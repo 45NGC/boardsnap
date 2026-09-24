@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=77.0.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "boardsnap"
+version = "0.1.0.dev0"
+description = "Recognition of digital chessboards and book diagrams into piece placement."
+readme = "README.md"
+requires-python = ">=3.11"
+license-files = ["LICENSE"]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["boardsnap", "boardsnap.*"]
+namespaces = false
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["tests"]
+addopts = ["--import-mode=importlib", "--strict-config", "--strict-markers", "-ra"]
+markers = [
+    "unit: tests of an isolated stage without the evaluation dataset",
+    "integration: tests of the complete pipeline and adapters",
+    "evaluation: tests using held-out images and known positions",
+]
