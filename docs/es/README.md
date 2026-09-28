@@ -6,12 +6,13 @@
 digital o un diagrama de libro y devuelve una única colocación de piezas para
 la aplicación Flutter **chess-scanner**.
 
-**Estado: estructura inicial, sin reconocimiento implementado.** El paquete se
-puede instalar e importar; solo contiene `__init__.py`. Los módulos de cada etapa
-se crearán cuando se implemente su funcionalidad.
-Todavía no hay CLI ejecutable, estilos compatibles, imágenes de evaluación ni
-pruebas funcionales. Los ejemplos JSON de la documentación describen el contrato;
-no son resultados generados por el programa.
+**Estado: serialización de la colocación de piezas implementada.** El paquete
+convierte una matriz de 8 × 8 ya clasificada en el diccionario de salida mediante
+`boardsnap.output.build_result(board)`. Pasan los 53 casos de prueba de salida.
+Los demás módulos se crearán cuando se implemente su funcionalidad.
+Todavía no hay reconocimiento de imágenes, CLI ejecutable, estilos compatibles
+ni imágenes de evaluación. Los ejemplos JSON describen el contrato de salida;
+no representan resultados del reconocimiento de imágenes.
 
 ## Alcance
 
@@ -34,6 +35,9 @@ El [contrato de salida](output-contract.md) define el orden de las casillas,
 la orientación por defecto y los errores estructurados. El mecanismo de
 integración con Flutter está pendiente de una decisión expresa; el núcleo será
 independiente de Flutter y de cualquier framework web.
+
+La [explicación de output.py](output-walkthrough.md) recorre el código de la
+función de salida paso a paso, con ejemplos de validación y compresión de huecos.
 
 ## Instalación para desarrollo
 
@@ -58,18 +62,20 @@ se añadirán cuando se implemente y evalúe la etapa que las necesite.
 
 ```text
 src/boardsnap/
-    __init__.py          # Paquete Python mínimo
+    __init__.py
+    output.py            # Validación de matrices y serialización de la colocación
 docs/
     en/                 # Documentación en inglés
     es/                 # Documentación en español
 data/tuning/             # Futuros ejemplos de ajuste y entrenamiento
 tests/
     README.md
+    test_output.py       # Especificación de salida previa a la implementación
     fixtures/evaluation/ # Futuras imágenes reservadas de evaluación
 ```
 
-La [arquitectura](architecture.md) describe el flujo y la futura separación
-de responsabilidades, todavía sin archivos de implementación. La
+La [arquitectura](architecture.md) describe el flujo y la separación de
+responsabilidades. La etapa de salida está implementada. La
 [hoja de ruta](roadmap.md) compara enfoques y fija las siguientes iteraciones.
 Las guías de [datos de ajuste](tuning-data.md) e
 [imágenes de evaluación](evaluation-data.md) describen las particiones previstas.
@@ -89,11 +95,17 @@ python -m pytest
 python -m pytest --collect-only
 ```
 
-Por ahora ambos comandos descubren **cero pruebas** y terminan con código `5`,
-el comportamiento de pytest cuando no hay pruebas. No indica pruebas superadas.
-Véanse los [códigos de salida de pytest](https://docs.pytest.org/en/stable/reference/exit-codes.html).
-La configuración está en `pyproject.toml`; no se añaden pruebas vacías ni
-resultados simulados para hacer que el comando termine con éxito.
+La colección y la ejecución terminan correctamente con código `0`: los 53 casos
+de prueba de salida pasan contra la implementación. Estas pruebas cubren la
+serialización y la validación de la matriz interna, no el reconocimiento de
+imágenes ni la detección de orientación.
+
+La configuración está en `pyproject.toml`. Para ejecutar solo las primeras
+pruebas unitarias:
+
+```bash
+python -m pytest -m unit
+```
 
 El [plan de pruebas](testing.md) incluye detección, orientación, piezas,
 serialización y errores con posiciones conocidas. Las imágenes de evaluación

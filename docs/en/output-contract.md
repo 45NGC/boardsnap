@@ -1,9 +1,10 @@
-# Planned output contract
+# Output contract
 
 **English** | [Spanish](../es/output-contract.md) · [Overview](README.md)
 
-This document defines the contract to be implemented in future iterations.
-The initial scaffold does not process images or emit these responses.
+This document defines the output contract. Success results can be built from
+already-classified matrices through the Python API below. Image processing,
+structured image-processing errors, and the CLI are not implemented yet.
 
 ## Success
 
@@ -28,6 +29,36 @@ uncertain squares, alternatives, or orientation metadata are added. The app
 will decide how to edit the position and complete the remaining game data.
 An incorrect classification can be corrected there; the engine will not request
 confirmation.
+
+## Python output API
+
+`boardsnap.output.build_result(board)` returns a dictionary with exactly
+`{"piecePlacement": "..."}`; JSON encoding belongs to the external adapter.
+For example, an explicitly empty board can be serialized with:
+
+```python
+from boardsnap.output import build_result
+
+board = [[None] * 8 for _ in range(8)]
+result = build_result(board)
+assert result == {"piecePlacement": "8/8/8/8/8/8/8/8"}
+```
+
+The input is an 8 × 8 matrix of already-classified squares, ordered from `a8`
+to `h1`. The board and its rows support lists and tuples. Each cell is `None`
+for empty or a single character from `PNBRQKpnbrqk`. Strings, bytes, and mappings
+are not valid board or row containers. Dots in the test fixtures are converted
+to `None` before calling this API; they are not valid cell values.
+
+- Incorrect board, row, or cell types raise `TypeError`.
+- Incorrect dimensions or invalid string symbols raise `ValueError`.
+- The input matrix is not modified.
+- An explicitly empty matrix of 64 squares is valid, as are arrangements that
+  would be illegal in a game; the function only serializes placement.
+
+These are internal matrix validation errors, distinct from the structured
+image-processing errors below. This function does not recognize pieces or
+infer orientation; those stages must supply the matrix in canonical order.
 
 ## Orientation
 

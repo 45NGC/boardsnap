@@ -2,7 +2,7 @@
 
 **English** | [Spanish](../es/roadmap.md) · [Overview](README.md)
 
-## 0. Project scaffold (this iteration)
+## 0. Project scaffold (completed)
 
 An installable `boardsnap` package with a single `__init__.py`, a documented
 architecture proposal, pytest configuration, and separate areas for tuning and
@@ -12,7 +12,8 @@ executable CLI, or simulated recognition tests.
 
 ## 1. Testable contract and first data profile
 
-Implement and test serialization of known matrices and the contract's errors.
+Matrix serialization and internal validation are implemented and covered by
+53 passing unit test cases. Structured image-processing errors remain pending.
 Define a first profile using our own screenshots of **a single lichess theme**,
 explicitly recording the piece set, background, and sizes; its exact identity
 will be chosen based on available samples. It will not be declared supported

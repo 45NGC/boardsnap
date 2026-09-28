@@ -2,13 +2,15 @@
 
 **English** | [Spanish](../es/architecture.md) · [Overview](README.md)
 
-This is the planned distribution of responsibilities, not an implemented API.
+This is the distribution of responsibilities. The output serialization API is
+implemented; the rest of the pipeline remains planned.
 The initial repository contained only a README, a license, and a generic Python
 `.gitignore`; there was no recognition code to preserve or migrate.
 
-A single package, `boardsnap`, lives under `src/`. This scaffold only contains
-`__init__.py`, which identifies the Python package. The modules proposed below
-will be created as each responsibility is implemented; their names are
+A single package, `boardsnap`, lives under `src/`. It contains `__init__.py`
+and `output.py`, which validates and serializes an already-classified matrix.
+The other modules below will be created as each responsibility is implemented;
+their names are
 provisional. No class hierarchies, plugin registries, or services are introduced
 in advance. The
 [PyPA packaging guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/)

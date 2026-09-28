@@ -2,13 +2,14 @@
 
 [English](../en/architecture.md) | **Español** · [Inicio](README.md)
 
-Esta es la distribución de responsabilidades prevista, no una API implementada.
+Esta es la distribución de responsabilidades. La API de serialización de salida
+está implementada; el resto del flujo sigue previsto para próximas etapas.
 El repositorio inicial contenía únicamente README, licencia y un `.gitignore`
 genérico de Python; no existía código de reconocimiento que conservar o migrar.
 
-Se usa un único paquete, `boardsnap`, bajo `src/`. Esta base solo contiene
-`__init__.py`, que identifica el paquete Python. Los módulos de la propuesta
-siguiente se crearán al implementar cada responsabilidad; sus nombres son
+Se usa un único paquete, `boardsnap`, bajo `src/`. Contiene `__init__.py`
+y `output.py`, que valida y serializa una matriz ya clasificada.
+Los demás módulos se crearán al implementar cada responsabilidad; sus nombres son
 orientativos. No se anticipan jerarquías de clases, registros de plugins ni
 servicios. La
 [guía de empaquetado de PyPA](https://packaging.python.org/en/latest/tutorials/packaging-projects/)

@@ -1,9 +1,11 @@
-# Contrato de salida previsto
+# Contrato de salida
 
 [English](../en/output-contract.md) | **Español** · [Inicio](README.md)
 
-Este documento define el contrato que se implementará en próximas iteraciones.
-La estructura inicial no procesa imágenes ni emite estas respuestas.
+Este documento define el contrato de salida. La API Python descrita más abajo
+permite construir resultados correctos a partir de matrices ya clasificadas.
+El procesamiento de imágenes, sus errores estructurados y la CLI todavía no
+están implementados.
 
 ## Éxito
 
@@ -27,6 +29,40 @@ No se añaden turno, enroque, captura al paso, contadores, confianza, casillas
 dudosas, alternativas ni metadatos de orientación. La app decidirá cómo editar
 la posición y completar los demás datos de una partida. Una clasificación
 incorrecta podrá corregirse allí; no se solicitará confirmación desde el motor.
+
+## API Python de salida
+
+`boardsnap.output.build_result(board)` devuelve un diccionario con exactamente
+`{"piecePlacement": "..."}`; la
+codificación JSON pertenece al adaptador externo.
+Por ejemplo, un tablero explícitamente vacío se puede serializar así:
+
+```python
+from boardsnap.output import build_result
+
+board = [[None] * 8 for _ in range(8)]
+result = build_result(board)
+assert result == {"piecePlacement": "8/8/8/8/8/8/8/8"}
+```
+
+La entrada es una matriz de 8 × 8 casillas ya clasificadas, ordenada desde `a8`
+hasta `h1`. El tablero y sus filas admiten listas y tuplas. Cada casilla es
+`None` si está vacía o un carácter de `PNBRQKpnbrqk`. Las cadenas de texto, los
+bytes y los diccionarios no son contenedores válidos para el tablero o sus filas.
+Los puntos de los datos de prueba se convierten a `None` antes de llamar a esta
+API; no son valores válidos para las casillas.
+
+- Los tipos incorrectos de tablero, fila o casilla provocan `TypeError`.
+- Las dimensiones incorrectas o las cadenas con símbolos inválidos provocan `ValueError`.
+- La matriz de entrada no se modifica.
+- Una matriz explícita de 64 casillas vacías es válida, igual que las
+  distribuciones que serían ilegales en una partida; la función solo serializa
+  la colocación.
+
+Estos son errores de validación de la matriz interna, distintos de los errores
+estructurados del procesamiento de imágenes descritos más abajo. Esta función
+no reconoce piezas ni deduce la orientación; esas etapas deben proporcionar
+la matriz en el orden canónico.
 
 ## Orientación
 

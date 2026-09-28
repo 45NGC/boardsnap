@@ -2,7 +2,7 @@
 
 [English](../en/roadmap.md) | **Español** · [Inicio](README.md)
 
-## 0. Base del proyecto (esta iteración)
+## 0. Base del proyecto (completada)
 
 Paquete instalable `boardsnap` con un único `__init__.py`, arquitectura propuesta
 en documentación, configuración de pytest y espacios separados para ajuste y
@@ -12,8 +12,10 @@ ejecutable ni pruebas de reconocimiento simuladas.
 
 ## 1. Contrato comprobable y primer perfil de datos
 
-Implementar y probar la serialización de matrices conocidas y los errores del
-contrato. Fijar un primer perfil con capturas propias de **un solo tema de
+La serialización de matrices y la validación interna están implementadas y
+cubiertas por 53 casos de prueba superados. Los errores estructurados del
+procesamiento de imágenes siguen pendientes.
+Fijar un primer perfil con capturas propias de **un solo tema de
 lichess**, anotando explícitamente juego de piezas, fondo y tamaños; su identidad
 exacta se decidirá con las muestras disponibles. No se declara compatible antes
 de medirlo.

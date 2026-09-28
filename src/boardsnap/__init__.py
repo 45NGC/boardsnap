@@ -1,4 +1,5 @@
-"""BoardSnap: initial scaffold for the chessboard recognition engine.
+"""BoardSnap: a chessboard recognition engine in development.
 
-Recognition and the public API are not implemented yet.
+Piece placement serialization is available in boardsnap.output.
+Image recognition is not implemented yet.
 """
