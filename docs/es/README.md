@@ -10,9 +10,12 @@ la aplicación Flutter **chess-scanner**.
 convierte una matriz de 8 × 8 ya clasificada en el diccionario de salida mediante
 `boardsnap.output.build_result(board)`. Pasan los 53 casos de prueba de salida.
 Los demás módulos se crearán cuando se implemente su funcionalidad.
-Todavía no hay reconocimiento de imágenes, CLI ejecutable, estilos compatibles
+Todavía no hay reconocimiento de imágenes, CLI de reconocimiento, estilos compatibles
 ni imágenes de evaluación. Los ejemplos JSON describen el contrato de salida;
 no representan resultados del reconocimiento de imágenes.
+
+Una [herramienta de captura](capture-data.md) separada recoge imágenes y etiquetas
+conocidas del editor de lichess. Utiliza el extra opcional de dependencias `capture`.
 
 ## Alcance
 
@@ -64,6 +67,7 @@ se añadirán cuando se implemente y evalúe la etapa que las necesite.
 src/boardsnap/
     __init__.py
     output.py            # Validación de matrices y serialización de la colocación
+tools/                   # Herramienta de captura y manifiesto de ejemplo
 docs/
     en/                 # Documentación en inglés
     es/                 # Documentación en español
@@ -95,10 +99,11 @@ python -m pytest
 python -m pytest --collect-only
 ```
 
-La colección y la ejecución terminan correctamente con código `0`: los 53 casos
-de prueba de salida pasan contra la implementación. Estas pruebas cubren la
-serialización y la validación de la matriz interna, no el reconocimiento de
-imágenes ni la detección de orientación.
+Las 53 pruebas de salida cubren la serialización y la validación de la matriz
+interna, no el reconocimiento de imágenes ni la detección de orientación.
+También se ejecutan las pruebas de validación de capturas. Las pruebas locales
+opcionales con navegador requieren activación expresa; consulta la
+[guía de captura](capture-data.md).
 
 La configuración está en `pyproject.toml`. Para ejecutar solo las primeras
 pruebas unitarias:

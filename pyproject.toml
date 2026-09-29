@@ -13,6 +13,7 @@ dependencies = []
 
 [project.optional-dependencies]
 dev = ["pytest>=8"]
+capture = ["playwright>=1.51,<2"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

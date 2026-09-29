@@ -4,6 +4,9 @@
 
 Ubicación: [`data/tuning/`](../../data/tuning/).
 
+Utiliza la [herramienta de captura](capture-data.md) para recoger el primer perfil
+de lichess desde un manifiesto con las particiones asignadas de antemano.
+
 Directorio reservado para imágenes usadas al crear plantillas, ajustar
 preprocesado y, en el futuro, entrenar o validar clasificadores. Todavía no
 contiene muestras ni artefactos.

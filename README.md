@@ -6,6 +6,9 @@ BoardSnap is a Python project for recognizing digital chessboards and book
 diagrams and returning piece placement to the Flutter app **chess-scanner**.
 **Piece placement serialization is implemented; recognition and the CLI are pending.**
 
+A separate [capture utility](docs/en/capture-data.md) collects annotated lichess
+screenshots for the first dataset. It does not perform image recognition.
+
 `boardsnap.output.build_result(board)` converts an already-classified 8 × 8
 matrix into the output dictionary. Its 53 unit test cases pass.
 
@@ -21,6 +24,7 @@ files. Spanish documentation is maintained in `docs/es/`.
 | Roadmap | [Read](docs/en/roadmap.md) | [Read](docs/es/roadmap.md) |
 | Testing | [Read](docs/en/testing.md) | [Read](docs/es/testing.md) |
 | Tuning data | [Read](docs/en/tuning-data.md) | [Read](docs/es/tuning-data.md) |
+| Capture utility | [Read](docs/en/capture-data.md) | [Read](docs/es/capture-data.md) |
 | Evaluation data | [Read](docs/en/evaluation-data.md) | [Read](docs/es/evaluation-data.md) |
 
 License: [GNU Affero General Public License v3](LICENSE).

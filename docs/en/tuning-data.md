@@ -4,6 +4,9 @@
 
 Location: [`data/tuning/`](../../data/tuning/).
 
+Use the [capture utility](capture-data.md) to collect the first lichess profile
+from a manifest with positions assigned to partitions in advance.
+
 This directory is reserved for images used to create templates, tune
 preprocessing, and, in the future, train or validate classifiers. It does not
 contain samples or artifacts yet.
