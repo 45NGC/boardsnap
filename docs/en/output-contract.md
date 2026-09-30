@@ -3,8 +3,9 @@
 **English** | [Spanish](../es/output-contract.md) · [Overview](README.md)
 
 This document defines the output contract. Success results can be built from
-already-classified matrices through the Python API below. Image processing,
-structured image-processing errors, and the CLI are not implemented yet.
+already-classified matrices through the Python API below. Image loading and its
+three input error codes are implemented in [image_input](image-input.md).
+Recognition, later-stage processing errors and the CLI remain pending.
 
 ## Success
 

@@ -4,8 +4,9 @@
 
 Este documento define el contrato de salida. La API Python descrita más abajo
 permite construir resultados correctos a partir de matrices ya clasificadas.
-El procesamiento de imágenes, sus errores estructurados y la CLI todavía no
-están implementados.
+La lectura de imágenes y sus tres códigos de error están implementados en
+[image_input](image-input.md). El reconocimiento, los errores de las etapas
+posteriores y la CLI siguen pendientes.
 
 ## Éxito
 

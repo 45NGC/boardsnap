@@ -4,12 +4,13 @@
 
 The first unit tests are in [test_output.py](../../tests/test_output.py). All
 53 cases pass against `boardsnap.output.build_result(board)`, implemented in
-[output.py](../../src/boardsnap/output.py). No recognition models or images
-have been added.
+[output.py](../../src/boardsnap/output.py). The first 20 annotated screenshots
+are included; no recognition model has been added.
 
 Both `python -m pytest --collect-only` and `python -m pytest` succeed with exit
-code `0`. The suite checks the actual output implementation without `skip`,
-`xfail`, or simulated results.
+code `0`. Output and dataset checks run locally. The capture tool's seven
+browser integration cases are skipped unless explicitly enabled as described
+in the [capture guide](capture-data.md). No test simulates recognition results.
 
 The configuration in `pyproject.toml` limits discovery to `tests/`, uses
 `importlib` import mode, and rejects unknown options or markers. Installing the
@@ -39,6 +40,12 @@ from an image.
 
 ## Cases to add with each implementation
 
+Image input is now covered by 31 unit cases in
+[test_image_input.py](../../tests/test_image_input.py). They distinguish file
+access, decoding and unsupported-input failures, and check normalization,
+EXIF, transparency and ownership of decoded pixels. See the
+[input guide](image-input.md). The remaining image stages are pending.
+
 | Area | Planned evidence |
 | --- | --- |
 | Input | Missing files, empty or corrupt content, and supported formats. |
@@ -56,8 +63,8 @@ that differ from the initial piece arrangement.
 
 ## Partitions and planned commands
 
-`data/tuning/` will contain examples for templates, tuning, and future training.
-`tests/fixtures/evaluation/` will contain held-out images with their expected
+`data/tuning/` contains 16 images for templates, tuning, and future experiments.
+`tests/fixtures/evaluation/` contains four reserved images with their expected
 piece placements; they will not be used to tune the engine. Crops and other
 variants will remain in their original image's partition. Source positions
 will also be kept separate to avoid evaluating near-identical copies.
@@ -70,6 +77,10 @@ python -m pytest -m integration
 python -m pytest -m evaluation
 ```
 
-The `unit` selector runs the current output tests. There are no `integration`
-or `evaluation` tests yet, so those selectors exit with code `5`. Exit codes
-are not altered to hide missing tests or missing functionality.
+The `unit` selector runs output and capture-manifest tests. `integration`
+selects the optional offline browser tests. `evaluation` currently selects
+[dataset integrity checks](../../tests/test_dataset.py): PNG signatures and
+dimensions, hashes, annotations, bounds within images, paired orientations,
+manifest consistency and disjoint positions/groups. These do not locate boards
+or classify pixels. Future recognition tests must use only images as inputs;
+annotations remain expected results. No evaluation accuracy is available yet.

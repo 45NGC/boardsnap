@@ -1,0 +1,24 @@
+{
+  "profileId": "lichess-cburnett-brown-v1",
+  "notes": "Initial repository dataset: 10 positions, 20 screenshots. Captured on 2026-09-29 and adopted unchanged from the pilot after review. Positions were selected or constructed, not sampled from a game corpus; includes empty-board and corner diagnostics without legality requirements. Splits were assigned before capture. Evaluation images have been used only to check capture/annotation correctness, not to tune recognition. This small, fixed-layout set does not establish recognition accuracy or provide sufficient training diversity.",
+  "positions": [
+    {
+      "groupId": "pos-003",
+      "split": "evaluation",
+      "piecePlacement": "8/5pk1/6p1/8/4P3/5K2/8/8"
+    },
+    {
+      "groupId": "pos-010",
+      "split": "evaluation",
+      "piecePlacement": "r2q1rk1/pp2bppp/2npbn2/2p1p3/2P1P3/2NP1NP1/PP2QPBP/R1B2RK1"
+    }
+  ],
+  "datasetId": "lichess-cburnett-brown-v1-initial",
+  "adoptedAt": "2026-09-30",
+  "review": {
+    "date": "2026-09-30",
+    "reviewer": "Codex",
+    "method": "Visual inspection of all 20 screenshots against piece placement, orientation and visible grid extent; automated checks of file hashes, dimensions, annotations and split consistency. DOM-derived fractional bounds are retained, not independently measured to subpixel precision."
+  },
+  "assetNotices": "data/THIRD_PARTY_NOTICES.md"
+}

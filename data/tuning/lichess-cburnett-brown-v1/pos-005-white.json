@@ -1,0 +1,30 @@
+{
+  "image": "pos-005-white.png",
+  "profileId": "lichess-cburnett-brown-v1",
+  "groupId": "pos-005",
+  "split": "tuning",
+  "orientation": "white-bottom",
+  "boardBounds": {
+    "x": 189.890625,
+    "y": 158.46875,
+    "width": 584,
+    "height": 584
+  },
+  "imageSize": {
+    "width": 1280,
+    "height": 1000
+  },
+  "piecePlacement": "r6k/8/8/8/8/8/8/K6R",
+  "source": {
+    "url": "https://lichess.org/editor?fen=r6k%2F8%2F8%2F8%2F8%2F8%2F8%2FK6R&color=white",
+    "capturedAt": "2026-09-29T14:06:37.625723+00:00",
+    "method": "Playwright screenshot of the live lichess editor",
+    "browser": "Chromium 153.0.8010.12",
+    "playwright": "1.63.0",
+    "deviceScaleFactor": 1,
+    "colorScheme": "light",
+    "locale": "en-GB",
+    "pageModification": "FEN/URL fields and board resize handle hidden using CSS visibility"
+  },
+  "sha256": "b8ad930e21030004430efde8c52b32acc63db861f0ef357bd4907b20f4c96d91"
+}

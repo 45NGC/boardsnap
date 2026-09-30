@@ -1,4 +1,4 @@
-# Tuning samples (pending)
+# Tuning samples
 
 **English** | [Spanish](../es/tuning-data.md) · [Overview](README.md)
 
@@ -7,9 +7,25 @@ Location: [`data/tuning/`](../../data/tuning/).
 Use the [capture utility](capture-data.md) to collect the first lichess profile
 from a manifest with positions assigned to partitions in advance.
 
-This directory is reserved for images used to create templates, tune
-preprocessing, and, in the future, train or validate classifiers. It does not
-contain samples or artifacts yet.
+The first dataset is `lichess-cburnett-brown-v1`: 16 PNGs and JSON annotations
+covering eight positions in both orientations. The reviewed pilot captures
+were adopted unchanged on 2026-09-30. They are available for templates,
+preprocessing and initial classification experiments; they are not a complete
+training corpus. No model or recognition accuracy is available yet.
+
+The [collection manifest](../../data/manifests/lichess-cburnett-brown-v1.json)
+fixes the positions and splits independently of the editable tool example.
+Images are 1280 × 1000 with a 584 × 584 board, cburnett pieces, brown squares,
+internal coordinates and editor context. Each JSON records the original capture
+time, source, canonical placement, orientation, bounds and image hash. See the
+[source notices](../../data/THIRD_PARTY_NOTICES.md) for artwork attribution.
+
+All 20 dataset screenshots were visually checked against positions and
+orientations. The grid extent was visually checked; fractional DOM-derived
+bounds were preserved, not independently measured to subpixel precision.
+The dataset integrity tests check files and partition consistency, not detection.
+Regenerate into a fresh output root using the collection manifest; do not
+overwrite the committed fixtures when the live site changes.
 
 For each sample added, record its identifier, source, permission to use it,
 visual profile, resolution, known position, orientation, and source group. All

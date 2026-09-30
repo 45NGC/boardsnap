@@ -6,12 +6,16 @@
 chessboard or a book diagram and returns a single piece placement to the
 Flutter application **chess-scanner**.
 
-**Status: piece placement serialization is implemented.** The package converts
+**Status: image input and piece placement serialization are implemented.** The package converts
 an already-classified 8 × 8 matrix into the output dictionary through
 `boardsnap.output.build_result(board)`. All 53 output unit test cases pass.
 Other modules will be created as their functionality is implemented.
-There is no image recognition, recognition CLI, supported style, or evaluation
-image set yet. The JSON examples describe the output contract; they do not
+
+[Image input](image-input.md) reads static PNG/JPEG files as fully loaded RGB
+images and provides structured input errors through `ImageInputError`.
+There is no image recognition, recognition CLI or measured style support yet.
+The first dataset contains 20 annotated PNGs (16 tuning, 4 evaluation) for
+`lichess-cburnett-brown-v1`. The JSON examples describe the output contract; they do not
 represent recognition results from images.
 
 A separate [capture utility](capture-data.md) collects screenshots and known
@@ -57,9 +61,9 @@ python -c "import boardsnap; print(boardsnap.__file__)"
 If your Python distribution does not include `ensurepip`, install your system's
 virtual environment support before creating `.venv`.
 
-There are no runtime dependencies in this iteration. `setuptools` builds the
-package and the `dev` extra installs `pytest`. Image and vision libraries will
-be added when the stage that needs them is implemented and evaluated.
+Pillow is the runtime dependency for decoding images. `setuptools` builds the
+package and the `dev` extra installs `pytest`. OpenCV, NumPy and PyTorch have
+not been added; each will be considered when its stage is implemented.
 
 ## Structure
 
@@ -67,21 +71,24 @@ be added when the stage that needs them is implemented and evaluated.
 src/boardsnap/
     __init__.py
     output.py            # Matrix validation and piece placement serialization
+    image_input.py       # PNG/JPEG decoding, RGB normalization and input errors
 tools/                   # Dataset capture utility and example manifest
 docs/
     en/                 # English documentation
     es/                 # Spanish documentation
-data/tuning/             # Future tuning and training samples
+data/manifests/          # Fixed collection manifest and split assignments
+data/tuning/             # 16 initial tuning images and annotations
 tests/
     README.md
     test_output.py       # Output specification, written before implementation
-    fixtures/evaluation/ # Future held-out evaluation images
+    test_dataset.py      # Image/annotation integrity and split checks
+    fixtures/evaluation/ # 4 reserved evaluation images and annotations
 ```
 
 The [architecture](architecture.md) describes the flow and separation of
-responsibilities. The output stage is implemented. The [roadmap](roadmap.md)
+responsibilities. Input and output stages are implemented. The [roadmap](roadmap.md)
 compares approaches and defines the next iterations. The [tuning data](tuning-data.md)
-and [evaluation images](evaluation-data.md) guides describe the planned data
+and [evaluation images](evaluation-data.md) guides describe the current data
 partitions. Both languages contain the same documents; changes to the contract
 or scope should be reflected in both versions.
 
@@ -100,7 +107,9 @@ python -m pytest --collect-only
 The 53 output tests cover serialization and internal matrix validation, not
 image recognition or orientation detection. Capture validation tests also run
 by default. Optional offline browser tests require explicit activation; see
-the [capture guide](capture-data.md).
+the [capture guide](capture-data.md). Dataset integrity checks run by default
+and can also be selected with `python -m pytest -m evaluation`; they do not
+measure image recognition accuracy.
 
 Configuration is in `pyproject.toml`. To run only the initial unit tests:
 

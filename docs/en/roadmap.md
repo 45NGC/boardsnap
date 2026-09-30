@@ -13,11 +13,17 @@ executable CLI, or simulated recognition tests.
 ## 1. Testable contract and first data profile
 
 Matrix serialization and internal validation are implemented and covered by
-53 passing unit test cases. Structured image-processing errors remain pending.
-Define a first profile using our own screenshots of **a single lichess theme**,
-explicitly recording the piece set, background, and sizes; its exact identity
-will be chosen based on available samples. It will not be declared supported
-before it is measured.
+53 passing unit test cases. Image loading now supports PNG/JPEG with RGB
+normalization and the three input error codes, covered by 31 unit cases.
+Later-stage processing errors remain pending.
+The first profile is now `lichess-cburnett-brown-v1`: 20 annotated PNGs with
+cburnett pieces, a brown board, 1280 × 1000 screenshots and a 584 × 584 grid.
+There are eight tuning positions and two reserved evaluation positions, each
+in both orientations. The [collection manifest](../../data/manifests/lichess-cburnett-brown-v1.json)
+fixes this initial set. Collection does not establish recognition support.
+Next implement board detection. Add negative images and varying
+grid sizes/locations before claiming detection generalization; this set uses
+one fixed layout.
 
 Start with PNG images, a complete aligned board, static pieces without overlays,
 and a single grid per image. Reserve evaluation images with annotated positions

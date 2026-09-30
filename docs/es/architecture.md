@@ -2,13 +2,14 @@
 
 [English](../en/architecture.md) | **Español** · [Inicio](README.md)
 
-Esta es la distribución de responsabilidades. La API de serialización de salida
-está implementada; el resto del flujo sigue previsto para próximas etapas.
+Esta es la distribución de responsabilidades. La entrada de imágenes y la
+serialización de salida están implementadas; el resto del flujo sigue previsto.
 El repositorio inicial contenía únicamente README, licencia y un `.gitignore`
 genérico de Python; no existía código de reconocimiento que conservar o migrar.
 
 Se usa un único paquete, `boardsnap`, bajo `src/`. Contiene `__init__.py`
-y `output.py`, que valida y serializa una matriz ya clasificada.
+y `output.py`, que valida y serializa una matriz ya clasificada, además de
+`image_input.py`, que carga PNG/JPEG y lanza errores estructurados de entrada.
 Los demás módulos se crearán al implementar cada responsabilidad; sus nombres son
 orientativos. No se anticipan jerarquías de clases, registros de plugins ni
 servicios. La
@@ -40,8 +41,9 @@ Las pistas de orientación se conservarán desde la entrada y la detección.
 | `pipeline` | Coordinar etapas y propagar fallos sin sustituirlos por posiciones inventadas. |
 | `adapters` | Traducir la entrada externa y serializar la respuesta; la CLI será el primer adaptador. |
 
-Las estructuras internas se elegirán al implementar cada etapa. No se fijan
-todavía clases públicas ni una representación de imagen ligada a una biblioteca.
+La entrada devuelve un objeto Pillow `Image.Image` RGB completamente cargado;
+`ImageInputError.to_dict()` representa los fallos para los futuros adaptadores.
+Las demás estructuras se elegirán al implementar sus etapas.
 El núcleo no importará los adaptadores ni conocerá HTTP, Flutter o una interfaz
 gráfica. El adaptador tampoco contendrá lógica de reconocimiento.
 
@@ -51,14 +53,15 @@ como el turno o los derechos de enroque.
 
 ## Dependencias
 
-La base no requiere bibliotecas en ejecución. `setuptools` es el backend de
-construcción y `pytest` es el único extra de desarrollo. La configuración de
+Pillow decodifica y normaliza la entrada. `setuptools` es el backend de
+construcción, `pytest` está en el extra de desarrollo y Playwright en el extra
+opcional de captura, fuera del núcleo de reconocimiento. La configuración de
 licencias incluye el archivo `LICENSE` existente en las distribuciones; se
 requiere una versión de setuptools que admita `project.license-files`, según su
 [documentación](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html).
 
-Al trabajar con imágenes se evaluarán Pillow para decodificación y OpenCV con
-NumPy para geometría y plantillas. Solo se añadirán las dependencias utilizadas.
+Se evaluarán OpenCV y NumPy para geometría y plantillas. Solo se añadirán
+dependencias utilizadas. La [guía de entrada](image-input.md) concreta la decodificación.
 No se incorpora ahora un framework de aprendizaje automático ni una biblioteca
 de reglas de ajedrez para serializar un único campo.
 

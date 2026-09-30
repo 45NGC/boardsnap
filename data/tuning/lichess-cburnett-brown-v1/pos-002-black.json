@@ -1,0 +1,30 @@
+{
+  "image": "pos-002-black.png",
+  "profileId": "lichess-cburnett-brown-v1",
+  "groupId": "pos-002",
+  "split": "tuning",
+  "orientation": "black-bottom",
+  "boardBounds": {
+    "x": 189.890625,
+    "y": 158.46875,
+    "width": 584,
+    "height": 584
+  },
+  "imageSize": {
+    "width": 1280,
+    "height": 1000
+  },
+  "piecePlacement": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R",
+  "source": {
+    "url": "https://lichess.org/editor?fen=r1bqkbnr%2Fpppp1ppp%2F2n5%2F4p3%2F4P3%2F5N2%2FPPPP1PPP%2FRNBQKB1R&color=black",
+    "capturedAt": "2026-09-29T14:06:31.280751+00:00",
+    "method": "Playwright screenshot of the live lichess editor",
+    "browser": "Chromium 153.0.8010.12",
+    "playwright": "1.63.0",
+    "deviceScaleFactor": 1,
+    "colorScheme": "light",
+    "locale": "en-GB",
+    "pageModification": "FEN/URL fields and board resize handle hidden using CSS visibility"
+  },
+  "sha256": "eb866f3111c1cd2def962e9039b1f08940b41b8521a09a275bee53dd7c55d63d"
+}

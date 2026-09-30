@@ -4,12 +4,14 @@
 
 Las primeras pruebas unitarias están en [test_output.py](../../tests/test_output.py).
 Los 53 casos pasan contra `boardsnap.output.build_result(board)`, implementada
-en [output.py](../../src/boardsnap/output.py). No se han añadido modelos de
-reconocimiento ni imágenes.
+en [output.py](../../src/boardsnap/output.py). Ya se incluyen las primeras
+20 capturas anotadas; todavía no se ha añadido un modelo de reconocimiento.
 
 Tanto `python -m pytest --collect-only` como `python -m pytest` terminan
-correctamente con código `0`. La suite comprueba la implementación real de
-salida sin `skip`, `xfail` ni resultados simulados.
+correctamente con código `0`. Las pruebas de salida y datos se ejecutan
+localmente. Los siete casos de integración con navegador se omiten salvo
+activación expresa, descrita en la [guía de captura](capture-data.md).
+Ninguna prueba simula resultados del reconocimiento.
 
 La configuración en `pyproject.toml` limita el descubrimiento a `tests/`, usa
 importación `importlib` y rechaza opciones o marcadores desconocidos. Instalar
@@ -40,6 +42,12 @@ del orden canónico no prueban la detección de orientación a partir de imágen
 
 ## Casos que se incorporarán con cada implementación
 
+La entrada ya cuenta con 31 casos unitarios en
+[test_image_input.py](../../tests/test_image_input.py). Distinguen acceso,
+decodificación y entradas no admitidas, y comprueban normalización, EXIF,
+transparencia e independencia de los píxeles respecto al archivo. Consulta la
+[guía de entrada](image-input.md). Las demás etapas de imagen siguen pendientes.
+
 | Área | Evidencia prevista |
 | --- | --- |
 | Entrada | Archivos inexistentes, contenido vacío o corrupto y formatos admitidos. |
@@ -57,8 +65,8 @@ posiciones asimétricas y alejadas de la distribución inicial de las piezas.
 
 ## Particiones y comandos previstos
 
-`data/tuning/` contendrá los ejemplos para plantillas, ajustes y futuro
-entrenamiento. `tests/fixtures/evaluation/` contendrá imágenes reservadas con sus
+`data/tuning/` contiene 16 imágenes para plantillas, ajustes y futuros
+experimentos. `tests/fixtures/evaluation/` contiene cuatro imágenes reservadas con sus
 colocaciones esperadas; no se usarán para ajustar el motor. Los recortes y otras
 variantes permanecerán en la partición de su imagen de origen. Se mantendrán
 separadas también las posiciones fuente para evitar evaluar copias casi iguales.
@@ -71,7 +79,11 @@ python -m pytest -m integration
 python -m pytest -m evaluation
 ```
 
-El selector `unit` ejecuta las pruebas actuales de salida. Todavía no hay
-pruebas `integration` ni `evaluation`, por lo que esos selectores terminan con
-código `5`. No se alteran los códigos de salida para ocultar pruebas o
-funcionalidad pendientes.
+El selector `unit` ejecuta pruebas de salida y manifiestos de captura.
+`integration` selecciona las pruebas locales opcionales del navegador.
+`evaluation` selecciona por ahora las [pruebas de integridad](../../tests/test_dataset.py):
+firma y dimensiones de PNG, hashes, anotaciones, límites dentro de la imagen,
+parejas de orientaciones, coherencia de manifiestos y separación de posiciones
+y grupos. No localizan tableros ni clasifican píxeles. Las futuras pruebas de
+reconocimiento solo recibirán imágenes; las anotaciones serán resultados
+esperados. Todavía no hay medidas de precisión.

@@ -13,12 +13,17 @@ ejecutable ni pruebas de reconocimiento simuladas.
 ## 1. Contrato comprobable y primer perfil de datos
 
 La serialización de matrices y la validación interna están implementadas y
-cubiertas por 53 casos de prueba superados. Los errores estructurados del
-procesamiento de imágenes siguen pendientes.
-Fijar un primer perfil con capturas propias de **un solo tema de
-lichess**, anotando explícitamente juego de piezas, fondo y tamaños; su identidad
-exacta se decidirá con las muestras disponibles. No se declara compatible antes
-de medirlo.
+cubiertas por 53 casos de prueba superados. La lectura admite PNG/JPEG,
+normalización RGB y tres códigos de error de entrada, con 31 pruebas unitarias.
+Los errores del procesamiento posterior siguen pendientes.
+El primer perfil ya es `lichess-cburnett-brown-v1`: 20 PNG anotados con piezas
+cburnett, tablero brown, capturas de 1280 × 1000 y cuadrícula de 584 × 584.
+Hay ocho posiciones de ajuste y dos reservadas de evaluación, ambas con las
+dos orientaciones. El [manifiesto](../../data/manifests/lichess-cburnett-brown-v1.json)
+fija este conjunto inicial. La recogida no demuestra compatibilidad del
+reconocimiento. El siguiente paso es implementar la detección del tablero.
+Añadir imágenes negativas y tamaños y ubicaciones de cuadrícula distintos antes
+de afirmar que la detección generaliza; este conjunto usa una distribución fija.
 
 Empezar con PNG, tablero completo y alineado, piezas estáticas sin superposiciones
 y una única cuadrícula por imagen. Reservar desde el principio imágenes de

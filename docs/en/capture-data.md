@@ -26,6 +26,12 @@ No lichess account is required.
 
 ## Prepare positions
 
+The first reviewed dataset is already stored in the repository. Its fixed
+[collection manifest](../../data/manifests/lichess-cburnett-brown-v1.json) is
+separate from the editable example below. To repeat collection, pass that
+manifest with a fresh `--output-root`; existing dataset folders are protected.
+See [tuning data](tuning-data.md) and [evaluation data](evaluation-data.md).
+
 Copy [`tools/capture.example.json`](../../tools/capture.example.json) to a new
 JSON file and edit it. Its 10 distinct positions produce 20 images: 16 for
 tuning and 4 for evaluation, keeping both orientations in the same partition.

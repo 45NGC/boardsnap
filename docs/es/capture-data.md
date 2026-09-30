@@ -27,6 +27,13 @@ No requiere una cuenta de lichess.
 
 ## Preparar posiciones
 
+El primer conjunto revisado ya está guardado en el repositorio. Su
+[manifiesto fijo](../../data/manifests/lichess-cburnett-brown-v1.json) es
+independiente del ejemplo editable siguiente. Para repetir la recogida utiliza
+ese manifiesto con un `--output-root` nuevo; las carpetas existentes están
+protegidas. Consulta los datos de [ajuste](tuning-data.md) y
+[evaluación](evaluation-data.md).
+
 Copia [`tools/capture.example.json`](../../tools/capture.example.json) a un
 archivo JSON nuevo y edítalo. Sus 10 posiciones distintas producen 20 imágenes:
 16 de ajuste y 4 de evaluación, manteniendo ambas orientaciones en la misma

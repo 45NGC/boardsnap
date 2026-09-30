@@ -6,12 +6,17 @@
 digital o un diagrama de libro y devuelve una única colocación de piezas para
 la aplicación Flutter **chess-scanner**.
 
-**Estado: serialización de la colocación de piezas implementada.** El paquete
+**Estado: entrada de imágenes y serialización de piezas implementadas.** El paquete
 convierte una matriz de 8 × 8 ya clasificada en el diccionario de salida mediante
 `boardsnap.output.build_result(board)`. Pasan los 53 casos de prueba de salida.
 Los demás módulos se crearán cuando se implemente su funcionalidad.
-Todavía no hay reconocimiento de imágenes, CLI de reconocimiento, estilos compatibles
-ni imágenes de evaluación. Los ejemplos JSON describen el contrato de salida;
+
+La [entrada de imágenes](image-input.md) lee PNG/JPEG estáticos como imágenes
+RGB cargadas y ofrece errores estructurados mediante `ImageInputError`.
+Todavía no hay reconocimiento de imágenes, CLI de reconocimiento ni estilos
+con compatibilidad medida. El primer conjunto contiene 20 PNG anotados
+(16 de ajuste y 4 de evaluación) del perfil `lichess-cburnett-brown-v1`.
+Los ejemplos JSON describen el contrato de salida;
 no representan resultados del reconocimiento de imágenes.
 
 Una [herramienta de captura](capture-data.md) separada recoge imágenes y etiquetas
@@ -57,9 +62,9 @@ python -c "import boardsnap; print(boardsnap.__file__)"
 Si la distribución de Python no incluye `ensurepip`, instala el soporte de
 entornos virtuales de tu sistema antes de crear `.venv`.
 
-No hay dependencias de ejecución en esta iteración. `setuptools` construye el
-paquete y el extra `dev` instala `pytest`. Las bibliotecas de imágenes y visión
-se añadirán cuando se implemente y evalúe la etapa que las necesite.
+Pillow es la dependencia del motor para decodificar imágenes. `setuptools`
+construye el paquete y el extra `dev` instala `pytest`. OpenCV, NumPy y PyTorch
+todavía no se han añadido; se valorarán al implementar sus respectivas etapas.
 
 ## Estructura
 
@@ -67,22 +72,25 @@ se añadirán cuando se implemente y evalúe la etapa que las necesite.
 src/boardsnap/
     __init__.py
     output.py            # Validación de matrices y serialización de la colocación
+    image_input.py       # Decodificación PNG/JPEG, normalización RGB y errores
 tools/                   # Herramienta de captura y manifiesto de ejemplo
 docs/
     en/                 # Documentación en inglés
     es/                 # Documentación en español
-data/tuning/             # Futuros ejemplos de ajuste y entrenamiento
+data/manifests/          # Manifiesto fijo y asignación de particiones
+data/tuning/             # 16 imágenes iniciales de ajuste y anotaciones
 tests/
     README.md
     test_output.py       # Especificación de salida previa a la implementación
-    fixtures/evaluation/ # Futuras imágenes reservadas de evaluación
+    test_dataset.py      # Integridad de imágenes, anotaciones y particiones
+    fixtures/evaluation/ # 4 imágenes reservadas de evaluación y anotaciones
 ```
 
 La [arquitectura](architecture.md) describe el flujo y la separación de
-responsabilidades. La etapa de salida está implementada. La
+responsabilidades. Las etapas de entrada y salida están implementadas. La
 [hoja de ruta](roadmap.md) compara enfoques y fija las siguientes iteraciones.
 Las guías de [datos de ajuste](tuning-data.md) e
-[imágenes de evaluación](evaluation-data.md) describen las particiones previstas.
+[imágenes de evaluación](evaluation-data.md) describen las particiones actuales.
 Ambos idiomas contienen los mismos documentos; al cambiar el contrato o el
 alcance, se actualizarán las dos versiones.
 
@@ -103,7 +111,9 @@ Las 53 pruebas de salida cubren la serialización y la validación de la matriz
 interna, no el reconocimiento de imágenes ni la detección de orientación.
 También se ejecutan las pruebas de validación de capturas. Las pruebas locales
 opcionales con navegador requieren activación expresa; consulta la
-[guía de captura](capture-data.md).
+[guía de captura](capture-data.md). Las pruebas de integridad de datos se ejecutan
+por defecto y también con `python -m pytest -m evaluation`; no miden precisión
+de reconocimiento.
 
 La configuración está en `pyproject.toml`. Para ejecutar solo las primeras
 pruebas unitarias:

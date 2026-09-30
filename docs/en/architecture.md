@@ -2,13 +2,14 @@
 
 **English** | [Spanish](../es/architecture.md) · [Overview](README.md)
 
-This is the distribution of responsibilities. The output serialization API is
-implemented; the rest of the pipeline remains planned.
+This is the distribution of responsibilities. Image input and output
+serialization are implemented; the rest of the pipeline remains planned.
 The initial repository contained only a README, a license, and a generic Python
 `.gitignore`; there was no recognition code to preserve or migrate.
 
 A single package, `boardsnap`, lives under `src/`. It contains `__init__.py`
-and `output.py`, which validates and serializes an already-classified matrix.
+and `output.py`, which validates and serializes an already-classified matrix,
+plus `image_input.py`, which loads PNG/JPEG files and raises structured input errors.
 The other modules below will be created as each responsibility is implemented;
 their names are
 provisional. No class hierarchies, plugin registries, or services are introduced
@@ -41,8 +42,9 @@ will apply the square mapping before output is generated.
 | `pipeline` | Coordinate stages and propagate failures without replacing them with invented positions. |
 | `adapters` | Translate external input and serialize the response; the CLI will be the first adapter. |
 
-Internal structures will be chosen when each stage is implemented. No public
-classes or image representation tied to a library are defined yet. The core
+Image input currently returns a fully loaded RGB Pillow `Image.Image`;
+`ImageInputError.to_dict()` exposes input failures for future adapters.
+Other internal structures will be chosen as their stages are implemented. The core
 will not import adapters or know about HTTP, Flutter, or a graphical interface.
 Adapters will not contain recognition logic either.
 
@@ -52,14 +54,15 @@ to move or castling rights be invented.
 
 ## Dependencies
 
-The scaffold requires no runtime libraries. `setuptools` is the build backend
-and `pytest` is the only development extra. The license configuration includes
+Pillow decodes and normalizes image input. `setuptools` is the build backend,
+`pytest` is in the development extra and Playwright is in the optional capture
+extra, outside the recognition core. The license configuration includes
 the existing `LICENSE` file in distributions; it requires a setuptools version
 that supports `project.license-files`, as described in its
 [documentation](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html).
 
-When working with images, Pillow will be considered for decoding and OpenCV with
-NumPy for geometry and templates. Only dependencies that are used will be added.
+OpenCV and NumPy will be considered for geometry and templates. Only dependencies
+that are used will be added. The [input guide](image-input.md) specifies decoding.
 No machine learning framework or chess rules library is introduced now to
 serialize a single field.
 

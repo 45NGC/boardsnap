@@ -1,5 +1,9 @@
 # Tests
 
+`test_image_input.py` covers PNG/JPEG decoding, RGB normalization, EXIF,
+transparency and the three structured input error codes using temporary images.
+Run it with `python -m pytest tests/test_image_input.py`.
+
 `test_output.py` verifies `boardsnap.output.build_result(board)`. All 53 unit
 test cases pass against the implementation in `src/boardsnap/output.py`.
 
@@ -15,5 +19,10 @@ screenshots and annotations without contacting lichess. See the
 
 There are no image recognition tests yet. Read the
 [test plan in English](../docs/en/testing.md).
+
+`test_dataset.py` verifies the 20 committed PNGs and their annotations, hashes,
+bounds, canonical placements, paired orientations and fixed partition inventory.
+Run these checks with `python -m pytest -m evaluation`. They check dataset
+integrity, not recognition accuracy, and do not access the browser or network.
 
 A [Spanish version of the test plan](../docs/es/testing.md) is also available.
