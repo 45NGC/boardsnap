@@ -6,14 +6,15 @@
 chessboard or a book diagram and returns a single piece placement to the
 Flutter application **chess-scanner**.
 
-**Status: image input and piece placement serialization are implemented.** The package converts
+**Status: image input, first-profile detection and piece placement serialization are implemented.** The package converts
 an already-classified 8 × 8 matrix into the output dictionary through
 `boardsnap.output.build_result(board)`. All 53 output unit test cases pass.
 Other modules will be created as their functionality is implemented.
 
 [Image input](image-input.md) reads static PNG/JPEG files as fully loaded RGB
 images and provides structured input errors through `ImageInputError`.
-There is no image recognition, recognition CLI or measured style support yet.
+[Board detection](detection.md) returns grid bounds for the brown lichess profile.
+Piece recognition and the recognition CLI remain pending.
 The first dataset contains 20 annotated PNGs (16 tuning, 4 evaluation) for
 `lichess-cburnett-brown-v1`. The JSON examples describe the output contract; they do not
 represent recognition results from images.
@@ -61,9 +62,9 @@ python -c "import boardsnap; print(boardsnap.__file__)"
 If your Python distribution does not include `ensurepip`, install your system's
 virtual environment support before creating `.venv`.
 
-Pillow is the runtime dependency for decoding images. `setuptools` builds the
-package and the `dev` extra installs `pytest`. OpenCV, NumPy and PyTorch have
-not been added; each will be considered when its stage is implemented.
+Pillow decodes images; NumPy and headless OpenCV provide board detection.
+`setuptools` builds the package and the `dev` extra installs `pytest`.
+PyTorch has not been added; classification remains a later stage.
 
 ## Structure
 
@@ -72,6 +73,7 @@ src/boardsnap/
     __init__.py
     output.py            # Matrix validation and piece placement serialization
     image_input.py       # PNG/JPEG decoding, RGB normalization and input errors
+    detection.py         # Grid bounds for the first brown-board profile
 tools/                   # Dataset capture utility and example manifest
 docs/
     en/                 # English documentation
@@ -86,7 +88,7 @@ tests/
 ```
 
 The [architecture](architecture.md) describes the flow and separation of
-responsibilities. Input and output stages are implemented. The [roadmap](roadmap.md)
+responsibilities. Input, detection and output stages are implemented. The [roadmap](roadmap.md)
 compares approaches and defines the next iterations. The [tuning data](tuning-data.md)
 and [evaluation images](evaluation-data.md) guides describe the current data
 partitions. Both languages contain the same documents; changes to the contract
@@ -134,11 +136,10 @@ object per image according to the contract, independently of Flutter integration
 
 ## Styles and limitations
 
-Currently, **no styles are supported**. The first target will be a specific
-digital screenshot profile, with piece designs, background, and resolutions
-defined by samples. Lichess and chess.com are target sources, not a promise of
-compatibility with all their themes. Printed diagrams will be added as separate
-profiles.
+Detection is implemented and tested for `lichess-cburnett-brown-v1`; see its
+[measured scope and limitations](detection.md). Full piece recognition has not
+been implemented for any style. Other lichess themes, chess.com and printed
+diagrams remain future profiles, not implied compatibility.
 
 Photographs of physical boards with three-dimensional pieces are out of scope.
 Compatibility with every design, color, or resolution is not assumed. The first

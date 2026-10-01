@@ -67,7 +67,8 @@ errors are not silently converted into input errors.
 ```
 
 The future adapter will encode this dictionary as JSON. No `piecePlacement` is
-returned on failure. The CLI, detection and Flutter integration remain pending.
+returned on failure. [Detection](detection.md) consumes this image representation;
+the CLI and Flutter integration remain pending.
 
 ## Tests
 

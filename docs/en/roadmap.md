@@ -21,9 +21,11 @@ cburnett pieces, a brown board, 1280 × 1000 screenshots and a 584 × 584 grid.
 There are eight tuning positions and two reserved evaluation positions, each
 in both orientations. The [collection manifest](../../data/manifests/lichess-cburnett-brown-v1.json)
 fixes this initial set. Collection does not establish recognition support.
-Next implement board detection. Add negative images and varying
-grid sizes/locations before claiming detection generalization; this set uses
-one fixed layout.
+First-profile [board detection](detection.md) is implemented and tested on
+cropped, resized, translated and board-free cases, with reserved-image results
+reported separately. Original captures still share one layout; independent
+captures and broader negative examples remain necessary before generalization
+claims. Next implement normalization and 64-square segmentation.
 
 Start with PNG images, a complete aligned board, static pieces without overlays,
 and a single grid per image. Reserve evaluation images with annotated positions

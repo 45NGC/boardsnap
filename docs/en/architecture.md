@@ -2,7 +2,7 @@
 
 **English** | [Spanish](../es/architecture.md) · [Overview](README.md)
 
-This is the distribution of responsibilities. Image input and output
+This is the distribution of responsibilities. Image input, board detection and output
 serialization are implemented; the rest of the pipeline remains planned.
 The initial repository contained only a README, a license, and a generic Python
 `.gitignore`; there was no recognition code to preserve or migrate.
@@ -10,6 +10,7 @@ The initial repository contained only a README, a license, and a generic Python
 A single package, `boardsnap`, lives under `src/`. It contains `__init__.py`
 and `output.py`, which validates and serializes an already-classified matrix,
 plus `image_input.py`, which loads PNG/JPEG files and raises structured input errors.
+`detection.py` locates the first profile's grid and returns immutable `BoardBounds`.
 The other modules below will be created as each responsibility is implemented;
 their names are
 provisional. No class hierarchies, plugin registries, or services are introduced
@@ -61,8 +62,9 @@ the existing `LICENSE` file in distributions; it requires a setuptools version
 that supports `project.license-files`, as described in its
 [documentation](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html).
 
-OpenCV and NumPy will be considered for geometry and templates. Only dependencies
-that are used will be added. The [input guide](image-input.md) specifies decoding.
+OpenCV and NumPy implement color masks, connected regions and 8 × 8 pattern
+validation for [board detection](detection.md). The [input guide](image-input.md)
+specifies decoding. Only dependencies used by implemented stages are added.
 No machine learning framework or chess rules library is introduced now to
 serialize a single field.
 

@@ -77,10 +77,13 @@ python -m pytest -m integration
 python -m pytest -m evaluation
 ```
 
-The `unit` selector runs output and capture-manifest tests. `integration`
-selects the optional offline browser tests. `evaluation` currently selects
+The `unit` selector runs output, image input, synthetic detection and
+capture-manifest tests. `integration` selects tuning-image detection checks and
+the optional offline browser tests. `evaluation` selects reserved-image
+detection checks and
 [dataset integrity checks](../../tests/test_dataset.py): PNG signatures and
 dimensions, hashes, annotations, bounds within images, paired orientations,
 manifest consistency and disjoint positions/groups. These do not locate boards
 or classify pixels. Future recognition tests must use only images as inputs;
-annotations remain expected results. No evaluation accuracy is available yet.
+annotations remain expected results. Detection has a limited measured result
+documented in the [detection guide](detection.md); piece recognition is pending.

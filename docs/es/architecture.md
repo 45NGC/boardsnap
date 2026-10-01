@@ -2,7 +2,7 @@
 
 [English](../en/architecture.md) | **Español** · [Inicio](README.md)
 
-Esta es la distribución de responsabilidades. La entrada de imágenes y la
+Esta es la distribución de responsabilidades. La entrada, la detección y la
 serialización de salida están implementadas; el resto del flujo sigue previsto.
 El repositorio inicial contenía únicamente README, licencia y un `.gitignore`
 genérico de Python; no existía código de reconocimiento que conservar o migrar.
@@ -10,6 +10,7 @@ genérico de Python; no existía código de reconocimiento que conservar o migra
 Se usa un único paquete, `boardsnap`, bajo `src/`. Contiene `__init__.py`
 y `output.py`, que valida y serializa una matriz ya clasificada, además de
 `image_input.py`, que carga PNG/JPEG y lanza errores estructurados de entrada.
+`detection.py` localiza la cuadrícula del primer perfil y devuelve `BoardBounds` inmutable.
 Los demás módulos se crearán al implementar cada responsabilidad; sus nombres son
 orientativos. No se anticipan jerarquías de clases, registros de plugins ni
 servicios. La
@@ -60,8 +61,9 @@ licencias incluye el archivo `LICENSE` existente en las distribuciones; se
 requiere una versión de setuptools que admita `project.license-files`, según su
 [documentación](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html).
 
-Se evaluarán OpenCV y NumPy para geometría y plantillas. Solo se añadirán
-dependencias utilizadas. La [guía de entrada](image-input.md) concreta la decodificación.
+OpenCV y NumPy implementan máscaras de color, regiones conectadas y validación
+del patrón de 8 × 8 para la [detección](detection.md). La [guía de entrada](image-input.md)
+concreta la decodificación. Solo se añaden dependencias de etapas implementadas.
 No se incorpora ahora un framework de aprendizaje automático ni una biblioteca
 de reglas de ajedrez para serializar un único campo.
 

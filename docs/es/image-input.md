@@ -71,7 +71,8 @@ fallos de entrada.
 ```
 
 El futuro adaptador convertirá ese diccionario en JSON. Los fallos no devuelven
-`piecePlacement`. La CLI, la detección y la integración Flutter siguen pendientes.
+`piecePlacement`. La [detección](detection.md) utiliza esta representación;
+la CLI y la integración Flutter siguen pendientes.
 
 ## Pruebas
 

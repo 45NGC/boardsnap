@@ -6,15 +6,15 @@
 digital o un diagrama de libro y devuelve una única colocación de piezas para
 la aplicación Flutter **chess-scanner**.
 
-**Estado: entrada de imágenes y serialización de piezas implementadas.** El paquete
+**Estado: entrada, detección del primer perfil y serialización implementadas.** El paquete
 convierte una matriz de 8 × 8 ya clasificada en el diccionario de salida mediante
 `boardsnap.output.build_result(board)`. Pasan los 53 casos de prueba de salida.
 Los demás módulos se crearán cuando se implemente su funcionalidad.
 
 La [entrada de imágenes](image-input.md) lee PNG/JPEG estáticos como imágenes
 RGB cargadas y ofrece errores estructurados mediante `ImageInputError`.
-Todavía no hay reconocimiento de imágenes, CLI de reconocimiento ni estilos
-con compatibilidad medida. El primer conjunto contiene 20 PNG anotados
+La [detección](detection.md) devuelve los límites de la cuadrícula brown de lichess.
+El reconocimiento de piezas y su CLI siguen pendientes. El primer conjunto contiene 20 PNG anotados
 (16 de ajuste y 4 de evaluación) del perfil `lichess-cburnett-brown-v1`.
 Los ejemplos JSON describen el contrato de salida;
 no representan resultados del reconocimiento de imágenes.
@@ -62,9 +62,9 @@ python -c "import boardsnap; print(boardsnap.__file__)"
 Si la distribución de Python no incluye `ensurepip`, instala el soporte de
 entornos virtuales de tu sistema antes de crear `.venv`.
 
-Pillow es la dependencia del motor para decodificar imágenes. `setuptools`
-construye el paquete y el extra `dev` instala `pytest`. OpenCV, NumPy y PyTorch
-todavía no se han añadido; se valorarán al implementar sus respectivas etapas.
+Pillow decodifica imágenes; NumPy y OpenCV sin interfaz gráfica permiten detectar
+el tablero. `setuptools` construye el paquete y el extra `dev` instala `pytest`.
+PyTorch todavía no se ha añadido; la clasificación será una etapa posterior.
 
 ## Estructura
 
@@ -73,6 +73,7 @@ src/boardsnap/
     __init__.py
     output.py            # Validación de matrices y serialización de la colocación
     image_input.py       # Decodificación PNG/JPEG, normalización RGB y errores
+    detection.py         # Límites de cuadrícula del primer perfil brown
 tools/                   # Herramienta de captura y manifiesto de ejemplo
 docs/
     en/                 # Documentación en inglés
@@ -87,7 +88,7 @@ tests/
 ```
 
 La [arquitectura](architecture.md) describe el flujo y la separación de
-responsabilidades. Las etapas de entrada y salida están implementadas. La
+responsabilidades. Las etapas de entrada, detección y salida están implementadas. La
 [hoja de ruta](roadmap.md) compara enfoques y fija las siguientes iteraciones.
 Las guías de [datos de ajuste](tuning-data.md) e
 [imágenes de evaluación](evaluation-data.md) describen las particiones actuales.
@@ -139,10 +140,10 @@ JSON por imagen según el contrato, sin depender de la integración con Flutter.
 
 ## Estilos y limitaciones
 
-Actualmente **ningún estilo está soportado**. El primer objetivo será un perfil
-concreto de captura digital, fijando piezas, fondo y resoluciones con ejemplos.
-Lichess y chess.com son fuentes objetivo, no una promesa de compatibilidad con
-todos sus temas. Los diagramas impresos se incorporarán como perfiles separados.
+La detección está implementada y probada para `lichess-cburnett-brown-v1`;
+consulta su [alcance medido y limitaciones](detection.md). El reconocimiento
+completo de piezas no está implementado para ningún estilo. Otros temas de
+lichess, chess.com y diagramas impresos siguen siendo perfiles futuros.
 
 Quedan fuera las fotografías de tableros físicos con piezas tridimensionales.
 No se presupone compatibilidad con cualquier diseño, color o resolución. Los

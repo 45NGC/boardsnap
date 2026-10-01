@@ -21,9 +21,12 @@ cburnett, tablero brown, capturas de 1280 × 1000 y cuadrícula de 584 × 584.
 Hay ocho posiciones de ajuste y dos reservadas de evaluación, ambas con las
 dos orientaciones. El [manifiesto](../../data/manifests/lichess-cburnett-brown-v1.json)
 fija este conjunto inicial. La recogida no demuestra compatibilidad del
-reconocimiento. El siguiente paso es implementar la detección del tablero.
-Añadir imágenes negativas y tamaños y ubicaciones de cuadrícula distintos antes
-de afirmar que la detección generaliza; este conjunto usa una distribución fija.
+reconocimiento. La [detección del primer perfil](detection.md) está implementada
+y probada con recortes, escalados, desplazamientos e imágenes sin tablero;
+se documentan por separado los resultados reservados. Las capturas originales
+comparten distribución: siguen haciendo falta capturas independientes y negativos
+más variados antes de afirmar generalización. Lo siguiente es normalizar y
+dividir el tablero en 64 casillas.
 
 Empezar con PNG, tablero completo y alineado, piezas estáticas sin superposiciones
 y una única cuadrícula por imagen. Reservar desde el principio imágenes de

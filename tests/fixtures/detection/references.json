@@ -1,0 +1,9 @@
+{
+  "profileId": "lichess-cburnett-brown-v1",
+  "reviewDate": "2026-10-01",
+  "reviewMethod": "Visually reviewed integer pixel edges, rounded from the original DOM bounds; no independent subpixel measurement.",
+  "box": [190, 158, 774, 742],
+  "tuning": ["pos-001", "pos-002", "pos-004", "pos-005", "pos-006", "pos-007", "pos-008", "pos-009"],
+  "evaluation": ["pos-003", "pos-010"],
+  "maxEdgeErrorPixels": 2
+}

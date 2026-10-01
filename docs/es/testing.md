@@ -79,11 +79,13 @@ python -m pytest -m integration
 python -m pytest -m evaluation
 ```
 
-El selector `unit` ejecuta pruebas de salida y manifiestos de captura.
-`integration` selecciona las pruebas locales opcionales del navegador.
-`evaluation` selecciona por ahora las [pruebas de integridad](../../tests/test_dataset.py):
+El selector `unit` ejecuta pruebas de salida, entrada, detección sintética y
+manifiestos de captura. `integration` selecciona detección sobre imágenes de ajuste
+y pruebas opcionales del navegador. `evaluation` selecciona detección sobre
+imágenes reservadas y las [pruebas de integridad](../../tests/test_dataset.py):
 firma y dimensiones de PNG, hashes, anotaciones, límites dentro de la imagen,
 parejas de orientaciones, coherencia de manifiestos y separación de posiciones
 y grupos. No localizan tableros ni clasifican píxeles. Las futuras pruebas de
 reconocimiento solo recibirán imágenes; las anotaciones serán resultados
-esperados. Todavía no hay medidas de precisión.
+esperados. La detección tiene resultados limitados documentados en la
+[guía de detección](detection.md); el reconocimiento de piezas sigue pendiente.

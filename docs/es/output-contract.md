@@ -5,8 +5,9 @@
 Este documento define el contrato de salida. La API Python descrita más abajo
 permite construir resultados correctos a partir de matrices ya clasificadas.
 La lectura de imágenes y sus tres códigos de error están implementados en
-[image_input](image-input.md). El reconocimiento, los errores de las etapas
-posteriores y la CLI siguen pendientes.
+[image_input](image-input.md). La [detección](detection.md) implementa
+`BOARD_NOT_FOUND` y rechaza varias cuadrículas con `UNSUPPORTED_IMAGE`.
+El reconocimiento de piezas, los errores posteriores y la CLI siguen pendientes.
 
 ## Éxito
 

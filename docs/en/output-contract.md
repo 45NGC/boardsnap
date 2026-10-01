@@ -5,7 +5,9 @@
 This document defines the output contract. Success results can be built from
 already-classified matrices through the Python API below. Image loading and its
 three input error codes are implemented in [image_input](image-input.md).
-Recognition, later-stage processing errors and the CLI remain pending.
+[Detection](detection.md) implements `BOARD_NOT_FOUND` and rejects multiple
+detected grids with `UNSUPPORTED_IMAGE`. Piece recognition, later-stage
+processing errors and the CLI remain pending.
 
 ## Success
 

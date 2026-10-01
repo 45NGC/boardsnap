@@ -1,5 +1,10 @@
 # Tests
 
+`test_detection.py` covers exact synthetic grid geometry and negative cases.
+`test_detection_images.py` compares real screenshot variants with reviewed
+bounds: tuning cases use `integration`, held-out cases use `evaluation`.
+See the [detection guide](../docs/en/detection.md) for scope and measurements.
+
 `test_image_input.py` covers PNG/JPEG decoding, RGB normalization, EXIF,
 transparency and the three structured input error codes using temporary images.
 Run it with `python -m pytest tests/test_image_input.py`.
@@ -17,7 +22,7 @@ overwrite protection. Its optional offline Chromium integration tests check
 screenshots and annotations without contacting lichess. See the
 [capture guide](../docs/en/capture-data.md) for installation and commands.
 
-There are no image recognition tests yet. Read the
+There are no piece classification tests yet. Read the
 [test plan in English](../docs/en/testing.md).
 
 `test_dataset.py` verifies the 20 committed PNGs and their annotations, hashes,
