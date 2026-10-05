@@ -44,7 +44,15 @@ Image input is now covered by 31 unit cases in
 [test_image_input.py](../../tests/test_image_input.py). They distinguish file
 access, decoding and unsupported-input failures, and check normalization,
 EXIF, transparency and ownership of decoded pixels. See the
-[input guide](image-input.md). The remaining image stages are pending.
+[input guide](image-input.md).
+
+Normalization and segmentation have 39 synthetic unit cases in
+`test_normalization.py` and `test_segmentation.py`, plus 16 tuning and 4 reserved
+cases in `test_preprocessing_images.py`. They check exact crop boundaries, sizes,
+all 64 cells in image order, reconstruction without omitted/duplicated pixels,
+invalid inputs and independent preservation of the source for orientation.
+See the [normalization guide](normalization.md) for commands and limitations.
+Classification and chess orientation remain pending.
 
 | Area | Planned evidence |
 | --- | --- |
@@ -77,10 +85,11 @@ python -m pytest -m integration
 python -m pytest -m evaluation
 ```
 
-The `unit` selector runs output, image input, synthetic detection and
-capture-manifest tests. `integration` selects tuning-image detection checks and
+The `unit` selector runs output, image input, synthetic detection, normalization,
+segmentation and capture-manifest tests. `integration` selects tuning-image
+detection/preprocessing checks and
 the optional offline browser tests. `evaluation` selects reserved-image
-detection checks and
+detection/preprocessing checks and
 [dataset integrity checks](../../tests/test_dataset.py): PNG signatures and
 dimensions, hashes, annotations, bounds within images, paired orientations,
 manifest consistency and disjoint positions/groups. These do not locate boards

@@ -2,7 +2,8 @@
 
 **English** | [Spanish](../es/architecture.md) · [Overview](README.md)
 
-This is the distribution of responsibilities. Image input, board detection and output
+This is the distribution of responsibilities. Image input, board detection,
+normalization, segmentation and output
 serialization are implemented; the rest of the pipeline remains planned.
 The initial repository contained only a README, a license, and a generic Python
 `.gitignore`; there was no recognition code to preserve or migrate.
@@ -11,6 +12,10 @@ A single package, `boardsnap`, lives under `src/`. It contains `__init__.py`
 and `output.py`, which validates and serializes an already-classified matrix,
 plus `image_input.py`, which loads PNG/JPEG files and raises structured input errors.
 `detection.py` locates the first profile's grid and returns immutable `BoardBounds`.
+`normalization.py` returns a `NormalizedBoard` with resized pixels, an independent
+full-resolution source copy and source bounds. `segmentation.py` returns an
+8 × 8 matrix of independent crops in image order; see the
+[normalization guide](normalization.md) for ownership and geometry.
 The other modules below will be created as each responsibility is implemented;
 their names are
 provisional. No class hierarchies, plugin registries, or services are introduced
@@ -28,13 +33,14 @@ Adapter (CLI; Flutter integration to be decided)
     → JSON
 ```
 
-Orientation clues will be preserved during input and detection. `orientation`
-will apply the square mapping before output is generated.
+Normalization preserves orientation clues in the full source copy, including
+external margins and internal labels. `orientation` will apply the square mapping
+before output is generated; segmentation does not infer chess coordinates.
 
 | Module | Planned responsibility |
 | --- | --- |
 | `image_input` | Read bytes or a file, decode the image, and validate its contents. Handle file orientation before analysis. |
-| `detection` | Locate the boundaries of an 8 × 8 grid and preserve visible margin coordinates before cropping them out. |
+| `detection` | Locate the boundaries of an 8 × 8 grid without changing the input pixels. |
 | `normalization` | Crop the board and adjust its size and geometry while retaining the mapping to the original image. |
 | `segmentation` | Produce exactly 64 crops, indexed by row and column in image view. |
 | `classification` | Choose one of 13 classes per crop: empty or one of the six pieces of either color. |

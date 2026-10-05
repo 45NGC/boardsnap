@@ -1,5 +1,12 @@
 # Tests
 
+`test_normalization.py` and `test_segmentation.py` check cropping, resizing,
+preserved orientation context and all 64 squares with exact ordering/coverage.
+`test_preprocessing_images.py` runs input through segmentation on real captures:
+16 tuning cases (`integration`) and 4 reserved cases (`evaluation`). These checks
+do not classify pieces or resolve chess orientation. See the
+[normalization guide](../docs/en/normalization.md).
+
 `test_detection.py` covers exact synthetic grid geometry and negative cases.
 `test_detection_images.py` compares real screenshot variants with reviewed
 bounds: tuning cases use `integration`, held-out cases use `evaluation`.

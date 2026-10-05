@@ -1,6 +1,7 @@
 """Save development previews of board detection without changing source images."""
 
 import argparse
+from contextlib import ExitStack
 from pathlib import Path
 import sys
 
@@ -8,6 +9,8 @@ from PIL import ImageDraw
 
 from boardsnap.detection import BoardDetectionError, detect_board
 from boardsnap.image_input import ImageInputError, read_image
+from boardsnap.normalization import normalize_board
+from boardsnap.segmentation import split_squares
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -19,6 +22,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--output-dir", type=Path, default=Path(".cache/detection-preview"),
         help="Preview directory (default: .cache/detection-preview).",
+    )
+    parser.add_argument(
+        "--squares", action="store_true",
+        help="Also save normalized.png and 64 crops in squares/ (zero-based image order).",
     )
     args = parser.parse_args(argv)
     source = args.input.resolve()
@@ -43,7 +50,9 @@ def main(argv: list[str] | None = None) -> int:
         try:
             destination.mkdir(parents=True, exist_ok=True)
             # Remove previous previews so a failed rerun cannot look successful.
-            for name in ("detection.png", "board.png"):
+            names = ["detection.png", "board.png", "normalized.png"]
+            names.extend(f"squares/row-{row}-col-{col}.png" for row in range(8) for col in range(8))
+            for name in names:
                 (destination / name).unlink(missing_ok=True)
             with read_image(path) as image:
                 bounds = detect_board(image)
@@ -55,6 +64,18 @@ def main(argv: list[str] | None = None) -> int:
                     preview.save(destination / "detection.png")
                 with image.crop(bounds.as_box()) as board:
                     board.save(destination / "board.png")
+                if args.squares:
+                    with ExitStack() as stack:
+                        normalized = stack.enter_context(normalize_board(image, bounds))
+                        normalized.image.save(destination / "normalized.png")
+                        squares = split_squares(normalized.image)
+                        for row in squares:
+                            for square in row:
+                                stack.enter_context(square)
+                        (destination / "squares").mkdir(exist_ok=True)
+                        for row_index, row in enumerate(squares):
+                            for col_index, square in enumerate(row):
+                                square.save(destination / "squares" / f"row-{row_index}-col-{col_index}.png")
             print(f"{path.name}: {bounds.as_box()} -> {destination}")
         except (ImageInputError, BoardDetectionError) as error:
             failures += 1

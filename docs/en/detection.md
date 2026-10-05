@@ -144,5 +144,6 @@ The initial corpus is small and shares one source layout. Broader negative
 images and independently captured sizes/layouts are still needed before claiming
 generalization. Reading JPEG is supported by input, but detection accuracy on
 compressed JPEGs has not been measured. Full piece-placement recognition is
-still pending. Next implement normalization and segmentation into 64 squares,
-preserving orientation clues from the original image.
+still pending. [Normalization and segmentation](normalization.md) now produce
+64 square crops and preserve the full original image for orientation. Add
+`--squares` to the preview command to inspect `normalized.png` and `squares/`.

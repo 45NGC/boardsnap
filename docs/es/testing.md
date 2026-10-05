@@ -46,7 +46,15 @@ La entrada ya cuenta con 31 casos unitarios en
 [test_image_input.py](../../tests/test_image_input.py). Distinguen acceso,
 decodificación y entradas no admitidas, y comprueban normalización, EXIF,
 transparencia e independencia de los píxeles respecto al archivo. Consulta la
-[guía de entrada](image-input.md). Las demás etapas de imagen siguen pendientes.
+[guía de entrada](image-input.md).
+
+La normalización y segmentación tienen 39 casos unitarios sintéticos en
+`test_normalization.py` y `test_segmentation.py`, más 16 casos de ajuste y
+4 reservados en `test_preprocessing_images.py`. Comprueban límites exactos,
+tamaños, 64 casillas en orden visual, reconstrucción sin píxeles omitidos ni
+duplicados, entradas inválidas y conservación independiente del origen para
+orientar. Consulta comandos y límites en la [guía de normalización](normalization.md).
+La clasificación y la orientación de ajedrez siguen pendientes.
 
 | Área | Evidencia prevista |
 | --- | --- |
@@ -79,9 +87,10 @@ python -m pytest -m integration
 python -m pytest -m evaluation
 ```
 
-El selector `unit` ejecuta pruebas de salida, entrada, detección sintética y
-manifiestos de captura. `integration` selecciona detección sobre imágenes de ajuste
-y pruebas opcionales del navegador. `evaluation` selecciona detección sobre
+El selector `unit` ejecuta pruebas de salida, entrada, detección sintética,
+normalización, segmentación y manifiestos de captura. `integration` selecciona
+detección y preprocesamiento sobre imágenes de ajuste
+y pruebas opcionales del navegador. `evaluation` selecciona detección y preprocesamiento sobre
 imágenes reservadas y las [pruebas de integridad](../../tests/test_dataset.py):
 firma y dimensiones de PNG, hashes, anotaciones, límites dentro de la imagen,
 parejas de orientaciones, coherencia de manifiestos y separación de posiciones

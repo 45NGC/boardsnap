@@ -25,7 +25,9 @@ First-profile [board detection](detection.md) is implemented and tested on
 cropped, resized, translated and board-free cases, with reserved-image results
 reported separately. Original captures still share one layout; independent
 captures and broader negative examples remain necessary before generalization
-claims. Next implement normalization and 64-square segmentation.
+claims. [Normalization and 64-square segmentation](normalization.md) are now
+implemented, retaining the complete source for orientation. Next implement the
+first-profile classifier and orientation resolution before connecting the CLI.
 
 Start with PNG images, a complete aligned board, static pieces without overlays,
 and a single grid per image. Reserve evaluation images with annotated positions

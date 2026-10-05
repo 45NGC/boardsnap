@@ -6,7 +6,7 @@
 digital o un diagrama de libro y devuelve una única colocación de piezas para
 la aplicación Flutter **chess-scanner**.
 
-**Estado: entrada, detección del primer perfil y serialización implementadas.** El paquete
+**Estado: entrada, detección del primer perfil, normalización, segmentación y serialización implementadas.** El paquete
 convierte una matriz de 8 × 8 ya clasificada en el diccionario de salida mediante
 `boardsnap.output.build_result(board)`. Pasan los 53 casos de prueba de salida.
 Los demás módulos se crearán cuando se implemente su funcionalidad.
@@ -14,6 +14,8 @@ Los demás módulos se crearán cuando se implemente su funcionalidad.
 La [entrada de imágenes](image-input.md) lee PNG/JPEG estáticos como imágenes
 RGB cargadas y ofrece errores estructurados mediante `ImageInputError`.
 La [detección](detection.md) devuelve los límites de la cuadrícula brown de lichess.
+La [normalización y segmentación](normalization.md) producen una matriz de 8 × 8
+recortes RGB de 64 × 64, conservando el origen completo para orientar después.
 El reconocimiento de piezas y su CLI siguen pendientes. El primer conjunto contiene 20 PNG anotados
 (16 de ajuste y 4 de evaluación) del perfil `lichess-cburnett-brown-v1`.
 Los ejemplos JSON describen el contrato de salida;
@@ -74,7 +76,9 @@ src/boardsnap/
     output.py            # Validación de matrices y serialización de la colocación
     image_input.py       # Decodificación PNG/JPEG, normalización RGB y errores
     detection.py         # Límites de cuadrícula del primer perfil brown
-tools/                   # Herramienta de captura y manifiesto de ejemplo
+    normalization.py     # Escalado y conservación de pistas de orientación
+    segmentation.py      # 64 recortes independientes en orden visual
+tools/                   # Capturas y vistas previas de detección/casillas
 docs/
     en/                 # Documentación en inglés
     es/                 # Documentación en español
@@ -88,7 +92,7 @@ tests/
 ```
 
 La [arquitectura](architecture.md) describe el flujo y la separación de
-responsabilidades. Las etapas de entrada, detección y salida están implementadas. La
+responsabilidades. Entrada, detección, normalización, segmentación y salida están implementadas. La
 [hoja de ruta](roadmap.md) compara enfoques y fija las siguientes iteraciones.
 Las guías de [datos de ajuste](tuning-data.md) e
 [imágenes de evaluación](evaluation-data.md) describen las particiones actuales.

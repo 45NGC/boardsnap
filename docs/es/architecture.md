@@ -2,7 +2,8 @@
 
 [English](../en/architecture.md) | **Español** · [Inicio](README.md)
 
-Esta es la distribución de responsabilidades. La entrada, la detección y la
+Esta es la distribución de responsabilidades. La entrada, la detección, la
+normalización, la segmentación y la
 serialización de salida están implementadas; el resto del flujo sigue previsto.
 El repositorio inicial contenía únicamente README, licencia y un `.gitignore`
 genérico de Python; no existía código de reconocimiento que conservar o migrar.
@@ -11,6 +12,10 @@ Se usa un único paquete, `boardsnap`, bajo `src/`. Contiene `__init__.py`
 y `output.py`, que valida y serializa una matriz ya clasificada, además de
 `image_input.py`, que carga PNG/JPEG y lanza errores estructurados de entrada.
 `detection.py` localiza la cuadrícula del primer perfil y devuelve `BoardBounds` inmutable.
+`normalization.py` devuelve `NormalizedBoard` con píxeles escalados, una copia
+independiente del origen a resolución completa y sus límites. `segmentation.py`
+devuelve una matriz de 8 × 8 recortes independientes en orden visual; consulta
+la [guía de normalización](normalization.md) para la gestión de imágenes y geometría.
 Los demás módulos se crearán al implementar cada responsabilidad; sus nombres son
 orientativos. No se anticipan jerarquías de clases, registros de plugins ni
 servicios. La
@@ -27,13 +32,15 @@ Adaptador (CLI; integración Flutter por decidir)
     → JSON
 ```
 
-Las pistas de orientación se conservarán desde la entrada y la detección.
-`orientation` aplicará la correspondencia de casillas antes de generar la salida.
+La normalización conserva las pistas de orientación en la copia completa del
+origen, incluidos márgenes exteriores y etiquetas internas. `orientation` aplicará
+la correspondencia de casillas antes de generar la salida; la segmentación no
+deduce coordenadas de ajedrez.
 
 | Módulo | Responsabilidad prevista |
 | --- | --- |
 | `image_input` | Leer bytes o un archivo, decodificar la imagen y validar su contenido. Tratar la orientación del archivo antes del análisis. |
-| `detection` | Localizar los límites de una cuadrícula de 8 × 8 y conservar las coordenadas visibles del margen, antes de recortarlas. |
+| `detection` | Localizar los límites de una cuadrícula de 8 × 8 sin modificar los píxeles de entrada. |
 | `normalization` | Recortar el tablero y ajustar tamaño y geometría sin perder la correspondencia con la imagen original. |
 | `segmentation` | Obtener exactamente 64 recortes, indexados por fila y columna en la vista de la imagen. |
 | `classification` | Elegir una de 13 clases por recorte: vacío o una de las seis piezas de cada color. |

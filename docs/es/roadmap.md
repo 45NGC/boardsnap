@@ -25,8 +25,10 @@ reconocimiento. La [detección del primer perfil](detection.md) está implementa
 y probada con recortes, escalados, desplazamientos e imágenes sin tablero;
 se documentan por separado los resultados reservados. Las capturas originales
 comparten distribución: siguen haciendo falta capturas independientes y negativos
-más variados antes de afirmar generalización. Lo siguiente es normalizar y
-dividir el tablero en 64 casillas.
+más variados antes de afirmar generalización. La [normalización y división en
+64 casillas](normalization.md) ya están implementadas y conservan el origen
+completo para orientar. Lo siguiente es clasificar las piezas del primer perfil
+y resolver la orientación antes de conectar la CLI.
 
 Empezar con PNG, tablero completo y alineado, piezas estáticas sin superposiciones
 y una única cuadrícula por imagen. Reservar desde el principio imágenes de

@@ -151,5 +151,6 @@ El conjunto inicial es pequeño y comparte una distribución de origen. Faltan
 negativos más variados y capturas independientes de otros tamaños y ubicaciones
 antes de afirmar generalización. La entrada lee JPEG, pero no se ha medido la
 detección sobre JPEG comprimidos. El reconocimiento completo de piezas sigue
-pendiente. Lo siguiente es normalizar y dividir en 64 casillas, conservando las
-pistas de orientación de la imagen original.
+pendiente. La [normalización y segmentación](normalization.md) ya producen
+64 recortes y conservan la imagen original completa para orientar. Añade
+`--squares` al comando de vistas previas para ver `normalized.png` y `squares/`.
