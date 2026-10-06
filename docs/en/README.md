@@ -6,7 +6,7 @@
 chessboard or a book diagram and returns a single piece placement to the
 Flutter application **chess-scanner**.
 
-**Status: image input, first-profile detection, normalization, segmentation and piece placement serialization are implemented.** The package converts
+**Status: image input, first-profile detection, normalization, segmentation, orientation and piece placement serialization are implemented.** The package converts
 an already-classified 8 × 8 matrix into the output dictionary through
 `boardsnap.output.build_result(board)`. All 53 output unit test cases pass.
 Other modules will be created as their functionality is implemented.
@@ -16,6 +16,8 @@ images and provides structured input errors through `ImageInputError`.
 [Board detection](detection.md) returns grid bounds for the brown lichess profile.
 [Normalization and segmentation](normalization.md) produce an 8 × 8 matrix of
 64 × 64 RGB crops while preserving the full source for later orientation.
+[Orientation](orientation.md) reads the profile's internal coordinates and maps
+cells into canonical order, falling back to White at the bottom without usable clues.
 Piece recognition and the recognition CLI remain pending.
 The first dataset contains 20 annotated PNGs (16 tuning, 4 evaluation) for
 `lichess-cburnett-brown-v1`. The JSON examples describe the output contract; they do not
@@ -78,6 +80,8 @@ src/boardsnap/
     detection.py         # Grid bounds for the first brown-board profile
     normalization.py     # Resize board and preserve source orientation clues
     segmentation.py      # 64 independent square crops in image order
+    orientation.py       # Coordinate reading and canonical cell mapping
+    assets/              # Coordinate glyph templates from tuning data
 tools/                   # Dataset capture and detection/square previews
 docs/
     en/                 # English documentation
@@ -92,7 +96,7 @@ tests/
 ```
 
 The [architecture](architecture.md) describes the flow and separation of
-responsibilities. Input, detection, normalization, segmentation and output are implemented. The [roadmap](roadmap.md)
+responsibilities. Input, detection, normalization, segmentation, orientation and output are implemented. The [roadmap](roadmap.md)
 compares approaches and defines the next iterations. The [tuning data](tuning-data.md)
 and [evaluation images](evaluation-data.md) guides describe the current data
 partitions. Both languages contain the same documents; changes to the contract

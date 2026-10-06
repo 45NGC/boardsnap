@@ -24,3 +24,9 @@ referring to lichess.org. The visible site identity here identifies the source.
 These screenshots are not original BoardSnap artwork; the repository license
 does not replace the upstream component terms. Preserve this notice with the
 dataset and consult the linked upstream notices when redistributing it.
+
+The packaged [coordinate glyph masks](../src/boardsnap/assets/README.md) are
+derived from the two empty tuning captures (`pos-004`), not from evaluation
+images. They contain only coordinate text silhouettes. Their package asset
+records source hashes and preserves this source attribution and font-notice
+reference; they are not original BoardSnap artwork.

@@ -5,12 +5,13 @@ from contextlib import ExitStack
 from pathlib import Path
 import sys
 
-from PIL import ImageDraw
+from PIL import Image, ImageDraw
 
 from boardsnap.detection import BoardDetectionError, detect_board
 from boardsnap.image_input import ImageInputError, read_image
 from boardsnap.normalization import normalize_board
 from boardsnap.segmentation import split_squares
+from boardsnap.orientation import detect_orientation, to_canonical
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -26,6 +27,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--squares", action="store_true",
         help="Also save normalized.png and 64 crops in squares/ (zero-based image order).",
+    )
+    parser.add_argument(
+        "--orientation", action="store_true",
+        help="Also save square previews, orientation.txt and canonical.png in a8-to-h1 order.",
     )
     args = parser.parse_args(argv)
     source = args.input.resolve()
@@ -50,7 +55,7 @@ def main(argv: list[str] | None = None) -> int:
         try:
             destination.mkdir(parents=True, exist_ok=True)
             # Remove previous previews so a failed rerun cannot look successful.
-            names = ["detection.png", "board.png", "normalized.png"]
+            names = ["detection.png", "board.png", "normalized.png", "canonical.png", "orientation.txt"]
             names.extend(f"squares/row-{row}-col-{col}.png" for row in range(8) for col in range(8))
             for name in names:
                 (destination / name).unlink(missing_ok=True)
@@ -64,7 +69,7 @@ def main(argv: list[str] | None = None) -> int:
                     preview.save(destination / "detection.png")
                 with image.crop(bounds.as_box()) as board:
                     board.save(destination / "board.png")
-                if args.squares:
+                if args.squares or args.orientation:
                     with ExitStack() as stack:
                         normalized = stack.enter_context(normalize_board(image, bounds))
                         normalized.image.save(destination / "normalized.png")
@@ -76,6 +81,15 @@ def main(argv: list[str] | None = None) -> int:
                         for row_index, row in enumerate(squares):
                             for col_index, square in enumerate(row):
                                 square.save(destination / "squares" / f"row-{row_index}-col-{col_index}.png")
+                        if args.orientation:
+                            orientation = detect_orientation(normalized)
+                            canonical = to_canonical(squares, orientation)
+                            with Image.new("RGB", normalized.image.size) as ordered:
+                                for row_index, row in enumerate(canonical):
+                                    for col_index, square in enumerate(row):
+                                        ordered.paste(square, (col_index * square.width, row_index * square.height))
+                                ordered.save(destination / "canonical.png")
+                            (destination / "orientation.txt").write_text(orientation + "\n", encoding="utf-8")
             print(f"{path.name}: {bounds.as_box()} -> {destination}")
         except (ImageInputError, BoardDetectionError) as error:
             failures += 1

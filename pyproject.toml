@@ -20,6 +20,9 @@ where = ["src"]
 include = ["boardsnap", "boardsnap.*"]
 namespaces = false
 
+[tool.setuptools.package-data]
+boardsnap = ["assets/*.json", "assets/*.md"]
+
 [tool.pytest.ini_options]
 minversion = "8.0"
 testpaths = ["tests"]

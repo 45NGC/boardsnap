@@ -8,7 +8,7 @@ def split_squares(image: Image.Image) -> list[list[Image.Image]]:
 
     Each crop owns its pixels. No pixels are skipped, repeated, resized or
     reordered; the caller owns the returned images and may close them after use.
-    The top-left crop is [0][0], not necessarily a8: chess orientation is pending.
+    The top-left crop is [0][0], not necessarily a8: apply orientation separately.
     Invalid internal inputs raise TypeError or ValueError.
     """
     if not isinstance(image, Image.Image):

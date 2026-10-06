@@ -65,6 +65,10 @@ infer orientation; those stages must supply the matrix in canonical order.
 
 ## Orientation
 
+Implemented for the initial profile's internal labels in
+[orientation.py](orientation.md). Other coordinate layouts remain unsupported
+and may invoke the same fallback. Orientation stays internal to the engine.
+
 Legible coordinates along the border will take priority when identifying ranks
 and files. Resolving orientation means assigning coordinates to squares; it
 does not mean rotating piece drawings to classify them.

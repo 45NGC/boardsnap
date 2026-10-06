@@ -4,12 +4,14 @@
 
 BoardSnap is a Python project for recognizing digital chessboards and book
 diagrams and returning piece placement to the Flutter app **chess-scanner**.
-**Image loading, first-profile board detection, normalization, 64-square segmentation and piece placement serialization are implemented; piece recognition and the CLI are pending.**
+**Image loading, first-profile board detection, normalization, 64-square segmentation, coordinate-based orientation and piece placement serialization are implemented; piece recognition and the CLI are pending.**
 
 `boardsnap.detection.detect_board(image)` returns grid bounds for the brown
 lichess profile. See [detection scope and tests](docs/en/detection.md).
 The [normalization guide](docs/en/normalization.md) explains square crops,
 preserved orientation context and the `--squares` preview option.
+The [orientation guide](docs/en/orientation.md) covers coordinate reading,
+canonical cell ordering and the White-at-the-bottom fallback.
 
 A separate [capture utility](docs/en/capture-data.md) collects annotated lichess
 screenshots for the first dataset. It does not perform image recognition.
@@ -33,6 +35,7 @@ files. Spanish documentation is maintained in `docs/es/`.
 | Image input | [Read](docs/en/image-input.md) | [Read](docs/es/image-input.md) |
 | Board detection | [Read](docs/en/detection.md) | [Read](docs/es/detection.md) |
 | Normalization and segmentation | [Read](docs/en/normalization.md) | [Read](docs/es/normalization.md) |
+| Orientation | [Read](docs/en/orientation.md) | [Read](docs/es/orientation.md) |
 | Output implementation walkthrough | [Read](docs/en/output-walkthrough.md) | [Read](docs/es/output-walkthrough.md) |
 | Roadmap | [Read](docs/en/roadmap.md) | [Read](docs/es/roadmap.md) |
 | Testing | [Read](docs/en/testing.md) | [Read](docs/es/testing.md) |

@@ -3,7 +3,7 @@
 **English** | [Spanish](../es/architecture.md) · [Overview](README.md)
 
 This is the distribution of responsibilities. Image input, board detection,
-normalization, segmentation and output
+normalization, segmentation, orientation and output
 serialization are implemented; the rest of the pipeline remains planned.
 The initial repository contained only a README, a license, and a generic Python
 `.gitignore`; there was no recognition code to preserve or migrate.
@@ -16,6 +16,9 @@ plus `image_input.py`, which loads PNG/JPEG files and raises structured input er
 full-resolution source copy and source bounds. `segmentation.py` returns an
 8 × 8 matrix of independent crops in image order; see the
 [normalization guide](normalization.md) for ownership and geometry.
+`orientation.py` reads supported coordinates from the preserved source and
+reorders matrix cells. Its glyph templates are installed package assets derived
+only from tuning data; see [orientation](orientation.md).
 The other modules below will be created as each responsibility is implemented;
 their names are
 provisional. No class hierarchies, plugin registries, or services are introduced
@@ -34,7 +37,7 @@ Adapter (CLI; Flutter integration to be decided)
 ```
 
 Normalization preserves orientation clues in the full source copy, including
-external margins and internal labels. `orientation` will apply the square mapping
+external margins and internal labels. `orientation` applies the square mapping
 before output is generated; segmentation does not infer chess coordinates.
 
 | Module | Planned responsibility |

@@ -84,10 +84,10 @@ bounds.y + v * bounds.height / N)`. Estas coordenadas se refieren a la imagen
 decodificada después de normalizar EXIF, no a los píxeles sin corregir del archivo.
 Es una correspondencia geométrica; LANCZOS utiliza píxeles vecinos al escalar.
 
-Resolver la orientación de ajedrez sigue pendiente. Esa etapa podrá examinar las
-coordenadas conservadas y reordenar las casillas clasificadas conforme al
-[contrato de salida](output-contract.md). Si faltan pistas, aplicará la convención
-documentada de blancas abajo. Estos módulos no aplican esa convención ni añaden
+La etapa separada de [orientación](orientation.md) examina las coordenadas
+conservadas admitidas y reordena las casillas conforme al
+[contrato de salida](output-contract.md). Si faltan pistas, aplica la convención
+documentada de blancas abajo. Normalización y segmentación no la aplican ni añaden
 campos al JSON público.
 
 ## Errores y límites
@@ -101,7 +101,7 @@ código público nuevo en esta etapa.
 
 Estas funciones asumen que la detección ha proporcionado una cuadrícula completa
 y alineada. No amplían los estilos admitidos, eliminan resaltados ni reparan una
-detección incorrecta. La clasificación, la lectura de coordenadas, la corrección
+detección incorrecta. La clasificación, el OCR general de coordenadas, la corrección
 de perspectiva y la CLI de reconocimiento siguen pendientes.
 
 ## Inspección visual

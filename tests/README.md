@@ -1,5 +1,11 @@
 # Tests
 
+`test_orientation.py` tests fallback/consistency policy and canonical cell mapping.
+`test_orientation_images.py` reads real coordinate pixels with separate tuning
+and evaluation markers, including absent, partial and conflicting labels.
+Annotated piece matrices test the mapping only; they do not simulate measured
+piece recognition. See the [orientation guide](../docs/en/orientation.md).
+
 `test_normalization.py` and `test_segmentation.py` check cropping, resizing,
 preserved orientation context and all 64 squares with exact ordering/coverage.
 `test_preprocessing_images.py` runs input through segmentation on real captures:

@@ -52,7 +52,12 @@ cases in `test_preprocessing_images.py`. They check exact crop boundaries, sizes
 all 64 cells in image order, reconstruction without omitted/duplicated pixels,
 invalid inputs and independent preservation of the source for orientation.
 See the [normalization guide](normalization.md) for commands and limitations.
-Classification and chess orientation remain pending.
+Orientation adds 38 unit cases and 162 pixel/provenance cases (130 development,
+32 reserved) in `test_orientation.py` and `test_orientation_images.py`. They check
+readable coordinates, missing/partial/conflicting labels and exact canonical
+mapping of annotated asymmetric positions. Those matrices are test inputs for
+mapping, not recognized pieces. See the [orientation guide](orientation.md).
+Classification remains pending.
 
 | Area | Planned evidence |
 | --- | --- |
@@ -86,8 +91,8 @@ python -m pytest -m evaluation
 ```
 
 The `unit` selector runs output, image input, synthetic detection, normalization,
-segmentation and capture-manifest tests. `integration` selects tuning-image
-detection/preprocessing checks and
+segmentation, orientation and capture-manifest tests. `integration` selects tuning-image
+detection/preprocessing/orientation checks and
 the optional offline browser tests. `evaluation` selects reserved-image
 detection/preprocessing checks and
 [dataset integrity checks](../../tests/test_dataset.py): PNG signatures and

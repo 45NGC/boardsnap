@@ -54,7 +54,12 @@ La normalización y segmentación tienen 39 casos unitarios sintéticos en
 tamaños, 64 casillas en orden visual, reconstrucción sin píxeles omitidos ni
 duplicados, entradas inválidas y conservación independiente del origen para
 orientar. Consulta comandos y límites en la [guía de normalización](normalization.md).
-La clasificación y la orientación de ajedrez siguen pendientes.
+La orientación añade 38 casos unitarios y 162 casos de píxeles/procedencia
+(130 de desarrollo y 32 reservados) en `test_orientation.py` y
+`test_orientation_images.py`. Comprueban coordenadas legibles, etiquetas ausentes,
+parciales o contradictorias y orden canónico exacto de posiciones asimétricas
+anotadas. Estas matrices son entradas de prueba, no piezas reconocidas.
+Consulta la [guía de orientación](orientation.md). La clasificación sigue pendiente.
 
 | Área | Evidencia prevista |
 | --- | --- |
@@ -88,9 +93,9 @@ python -m pytest -m evaluation
 ```
 
 El selector `unit` ejecuta pruebas de salida, entrada, detección sintética,
-normalización, segmentación y manifiestos de captura. `integration` selecciona
-detección y preprocesamiento sobre imágenes de ajuste
-y pruebas opcionales del navegador. `evaluation` selecciona detección y preprocesamiento sobre
+normalización, segmentación, orientación y manifiestos de captura. `integration` selecciona
+detección, preprocesamiento y orientación sobre imágenes de ajuste
+y pruebas opcionales del navegador. `evaluation` selecciona detección, preprocesamiento y orientación sobre
 imágenes reservadas y las [pruebas de integridad](../../tests/test_dataset.py):
 firma y dimensiones de PNG, hashes, anotaciones, límites dentro de la imagen,
 parejas de orientaciones, coherencia de manifiestos y separación de posiciones

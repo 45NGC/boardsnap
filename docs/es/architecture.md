@@ -3,7 +3,7 @@
 [English](../en/architecture.md) | **Español** · [Inicio](README.md)
 
 Esta es la distribución de responsabilidades. La entrada, la detección, la
-normalización, la segmentación y la
+normalización, la segmentación, la orientación y la
 serialización de salida están implementadas; el resto del flujo sigue previsto.
 El repositorio inicial contenía únicamente README, licencia y un `.gitignore`
 genérico de Python; no existía código de reconocimiento que conservar o migrar.
@@ -16,6 +16,9 @@ y `output.py`, que valida y serializa una matriz ya clasificada, además de
 independiente del origen a resolución completa y sus límites. `segmentation.py`
 devuelve una matriz de 8 × 8 recortes independientes en orden visual; consulta
 la [guía de normalización](normalization.md) para la gestión de imágenes y geometría.
+`orientation.py` lee las coordenadas admitidas del origen conservado y reordena
+las casillas. Sus plantillas de caracteres se instalan con el paquete y proceden
+solo de datos de ajuste; consulta [orientación](orientation.md).
 Los demás módulos se crearán al implementar cada responsabilidad; sus nombres son
 orientativos. No se anticipan jerarquías de clases, registros de plugins ni
 servicios. La
@@ -33,7 +36,7 @@ Adaptador (CLI; integración Flutter por decidir)
 ```
 
 La normalización conserva las pistas de orientación en la copia completa del
-origen, incluidos márgenes exteriores y etiquetas internas. `orientation` aplicará
+origen, incluidos márgenes exteriores y etiquetas internas. `orientation` aplica
 la correspondencia de casillas antes de generar la salida; la segmentación no
 deduce coordenadas de ajedrez.
 

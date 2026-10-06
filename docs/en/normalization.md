@@ -79,10 +79,10 @@ bounds.y + v * bounds.height / N)`. These coordinates refer to the decoded image
 after EXIF normalization, not to the original file's uncorrected pixel layout.
 This is a geometric mapping; LANCZOS samples neighboring pixels when resizing.
 
-Chess orientation remains pending. Its future stage can inspect preserved
-coordinates and reorder classified cells according to the
-[output contract](output-contract.md). When clues are insufficient, that stage
-will apply the documented White-at-the-bottom convention. These modules do not
+The separate [orientation stage](orientation.md) inspects supported preserved
+coordinates and reorders cells according to the [output contract](output-contract.md).
+When clues are insufficient, it applies the documented White-at-the-bottom
+convention. The normalization and segmentation modules do not
 apply that fallback or add fields to the public JSON.
 
 ## Errors and limits
@@ -95,7 +95,7 @@ the output error contract. No new public error code is introduced here.
 
 These functions assume detection has supplied a complete, axis-aligned grid.
 They do not expand style support, remove highlights or repair incorrect detection.
-Piece classification, coordinate reading, perspective correction and the
+Piece classification, general coordinate OCR, perspective correction and the
 recognition CLI remain pending.
 
 ## Visual inspection

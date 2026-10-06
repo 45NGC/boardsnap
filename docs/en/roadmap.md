@@ -26,8 +26,9 @@ cropped, resized, translated and board-free cases, with reserved-image results
 reported separately. Original captures still share one layout; independent
 captures and broader negative examples remain necessary before generalization
 claims. [Normalization and 64-square segmentation](normalization.md) are now
-implemented, retaining the complete source for orientation. Next implement the
-first-profile classifier and orientation resolution before connecting the CLI.
+implemented, retaining the complete source for orientation. [Orientation](orientation.md)
+now reads the profile's internal coordinates and applies the documented fallback.
+Next implement the first-profile classifier before connecting the CLI.
 
 Start with PNG images, a complete aligned board, static pieces without overlays,
 and a single grid per image. Reserve evaluation images with annotated positions

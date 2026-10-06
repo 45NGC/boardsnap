@@ -27,8 +27,9 @@ se documentan por separado los resultados reservados. Las capturas originales
 comparten distribución: siguen haciendo falta capturas independientes y negativos
 más variados antes de afirmar generalización. La [normalización y división en
 64 casillas](normalization.md) ya están implementadas y conservan el origen
-completo para orientar. Lo siguiente es clasificar las piezas del primer perfil
-y resolver la orientación antes de conectar la CLI.
+completo para orientar. La [orientación](orientation.md) ya lee las coordenadas
+interiores del perfil y aplica la convención documentada. Lo siguiente es
+clasificar las piezas del primer perfil antes de conectar la CLI.
 
 Empezar con PNG, tablero completo y alineado, piezas estáticas sin superposiciones
 y una única cuadrícula por imagen. Reservar desde el principio imágenes de

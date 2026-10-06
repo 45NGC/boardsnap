@@ -68,6 +68,10 @@ la matriz en el orden canónico.
 
 ## Orientación
 
+Implementada para las etiquetas interiores del primer perfil en
+[orientation.py](orientation.md). Otras distribuciones de coordenadas siguen
+sin admitirse y pueden activar la misma convención. Es un dato interno del motor.
+
 Las coordenadas legibles del borde tendrán prioridad para identificar filas y
 columnas. Resolver orientación implica asignar coordenadas a las casillas;
 no implica girar los dibujos de las piezas para clasificarlas.
