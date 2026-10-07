@@ -159,6 +159,10 @@ paquete editable para registrar el comando. Consulta [uso, errores y códigos](c
 
 ## Estilos y limitaciones
 
+El [inventario de estilos y condiciones](style-inventory.md) separa fondos,
+piezas e interfaces, registra estados para web/Android/iOS y ordena las capturas
+pendientes. Los objetivos enumerados no son automáticamente perfiles compatibles.
+
 Consulta los [perfiles evaluados](profiles.md) para los tres estilos digitales,
 el experimento de libros, los resultados reservados y sus límites. Brown sigue
 siendo el perfil predeterminado; selecciona los demás con `--profile`.

@@ -10,6 +10,11 @@ unknown-style detector. Output remains only `piecePlacement` or a structured err
 
 ## Coverage and measured results
 
+The [style inventory](style-inventory.md) separates board backgrounds, piece
+designs and layouts. Existing digital profiles have status **evaluated** there;
+their pilot results do not establish broader release compatibility or mobile
+support. Pending inventory entries are not accepted as runtime profile IDs.
+
 Results below are from **reserved source positions**, with all algorithms and
 assets fixed on tuning data first. Reports include failures and every class,
 background and full-position result; metrics never appear in the app response.

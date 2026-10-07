@@ -24,7 +24,12 @@ incluidas en el paquete. `pipeline.py` ofrece `recognize_image(path)` y gestiona
 los recursos; devuelve solo colocación y propaga errores estructurados.
 Consulta [clasificación](classification.md).
 Los perfiles se definen en una tabla estática sencilla, sin un sistema dinámico
-de plugins. Ya existen las etapas indicadas; no se añade servidor ni framework.
+de plugins. El [inventario de estilos](style-inventory.md) separa fondo del tablero,
+diseño de piezas e interfaz como dimensiones de recogida. Los perfiles de ejecución
+siguen agrupando sus ajustes evaluados; una entrada independiente del inventario
+no habilita combinaciones sin probar. Los futuros metadatos de recogida registrarán
+cada dimensión, cliente y condición por separado.
+Ya existen las etapas indicadas; no se añade servidor ni framework.
 La
 [guía de empaquetado de PyPA](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
 describe esta organización y la configuración mediante `pyproject.toml`.

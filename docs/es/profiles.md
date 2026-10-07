@@ -11,6 +11,11 @@ La salida sigue siendo solo `piecePlacement` o un error estructurado.
 
 ## Cobertura y resultados medidos
 
+El [inventario de estilos](style-inventory.md) separa fondos, diseños de piezas e
+interfaces. Los perfiles digitales existentes figuran como **evaluados**: los
+pilotos no demuestran compatibilidad más amplia de una versión ni soporte móvil.
+Las entradas pendientes del inventario no son ID de perfiles aceptados por el motor.
+
 Estos resultados corresponden a **posiciones reservadas**, después de fijar los
 algoritmos y plantillas con los datos de ajuste. Los informes incluyen fallos,
 clases, fondos y posiciones completas. Las métricas no se envían a la app.

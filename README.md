@@ -7,6 +7,8 @@ diagrams and returning piece placement to the Flutter app **chess-scanner**.
 **The Python pipeline and JSON CLI support three evaluated digital profiles. A book-diagram profile is experimental.**
 
 The [profile guide](docs/en/profiles.md) records exact scope, datasets and results.
+The [style inventory](docs/en/style-inventory.md) tracks backgrounds, piece designs,
+interfaces and image conditions separately, with independent web/Android/iOS status.
 [Flutter integration](docs/en/flutter-integration.md) is documented as an HTTPS API
 for Android, iOS and web; no server or Flutter client is implemented.
 
@@ -49,6 +51,7 @@ files. Spanish documentation is maintained in `docs/es/`.
 | Orientation | [Read](docs/en/orientation.md) | [Read](docs/es/orientation.md) |
 | Piece recognition | [Read](docs/en/classification.md) | [Read](docs/es/classification.md) |
 | Evaluated profiles | [Read](docs/en/profiles.md) | [Read](docs/es/profiles.md) |
+| Digital style and condition inventory | [Read](docs/en/style-inventory.md) | [Read](docs/es/style-inventory.md) |
 | Flutter integration design | [Read](docs/en/flutter-integration.md) | [Read](docs/es/flutter-integration.md) |
 | Command-line interface | [Read](docs/en/cli.md) | [Read](docs/es/cli.md) |
 | Output implementation walkthrough | [Read](docs/en/output-walkthrough.md) | [Read](docs/es/output-walkthrough.md) |

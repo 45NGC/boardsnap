@@ -23,6 +23,11 @@ only from tuning data; see [orientation](orientation.md).
 `pipeline.py` provides `recognize_image(path)` and owns stage resources; it returns
 only piece placement and propagates structured failures. See [classification](classification.md).
 The profile table is a small static configuration, not a dynamic plugin system.
+The [style inventory](style-inventory.md) models board background, piece design
+and interface layout as separate collection dimensions. Runtime profiles still
+bundle their evaluated settings; independent inventory entries do not enable
+untested combinations. Future collection metadata will record each dimension,
+client and image condition separately.
 All stages listed below exist; no server or additional framework is introduced.
 The
 [PyPA packaging guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/)

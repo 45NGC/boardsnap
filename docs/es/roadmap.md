@@ -8,6 +8,14 @@ Las pruebas cubren ambas vistas, coordenadas ausentes/contrarias, compatibilidad
 e inválidos; el JSON no cambia. Consulta [orientación](orientation.md).
 Más temas y superposiciones quedan para después; el experimento de libros se aplaza.
 
+También queda completado el siguiente hito de planificación: el [inventario
+bilingüe de estilos y condiciones](style-inventory.md) separa fondos, piezas e
+interfaces, define cuatro estados según evidencia y distingue navegadores y apps
+nativas. Sus lotes ordenados son la lista actual de ampliación. Lo siguiente es
+ampliar el corpus independiente de las tres combinaciones existentes y después
+capturar fondos G1 con piezas fijas. Falta implementar las nuevas capturas y su
+reconocimiento; el inventario no añade temas compatibles.
+
 ## 0. Base del proyecto (completada)
 
 Paquete instalable `boardsnap` con un único `__init__.py`, arquitectura propuesta

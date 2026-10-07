@@ -154,6 +154,10 @@ to register the new command. See [usage, errors and exit codes](cli.md).
 
 ## Styles and limitations
 
+The [style and condition inventory](style-inventory.md) separates backgrounds,
+pieces and interface layouts, records web/Android/iOS status and orders the
+remaining capture work. Listed targets are not automatically supported profiles.
+
 See [evaluated profiles](profiles.md) for the three digital styles, the experimental
 book baseline, reserved results and limitations. The original brown profile
 remains the default; select another explicitly with `--profile`.

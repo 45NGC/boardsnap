@@ -8,6 +8,14 @@ cover both views, missing/opposite labels, backward compatibility and invalid
 values; the JSON contract is unchanged. See [orientation](orientation.md).
 Further themes and overlays remain subsequent work; the book experiment is deferred.
 
+The next planning milestone is also complete: the bilingual [digital style and
+condition inventory](style-inventory.md) separates backgrounds, pieces and layouts,
+defines four evidence-based states and tracks browsers and native mobile apps
+independently. Its ordered work batches are the current expansion backlog. Next:
+broaden the independent corpus for the three existing combinations, then capture
+G1 backgrounds with fixed pieces. New capture support and recognition remain to
+be implemented; this inventory does not add compatible themes.
+
 ## 0. Project scaffold (completed)
 
 An installable `boardsnap` package with a single `__init__.py`, a documented
