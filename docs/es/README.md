@@ -20,7 +20,8 @@ La [orientación](orientation.md) lee las coordenadas interiores del perfil y
 ordena las casillas, asumiendo blancas abajo cuando no hay pistas utilizables.
 El [clasificador](classification.md) reconoce trece clases con plantillas de ajuste.
 `boardsnap.pipeline.recognize_image(path)` devuelve la colocación de piezas.
-La CLI sigue pendiente. El primer conjunto contiene 20 PNG anotados
+La [CLI](cli.md) ofrece `boardsnap imagen.png` con JSON y códigos de salida.
+El primer conjunto contiene 20 PNG anotados
 (16 de ajuste y 4 de evaluación) del perfil `lichess-cburnett-brown-v1`.
 Los ejemplos JSON describen el contrato de salida;
 no representan resultados del reconocimiento de imágenes.
@@ -86,6 +87,8 @@ src/boardsnap/
     assets/              # Plantillas de coordenadas extraídas de datos de ajuste
     classification.py    # Referencia de plantillas para trece clases
     pipeline.py          # API Python de imagen a piecePlacement
+    adapters/cli.py       # CLI JSON separada del reconocimiento
+    __main__.py          # Entrada python -m boardsnap
 tools/                   # Capturas y vistas previas de detección/casillas
 docs/
     en/                 # Documentación en inglés
@@ -139,16 +142,17 @@ El [plan de pruebas](testing.md) incluye detección, orientación, piezas,
 serialización y errores con posiciones conocidas. Las imágenes de evaluación
 estarán separadas de las utilizadas para ajustar el reconocimiento.
 
-## CLI prevista
+## CLI
 
-En una iteración posterior se habilitará esta interfaz:
+Después de instalar el paquete:
 
 ```bash
 boardsnap imagen.png
 ```
 
-**Este comando aún no está registrado ni implementado.** Producirá un objeto
-JSON por imagen según el contrato, sin depender de la integración con Flutter.
+El comando produce un objeto JSON por imagen sin depender de la integración con
+Flutter. `python -m boardsnap imagen.png` es equivalente. Reinstala una vez el
+paquete editable para registrar el comando. Consulta [uso, errores y códigos](cli.md).
 
 ## Estilos y limitaciones
 

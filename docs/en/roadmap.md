@@ -29,8 +29,8 @@ claims. [Normalization and 64-square segmentation](normalization.md) are now
 implemented, retaining the complete source for orientation. [Orientation](orientation.md)
 now reads the profile's internal coordinates and applies the documented fallback.
 The [template classifier and Python pipeline](classification.md) are implemented
-with a measured initial baseline. Next connect the JSON CLI and expand independent
-test coverage; the Flutter integration mechanism still requires an explicit decision.
+with a measured initial baseline. The [JSON CLI](cli.md) is also implemented.
+Next expand independent test coverage; Flutter integration still requires an explicit decision.
 
 Start with PNG images, a complete aligned board, static pieces without overlays,
 and a single grid per image. Reserve evaluation images with annotated positions
@@ -41,19 +41,15 @@ Partition by original image, position, and family of variants: crops, resized
 images, and compressed versions derived from the same sample will remain in
 the same partition. No template will be extracted from the evaluation set.
 
-## 2. First complete pipeline and CLI
+## 2. First complete pipeline and CLI (implemented for the initial profile)
 
-Implement image reading, grid detection through geometry and regularity,
-cropping, size normalization, 64-square segmentation, and a template classifier
-for the selected profile. Treat square backgrounds and pieces separately.
-Resolve orientation using the coordinates supported by the profile or apply
-the documented convention.
-
-Connect the CLI to the same core and check JSON, errors, and exit codes. Each
-stage will have isolated tests; the complete flow will be evaluated on held-out
-images. This milestone requires reporting observed failures and matching every
-position exactly in an acceptance suite fixed before tuning; it does not imply
-universal recognition.
+The Python pipeline connects image input, detection, normalization, 64-square
+segmentation, template classification, orientation and piece placement output.
+The [CLI](cli.md) invokes this same core and provides JSON, structured errors,
+exit codes and separate diagnostics. Both console and module entry points are
+tested on tuning and reserved images, in addition to isolated stage tests.
+The [measured baseline](classification.md) reports the limited initial acceptance
+results; this milestone does not imply universal recognition.
 
 ## 3. Measured expansion of digital support
 

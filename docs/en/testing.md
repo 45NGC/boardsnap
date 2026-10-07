@@ -20,6 +20,11 @@ without manually adding `src/` to `sys.path`.
 
 ## Current output tests
 
+The [CLI tests](cli.md) cover the installed command and module entry point with
+exact JSON, structured errors, process exit codes and stdout/stderr separation.
+Run `python -m pytest tests/test_cli.py tests/test_cli_process.py`. Reinstall the
+editable package after adding/changing its console entry point before testing.
+
 The [output contract](output-contract.md) specifies matrix values, ordering,
 result shape, and validation exceptions. The suite covers:
 

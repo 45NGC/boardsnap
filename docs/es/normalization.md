@@ -95,14 +95,15 @@ campos al JSON público.
 Los tipos de argumentos internos inválidos producen `TypeError`; los modos,
 dimensiones, límites o tamaños de destino inválidos producen `ValueError`,
 siguiendo las API internas existentes. No se devuelve un tablero parcial ni una
-posición vacía sustitutiva. El futuro coordinador/adaptador deberá traducir los
+posición vacía sustitutiva. El adaptador de [CLI](cli.md) traduce los
 fallos de procesamiento al contrato de errores de salida. No se incorpora ningún
 código público nuevo en esta etapa.
 
 Estas funciones asumen que la detección ha proporcionado una cuadrícula completa
 y alineada. No amplían los estilos admitidos, eliminan resaltados ni reparan una
 detección incorrecta. El [clasificador separado](classification.md) admite el primer
-perfil. El OCR general de coordenadas, la corrección de perspectiva y la CLI siguen pendientes.
+perfil. El OCR general de coordenadas y la corrección de perspectiva siguen pendientes;
+la [CLI](cli.md) ya está implementada.
 
 ## Inspección visual
 

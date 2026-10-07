@@ -4,7 +4,7 @@
 
 This is the distribution of responsibilities. Image input, board detection,
 normalization, segmentation, orientation, classification, pipeline composition and
-output serialization are implemented. External adapters remain planned.
+output serialization are implemented. The CLI adapter is implemented; Flutter transport remains undecided.
 The initial repository contained only a README, a license, and a generic Python
 `.gitignore`; there was no recognition code to preserve or migrate.
 
@@ -53,7 +53,7 @@ before output is generated; segmentation does not infer chess coordinates.
 | `orientation` | Use verifiable clues or the documented convention to reorder the matrix into chess coordinates. |
 | `output` | Check the matrix structure, compress empty squares, and construct `piecePlacement` or the agreed error. |
 | `pipeline` | Coordinate stages and propagate failures without replacing them with invented positions. |
-| `adapters` | Translate external input and serialize the response; the CLI will be the first adapter. |
+| `adapters` | Translate external input and serialize the response; `adapters.cli` provides the JSON command. |
 
 Image input currently returns a fully loaded RGB Pillow `Image.Image`;
 `ImageInputError.to_dict()` exposes input failures for future adapters.
@@ -90,7 +90,7 @@ when that experiment is undertaken.
 
 ## External integration
 
-The future CLI will accept a path and emit JSON. It will consume the core; it
+The [CLI](cli.md) accepts a path and emits JSON. It consumes the core; it
 does not determine how the Flutter app will run Python. A remote service, local
 process, or another approach must be chosen explicitly according to
 chess-scanner's platforms and constraints. Until then, there will be no server,

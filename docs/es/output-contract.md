@@ -11,7 +11,8 @@ La [clasificación](classification.md) incorpora reconocimiento por plantillas d
 primer perfil y `PROCESSING_FAILED` si sus recursos no están disponibles.
 `boardsnap.pipeline.recognize_image(path)` devuelve el diccionario de éxito o
 propaga esas excepciones estructuradas para que el adaptador las serialice.
-La CLI sigue pendiente.
+La [CLI](cli.md) implementa este transporte y convierte excepciones inesperadas
+del reconocimiento en `PROCESSING_FAILED`.
 
 ## Éxito
 
@@ -125,13 +126,13 @@ vacío como sustituto del fallo. Un diseño desconocido puede no distinguirse
 automáticamente de un fallo de detección o de una clasificación incorrecta;
 la cobertura de estilos se documentará con ejemplos evaluados.
 
-## Transporte por CLI (pendiente)
+## Transporte por CLI
 
-La interfaz prevista es `boardsnap imagen.png`. Para una petición válida,
-`stdout` contendrá exactamente un objeto JSON terminado en salto de línea:
+La interfaz es `boardsnap imagen.png` (también `python -m boardsnap imagen.png`).
+Para una petición válida, `stdout` contiene exactamente un objeto JSON terminado en salto de línea:
 éxito con código de proceso `0`, o fallo de imagen/procesamiento con código `1`.
-Los diagnósticos irán a `stderr`. Ayuda y errores de invocación, como omitir la
-ruta, seguirán la interfaz de argumentos de la CLI; no representan una imagen
-procesada y los errores de invocación usarán código `2`.
+Los diagnósticos van a `stderr`. `--help` muestra ayuda en stdout y termina con `0`,
+sin resultado JSON. Los errores de invocación, como omitir la ruta o añadir argumentos,
+muestran el uso en stderr, dejan stdout vacío y terminan con `2`; no se procesa imagen.
 
 El formato de resultado no presupone HTTP ni códigos de estado de un servidor.

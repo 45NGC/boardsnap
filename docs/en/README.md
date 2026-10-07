@@ -20,7 +20,7 @@ images and provides structured input errors through `ImageInputError`.
 cells into canonical order, falling back to White at the bottom without usable clues.
 The [classifier](classification.md) recognizes thirteen classes using tuning-only
 templates. `boardsnap.pipeline.recognize_image(path)` returns piece placement.
-The recognition CLI remains pending.
+The [recognition CLI](cli.md) exposes `boardsnap image.png` with JSON and exit codes.
 The first dataset contains 20 annotated PNGs (16 tuning, 4 evaluation) for
 `lichess-cburnett-brown-v1`. The JSON examples describe the output contract; they do not
 represent recognition results from images.
@@ -86,6 +86,8 @@ src/boardsnap/
     assets/              # Coordinate glyph templates from tuning data
     classification.py    # Thirteen-class template baseline
     pipeline.py          # Image-to-piecePlacement Python API
+    adapters/cli.py       # JSON CLI, separate from recognition logic
+    __main__.py          # python -m boardsnap entry point
 tools/                   # Dataset capture and detection/square previews
 docs/
     en/                 # English documentation
@@ -135,16 +137,17 @@ The [test plan](testing.md) covers detection, orientation, pieces, serialization
 and errors using known positions. Evaluation images will be kept separate from
 those used to tune recognition.
 
-## Planned CLI
+## CLI
 
-A later iteration will enable this interface:
+After installing the package:
 
 ```bash
 boardsnap image.png
 ```
 
-**This command is not registered or implemented yet.** It will produce one JSON
-object per image according to the contract, independently of Flutter integration.
+The command produces one JSON object per image, independently of Flutter integration.
+`python -m boardsnap image.png` is equivalent. Reinstall the editable package once
+to register the new command. See [usage, errors and exit codes](cli.md).
 
 ## Styles and limitations
 

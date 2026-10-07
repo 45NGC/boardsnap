@@ -98,7 +98,7 @@ partitions yourself.
 
 Exit codes: `0` success, `1` capture/dependency failure, `2` invalid arguments,
 manifest or existing destination. Progress/errors go to stderr; stdout contains
-a brief summary. This is separate from the planned recognition JSON CLI.
+a brief summary. This is separate from the [recognition JSON CLI](cli.md).
 
 ## Profile and verification
 

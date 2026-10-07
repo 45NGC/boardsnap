@@ -16,7 +16,7 @@ def recognize_image(path: str | PathLike[str]) -> dict[str, str]:
     """Return only piecePlacement, or propagate a stage's structured exception.
 
     Reads pixels only: no sidecars, expected positions or filename-based hints.
-    The adapter will serialize success or error.to_dict(); the core writes nothing.
+    Adapters serialize success or error.to_dict(); the core writes nothing.
     Supports only the initial brown/cburnett profile. All owned images are closed.
     """
     with ExitStack() as stack:

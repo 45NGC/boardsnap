@@ -89,14 +89,14 @@ apply that fallback or add fields to the public JSON.
 
 Invalid internal argument types raise `TypeError`; invalid modes, dimensions,
 bounds or target sizes raise `ValueError`, consistent with the existing internal
-APIs. No partial board or substitute empty position is returned. The future
-pipeline/adapter remains responsible for translating processing failures into
+APIs. No partial board or substitute empty position is returned. The [CLI](cli.md)
+adapter translates processing failures into
 the output error contract. No new public error code is introduced here.
 
 These functions assume detection has supplied a complete, axis-aligned grid.
 They do not expand style support, remove highlights or repair incorrect detection.
 The separate [classifier](classification.md) supports the initial profile.
-General coordinate OCR, perspective correction and the recognition CLI remain pending.
+General coordinate OCR and perspective correction remain pending; the [CLI](cli.md) is implemented.
 
 ## Visual inspection
 

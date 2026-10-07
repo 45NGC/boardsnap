@@ -1,5 +1,11 @@
 # Tests
 
+`test_cli.py` checks adapter error and stream handling. `test_cli_process.py`
+executes both `boardsnap` and `python -m boardsnap` with real images, compares
+exact JSON, checks exit codes and ensures diagnostics stay outside stdout.
+The console command must be registered first: `python -m pip install -e '.[dev]'`.
+See the [CLI guide](../docs/en/cli.md).
+
 `test_classification.py` checks classifier inputs, empty/background handling and
 asset failures. `test_classification_images.py` checks all thirteen classes on both
 backgrounds, template provenance, each real square and complete pixel-to-position

@@ -9,5 +9,6 @@ First-profile coordinate reading and canonical cell ordering are available in
 boardsnap.orientation, with white-bottom fallback when clues are insufficient.
 First-profile template classification is available in boardsnap.classification.
 boardsnap.pipeline.recognize_image composes the stages into piecePlacement;
-the recognition CLI and Flutter integration remain separate, pending adapters.
+the separate CLI adapter exposes boardsnap image.png and python -m boardsnap.
+Flutter integration remains undecided.
 """

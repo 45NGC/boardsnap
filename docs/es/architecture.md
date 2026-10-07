@@ -4,7 +4,7 @@
 
 Esta es la distribución de responsabilidades. La entrada, la detección, la
 normalización, la segmentación, la orientación, la clasificación, la coordinación
-del flujo y la serialización están implementadas. Los adaptadores siguen previstos.
+del flujo y la serialización están implementadas. La CLI ya tiene adaptador; el transporte Flutter sigue por decidir.
 El repositorio inicial contenía únicamente README, licencia y un `.gitignore`
 genérico de Python; no existía código de reconocimiento que conservar o migrar.
 
@@ -54,7 +54,7 @@ deduce coordenadas de ajedrez.
 | `orientation` | Usar pistas verificables o la convención documentada para reordenar la matriz a coordenadas de ajedrez. |
 | `output` | Comprobar la estructura de la matriz, comprimir casillas vacías y construir `piecePlacement` o el error acordado. |
 | `pipeline` | Coordinar etapas y propagar fallos sin sustituirlos por posiciones inventadas. |
-| `adapters` | Traducir la entrada externa y serializar la respuesta; la CLI será el primer adaptador. |
+| `adapters` | Traducir la entrada externa y serializar la respuesta; `adapters.cli` ofrece el comando JSON. |
 
 La entrada devuelve un objeto Pillow `Image.Image` RGB completamente cargado;
 `ImageInputError.to_dict()` representa los fallos para los futuros adaptadores.
@@ -91,7 +91,7 @@ La elección y la instalación de PyTorch se harán al abordar ese experimento.
 
 ## Integración externa
 
-La futura CLI recibirá una ruta y emitirá JSON. Será un consumidor del núcleo,
+La [CLI](cli.md) recibe una ruta y emite JSON. Es un consumidor del núcleo,
 no una decisión sobre cómo ejecutará Python la app Flutter. Servicio remoto,
 proceso local u otra vía deberán decidirse expresamente según las plataformas
 y restricciones de chess-scanner. Hasta entonces no habrá servidor, endpoints,

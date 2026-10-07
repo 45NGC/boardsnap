@@ -30,8 +30,8 @@ más variados antes de afirmar generalización. La [normalización y división e
 completo para orientar. La [orientación](orientation.md) ya lee las coordenadas
 interiores del perfil y aplica la convención documentada. El [clasificador de
 plantillas y el flujo Python](classification.md) ya tienen una referencia medida.
-Lo siguiente es conectar la CLI de JSON y ampliar las pruebas independientes;
-el mecanismo de integración Flutter sigue requiriendo una decisión expresa.
+La [CLI de JSON](cli.md) también está implementada. Lo siguiente es ampliar las
+pruebas independientes; Flutter sigue requiriendo una decisión expresa de integración.
 
 Empezar con PNG, tablero completo y alineado, piezas estáticas sin superposiciones
 y una única cuadrícula por imagen. Reservar desde el principio imágenes de
@@ -43,19 +43,15 @@ La división se hará por imagen original, posición y familia de variantes:
 recortes, escalados y compresiones derivados de una misma muestra permanecerán
 en la misma partición. Ninguna plantilla se extraerá del conjunto de evaluación.
 
-## 2. Primera cadena completa y CLI
+## 2. Primera cadena completa y CLI (implementadas para el primer perfil)
 
-Implementar lectura, detección de cuadrícula mediante geometría y regularidad,
-recorte, tamaño normalizado, 64 casillas y un clasificador de plantillas del
-perfil elegido. Contemplar por separado el fondo de casilla y las piezas.
-Resolver la orientación con las coordenadas admitidas por el perfil o aplicar
-la convención documentada.
-
-Conectar la CLI al mismo núcleo y comprobar JSON, errores y códigos de salida.
-Cada etapa tendrá pruebas aisladas; el recorrido completo se evaluará con
-imágenes reservadas. El hito exige publicar los fallos observados y acertar
-exactamente las posiciones de una suite de aceptación fijada antes del ajuste;
-no supone reconocimiento universal.
+El flujo Python conecta entrada, detección, normalización, 64 casillas,
+clasificación por plantillas, orientación y salida. La [CLI](cli.md) utiliza ese
+mismo núcleo y proporciona JSON, errores estructurados, códigos de salida y
+diagnósticos separados. Se prueban tanto el comando instalado como la ejecución
+como módulo con capturas de ajuste y reservadas, además de las pruebas aisladas.
+La [referencia medida](classification.md) documenta los límites de la aceptación
+inicial; este hito no supone reconocimiento universal.
 
 ## 3. Ampliación digital medida
 

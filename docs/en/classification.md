@@ -76,7 +76,7 @@ or failure. Success is exactly `{"piecePlacement": "..."}`. It propagates the
 stage exceptions; adapters serialize `error.to_dict()`. Missing/corrupt templates
 raise `ClassificationError` with `PROCESSING_FAILED`, never an empty position.
 Invalid internal image types, modes or dimensions raise `TypeError`/`ValueError`.
-The registered recognition CLI and Flutter integration are still pending.
+The [registered recognition CLI](cli.md) serializes these outcomes. Flutter integration remains undecided.
 
 ## Evaluation protocol fixed before held-out execution
 
@@ -176,7 +176,7 @@ This includes orientation/square previews and saves `result.json` beside them
 under `.cache/detection-preview/<profile>/<capture>/`, with only `piecePlacement`.
 Rerunning without `--recognition` removes the prior recognition result for each
 processed image. The default command uses tuning images only; original captures
-are not changed. This development utility is separate from the planned JSON CLI.
+are not changed. This development utility is separate from the [JSON CLI](cli.md).
 
 Validation: 161 new tests passed (30 unit/report, 111 integration, 20 reserved);
 the full suite passed **707 tests**, with 7 optional browser tests skipped.

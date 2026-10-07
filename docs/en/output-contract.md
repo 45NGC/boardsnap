@@ -9,7 +9,8 @@ three input error codes are implemented in [image_input](image-input.md).
 detected grids with `UNSUPPORTED_IMAGE`. [Classification](classification.md) adds
 first-profile template recognition and `PROCESSING_FAILED` for unavailable assets.
 `boardsnap.pipeline.recognize_image(path)` returns the success dictionary or
-propagates these structured exceptions for adapters to serialize. The CLI remains pending.
+propagates these structured exceptions for adapters to serialize. The [CLI](cli.md)
+implements this transport and maps unexpected recognition exceptions to `PROCESSING_FAILED`.
 
 ## Success
 
@@ -120,13 +121,13 @@ empty board as a substitute for failure. An unknown design may not be
 automatically distinguishable from a detection failure or an incorrect
 classification; style coverage will be documented using evaluated examples.
 
-## CLI transport (pending)
+## CLI transport
 
-The planned interface is `boardsnap image.png`. For a valid invocation, `stdout`
-will contain exactly one JSON object followed by a newline: success with process
+The interface is `boardsnap image.png` (also `python -m boardsnap image.png`).
+For a valid invocation, `stdout` contains exactly one JSON object followed by a newline: success with process
 exit code `0`, or an image/processing failure with exit code `1`. Diagnostics
-will go to `stderr`. Help and invocation errors, such as a missing path, will
-follow the CLI's argument interface; they do not represent a processed image,
-and invocation errors will use exit code `2`.
+go to `stderr`. `--help` prints help to stdout and exits `0`, not a JSON result.
+Invocation errors, such as a missing path or extra arguments, print usage to
+stderr, leave stdout empty and exit `2`; no image was processed.
 
 The result format does not assume HTTP or server status codes.

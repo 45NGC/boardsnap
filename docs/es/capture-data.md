@@ -101,8 +101,8 @@ lotes separados sin comprobar sus grupos y posiciones entre particiones.
 
 Códigos de salida: `0` éxito, `1` fallo de captura o dependencias, `2` argumentos
 o manifiesto incorrectos, o destino existente. El progreso y los errores van a
-stderr; stdout contiene un resumen breve. Es independiente de la futura CLI de
-reconocimiento con salida JSON.
+stderr; stdout contiene un resumen breve. Es independiente de la
+[CLI de reconocimiento con salida JSON](cli.md).
 
 ## Perfil y comprobaciones
 

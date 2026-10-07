@@ -21,6 +21,11 @@ añadir manualmente `src/` a `sys.path`.
 
 ## Pruebas actuales de salida
 
+Las [pruebas de CLI](cli.md) ejecutan el comando instalado y el módulo, comprobando
+JSON exacto, errores estructurados, códigos de salida y separación stdout/stderr.
+Ejecuta `python -m pytest tests/test_cli.py tests/test_cli_process.py`. Reinstala
+el paquete editable al añadir o cambiar el punto de entrada antes de probarlo.
+
 El [contrato de salida](output-contract.md) especifica los valores de la matriz,
 el orden, la forma del resultado y las excepciones de validación. La suite cubre:
 

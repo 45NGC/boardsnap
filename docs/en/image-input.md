@@ -66,9 +66,9 @@ errors are not silently converted into input errors.
 {"error": {"code": "INVALID_IMAGE", "message": "The image file is empty."}}
 ```
 
-The future adapter will encode this dictionary as JSON. No `piecePlacement` is
+The CLI adapter encodes this dictionary as JSON. No `piecePlacement` is
 returned on failure. [Detection](detection.md) consumes this image representation;
-the CLI and Flutter integration remain pending.
+the [CLI](cli.md) is implemented and Flutter integration remains undecided.
 
 ## Tests
 

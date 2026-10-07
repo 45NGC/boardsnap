@@ -70,9 +70,9 @@ fallos de entrada.
 {"error": {"code": "INVALID_IMAGE", "message": "The image file is empty."}}
 ```
 
-El futuro adaptador convertirá ese diccionario en JSON. Los fallos no devuelven
+El adaptador de CLI convierte ese diccionario en JSON. Los fallos no devuelven
 `piecePlacement`. La [detección](detection.md) utiliza esta representación;
-la CLI y la integración Flutter siguen pendientes.
+la [CLI](cli.md) está implementada y la integración Flutter sigue por decidir.
 
 ## Pruebas
 

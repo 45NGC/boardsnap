@@ -76,8 +76,8 @@ o fallar. El éxito es exactamente `{"piecePlacement": "..."}`. Propaga las
 excepciones de cada etapa; el adaptador serializará `error.to_dict()`. Las
 plantillas ausentes o corruptas producen `ClassificationError` con
 `PROCESSING_FAILED`, nunca una posición vacía. Los tipos, modos y dimensiones
-internos inválidos producen `TypeError`/`ValueError`. La CLI de reconocimiento
-registrada y la integración con Flutter siguen pendientes.
+internos inválidos producen `TypeError`/`ValueError`. La [CLI registrada](cli.md)
+serializa estos resultados. La integración con Flutter sigue por decidir.
 
 ## Protocolo fijado antes de evaluar los reservados
 
@@ -180,7 +180,7 @@ Incluye vistas de orientación/casillas y guarda `result.json` junto a ellas en
 `.cache/detection-preview/<perfil>/<captura>/`, solo con `piecePlacement`. Repetir
 sin `--recognition` elimina el resultado anterior de cada imagen procesada. Por
 defecto usa solo capturas de ajuste y no modifica los originales. Esta utilidad
-de desarrollo es independiente de la futura CLI de JSON.
+de desarrollo es independiente de la [CLI de JSON](cli.md).
 
 Validación: pasan 161 pruebas nuevas (30 unitarias/informes, 111 de integración y
 20 reservadas); la batería completa pasa **707 pruebas**, con 7 opcionales de
