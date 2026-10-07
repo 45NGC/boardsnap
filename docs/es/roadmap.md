@@ -31,7 +31,7 @@ completo para orientar. La [orientación](orientation.md) ya lee las coordenadas
 interiores del perfil y aplica la convención documentada. El [clasificador de
 plantillas y el flujo Python](classification.md) ya tienen una referencia medida.
 La [CLI de JSON](cli.md) también está implementada. Lo siguiente es ampliar las
-pruebas independientes; Flutter sigue requiriendo una decisión expresa de integración.
+pruebas independientes; la [ampliación de perfiles](profiles.md) y el [diseño Flutter](flutter-integration.md) ya están documentados.
 
 Empezar con PNG, tablero completo y alineado, piezas estáticas sin superposiciones
 y una única cuadrícula por imagen. Reservar desde el principio imágenes de
@@ -53,19 +53,30 @@ como módulo con capturas de ajuste y reservadas, además de las pruebas aislada
 La [referencia medida](classification.md) documenta los límites de la aceptación
 inicial; este hito no supone reconocimiento universal.
 
-## 3. Ampliación digital medida
+## 3. Ampliación digital medida (primeros perfiles implementados)
 
-Añadir un perfil concreto de chess.com y después nuevos temas, resoluciones y
-formatos, uno a uno. Probar compresión, márgenes de interfaz y colores distintos
-con muestras separadas. Registrar por perfil qué se ha medido y qué queda fuera.
-Mantener regresiones de los perfiles anteriores al incorporar uno nuevo.
+Lichess blue/cburnett y el estilo verde predeterminado capturado de Chess.com
+ya tienen perfiles explícitos, plantillas de ajuste, herramienta de captura y
+regresión. Cada uno reconoce 4/4 imágenes reservadas (dos posiciones en ambas
+vistas). La [guía de perfiles](profiles.md) detalla los límites: estos pilotos
+pequeños con posiciones compartidas no demuestran compatibilidad universal.
 
-## 4. Diagramas de libros
+Lo siguiente es reunir posiciones seleccionadas independientemente, otras
+distribuciones del navegador y compresiones, conservando las regresiones.
+Incorporar estilos evaluados uno a uno.
 
-Comenzar con una familia concreta de símbolos impresos, diagramas completos y
-escaneos limpios. Evaluar binarización, líneas y contornos para rejillas sin
-alternancia de colores, y después inclinación moderada, ruido y fondos de papel.
-No extrapolar resultados de capturas digitales a símbolos tipográficos de libros.
+## 4. Diagramas de libros (referencia experimental implementada)
+
+La edición ilustrada concreta de *Chess Strategy* tiene cinco diagramas de ajuste
+y dos reservados. El detector de marco/brillo y sus 80 recortes de ajuste logran
+126/128 casillas reservadas, pero **0/2 posiciones exactas**. La aceptación completa
+sigue pendiente y ambos fallos quedan registrados como fallos esperados estrictos.
+
+Después hay que reunir más ejemplos de esa familia y mejorar la robustez con
+un conjunto de desarrollo separado. Si se utilizan los fallos reservados para
+ajustar, pasan a desarrollo y se preparan otros diagramas independientes de
+aceptación. Otros libros, fuentes, páginas completas y perspectiva quedan fuera
+del alcance medido.
 
 ## 5. Clasificación aprendida e integración
 
@@ -76,9 +87,9 @@ evaluación antes de ajustar modelos; comprobar clases/fondos y añadir muestras
 independientes cuando falten. Mantener juntos todos los recortes, vistas y aumentos.
 Versionar datos y recursos; el corpus actual no demuestra ventajas robustas de una red.
 
-Elegir expresamente el mecanismo de integración con chess-scanner cuando se
-conozcan plataformas, latencia y condiciones de ejecución. Implementarlo en un
-adaptador separado, manteniendo el contrato y el núcleo existentes.
+Para Android, iOS y web queda la [propuesta HTTPS documentada](flutter-integration.md).
+El backend adaptador y el cliente Flutter se implementarán en otra tarea; esta
+iteración aporta solo el diseño y conserva el contrato del núcleo.
 
 ## Comparación inicial de enfoques
 

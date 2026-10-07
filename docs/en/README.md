@@ -6,10 +6,12 @@
 chessboard or a book diagram and returns a single piece placement to the
 Flutter application **chess-scanner**.
 
-**Status: the first-profile Python recognition pipeline is implemented, including template classification.** The package also converts
-an already-classified 8 × 8 matrix into the output dictionary through
-`boardsnap.output.build_result(board)`. All 53 output unit test cases pass.
-Other modules will be created as their functionality is implemented.
+**Status: the Python pipeline and JSON CLI support three evaluated digital profiles.**
+The [profile guide](profiles.md) describes brown/cburnett, blue/cburnett and the
+captured Chess.com green style. The book profile is **experimental**: 126/128
+reserved squares correct, but 0/2 full positions. The dataset has 65 images
+(51 tuning, 14 reserved). [Flutter integration](flutter-integration.md) is
+specified as a future HTTPS adapter for Android, iOS and web; it is not implemented.
 
 [Image input](image-input.md) reads static PNG/JPEG files as fully loaded RGB
 images and provides structured input errors through `ImageInputError`.
@@ -46,9 +48,8 @@ squares, alternatives, or confirmation requests. Piece corrections will be
 handled by the chess-scanner editor.
 
 The [output contract](output-contract.md) defines square order, default
-orientation, and structured errors. The Flutter integration mechanism requires
-an explicit decision; the core will remain independent of Flutter and any web
-framework.
+orientation, and structured errors. The [Flutter design](flutter-integration.md)
+proposes HTTPS; the core remains independent of Flutter and web frameworks.
 
 The [output.py walkthrough](output-walkthrough.md) explains the output function
 step by step, with examples of validation and empty-square compression.
@@ -79,7 +80,8 @@ src/boardsnap/
     __init__.py
     output.py            # Matrix validation and piece placement serialization
     image_input.py       # PNG/JPEG decoding, RGB normalization and input errors
-    detection.py         # Grid bounds for the first brown-board profile
+    profiles.py          # Explicit palettes, artwork and coordinate layouts
+    detection.py         # Grid bounds for the selected profile
     normalization.py     # Resize board and preserve source orientation clues
     segmentation.py      # 64 independent square crops in image order
     orientation.py       # Coordinate reading and canonical cell mapping
@@ -93,12 +95,12 @@ docs/
     en/                 # English documentation
     es/                 # Spanish documentation
 data/manifests/          # Fixed collection manifest and split assignments
-data/tuning/             # 16 initial tuning images and annotations
+data/tuning/             # 51 tuning images and annotations
 tests/
     README.md
     test_output.py       # Output specification, written before implementation
     test_dataset.py      # Image/annotation integrity and split checks
-    fixtures/evaluation/ # 4 reserved evaluation images and annotations
+    fixtures/evaluation/ # 14 reserved evaluation images and annotations
 ```
 
 The [architecture](architecture.md) describes the flow and separation of
@@ -151,10 +153,9 @@ to register the new command. See [usage, errors and exit codes](cli.md).
 
 ## Styles and limitations
 
-Detection is implemented and tested for `lichess-cburnett-brown-v1`; see its
-[measured scope and limitations](detection.md) and [piece recognition baseline](classification.md).
-Other lichess themes, chess.com and printed
-diagrams remain future profiles, not implied compatibility.
+See [evaluated profiles](profiles.md) for the three digital styles, the experimental
+book baseline, reserved results and limitations. The original brown profile
+remains the default; select another explicitly with `--profile`.
 
 Photographs of physical boards with three-dimensional pieces are out of scope.
 Compatibility with every design, color, or resolution is not assumed. The first

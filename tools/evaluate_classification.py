@@ -9,6 +9,7 @@ from boardsnap.classification import ClassificationError
 from boardsnap.detection import BoardDetectionError
 from boardsnap.image_input import ImageInputError
 from boardsnap.pipeline import recognize_image
+from boardsnap.profiles import PROFILES, get_profile
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -21,11 +22,11 @@ def _expand(placement: str) -> list[str]:
             for piece in (["empty"] * int(token) if token.isdigit() else [token])]
 
 
-def evaluate(split: str) -> dict:
+def evaluate(split: str, profile: str = PROFILE) -> dict:
     """Score the real pipeline; annotations supply expectations, never predictions."""
     if split not in ("tuning", "evaluation"):
         raise ValueError("Split must be tuning or evaluation.")
-    folder = ROOT / ("data/tuning" if split == "tuning" else "tests/fixtures/evaluation") / PROFILE
+    folder = ROOT / ("data/tuning" if split == "tuning" else "tests/fixtures/evaluation") / profile
     manifest = json.loads((folder / "manifest.json").read_text())
     classes = {
         label: {"correct": 0, "total": 0,
@@ -37,12 +38,13 @@ def evaluate(split: str) -> dict:
     for position in manifest["positions"]:
         if position["split"] != split:
             raise ValueError("Mixed dataset splits are not allowed.")
-        for view in ("white", "black"):
+        for view in position.get("views", ("white", "black")):
             path = folder / f"{position['groupId']}-{view}.png"
             expected = position["piecePlacement"]
             row = {"image": path.relative_to(ROOT).as_posix(), "expected": expected}
             try:
-                actual = recognize_image(path)["piecePlacement"]
+                actual = (recognize_image(path) if profile == PROFILE else
+                          recognize_image(path, profile=profile))["piecePlacement"]
                 row.update(actual=actual, exact=actual == expected)
                 predictions = _expand(actual)
             except (ImageInputError, BoardDetectionError, ClassificationError) as error:
@@ -64,8 +66,8 @@ def evaluate(split: str) -> dict:
     occupied_correct = correct - classes["empty"]["correct"]
     present = [value for value in classes.values() if value["total"]]
     return {
-        "profileId": PROFILE, "split": split,
-        "templateManifestSha256": hashlib.sha256((ROOT / "src/boardsnap/assets/piece-templates.json").read_bytes()).hexdigest(),
+        "profileId": profile, "split": split,
+        "templateManifestSha256": hashlib.sha256((ROOT / f"src/boardsnap/assets/{get_profile(profile).piece_asset}.json").read_bytes()).hexdigest(),
         "imageCount": len(results), "positionCount": len(manifest["positions"]),
         "exactPositions": sum(row["exact"] for row in results),
         "processingFailures": sum("error" in row for row in results),
@@ -81,8 +83,9 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--split", required=True, choices=("tuning", "evaluation"))
     parser.add_argument("--output", type=Path, help="Save the development report instead of printing it.")
+    parser.add_argument("--profile", choices=tuple(PROFILES), default=PROFILE)
     args = parser.parse_args()
-    content = json.dumps(evaluate(args.split), indent=2) + "\n"
+    content = json.dumps(evaluate(args.split, args.profile), indent=2) + "\n"
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(content, encoding="utf-8")

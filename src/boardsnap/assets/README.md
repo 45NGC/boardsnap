@@ -51,3 +51,26 @@ At runtime the engine reads this installed asset using `importlib.resources`;
 it does not access the repository dataset or infer orientation from filenames.
 The two examples account for different backgrounds and subpixel rendering.
 Templates and recognition gates were fixed on tuning data before evaluation.
+
+## Additional profile assets
+
+Profile-named `*-pieces.json/png` and `*-coordinates.json` files belong to the
+explicit profiles in `boardsnap.profiles`. Digital atlases retain format version
+1 and 26 crops. The experimental print atlas uses format version 2: 80 crops,
+up to four examples of each class/background, with explicit atlas coordinates.
+It uses no coordinate asset; orientation follows White-at-the-bottom convention.
+Blue glyph masks also include readable 75% and 125% resizes of the empty tuning
+board, to cover coordinate rasterization changes. No evaluation glyph is included.
+
+Rebuild using `python -m tools.build_piece_templates --profile PROFILE_ID` and,
+for digital profiles, `python -m tools.build_coordinate_templates --profile PROFILE_ID`.
+The book builder is also available as `python -m tools.build_book_templates`.
+The same environment produces deterministic assets. Source files are not runtime
+inputs and the engine never looks up positions or annotations from the corpus.
+
+Preserve the packaged [third-party notices](THIRD_PARTY_NOTICES.md). Blue uses
+lichess/cburnett assets; Chess.com owns the source interface/artwork; book crops
+come from the illustrated Gutenberg edition of Edward Lasker's *Chess Strategy*,
+translated by J. du Mont. The BoardSnap code license does not relicense these
+third-party assets. The book profile is experimental: its frozen reserved report
+contains 126/128 correct squares but zero of two exact positions.

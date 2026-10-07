@@ -75,10 +75,15 @@ Un error no incluye posiciones parciales, confianza ni un tablero vacío inventa
 
 ## Cobertura y pruebas
 
-La CLI conserva el alcance del núcleo: el perfil inicial brown/cburnett de lichess,
-con la convención de blancas abajo si no se leen coordenadas. Consulta los
-[resultados y límites de clasificación](classification.md). Añadir el comando no
-demuestra compatibilidad con estilos nuevos ni decide cómo se integrará Flutter.
+Selecciona un [perfil](profiles.md) con `--profile ID`; si se omite, se mantiene
+brown/cburnett. Los tres perfiles digitales tienen evaluación sobre un corpus
+pequeño; el perfil de libros es experimental, con dos posiciones completas
+fallidas. Un ID desconocido es error de uso (salida 2). El [transporte Flutter](flutter-integration.md)
+se documenta aparte; la CLI no inicia un servidor.
+
+```bash
+boardsnap imagen.png --profile chesscom-default-green-v1
+```
 
 ```bash
 python -m pytest tests/test_cli.py tests/test_cli_process.py
@@ -95,7 +100,7 @@ inicial. Las pruebas unitarias del adaptador inyectan errores y mensajes para
 comprobar códigos, fallos inesperados, restauración de canales y propagación del
 control del proceso; esas inyecciones no miden precisión del reconocimiento.
 
-Resultados verificados: pasan las **74 pruebas de CLI** (10 unitarias, 56 de
-integración y 8 de procesos con imágenes reservadas). La batería completa pasa
+Referencia de la etapa del perfil original: pasan las **74 pruebas de CLI** (10 unitarias, 56 de
+integración y 8 de procesos con imágenes reservadas). En aquella etapa la batería completa superó
 **781 pruebas**, con 7 opcionales de navegador omitidas. Se comprobaron el comando
 instalado y el módulo sin modificar plantillas ni datos de evaluación.

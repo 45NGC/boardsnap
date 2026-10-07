@@ -1,0 +1,432 @@
+{
+  "profileId": "chesscom-default-green-v1",
+  "split": "evaluation",
+  "templateManifestSha256": "a731465b2646d6d1d30dfb56e24c6e2d1c5f4c9777915ace5b7f830cf865c47a",
+  "imageCount": 4,
+  "positionCount": 2,
+  "exactPositions": 4,
+  "processingFailures": 0,
+  "correctSquares": 256,
+  "totalSquares": 256,
+  "squareAccuracy": 1.0,
+  "occupiedSquareAccuracy": 1.0,
+  "macroRecallPresentClasses": 1.0,
+  "classes": {
+    "empty": {
+      "correct": 182,
+      "total": 182,
+      "backgrounds": {
+        "light": {
+          "correct": 90,
+          "total": 90
+        },
+        "dark": {
+          "correct": 92,
+          "total": 92
+        }
+      },
+      "predicted": {
+        "empty": 182,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "P": {
+      "correct": 18,
+      "total": 18,
+      "backgrounds": {
+        "light": {
+          "correct": 10,
+          "total": 10
+        },
+        "dark": {
+          "correct": 8,
+          "total": 8
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 18,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "N": {
+      "correct": 4,
+      "total": 4,
+      "backgrounds": {
+        "light": {
+          "correct": 2,
+          "total": 2
+        },
+        "dark": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 4,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "B": {
+      "correct": 4,
+      "total": 4,
+      "backgrounds": {
+        "light": {
+          "correct": 2,
+          "total": 2
+        },
+        "dark": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 4,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "R": {
+      "correct": 4,
+      "total": 4,
+      "backgrounds": {
+        "light": {
+          "correct": 2,
+          "total": 2
+        },
+        "dark": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 4,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "Q": {
+      "correct": 2,
+      "total": 2,
+      "backgrounds": {
+        "light": {
+          "correct": 2,
+          "total": 2
+        },
+        "dark": {
+          "correct": 0,
+          "total": 0
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 2,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "K": {
+      "correct": 4,
+      "total": 4,
+      "backgrounds": {
+        "light": {
+          "correct": 2,
+          "total": 2
+        },
+        "dark": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 4,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "p": {
+      "correct": 20,
+      "total": 20,
+      "backgrounds": {
+        "light": {
+          "correct": 10,
+          "total": 10
+        },
+        "dark": {
+          "correct": 10,
+          "total": 10
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 20,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "n": {
+      "correct": 4,
+      "total": 4,
+      "backgrounds": {
+        "light": {
+          "correct": 2,
+          "total": 2
+        },
+        "dark": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 4,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "b": {
+      "correct": 4,
+      "total": 4,
+      "backgrounds": {
+        "light": {
+          "correct": 2,
+          "total": 2
+        },
+        "dark": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 4,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "r": {
+      "correct": 4,
+      "total": 4,
+      "backgrounds": {
+        "light": {
+          "correct": 2,
+          "total": 2
+        },
+        "dark": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 4,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "q": {
+      "correct": 2,
+      "total": 2,
+      "backgrounds": {
+        "light": {
+          "correct": 0,
+          "total": 0
+        },
+        "dark": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 2,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "k": {
+      "correct": 4,
+      "total": 4,
+      "backgrounds": {
+        "light": {
+          "correct": 2,
+          "total": 2
+        },
+        "dark": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 4,
+        "processing-error": 0
+      }
+    }
+  },
+  "images": [
+    {
+      "image": "tests/fixtures/evaluation/chesscom-default-green-v1/pos-003-white.png",
+      "expected": "8/5pk1/6p1/8/4P3/5K2/8/8",
+      "actual": "8/5pk1/6p1/8/4P3/5K2/8/8",
+      "exact": true
+    },
+    {
+      "image": "tests/fixtures/evaluation/chesscom-default-green-v1/pos-003-black.png",
+      "expected": "8/5pk1/6p1/8/4P3/5K2/8/8",
+      "actual": "8/5pk1/6p1/8/4P3/5K2/8/8",
+      "exact": true
+    },
+    {
+      "image": "tests/fixtures/evaluation/chesscom-default-green-v1/pos-010-white.png",
+      "expected": "r2q1rk1/pp2bppp/2npbn2/2p1p3/2P1P3/2NP1NP1/PP2QPBP/R1B2RK1",
+      "actual": "r2q1rk1/pp2bppp/2npbn2/2p1p3/2P1P3/2NP1NP1/PP2QPBP/R1B2RK1",
+      "exact": true
+    },
+    {
+      "image": "tests/fixtures/evaluation/chesscom-default-green-v1/pos-010-black.png",
+      "expected": "r2q1rk1/pp2bppp/2npbn2/2p1p3/2P1P3/2NP1NP1/PP2QPBP/R1B2RK1",
+      "actual": "r2q1rk1/pp2bppp/2npbn2/2p1p3/2P1P3/2NP1NP1/PP2QPBP/R1B2RK1",
+      "exact": true
+    }
+  ]
+}

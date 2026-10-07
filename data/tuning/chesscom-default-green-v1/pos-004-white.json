@@ -1,0 +1,29 @@
+{
+  "image": "pos-004-white.png",
+  "profileId": "chesscom-default-green-v1",
+  "groupId": "pos-004",
+  "split": "tuning",
+  "orientation": "white-bottom",
+  "boardBounds": {
+    "x": 228,
+    "y": 66,
+    "width": 704,
+    "height": 704
+  },
+  "imageSize": {
+    "width": 1280,
+    "height": 1000
+  },
+  "piecePlacement": "8/8/8/8/8/8/8/8",
+  "sha256": "05c6b0be3a2d73f63f8ee86eb9fb79734c948159dcaccaf74ad13c7dff6b5a99",
+  "source": {
+    "url": "https://www.chess.com/analysis?fen=8%2F8%2F8%2F8%2F8%2F8%2F8%2F8",
+    "capturedAt": "2026-10-07T11:43:14.264604+00:00",
+    "browser": "Chromium 153.0.8010.12",
+    "artwork": [
+      "https://assets-themes.chess.com/image/9rdwe/200.png"
+    ],
+    "method": "Live analysis board; DOM piece geometry verified",
+    "pageModification": "Onboarding dismissed, tracking rejected; analysis arrows, highlights, evaluation bar and input fields hidden; piece DOM nodes removed for the empty tuning calibration board"
+  }
+}

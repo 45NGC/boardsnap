@@ -1,5 +1,6 @@
 """Rebuild the first piece baseline from the fixed tuning split, never evaluation."""
 
+import argparse
 from collections import Counter
 from contextlib import ExitStack
 import hashlib
@@ -12,6 +13,7 @@ from boardsnap.detection import BoardBounds
 from boardsnap.image_input import read_image
 from boardsnap.normalization import normalize_board
 from boardsnap.output import build_result
+from boardsnap.profiles import PROFILES, get_profile
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,22 +21,26 @@ PROFILE = "lichess-cburnett-brown-v1"
 LABELS = (None, *"PNBRQKpnbrqk")
 
 
-def build_templates(root: Path = ROOT) -> None:
+def build_templates(root: Path = ROOT, profile: str = PROFILE) -> None:
     """Select the first sample of each class/background in stable filename order."""
-    folder = root / "data/tuning" / PROFILE
+    if get_profile(profile).coordinates == "none":
+        from tools.build_book_templates import build_templates as build_book
+        build_book(root)
+        return
+    folder = root / "data/tuning" / profile
     manifest = json.loads((folder / "manifest.json").read_text())
-    if manifest["profileId"] != PROFILE or any(p["split"] != "tuning" for p in manifest["positions"]):
+    if manifest["profileId"] != profile or any(p["split"] != "tuning" for p in manifest["positions"]):
         raise ValueError("Only the fixed tuning profile can supply templates.")
     selected = {}
     coverage = Counter()
     with ExitStack() as stack:
         atlas = stack.enter_context(Image.new("RGB", (128, 832)))
         for position in sorted(manifest["positions"], key=lambda value: value["groupId"]):
-            for view in ("black", "white"):
+            for view in position.get("views", ("black", "white")):
                 path = folder / f"{position['groupId']}-{view}.png"
                 annotation_path = path.with_suffix(".json")
                 annotation = json.loads(annotation_path.read_text())
-                if (annotation["split"] != "tuning" or annotation["profileId"] != PROFILE
+                if (annotation["split"] != "tuning" or annotation["profileId"] != profile
                         or annotation["orientation"] != f"{view}-bottom"
                         or annotation["piecePlacement"] != position["piecePlacement"]):
                     raise ValueError(f"Inconsistent tuning annotation: {annotation_path}")
@@ -75,17 +81,20 @@ def build_templates(root: Path = ROOT) -> None:
             raise ValueError("Tuning data must cover all thirteen classes on both backgrounds.")
         destination = root / "src/boardsnap/assets"
         destination.mkdir(parents=True, exist_ok=True)
-        atlas_path = destination / "piece-templates.png"
+        asset = get_profile(profile).piece_asset
+        atlas_path = destination / f"{asset}.png"
         atlas.save(atlas_path)
         data = {
-            "formatVersion": 1, "profileId": PROFILE, "squareSize": 64,
+            "formatVersion": 1, "profileId": profile, "squareSize": 64,
             "selection": "First sample per class/background in filename and image row/column order; tuning only.",
             "atlasSha256": hashlib.sha256(atlas_path.read_bytes()).hexdigest(),
             "templates": [dict(selected[key], tuningCount=coverage[key]) for key in keys],
         }
-        (destination / "piece-templates.json").write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
+        (destination / f"{asset}.json").write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote 26 templates from {sum(coverage.values())} tuning squares to {destination}")
 
 
 if __name__ == "__main__":
-    build_templates()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--profile", choices=tuple(PROFILES), default=PROFILE)
+    build_templates(profile=parser.parse_args().profile)

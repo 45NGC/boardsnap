@@ -2,6 +2,8 @@
 
 **English** | [Spanish](../es/tuning-data.md) · [Overview](README.md)
 
+This guide records the original brown-profile implementation. See [evaluated profiles](profiles.md) for subsequent digital styles, the experimental book profile and current coverage.
+
 Location: [`data/tuning/`](../../data/tuning/).
 
 Use the [capture utility](capture-data.md) to collect the first lichess profile

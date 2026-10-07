@@ -2,6 +2,8 @@
 
 **English** | [Spanish](../es/capture-data.md) · [Overview](README.md)
 
+This guide records the original brown-profile implementation. See [evaluated profiles](profiles.md) for subsequent digital styles, the experimental book profile and current coverage.
+
 `tools/capture_lichess.py` collects screenshots and annotations from the live
 [lichess editor](https://lichess.org/editor). It is a repository utility,
 separate from the installed engine, and does not recognize images.

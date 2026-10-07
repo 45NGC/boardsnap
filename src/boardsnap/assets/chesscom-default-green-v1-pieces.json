@@ -1,0 +1,659 @@
+{
+  "formatVersion": 1,
+  "profileId": "chesscom-default-green-v1",
+  "squareSize": 64,
+  "selection": "First sample per class/background in filename and image row/column order; tuning only.",
+  "atlasSha256": "8b9f0a877478b906fb687ea10fadcc3bf7b572a8cbb9859aaaf68f6d350e6523",
+  "templates": [
+    {
+      "label": null,
+      "background": "light",
+      "atlasBox": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 2,
+        "column": 0,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 334
+    },
+    {
+      "label": null,
+      "background": "dark",
+      "atlasBox": [
+        64,
+        0,
+        128,
+        64
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 2,
+        "column": 1,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 342
+    },
+    {
+      "label": "P",
+      "background": "light",
+      "atlasBox": [
+        0,
+        64,
+        64,
+        128
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 1,
+        "column": 1,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 26
+    },
+    {
+      "label": "P",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        64,
+        128,
+        128
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 1,
+        "column": 0,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 36
+    },
+    {
+      "label": "N",
+      "background": "light",
+      "atlasBox": [
+        0,
+        128,
+        64,
+        192
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 0,
+        "column": 6,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 6
+    },
+    {
+      "label": "N",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        128,
+        128,
+        192
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 0,
+        "column": 1,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 4
+    },
+    {
+      "label": "B",
+      "background": "light",
+      "atlasBox": [
+        0,
+        192,
+        64,
+        256
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 0,
+        "column": 2,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 4
+    },
+    {
+      "label": "B",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        192,
+        128,
+        256
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 0,
+        "column": 5,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 6
+    },
+    {
+      "label": "R",
+      "background": "light",
+      "atlasBox": [
+        0,
+        256,
+        64,
+        320
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 0,
+        "column": 0,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 6
+    },
+    {
+      "label": "R",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        256,
+        128,
+        320
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 0,
+        "column": 7,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 4
+    },
+    {
+      "label": "Q",
+      "background": "light",
+      "atlasBox": [
+        0,
+        320,
+        64,
+        384
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 0,
+        "column": 4,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 4
+    },
+    {
+      "label": "Q",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        320,
+        128,
+        384
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-006-black.png",
+        "sha256": "135be29c7e883da25861fc429a961b7ef82506b695bb9c103988ffd39cad1272",
+        "annotationSha256": "56310a4b6b69817a3d5cfd5ff3b95604f62cf461386b9f5df65048451847f49d",
+        "row": 2,
+        "column": 5,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 2
+    },
+    {
+      "label": "K",
+      "background": "light",
+      "atlasBox": [
+        0,
+        384,
+        64,
+        448
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-007-black.png",
+        "sha256": "4243c7de7627f5df78737640d12fbcca5852036c528cdca9dc85eb2798c1a04b",
+        "annotationSha256": "21438ee11bddf11aab8ef67f1cb306e9c028097ea732323f4e5fa54ba7f9db14",
+        "row": 1,
+        "column": 1,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 2
+    },
+    {
+      "label": "K",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        384,
+        128,
+        448
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 0,
+        "column": 3,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 10
+    },
+    {
+      "label": "p",
+      "background": "light",
+      "atlasBox": [
+        0,
+        448,
+        64,
+        512
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 6,
+        "column": 0,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 36
+    },
+    {
+      "label": "p",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        448,
+        128,
+        512
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 6,
+        "column": 1,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 26
+    },
+    {
+      "label": "n",
+      "background": "light",
+      "atlasBox": [
+        0,
+        512,
+        64,
+        576
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 7,
+        "column": 1,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 8
+    },
+    {
+      "label": "n",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        512,
+        128,
+        576
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 7,
+        "column": 6,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 2
+    },
+    {
+      "label": "b",
+      "background": "light",
+      "atlasBox": [
+        0,
+        576,
+        64,
+        640
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 7,
+        "column": 5,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 4
+    },
+    {
+      "label": "b",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        576,
+        128,
+        640
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 7,
+        "column": 2,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 6
+    },
+    {
+      "label": "r",
+      "background": "light",
+      "atlasBox": [
+        0,
+        640,
+        64,
+        704
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 7,
+        "column": 7,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 6
+    },
+    {
+      "label": "r",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        640,
+        128,
+        704
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 7,
+        "column": 0,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 4
+    },
+    {
+      "label": "q",
+      "background": "light",
+      "atlasBox": [
+        0,
+        704,
+        64,
+        768
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-006-black.png",
+        "sha256": "135be29c7e883da25861fc429a961b7ef82506b695bb9c103988ffd39cad1272",
+        "annotationSha256": "56310a4b6b69817a3d5cfd5ff3b95604f62cf461386b9f5df65048451847f49d",
+        "row": 4,
+        "column": 4,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 2
+    },
+    {
+      "label": "q",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        704,
+        128,
+        768
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 7,
+        "column": 4,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 4
+    },
+    {
+      "label": "k",
+      "background": "light",
+      "atlasBox": [
+        0,
+        768,
+        64,
+        832
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-001-black.png",
+        "sha256": "5441f3cb5df2704f368e6afbe62d5b4a2b628dc8c20dd933bacd33092f66c2d3",
+        "annotationSha256": "335fb6909baf2dbcb1ca81568067777d9131ebdd032430416ca0076f5d11604d",
+        "row": 7,
+        "column": 3,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 10
+    },
+    {
+      "label": "k",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        768,
+        128,
+        832
+      ],
+      "source": {
+        "image": "data/tuning/chesscom-default-green-v1/pos-007-black.png",
+        "sha256": "4243c7de7627f5df78737640d12fbcca5852036c528cdca9dc85eb2798c1a04b",
+        "annotationSha256": "21438ee11bddf11aab8ef67f1cb306e9c028097ea732323f4e5fa54ba7f9db14",
+        "row": 6,
+        "column": 1,
+        "orientation": "black-bottom",
+        "bounds": [
+          228,
+          66,
+          932,
+          770
+        ]
+      },
+      "tuningCount": 2
+    }
+  ]
+}

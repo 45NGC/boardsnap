@@ -1,0 +1,22 @@
+{
+  "profileId": "book-strategy-hatched-v1",
+  "notes": "Pilot of actual diagrams from the Project Gutenberg illustrated edition of Chess Strategy, ebook 5614. White-bottom convention; hand-transcribed labels and approximate interior grid bounds, reviewed visually. Diagram 2 contains arrows and is excluded. Independent whole diagrams are held out. Not a benchmark for other editions or books.",
+  "positions": [
+    {
+      "groupId": "diag-003",
+      "split": "evaluation",
+      "piecePlacement": "3r1rk1/pp3ppp/2p1p3/8/3P4/8/PPP2PPP/2KR3R",
+      "views": [
+        "white"
+      ]
+    },
+    {
+      "groupId": "diag-007",
+      "split": "evaluation",
+      "piecePlacement": "8/6pk/bp5p/2pPn3/2P5/4N1B1/P6P/K7",
+      "views": [
+        "white"
+      ]
+    }
+  ]
+}

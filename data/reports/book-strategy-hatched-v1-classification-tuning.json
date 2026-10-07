@@ -1,0 +1,438 @@
+{
+  "profileId": "book-strategy-hatched-v1",
+  "split": "tuning",
+  "templateManifestSha256": "36512ed70acb6d9b09de377ce0c8279af3ba49f723bf569dccc21d5b56bf68cb",
+  "imageCount": 5,
+  "positionCount": 5,
+  "exactPositions": 5,
+  "processingFailures": 0,
+  "correctSquares": 320,
+  "totalSquares": 320,
+  "squareAccuracy": 1.0,
+  "occupiedSquareAccuracy": 1.0,
+  "macroRecallPresentClasses": 1.0,
+  "classes": {
+    "empty": {
+      "correct": 207,
+      "total": 207,
+      "backgrounds": {
+        "light": {
+          "correct": 108,
+          "total": 108
+        },
+        "dark": {
+          "correct": 99,
+          "total": 99
+        }
+      },
+      "predicted": {
+        "empty": 207,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "P": {
+      "correct": 28,
+      "total": 28,
+      "backgrounds": {
+        "light": {
+          "correct": 14,
+          "total": 14
+        },
+        "dark": {
+          "correct": 14,
+          "total": 14
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 28,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "N": {
+      "correct": 8,
+      "total": 8,
+      "backgrounds": {
+        "light": {
+          "correct": 4,
+          "total": 4
+        },
+        "dark": {
+          "correct": 4,
+          "total": 4
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 8,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "B": {
+      "correct": 4,
+      "total": 4,
+      "backgrounds": {
+        "light": {
+          "correct": 2,
+          "total": 2
+        },
+        "dark": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 4,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "R": {
+      "correct": 8,
+      "total": 8,
+      "backgrounds": {
+        "light": {
+          "correct": 3,
+          "total": 3
+        },
+        "dark": {
+          "correct": 5,
+          "total": 5
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 8,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "Q": {
+      "correct": 3,
+      "total": 3,
+      "backgrounds": {
+        "light": {
+          "correct": 2,
+          "total": 2
+        },
+        "dark": {
+          "correct": 1,
+          "total": 1
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 3,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "K": {
+      "correct": 5,
+      "total": 5,
+      "backgrounds": {
+        "light": {
+          "correct": 1,
+          "total": 1
+        },
+        "dark": {
+          "correct": 4,
+          "total": 4
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 5,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "p": {
+      "correct": 27,
+      "total": 27,
+      "backgrounds": {
+        "light": {
+          "correct": 11,
+          "total": 11
+        },
+        "dark": {
+          "correct": 16,
+          "total": 16
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 27,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "n": {
+      "correct": 7,
+      "total": 7,
+      "backgrounds": {
+        "light": {
+          "correct": 3,
+          "total": 3
+        },
+        "dark": {
+          "correct": 4,
+          "total": 4
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 7,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "b": {
+      "correct": 6,
+      "total": 6,
+      "backgrounds": {
+        "light": {
+          "correct": 4,
+          "total": 4
+        },
+        "dark": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 6,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "r": {
+      "correct": 9,
+      "total": 9,
+      "backgrounds": {
+        "light": {
+          "correct": 4,
+          "total": 4
+        },
+        "dark": {
+          "correct": 5,
+          "total": 5
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 9,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "q": {
+      "correct": 3,
+      "total": 3,
+      "backgrounds": {
+        "light": {
+          "correct": 1,
+          "total": 1
+        },
+        "dark": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 3,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "k": {
+      "correct": 5,
+      "total": 5,
+      "backgrounds": {
+        "light": {
+          "correct": 3,
+          "total": 3
+        },
+        "dark": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 5,
+        "processing-error": 0
+      }
+    }
+  },
+  "images": [
+    {
+      "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+      "expected": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "actual": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "exact": true
+    },
+    {
+      "image": "data/tuning/book-strategy-hatched-v1/diag-004-white.png",
+      "expected": "4r2k/ppqnr1p1/2nbp2p/8/5P2/1P1N1N2/PB1QR1PP/4R1K1",
+      "actual": "4r2k/ppqnr1p1/2nbp2p/8/5P2/1P1N1N2/PB1QR1PP/4R1K1",
+      "exact": true
+    },
+    {
+      "image": "data/tuning/book-strategy-hatched-v1/diag-005-white.png",
+      "expected": "4r1k1/2p1r1pp/1p1n1p2/8/4P3/2P3N1/PPb3PP/3R1K2",
+      "actual": "4r1k1/2p1r1pp/1p1n1p2/8/4P3/2P3N1/PPb3PP/3R1K2",
+      "exact": true
+    },
+    {
+      "image": "data/tuning/book-strategy-hatched-v1/diag-006-white.png",
+      "expected": "2r2rk1/p4ppp/1pbR1n2/2p5/4P3/1BP2N2/1P3PPP/4R1K1",
+      "actual": "2r2rk1/p4ppp/1pbR1n2/2p5/4P3/1BP2N2/1P3PPP/4R1K1",
+      "exact": true
+    },
+    {
+      "image": "data/tuning/book-strategy-hatched-v1/diag-008-white.png",
+      "expected": "2b1qr1k/4n1pp/pN6/2R1N3/2Q5/8/P5PP/6K1",
+      "actual": "2b1qr1k/4n1pp/pN6/2R1N3/2Q5/8/P5PP/6K1",
+      "exact": true
+    }
+  ]
+}

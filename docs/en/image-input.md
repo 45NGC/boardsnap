@@ -68,7 +68,7 @@ errors are not silently converted into input errors.
 
 The CLI adapter encodes this dictionary as JSON. No `piecePlacement` is
 returned on failure. [Detection](detection.md) consumes this image representation;
-the [CLI](cli.md) is implemented and Flutter integration remains undecided.
+the [CLI](cli.md) is implemented and the [Flutter HTTPS design](flutter-integration.md) is documented separately.
 
 ## Tests
 

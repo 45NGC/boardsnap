@@ -4,14 +4,14 @@
 
 This is the distribution of responsibilities. Image input, board detection,
 normalization, segmentation, orientation, classification, pipeline composition and
-output serialization are implemented. The CLI adapter is implemented; Flutter transport remains undecided.
+output serialization are implemented. The CLI adapter is implemented; the future HTTPS transport is [documented](flutter-integration.md).
 The initial repository contained only a README, a license, and a generic Python
 `.gitignore`; there was no recognition code to preserve or migrate.
 
 A single package, `boardsnap`, lives under `src/`. It contains `__init__.py`
 and `output.py`, which validates and serializes an already-classified matrix,
 plus `image_input.py`, which loads PNG/JPEG files and raises structured input errors.
-`detection.py` locates the first profile's grid and returns immutable `BoardBounds`.
+`profiles.py` holds explicit profile configuration. `detection.py` locates the selected grid and returns immutable `BoardBounds`.
 `normalization.py` returns a `NormalizedBoard` with resized pixels, an independent
 full-resolution source copy and source bounds. `segmentation.py` returns an
 8 × 8 matrix of independent crops in image order; see the
@@ -19,20 +19,19 @@ full-resolution source copy and source bounds. `segmentation.py` returns an
 `orientation.py` reads supported coordinates from the preserved source and
 reorders matrix cells. Its glyph templates are installed package assets derived
 only from tuning data; see [orientation](orientation.md).
-`classification.py` compares square features with packaged cburnett templates.
+`classification.py` compares square features with packaged profile-specific templates.
 `pipeline.py` provides `recognize_image(path)` and owns stage resources; it returns
 only piece placement and propagates structured failures. See [classification](classification.md).
-The other modules below will be created as each responsibility is implemented;
-their names are
-provisional. No class hierarchies, plugin registries, or services are introduced
-in advance. The
+The profile table is a small static configuration, not a dynamic plugin system.
+All stages listed below exist; no server or additional framework is introduced.
+The
 [PyPA packaging guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
 describes this organization and configuration through `pyproject.toml`.
 
-## Planned flow
+## Recognition flow
 
 ```text
-Adapter (CLI; Flutter integration to be decided)
+Adapter (CLI implemented; HTTPS transport documented)
     → pipeline
         → image_input → detection → normalization → segmentation
         → classification → orientation → output
@@ -43,7 +42,7 @@ Normalization preserves orientation clues in the full source copy, including
 external margins and internal labels. `orientation` applies the square mapping
 before output is generated; segmentation does not infer chess coordinates.
 
-| Module | Planned responsibility |
+| Module | Responsibility |
 | --- | --- |
 | `image_input` | Read bytes or a file, decode the image, and validate its contents. Handle file orientation before analysis. |
 | `detection` | Locate the boundaries of an 8 × 8 grid without changing the input pixels. |
@@ -90,8 +89,8 @@ when that experiment is undertaken.
 
 ## External integration
 
-The [CLI](cli.md) accepts a path and emits JSON. It consumes the core; it
-does not determine how the Flutter app will run Python. A remote service, local
-process, or another approach must be chosen explicitly according to
-chess-scanner's platforms and constraints. Until then, there will be no server,
-endpoints, Flutter SDK, or deployment code.
+The [CLI](cli.md) and Python API accept an explicit profile, defaulting to the
+original brown style. [Evaluated profiles](profiles.md) document limits and the
+experimental book baseline. The [Flutter integration design](flutter-integration.md)
+proposes a separate HTTPS adapter for Android, iOS and web. It calls the same core;
+no server, Flutter code or web-framework dependency is introduced in this iteration.

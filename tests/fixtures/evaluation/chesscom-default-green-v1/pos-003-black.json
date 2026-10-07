@@ -1,0 +1,33 @@
+{
+  "image": "pos-003-black.png",
+  "profileId": "chesscom-default-green-v1",
+  "groupId": "pos-003",
+  "split": "evaluation",
+  "orientation": "black-bottom",
+  "boardBounds": {
+    "x": 228,
+    "y": 66,
+    "width": 704,
+    "height": 704
+  },
+  "imageSize": {
+    "width": 1280,
+    "height": 1000
+  },
+  "piecePlacement": "8/5pk1/6p1/8/4P3/5K2/8/8",
+  "sha256": "66ee95cf82db7c28e6d6e72805b933904f42620709d5f59d36c348e566a95845",
+  "source": {
+    "url": "https://www.chess.com/analysis?fen=8%2F5pk1%2F6p1%2F8%2F4P3%2F5K2%2F8%2F8",
+    "capturedAt": "2026-10-07T11:43:11.131577+00:00",
+    "browser": "Chromium 153.0.8010.12",
+    "artwork": [
+      "https://assets-themes.chess.com/image/9rdwe/200.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/bk.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/bp.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/wk.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/wp.png"
+    ],
+    "method": "Live analysis board; DOM piece geometry verified",
+    "pageModification": "Onboarding dismissed, tracking rejected; analysis arrows, highlights, evaluation bar and input fields hidden"
+  }
+}

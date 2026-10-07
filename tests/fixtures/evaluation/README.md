@@ -12,3 +12,10 @@ Read the [evaluation guide in English](../../../docs/en/evaluation-data.md).
 
 A [Spanish version of the evaluation guide](../../../docs/es/evaluation-data.md)
 is also available.
+
+Additional reserved partitions: blue/cburnett (4 images), Chess.com green (4)
+and the hatched book edition (2). Digital themes share the same two positions;
+these are not independent positions just because their artwork differs.
+The book baseline currently fails both complete positions (126/128 squares).
+Those failures remain explicit in the reports and strict `xfail` tests.
+See [evaluated profiles](../../../docs/en/profiles.md).

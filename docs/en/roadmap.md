@@ -30,7 +30,7 @@ implemented, retaining the complete source for orientation. [Orientation](orient
 now reads the profile's internal coordinates and applies the documented fallback.
 The [template classifier and Python pipeline](classification.md) are implemented
 with a measured initial baseline. The [JSON CLI](cli.md) is also implemented.
-Next expand independent test coverage; Flutter integration still requires an explicit decision.
+The subsequent [profile expansion](profiles.md) and [Flutter transport design](flutter-integration.md) are now documented.
 
 Start with PNG images, a complete aligned board, static pieces without overlays,
 and a single grid per image. Reserve evaluation images with annotated positions
@@ -51,20 +51,29 @@ tested on tuning and reserved images, in addition to isolated stage tests.
 The [measured baseline](classification.md) reports the limited initial acceptance
 results; this milestone does not imply universal recognition.
 
-## 3. Measured expansion of digital support
+## 3. Measured digital expansion (initial profiles implemented)
 
-Add a specific chess.com profile, followed by new themes, resolutions, and
-formats, one at a time. Test compression, interface margins, and different
-colors using separate samples. Record what has been measured and what remains
-out of scope for each profile. Maintain regression tests for previous profiles
-when adding a new one.
+Blue/cburnett lichess and the captured Chess.com default green style now have
+explicit profiles, tuning-only templates, capture tooling and regression tests.
+Each recognizes 4/4 reserved images (two positions in both views). See the
+[profile guide](profiles.md) for limits; these small, shared-position pilots do
+not establish support for arbitrary themes, resolutions or platforms.
 
-## 4. Book diagrams
+Next collect independently selected positions, additional browser layouts and
+compression cases, and keep all existing regressions. Add one evaluated style
+at a time rather than claiming every combination is covered.
 
-Start with a specific family of printed symbols, complete diagrams, and clean
-scans. Evaluate binarization, lines, and contours for grids without alternating
-colors, then moderate skew, noise, and paper backgrounds. Do not extrapolate
-results from digital screenshots to typographic symbols in books.
+## 4. Book diagrams (experimental baseline implemented)
+
+The fixed illustrated *Chess Strategy* edition has five tuning diagrams and two
+reserved diagrams. A frame/brightness detector and 80 tuning crops achieve
+126/128 reserved squares, but **0/2 exact positions**. Full-position acceptance
+therefore remains open, with both failures recorded as strict expected failures.
+
+Next gather more examples of that symbol family and improve robustness on a
+separate development set. If the current held-out failures inform tuning, retire
+them into development and obtain new independent acceptance diagrams. Other
+books, fonts, full pages and perspective correction remain outside measured scope.
 
 ## 5. Learned classification and integration
 
@@ -75,9 +84,9 @@ tuning models, check class/background coverage and add independent samples as ne
 Keep all crop/orientation/augmentation relatives together. Version data and artifacts;
 the current tiny corpus cannot establish a robust neural-model advantage.
 
-Explicitly choose the chess-scanner integration mechanism once platforms,
-latency, and execution constraints are known. Implement it in a separate
-adapter, preserving the existing contract and core.
+The requested Android, iOS and web targets lead to the [documented HTTPS
+proposal](flutter-integration.md). Implement the backend adapter and Flutter
+client in a later task; this iteration supplies the design only and retains the core contract.
 
 ## Initial comparison of approaches
 

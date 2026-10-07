@@ -2,6 +2,8 @@
 
 [English](../en/evaluation-data.md) | **Español** · [Inicio](README.md)
 
+Esta guía describe la implementación original del perfil brown. Consulta los [perfiles evaluados](profiles.md) para los nuevos estilos digitales, el experimento de libros y la cobertura actual.
+
 Ubicación: [`tests/fixtures/evaluation/`](../../tests/fixtures/evaluation/).
 
 El primer perfil contiene cuatro PNG anotados: `pos-003` (final de peones) y

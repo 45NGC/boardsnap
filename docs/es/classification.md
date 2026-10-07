@@ -2,6 +2,8 @@
 
 [English](../en/classification.md) | **Español** · [Inicio](README.md)
 
+Esta guía describe la implementación original del perfil brown. Consulta los [perfiles evaluados](profiles.md) para los nuevos estilos digitales, el experimento de libros y la cobertura actual.
+
 El clasificador inicial de plantillas admite **piezas cburnett sobre el tablero
 brown de lichess**. Elige una de trece clases por casilla: vacía (`None`), blancas
 `PNBRQK` o negras `pnbrqk`. Utiliza solo píxeles, no anotaciones, posiciones
@@ -77,7 +79,7 @@ excepciones de cada etapa; el adaptador serializará `error.to_dict()`. Las
 plantillas ausentes o corruptas producen `ClassificationError` con
 `PROCESSING_FAILED`, nunca una posición vacía. Los tipos, modos y dimensiones
 internos inválidos producen `TypeError`/`ValueError`. La [CLI registrada](cli.md)
-serializa estos resultados. La integración con Flutter sigue por decidir.
+serializa estos resultados. El [diseño HTTPS para Flutter](flutter-integration.md) queda documentado aparte.
 
 ## Protocolo fijado antes de evaluar los reservados
 

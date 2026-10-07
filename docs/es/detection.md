@@ -2,6 +2,8 @@
 
 [English](../en/detection.md) | **Español** · [Inicio](README.md)
 
+Esta guía describe la implementación original del perfil brown. Consulta los [perfiles evaluados](profiles.md) para los nuevos estilos digitales, el experimento de libros y la cobertura actual.
+
 `boardsnap.detection.detect_board(image)` localiza una cuadrícula completa de
 8 × 8, alineada con los ejes, dentro de una imagen Pillow RGB decodificada.
 Esta primera implementación se dirige al tablero brown del perfil

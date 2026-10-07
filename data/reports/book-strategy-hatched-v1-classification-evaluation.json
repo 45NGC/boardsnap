@@ -1,0 +1,420 @@
+{
+  "profileId": "book-strategy-hatched-v1",
+  "split": "evaluation",
+  "templateManifestSha256": "36512ed70acb6d9b09de377ce0c8279af3ba49f723bf569dccc21d5b56bf68cb",
+  "imageCount": 2,
+  "positionCount": 2,
+  "exactPositions": 0,
+  "processingFailures": 0,
+  "correctSquares": 126,
+  "totalSquares": 128,
+  "squareAccuracy": 0.984375,
+  "occupiedSquareAccuracy": 0.9411764705882353,
+  "macroRecallPresentClasses": 0.9008264462809916,
+  "classes": {
+    "empty": {
+      "correct": 94,
+      "total": 94,
+      "backgrounds": {
+        "light": {
+          "correct": 48,
+          "total": 48
+        },
+        "dark": {
+          "correct": 46,
+          "total": 46
+        }
+      },
+      "predicted": {
+        "empty": 94,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "P": {
+      "correct": 10,
+      "total": 11,
+      "backgrounds": {
+        "light": {
+          "correct": 6,
+          "total": 6
+        },
+        "dark": {
+          "correct": 4,
+          "total": 5
+        }
+      },
+      "predicted": {
+        "empty": 1,
+        "P": 10,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "N": {
+      "correct": 1,
+      "total": 1,
+      "backgrounds": {
+        "light": {
+          "correct": 0,
+          "total": 0
+        },
+        "dark": {
+          "correct": 1,
+          "total": 1
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 1,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "B": {
+      "correct": 0,
+      "total": 1,
+      "backgrounds": {
+        "light": {
+          "correct": 0,
+          "total": 0
+        },
+        "dark": {
+          "correct": 0,
+          "total": 1
+        }
+      },
+      "predicted": {
+        "empty": 1,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "R": {
+      "correct": 2,
+      "total": 2,
+      "backgrounds": {
+        "light": {
+          "correct": 2,
+          "total": 2
+        },
+        "dark": {
+          "correct": 0,
+          "total": 0
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 2,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "Q": {
+      "correct": 0,
+      "total": 0,
+      "backgrounds": {
+        "light": {
+          "correct": 0,
+          "total": 0
+        },
+        "dark": {
+          "correct": 0,
+          "total": 0
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "K": {
+      "correct": 2,
+      "total": 2,
+      "backgrounds": {
+        "light": {
+          "correct": 0,
+          "total": 0
+        },
+        "dark": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 2,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "p": {
+      "correct": 11,
+      "total": 11,
+      "backgrounds": {
+        "light": {
+          "correct": 5,
+          "total": 5
+        },
+        "dark": {
+          "correct": 6,
+          "total": 6
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 11,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "n": {
+      "correct": 1,
+      "total": 1,
+      "backgrounds": {
+        "light": {
+          "correct": 0,
+          "total": 0
+        },
+        "dark": {
+          "correct": 1,
+          "total": 1
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 1,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "b": {
+      "correct": 1,
+      "total": 1,
+      "backgrounds": {
+        "light": {
+          "correct": 1,
+          "total": 1
+        },
+        "dark": {
+          "correct": 0,
+          "total": 0
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 1,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "r": {
+      "correct": 2,
+      "total": 2,
+      "backgrounds": {
+        "light": {
+          "correct": 0,
+          "total": 0
+        },
+        "dark": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 2,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "q": {
+      "correct": 0,
+      "total": 0,
+      "backgrounds": {
+        "light": {
+          "correct": 0,
+          "total": 0
+        },
+        "dark": {
+          "correct": 0,
+          "total": 0
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "k": {
+      "correct": 2,
+      "total": 2,
+      "backgrounds": {
+        "light": {
+          "correct": 2,
+          "total": 2
+        },
+        "dark": {
+          "correct": 0,
+          "total": 0
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 2,
+        "processing-error": 0
+      }
+    }
+  },
+  "images": [
+    {
+      "image": "tests/fixtures/evaluation/book-strategy-hatched-v1/diag-003-white.png",
+      "expected": "3r1rk1/pp3ppp/2p1p3/8/3P4/8/PPP2PPP/2KR3R",
+      "actual": "3r1rk1/pp3ppp/2p1p3/8/3P4/8/P1P2PPP/2KR3R",
+      "exact": false
+    },
+    {
+      "image": "tests/fixtures/evaluation/book-strategy-hatched-v1/diag-007-white.png",
+      "expected": "8/6pk/bp5p/2pPn3/2P5/4N1B1/P6P/K7",
+      "actual": "8/6pk/bp5p/2pPn3/2P5/4N3/P6P/K7",
+      "exact": false
+    }
+  ]
+}

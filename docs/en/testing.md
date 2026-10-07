@@ -110,3 +110,19 @@ manifest consistency and disjoint positions/groups. Integrity tests alone do not
 recognize pixels. Recognition tests use only images as inputs; annotations remain
 expected results. Detection and classification have limited measured results in
 their respective guides; the current corpus does not establish broad style support.
+
+## Profile expansion regression
+
+`python -m pytest tests/test_profiles.py` covers new-profile geometry, orientation,
+full placement, negative inputs, explicit CLI selection, template provenance,
+cross-profile partition isolation and digital crops/resizing. Two strict `xfail`
+tests expose the unresolved exact-position failures of the experimental book
+profile. They are not successful acceptance cases. See [measured profiles](profiles.md).
+
+Validation for this iteration: **854 passed, 7 optional browser tests skipped,
+2 expected failures** in the default suite. The seven local Chromium tests were
+then run explicitly and all passed: **861 successful tests in total**. Both
+expected failures are the documented book acceptance cases. A built wheel was
+installed separately and each profile's CLI checked outside the repository with
+anonymous images and no sidecars. Template rebuilds reproduce the committed assets
+byte-for-byte in the current environment; reports reproduce the recorded results.

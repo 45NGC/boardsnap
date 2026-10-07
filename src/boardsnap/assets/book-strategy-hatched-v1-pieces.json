@@ -1,0 +1,1929 @@
+{
+  "formatVersion": 2,
+  "profileId": "book-strategy-hatched-v1",
+  "squareSize": 64,
+  "selection": "First four samples per class/background; tuning diagrams only.",
+  "atlasSha256": "c93098137c32c0a51453c1ac849c47e69ba43c02638c559f360cad32f719b476",
+  "templates": [
+    {
+      "label": "r",
+      "background": "light",
+      "atlasBox": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 0,
+        "column": 0,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "n",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        0,
+        128,
+        64
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 0,
+        "column": 1,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "b",
+      "background": "light",
+      "atlasBox": [
+        0,
+        64,
+        64,
+        128
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 0,
+        "column": 2,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "q",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        64,
+        128,
+        128
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 0,
+        "column": 3,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "k",
+      "background": "light",
+      "atlasBox": [
+        0,
+        128,
+        64,
+        192
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 0,
+        "column": 4,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "b",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        128,
+        128,
+        192
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 0,
+        "column": 5,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "n",
+      "background": "light",
+      "atlasBox": [
+        0,
+        192,
+        64,
+        256
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 0,
+        "column": 6,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "r",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        192,
+        128,
+        256
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 0,
+        "column": 7,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "p",
+      "background": "dark",
+      "atlasBox": [
+        0,
+        256,
+        64,
+        320
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 1,
+        "column": 0,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "p",
+      "background": "light",
+      "atlasBox": [
+        64,
+        256,
+        128,
+        320
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 1,
+        "column": 1,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "p",
+      "background": "dark",
+      "atlasBox": [
+        0,
+        320,
+        64,
+        384
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 1,
+        "column": 2,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "p",
+      "background": "light",
+      "atlasBox": [
+        64,
+        320,
+        128,
+        384
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 1,
+        "column": 3,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "p",
+      "background": "dark",
+      "atlasBox": [
+        0,
+        384,
+        64,
+        448
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 1,
+        "column": 4,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "p",
+      "background": "light",
+      "atlasBox": [
+        64,
+        384,
+        128,
+        448
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 1,
+        "column": 5,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "p",
+      "background": "dark",
+      "atlasBox": [
+        0,
+        448,
+        64,
+        512
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 1,
+        "column": 6,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "p",
+      "background": "light",
+      "atlasBox": [
+        64,
+        448,
+        128,
+        512
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 1,
+        "column": 7,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": null,
+      "background": "light",
+      "atlasBox": [
+        0,
+        512,
+        64,
+        576
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 2,
+        "column": 0,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": null,
+      "background": "dark",
+      "atlasBox": [
+        64,
+        512,
+        128,
+        576
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 2,
+        "column": 1,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": null,
+      "background": "light",
+      "atlasBox": [
+        0,
+        576,
+        64,
+        640
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 2,
+        "column": 2,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": null,
+      "background": "dark",
+      "atlasBox": [
+        64,
+        576,
+        128,
+        640
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 2,
+        "column": 3,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": null,
+      "background": "light",
+      "atlasBox": [
+        0,
+        640,
+        64,
+        704
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 2,
+        "column": 4,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": null,
+      "background": "dark",
+      "atlasBox": [
+        64,
+        640,
+        128,
+        704
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 2,
+        "column": 5,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": null,
+      "background": "light",
+      "atlasBox": [
+        0,
+        704,
+        64,
+        768
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 2,
+        "column": 6,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": null,
+      "background": "dark",
+      "atlasBox": [
+        64,
+        704,
+        128,
+        768
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 2,
+        "column": 7,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "P",
+      "background": "light",
+      "atlasBox": [
+        0,
+        768,
+        64,
+        832
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 6,
+        "column": 0,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "P",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        768,
+        128,
+        832
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 6,
+        "column": 1,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "P",
+      "background": "light",
+      "atlasBox": [
+        0,
+        832,
+        64,
+        896
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 6,
+        "column": 2,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "P",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        832,
+        128,
+        896
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 6,
+        "column": 3,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "P",
+      "background": "light",
+      "atlasBox": [
+        0,
+        896,
+        64,
+        960
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 6,
+        "column": 4,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "P",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        896,
+        128,
+        960
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 6,
+        "column": 5,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "P",
+      "background": "light",
+      "atlasBox": [
+        0,
+        960,
+        64,
+        1024
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 6,
+        "column": 6,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "P",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        960,
+        128,
+        1024
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 6,
+        "column": 7,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "R",
+      "background": "dark",
+      "atlasBox": [
+        0,
+        1024,
+        64,
+        1088
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 7,
+        "column": 0,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "N",
+      "background": "light",
+      "atlasBox": [
+        64,
+        1024,
+        128,
+        1088
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 7,
+        "column": 1,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "B",
+      "background": "dark",
+      "atlasBox": [
+        0,
+        1088,
+        64,
+        1152
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 7,
+        "column": 2,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "Q",
+      "background": "light",
+      "atlasBox": [
+        64,
+        1088,
+        128,
+        1152
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 7,
+        "column": 3,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "K",
+      "background": "dark",
+      "atlasBox": [
+        0,
+        1152,
+        64,
+        1216
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 7,
+        "column": 4,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "B",
+      "background": "light",
+      "atlasBox": [
+        64,
+        1152,
+        128,
+        1216
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 7,
+        "column": 5,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "N",
+      "background": "dark",
+      "atlasBox": [
+        0,
+        1216,
+        64,
+        1280
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 7,
+        "column": 6,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "R",
+      "background": "light",
+      "atlasBox": [
+        64,
+        1216,
+        128,
+        1280
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-001-white.png",
+        "sha256": "59a48be61adda0f717fda3ace29aa93cd1f11c7f956898c70f42e3fda6148abf",
+        "annotationSha256": "6fd532d1da2475a92b41720ffb9ed028d651afdc9f0cb581f460ed876d8e14bc",
+        "row": 7,
+        "column": 7,
+        "orientation": "white-bottom",
+        "bounds": [
+          25,
+          27,
+          625,
+          624
+        ]
+      }
+    },
+    {
+      "label": "r",
+      "background": "light",
+      "atlasBox": [
+        0,
+        1280,
+        64,
+        1344
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-004-white.png",
+        "sha256": "2251ea3050c6809c8c74856e3311b0b8e8dd4481320ac2d0c095493a82fdd8de",
+        "annotationSha256": "5620b887265bee721bfb43d6b90afdaac9210a66f2c553d951e162d49ae715cb",
+        "row": 0,
+        "column": 4,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          22,
+          627,
+          622
+        ]
+      }
+    },
+    {
+      "label": "k",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        1280,
+        128,
+        1344
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-004-white.png",
+        "sha256": "2251ea3050c6809c8c74856e3311b0b8e8dd4481320ac2d0c095493a82fdd8de",
+        "annotationSha256": "5620b887265bee721bfb43d6b90afdaac9210a66f2c553d951e162d49ae715cb",
+        "row": 0,
+        "column": 7,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          22,
+          627,
+          622
+        ]
+      }
+    },
+    {
+      "label": "q",
+      "background": "dark",
+      "atlasBox": [
+        0,
+        1344,
+        64,
+        1408
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-004-white.png",
+        "sha256": "2251ea3050c6809c8c74856e3311b0b8e8dd4481320ac2d0c095493a82fdd8de",
+        "annotationSha256": "5620b887265bee721bfb43d6b90afdaac9210a66f2c553d951e162d49ae715cb",
+        "row": 1,
+        "column": 2,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          22,
+          627,
+          622
+        ]
+      }
+    },
+    {
+      "label": "n",
+      "background": "light",
+      "atlasBox": [
+        64,
+        1344,
+        128,
+        1408
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-004-white.png",
+        "sha256": "2251ea3050c6809c8c74856e3311b0b8e8dd4481320ac2d0c095493a82fdd8de",
+        "annotationSha256": "5620b887265bee721bfb43d6b90afdaac9210a66f2c553d951e162d49ae715cb",
+        "row": 1,
+        "column": 3,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          22,
+          627,
+          622
+        ]
+      }
+    },
+    {
+      "label": "r",
+      "background": "dark",
+      "atlasBox": [
+        0,
+        1408,
+        64,
+        1472
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-004-white.png",
+        "sha256": "2251ea3050c6809c8c74856e3311b0b8e8dd4481320ac2d0c095493a82fdd8de",
+        "annotationSha256": "5620b887265bee721bfb43d6b90afdaac9210a66f2c553d951e162d49ae715cb",
+        "row": 1,
+        "column": 4,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          22,
+          627,
+          622
+        ]
+      }
+    },
+    {
+      "label": "n",
+      "background": "light",
+      "atlasBox": [
+        64,
+        1408,
+        128,
+        1472
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-004-white.png",
+        "sha256": "2251ea3050c6809c8c74856e3311b0b8e8dd4481320ac2d0c095493a82fdd8de",
+        "annotationSha256": "5620b887265bee721bfb43d6b90afdaac9210a66f2c553d951e162d49ae715cb",
+        "row": 2,
+        "column": 2,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          22,
+          627,
+          622
+        ]
+      }
+    },
+    {
+      "label": "b",
+      "background": "dark",
+      "atlasBox": [
+        0,
+        1472,
+        64,
+        1536
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-004-white.png",
+        "sha256": "2251ea3050c6809c8c74856e3311b0b8e8dd4481320ac2d0c095493a82fdd8de",
+        "annotationSha256": "5620b887265bee721bfb43d6b90afdaac9210a66f2c553d951e162d49ae715cb",
+        "row": 2,
+        "column": 3,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          22,
+          627,
+          622
+        ]
+      }
+    },
+    {
+      "label": "N",
+      "background": "light",
+      "atlasBox": [
+        64,
+        1472,
+        128,
+        1536
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-004-white.png",
+        "sha256": "2251ea3050c6809c8c74856e3311b0b8e8dd4481320ac2d0c095493a82fdd8de",
+        "annotationSha256": "5620b887265bee721bfb43d6b90afdaac9210a66f2c553d951e162d49ae715cb",
+        "row": 5,
+        "column": 3,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          22,
+          627,
+          622
+        ]
+      }
+    },
+    {
+      "label": "N",
+      "background": "light",
+      "atlasBox": [
+        0,
+        1536,
+        64,
+        1600
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-004-white.png",
+        "sha256": "2251ea3050c6809c8c74856e3311b0b8e8dd4481320ac2d0c095493a82fdd8de",
+        "annotationSha256": "5620b887265bee721bfb43d6b90afdaac9210a66f2c553d951e162d49ae715cb",
+        "row": 5,
+        "column": 5,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          22,
+          627,
+          622
+        ]
+      }
+    },
+    {
+      "label": "B",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        1536,
+        128,
+        1600
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-004-white.png",
+        "sha256": "2251ea3050c6809c8c74856e3311b0b8e8dd4481320ac2d0c095493a82fdd8de",
+        "annotationSha256": "5620b887265bee721bfb43d6b90afdaac9210a66f2c553d951e162d49ae715cb",
+        "row": 6,
+        "column": 1,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          22,
+          627,
+          622
+        ]
+      }
+    },
+    {
+      "label": "Q",
+      "background": "dark",
+      "atlasBox": [
+        0,
+        1600,
+        64,
+        1664
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-004-white.png",
+        "sha256": "2251ea3050c6809c8c74856e3311b0b8e8dd4481320ac2d0c095493a82fdd8de",
+        "annotationSha256": "5620b887265bee721bfb43d6b90afdaac9210a66f2c553d951e162d49ae715cb",
+        "row": 6,
+        "column": 3,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          22,
+          627,
+          622
+        ]
+      }
+    },
+    {
+      "label": "R",
+      "background": "light",
+      "atlasBox": [
+        64,
+        1600,
+        128,
+        1664
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-004-white.png",
+        "sha256": "2251ea3050c6809c8c74856e3311b0b8e8dd4481320ac2d0c095493a82fdd8de",
+        "annotationSha256": "5620b887265bee721bfb43d6b90afdaac9210a66f2c553d951e162d49ae715cb",
+        "row": 6,
+        "column": 4,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          22,
+          627,
+          622
+        ]
+      }
+    },
+    {
+      "label": "R",
+      "background": "dark",
+      "atlasBox": [
+        0,
+        1664,
+        64,
+        1728
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-004-white.png",
+        "sha256": "2251ea3050c6809c8c74856e3311b0b8e8dd4481320ac2d0c095493a82fdd8de",
+        "annotationSha256": "5620b887265bee721bfb43d6b90afdaac9210a66f2c553d951e162d49ae715cb",
+        "row": 7,
+        "column": 4,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          22,
+          627,
+          622
+        ]
+      }
+    },
+    {
+      "label": "K",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        1664,
+        128,
+        1728
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-004-white.png",
+        "sha256": "2251ea3050c6809c8c74856e3311b0b8e8dd4481320ac2d0c095493a82fdd8de",
+        "annotationSha256": "5620b887265bee721bfb43d6b90afdaac9210a66f2c553d951e162d49ae715cb",
+        "row": 7,
+        "column": 6,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          22,
+          627,
+          622
+        ]
+      }
+    },
+    {
+      "label": "r",
+      "background": "light",
+      "atlasBox": [
+        0,
+        1728,
+        64,
+        1792
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-005-white.png",
+        "sha256": "a8f678bd388fdb11521c03cbe9a3541379bc5231311214ba85d372bc7335a49c",
+        "annotationSha256": "a3bb1a1ade2ec03879bd52da0ad943cf5ce9f18e02877950911634a3d4fb6cc8",
+        "row": 0,
+        "column": 4,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          23,
+          629,
+          624
+        ]
+      }
+    },
+    {
+      "label": "k",
+      "background": "light",
+      "atlasBox": [
+        64,
+        1728,
+        128,
+        1792
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-005-white.png",
+        "sha256": "a8f678bd388fdb11521c03cbe9a3541379bc5231311214ba85d372bc7335a49c",
+        "annotationSha256": "a3bb1a1ade2ec03879bd52da0ad943cf5ce9f18e02877950911634a3d4fb6cc8",
+        "row": 0,
+        "column": 6,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          23,
+          629,
+          624
+        ]
+      }
+    },
+    {
+      "label": "r",
+      "background": "dark",
+      "atlasBox": [
+        0,
+        1792,
+        64,
+        1856
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-005-white.png",
+        "sha256": "a8f678bd388fdb11521c03cbe9a3541379bc5231311214ba85d372bc7335a49c",
+        "annotationSha256": "a3bb1a1ade2ec03879bd52da0ad943cf5ce9f18e02877950911634a3d4fb6cc8",
+        "row": 1,
+        "column": 4,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          23,
+          629,
+          624
+        ]
+      }
+    },
+    {
+      "label": "n",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        1792,
+        128,
+        1856
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-005-white.png",
+        "sha256": "a8f678bd388fdb11521c03cbe9a3541379bc5231311214ba85d372bc7335a49c",
+        "annotationSha256": "a3bb1a1ade2ec03879bd52da0ad943cf5ce9f18e02877950911634a3d4fb6cc8",
+        "row": 2,
+        "column": 3,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          23,
+          629,
+          624
+        ]
+      }
+    },
+    {
+      "label": "N",
+      "background": "dark",
+      "atlasBox": [
+        0,
+        1856,
+        64,
+        1920
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-005-white.png",
+        "sha256": "a8f678bd388fdb11521c03cbe9a3541379bc5231311214ba85d372bc7335a49c",
+        "annotationSha256": "a3bb1a1ade2ec03879bd52da0ad943cf5ce9f18e02877950911634a3d4fb6cc8",
+        "row": 5,
+        "column": 6,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          23,
+          629,
+          624
+        ]
+      }
+    },
+    {
+      "label": "b",
+      "background": "light",
+      "atlasBox": [
+        64,
+        1856,
+        128,
+        1920
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-005-white.png",
+        "sha256": "a8f678bd388fdb11521c03cbe9a3541379bc5231311214ba85d372bc7335a49c",
+        "annotationSha256": "a3bb1a1ade2ec03879bd52da0ad943cf5ce9f18e02877950911634a3d4fb6cc8",
+        "row": 6,
+        "column": 2,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          23,
+          629,
+          624
+        ]
+      }
+    },
+    {
+      "label": "R",
+      "background": "light",
+      "atlasBox": [
+        0,
+        1920,
+        64,
+        1984
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-005-white.png",
+        "sha256": "a8f678bd388fdb11521c03cbe9a3541379bc5231311214ba85d372bc7335a49c",
+        "annotationSha256": "a3bb1a1ade2ec03879bd52da0ad943cf5ce9f18e02877950911634a3d4fb6cc8",
+        "row": 7,
+        "column": 3,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          23,
+          629,
+          624
+        ]
+      }
+    },
+    {
+      "label": "K",
+      "background": "light",
+      "atlasBox": [
+        64,
+        1920,
+        128,
+        1984
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-005-white.png",
+        "sha256": "a8f678bd388fdb11521c03cbe9a3541379bc5231311214ba85d372bc7335a49c",
+        "annotationSha256": "a3bb1a1ade2ec03879bd52da0ad943cf5ce9f18e02877950911634a3d4fb6cc8",
+        "row": 7,
+        "column": 5,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          23,
+          629,
+          624
+        ]
+      }
+    },
+    {
+      "label": "r",
+      "background": "light",
+      "atlasBox": [
+        0,
+        1984,
+        64,
+        2048
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-006-white.png",
+        "sha256": "6e6384c4ab8e7d2a7c1234e166d7fe2312ffce641ceb1f0d277774dc3a9b179a",
+        "annotationSha256": "ba6b5f9ac7dfdd5f8c553b9110324071726c7d8a57708058d620c3c6fe3fd4fb",
+        "row": 0,
+        "column": 2,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          29,
+          627,
+          627
+        ]
+      }
+    },
+    {
+      "label": "r",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        1984,
+        128,
+        2048
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-006-white.png",
+        "sha256": "6e6384c4ab8e7d2a7c1234e166d7fe2312ffce641ceb1f0d277774dc3a9b179a",
+        "annotationSha256": "ba6b5f9ac7dfdd5f8c553b9110324071726c7d8a57708058d620c3c6fe3fd4fb",
+        "row": 0,
+        "column": 5,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          29,
+          627,
+          627
+        ]
+      }
+    },
+    {
+      "label": "k",
+      "background": "light",
+      "atlasBox": [
+        0,
+        2048,
+        64,
+        2112
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-006-white.png",
+        "sha256": "6e6384c4ab8e7d2a7c1234e166d7fe2312ffce641ceb1f0d277774dc3a9b179a",
+        "annotationSha256": "ba6b5f9ac7dfdd5f8c553b9110324071726c7d8a57708058d620c3c6fe3fd4fb",
+        "row": 0,
+        "column": 6,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          29,
+          627,
+          627
+        ]
+      }
+    },
+    {
+      "label": "b",
+      "background": "light",
+      "atlasBox": [
+        64,
+        2048,
+        128,
+        2112
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-006-white.png",
+        "sha256": "6e6384c4ab8e7d2a7c1234e166d7fe2312ffce641ceb1f0d277774dc3a9b179a",
+        "annotationSha256": "ba6b5f9ac7dfdd5f8c553b9110324071726c7d8a57708058d620c3c6fe3fd4fb",
+        "row": 2,
+        "column": 2,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          29,
+          627,
+          627
+        ]
+      }
+    },
+    {
+      "label": "R",
+      "background": "dark",
+      "atlasBox": [
+        0,
+        2112,
+        64,
+        2176
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-006-white.png",
+        "sha256": "6e6384c4ab8e7d2a7c1234e166d7fe2312ffce641ceb1f0d277774dc3a9b179a",
+        "annotationSha256": "ba6b5f9ac7dfdd5f8c553b9110324071726c7d8a57708058d620c3c6fe3fd4fb",
+        "row": 2,
+        "column": 3,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          29,
+          627,
+          627
+        ]
+      }
+    },
+    {
+      "label": "n",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        2112,
+        128,
+        2176
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-006-white.png",
+        "sha256": "6e6384c4ab8e7d2a7c1234e166d7fe2312ffce641ceb1f0d277774dc3a9b179a",
+        "annotationSha256": "ba6b5f9ac7dfdd5f8c553b9110324071726c7d8a57708058d620c3c6fe3fd4fb",
+        "row": 2,
+        "column": 5,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          29,
+          627,
+          627
+        ]
+      }
+    },
+    {
+      "label": "B",
+      "background": "light",
+      "atlasBox": [
+        0,
+        2176,
+        64,
+        2240
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-006-white.png",
+        "sha256": "6e6384c4ab8e7d2a7c1234e166d7fe2312ffce641ceb1f0d277774dc3a9b179a",
+        "annotationSha256": "ba6b5f9ac7dfdd5f8c553b9110324071726c7d8a57708058d620c3c6fe3fd4fb",
+        "row": 5,
+        "column": 1,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          29,
+          627,
+          627
+        ]
+      }
+    },
+    {
+      "label": "N",
+      "background": "light",
+      "atlasBox": [
+        64,
+        2176,
+        128,
+        2240
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-006-white.png",
+        "sha256": "6e6384c4ab8e7d2a7c1234e166d7fe2312ffce641ceb1f0d277774dc3a9b179a",
+        "annotationSha256": "ba6b5f9ac7dfdd5f8c553b9110324071726c7d8a57708058d620c3c6fe3fd4fb",
+        "row": 5,
+        "column": 5,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          29,
+          627,
+          627
+        ]
+      }
+    },
+    {
+      "label": "R",
+      "background": "dark",
+      "atlasBox": [
+        0,
+        2240,
+        64,
+        2304
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-006-white.png",
+        "sha256": "6e6384c4ab8e7d2a7c1234e166d7fe2312ffce641ceb1f0d277774dc3a9b179a",
+        "annotationSha256": "ba6b5f9ac7dfdd5f8c553b9110324071726c7d8a57708058d620c3c6fe3fd4fb",
+        "row": 7,
+        "column": 4,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          29,
+          627,
+          627
+        ]
+      }
+    },
+    {
+      "label": "K",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        2240,
+        128,
+        2304
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-006-white.png",
+        "sha256": "6e6384c4ab8e7d2a7c1234e166d7fe2312ffce641ceb1f0d277774dc3a9b179a",
+        "annotationSha256": "ba6b5f9ac7dfdd5f8c553b9110324071726c7d8a57708058d620c3c6fe3fd4fb",
+        "row": 7,
+        "column": 6,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          29,
+          627,
+          627
+        ]
+      }
+    },
+    {
+      "label": "b",
+      "background": "light",
+      "atlasBox": [
+        0,
+        2304,
+        64,
+        2368
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-008-white.png",
+        "sha256": "43f0e390b92a3c71c5bf507b0063afa9766175f3d32890ef9a213e6bd612b551",
+        "annotationSha256": "e92a12dbc8bb332463a0fbbf9ff637b1a7a9242768f18b464df5f5cab33aa20a",
+        "row": 0,
+        "column": 2,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          23,
+          629,
+          625
+        ]
+      }
+    },
+    {
+      "label": "q",
+      "background": "light",
+      "atlasBox": [
+        64,
+        2304,
+        128,
+        2368
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-008-white.png",
+        "sha256": "43f0e390b92a3c71c5bf507b0063afa9766175f3d32890ef9a213e6bd612b551",
+        "annotationSha256": "e92a12dbc8bb332463a0fbbf9ff637b1a7a9242768f18b464df5f5cab33aa20a",
+        "row": 0,
+        "column": 4,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          23,
+          629,
+          625
+        ]
+      }
+    },
+    {
+      "label": "k",
+      "background": "dark",
+      "atlasBox": [
+        0,
+        2368,
+        64,
+        2432
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-008-white.png",
+        "sha256": "43f0e390b92a3c71c5bf507b0063afa9766175f3d32890ef9a213e6bd612b551",
+        "annotationSha256": "e92a12dbc8bb332463a0fbbf9ff637b1a7a9242768f18b464df5f5cab33aa20a",
+        "row": 0,
+        "column": 7,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          23,
+          629,
+          625
+        ]
+      }
+    },
+    {
+      "label": "n",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        2368,
+        128,
+        2432
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-008-white.png",
+        "sha256": "43f0e390b92a3c71c5bf507b0063afa9766175f3d32890ef9a213e6bd612b551",
+        "annotationSha256": "e92a12dbc8bb332463a0fbbf9ff637b1a7a9242768f18b464df5f5cab33aa20a",
+        "row": 1,
+        "column": 4,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          23,
+          629,
+          625
+        ]
+      }
+    },
+    {
+      "label": "N",
+      "background": "dark",
+      "atlasBox": [
+        0,
+        2432,
+        64,
+        2496
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-008-white.png",
+        "sha256": "43f0e390b92a3c71c5bf507b0063afa9766175f3d32890ef9a213e6bd612b551",
+        "annotationSha256": "e92a12dbc8bb332463a0fbbf9ff637b1a7a9242768f18b464df5f5cab33aa20a",
+        "row": 2,
+        "column": 1,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          23,
+          629,
+          625
+        ]
+      }
+    },
+    {
+      "label": "N",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        2432,
+        128,
+        2496
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-008-white.png",
+        "sha256": "43f0e390b92a3c71c5bf507b0063afa9766175f3d32890ef9a213e6bd612b551",
+        "annotationSha256": "e92a12dbc8bb332463a0fbbf9ff637b1a7a9242768f18b464df5f5cab33aa20a",
+        "row": 3,
+        "column": 4,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          23,
+          629,
+          625
+        ]
+      }
+    },
+    {
+      "label": "Q",
+      "background": "light",
+      "atlasBox": [
+        0,
+        2496,
+        64,
+        2560
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-008-white.png",
+        "sha256": "43f0e390b92a3c71c5bf507b0063afa9766175f3d32890ef9a213e6bd612b551",
+        "annotationSha256": "e92a12dbc8bb332463a0fbbf9ff637b1a7a9242768f18b464df5f5cab33aa20a",
+        "row": 4,
+        "column": 2,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          23,
+          629,
+          625
+        ]
+      }
+    },
+    {
+      "label": "K",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        2496,
+        128,
+        2560
+      ],
+      "source": {
+        "image": "data/tuning/book-strategy-hatched-v1/diag-008-white.png",
+        "sha256": "43f0e390b92a3c71c5bf507b0063afa9766175f3d32890ef9a213e6bd612b551",
+        "annotationSha256": "e92a12dbc8bb332463a0fbbf9ff637b1a7a9242768f18b464df5f5cab33aa20a",
+        "row": 7,
+        "column": 6,
+        "orientation": "white-bottom",
+        "bounds": [
+          24,
+          23,
+          629,
+          625
+        ]
+      }
+    }
+  ]
+}

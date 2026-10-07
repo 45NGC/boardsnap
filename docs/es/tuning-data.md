@@ -2,6 +2,8 @@
 
 [English](../en/tuning-data.md) | **Español** · [Inicio](README.md)
 
+Esta guía describe la implementación original del perfil brown. Consulta los [perfiles evaluados](profiles.md) para los nuevos estilos digitales, el experimento de libros y la cobertura actual.
+
 Ubicación: [`data/tuning/`](../../data/tuning/).
 
 Utiliza la [herramienta de captura](capture-data.md) para recoger el primer perfil

@@ -2,6 +2,8 @@
 
 **English** | [Spanish](../es/orientation.md) · [Overview](README.md)
 
+This guide records the original brown-profile implementation. See [evaluated profiles](profiles.md) for subsequent digital styles, the experimental book profile and current coverage.
+
 `detect_orientation(board)` reads coordinate pixels from the full-resolution
 source retained by `normalize_board`. It returns `"white-bottom"` or
 `"black-bottom"`. `to_canonical(matrix, orientation)` maps an 8 × 8 matrix from

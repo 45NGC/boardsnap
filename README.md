@@ -4,7 +4,11 @@
 
 BoardSnap is a Python project for recognizing digital chessboards and book
 diagrams and returning piece placement to the Flutter app **chess-scanner**.
-**The first-profile recognition pipeline and JSON CLI are implemented. Flutter integration remains undecided.**
+**The Python pipeline and JSON CLI support three evaluated digital profiles. A book-diagram profile is experimental.**
+
+The [profile guide](docs/en/profiles.md) records exact scope, datasets and results.
+[Flutter integration](docs/en/flutter-integration.md) is documented as an HTTPS API
+for Android, iOS and web; no server or Flutter client is implemented.
 
 With the package installed, run `boardsnap image.png` (or `python -m boardsnap image.png`).
 See the [CLI guide](docs/en/cli.md) for installation, errors and exit codes.
@@ -43,6 +47,8 @@ files. Spanish documentation is maintained in `docs/es/`.
 | Normalization and segmentation | [Read](docs/en/normalization.md) | [Read](docs/es/normalization.md) |
 | Orientation | [Read](docs/en/orientation.md) | [Read](docs/es/orientation.md) |
 | Piece recognition | [Read](docs/en/classification.md) | [Read](docs/es/classification.md) |
+| Evaluated profiles | [Read](docs/en/profiles.md) | [Read](docs/es/profiles.md) |
+| Flutter integration design | [Read](docs/en/flutter-integration.md) | [Read](docs/es/flutter-integration.md) |
 | Command-line interface | [Read](docs/en/cli.md) | [Read](docs/es/cli.md) |
 | Output implementation walkthrough | [Read](docs/en/output-walkthrough.md) | [Read](docs/es/output-walkthrough.md) |
 | Roadmap | [Read](docs/en/roadmap.md) | [Read](docs/es/roadmap.md) |

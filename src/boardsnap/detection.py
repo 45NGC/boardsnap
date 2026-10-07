@@ -1,4 +1,4 @@
-"""Locate complete, axis-aligned 8 by 8 boards in the lichess brown profile."""
+"""Locate complete grids with an explicitly selected digital or print profile."""
 
 from dataclasses import dataclass
 from typing import Literal
@@ -7,10 +7,9 @@ import cv2
 import numpy as np
 from PIL import Image
 
+from boardsnap.profiles import DEFAULT_PROFILE, get_profile
 
-# RGB colors of the first profile, not coordinates from the screenshot corpus.
-_COLORS = ((240, 217, 181), (181, 136, 99))
-_COLOR_TOLERANCE = 12
+
 _MIN_BOARD_SIDE = 128
 
 
@@ -78,11 +77,49 @@ def _has_checker_pattern(masks: list[np.ndarray], bounds: BoardBounds) -> bool:
     return False
 
 
-def detect_board(image: Image.Image) -> BoardBounds:
+def _book_candidates(image: Image.Image) -> list[BoardBounds]:
+    """Find framed, lightly skewed diagrams in the fixed hatched-print edition.
+
+    The frame supplies geometry; alternating square rim brightness must also
+    support eight rows/columns. This is deliberately not a generic page detector.
+    """
+    gray = cv2.cvtColor(np.asarray(image), cv2.COLOR_RGB2GRAY)
+    _, ink = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)
+    ink = cv2.morphologyEx(ink, cv2.MORPH_CLOSE, np.ones((5, 5), np.uint8))
+    contours, _ = cv2.findContours(ink, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    candidates = []
+    for contour in contours:
+        x, y, width, height = cv2.boundingRect(contour)
+        if min(width, height) < 256 or abs(width - height) > max(width, height) * .05:
+            continue
+        if cv2.contourArea(contour) < width * height * .8:
+            continue
+        dx, dy = round(width * .023), round(height * .023)
+        bounds = BoardBounds(x + dx, y + dy, width - 2 * dx, height - 2 * dy)
+        patch = gray[bounds.y:bounds.y + bounds.height, bounds.x:bounds.x + bounds.width]
+        patch = cv2.resize(patch, (512, 512), interpolation=cv2.INTER_AREA)
+        patch = cv2.GaussianBlur(patch, (0, 0), 1.3)
+        values = np.empty((8, 8))
+        for row in range(8):
+            for col in range(8):
+                cell = patch[row * 64:(row + 1) * 64, col * 64:(col + 1) * 64]
+                rim = np.concatenate((cell[5:11, 5:-5].ravel(), cell[-11:-5, 5:-5].ravel(),
+                                      cell[5:-5, 5:11].ravel(), cell[5:-5, -11:-5].ravel()))
+                values[row, col] = np.median(rim)
+        parity = np.indices((8, 8)).sum(axis=0) % 2
+        light, dark = np.median(values[parity == 0]), np.median(values[parity == 1])
+        middle = (light + dark) / 2
+        if light - dark >= 20 and np.count_nonzero((values > middle) == (parity == 0)) >= 58:
+            candidates.append(bounds)
+    return candidates
+
+
+def detect_board(image: Image.Image, *, profile: str = DEFAULT_PROFILE) -> BoardBounds:
     """Return one board's bounds using only a fully decoded RGB image.
 
-    Supports the brown two-color profile, complete axis-aligned boards at least
-    128 pixels per side, with enough background visible in every square.
+    Digital profiles require complete axis-aligned boards at least 128 pixels
+    per side with visible backgrounds. The experimental print profile requires
+    a retained frame, at least 256 pixels per side and near-square geometry.
     Does not modify pixels, crop, infer orientation, or recognize pieces.
 
     Raises:
@@ -97,14 +134,24 @@ def detect_board(image: Image.Image) -> BoardBounds:
     if min(image.size) < _MIN_BOARD_SIDE:
         raise BoardDetectionError("BOARD_NOT_FOUND", "No supported chessboard was detected in the image.")
 
+    config = get_profile(profile)
+    if config.kind == "print":
+        candidates = _book_candidates(image)
+        if not candidates:
+            raise BoardDetectionError("BOARD_NOT_FOUND", "No supported chessboard was detected in the image.")
+        if len(candidates) > 1:
+            raise BoardDetectionError("UNSUPPORTED_IMAGE", "Images with multiple chessboards are not supported.")
+        return candidates[0]
+    colors = config.colors
+    tolerance = config.color_tolerance
     pixels = np.asarray(image)
     masks = [
         cv2.inRange(
             pixels,
-            np.array([channel - _COLOR_TOLERANCE for channel in color], dtype=np.uint8),
-            np.array([min(255, channel + _COLOR_TOLERANCE) for channel in color], dtype=np.uint8),
+            np.array([max(0, channel - tolerance) for channel in color], dtype=np.uint8),
+            np.array([min(255, channel + tolerance) for channel in color], dtype=np.uint8),
         )
-        for color in _COLORS
+        for color in colors
     ]
     background = cv2.bitwise_or(*masks)
     # Close tiny antialiased seams without filling the piece-sized holes.

@@ -2,6 +2,8 @@
 
 **English** | [Spanish](../es/classification.md) · [Overview](README.md)
 
+This guide records the original brown-profile implementation. See [evaluated profiles](profiles.md) for subsequent digital styles, the experimental book profile and current coverage.
+
 The initial template classifier supports **cburnett pieces on the lichess brown
 board**. It chooses one of thirteen classes for each square: empty (`None`),
 white `PNBRQK`, or black `pnbrqk`. Classification uses only square pixels, not
@@ -76,7 +78,7 @@ or failure. Success is exactly `{"piecePlacement": "..."}`. It propagates the
 stage exceptions; adapters serialize `error.to_dict()`. Missing/corrupt templates
 raise `ClassificationError` with `PROCESSING_FAILED`, never an empty position.
 Invalid internal image types, modes or dimensions raise `TypeError`/`ValueError`.
-The [registered recognition CLI](cli.md) serializes these outcomes. Flutter integration remains undecided.
+The [registered recognition CLI](cli.md) serializes these outcomes. the [Flutter HTTPS design](flutter-integration.md) is documented separately.
 
 ## Evaluation protocol fixed before held-out execution
 

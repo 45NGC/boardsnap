@@ -1,0 +1,29 @@
+{
+  "groupId": "diag-008",
+  "split": "tuning",
+  "piecePlacement": "2b1qr1k/4n1pp/pN6/2R1N3/2Q5/8/P5PP/6K1",
+  "views": [
+    "white"
+  ],
+  "image": "diag-008-white.png",
+  "profileId": "book-strategy-hatched-v1",
+  "orientation": "white-bottom",
+  "imageSize": {
+    "width": 650,
+    "height": 639
+  },
+  "boardBounds": {
+    "x": 24,
+    "y": 23,
+    "width": 605,
+    "height": 602
+  },
+  "sha256": "43f0e390b92a3c71c5bf507b0063afa9766175f3d32890ef9a213e6bd612b551",
+  "source": {
+    "url": "https://www.gutenberg.org/cache/epub/5614/images/diag08.jpg",
+    "originalSha256": "279c6ee463436712df6a2921a83189542d452d4fcb308d1acafb00af2933305b",
+    "method": "Downloaded original JPEG; RGB decoded pixels saved losslessly as PNG. No redraw, recoloring or geometric correction.",
+    "annotationMethod": "Visual transcription of pieces and approximate grid interior; white-bottom convention (no coordinate labels).",
+    "retrievedAt": "2026-10-07"
+  }
+}

@@ -73,10 +73,15 @@ An error result contains no partial position, confidence or invented empty board
 
 ## Coverage and tests
 
-The CLI has exactly the core's current scope: the initial brown/cburnett lichess
-profile, with the documented White-at-the-bottom fallback when coordinates cannot
-be read. See [classification results and limits](classification.md). Adding a
-command does not establish compatibility with new styles or decide Flutter transport.
+Select a [profile](profiles.md) using `--profile PROFILE_ID`; omission retains
+brown/cburnett. The three digital profiles are evaluated on a small corpus;
+the book profile is experimental with two known full-position failures.
+Unknown profile IDs are usage errors (exit 2). [Flutter transport](flutter-integration.md)
+is documented separately; the CLI does not start a server.
+
+```bash
+boardsnap image.png --profile chesscom-default-green-v1
+```
 
 ```bash
 python -m pytest tests/test_cli.py tests/test_cli_process.py
@@ -92,7 +97,7 @@ with spaces/unicode and leading dashes. Adapter unit tests inject errors and noi
 stages to verify all error codes, unexpected failures, stream restoration and
 process-control propagation; these injections do not measure recognition accuracy.
 
-Verified results: all **74 CLI tests** passed (10 unit, 56 integration and 8
-reserved-image subprocess cases). The full suite passed **781 tests**, with
+Original-profile baseline: all **74 CLI tests** passed (10 unit, 56 integration and 8
+reserved-image subprocess cases). At that stage, the full suite passed **781 tests**, with
 7 optional browser tests skipped. Both installed and module commands were
 checked without changing the recognition templates or evaluation data.

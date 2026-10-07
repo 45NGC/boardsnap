@@ -15,13 +15,14 @@ from boardsnap.segmentation import split_squares
 from boardsnap.orientation import detect_orientation, to_canonical
 from boardsnap.classification import ClassificationError, classify_squares
 from boardsnap.output import build_result
+from boardsnap.profiles import DEFAULT_PROFILE, PROFILES
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
-        "input", nargs="?", type=Path, default=Path("data/tuning"),
-        help="Image or directory to scan recursively (default: data/tuning).",
+        "input", nargs="?", type=Path, default=Path(f"data/tuning/{DEFAULT_PROFILE}"),
+        help="Image or directory to scan recursively (default: data/tuning/lichess-cburnett-brown-v1).",
     )
     parser.add_argument(
         "--output-dir", type=Path, default=Path(".cache/detection-preview"),
@@ -39,6 +40,7 @@ def main(argv: list[str] | None = None) -> int:
         "--recognition", action="store_true",
         help="Also save orientation previews and recognized piecePlacement in result.json.",
     )
+    parser.add_argument("--profile", choices=tuple(PROFILES), default=DEFAULT_PROFILE)
     args = parser.parse_args(argv)
     source = args.input.resolve()
     output = args.output_dir.resolve()
@@ -67,7 +69,7 @@ def main(argv: list[str] | None = None) -> int:
             for name in names:
                 (destination / name).unlink(missing_ok=True)
             with read_image(path) as image:
-                bounds = detect_board(image)
+                bounds = detect_board(image, profile=args.profile)
                 left, top, right, bottom = bounds.as_box()
                 with image.copy() as preview:
                     ImageDraw.Draw(preview).rectangle(
@@ -89,7 +91,7 @@ def main(argv: list[str] | None = None) -> int:
                             for col_index, square in enumerate(row):
                                 square.save(destination / "squares" / f"row-{row_index}-col-{col_index}.png")
                         if args.orientation or args.recognition:
-                            orientation = detect_orientation(normalized)
+                            orientation = detect_orientation(normalized, profile=args.profile)
                             canonical = to_canonical(squares, orientation)
                             with Image.new("RGB", normalized.image.size) as ordered:
                                 for row_index, row in enumerate(canonical):
@@ -98,7 +100,7 @@ def main(argv: list[str] | None = None) -> int:
                                 ordered.save(destination / "canonical.png")
                             (destination / "orientation.txt").write_text(orientation + "\n", encoding="utf-8")
                             if args.recognition:
-                                result = build_result(to_canonical(classify_squares(squares), orientation))
+                                result = build_result(to_canonical(classify_squares(squares, profile=args.profile), orientation))
                                 (destination / "result.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
             print(f"{path.name}: {bounds.as_box()} -> {destination}")
         except (ImageInputError, BoardDetectionError, ClassificationError) as error:

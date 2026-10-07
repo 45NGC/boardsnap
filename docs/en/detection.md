@@ -2,6 +2,8 @@
 
 **English** | [Spanish](../es/detection.md) · [Overview](README.md)
 
+This guide records the original brown-profile implementation. See [evaluated profiles](profiles.md) for subsequent digital styles, the experimental book profile and current coverage.
+
 `boardsnap.detection.detect_board(image)` locates a complete, axis-aligned
 8 × 8 grid in a decoded RGB Pillow image. The initial implementation targets
 the brown board in `lichess-cburnett-brown-v1`. It uses only pixels; it does not

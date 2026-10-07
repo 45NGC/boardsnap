@@ -72,7 +72,7 @@ fallos de entrada.
 
 El adaptador de CLI convierte ese diccionario en JSON. Los fallos no devuelven
 `piecePlacement`. La [detección](detection.md) utiliza esta representación;
-la [CLI](cli.md) está implementada y la integración Flutter sigue por decidir.
+la [CLI](cli.md) está implementada y el [diseño HTTPS para Flutter](flutter-integration.md) queda documentado aparte.
 
 ## Pruebas
 

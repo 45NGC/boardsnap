@@ -6,10 +6,12 @@
 digital o un diagrama de libro y devuelve una única colocación de piezas para
 la aplicación Flutter **chess-scanner**.
 
-**Estado: flujo Python del primer perfil implementado, incluida la clasificación por plantillas.** El paquete también
-convierte una matriz de 8 × 8 ya clasificada en el diccionario de salida mediante
-`boardsnap.output.build_result(board)`. Pasan los 53 casos de prueba de salida.
-Los demás módulos se crearán cuando se implemente su funcionalidad.
+**Estado: flujo Python y CLI JSON con tres perfiles digitales evaluados.**
+La [guía de perfiles](profiles.md) describe brown/cburnett, blue/cburnett y el
+estilo verde capturado de Chess.com. El perfil de libros es **experimental**:
+126/128 casillas reservadas correctas, pero 0/2 posiciones completas. Hay 65
+imágenes (51 de ajuste y 14 reservadas). La [integración Flutter](flutter-integration.md)
+se documenta mediante un futuro adaptador HTTPS para Android, iOS y web; no está implementada.
 
 La [entrada de imágenes](image-input.md) lee PNG/JPEG estáticos como imágenes
 RGB cargadas y ofrece errores estructurados mediante `ImageInputError`.
@@ -47,9 +49,8 @@ alternativas ni solicitudes de confirmación. Las correcciones de piezas
 corresponderán al editor de chess-scanner.
 
 El [contrato de salida](output-contract.md) define el orden de las casillas,
-la orientación por defecto y los errores estructurados. El mecanismo de
-integración con Flutter está pendiente de una decisión expresa; el núcleo será
-independiente de Flutter y de cualquier framework web.
+la orientación por defecto y los errores estructurados. El [diseño Flutter](flutter-integration.md)
+propone HTTPS; el núcleo sigue independiente de Flutter y de frameworks web.
 
 La [explicación de output.py](output-walkthrough.md) recorre el código de la
 función de salida paso a paso, con ejemplos de validación y compresión de huecos.
@@ -80,7 +81,8 @@ src/boardsnap/
     __init__.py
     output.py            # Validación de matrices y serialización de la colocación
     image_input.py       # Decodificación PNG/JPEG, normalización RGB y errores
-    detection.py         # Límites de cuadrícula del primer perfil brown
+    profiles.py          # Colores, recursos y coordenadas de cada perfil
+    detection.py         # Límites de cuadrícula del perfil elegido
     normalization.py     # Escalado y conservación de pistas de orientación
     segmentation.py      # 64 recortes independientes en orden visual
     orientation.py       # Lectura de coordenadas y orden canónico
@@ -94,12 +96,12 @@ docs/
     en/                 # Documentación en inglés
     es/                 # Documentación en español
 data/manifests/          # Manifiesto fijo y asignación de particiones
-data/tuning/             # 16 imágenes iniciales de ajuste y anotaciones
+data/tuning/             # 51 imágenes de ajuste y anotaciones
 tests/
     README.md
     test_output.py       # Especificación de salida previa a la implementación
     test_dataset.py      # Integridad de imágenes, anotaciones y particiones
-    fixtures/evaluation/ # 4 imágenes reservadas de evaluación y anotaciones
+    fixtures/evaluation/ # 14 imágenes reservadas y anotaciones
 ```
 
 La [arquitectura](architecture.md) describe el flujo y la separación de
@@ -156,10 +158,9 @@ paquete editable para registrar el comando. Consulta [uso, errores y códigos](c
 
 ## Estilos y limitaciones
 
-La detección está implementada y probada para `lichess-cburnett-brown-v1`;
-consulta su [alcance medido y limitaciones](detection.md) y la
-[referencia de reconocimiento](classification.md). Otros temas de
-lichess, chess.com y diagramas impresos siguen siendo perfiles futuros.
+Consulta los [perfiles evaluados](profiles.md) para los tres estilos digitales,
+el experimento de libros, los resultados reservados y sus límites. Brown sigue
+siendo el perfil predeterminado; selecciona los demás con `--profile`.
 
 Quedan fuera las fotografías de tableros físicos con piezas tridimensionales.
 No se presupone compatibilidad con cualquier diseño, color o resolución. Los

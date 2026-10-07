@@ -114,3 +114,20 @@ y grupos. La integridad por sí sola no reconoce píxeles. Las pruebas de
 reconocimiento reciben solo imágenes; las anotaciones son resultados esperados.
 Detección y clasificación tienen resultados medidos limitados en sus respectivas
 guías; el corpus actual no demuestra compatibilidad amplia entre estilos.
+
+## Regresión de la ampliación de perfiles
+
+`python -m pytest tests/test_profiles.py` comprueba geometría, orientación,
+posición completa, negativos, selección en CLI, procedencia de plantillas,
+particiones entre perfiles y recortes/escalados digitales. Dos pruebas `xfail`
+estrictas muestran los fallos de posición completa del libro experimental.
+No son casos de aceptación superados. Consulta los [perfiles medidos](profiles.md).
+
+Validación de esta iteración: **854 pruebas superadas, 7 opcionales de navegador
+omitidas y 2 fallos esperados** en la batería normal. Después se ejecutaron
+expresamente las siete pruebas locales de Chromium y pasaron todas: **861 pruebas
+superadas en total**. Los dos fallos esperados son la aceptación pendiente del libro.
+Se construyó e instaló un wheel por separado y se comprobó cada perfil desde fuera
+del repositorio, con imágenes anónimas sin anotaciones adjuntas. Reconstruir las
+plantillas reproduce los recursos byte a byte en el entorno actual; los informes
+reproducen los resultados registrados.

@@ -148,7 +148,8 @@ WAIT_FOR_ARTWORK = """async board => {
 }"""
 
 
-def capture_position(page, position: dict, color: str, folder: Path, browser_version: str) -> None:
+def capture_position(page, position: dict, color: str, folder: Path, browser_version: str,
+                     profile_id: str = PROFILE) -> None:
     placement = position["piecePlacement"]
     url = editor_url(placement, color)
     response = page.goto(url, wait_until="domcontentloaded")
@@ -157,12 +158,19 @@ def capture_position(page, position: dict, color: str, folder: Path, browser_ver
     board = page.locator(BOARD)
     board.wait_for(state="visible")
     page.locator(f".main-board .cg-wrap.orientation-{color}").wait_for(state="visible")
+    if profile_id == "lichess-cburnett-blue-v1" and page.locator("body").get_attribute("data-board") != "blue":
+        page.locator(".dasher .toggle").evaluate("e => e.click()")
+        page.locator("#dasher_app button.sub").filter(has_text="Board").evaluate("e => e.click()")
+        page.locator('#dasher_app button[title="blue"]').evaluate("e => e.click()")
+        page.wait_for_function("document.body.dataset.board === 'blue'")
+        page.locator(".dasher .toggle").evaluate("e => e.click()")
     profile = page.locator("body").evaluate(
         "e => ({board:e.dataset.board, pieces:e.dataset.pieceSet, "
         "is3d:e.classList.contains('is3d'), coordinates:e.classList.contains('coords-in')})"
     )
-    if profile != {"board": "brown", "pieces": "cburnett", "is3d": False, "coordinates": True}:
-        raise ValueError(f"The live editor no longer matches {PROFILE}: {profile}")
+    expected_theme = "blue" if profile_id == "lichess-cburnett-blue-v1" else "brown"
+    if profile != {"board": expected_theme, "pieces": "cburnett", "is3d": False, "coordinates": True}:
+        raise ValueError(f"The live editor no longer matches {profile_id}: {profile}")
     actual = page.locator(".copyables input").first.input_value().split()[0]
     if actual != placement:
         raise ValueError(f"Editor loaded a different position: {actual}")
@@ -187,7 +195,7 @@ def capture_position(page, position: dict, color: str, folder: Path, browser_ver
     name = f"{position['groupId']}-{color}"
     annotation = {
         "image": f"{name}.png",
-        "profileId": PROFILE,
+        "profileId": profile_id,
         "groupId": position["groupId"],
         "split": position["split"],
         "orientation": f"{color}-bottom",

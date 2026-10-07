@@ -2,6 +2,8 @@
 
 **English** | [Spanish](../es/evaluation-data.md) · [Overview](README.md)
 
+This guide records the original brown-profile implementation. See [evaluated profiles](profiles.md) for subsequent digital styles, the experimental book profile and current coverage.
+
 Location: [`tests/fixtures/evaluation/`](../../tests/fixtures/evaluation/).
 
 The first profile contains four annotated PNGs: `pos-003` (pawn ending) and

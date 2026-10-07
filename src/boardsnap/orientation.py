@@ -1,4 +1,4 @@
-"""Read first-profile border coordinates and reorder cells into a8-to-h1 order."""
+"""Read supported border coordinates and reorder cells into a8-to-h1 order."""
 
 from functools import lru_cache
 from importlib.resources import files
@@ -11,21 +11,28 @@ from PIL import Image
 
 from boardsnap.normalization import NormalizedBoard
 from boardsnap.detection import BoardBounds
+from boardsnap.profiles import DEFAULT_PROFILE, get_profile
 
 
 Orientation = Literal["white-bottom", "black-bottom"]
 _T = TypeVar("_T")
-_COLORS = np.array(((240, 217, 181), (181, 136, 99)), dtype=float)
 
 
-def _coordinate_boxes(bounds: BoardBounds) -> tuple[list[tuple[int, int, int, int]], ...]:
-    """First-profile labels: lower-left of bottom cells, upper-right of right cells."""
+def _coordinate_boxes(bounds: BoardBounds, profile: str = DEFAULT_PROFILE) -> tuple[list[tuple[int, int, int, int]], ...]:
+    """Use each digital profile's coordinate placement within border cells."""
     x, y, width, height = bounds.x, bounds.y, bounds.width, bounds.height
     sx, sy = width / 8, height / 8
     # Exclude the outer shadow without cutting off the small coordinate glyphs.
     inset_x = max(1, round(width / 584 * 2))
     inset_y = max(1, round(height / 584 * 2))
     bottom_gap = max(1, round(height / 584))
+    if get_profile(profile).coordinates == "chesscom":
+        return (
+            [(round(x + (col + .72) * sx), round(y + height - sy * .28),
+              round(x + (col + 1) * sx) - inset_x, y + height - bottom_gap) for col in range(8)],
+            [(x + inset_x, round(y + row * sy) + inset_y,
+              round(x + sx * .25), round(y + (row + .28) * sy)) for row in range(8)],
+        )
     return (
         [(round(x + col * sx) + inset_x, round(y + height - sy * .22),
           round(x + col * sx + sx * .22), y + height - bottom_gap) for col in range(8)],
@@ -34,14 +41,15 @@ def _coordinate_boxes(bounds: BoardBounds) -> tuple[list[tuple[int, int, int, in
     )
 
 
-def _glyph_mask(image: Image.Image) -> np.ndarray | None:
+def _glyph_mask(image: Image.Image, profile: str = DEFAULT_PROFILE) -> np.ndarray | None:
     """Extract a contrasting glyph on one of the two known square backgrounds."""
     pixels = np.asarray(image, dtype=float)
     median = np.median(pixels, axis=(0, 1))
-    distances = np.linalg.norm(_COLORS - median, axis=1)
+    colors = np.asarray(get_profile(profile).colors, dtype=float)
+    distances = np.linalg.norm(colors - median, axis=1)
     if distances.min() > 25:
         return None
-    background = _COLORS[distances.argmin()].mean()
+    background = colors[distances.argmin()].mean()
     # Grayscale tolerates Chromium's colored subpixel antialiasing on text.
     gray = pixels.mean(axis=2)
     mask = gray < background - 35 if background > 180 else gray > background + 35
@@ -66,10 +74,10 @@ def _normalized_mask(mask: np.ndarray) -> np.ndarray:
     return result
 
 
-@lru_cache(maxsize=1)
-def _templates() -> dict[str, list[np.ndarray]]:
+@lru_cache(maxsize=8)
+def _templates(profile: str = DEFAULT_PROFILE) -> dict[str, list[np.ndarray]]:
     # Shipped package data, never runtime reads from tuning/evaluation folders.
-    data = json.loads(files("boardsnap").joinpath("assets/coordinate-glyphs.json").read_text())
+    data = json.loads(files("boardsnap").joinpath(f"assets/{get_profile(profile).coordinate_asset}.json").read_text())
     return {
         symbol: [_normalized_mask(np.array([[int(pixel) for pixel in row] for row in bitmap],
                                           dtype=np.uint8)) for bitmap in bitmaps]
@@ -77,15 +85,15 @@ def _templates() -> dict[str, list[np.ndarray]]:
     }
 
 
-def _read_coordinate(image: Image.Image, alphabet: str) -> str | None:
-    mask = _glyph_mask(image)
+def _read_coordinate(image: Image.Image, alphabet: str, profile: str = DEFAULT_PROFILE) -> str | None:
+    mask = _glyph_mask(image, profile)
     if mask is None:
         return None
     glyph = _normalized_mask(mask)
     scores = []
     for symbol in alphabet:
         score = max(np.count_nonzero(glyph & template) / np.count_nonzero(glyph | template)
-                    for template in _templates()[symbol])
+                    for template in _templates(profile)[symbol])
         scores.append((score, symbol))
     scores.sort(reverse=True)
     # Internal template similarity gates, never confidence fields in the result.
@@ -94,15 +102,16 @@ def _read_coordinate(image: Image.Image, alphabet: str) -> str | None:
     return scores[0][1]
 
 
-def detect_orientation(board: NormalizedBoard) -> Orientation:
-    """Read first-profile coordinates from preserved source pixels.
+def detect_orientation(board: NormalizedBoard, *, profile: str = DEFAULT_PROFILE) -> Orientation:
+    """Read selected-profile coordinates from preserved source pixels.
 
     At least four readable labels must agree on one direction, with no readable
     contradictions across either axis. Missing, unreadable or conflicting clues
     deterministically fall back to white-bottom. No piece/layout assumptions,
     metadata, filenames or annotations are used. This does not rotate images.
 
-    Only the first profile's internal bottom-file/right-rank labels are supported.
+    Lichess uses bottom-file/right-rank labels; Chess.com uses bottom-file/left-rank.
+    The print profile has no coordinates and always uses the documented fallback.
     Invalid internal arguments raise TypeError/ValueError, not a guessed position.
     """
     if not isinstance(board, NormalizedBoard):
@@ -117,14 +126,14 @@ def detect_orientation(board: NormalizedBoard) -> Orientation:
     if (min(bounds.x, bounds.y) < 0 or min(bounds.width, bounds.height) <= 0
             or bounds.x + bounds.width > image.width or bounds.y + bounds.height > image.height):
         raise ValueError("Board bounds must lie entirely inside the source image.")
-    if min(bounds.width, bounds.height) < 256:
+    if get_profile(profile).coordinates == "none" or min(bounds.width, bounds.height) < 256:
         return "white-bottom"
 
     directions: list[str] = []
-    for boxes, expected in zip(_coordinate_boxes(bounds), ("abcdefgh", "87654321"), strict=True):
+    for boxes, expected in zip(_coordinate_boxes(bounds, profile), ("abcdefgh", "87654321"), strict=True):
         for index, box in enumerate(boxes):
             with image.crop(box) as patch:
-                symbol = _read_coordinate(patch, expected)
+                symbol = _read_coordinate(patch, expected, profile)
             if symbol is None:
                 continue
             if symbol == expected[index]:

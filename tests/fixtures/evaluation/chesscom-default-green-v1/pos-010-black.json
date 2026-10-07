@@ -1,0 +1,41 @@
+{
+  "image": "pos-010-black.png",
+  "profileId": "chesscom-default-green-v1",
+  "groupId": "pos-010",
+  "split": "evaluation",
+  "orientation": "black-bottom",
+  "boardBounds": {
+    "x": 228,
+    "y": 66,
+    "width": 704,
+    "height": 704
+  },
+  "imageSize": {
+    "width": 1280,
+    "height": 1000
+  },
+  "piecePlacement": "r2q1rk1/pp2bppp/2npbn2/2p1p3/2P1P3/2NP1NP1/PP2QPBP/R1B2RK1",
+  "sha256": "9ae55db9da07354531abd9a151dab02bb01299af6801ed489979e6e00a09cc49",
+  "source": {
+    "url": "https://www.chess.com/analysis?fen=r2q1rk1%2Fpp2bppp%2F2npbn2%2F2p1p3%2F2P1P3%2F2NP1NP1%2FPP2QPBP%2FR1B2RK1",
+    "capturedAt": "2026-10-07T11:43:47.285018+00:00",
+    "browser": "Chromium 153.0.8010.12",
+    "artwork": [
+      "https://assets-themes.chess.com/image/9rdwe/200.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/bb.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/bk.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/bn.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/bp.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/bq.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/br.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/wb.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/wk.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/wn.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/wp.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/wq.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/wr.png"
+    ],
+    "method": "Live analysis board; DOM piece geometry verified",
+    "pageModification": "Onboarding dismissed, tracking rejected; analysis arrows, highlights, evaluation bar and input fields hidden"
+  }
+}

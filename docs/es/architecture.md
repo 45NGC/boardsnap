@@ -4,14 +4,14 @@
 
 Esta es la distribución de responsabilidades. La entrada, la detección, la
 normalización, la segmentación, la orientación, la clasificación, la coordinación
-del flujo y la serialización están implementadas. La CLI ya tiene adaptador; el transporte Flutter sigue por decidir.
+del flujo y la serialización están implementadas. La CLI ya tiene adaptador; el futuro transporte HTTPS queda [documentado](flutter-integration.md).
 El repositorio inicial contenía únicamente README, licencia y un `.gitignore`
 genérico de Python; no existía código de reconocimiento que conservar o migrar.
 
 Se usa un único paquete, `boardsnap`, bajo `src/`. Contiene `__init__.py`
 y `output.py`, que valida y serializa una matriz ya clasificada, además de
 `image_input.py`, que carga PNG/JPEG y lanza errores estructurados de entrada.
-`detection.py` localiza la cuadrícula del primer perfil y devuelve `BoardBounds` inmutable.
+`profiles.py` define cada perfil. `detection.py` localiza su cuadrícula y devuelve `BoardBounds` inmutable.
 `normalization.py` devuelve `NormalizedBoard` con píxeles escalados, una copia
 independiente del origen a resolución completa y sus límites. `segmentation.py`
 devuelve una matriz de 8 × 8 recortes independientes en orden visual; consulta
@@ -19,20 +19,20 @@ la [guía de normalización](normalization.md) para la gestión de imágenes y g
 `orientation.py` lee las coordenadas admitidas del origen conservado y reordena
 las casillas. Sus plantillas de caracteres se instalan con el paquete y proceden
 solo de datos de ajuste; consulta [orientación](orientation.md).
-`classification.py` compara características de las casillas con plantillas cburnett
+`classification.py` compara características de las casillas con plantillas del perfil
 incluidas en el paquete. `pipeline.py` ofrece `recognize_image(path)` y gestiona
 los recursos; devuelve solo colocación y propaga errores estructurados.
 Consulta [clasificación](classification.md).
-Los demás módulos se crearán al implementar cada responsabilidad; sus nombres son
-orientativos. No se anticipan jerarquías de clases, registros de plugins ni
-servicios. La
+Los perfiles se definen en una tabla estática sencilla, sin un sistema dinámico
+de plugins. Ya existen las etapas indicadas; no se añade servidor ni framework.
+La
 [guía de empaquetado de PyPA](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
 describe esta organización y la configuración mediante `pyproject.toml`.
 
-## Flujo previsto
+## Flujo de reconocimiento
 
 ```text
-Adaptador (CLI; integración Flutter por decidir)
+Adaptador (CLI implementada; transporte HTTPS documentado)
     → pipeline
         → image_input → detection → normalization → segmentation
         → classification → orientation → output
@@ -91,8 +91,8 @@ La elección y la instalación de PyTorch se harán al abordar ese experimento.
 
 ## Integración externa
 
-La [CLI](cli.md) recibe una ruta y emite JSON. Es un consumidor del núcleo,
-no una decisión sobre cómo ejecutará Python la app Flutter. Servicio remoto,
-proceso local u otra vía deberán decidirse expresamente según las plataformas
-y restricciones de chess-scanner. Hasta entonces no habrá servidor, endpoints,
-SDK de Flutter ni código de despliegue.
+La [CLI](cli.md) y la API Python aceptan un perfil explícito, con brown como
+predeterminado. Los [perfiles evaluados](profiles.md) describen límites y el
+experimento de libros. El [diseño de integración Flutter](flutter-integration.md)
+propone un adaptador HTTPS separado para Android, iOS y web. Utilizará el mismo
+núcleo; esta iteración no incorpora servidor, código Flutter ni framework web.

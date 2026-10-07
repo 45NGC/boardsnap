@@ -1,0 +1,16 @@
+{
+  "profileId": "chesscom-default-green-v1",
+  "notes": "Current Chess.com default green/artwork profile captured live, both views. Original cross-profile splits retained. The illegal corner diagnostic pos-005 is omitted because the site rejects it. Empty pos-004 uses explicitly recorded removal of piece DOM nodes for tuning calibration. This small pilot is not a representative benchmark.",
+  "positions": [
+    {
+      "groupId": "pos-003",
+      "split": "evaluation",
+      "piecePlacement": "8/5pk1/6p1/8/4P3/5K2/8/8"
+    },
+    {
+      "groupId": "pos-010",
+      "split": "evaluation",
+      "piecePlacement": "r2q1rk1/pp2bppp/2npbn2/2p1p3/2P1P3/2NP1NP1/PP2QPBP/R1B2RK1"
+    }
+  ]
+}

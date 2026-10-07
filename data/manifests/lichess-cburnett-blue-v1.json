@@ -1,0 +1,56 @@
+{
+  "profileId": "lichess-cburnett-blue-v1",
+  "notes": "Pilot with 10 distinct positions and two orientations each: 16 tuning images and 4 evaluation images. Includes openings, constructed middlegame/endgame positions, an empty board and a corner diagnostic; chess legality is not required. Positions are selected or constructed for capture checks, not sampled from a game corpus. This is not a representative recognition benchmark. Review screenshots and annotations before adopting them as data. Record asset permissions before redistributing captures.",
+  "positions": [
+    {
+      "groupId": "pos-001",
+      "split": "tuning",
+      "piecePlacement": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR"
+    },
+    {
+      "groupId": "pos-002",
+      "split": "tuning",
+      "piecePlacement": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R"
+    },
+    {
+      "groupId": "pos-003",
+      "split": "evaluation",
+      "piecePlacement": "8/5pk1/6p1/8/4P3/5K2/8/8"
+    },
+    {
+      "groupId": "pos-004",
+      "split": "tuning",
+      "piecePlacement": "8/8/8/8/8/8/8/8"
+    },
+    {
+      "groupId": "pos-005",
+      "split": "tuning",
+      "piecePlacement": "r6k/8/8/8/8/8/8/K6R"
+    },
+    {
+      "groupId": "pos-006",
+      "split": "tuning",
+      "piecePlacement": "6k1/5pp1/7p/3q4/8/2Q2P2/5KPP/8"
+    },
+    {
+      "groupId": "pos-007",
+      "split": "tuning",
+      "piecePlacement": "8/5pk1/6p1/1r5p/7P/3R2P1/5PK1/8"
+    },
+    {
+      "groupId": "pos-008",
+      "split": "tuning",
+      "piecePlacement": "6k1/pp3ppp/2n5/8/3N4/8/PP3PPP/6K1"
+    },
+    {
+      "groupId": "pos-009",
+      "split": "tuning",
+      "piecePlacement": "5bk1/5ppp/8/3p4/3P4/2B5/5PPP/6K1"
+    },
+    {
+      "groupId": "pos-010",
+      "split": "evaluation",
+      "piecePlacement": "r2q1rk1/pp2bppp/2npbn2/2p1p3/2P1P3/2NP1NP1/PP2QPBP/R1B2RK1"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "image": "pos-003-white.png",
+  "profileId": "lichess-cburnett-blue-v1",
+  "groupId": "pos-003",
+  "split": "evaluation",
+  "orientation": "white-bottom",
+  "boardBounds": {
+    "x": 189.890625,
+    "y": 158.46875,
+    "width": 584,
+    "height": 584
+  },
+  "imageSize": {
+    "width": 1280,
+    "height": 1000
+  },
+  "piecePlacement": "8/5pk1/6p1/8/4P3/5K2/8/8",
+  "source": {
+    "url": "https://lichess.org/editor?fen=8%2F5pk1%2F6p1%2F8%2F4P3%2F5K2%2F8%2F8&color=white",
+    "capturedAt": "2026-10-07T11:39:57.379764+00:00",
+    "method": "Playwright screenshot of the live lichess editor",
+    "browser": "Chromium 153.0.8010.12",
+    "playwright": "1.63.0",
+    "deviceScaleFactor": 1,
+    "colorScheme": "light",
+    "locale": "en-GB",
+    "pageModification": "FEN/URL fields and board resize handle hidden using CSS visibility"
+  },
+  "sha256": "eb23ad5b91b2f6e04ba44d527b748cbc399e4421a9bc735f136b8f66d1a783f2"
+}

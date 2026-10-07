@@ -57,3 +57,8 @@ Run these checks with `python -m pytest -m evaluation`. They check dataset
 integrity, not recognition accuracy, and do not access the browser or network.
 
 A [Spanish version of the test plan](../docs/es/testing.md) is also available.
+
+`test_profiles.py` adds regression, provenance, split isolation and CLI checks
+for additional styles. The experimental book profile has two strict expected
+full-position failures (`xfail`), not two accepted positions. Results and scope
+are recorded in the [profile guide](../docs/en/profiles.md).

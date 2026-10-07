@@ -1,0 +1,35 @@
+{
+  "image": "pos-009-white.png",
+  "profileId": "chesscom-default-green-v1",
+  "groupId": "pos-009",
+  "split": "tuning",
+  "orientation": "white-bottom",
+  "boardBounds": {
+    "x": 228,
+    "y": 66,
+    "width": 704,
+    "height": 704
+  },
+  "imageSize": {
+    "width": 1280,
+    "height": 1000
+  },
+  "piecePlacement": "5bk1/5ppp/8/3p4/3P4/2B5/5PPP/6K1",
+  "sha256": "5ddc786a38c7dd0b2542aef67352a2a1fe7ebebe77f6f70902c2905b05e005c5",
+  "source": {
+    "url": "https://www.chess.com/analysis?fen=5bk1%2F5ppp%2F8%2F3p4%2F3P4%2F2B5%2F5PPP%2F6K1",
+    "capturedAt": "2026-10-07T11:43:38.368459+00:00",
+    "browser": "Chromium 153.0.8010.12",
+    "artwork": [
+      "https://assets-themes.chess.com/image/9rdwe/200.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/bb.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/bk.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/bp.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/wb.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/wk.png",
+      "https://assets-themes.chess.com/image/ejgfv/150/wp.png"
+    ],
+    "method": "Live analysis board; DOM piece geometry verified",
+    "pageModification": "Onboarding dismissed, tracking rejected; analysis arrows, highlights, evaluation bar and input fields hidden"
+  }
+}

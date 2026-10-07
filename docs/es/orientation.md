@@ -2,6 +2,8 @@
 
 [English](../en/orientation.md) | **Español** · [Inicio](README.md)
 
+Esta guía describe la implementación original del perfil brown. Consulta los [perfiles evaluados](profiles.md) para los nuevos estilos digitales, el experimento de libros y la cobertura actual.
+
 `detect_orientation(board)` lee las coordenadas en los píxeles del origen a
 resolución completa conservado por `normalize_board`. Devuelve `"white-bottom"`
 o `"black-bottom"`. `to_canonical(matrix, orientation)` transforma una matriz

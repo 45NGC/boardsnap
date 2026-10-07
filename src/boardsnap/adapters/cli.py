@@ -9,6 +9,7 @@ from boardsnap.classification import ClassificationError
 from boardsnap.detection import BoardDetectionError
 from boardsnap.image_input import ImageInputError
 from boardsnap.pipeline import recognize_image
+from boardsnap.profiles import PROFILES
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -20,13 +21,16 @@ def main(argv: list[str] | None = None) -> int:
     the Python core continues to expose its original exceptions to developers.
     """
     parser = argparse.ArgumentParser(prog="boardsnap", description="Recognize a chessboard image as piece placement JSON.")
-    parser.add_argument("image", help="Path to a PNG or JPEG image (initial brown/cburnett profile).")
+    parser.add_argument("image", help="Path to a PNG or JPEG image.")
+    parser.add_argument("--profile", choices=tuple(PROFILES),
+                        help="Recognition profile (default: lichess-cburnett-brown-v1; book profile is experimental).")
     args = parser.parse_args(argv)
 
     exit_code = 0
     with redirect_stdout(sys.stderr):
         try:
-            result = recognize_image(args.image)
+            result = (recognize_image(args.image, profile=args.profile) if args.profile
+                      else recognize_image(args.image))
         except (ImageInputError, BoardDetectionError, ClassificationError) as error:
             result = error.to_dict()
             exit_code = 1

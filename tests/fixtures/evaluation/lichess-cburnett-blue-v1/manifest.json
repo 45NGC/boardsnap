@@ -1,0 +1,16 @@
+{
+  "profileId": "lichess-cburnett-blue-v1",
+  "notes": "Pilot with 10 distinct positions and two orientations each: 16 tuning images and 4 evaluation images. Includes openings, constructed middlegame/endgame positions, an empty board and a corner diagnostic; chess legality is not required. Positions are selected or constructed for capture checks, not sampled from a game corpus. This is not a representative recognition benchmark. Review screenshots and annotations before adopting them as data. Record asset permissions before redistributing captures.",
+  "positions": [
+    {
+      "groupId": "pos-003",
+      "split": "evaluation",
+      "piecePlacement": "8/5pk1/6p1/8/4P3/5K2/8/8"
+    },
+    {
+      "groupId": "pos-010",
+      "split": "evaluation",
+      "piecePlacement": "r2q1rk1/pp2bppp/2npbn2/2p1p3/2P1P3/2NP1NP1/PP2QPBP/R1B2RK1"
+    }
+  ]
+}
