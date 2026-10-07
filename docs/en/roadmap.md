@@ -2,6 +2,12 @@
 
 **English** | [Spanish](../es/roadmap.md) · [Overview](README.md)
 
+Current digital-roadmap milestone completed: explicit orientation input in the
+Python pipeline and CLI (`white-bottom`, `black-bottom`, default `auto`). Tests
+cover both views, missing/opposite labels, backward compatibility and invalid
+values; the JSON contract is unchanged. See [orientation](orientation.md).
+Further themes and overlays remain subsequent work; the book experiment is deferred.
+
 ## 0. Project scaffold (completed)
 
 An installable `boardsnap` package with a single `__init__.py`, a documented

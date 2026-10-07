@@ -68,20 +68,24 @@ infer orientation; those stages must supply the matrix in canonical order.
 
 ## Orientation
 
-Implemented for the initial profile's internal labels in
-[orientation.py](orientation.md). Other coordinate layouts remain unsupported
-and may invoke the same fallback. Orientation stays internal to the engine.
+The Python pipeline accepts `orientation="white-bottom"`, `"black-bottom"` or
+`"auto"` (default). Explicit orientation **takes priority over coordinates** and
+bypasses their reader. It describes the image view, not the side to move. See the
+[orientation guide](orientation.md). Invalid values raise `ValueError` before
+image I/O. Existing calls without the parameter retain automatic behavior.
 
-Legible coordinates along the border will take priority when identifying ranks
-and files. Resolving orientation means assigning coordinates to squares; it
-does not mean rotating piece drawings to classify them.
+In `auto`, the engine reads the selected profile's supported coordinate layout;
+insufficient, unreadable or conflicting labels fall back to White at the bottom.
+An explicit choice is honored even when it contradicts readable coordinates.
+Orientation is input only: no field is added to the response.
+Resolving it assigns chess coordinates to squares without rotating piece drawings.
 
 | Image view | Mapping to the output |
 | --- | --- |
 | White at the bottom | Top left = `a8`; bottom right = `h1`. |
 | Black at the bottom | Top left = `h1`; bottom right = `a8`; both matrix rows and columns are reversed. |
 
-When there are insufficient clues or labels cannot be read consistently, the
+In `auto`, when there are insufficient clues or labels cannot be read consistently, the
 engine will assume **White at the bottom**: top left is `a8` and bottom right
 is `h1`. This rule is deterministic and produces no additional field or
 confirmation request. It can produce an incorrect orientation if the actual

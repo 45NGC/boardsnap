@@ -2,6 +2,12 @@
 
 [English](../en/roadmap.md) | **Español** · [Inicio](README.md)
 
+Hito actual de la hoja de ruta digital completado: orientación explícita en el
+flujo Python y la CLI (`white-bottom`, `black-bottom`, `auto` predeterminado).
+Las pruebas cubren ambas vistas, coordenadas ausentes/contrarias, compatibilidad
+e inválidos; el JSON no cambia. Consulta [orientación](orientation.md).
+Más temas y superposiciones quedan para después; el experimento de libros se aplaza.
+
 ## 0. Base del proyecto (completada)
 
 Paquete instalable `boardsnap` con un único `__init__.py`, arquitectura propuesta

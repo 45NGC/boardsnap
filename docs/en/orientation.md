@@ -9,6 +9,48 @@ source retained by `normalize_board`. It returns `"white-bottom"` or
 `"black-bottom"`. `to_canonical(matrix, orientation)` maps an 8 × 8 matrix from
 image order to chess order: ranks 8 to 1, files a to h.
 
+## Explicit orientation input
+
+`recognize_image(path, *, profile=..., orientation="auto")` accepts exactly
+`"white-bottom"`, `"black-bottom"` or `"auto"`. This describes the board view,
+**not the side to move**. The default `auto` preserves existing calls.
+
+```python
+from boardsnap.pipeline import recognize_image
+
+result = recognize_image("image.png", orientation="black-bottom")
+result = recognize_image("image.png", profile="chesscom-default-green-v1",
+                         orientation="white-bottom")
+```
+
+Explicit values take priority over every image clue and **skip coordinate reading**.
+The same square classifier runs and its labels are reordered into ranks 8–1,
+files a–h. Drawings are not rotated and piece colors are not exchanged. A mistaken
+explicit choice is still honored; BoardSnap does not correct it from the pieces
+or ask for confirmation. Unsupported image geometry/styles remain unsupported.
+
+Only `auto` calls `detect_orientation`; missing, unreadable or contradictory
+coordinates then keep the White-at-the-bottom convention. That low-level reader
+is unchanged. Invalid Python values, including non-strings, raise `ValueError`
+before opening the file. The JSON result still contains only `piecePlacement`.
+
+```bash
+boardsnap image.png --orientation black-bottom
+python -m boardsnap image.png --profile chesscom-default-green-v1 --orientation white-bottom
+boardsnap image.png --orientation auto
+```
+
+An invalid or missing CLI option value is a usage error: exit 2, empty stdout,
+usage text on stderr. See [CLI](cli.md) and the [Flutter input design](flutter-integration.md).
+The preview tool's existing boolean `--orientation` still requests automatic
+orientation previews; it is a different option from the recognition CLI's input.
+
+`tests/test_orientation_input.py` checks real asymmetric positions in both views
+for all three digital profiles, with original, removed and opposite-view labels.
+It verifies the override skips the reader, default/auto compatibility, the fallback
+and invalid values before I/O. CLI subprocess tests check both entry points,
+profile/option combinations, explicit precedence, exact JSON and usage errors.
+
 ## Current scope and method
 
 The first implementation reads **internal file labels along the bottom and rank
@@ -31,7 +73,7 @@ and OpenCV dependencies; no OCR executable, network service or PyTorch is needed
 
 Piece identities, occupied squares, checkerboard parity, interface text outside
 these regions, filenames, annotations and image metadata do not determine the
-orientation. In particular, an unlabelled Black-view board also uses the White
+orientation. In auto mode, an unlabelled Black-view board also uses the White
 fallback; that result can be wrong but is deterministic and needs no confirmation.
 
 The 32 glyph examples come **only from the empty tuning position `pos-004` in
@@ -86,8 +128,8 @@ The same mapping can be applied to a classified piece-symbol matrix before
 
 Invalid internal argument types raise `TypeError`; malformed dimensions, bounds,
 mode or orientation values raise `ValueError`. Missing labels are not errors.
-The [public JSON contract](output-contract.md) is unchanged: orientation is
-internal data, never a new field, confidence score or confirmation request.
+The [public JSON contract](output-contract.md) is unchanged: the resolved orientation is
+never a new response field, confidence score or confirmation request.
 
 ## Preview and tests
 

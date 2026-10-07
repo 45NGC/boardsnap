@@ -18,8 +18,9 @@ RGB cargadas y ofrece errores estructurados mediante `ImageInputError`.
 La [detección](detection.md) devuelve los límites de la cuadrícula brown de lichess.
 La [normalización y segmentación](normalization.md) producen una matriz de 8 × 8
 recortes RGB de 64 × 64, conservando el origen completo para orientar después.
-La [orientación](orientation.md) lee las coordenadas interiores del perfil y
-ordena las casillas, asumiendo blancas abajo cuando no hay pistas utilizables.
+La [orientación](orientation.md) acepta la vista explícita mediante el flujo y la
+CLI. Por defecto, `auto` lee coordenadas y asume blancas abajo si no son utilizables;
+los valores explícitos tienen prioridad.
 El [clasificador](classification.md) reconoce trece clases con plantillas de ajuste.
 `boardsnap.pipeline.recognize_image(path)` devuelve la colocación de piezas.
 La [CLI](cli.md) ofrece `boardsnap imagen.png` con JSON y códigos de salida.
@@ -166,7 +167,7 @@ Quedan fuera las fotografías de tableros físicos con piezas tridimensionales.
 No se presupone compatibilidad con cualquier diseño, color o resolución. Los
 primeros perfiles tampoco cubrirán tableros parciales, animaciones, piezas
 ocultas, flechas, múltiples tableros o imágenes muy inclinadas o degradadas.
-Sin pistas de orientación se asumirá la vista con blancas abajo (`a8` arriba a
+En `auto`, sin pistas de orientación se asumirá la vista con blancas abajo (`a8` arriba a
 la izquierda); una imagen con negras abajo sin coordenadas puede quedar
 invertida respecto a la posición real.
 

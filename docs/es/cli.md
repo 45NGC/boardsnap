@@ -44,6 +44,22 @@ Flutter. Las rutas relativas parten del directorio de trabajo actual y los
 recursos instalados funcionan fuera del repositorio. El comando no guarda vistas
 previas ni modifica las entradas.
 
+## Opción de orientación
+
+Usa `--orientation white-bottom`, `--orientation black-bottom` o `--orientation auto`.
+Por defecto se utiliza `auto`: leer coordenadas y asumir blancas abajo si no son
+utilizables. Los valores explícitos omiten esa lectura y prevalecen sobre etiquetas
+contradictorias. Describen la vista, nunca el turno. Se pueden combinar con
+`--profile` y mantienen exactamente el mismo JSON de respuesta.
+
+```bash
+boardsnap imagen.png --orientation black-bottom
+boardsnap imagen.png --profile chesscom-default-green-v1 --orientation white-bottom
+```
+
+Los valores inválidos o la opción sin valor terminan con código 2, sin JSON ni
+stdout, antes de abrir la imagen. Consulta la [semántica y pruebas](orientation.md).
+
 ## Canales de salida y códigos del proceso
 
 | Invocación | stdout | stderr | Código |

@@ -12,7 +12,7 @@ no puede integrar el motor ejecutando el comando Python instalado en tu ordenado
 ## Responsabilidades y petición propuesta
 
 Un backend independiente llamaría a
-`recognize_image(temporary_path, profile=profile_id)`. Gestionaría los archivos
+`recognize_image(temporary_path, profile=profile_id, orientation=orientation)`. Gestionaría los archivos
 temporales, límites, concurrencia y serialización. El núcleo no conocería su
 framework web. Flutter se encarga de seleccionar la imagen, enviarla, mostrar el
 editor y gestionar el resto del estado de la partida.
@@ -22,6 +22,11 @@ Endpoint propuesto: `POST /v1/recognize`, formulario multipart:
 - `image`: un archivo PNG/JPEG enviado como bytes, no una ruta local del dispositivo.
 - `profile`: uno de los [perfiles evaluados](profiles.md). Si se omite se utiliza
   `lichess-cburnett-brown-v1`, igual que en la CLI. Un ID desconocido es un error.
+- `orientation`: `white-bottom`, `black-bottom` o `auto` (predeterminado). Flutter
+  puede preguntar qué lado está abajo después de elegir la imagen y enviar la
+  elección. Describe la vista, no el turno. Los valores explícitos prevalecen
+  sobre las coordenadas. Un valor inválido se mapearía a `INVALID_REQUEST` (400).
+  El parámetro Python/CLI está implementado; el campo HTTP y la interfaz Flutter siguen siendo un diseño.
 
 Éxito, HTTP 200, `Content-Type: application/json`:
 
@@ -35,7 +40,7 @@ Correspondencias sugeridas para el adaptador futuro:
 
 | Estado HTTP | Código | Significado |
 | --- | --- | --- |
-| 400 | `INVALID_REQUEST` | Falta el archivo, llegan varios o el perfil es desconocido; validación del adaptador. |
+| 400 | `INVALID_REQUEST` | Falta el archivo, llegan varios, el perfil es desconocido o la orientación es inválida; validación del adaptador. |
 | 413 | `PAYLOAD_TOO_LARGE` | Se supera el límite de bytes configurado; validación del adaptador. |
 | 422 | `INVALID_IMAGE`, `UNSUPPORTED_IMAGE`, `BOARD_NOT_FOUND` | El núcleo no puede procesar la imagen enviada. |
 | 500 | `INPUT_READ_ERROR`, `PROCESSING_FAILED` | El servidor no puede leer su archivo temporal o procesar la imagen. |
@@ -43,7 +48,7 @@ Correspondencias sugeridas para el adaptador futuro:
 Los dos códigos de validación de petición son **propuestas exclusivas de HTTP**,
 no errores nuevos de la CLI o del núcleo. Los detalles de excepciones quedan en
 los registros del servidor. No se añaden confianza, confirmaciones, turno,
-enroques, captura al paso ni FEN completo. Sin coordenadas legibles se mantiene
+enroques, captura al paso ni FEN completo. Solo en `auto`, sin coordenadas legibles se mantiene
 la convención de blancas abajo.
 
 ## Trabajo en chess-scanner y en el backend futuro

@@ -18,8 +18,9 @@ images and provides structured input errors through `ImageInputError`.
 [Board detection](detection.md) returns grid bounds for the brown lichess profile.
 [Normalization and segmentation](normalization.md) produce an 8 × 8 matrix of
 64 × 64 RGB crops while preserving the full source for later orientation.
-[Orientation](orientation.md) reads the profile's internal coordinates and maps
-cells into canonical order, falling back to White at the bottom without usable clues.
+[Orientation](orientation.md) accepts an explicit image view through the pipeline
+and CLI. The default `auto` reads coordinates and assumes White at the bottom
+without usable clues; explicit values take priority.
 The [classifier](classification.md) recognizes thirteen classes using tuning-only
 templates. `boardsnap.pipeline.recognize_image(path)` returns piece placement.
 The [recognition CLI](cli.md) exposes `boardsnap image.png` with JSON and exit codes.
@@ -160,7 +161,7 @@ remains the default; select another explicitly with `--profile`.
 Photographs of physical boards with three-dimensional pieces are out of scope.
 Compatibility with every design, color, or resolution is not assumed. The first
 profiles will also exclude partial boards, animations, occluded pieces, arrows,
-multiple boards, and heavily skewed or degraded images. Without orientation
+multiple boards, and heavily skewed or degraded images. In `auto`, without orientation
 clues, the engine will assume White at the bottom (`a8` at the top left); an
 image with Black at the bottom and no coordinates may be reversed relative to
 the actual position.

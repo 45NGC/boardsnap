@@ -62,9 +62,10 @@ acceptance diagrams if these failures are used for tuning. Do not present the
   retained frame, a near-square diagram at least 256 px wide and this edition's
   symbols. Scanned full pages, perspective correction, arbitrary books and other
   fonts are not established capabilities.
-- Print diagrams have no coordinates: always assume White at the bottom.
-  Digital images with absent/unreadable/conflicting coordinates use the same
-  convention. Piece arrangements are never used to guess orientation.
+- In `orientation="auto"`, print diagrams have no coordinates and assume White
+  at the bottom. Digital images with absent/unreadable/conflicting coordinates
+  use the same convention. Explicit `white-bottom` or `black-bottom` bypasses
+  coordinate reading in every profile and takes priority over image clues. Piece arrangements are never used to guess orientation.
 
 A profile flag changes internal processing only. It adds no confidence, alternative
 positions, legality correction, game state or extra FEN fields. Book failures
@@ -88,8 +89,9 @@ python -m tools.evaluate_classification --profile chesscom-default-green-v1 \
 python -m pytest tests/test_profiles.py
 ```
 
-Python callers use `recognize_image(path, profile="...")`. Detection, orientation
-and classification accept the same keyword. Unknown CLI profiles are usage errors
+Python callers use `recognize_image(path, profile="...", orientation="auto")`.
+The pipeline also accepts explicit `white-bottom`/`black-bottom`; see [orientation](orientation.md). Detection, orientation
+and classification accept the `profile` keyword; the input orientation override belongs to the pipeline. Unknown CLI profiles are usage errors
 (exit 2, diagnostics on stderr); unknown Python profiles raise `ValueError`.
 The preview tool defaults to the original brown folder, so adding new datasets
 does not accidentally process every theme with the brown profile.

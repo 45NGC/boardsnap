@@ -12,7 +12,7 @@ an installed desktop Python command as its integration mechanism.
 ## Responsibilities and proposed request
 
 A separately implemented backend calls
-`recognize_image(temporary_path, profile=profile_id)`. It owns temporary uploads,
+`recognize_image(temporary_path, profile=profile_id, orientation=orientation)`. It owns temporary uploads,
 request limits, concurrency and response serialization. The core remains
 independent of its web framework. Flutter owns image selection, HTTP transport,
 the board editor and all remaining game state.
@@ -22,6 +22,11 @@ Proposed endpoint: `POST /v1/recognize`, multipart form data:
 - `image`: one PNG/JPEG file, sent as bytes; do not send a local device path.
 - `profile`: one of the [evaluated profile IDs](profiles.md). Omission uses
   `lichess-cburnett-brown-v1`, matching the CLI. Unknown IDs are request errors.
+- `orientation`: `white-bottom`, `black-bottom` or `auto` (default). Flutter can
+  ask which side is at the bottom after image selection and send that choice.
+  It describes the image view, not the side to move. Explicit values override
+  image coordinates. Unknown values map to the proposed `INVALID_REQUEST` (400).
+  The Python/CLI parameter is implemented; the HTTP field and Flutter UI remain design only.
 
 Success, HTTP 200, `Content-Type: application/json`:
 
@@ -35,7 +40,7 @@ Suggested mappings for the future adapter:
 
 | HTTP status | Code | Meaning |
 | --- | --- | --- |
-| 400 | `INVALID_REQUEST` | Missing/multiple files or unknown profile; adapter validation. |
+| 400 | `INVALID_REQUEST` | Missing/multiple files, unknown profile or invalid orientation; adapter validation. |
 | 413 | `PAYLOAD_TOO_LARGE` | Upload exceeds the configured byte limit; adapter validation. |
 | 422 | `INVALID_IMAGE`, `UNSUPPORTED_IMAGE`, `BOARD_NOT_FOUND` | Core cannot process the supplied image. |
 | 500 | `INPUT_READ_ERROR`, `PROCESSING_FAILED` | Server could not read its temporary file or process the image. |
@@ -43,7 +48,7 @@ Suggested mappings for the future adapter:
 The two request-validation codes above are **proposed HTTP-only codes**, not
 new CLI/core errors. Exception details belong in server logs, never responses.
 No confidence, confirmation requests, turn, castling rights, en passant or full
-FEN are added. Missing readable orientation clues still mean White at the bottom.
+FEN are added. Only `auto` falls back to White at the bottom when readable clues are absent.
 
 ## Work in chess-scanner and the future backend
 

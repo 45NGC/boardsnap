@@ -16,8 +16,9 @@ pytestmark = pytest.mark.unit
 
 @pytest.mark.parametrize("failure", [None, RuntimeError("unexpected failure")])
 def test_diagnostics_never_mix_with_result_json(monkeypatch, capsys, failure):
-    def noisy_recognizer(path):
+    def noisy_recognizer(path, *, orientation):
         assert path == "image with spaces.png"
+        assert orientation == "auto"
         print("diagnostic sent to stdout by a stage")
         print("diagnostic sent to stderr", file=sys.stderr)
         if failure:
@@ -47,7 +48,8 @@ def test_diagnostics_never_mix_with_result_json(monkeypatch, capsys, failure):
     ClassificationError("Could not load the piece recognition templates."),
 ])
 def test_preserves_structured_stage_errors(monkeypatch, capsys, error):
-    def fail(path):
+    def fail(path, *, orientation):
+        assert orientation == "auto"
         raise error
 
     monkeypatch.setattr(cli, "recognize_image", fail)
@@ -59,7 +61,8 @@ def test_preserves_structured_stage_errors(monkeypatch, capsys, error):
 
 @pytest.mark.parametrize("error", [KeyboardInterrupt(), SystemExit(4)])
 def test_does_not_convert_process_control_into_image_errors(monkeypatch, capsys, error):
-    def interrupt(path):
+    def interrupt(path, *, orientation):
+        assert orientation == "auto"
         raise error
 
     monkeypatch.setattr(cli, "recognize_image", interrupt)

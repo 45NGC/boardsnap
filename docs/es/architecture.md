@@ -29,6 +29,11 @@ La
 [guía de empaquetado de PyPA](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
 describe esta organización y la configuración mediante `pyproject.toml`.
 
+El flujo acepta `orientation="auto"` por defecto. `white-bottom` o `black-bottom`
+explícitos omiten la detección de coordenadas y seleccionan el orden canónico.
+Los adaptadores CLI/HTTP transmiten la vista sin añadirla a la respuesta ni
+interpretarla como turno. Consulta [orientación](orientation.md).
+
 ## Flujo de reconocimiento
 
 ```text

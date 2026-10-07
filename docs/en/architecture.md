@@ -28,6 +28,11 @@ The
 [PyPA packaging guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
 describes this organization and configuration through `pyproject.toml`.
 
+The pipeline accepts `orientation="auto"` by default. Explicit `white-bottom` or
+`black-bottom` skips coordinate detection and selects the canonical matrix mapping.
+CLI/HTTP adapters pass the image view without adding it to the response or treating
+it as the side to move. See [orientation](orientation.md).
+
 ## Recognition flow
 
 ```text

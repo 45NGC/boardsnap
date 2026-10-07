@@ -73,20 +73,24 @@ la matriz en el orden canónico.
 
 ## Orientación
 
-Implementada para las etiquetas interiores del primer perfil en
-[orientation.py](orientation.md). Otras distribuciones de coordenadas siguen
-sin admitirse y pueden activar la misma convención. Es un dato interno del motor.
+El flujo Python acepta `orientation="white-bottom"`, `"black-bottom"` o `"auto"`
+(predeterminado). La orientación explícita **prevalece sobre las coordenadas** y
+omite su lectura. Describe la vista de la imagen, no el turno. Consulta la
+[guía de orientación](orientation.md). Los valores inválidos generan `ValueError`
+antes de leer la imagen. Omitir el parámetro conserva el comportamiento automático.
 
-Las coordenadas legibles del borde tendrán prioridad para identificar filas y
-columnas. Resolver orientación implica asignar coordenadas a las casillas;
-no implica girar los dibujos de las piezas para clasificarlas.
+En `auto` se leen las coordenadas admitidas por el perfil; si faltan, no son
+legibles o se contradicen, se asume blancas abajo. Una elección explícita se
+respeta incluso si contradice coordenadas legibles. Es un parámetro de entrada:
+no se añade ningún campo a la respuesta. Resolver la orientación asigna las
+coordenadas de ajedrez sin girar los dibujos de las piezas.
 
 | Vista de la imagen | Correspondencia con la salida |
 | --- | --- |
 | Blancas abajo | Arriba a la izquierda = `a8`; abajo a la derecha = `h1`. |
 | Negras abajo | Arriba a la izquierda = `h1`; abajo a la derecha = `a8`; se invierten filas y columnas de la matriz. |
 
-Cuando no haya pistas suficientes o las etiquetas no permitan una lectura
+En `auto`, cuando no haya pistas suficientes o las etiquetas no permitan una lectura
 coherente, se asumirá **blancas abajo**: arriba a la izquierda será `a8` y abajo
 a la derecha `h1`. Esta regla es determinista y no genera un campo adicional
 ni una solicitud de confirmación. Puede producir una orientación incorrecta si

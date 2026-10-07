@@ -18,7 +18,8 @@ lichess profile. See [detection scope and tests](docs/en/detection.md).
 The [normalization guide](docs/en/normalization.md) explains square crops,
 preserved orientation context and the `--squares` preview option.
 The [orientation guide](docs/en/orientation.md) covers coordinate reading,
-canonical cell ordering and the White-at-the-bottom fallback.
+canonical cell ordering and explicit `--orientation white-bottom|black-bottom`
+input. The default `auto` preserves coordinate reading and its White-at-the-bottom fallback.
 `boardsnap.pipeline.recognize_image(path)` returns the recognized `piecePlacement`.
 See [classification and measured limits](docs/en/classification.md) for the baseline,
 reserved results, template provenance and `--recognition` previews.

@@ -24,13 +24,15 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("image", help="Path to a PNG or JPEG image.")
     parser.add_argument("--profile", choices=tuple(PROFILES),
                         help="Recognition profile (default: lichess-cburnett-brown-v1; book profile is experimental).")
+    parser.add_argument("--orientation", choices=("white-bottom", "black-bottom", "auto"), default="auto",
+                        help="Image view, not side to move; explicit values override coordinates (default: auto).")
     args = parser.parse_args(argv)
 
     exit_code = 0
     with redirect_stdout(sys.stderr):
         try:
-            result = (recognize_image(args.image, profile=args.profile) if args.profile
-                      else recognize_image(args.image))
+            result = (recognize_image(args.image, profile=args.profile, orientation=args.orientation) if args.profile
+                      else recognize_image(args.image, orientation=args.orientation))
         except (ImageInputError, BoardDetectionError, ClassificationError) as error:
             result = error.to_dict()
             exit_code = 1

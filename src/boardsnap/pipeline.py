@@ -2,6 +2,7 @@
 
 from contextlib import ExitStack
 from os import PathLike
+from typing import Literal
 
 from boardsnap.classification import classify_squares
 from boardsnap.detection import detect_board
@@ -13,13 +14,22 @@ from boardsnap.segmentation import split_squares
 from boardsnap.profiles import DEFAULT_PROFILE, get_profile
 
 
-def recognize_image(path: str | PathLike[str], *, profile: str = DEFAULT_PROFILE) -> dict[str, str]:
+def recognize_image(path: str | PathLike[str], *, profile: str = DEFAULT_PROFILE,
+                    orientation: Literal["white-bottom", "black-bottom", "auto"] = "auto"
+                    ) -> dict[str, str]:
     """Return only piecePlacement, or propagate a stage's structured exception.
 
     Reads pixels only: no sidecars, expected positions or filename-based hints.
     Adapters serialize success or error.to_dict(); the core writes nothing.
     The explicit profile defaults to brown/cburnett. All owned images are closed.
+
+    orientation describes the image view, not the side to move. An explicit
+    white-bottom/black-bottom value bypasses coordinate reading and takes
+    priority over all image clues. auto preserves coordinate detection and its
+    white-bottom fallback. Invalid values raise ValueError before image I/O.
     """
+    if not isinstance(orientation, str) or orientation not in ("white-bottom", "black-bottom", "auto"):
+        raise ValueError("Orientation must be white-bottom, black-bottom or auto.")
     get_profile(profile)
     with ExitStack() as stack:
         source = stack.enter_context(read_image(path))
@@ -28,6 +38,7 @@ def recognize_image(path: str | PathLike[str], *, profile: str = DEFAULT_PROFILE
         for row in squares:
             for square in row:
                 stack.enter_context(square)
-        orientation = detect_orientation(board, profile=profile)
+        resolved_orientation = (detect_orientation(board, profile=profile)
+                                if orientation == "auto" else orientation)
         visual = classify_squares(squares, profile=profile)
-        return build_result(to_canonical(visual, orientation))
+        return build_result(to_canonical(visual, resolved_orientation))

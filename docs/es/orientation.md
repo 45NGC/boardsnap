@@ -9,6 +9,50 @@ resolución completa conservado por `normalize_board`. Devuelve `"white-bottom"`
 o `"black-bottom"`. `to_canonical(matrix, orientation)` transforma una matriz
 de 8 × 8 en orden visual al orden de ajedrez: filas 8 a 1, columnas a a h.
 
+## Orientación explícita de entrada
+
+`recognize_image(path, *, profile=..., orientation="auto")` acepta exactamente
+`"white-bottom"`, `"black-bottom"` o `"auto"`. Describe la vista del tablero,
+**no quién tiene el turno**. El valor predeterminado `auto` conserva las llamadas existentes.
+
+```python
+from boardsnap.pipeline import recognize_image
+
+result = recognize_image("imagen.png", orientation="black-bottom")
+result = recognize_image("imagen.png", profile="chesscom-default-green-v1",
+                         orientation="white-bottom")
+```
+
+Los valores explícitos prevalecen sobre cualquier pista y **omiten la lectura de
+coordenadas**. Se utiliza el mismo clasificador y sus etiquetas se ordenan desde
+la fila 8 hasta la 1 y desde a hasta h. No se giran los dibujos ni se intercambian
+colores de piezas. Una elección explícita equivocada también se respeta; BoardSnap
+no la corrige según las piezas ni solicita confirmación. No amplía el soporte de
+geometrías ni de estilos de imagen.
+
+Solo `auto` llama a `detect_orientation`; sin coordenadas legibles y coherentes
+mantiene la convención de blancas abajo. Ese lector de bajo nivel no cambia.
+Los valores Python inválidos, incluidos los que no sean cadenas, generan
+`ValueError` antes de abrir el archivo. El JSON sigue conteniendo solo `piecePlacement`.
+
+```bash
+boardsnap imagen.png --orientation black-bottom
+python -m boardsnap imagen.png --profile chesscom-default-green-v1 --orientation white-bottom
+boardsnap imagen.png --orientation auto
+```
+
+Un valor inválido o ausente en la opción de CLI es error de uso: salida 2, stdout
+vacío y explicación en stderr. Consulta [CLI](cli.md) y el [diseño de entrada Flutter](flutter-integration.md).
+La opción booleana `--orientation` de la herramienta de vistas previas sigue
+solicitando orientación automática; es distinta de la opción de entrada de la CLI.
+
+`tests/test_orientation_input.py` comprueba posiciones reales asimétricas desde
+ambos lados en los tres perfiles digitales, con coordenadas originales, borradas
+y de la vista contraria. Verifica que la elección explícita omite el lector,
+compatibilidad de auto/predeterminado, convención e inválidos antes de leer archivos.
+Las pruebas de CLI comprueban ambos puntos de entrada, combinación de perfil y
+orientación, prioridad explícita, JSON exacto y errores de uso.
+
 ## Alcance y método actuales
 
 La primera implementación lee **letras interiores en el borde inferior y números

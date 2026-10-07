@@ -65,9 +65,11 @@ aceptación. No debe interpretarse el 126/128 como reconocimiento fiable de libr
   marco, un diagrama casi cuadrado de al menos 256 px y los símbolos de esa edición.
   No se ha establecido soporte para páginas completas, corrección de perspectiva,
   otros libros ni otras fuentes tipográficas.
-- Los diagramas impresos no tienen coordenadas: se asume siempre blancas abajo.
-  En imágenes digitales sin coordenadas legibles o con pistas contradictorias
-  se aplica la misma convención. No se deduce la orientación por las piezas.
+- En `orientation="auto"`, los diagramas impresos no tienen coordenadas y
+  se asume blancas abajo. En imágenes digitales sin coordenadas legibles o con
+  pistas contradictorias se aplica la misma convención. Los valores explícitos
+  `white-bottom`/`black-bottom` omiten la lectura de coordenadas en cualquier
+  perfil y prevalecen sobre las pistas de la imagen. No se deduce la orientación por las piezas.
 
 El perfil solo cambia el procesamiento interno. No añade confianza, alternativas,
 corrección de legalidad, estado de partida ni otros campos FEN. Si el procesamiento
@@ -92,8 +94,9 @@ python -m tools.evaluate_classification --profile chesscom-default-green-v1 \
 python -m pytest tests/test_profiles.py
 ```
 
-En Python: `recognize_image(path, profile="...")`. Detección, orientación y
-clasificación aceptan el mismo argumento. Un perfil desconocido en la CLI es un
+En Python: `recognize_image(path, profile="...", orientation="auto")`.
+El flujo también acepta `white-bottom`/`black-bottom` explícitos; consulta [orientación](orientation.md). Detección, orientación y
+clasificación aceptan `profile`; la orientación explícita de entrada pertenece al flujo. Un perfil desconocido en la CLI es un
 error de uso (salida 2, diagnóstico en stderr); en Python produce `ValueError`.
 La herramienta de vistas previas usa por defecto la carpeta brown original,
 para no procesar accidentalmente todos los temas con el mismo perfil.

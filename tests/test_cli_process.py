@@ -108,3 +108,30 @@ def test_double_dash_allows_filename_starting_with_dash(command, tmp_path):
     result = run(command, ["--", path.name], tmp_path)
     assert result.returncode == 0 and result.stderr == ""
     assert result.stdout == '{"piecePlacement": "8/8/8/8/8/8/8/8"}\n'
+
+
+@pytest.mark.integration
+@pytest.mark.parametrize("orientation,placement", [
+    ("auto", "6k1/5pp1/7p/3q4/8/2Q2P2/5KPP/8"),
+    ("black-bottom", "6k1/5pp1/7p/3q4/8/2Q2P2/5KPP/8"),
+    ("white-bottom", "8/PPK5/2P2Q2/8/4q3/p7/1pp5/1k6"),
+])
+def test_orientation_option_controls_mapping_without_extra_json(command, tmp_path, orientation, placement):
+    # White-bottom intentionally contradicts the visible black-bottom labels:
+    # an explicit user choice must still win. Exercise profile+orientation together.
+    profile = "chesscom-default-green-v1"
+    image = tmp_path / "anonymous.png"
+    shutil.copyfile(ROOT / "data/tuning" / profile / "pos-006-black.png", image)
+    result = run(command, [str(image), "--profile", profile, "--orientation", orientation], tmp_path)
+    assert result.returncode == 0
+    assert result.stdout == json.dumps({"piecePlacement": placement}) + "\n"
+    assert result.stderr == ""
+
+
+@pytest.mark.integration
+@pytest.mark.parametrize("option", [["--orientation", "white"], ["--orientation"]])
+def test_invalid_orientation_is_usage_error_before_image_io(command, tmp_path, option):
+    result = run(command, ["does-not-exist.png", *option], tmp_path)
+    assert result.returncode == 2
+    assert result.stdout == ""
+    assert "--orientation" in result.stderr

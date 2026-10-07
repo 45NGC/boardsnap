@@ -42,6 +42,22 @@ batch processing, stdin images, HTTP and Flutter integration are not provided.
 Relative paths refer to the current working directory, and installed assets work
 outside the repository. The command does not write previews or modify inputs.
 
+## Orientation option
+
+Use `--orientation white-bottom`, `--orientation black-bottom` or `--orientation auto`.
+The default is `auto`: read coordinates, then assume White at the bottom if they
+are unusable. Explicit values skip coordinate reading and override contradictory
+labels. This describes the image view, never the side to move. It works with
+`--profile` and keeps exactly the same JSON response.
+
+```bash
+boardsnap image.png --orientation black-bottom
+boardsnap image.png --profile chesscom-default-green-v1 --orientation white-bottom
+```
+
+Invalid values or a missing option value exit 2 with no JSON/stdout, before
+opening the image. See [orientation semantics and tests](orientation.md).
+
 ## Streams and process status
 
 | Invocation | stdout | stderr | Exit code |
