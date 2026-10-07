@@ -5,12 +5,13 @@
 The first unit tests are in [test_output.py](../../tests/test_output.py). All
 53 cases pass against `boardsnap.output.build_result(board)`, implemented in
 [output.py](../../src/boardsnap/output.py). The first 20 annotated screenshots
-are included; no recognition model has been added.
+are included; the first template baseline and full Python recognition flow are implemented.
 
 Both `python -m pytest --collect-only` and `python -m pytest` succeed with exit
 code `0`. Output and dataset checks run locally. The capture tool's seven
 browser integration cases are skipped unless explicitly enabled as described
-in the [capture guide](capture-data.md). No test simulates recognition results.
+in the [capture guide](capture-data.md). Recognition accuracy tests use real pixels;
+isolated policy/reporting unit tests explicitly control their inputs/outcomes.
 
 The configuration in `pyproject.toml` limits discovery to `tests/`, uses
 `importlib` import mode, and rejects unknown options or markers. Installing the
@@ -57,7 +58,10 @@ Orientation adds 38 unit cases and 162 pixel/provenance cases (130 development,
 readable coordinates, missing/partial/conflicting labels and exact canonical
 mapping of annotated asymmetric positions. Those matrices are test inputs for
 mapping, not recognized pieces. See the [orientation guide](orientation.md).
-Classification remains pending.
+Classification adds input/asset unit checks, real square/background coverage and
+full-position tests on anonymous images. Reports include exact positions and all
+thirteen classes with per-background support; see [classification](classification.md).
+Future learned models must use separate training, validation and evaluation groups.
 
 | Area | Planned evidence |
 | --- | --- |
@@ -91,13 +95,13 @@ python -m pytest -m evaluation
 ```
 
 The `unit` selector runs output, image input, synthetic detection, normalization,
-segmentation, orientation and capture-manifest tests. `integration` selects tuning-image
-detection/preprocessing/orientation checks and
+segmentation, orientation, classifier/report accounting and capture-manifest tests.
+`integration` selects tuning-image detection/preprocessing/orientation/classification checks and
 the optional offline browser tests. `evaluation` selects reserved-image
-detection/preprocessing checks and
+detection/preprocessing/orientation/classification checks and
 [dataset integrity checks](../../tests/test_dataset.py): PNG signatures and
 dimensions, hashes, annotations, bounds within images, paired orientations,
-manifest consistency and disjoint positions/groups. These do not locate boards
-or classify pixels. Future recognition tests must use only images as inputs;
-annotations remain expected results. Detection has a limited measured result
-documented in the [detection guide](detection.md); piece recognition is pending.
+manifest consistency and disjoint positions/groups. Integrity tests alone do not
+recognize pixels. Recognition tests use only images as inputs; annotations remain
+expected results. Detection and classification have limited measured results in
+their respective guides; the current corpus does not establish broad style support.

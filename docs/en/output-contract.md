@@ -6,8 +6,10 @@ This document defines the output contract. Success results can be built from
 already-classified matrices through the Python API below. Image loading and its
 three input error codes are implemented in [image_input](image-input.md).
 [Detection](detection.md) implements `BOARD_NOT_FOUND` and rejects multiple
-detected grids with `UNSUPPORTED_IMAGE`. Piece recognition, later-stage
-processing errors and the CLI remain pending.
+detected grids with `UNSUPPORTED_IMAGE`. [Classification](classification.md) adds
+first-profile template recognition and `PROCESSING_FAILED` for unavailable assets.
+`boardsnap.pipeline.recognize_image(path)` returns the success dictionary or
+propagates these structured exceptions for adapters to serialize. The CLI remains pending.
 
 ## Success
 

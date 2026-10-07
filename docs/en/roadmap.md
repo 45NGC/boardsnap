@@ -15,7 +15,7 @@ executable CLI, or simulated recognition tests.
 Matrix serialization and internal validation are implemented and covered by
 53 passing unit test cases. Image loading now supports PNG/JPEG with RGB
 normalization and the three input error codes, covered by 31 unit cases.
-Later-stage processing errors remain pending.
+Template asset failures now use `PROCESSING_FAILED`.
 The first profile is now `lichess-cburnett-brown-v1`: 20 annotated PNGs with
 cburnett pieces, a brown board, 1280 × 1000 screenshots and a 584 × 584 grid.
 There are eight tuning positions and two reserved evaluation positions, each
@@ -28,7 +28,9 @@ captures and broader negative examples remain necessary before generalization
 claims. [Normalization and 64-square segmentation](normalization.md) are now
 implemented, retaining the complete source for orientation. [Orientation](orientation.md)
 now reads the profile's internal coordinates and applies the documented fallback.
-Next implement the first-profile classifier before connecting the CLI.
+The [template classifier and Python pipeline](classification.md) are implemented
+with a measured initial baseline. Next connect the JSON CLI and expand independent
+test coverage; the Flutter integration mechanism still requires an explicit decision.
 
 Start with PNG images, a complete aligned board, static pieces without overlays,
 and a single grid per image. Reserve evaluation images with annotated positions
@@ -70,10 +72,12 @@ results from digital screenshots to typographic symbols in books.
 
 ## 5. Learned classification and integration
 
-If templates require too many variants or fail evaluation, compare visual
-descriptors with a small classifier and, if justified, a 13-class convolutional
-network, with PyTorch as a candidate framework. Separate training, validation,
-and final evaluation before tuning models. Version the data and artifacts.
+The [frozen template baseline](classification.md) can be compared with a small
+13-class PyTorch model on the current profile without first covering every theme.
+Separate whole source groups into training, validation and final evaluation before
+tuning models, check class/background coverage and add independent samples as needed.
+Keep all crop/orientation/augmentation relatives together. Version data and artifacts;
+the current tiny corpus cannot establish a robust neural-model advantage.
 
 Explicitly choose the chess-scanner integration mechanism once platforms,
 latency, and execution constraints are known. Implement it in a separate
@@ -81,8 +85,8 @@ adapter, preserving the existing contract and core.
 
 ## Initial comparison of approaches
 
-These are design hypotheses to test against the dataset; no accuracy measurements
-exist yet. Geometric detection and piece classification are separate tasks and
+The alternatives below remain hypotheses; [template baseline measurements](classification.md)
+now exist for the initial corpus only. Geometric detection and classification are separate tasks and
 may use different techniques.
 
 | Approach | Expected accuracy and limits | Complexity | Maintenance |

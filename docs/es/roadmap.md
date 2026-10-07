@@ -15,7 +15,7 @@ ejecutable ni pruebas de reconocimiento simuladas.
 La serialización de matrices y la validación interna están implementadas y
 cubiertas por 53 casos de prueba superados. La lectura admite PNG/JPEG,
 normalización RGB y tres códigos de error de entrada, con 31 pruebas unitarias.
-Los errores del procesamiento posterior siguen pendientes.
+Los fallos de recursos de plantillas ya usan `PROCESSING_FAILED`.
 El primer perfil ya es `lichess-cburnett-brown-v1`: 20 PNG anotados con piezas
 cburnett, tablero brown, capturas de 1280 × 1000 y cuadrícula de 584 × 584.
 Hay ocho posiciones de ajuste y dos reservadas de evaluación, ambas con las
@@ -28,8 +28,10 @@ comparten distribución: siguen haciendo falta capturas independientes y negativ
 más variados antes de afirmar generalización. La [normalización y división en
 64 casillas](normalization.md) ya están implementadas y conservan el origen
 completo para orientar. La [orientación](orientation.md) ya lee las coordenadas
-interiores del perfil y aplica la convención documentada. Lo siguiente es
-clasificar las piezas del primer perfil antes de conectar la CLI.
+interiores del perfil y aplica la convención documentada. El [clasificador de
+plantillas y el flujo Python](classification.md) ya tienen una referencia medida.
+Lo siguiente es conectar la CLI de JSON y ampliar las pruebas independientes;
+el mecanismo de integración Flutter sigue requiriendo una decisión expresa.
 
 Empezar con PNG, tablero completo y alineado, piezas estáticas sin superposiciones
 y una única cuadrícula por imagen. Reservar desde el principio imágenes de
@@ -71,11 +73,12 @@ No extrapolar resultados de capturas digitales a símbolos tipográficos de libr
 
 ## 5. Clasificación aprendida e integración
 
-Si las plantillas requieren demasiadas variantes o fallan en la evaluación,
-comparar descriptores visuales con un clasificador pequeño y, si se justifica,
-una red convolucional de 13 clases, con PyTorch como framework candidato.
-Separar entrenamiento, validación y evaluación final antes de ajustar modelos.
-Versionar los datos y los artefactos.
+La [referencia de plantillas congelada](classification.md) puede compararse con
+un modelo PyTorch pequeño de trece clases sobre el perfil actual, sin cubrir todos
+los temas primero. Separar grupos completos en entrenamiento, validación y
+evaluación antes de ajustar modelos; comprobar clases/fondos y añadir muestras
+independientes cuando falten. Mantener juntos todos los recortes, vistas y aumentos.
+Versionar datos y recursos; el corpus actual no demuestra ventajas robustas de una red.
 
 Elegir expresamente el mecanismo de integración con chess-scanner cuando se
 conozcan plataformas, latencia y condiciones de ejecución. Implementarlo en un
@@ -83,8 +86,8 @@ adaptador separado, manteniendo el contrato y el núcleo existentes.
 
 ## Comparación inicial de enfoques
 
-Son hipótesis de diseño para contrastar con el corpus; todavía no hay medidas
-de precisión. La detección geométrica y la clasificación de piezas son tareas
+Las alternativas siguen siendo hipótesis; ya hay [medidas de la referencia de
+plantillas](classification.md), limitadas al corpus inicial. Detección y clasificación son tareas
 distintas y podrán usar técnicas diferentes.
 
 | Enfoque | Precisión esperada y límites | Complejidad | Mantenimiento |

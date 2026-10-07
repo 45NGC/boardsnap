@@ -21,7 +21,7 @@ include = ["boardsnap", "boardsnap.*"]
 namespaces = false
 
 [tool.setuptools.package-data]
-boardsnap = ["assets/*.json", "assets/*.md"]
+boardsnap = ["assets/*.json", "assets/*.md", "assets/*.png"]
 
 [tool.pytest.ini_options]
 minversion = "8.0"

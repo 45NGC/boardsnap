@@ -1,5 +1,12 @@
 # Tests
 
+`test_classification.py` checks classifier inputs, empty/background handling and
+asset failures. `test_classification_images.py` checks all thirteen classes on both
+backgrounds, template provenance, each real square and complete pixel-to-position
+recognition with anonymous inputs. Tuning and evaluation keep separate markers.
+`test_classification_report.py` checks metric denominators with controlled outcomes,
+not recognition accuracy. See the [baseline and evaluation](../docs/en/classification.md).
+
 `test_orientation.py` tests fallback/consistency policy and canonical cell mapping.
 `test_orientation_images.py` reads real coordinate pixels with separate tuning
 and evaluation markers, including absent, partial and conflicting labels.
@@ -35,7 +42,7 @@ overwrite protection. Its optional offline Chromium integration tests check
 screenshots and annotations without contacting lichess. See the
 [capture guide](../docs/en/capture-data.md) for installation and commands.
 
-There are no piece classification tests yet. Read the
+Piece classification and full-position checks are now implemented. Read the
 [test plan in English](../docs/en/testing.md).
 
 `test_dataset.py` verifies the 20 committed PNGs and their annotations, hashes,

@@ -1,0 +1,659 @@
+{
+  "formatVersion": 1,
+  "profileId": "lichess-cburnett-brown-v1",
+  "squareSize": 64,
+  "selection": "First sample per class/background in filename and image row/column order; tuning only.",
+  "atlasSha256": "7a695bb68805a49ee4d3cc06777c36915509ef9e3933796770650493876523b6",
+  "templates": [
+    {
+      "label": null,
+      "background": "light",
+      "atlasBox": [
+        0,
+        0,
+        64,
+        64
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 2,
+        "column": 0,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 394
+    },
+    {
+      "label": null,
+      "background": "dark",
+      "atlasBox": [
+        64,
+        0,
+        128,
+        64
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 2,
+        "column": 1,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 402
+    },
+    {
+      "label": "P",
+      "background": "light",
+      "atlasBox": [
+        0,
+        64,
+        64,
+        128
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 1,
+        "column": 1,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 26
+    },
+    {
+      "label": "P",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        64,
+        128,
+        128
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 1,
+        "column": 0,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 36
+    },
+    {
+      "label": "N",
+      "background": "light",
+      "atlasBox": [
+        0,
+        128,
+        64,
+        192
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 0,
+        "column": 6,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 6
+    },
+    {
+      "label": "N",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        128,
+        128,
+        192
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 0,
+        "column": 1,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 4
+    },
+    {
+      "label": "B",
+      "background": "light",
+      "atlasBox": [
+        0,
+        192,
+        64,
+        256
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 0,
+        "column": 2,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 4
+    },
+    {
+      "label": "B",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        192,
+        128,
+        256
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 0,
+        "column": 5,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 6
+    },
+    {
+      "label": "R",
+      "background": "light",
+      "atlasBox": [
+        0,
+        256,
+        64,
+        320
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 0,
+        "column": 0,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 8
+    },
+    {
+      "label": "R",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        256,
+        128,
+        320
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 0,
+        "column": 7,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 4
+    },
+    {
+      "label": "Q",
+      "background": "light",
+      "atlasBox": [
+        0,
+        320,
+        64,
+        384
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 0,
+        "column": 4,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 4
+    },
+    {
+      "label": "Q",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        320,
+        128,
+        384
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-006-black.png",
+        "sha256": "b5b577bba70da75fa060a77d42a8873920f7d69d033f049d2918d31a0cfb5dbf",
+        "annotationSha256": "624f5435ce8a22a5c64f42644c58236d808d6deb45d1218f06b40e4422ba2e10",
+        "row": 2,
+        "column": 5,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 2
+    },
+    {
+      "label": "K",
+      "background": "light",
+      "atlasBox": [
+        0,
+        384,
+        64,
+        448
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-007-black.png",
+        "sha256": "57c521a3726ae96c601bae9e8f0d5a057a7e2e578bbd8c1e5565c0a5355a258a",
+        "annotationSha256": "200f05868fab3d9832cdc489a75f643b82f64f38ca4940eb6c329c4a8292c896",
+        "row": 1,
+        "column": 1,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 2
+    },
+    {
+      "label": "K",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        384,
+        128,
+        448
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 0,
+        "column": 3,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 12
+    },
+    {
+      "label": "p",
+      "background": "light",
+      "atlasBox": [
+        0,
+        448,
+        64,
+        512
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 6,
+        "column": 0,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 36
+    },
+    {
+      "label": "p",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        448,
+        128,
+        512
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 6,
+        "column": 1,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 26
+    },
+    {
+      "label": "n",
+      "background": "light",
+      "atlasBox": [
+        0,
+        512,
+        64,
+        576
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 7,
+        "column": 1,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 8
+    },
+    {
+      "label": "n",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        512,
+        128,
+        576
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 7,
+        "column": 6,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 2
+    },
+    {
+      "label": "b",
+      "background": "light",
+      "atlasBox": [
+        0,
+        576,
+        64,
+        640
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 7,
+        "column": 5,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 4
+    },
+    {
+      "label": "b",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        576,
+        128,
+        640
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 7,
+        "column": 2,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 6
+    },
+    {
+      "label": "r",
+      "background": "light",
+      "atlasBox": [
+        0,
+        640,
+        64,
+        704
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 7,
+        "column": 7,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 8
+    },
+    {
+      "label": "r",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        640,
+        128,
+        704
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 7,
+        "column": 0,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 4
+    },
+    {
+      "label": "q",
+      "background": "light",
+      "atlasBox": [
+        0,
+        704,
+        64,
+        768
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-006-black.png",
+        "sha256": "b5b577bba70da75fa060a77d42a8873920f7d69d033f049d2918d31a0cfb5dbf",
+        "annotationSha256": "624f5435ce8a22a5c64f42644c58236d808d6deb45d1218f06b40e4422ba2e10",
+        "row": 4,
+        "column": 4,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 2
+    },
+    {
+      "label": "q",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        704,
+        128,
+        768
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 7,
+        "column": 4,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 4
+    },
+    {
+      "label": "k",
+      "background": "light",
+      "atlasBox": [
+        0,
+        768,
+        64,
+        832
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+        "sha256": "220d8b439a42ada263f695ccb3f8f1c1ba57cf0134acd1f48aeb75ffa3e5a8fd",
+        "annotationSha256": "528bbfdbfdc85ae85107d8dce9530d4d51d52921f7e853f66779de57e0eb984c",
+        "row": 7,
+        "column": 3,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 10
+    },
+    {
+      "label": "k",
+      "background": "dark",
+      "atlasBox": [
+        64,
+        768,
+        128,
+        832
+      ],
+      "source": {
+        "image": "data/tuning/lichess-cburnett-brown-v1/pos-005-black.png",
+        "sha256": "6d05574fa7e4977bd7478ba374bc2c73e87f42f77bcf575477e8cb1f9d5f86b1",
+        "annotationSha256": "f7e5cfcf2170733dc8dd43037b517b7912809627c9fdc0f72e47b848744706b8",
+        "row": 7,
+        "column": 0,
+        "orientation": "black-bottom",
+        "bounds": [
+          190,
+          158,
+          774,
+          742
+        ]
+      },
+      "tuningCount": 4
+    }
+  ]
+}

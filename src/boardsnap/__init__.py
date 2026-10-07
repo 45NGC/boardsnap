@@ -7,5 +7,7 @@ Board normalization and square crops are available in boardsnap.normalization
 and boardsnap.segmentation, with original pixels retained for orientation.
 First-profile coordinate reading and canonical cell ordering are available in
 boardsnap.orientation, with white-bottom fallback when clues are insufficient.
-Piece recognition is not implemented yet.
+First-profile template classification is available in boardsnap.classification.
+boardsnap.pipeline.recognize_image composes the stages into piecePlacement;
+the recognition CLI and Flutter integration remain separate, pending adapters.
 """

@@ -95,8 +95,8 @@ the output error contract. No new public error code is introduced here.
 
 These functions assume detection has supplied a complete, axis-aligned grid.
 They do not expand style support, remove highlights or repair incorrect detection.
-Piece classification, general coordinate OCR, perspective correction and the
-recognition CLI remain pending.
+The separate [classifier](classification.md) supports the initial profile.
+General coordinate OCR, perspective correction and the recognition CLI remain pending.
 
 ## Visual inspection
 

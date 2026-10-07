@@ -109,8 +109,9 @@ que tenga ocho filas.
 función. No se devuelve una posición parcial. Comprobar el tipo antes de llamar
 a `len()` también permite dar un mensaje claro cuando se recibe algo como `None`.
 
-Estas excepciones validan una matriz interna. Los errores estructurados para
-fallos de procesamiento de imágenes pertenecen a etapas todavía pendientes.
+Estas excepciones validan una matriz interna. Los errores estructurados de
+procesamiento corresponden a entrada, detección y clasificación; consulta el
+[contrato de salida](output-contract.md).
 
 ## 5. El recorrido de las filas
 

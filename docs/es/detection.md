@@ -58,7 +58,8 @@ de entrada o detección muestran su código y se eliminan las vistas anteriores
 de esa imagen. El comando termina con código 1 si alguna imagen falla.
 Las capturas originales no se modifican.
 
-Esta herramienta de desarrollo no reconoce piezas ni genera FEN. El detector
+Añade `--recognition` para [clasificar piezas](classification.md) y guardar su
+colocación en `result.json`. Sin esa opción solo se guardan vistas previas. El detector
 y los tests no guardan vistas previas automáticamente; ejecuta el comando
 después de los cambios. La salida predeterminada está excluida de Git por estar
 en `.cache`.
@@ -150,7 +151,7 @@ aceptarse.
 El conjunto inicial es pequeño y comparte una distribución de origen. Faltan
 negativos más variados y capturas independientes de otros tamaños y ubicaciones
 antes de afirmar generalización. La entrada lee JPEG, pero no se ha medido la
-detección sobre JPEG comprimidos. El reconocimiento completo de piezas sigue
-pendiente. La [normalización y segmentación](normalization.md) ya producen
+detección sobre JPEG comprimidos. El [flujo del primer perfil](classification.md)
+ya genera colocación de piezas. La [normalización y segmentación](normalization.md) producen
 64 recortes y conservan la imagen original completa para orientar. Añade
 `--squares` al comando de vistas previas para ver `normalized.png` y `squares/`.

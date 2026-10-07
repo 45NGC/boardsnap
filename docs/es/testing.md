@@ -5,13 +5,14 @@
 Las primeras pruebas unitarias están en [test_output.py](../../tests/test_output.py).
 Los 53 casos pasan contra `boardsnap.output.build_result(board)`, implementada
 en [output.py](../../src/boardsnap/output.py). Ya se incluyen las primeras
-20 capturas anotadas; todavía no se ha añadido un modelo de reconocimiento.
+20 capturas anotadas; ya existe una referencia de plantillas y el flujo Python completo.
 
 Tanto `python -m pytest --collect-only` como `python -m pytest` terminan
 correctamente con código `0`. Las pruebas de salida y datos se ejecutan
 localmente. Los siete casos de integración con navegador se omiten salvo
 activación expresa, descrita en la [guía de captura](capture-data.md).
-Ninguna prueba simula resultados del reconocimiento.
+Las pruebas de precisión usan píxeles reales; las pruebas unitarias aisladas de
+políticas e informes controlan explícitamente sus entradas y resultados.
 
 La configuración en `pyproject.toml` limita el descubrimiento a `tests/`, usa
 importación `importlib` y rechaza opciones o marcadores desconocidos. Instalar
@@ -59,7 +60,11 @@ La orientación añade 38 casos unitarios y 162 casos de píxeles/procedencia
 `test_orientation_images.py`. Comprueban coordenadas legibles, etiquetas ausentes,
 parciales o contradictorias y orden canónico exacto de posiciones asimétricas
 anotadas. Estas matrices son entradas de prueba, no piezas reconocidas.
-Consulta la [guía de orientación](orientation.md). La clasificación sigue pendiente.
+Consulta la [guía de orientación](orientation.md). La clasificación añade pruebas
+de entradas/recursos, cobertura real de clases/fondos y posiciones completas con
+imágenes anónimas. Sus informes detallan las trece clases y los ejemplos de cada
+fondo; consulta [clasificación](classification.md). Los modelos aprendidos futuros
+deben separar entrenamiento, validación y evaluación por grupos.
 
 | Área | Evidencia prevista |
 | --- | --- |
@@ -93,13 +98,14 @@ python -m pytest -m evaluation
 ```
 
 El selector `unit` ejecuta pruebas de salida, entrada, detección sintética,
-normalización, segmentación, orientación y manifiestos de captura. `integration` selecciona
-detección, preprocesamiento y orientación sobre imágenes de ajuste
-y pruebas opcionales del navegador. `evaluation` selecciona detección, preprocesamiento y orientación sobre
+normalización, segmentación, orientación, clasificación, cálculo de métricas y
+manifiestos de captura. `integration` selecciona detección, preprocesamiento,
+orientación y clasificación sobre ajuste y pruebas opcionales del navegador.
+`evaluation` selecciona detección, preprocesamiento, orientación y clasificación sobre
 imágenes reservadas y las [pruebas de integridad](../../tests/test_dataset.py):
 firma y dimensiones de PNG, hashes, anotaciones, límites dentro de la imagen,
 parejas de orientaciones, coherencia de manifiestos y separación de posiciones
-y grupos. No localizan tableros ni clasifican píxeles. Las futuras pruebas de
-reconocimiento solo recibirán imágenes; las anotaciones serán resultados
-esperados. La detección tiene resultados limitados documentados en la
-[guía de detección](detection.md); el reconocimiento de piezas sigue pendiente.
+y grupos. La integridad por sí sola no reconoce píxeles. Las pruebas de
+reconocimiento reciben solo imágenes; las anotaciones son resultados esperados.
+Detección y clasificación tienen resultados medidos limitados en sus respectivas
+guías; el corpus actual no demuestra compatibilidad amplia entre estilos.

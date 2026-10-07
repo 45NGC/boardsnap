@@ -3,8 +3,8 @@
 [English](../en/architecture.md) | **Español** · [Inicio](README.md)
 
 Esta es la distribución de responsabilidades. La entrada, la detección, la
-normalización, la segmentación, la orientación y la
-serialización de salida están implementadas; el resto del flujo sigue previsto.
+normalización, la segmentación, la orientación, la clasificación, la coordinación
+del flujo y la serialización están implementadas. Los adaptadores siguen previstos.
 El repositorio inicial contenía únicamente README, licencia y un `.gitignore`
 genérico de Python; no existía código de reconocimiento que conservar o migrar.
 
@@ -19,6 +19,10 @@ la [guía de normalización](normalization.md) para la gestión de imágenes y g
 `orientation.py` lee las coordenadas admitidas del origen conservado y reordena
 las casillas. Sus plantillas de caracteres se instalan con el paquete y proceden
 solo de datos de ajuste; consulta [orientación](orientation.md).
+`classification.py` compara características de las casillas con plantillas cburnett
+incluidas en el paquete. `pipeline.py` ofrece `recognize_image(path)` y gestiona
+los recursos; devuelve solo colocación y propaga errores estructurados.
+Consulta [clasificación](classification.md).
 Los demás módulos se crearán al implementar cada responsabilidad; sus nombres son
 orientativos. No se anticipan jerarquías de clases, registros de plugins ni
 servicios. La

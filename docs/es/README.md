@@ -6,7 +6,7 @@
 digital o un diagrama de libro y devuelve una única colocación de piezas para
 la aplicación Flutter **chess-scanner**.
 
-**Estado: entrada, detección del primer perfil, normalización, segmentación, orientación y serialización implementadas.** El paquete
+**Estado: flujo Python del primer perfil implementado, incluida la clasificación por plantillas.** El paquete también
 convierte una matriz de 8 × 8 ya clasificada en el diccionario de salida mediante
 `boardsnap.output.build_result(board)`. Pasan los 53 casos de prueba de salida.
 Los demás módulos se crearán cuando se implemente su funcionalidad.
@@ -18,7 +18,9 @@ La [normalización y segmentación](normalization.md) producen una matriz de 8 �
 recortes RGB de 64 × 64, conservando el origen completo para orientar después.
 La [orientación](orientation.md) lee las coordenadas interiores del perfil y
 ordena las casillas, asumiendo blancas abajo cuando no hay pistas utilizables.
-El reconocimiento de piezas y su CLI siguen pendientes. El primer conjunto contiene 20 PNG anotados
+El [clasificador](classification.md) reconoce trece clases con plantillas de ajuste.
+`boardsnap.pipeline.recognize_image(path)` devuelve la colocación de piezas.
+La CLI sigue pendiente. El primer conjunto contiene 20 PNG anotados
 (16 de ajuste y 4 de evaluación) del perfil `lichess-cburnett-brown-v1`.
 Los ejemplos JSON describen el contrato de salida;
 no representan resultados del reconocimiento de imágenes.
@@ -68,7 +70,7 @@ entornos virtuales de tu sistema antes de crear `.venv`.
 
 Pillow decodifica imágenes; NumPy y OpenCV sin interfaz gráfica permiten detectar
 el tablero. `setuptools` construye el paquete y el extra `dev` instala `pytest`.
-PyTorch todavía no se ha añadido; la clasificación será una etapa posterior.
+PyTorch todavía no se ha añadido; su comparación posterior puede usar este mismo perfil.
 
 ## Estructura
 
@@ -82,6 +84,8 @@ src/boardsnap/
     segmentation.py      # 64 recortes independientes en orden visual
     orientation.py       # Lectura de coordenadas y orden canónico
     assets/              # Plantillas de coordenadas extraídas de datos de ajuste
+    classification.py    # Referencia de plantillas para trece clases
+    pipeline.py          # API Python de imagen a piecePlacement
 tools/                   # Capturas y vistas previas de detección/casillas
 docs/
     en/                 # Documentación en inglés
@@ -96,7 +100,7 @@ tests/
 ```
 
 La [arquitectura](architecture.md) describe el flujo y la separación de
-responsabilidades. Entrada, detección, normalización, segmentación, orientación y salida están implementadas. La
+responsabilidades. Todas las etapas del núcleo y su coordinación están implementadas para el primer perfil. La
 [hoja de ruta](roadmap.md) compara enfoques y fija las siguientes iteraciones.
 Las guías de [datos de ajuste](tuning-data.md) e
 [imágenes de evaluación](evaluation-data.md) describen las particiones actuales.
@@ -149,8 +153,8 @@ JSON por imagen según el contrato, sin depender de la integración con Flutter.
 ## Estilos y limitaciones
 
 La detección está implementada y probada para `lichess-cburnett-brown-v1`;
-consulta su [alcance medido y limitaciones](detection.md). El reconocimiento
-completo de piezas no está implementado para ningún estilo. Otros temas de
+consulta su [alcance medido y limitaciones](detection.md) y la
+[referencia de reconocimiento](classification.md). Otros temas de
 lichess, chess.com y diagramas impresos siguen siendo perfiles futuros.
 
 Quedan fuera las fotografías de tableros físicos con piezas tridimensionales.

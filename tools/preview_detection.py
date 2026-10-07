@@ -2,6 +2,7 @@
 
 import argparse
 from contextlib import ExitStack
+import json
 from pathlib import Path
 import sys
 
@@ -12,6 +13,8 @@ from boardsnap.image_input import ImageInputError, read_image
 from boardsnap.normalization import normalize_board
 from boardsnap.segmentation import split_squares
 from boardsnap.orientation import detect_orientation, to_canonical
+from boardsnap.classification import ClassificationError, classify_squares
+from boardsnap.output import build_result
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -31,6 +34,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--orientation", action="store_true",
         help="Also save square previews, orientation.txt and canonical.png in a8-to-h1 order.",
+    )
+    parser.add_argument(
+        "--recognition", action="store_true",
+        help="Also save orientation previews and recognized piecePlacement in result.json.",
     )
     args = parser.parse_args(argv)
     source = args.input.resolve()
@@ -55,7 +62,7 @@ def main(argv: list[str] | None = None) -> int:
         try:
             destination.mkdir(parents=True, exist_ok=True)
             # Remove previous previews so a failed rerun cannot look successful.
-            names = ["detection.png", "board.png", "normalized.png", "canonical.png", "orientation.txt"]
+            names = ["detection.png", "board.png", "normalized.png", "canonical.png", "orientation.txt", "result.json"]
             names.extend(f"squares/row-{row}-col-{col}.png" for row in range(8) for col in range(8))
             for name in names:
                 (destination / name).unlink(missing_ok=True)
@@ -69,7 +76,7 @@ def main(argv: list[str] | None = None) -> int:
                     preview.save(destination / "detection.png")
                 with image.crop(bounds.as_box()) as board:
                     board.save(destination / "board.png")
-                if args.squares or args.orientation:
+                if args.squares or args.orientation or args.recognition:
                     with ExitStack() as stack:
                         normalized = stack.enter_context(normalize_board(image, bounds))
                         normalized.image.save(destination / "normalized.png")
@@ -81,7 +88,7 @@ def main(argv: list[str] | None = None) -> int:
                         for row_index, row in enumerate(squares):
                             for col_index, square in enumerate(row):
                                 square.save(destination / "squares" / f"row-{row_index}-col-{col_index}.png")
-                        if args.orientation:
+                        if args.orientation or args.recognition:
                             orientation = detect_orientation(normalized)
                             canonical = to_canonical(squares, orientation)
                             with Image.new("RGB", normalized.image.size) as ordered:
@@ -90,8 +97,11 @@ def main(argv: list[str] | None = None) -> int:
                                         ordered.paste(square, (col_index * square.width, row_index * square.height))
                                 ordered.save(destination / "canonical.png")
                             (destination / "orientation.txt").write_text(orientation + "\n", encoding="utf-8")
+                            if args.recognition:
+                                result = build_result(to_canonical(classify_squares(squares), orientation))
+                                (destination / "result.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
             print(f"{path.name}: {bounds.as_box()} -> {destination}")
-        except (ImageInputError, BoardDetectionError) as error:
+        except (ImageInputError, BoardDetectionError, ClassificationError) as error:
             failures += 1
             print(f"{path}: {error.code}: {error.message}", file=sys.stderr)
         except OSError as error:

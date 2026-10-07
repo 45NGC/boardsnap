@@ -30,3 +30,9 @@ derived from the two empty tuning captures (`pos-004`), not from evaluation
 images. They contain only coordinate text silhouettes. Their package asset
 records source hashes and preserves this source attribution and font-notice
 reference; they are not original BoardSnap artwork.
+
+The same asset directory now includes a 26-crop piece atlas derived only from
+the tuning split. These crops include cburnett artwork by Colin M. L. Burnett
+(GPL-2.0-or-later) and the brown board background (AGPL-3.0-or-later), with the
+upstream terms above preserved. `piece-templates.json` records exact source
+hashes and square coordinates; no reserved evaluation image supplied a template.

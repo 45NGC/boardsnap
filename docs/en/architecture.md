@@ -3,8 +3,8 @@
 **English** | [Spanish](../es/architecture.md) · [Overview](README.md)
 
 This is the distribution of responsibilities. Image input, board detection,
-normalization, segmentation, orientation and output
-serialization are implemented; the rest of the pipeline remains planned.
+normalization, segmentation, orientation, classification, pipeline composition and
+output serialization are implemented. External adapters remain planned.
 The initial repository contained only a README, a license, and a generic Python
 `.gitignore`; there was no recognition code to preserve or migrate.
 
@@ -19,6 +19,9 @@ full-resolution source copy and source bounds. `segmentation.py` returns an
 `orientation.py` reads supported coordinates from the preserved source and
 reorders matrix cells. Its glyph templates are installed package assets derived
 only from tuning data; see [orientation](orientation.md).
+`classification.py` compares square features with packaged cburnett templates.
+`pipeline.py` provides `recognize_image(path)` and owns stage resources; it returns
+only piece placement and propagates structured failures. See [classification](classification.md).
 The other modules below will be created as each responsibility is implemented;
 their names are
 provisional. No class hierarchies, plugin registries, or services are introduced

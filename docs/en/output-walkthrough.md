@@ -110,7 +110,8 @@ position is returned. Checking the type before calling `len()` also allows a
 clear message when something like `None` is supplied.
 
 These exceptions validate an internal matrix. Structured image-processing
-errors belong to stages that have not been implemented yet.
+errors belong to the input, detection and classification stages; see the
+[output contract](output-contract.md).
 
 ## 5. Iterating over rows
 

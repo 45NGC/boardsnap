@@ -7,7 +7,11 @@ permite construir resultados correctos a partir de matrices ya clasificadas.
 La lectura de imágenes y sus tres códigos de error están implementados en
 [image_input](image-input.md). La [detección](detection.md) implementa
 `BOARD_NOT_FOUND` y rechaza varias cuadrículas con `UNSUPPORTED_IMAGE`.
-El reconocimiento de piezas, los errores posteriores y la CLI siguen pendientes.
+La [clasificación](classification.md) incorpora reconocimiento por plantillas del
+primer perfil y `PROCESSING_FAILED` si sus recursos no están disponibles.
+`boardsnap.pipeline.recognize_image(path)` devuelve el diccionario de éxito o
+propaga esas excepciones estructuradas para que el adaptador las serialice.
+La CLI sigue pendiente.
 
 ## Éxito
 

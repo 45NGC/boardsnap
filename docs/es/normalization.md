@@ -101,8 +101,8 @@ código público nuevo en esta etapa.
 
 Estas funciones asumen que la detección ha proporcionado una cuadrícula completa
 y alineada. No amplían los estilos admitidos, eliminan resaltados ni reparan una
-detección incorrecta. La clasificación, el OCR general de coordenadas, la corrección
-de perspectiva y la CLI de reconocimiento siguen pendientes.
+detección incorrecta. El [clasificador separado](classification.md) admite el primer
+perfil. El OCR general de coordenadas, la corrección de perspectiva y la CLI siguen pendientes.
 
 ## Inspección visual
 

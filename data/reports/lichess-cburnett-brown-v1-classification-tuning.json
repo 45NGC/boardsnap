@@ -1,0 +1,504 @@
+{
+  "profileId": "lichess-cburnett-brown-v1",
+  "split": "tuning",
+  "templateManifestSha256": "d22077e6e6a0fcdbd1325bd875e3b0a24f14c0ce09c5bebc34d667c631b3d34a",
+  "imageCount": 16,
+  "positionCount": 8,
+  "exactPositions": 16,
+  "processingFailures": 0,
+  "correctSquares": 1024,
+  "totalSquares": 1024,
+  "squareAccuracy": 1.0,
+  "occupiedSquareAccuracy": 1.0,
+  "macroRecallPresentClasses": 1.0,
+  "classes": {
+    "empty": {
+      "correct": 796,
+      "total": 796,
+      "backgrounds": {
+        "light": {
+          "correct": 394,
+          "total": 394
+        },
+        "dark": {
+          "correct": 402,
+          "total": 402
+        }
+      },
+      "predicted": {
+        "empty": 796,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "P": {
+      "correct": 62,
+      "total": 62,
+      "backgrounds": {
+        "light": {
+          "correct": 26,
+          "total": 26
+        },
+        "dark": {
+          "correct": 36,
+          "total": 36
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 62,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "N": {
+      "correct": 10,
+      "total": 10,
+      "backgrounds": {
+        "light": {
+          "correct": 6,
+          "total": 6
+        },
+        "dark": {
+          "correct": 4,
+          "total": 4
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 10,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "B": {
+      "correct": 10,
+      "total": 10,
+      "backgrounds": {
+        "light": {
+          "correct": 4,
+          "total": 4
+        },
+        "dark": {
+          "correct": 6,
+          "total": 6
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 10,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "R": {
+      "correct": 12,
+      "total": 12,
+      "backgrounds": {
+        "light": {
+          "correct": 8,
+          "total": 8
+        },
+        "dark": {
+          "correct": 4,
+          "total": 4
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 12,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "Q": {
+      "correct": 6,
+      "total": 6,
+      "backgrounds": {
+        "light": {
+          "correct": 4,
+          "total": 4
+        },
+        "dark": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 6,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "K": {
+      "correct": 14,
+      "total": 14,
+      "backgrounds": {
+        "light": {
+          "correct": 2,
+          "total": 2
+        },
+        "dark": {
+          "correct": 12,
+          "total": 12
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 14,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "p": {
+      "correct": 62,
+      "total": 62,
+      "backgrounds": {
+        "light": {
+          "correct": 36,
+          "total": 36
+        },
+        "dark": {
+          "correct": 26,
+          "total": 26
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 62,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "n": {
+      "correct": 10,
+      "total": 10,
+      "backgrounds": {
+        "light": {
+          "correct": 8,
+          "total": 8
+        },
+        "dark": {
+          "correct": 2,
+          "total": 2
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 10,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "b": {
+      "correct": 10,
+      "total": 10,
+      "backgrounds": {
+        "light": {
+          "correct": 4,
+          "total": 4
+        },
+        "dark": {
+          "correct": 6,
+          "total": 6
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 10,
+        "r": 0,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "r": {
+      "correct": 12,
+      "total": 12,
+      "backgrounds": {
+        "light": {
+          "correct": 8,
+          "total": 8
+        },
+        "dark": {
+          "correct": 4,
+          "total": 4
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 12,
+        "q": 0,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "q": {
+      "correct": 6,
+      "total": 6,
+      "backgrounds": {
+        "light": {
+          "correct": 2,
+          "total": 2
+        },
+        "dark": {
+          "correct": 4,
+          "total": 4
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 6,
+        "k": 0,
+        "processing-error": 0
+      }
+    },
+    "k": {
+      "correct": 14,
+      "total": 14,
+      "backgrounds": {
+        "light": {
+          "correct": 10,
+          "total": 10
+        },
+        "dark": {
+          "correct": 4,
+          "total": 4
+        }
+      },
+      "predicted": {
+        "empty": 0,
+        "P": 0,
+        "N": 0,
+        "B": 0,
+        "R": 0,
+        "Q": 0,
+        "K": 0,
+        "p": 0,
+        "n": 0,
+        "b": 0,
+        "r": 0,
+        "q": 0,
+        "k": 14,
+        "processing-error": 0
+      }
+    }
+  },
+  "images": [
+    {
+      "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-white.png",
+      "expected": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "actual": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "exact": true
+    },
+    {
+      "image": "data/tuning/lichess-cburnett-brown-v1/pos-001-black.png",
+      "expected": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "actual": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR",
+      "exact": true
+    },
+    {
+      "image": "data/tuning/lichess-cburnett-brown-v1/pos-002-white.png",
+      "expected": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R",
+      "actual": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R",
+      "exact": true
+    },
+    {
+      "image": "data/tuning/lichess-cburnett-brown-v1/pos-002-black.png",
+      "expected": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R",
+      "actual": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R",
+      "exact": true
+    },
+    {
+      "image": "data/tuning/lichess-cburnett-brown-v1/pos-004-white.png",
+      "expected": "8/8/8/8/8/8/8/8",
+      "actual": "8/8/8/8/8/8/8/8",
+      "exact": true
+    },
+    {
+      "image": "data/tuning/lichess-cburnett-brown-v1/pos-004-black.png",
+      "expected": "8/8/8/8/8/8/8/8",
+      "actual": "8/8/8/8/8/8/8/8",
+      "exact": true
+    },
+    {
+      "image": "data/tuning/lichess-cburnett-brown-v1/pos-005-white.png",
+      "expected": "r6k/8/8/8/8/8/8/K6R",
+      "actual": "r6k/8/8/8/8/8/8/K6R",
+      "exact": true
+    },
+    {
+      "image": "data/tuning/lichess-cburnett-brown-v1/pos-005-black.png",
+      "expected": "r6k/8/8/8/8/8/8/K6R",
+      "actual": "r6k/8/8/8/8/8/8/K6R",
+      "exact": true
+    },
+    {
+      "image": "data/tuning/lichess-cburnett-brown-v1/pos-006-white.png",
+      "expected": "6k1/5pp1/7p/3q4/8/2Q2P2/5KPP/8",
+      "actual": "6k1/5pp1/7p/3q4/8/2Q2P2/5KPP/8",
+      "exact": true
+    },
+    {
+      "image": "data/tuning/lichess-cburnett-brown-v1/pos-006-black.png",
+      "expected": "6k1/5pp1/7p/3q4/8/2Q2P2/5KPP/8",
+      "actual": "6k1/5pp1/7p/3q4/8/2Q2P2/5KPP/8",
+      "exact": true
+    },
+    {
+      "image": "data/tuning/lichess-cburnett-brown-v1/pos-007-white.png",
+      "expected": "8/5pk1/6p1/1r5p/7P/3R2P1/5PK1/8",
+      "actual": "8/5pk1/6p1/1r5p/7P/3R2P1/5PK1/8",
+      "exact": true
+    },
+    {
+      "image": "data/tuning/lichess-cburnett-brown-v1/pos-007-black.png",
+      "expected": "8/5pk1/6p1/1r5p/7P/3R2P1/5PK1/8",
+      "actual": "8/5pk1/6p1/1r5p/7P/3R2P1/5PK1/8",
+      "exact": true
+    },
+    {
+      "image": "data/tuning/lichess-cburnett-brown-v1/pos-008-white.png",
+      "expected": "6k1/pp3ppp/2n5/8/3N4/8/PP3PPP/6K1",
+      "actual": "6k1/pp3ppp/2n5/8/3N4/8/PP3PPP/6K1",
+      "exact": true
+    },
+    {
+      "image": "data/tuning/lichess-cburnett-brown-v1/pos-008-black.png",
+      "expected": "6k1/pp3ppp/2n5/8/3N4/8/PP3PPP/6K1",
+      "actual": "6k1/pp3ppp/2n5/8/3N4/8/PP3PPP/6K1",
+      "exact": true
+    },
+    {
+      "image": "data/tuning/lichess-cburnett-brown-v1/pos-009-white.png",
+      "expected": "5bk1/5ppp/8/3p4/3P4/2B5/5PPP/6K1",
+      "actual": "5bk1/5ppp/8/3p4/3P4/2B5/5PPP/6K1",
+      "exact": true
+    },
+    {
+      "image": "data/tuning/lichess-cburnett-brown-v1/pos-009-black.png",
+      "expected": "5bk1/5ppp/8/3p4/3P4/2B5/5PPP/6K1",
+      "actual": "5bk1/5ppp/8/3p4/3P4/2B5/5PPP/6K1",
+      "exact": true
+    }
+  ]
+}

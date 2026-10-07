@@ -6,7 +6,7 @@
 chessboard or a book diagram and returns a single piece placement to the
 Flutter application **chess-scanner**.
 
-**Status: image input, first-profile detection, normalization, segmentation, orientation and piece placement serialization are implemented.** The package converts
+**Status: the first-profile Python recognition pipeline is implemented, including template classification.** The package also converts
 an already-classified 8 × 8 matrix into the output dictionary through
 `boardsnap.output.build_result(board)`. All 53 output unit test cases pass.
 Other modules will be created as their functionality is implemented.
@@ -18,7 +18,9 @@ images and provides structured input errors through `ImageInputError`.
 64 × 64 RGB crops while preserving the full source for later orientation.
 [Orientation](orientation.md) reads the profile's internal coordinates and maps
 cells into canonical order, falling back to White at the bottom without usable clues.
-Piece recognition and the recognition CLI remain pending.
+The [classifier](classification.md) recognizes thirteen classes using tuning-only
+templates. `boardsnap.pipeline.recognize_image(path)` returns piece placement.
+The recognition CLI remains pending.
 The first dataset contains 20 annotated PNGs (16 tuning, 4 evaluation) for
 `lichess-cburnett-brown-v1`. The JSON examples describe the output contract; they do not
 represent recognition results from images.
@@ -68,7 +70,7 @@ virtual environment support before creating `.venv`.
 
 Pillow decodes images; NumPy and headless OpenCV provide board detection.
 `setuptools` builds the package and the `dev` extra installs `pytest`.
-PyTorch has not been added; classification remains a later stage.
+PyTorch has not been added; its later comparison can use this same profile.
 
 ## Structure
 
@@ -82,6 +84,8 @@ src/boardsnap/
     segmentation.py      # 64 independent square crops in image order
     orientation.py       # Coordinate reading and canonical cell mapping
     assets/              # Coordinate glyph templates from tuning data
+    classification.py    # Thirteen-class template baseline
+    pipeline.py          # Image-to-piecePlacement Python API
 tools/                   # Dataset capture and detection/square previews
 docs/
     en/                 # English documentation
@@ -96,7 +100,7 @@ tests/
 ```
 
 The [architecture](architecture.md) describes the flow and separation of
-responsibilities. Input, detection, normalization, segmentation, orientation and output are implemented. The [roadmap](roadmap.md)
+responsibilities. All core stages and their composition are implemented for the initial profile. The [roadmap](roadmap.md)
 compares approaches and defines the next iterations. The [tuning data](tuning-data.md)
 and [evaluation images](evaluation-data.md) guides describe the current data
 partitions. Both languages contain the same documents; changes to the contract
@@ -145,8 +149,8 @@ object per image according to the contract, independently of Flutter integration
 ## Styles and limitations
 
 Detection is implemented and tested for `lichess-cburnett-brown-v1`; see its
-[measured scope and limitations](detection.md). Full piece recognition has not
-been implemented for any style. Other lichess themes, chess.com and printed
+[measured scope and limitations](detection.md) and [piece recognition baseline](classification.md).
+Other lichess themes, chess.com and printed
 diagrams remain future profiles, not implied compatibility.
 
 Photographs of physical boards with three-dimensional pieces are out of scope.

@@ -54,7 +54,8 @@ Rerunning replaces that image's previews; detection/input failures are printed
 with their error codes and old previews for that image are removed. The command
 exits with status 1 if any image fails. Original captures are never modified.
 
-This development tool does not recognize pieces or generate FEN. The detector
+Add `--recognition` for [piece classification](classification.md) and a `result.json`
+containing piece placement. Without that flag the tool only saves previews. The detector
 and tests do not save previews automatically; run the command after changes.
 The default output is ignored by Git because it lives under `.cache`.
 
@@ -143,7 +144,7 @@ empty chessboard at this stage and may be accepted.
 The initial corpus is small and shares one source layout. Broader negative
 images and independently captured sizes/layouts are still needed before claiming
 generalization. Reading JPEG is supported by input, but detection accuracy on
-compressed JPEGs has not been measured. Full piece-placement recognition is
-still pending. [Normalization and segmentation](normalization.md) now produce
+compressed JPEGs has not been measured. The first-profile [recognition pipeline](classification.md)
+now generates piece placement. [Normalization and segmentation](normalization.md) produce
 64 square crops and preserve the full original image for orientation. Add
 `--squares` to the preview command to inspect `normalized.png` and `squares/`.
