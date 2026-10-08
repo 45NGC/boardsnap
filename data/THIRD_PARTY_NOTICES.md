@@ -68,3 +68,28 @@ The downloaded JPEG pixels were decoded to RGB and stored as PNG without
 redrawing, recoloring or geometric correction. Sidecars record original URLs
 and hashes. The book atlas contains crops only from tuning diagrams 1, 4, 5, 6
 and 8. Reserved diagrams 3 and 7 supplied no templates.
+
+## Detection-only corpus: digital-detection-v1
+
+`data/detection/development/` and `tests/fixtures/detection/held-out/` add 28
+original PNGs for rectangle tests. The detection manifest records their hashes,
+original local paths, source groups and conditions. Twenty images were supplied
+by the project owner as real-use Lichess/Chess.com screenshots; exact game URLs,
+FEN/PGN, capture dates and named appearance settings were not supplied. Their
+pixels are preserved, including visible interface fragments and annotations.
+Eight more images come from the configurable automated pilot: Lichess
+green/Merida and purple/Alpha, Chess.com blue/Classic and brown/Bases. Their
+capture URLs, asset URLs and page modifications are preserved in the manifest.
+
+In addition to the earlier Lichess notices, the upstream
+[copying notice](https://github.com/lichess-org/lila/blob/master/COPYING.md)
+identifies Merida by Armando Hernandez Marroquin under GPL-2.0-or-later, and Alpha
+by Eric Bentzen with personal, noncommercial-use terms. Alpha is listed as a
+non-free exception; neither this repository's license nor inclusion in a test
+fixture grants broader artwork rights. Board and interface notices above still
+apply. The Chess.com images retain the same third-party status described above;
+no open-source license grant is asserted for Classic/Bases or user screenshots.
+
+These images are detection references, not newly licensed BoardSnap artwork.
+They supply no piece-training templates or verified position labels. Preserve
+these notices when using the corpus and review upstream terms for redistribution.

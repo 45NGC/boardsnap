@@ -22,9 +22,17 @@ underrepresented combinations are documented.
 and Chess.com web boards: independent backgrounds/pieces, both views, viewport
 and pixel density, verified PNG labels and atomic batches. A local 16-image
 training pilot covers four combinations. Reviewed real-use import is available
-for planned positions; no real-use images have been supplied. Next expand the
+for planned positions. Twenty real-use images have since been supplied and
+adopted as detection-only fixtures, without FEN/classification labels. Next expand the
 clean corpus, develop recognition for the new styles, and add automated marks.
 Recognition compatibility and native mobile coverage are unchanged.
+
+Digital detection now combines palette proposals, RGB boundaries, regular grid
+spacing and robust cell alternation. The [detection guide](detection.md) records
+28 reviewed images, grouped development/evaluation partitions, independent
+rectangle metrics and negative tests. All 8 held-out originals have exact integer
+bounds; no piece-classification improvement is claimed. Next broaden real-theme
+and texture coverage and improve classification/normalization for markings.
 
 ## 0. Project scaffold (completed)
 

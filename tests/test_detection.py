@@ -79,9 +79,8 @@ def test_rejects_incomplete_boards(box):
         detect_board(draw_grid().crop(box))
 
 
-def test_rejects_unsupported_palette():
-    with pytest.raises(BoardDetectionError):
-        detect_board(draw_grid(colors=((255, 255, 255), (0, 0, 0))))
+def test_detects_previously_unsupported_palette():
+    assert detect_board(draw_grid(colors=((255, 255, 255), (0, 0, 0)))) == BoardBounds(0, 0, 256, 256)
 
 
 def test_multiple_boards_are_an_explicit_error():

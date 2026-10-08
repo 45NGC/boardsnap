@@ -1,0 +1,2875 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "digital-detection-v1",
+  "stage": "detection-only",
+  "maxEdgeErrorPixels": 2,
+  "reviewMethod": "Real-use integer rectangles entered after visual inspection of the originals and checked at border scanlines. Automated references are rounded DOM bounds, visually checked. No detector output supplies expected bounds; not an independent human annotation study.",
+  "partitionPolicy": "Real games 001-003 per platform: development; games 004-005: evaluation. Every variant stays with its game. All automated pilot variants belong to their pre-existing training source group and remain development. Split fixed before running the detector on held-out cases.",
+  "classificationLabelsAvailable": false,
+  "samples": [
+    {
+      "id": "lichess-game-001-shot-001",
+      "path": "data/detection/development/lichess-game-001-shot-001.png",
+      "sha256": "a868f80cefce399f64d31b59d2ecdada957ec556519b3068b1de1601adc4a8a3",
+      "sourceGroupId": "lichess-game-001",
+      "split": "development",
+      "platform": "lichess",
+      "imageSize": [
+        1146,
+        1116
+      ],
+      "box": [
+        40,
+        14,
+        1120,
+        1094
+      ],
+      "conditions": [
+        "last-move-highlights"
+      ],
+      "provenance": {
+        "kind": "user-supplied-real-use",
+        "originalPath": ".cache/real-captures/lichess/lichess-game-001-shot-001.png",
+        "url": null,
+        "note": "Original PNG bytes. Exact source URL, capture date, theme name and FEN/PGN not supplied."
+      }
+    },
+    {
+      "id": "lichess-game-001-shot-002",
+      "path": "data/detection/development/lichess-game-001-shot-002.png",
+      "sha256": "1b8a7bb86a2373fb225575375291a0db239124697f7d014c488f643636223450",
+      "sourceGroupId": "lichess-game-001",
+      "split": "development",
+      "platform": "lichess",
+      "imageSize": [
+        1156,
+        1192
+      ],
+      "box": [
+        27,
+        17,
+        1107,
+        1097
+      ],
+      "conditions": [
+        "last-move-highlights"
+      ],
+      "provenance": {
+        "kind": "user-supplied-real-use",
+        "originalPath": ".cache/real-captures/lichess/lichess-game-001-shot-002.png",
+        "url": null,
+        "note": "Original PNG bytes. Exact source URL, capture date, theme name and FEN/PGN not supplied."
+      }
+    },
+    {
+      "id": "lichess-game-002-shot-001",
+      "path": "data/detection/development/lichess-game-002-shot-001.png",
+      "sha256": "ff586a4d7b414e418765b7111c023a9fc931849840484ebb6811ac9d70d0f912",
+      "sourceGroupId": "lichess-game-002",
+      "split": "development",
+      "platform": "lichess",
+      "imageSize": [
+        1141,
+        1150
+      ],
+      "box": [
+        18,
+        9,
+        1098,
+        1089
+      ],
+      "conditions": [
+        "last-move-highlights"
+      ],
+      "provenance": {
+        "kind": "user-supplied-real-use",
+        "originalPath": ".cache/real-captures/lichess/lichess-game-002-shot-001.png",
+        "url": null,
+        "note": "Original PNG bytes. Exact source URL, capture date, theme name and FEN/PGN not supplied."
+      }
+    },
+    {
+      "id": "lichess-game-002-shot-002",
+      "path": "data/detection/development/lichess-game-002-shot-002.png",
+      "sha256": "e1769159e21201b9890150f3a3c879fcd2e0b5f96746a684fa5e0737ed3bf564",
+      "sourceGroupId": "lichess-game-002",
+      "split": "development",
+      "platform": "lichess",
+      "imageSize": [
+        1162,
+        1163
+      ],
+      "box": [
+        22,
+        11,
+        1102,
+        1091
+      ],
+      "conditions": [
+        "last-move-highlights"
+      ],
+      "provenance": {
+        "kind": "user-supplied-real-use",
+        "originalPath": ".cache/real-captures/lichess/lichess-game-002-shot-002.png",
+        "url": null,
+        "note": "Original PNG bytes. Exact source URL, capture date, theme name and FEN/PGN not supplied."
+      }
+    },
+    {
+      "id": "lichess-game-003-shot-001",
+      "path": "data/detection/development/lichess-game-003-shot-001.png",
+      "sha256": "7f50fddc2327edd168ac115435feccd4c955dbdbdee7f6b8f3deb35b7b18404d",
+      "sourceGroupId": "lichess-game-003",
+      "split": "development",
+      "platform": "lichess",
+      "imageSize": [
+        1115,
+        1102
+      ],
+      "box": [
+        20,
+        8,
+        1100,
+        1088
+      ],
+      "conditions": [
+        "last-move-highlights"
+      ],
+      "provenance": {
+        "kind": "user-supplied-real-use",
+        "originalPath": ".cache/real-captures/lichess/lichess-game-003-shot-001.png",
+        "url": null,
+        "note": "Original PNG bytes. Exact source URL, capture date, theme name and FEN/PGN not supplied."
+      }
+    },
+    {
+      "id": "lichess-game-003-shot-002",
+      "path": "data/detection/development/lichess-game-003-shot-002.png",
+      "sha256": "266cd18fadacddc3ef3332979a7659421dfcb4dbbc169f23cf035e62333a77f5",
+      "sourceGroupId": "lichess-game-003",
+      "split": "development",
+      "platform": "lichess",
+      "imageSize": [
+        1110,
+        1105
+      ],
+      "box": [
+        15,
+        8,
+        1095,
+        1088
+      ],
+      "conditions": [
+        "last-move-highlights"
+      ],
+      "provenance": {
+        "kind": "user-supplied-real-use",
+        "originalPath": ".cache/real-captures/lichess/lichess-game-003-shot-002.png",
+        "url": null,
+        "note": "Original PNG bytes. Exact source URL, capture date, theme name and FEN/PGN not supplied."
+      }
+    },
+    {
+      "id": "lichess-game-004-shot-001",
+      "path": "tests/fixtures/detection/held-out/lichess-game-004-shot-001.png",
+      "sha256": "af88c456ac979f1eacf82147be8604b3fc9ef5eb127348635dfdc988a0ead6bf",
+      "sourceGroupId": "lichess-game-004",
+      "split": "evaluation",
+      "platform": "lichess",
+      "imageSize": [
+        1147,
+        1135
+      ],
+      "box": [
+        15,
+        10,
+        1095,
+        1090
+      ],
+      "conditions": [
+        "last-move-highlights"
+      ],
+      "provenance": {
+        "kind": "user-supplied-real-use",
+        "originalPath": ".cache/real-captures/lichess/lichess-game-004-shot-001.png",
+        "url": null,
+        "note": "Original PNG bytes. Exact source URL, capture date, theme name and FEN/PGN not supplied."
+      }
+    },
+    {
+      "id": "lichess-game-004-shot-002",
+      "path": "tests/fixtures/detection/held-out/lichess-game-004-shot-002.png",
+      "sha256": "5fa1c9e112c6f0e0c8a6d87bf958e3e99cef81040fd9d5e44e472e52fa39e72c",
+      "sourceGroupId": "lichess-game-004",
+      "split": "evaluation",
+      "platform": "lichess",
+      "imageSize": [
+        1111,
+        1109
+      ],
+      "box": [
+        11,
+        10,
+        1091,
+        1090
+      ],
+      "conditions": [
+        "last-move-highlights"
+      ],
+      "provenance": {
+        "kind": "user-supplied-real-use",
+        "originalPath": ".cache/real-captures/lichess/lichess-game-004-shot-002.png",
+        "url": null,
+        "note": "Original PNG bytes. Exact source URL, capture date, theme name and FEN/PGN not supplied."
+      }
+    },
+    {
+      "id": "lichess-game-005-shot-001",
+      "path": "tests/fixtures/detection/held-out/lichess-game-005-shot-001.png",
+      "sha256": "3f03ff591688bf711ec07e1e5f063e61d7977abb64c40ae8f3140baf9de6752d",
+      "sourceGroupId": "lichess-game-005",
+      "split": "evaluation",
+      "platform": "lichess",
+      "imageSize": [
+        1103,
+        1098
+      ],
+      "box": [
+        12,
+        6,
+        1092,
+        1086
+      ],
+      "conditions": [
+        "last-move-highlights",
+        "arrows",
+        "circles"
+      ],
+      "provenance": {
+        "kind": "user-supplied-real-use",
+        "originalPath": ".cache/real-captures/lichess/lichess-game-005-shot-001.png",
+        "url": null,
+        "note": "Original PNG bytes. Exact source URL, capture date, theme name and FEN/PGN not supplied."
+      }
+    },
+    {
+      "id": "lichess-game-005-shot-002",
+      "path": "tests/fixtures/detection/held-out/lichess-game-005-shot-002.png",
+      "sha256": "14f8776c66c09bcebce195616560f840c3231f4382d116e89eb59c638aa27c6d",
+      "sourceGroupId": "lichess-game-005",
+      "split": "evaluation",
+      "platform": "lichess",
+      "imageSize": [
+        1124,
+        1106
+      ],
+      "box": [
+        30,
+        11,
+        1110,
+        1091
+      ],
+      "conditions": [
+        "last-move-highlights",
+        "arrows",
+        "circles",
+        "check-highlight"
+      ],
+      "provenance": {
+        "kind": "user-supplied-real-use",
+        "originalPath": ".cache/real-captures/lichess/lichess-game-005-shot-002.png",
+        "url": null,
+        "note": "Original PNG bytes. Exact source URL, capture date, theme name and FEN/PGN not supplied."
+      }
+    },
+    {
+      "id": "chesscom-game-001-shot-001",
+      "path": "data/detection/development/chesscom-game-001-shot-001.png",
+      "sha256": "2f0f5154dcbe6ed08303160e0e4d3a172b78d8999a46020d1d5cea6e6b6d3cf4",
+      "sourceGroupId": "chesscom-game-001",
+      "split": "development",
+      "platform": "chesscom",
+      "imageSize": [
+        1283,
+        1281
+      ],
+      "box": [
+        33,
+        29,
+        1257,
+        1253
+      ],
+      "conditions": [
+        "last-move-highlights"
+      ],
+      "provenance": {
+        "kind": "user-supplied-real-use",
+        "originalPath": ".cache/real-captures/chesscom/chesscom-game-001-shot-001.png",
+        "url": null,
+        "note": "Original PNG bytes. Exact source URL, capture date, theme name and FEN/PGN not supplied."
+      }
+    },
+    {
+      "id": "chesscom-game-001-shot-002",
+      "path": "data/detection/development/chesscom-game-001-shot-002.png",
+      "sha256": "be9d25762296d9d1a94b5d80047f549123fac7cc5a70ba06851ad1eafe467c6d",
+      "sourceGroupId": "chesscom-game-001",
+      "split": "development",
+      "platform": "chesscom",
+      "imageSize": [
+        1309,
+        1309
+      ],
+      "box": [
+        41,
+        34,
+        1265,
+        1258
+      ],
+      "conditions": [
+        "last-move-highlights"
+      ],
+      "provenance": {
+        "kind": "user-supplied-real-use",
+        "originalPath": ".cache/real-captures/chesscom/chesscom-game-001-shot-002.png",
+        "url": null,
+        "note": "Original PNG bytes. Exact source URL, capture date, theme name and FEN/PGN not supplied."
+      }
+    },
+    {
+      "id": "chesscom-game-002-shot-001",
+      "path": "data/detection/development/chesscom-game-002-shot-001.png",
+      "sha256": "4b040aecd4b5ae604fc7070f9c0cc52a83565576d6962f887a142868fd3abefb",
+      "sourceGroupId": "chesscom-game-002",
+      "split": "development",
+      "platform": "chesscom",
+      "imageSize": [
+        1261,
+        1313
+      ],
+      "box": [
+        17,
+        42,
+        1241,
+        1266
+      ],
+      "conditions": [
+        "last-move-highlights"
+      ],
+      "provenance": {
+        "kind": "user-supplied-real-use",
+        "originalPath": ".cache/real-captures/chesscom/chesscom-game-002-shot-001.png",
+        "url": null,
+        "note": "Original PNG bytes. Exact source URL, capture date, theme name and FEN/PGN not supplied."
+      }
+    },
+    {
+      "id": "chesscom-game-002-shot-002",
+      "path": "data/detection/development/chesscom-game-002-shot-002.png",
+      "sha256": "f2c57672438694ffb6b439453ce567d32980365c10e43f92d597467b9b7fe753",
+      "sourceGroupId": "chesscom-game-002",
+      "split": "development",
+      "platform": "chesscom",
+      "imageSize": [
+        1284,
+        1261
+      ],
+      "box": [
+        17,
+        12,
+        1241,
+        1236
+      ],
+      "conditions": [
+        "last-move-highlights"
+      ],
+      "provenance": {
+        "kind": "user-supplied-real-use",
+        "originalPath": ".cache/real-captures/chesscom/chesscom-game-002-shot-002.png",
+        "url": null,
+        "note": "Original PNG bytes. Exact source URL, capture date, theme name and FEN/PGN not supplied."
+      }
+    },
+    {
+      "id": "chesscom-game-003-shot-001",
+      "path": "data/detection/development/chesscom-game-003-shot-001.png",
+      "sha256": "5e8249e80ad1776af79afb63ae4ebe62d18283b0a70b2921f3a2bcd7bec57425",
+      "sourceGroupId": "chesscom-game-003",
+      "split": "development",
+      "platform": "chesscom",
+      "imageSize": [
+        1289,
+        1304
+      ],
+      "box": [
+        31,
+        22,
+        1255,
+        1246
+      ],
+      "conditions": [
+        "last-move-highlights"
+      ],
+      "provenance": {
+        "kind": "user-supplied-real-use",
+        "originalPath": ".cache/real-captures/chesscom/chesscom-game-003-shot-001.png",
+        "url": null,
+        "note": "Original PNG bytes. Exact source URL, capture date, theme name and FEN/PGN not supplied."
+      }
+    },
+    {
+      "id": "chesscom-game-003-shot-002",
+      "path": "data/detection/development/chesscom-game-003-shot-002.png",
+      "sha256": "0c9be0eb9396107eebc6a1d353422e7065e6ddf810d627677603568289dab69a",
+      "sourceGroupId": "chesscom-game-003",
+      "split": "development",
+      "platform": "chesscom",
+      "imageSize": [
+        1239,
+        1272
+      ],
+      "box": [
+        3,
+        13,
+        1227,
+        1237
+      ],
+      "conditions": [
+        "last-move-highlights"
+      ],
+      "provenance": {
+        "kind": "user-supplied-real-use",
+        "originalPath": ".cache/real-captures/chesscom/chesscom-game-003-shot-002.png",
+        "url": null,
+        "note": "Original PNG bytes. Exact source URL, capture date, theme name and FEN/PGN not supplied."
+      }
+    },
+    {
+      "id": "chesscom-game-004-shot-001",
+      "path": "tests/fixtures/detection/held-out/chesscom-game-004-shot-001.png",
+      "sha256": "dcc68f573967ea5d2093885499c06bf5221e830aa2e9b21f93b5d837ff036bef",
+      "sourceGroupId": "chesscom-game-004",
+      "split": "evaluation",
+      "platform": "chesscom",
+      "imageSize": [
+        1295,
+        1291
+      ],
+      "box": [
+        31,
+        32,
+        1255,
+        1256
+      ],
+      "conditions": [
+        "last-move-highlights"
+      ],
+      "provenance": {
+        "kind": "user-supplied-real-use",
+        "originalPath": ".cache/real-captures/chesscom/chesscom-game-004-shot-001.png",
+        "url": null,
+        "note": "Original PNG bytes. Exact source URL, capture date, theme name and FEN/PGN not supplied."
+      }
+    },
+    {
+      "id": "chesscom-game-004-shot-002",
+      "path": "tests/fixtures/detection/held-out/chesscom-game-004-shot-002.png",
+      "sha256": "b2c0618d2f190065e3bf99c00d1520dfd3b2e5f9ceae6f63d10ad770a222f3a1",
+      "sourceGroupId": "chesscom-game-004",
+      "split": "evaluation",
+      "platform": "chesscom",
+      "imageSize": [
+        1263,
+        1266
+      ],
+      "box": [
+        22,
+        20,
+        1246,
+        1244
+      ],
+      "conditions": [
+        "last-move-highlights"
+      ],
+      "provenance": {
+        "kind": "user-supplied-real-use",
+        "originalPath": ".cache/real-captures/chesscom/chesscom-game-004-shot-002.png",
+        "url": null,
+        "note": "Original PNG bytes. Exact source URL, capture date, theme name and FEN/PGN not supplied."
+      }
+    },
+    {
+      "id": "chesscom-game-005-shot-001",
+      "path": "tests/fixtures/detection/held-out/chesscom-game-005-shot-001.png",
+      "sha256": "cc6941320a58af7672e951abcbd4bc43e28a66482f3e204b3ac63a71cb56447c",
+      "sourceGroupId": "chesscom-game-005",
+      "split": "evaluation",
+      "platform": "chesscom",
+      "imageSize": [
+        1293,
+        1299
+      ],
+      "box": [
+        35,
+        29,
+        1259,
+        1253
+      ],
+      "conditions": [
+        "last-move-highlights",
+        "arrows",
+        "manual-square-highlight"
+      ],
+      "provenance": {
+        "kind": "user-supplied-real-use",
+        "originalPath": ".cache/real-captures/chesscom/chesscom-game-005-shot-001.png",
+        "url": null,
+        "note": "Original PNG bytes. Exact source URL, capture date, theme name and FEN/PGN not supplied."
+      }
+    },
+    {
+      "id": "chesscom-game-005-shot-002",
+      "path": "tests/fixtures/detection/held-out/chesscom-game-005-shot-002.png",
+      "sha256": "f8242502bff4a1ed5627cec7f7202d12b1fc4607672014add4294cb6e3efd5a2",
+      "sourceGroupId": "chesscom-game-005",
+      "split": "evaluation",
+      "platform": "chesscom",
+      "imageSize": [
+        1260,
+        1284
+      ],
+      "box": [
+        17,
+        9,
+        1241,
+        1233
+      ],
+      "conditions": [
+        "last-move-highlights",
+        "arrows"
+      ],
+      "provenance": {
+        "kind": "user-supplied-real-use",
+        "originalPath": ".cache/real-captures/chesscom/chesscom-game-005-shot-002.png",
+        "url": null,
+        "note": "Original PNG bytes. Exact source URL, capture date, theme name and FEN/PGN not supplied."
+      }
+    },
+    {
+      "id": "chesscom-blue-classic-digital-009-black-bottom",
+      "path": "data/detection/development/chesscom-blue-classic-digital-009-black-bottom.png",
+      "sha256": "9a47f91062ac93bd4aa9dc04df42cb023360a084f76129f3449638f6873cb5e1",
+      "sourceGroupId": "digital-positions-v1-sequence-003",
+      "split": "development",
+      "platform": "chesscom",
+      "imageSize": [
+        1280,
+        1000
+      ],
+      "box": [
+        228,
+        66,
+        932,
+        770
+      ],
+      "conditions": [
+        "clean"
+      ],
+      "configuration": {
+        "id": "chesscom-blue-classic",
+        "platform": "chesscom",
+        "boardTheme": "blue",
+        "pieceSet": "classic",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      "provenance": {
+        "kind": "automated-platform-capture",
+        "source": {
+          "url": "https://www.chess.com/analysis?fen=rnbqkbnr%2Fpp5p%2F2pp4%2F5pp1%2F1P6%2FP3P3%2F3P1PPP%2FRNBQKBNR",
+          "client": "desktop-web",
+          "locale": "en-GB",
+          "layoutId": "CC01",
+          "pageModification": "Onboarding dismissed, cookies rejected when shown; arrows/highlights/evaluation bar/answer inputs hidden; public unlocked catalogue artwork applied to local board options",
+          "cssBoardBounds": {
+            "x": 228,
+            "y": 66,
+            "width": 704,
+            "height": 704
+          },
+          "selectorChoices": {
+            "boardStyle": {
+              "id": "3557ef20-7a02-11ef-8bc3-211bd4db38dc",
+              "name": "Blue",
+              "isUnlocked": true
+            },
+            "pieceSet": {
+              "id": "711c34de-b2f4-11ed-9bad-8dc29a8ae490",
+              "name": "Classic",
+              "isUnlocked": true
+            },
+            "method": "local-board-options",
+            "catalogueUrl": "https://api.chess.com/rpc/chesscom.themes.v2.ThemesService/ListThemesSelection"
+          },
+          "observedStyle": {
+            "board": {
+              "assets": {
+                "background": "https://assets-themes.chess.com/image/4fs27/200.png"
+              },
+              "config": {
+                "highlightSquareHex": "#44E0E0",
+                "darkSquareCoordinateHex": "#F2F6Fa",
+                "lightSquareCoordinateHex": "#5596F2"
+              }
+            },
+            "config": {
+              "perspective": "TOP_DOWN"
+            },
+            "pieces": {
+              "assets": {
+                "wp": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wp.png",
+                "wn": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wn.png",
+                "wb": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wb.png",
+                "wr": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wr.png",
+                "wq": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wq.png",
+                "wk": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wk.png",
+                "bp": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bp.png",
+                "bn": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bn.png",
+                "bb": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bb.png",
+                "br": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/br.png",
+                "bq": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bq.png",
+                "bk": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bk.png"
+              }
+            },
+            "sound": {
+              "assets": {
+                "capture": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/capture.mp3"
+                },
+                "castle": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/castle.mp3"
+                },
+                "gameEnd": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/game-end.mp3"
+                },
+                "gameStart": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/game-start.mp3"
+                },
+                "illegal": {
+                  "mp3": "https://assets-themes.chess.com/audio/b9qbh/illegal.mp3"
+                },
+                "moveCheck": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-check.mp3"
+                },
+                "moveOpponent": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-opponent.mp3"
+                },
+                "moveSelf": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-self.mp3"
+                },
+                "notify": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/notify.mp3"
+                },
+                "premove": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/premove.mp3"
+                },
+                "promote": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/promote.mp3"
+                },
+                "tenSeconds": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/tenseconds.mp3"
+                }
+              }
+            }
+          },
+          "boardArtwork": [
+            "https://assets-themes.chess.com/image/4fs27/200.png"
+          ],
+          "pieceArtwork": [
+            {
+              "code": "br",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/br.png"
+              ]
+            },
+            {
+              "code": "bn",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bn.png"
+              ]
+            },
+            {
+              "code": "bb",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bb.png"
+              ]
+            },
+            {
+              "code": "bk",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bk.png"
+              ]
+            },
+            {
+              "code": "bq",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bq.png"
+              ]
+            },
+            {
+              "code": "bb",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bb.png"
+              ]
+            },
+            {
+              "code": "bn",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bn.png"
+              ]
+            },
+            {
+              "code": "br",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/br.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wp.png"
+              ]
+            },
+            {
+              "code": "wr",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wr.png"
+              ]
+            },
+            {
+              "code": "wn",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wn.png"
+              ]
+            },
+            {
+              "code": "wb",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wb.png"
+              ]
+            },
+            {
+              "code": "wk",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wk.png"
+              ]
+            },
+            {
+              "code": "wq",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wq.png"
+              ]
+            },
+            {
+              "code": "wb",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wb.png"
+              ]
+            },
+            {
+              "code": "wn",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wn.png"
+              ]
+            },
+            {
+              "code": "wr",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wr.png"
+              ]
+            }
+          ],
+          "browser": "Chromium 153.0.8010.12",
+          "capturedAt": "2026-10-08T11:38:53.944182+00:00"
+        },
+        "originalPath": ".cache/configurable-captures/digital-positions-v1/g1-clean-pilot-v1/training/chesscom-blue-classic/digital-009-black-bottom.png",
+        "note": "Original bytes; original capture training group remains development for detection."
+      }
+    },
+    {
+      "id": "chesscom-blue-classic-digital-009-white-bottom",
+      "path": "data/detection/development/chesscom-blue-classic-digital-009-white-bottom.png",
+      "sha256": "e6fd5251c12377ed7488c19e663713ce5e6131ff7941a1bbfeeaefe503768e3f",
+      "sourceGroupId": "digital-positions-v1-sequence-003",
+      "split": "development",
+      "platform": "chesscom",
+      "imageSize": [
+        1280,
+        1000
+      ],
+      "box": [
+        228,
+        66,
+        932,
+        770
+      ],
+      "conditions": [
+        "clean"
+      ],
+      "configuration": {
+        "id": "chesscom-blue-classic",
+        "platform": "chesscom",
+        "boardTheme": "blue",
+        "pieceSet": "classic",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      "provenance": {
+        "kind": "automated-platform-capture",
+        "source": {
+          "url": "https://www.chess.com/analysis?fen=rnbqkbnr%2Fpp5p%2F2pp4%2F5pp1%2F1P6%2FP3P3%2F3P1PPP%2FRNBQKBNR",
+          "client": "desktop-web",
+          "locale": "en-GB",
+          "layoutId": "CC01",
+          "pageModification": "Onboarding dismissed, cookies rejected when shown; arrows/highlights/evaluation bar/answer inputs hidden; public unlocked catalogue artwork applied to local board options",
+          "cssBoardBounds": {
+            "x": 228,
+            "y": 66,
+            "width": 704,
+            "height": 704
+          },
+          "selectorChoices": {
+            "boardStyle": {
+              "id": "3557ef20-7a02-11ef-8bc3-211bd4db38dc",
+              "name": "Blue",
+              "isUnlocked": true
+            },
+            "pieceSet": {
+              "id": "711c34de-b2f4-11ed-9bad-8dc29a8ae490",
+              "name": "Classic",
+              "isUnlocked": true
+            },
+            "method": "local-board-options",
+            "catalogueUrl": "https://api.chess.com/rpc/chesscom.themes.v2.ThemesService/ListThemesSelection"
+          },
+          "observedStyle": {
+            "board": {
+              "assets": {
+                "background": "https://assets-themes.chess.com/image/4fs27/200.png"
+              },
+              "config": {
+                "highlightSquareHex": "#44E0E0",
+                "darkSquareCoordinateHex": "#F2F6Fa",
+                "lightSquareCoordinateHex": "#5596F2"
+              }
+            },
+            "config": {
+              "perspective": "TOP_DOWN"
+            },
+            "pieces": {
+              "assets": {
+                "wp": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wp.png",
+                "wn": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wn.png",
+                "wb": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wb.png",
+                "wr": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wr.png",
+                "wq": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wq.png",
+                "wk": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wk.png",
+                "bp": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bp.png",
+                "bn": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bn.png",
+                "bb": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bb.png",
+                "br": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/br.png",
+                "bq": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bq.png",
+                "bk": "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bk.png"
+              }
+            },
+            "sound": {
+              "assets": {
+                "capture": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/capture.mp3"
+                },
+                "castle": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/castle.mp3"
+                },
+                "gameEnd": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/game-end.mp3"
+                },
+                "gameStart": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/game-start.mp3"
+                },
+                "illegal": {
+                  "mp3": "https://assets-themes.chess.com/audio/b9qbh/illegal.mp3"
+                },
+                "moveCheck": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-check.mp3"
+                },
+                "moveOpponent": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-opponent.mp3"
+                },
+                "moveSelf": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-self.mp3"
+                },
+                "notify": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/notify.mp3"
+                },
+                "premove": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/premove.mp3"
+                },
+                "promote": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/promote.mp3"
+                },
+                "tenSeconds": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/tenseconds.mp3"
+                }
+              }
+            }
+          },
+          "boardArtwork": [
+            "https://assets-themes.chess.com/image/4fs27/200.png"
+          ],
+          "pieceArtwork": [
+            {
+              "code": "br",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/br.png"
+              ]
+            },
+            {
+              "code": "bn",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bn.png"
+              ]
+            },
+            {
+              "code": "bb",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bb.png"
+              ]
+            },
+            {
+              "code": "bk",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bk.png"
+              ]
+            },
+            {
+              "code": "bq",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bq.png"
+              ]
+            },
+            {
+              "code": "bb",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bb.png"
+              ]
+            },
+            {
+              "code": "bn",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bn.png"
+              ]
+            },
+            {
+              "code": "br",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/br.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/bp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wp.png"
+              ]
+            },
+            {
+              "code": "wr",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wr.png"
+              ]
+            },
+            {
+              "code": "wn",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wn.png"
+              ]
+            },
+            {
+              "code": "wb",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wb.png"
+              ]
+            },
+            {
+              "code": "wk",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wk.png"
+              ]
+            },
+            {
+              "code": "wq",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wq.png"
+              ]
+            },
+            {
+              "code": "wb",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wb.png"
+              ]
+            },
+            {
+              "code": "wn",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wn.png"
+              ]
+            },
+            {
+              "code": "wr",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/classic/150/wr.png"
+              ]
+            }
+          ],
+          "browser": "Chromium 153.0.8010.12",
+          "capturedAt": "2026-10-08T11:38:50.235496+00:00"
+        },
+        "originalPath": ".cache/configurable-captures/digital-positions-v1/g1-clean-pilot-v1/training/chesscom-blue-classic/digital-009-white-bottom.png",
+        "note": "Original bytes; original capture training group remains development for detection."
+      }
+    },
+    {
+      "id": "chesscom-brown-bases-digital-009-black-bottom",
+      "path": "data/detection/development/chesscom-brown-bases-digital-009-black-bottom.png",
+      "sha256": "026e572660d5c54ca1e1702d7c8b0f97856ce9e4f7e9386170a690082aa03ed7",
+      "sourceGroupId": "digital-positions-v1-sequence-003",
+      "split": "development",
+      "platform": "chesscom",
+      "imageSize": [
+        1280,
+        1000
+      ],
+      "box": [
+        228,
+        66,
+        932,
+        770
+      ],
+      "conditions": [
+        "clean"
+      ],
+      "configuration": {
+        "id": "chesscom-brown-bases",
+        "platform": "chesscom",
+        "boardTheme": "brown",
+        "pieceSet": "bases",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      "provenance": {
+        "kind": "automated-platform-capture",
+        "source": {
+          "url": "https://www.chess.com/analysis?fen=rnbqkbnr%2Fpp5p%2F2pp4%2F5pp1%2F1P6%2FP3P3%2F3P1PPP%2FRNBQKBNR",
+          "client": "desktop-web",
+          "locale": "en-GB",
+          "layoutId": "CC01",
+          "pageModification": "Onboarding dismissed, cookies rejected when shown; arrows/highlights/evaluation bar/answer inputs hidden; public unlocked catalogue artwork applied to local board options",
+          "cssBoardBounds": {
+            "x": 228,
+            "y": 66,
+            "width": 704,
+            "height": 704
+          },
+          "selectorChoices": {
+            "boardStyle": {
+              "id": "7116ac3a-b2f4-11ed-9a13-55a98900fd1f",
+              "name": "Brown",
+              "isUnlocked": true
+            },
+            "pieceSet": {
+              "id": "711b9286-b2f4-11ed-99b1-11f4cfc8d51b",
+              "name": "Bases",
+              "isUnlocked": true
+            },
+            "method": "local-board-options",
+            "catalogueUrl": "https://api.chess.com/rpc/chesscom.themes.v2.ThemesService/ListThemesSelection"
+          },
+          "observedStyle": {
+            "board": {
+              "assets": {
+                "background": "https://images.chesscomfiles.com/chess-themes/boards/brown/200.png"
+              },
+              "config": {
+                "highlightSquareHex": "#ffff33",
+                "darkSquareCoordinateHex": "#F0D9B5",
+                "lightSquareCoordinateHex": "#B58863"
+              }
+            },
+            "config": {
+              "perspective": "TOP_DOWN"
+            },
+            "pieces": {
+              "assets": {
+                "wp": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wp.png",
+                "wn": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wn.png",
+                "wb": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wb.png",
+                "wr": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wr.png",
+                "wq": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wq.png",
+                "wk": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wk.png",
+                "bp": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bp.png",
+                "bn": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bn.png",
+                "bb": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bb.png",
+                "br": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/br.png",
+                "bq": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bq.png",
+                "bk": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bk.png"
+              }
+            },
+            "sound": {
+              "assets": {
+                "capture": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/capture.mp3"
+                },
+                "castle": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/castle.mp3"
+                },
+                "gameEnd": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/game-end.mp3"
+                },
+                "gameStart": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/game-start.mp3"
+                },
+                "illegal": {
+                  "mp3": "https://assets-themes.chess.com/audio/b9qbh/illegal.mp3"
+                },
+                "moveCheck": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-check.mp3"
+                },
+                "moveOpponent": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-opponent.mp3"
+                },
+                "moveSelf": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-self.mp3"
+                },
+                "notify": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/notify.mp3"
+                },
+                "premove": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/premove.mp3"
+                },
+                "promote": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/promote.mp3"
+                },
+                "tenSeconds": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/tenseconds.mp3"
+                }
+              }
+            }
+          },
+          "boardArtwork": [
+            "https://images.chesscomfiles.com/chess-themes/boards/brown/200.png"
+          ],
+          "pieceArtwork": [
+            {
+              "code": "br",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/br.png"
+              ]
+            },
+            {
+              "code": "bn",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bn.png"
+              ]
+            },
+            {
+              "code": "bb",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bb.png"
+              ]
+            },
+            {
+              "code": "bk",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bk.png"
+              ]
+            },
+            {
+              "code": "bq",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bq.png"
+              ]
+            },
+            {
+              "code": "bb",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bb.png"
+              ]
+            },
+            {
+              "code": "bn",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bn.png"
+              ]
+            },
+            {
+              "code": "br",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/br.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wp.png"
+              ]
+            },
+            {
+              "code": "wr",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wr.png"
+              ]
+            },
+            {
+              "code": "wn",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wn.png"
+              ]
+            },
+            {
+              "code": "wb",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wb.png"
+              ]
+            },
+            {
+              "code": "wk",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wk.png"
+              ]
+            },
+            {
+              "code": "wq",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wq.png"
+              ]
+            },
+            {
+              "code": "wb",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wb.png"
+              ]
+            },
+            {
+              "code": "wn",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wn.png"
+              ]
+            },
+            {
+              "code": "wr",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wr.png"
+              ]
+            }
+          ],
+          "browser": "Chromium 153.0.8010.12",
+          "capturedAt": "2026-10-08T11:39:10.049734+00:00"
+        },
+        "originalPath": ".cache/configurable-captures/digital-positions-v1/g1-clean-pilot-v1/training/chesscom-brown-bases/digital-009-black-bottom.png",
+        "note": "Original bytes; original capture training group remains development for detection."
+      }
+    },
+    {
+      "id": "chesscom-brown-bases-digital-009-white-bottom",
+      "path": "data/detection/development/chesscom-brown-bases-digital-009-white-bottom.png",
+      "sha256": "a63c3f0e0d1e12a3988878a7d971f27a97d4eea4d9f17c1a50d4e9c605fbb1d3",
+      "sourceGroupId": "digital-positions-v1-sequence-003",
+      "split": "development",
+      "platform": "chesscom",
+      "imageSize": [
+        1280,
+        1000
+      ],
+      "box": [
+        228,
+        66,
+        932,
+        770
+      ],
+      "conditions": [
+        "clean"
+      ],
+      "configuration": {
+        "id": "chesscom-brown-bases",
+        "platform": "chesscom",
+        "boardTheme": "brown",
+        "pieceSet": "bases",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      "provenance": {
+        "kind": "automated-platform-capture",
+        "source": {
+          "url": "https://www.chess.com/analysis?fen=rnbqkbnr%2Fpp5p%2F2pp4%2F5pp1%2F1P6%2FP3P3%2F3P1PPP%2FRNBQKBNR",
+          "client": "desktop-web",
+          "locale": "en-GB",
+          "layoutId": "CC01",
+          "pageModification": "Onboarding dismissed, cookies rejected when shown; arrows/highlights/evaluation bar/answer inputs hidden; public unlocked catalogue artwork applied to local board options",
+          "cssBoardBounds": {
+            "x": 228,
+            "y": 66,
+            "width": 704,
+            "height": 704
+          },
+          "selectorChoices": {
+            "boardStyle": {
+              "id": "7116ac3a-b2f4-11ed-9a13-55a98900fd1f",
+              "name": "Brown",
+              "isUnlocked": true
+            },
+            "pieceSet": {
+              "id": "711b9286-b2f4-11ed-99b1-11f4cfc8d51b",
+              "name": "Bases",
+              "isUnlocked": true
+            },
+            "method": "local-board-options",
+            "catalogueUrl": "https://api.chess.com/rpc/chesscom.themes.v2.ThemesService/ListThemesSelection"
+          },
+          "observedStyle": {
+            "board": {
+              "assets": {
+                "background": "https://images.chesscomfiles.com/chess-themes/boards/brown/200.png"
+              },
+              "config": {
+                "highlightSquareHex": "#ffff33",
+                "darkSquareCoordinateHex": "#F0D9B5",
+                "lightSquareCoordinateHex": "#B58863"
+              }
+            },
+            "config": {
+              "perspective": "TOP_DOWN"
+            },
+            "pieces": {
+              "assets": {
+                "wp": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wp.png",
+                "wn": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wn.png",
+                "wb": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wb.png",
+                "wr": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wr.png",
+                "wq": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wq.png",
+                "wk": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wk.png",
+                "bp": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bp.png",
+                "bn": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bn.png",
+                "bb": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bb.png",
+                "br": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/br.png",
+                "bq": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bq.png",
+                "bk": "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bk.png"
+              }
+            },
+            "sound": {
+              "assets": {
+                "capture": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/capture.mp3"
+                },
+                "castle": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/castle.mp3"
+                },
+                "gameEnd": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/game-end.mp3"
+                },
+                "gameStart": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/game-start.mp3"
+                },
+                "illegal": {
+                  "mp3": "https://assets-themes.chess.com/audio/b9qbh/illegal.mp3"
+                },
+                "moveCheck": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-check.mp3"
+                },
+                "moveOpponent": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-opponent.mp3"
+                },
+                "moveSelf": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/move-self.mp3"
+                },
+                "notify": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/notify.mp3"
+                },
+                "premove": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/premove.mp3"
+                },
+                "promote": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/promote.mp3"
+                },
+                "tenSeconds": {
+                  "mp3": "https://images.chesscomfiles.com/chess-themes/sounds/_MP3_/default/tenseconds.mp3"
+                }
+              }
+            }
+          },
+          "boardArtwork": [
+            "https://images.chesscomfiles.com/chess-themes/boards/brown/200.png"
+          ],
+          "pieceArtwork": [
+            {
+              "code": "br",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/br.png"
+              ]
+            },
+            {
+              "code": "bn",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bn.png"
+              ]
+            },
+            {
+              "code": "bb",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bb.png"
+              ]
+            },
+            {
+              "code": "bk",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bk.png"
+              ]
+            },
+            {
+              "code": "bq",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bq.png"
+              ]
+            },
+            {
+              "code": "bb",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bb.png"
+              ]
+            },
+            {
+              "code": "bn",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bn.png"
+              ]
+            },
+            {
+              "code": "br",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/br.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bp.png"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/bp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wp.png"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wp.png"
+              ]
+            },
+            {
+              "code": "wr",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wr.png"
+              ]
+            },
+            {
+              "code": "wn",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wn.png"
+              ]
+            },
+            {
+              "code": "wb",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wb.png"
+              ]
+            },
+            {
+              "code": "wk",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wk.png"
+              ]
+            },
+            {
+              "code": "wq",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wq.png"
+              ]
+            },
+            {
+              "code": "wb",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wb.png"
+              ]
+            },
+            {
+              "code": "wn",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wn.png"
+              ]
+            },
+            {
+              "code": "wr",
+              "artwork": [
+                "https://images.chesscomfiles.com/chess-themes/pieces/bases/150/wr.png"
+              ]
+            }
+          ],
+          "browser": "Chromium 153.0.8010.12",
+          "capturedAt": "2026-10-08T11:39:06.027181+00:00"
+        },
+        "originalPath": ".cache/configurable-captures/digital-positions-v1/g1-clean-pilot-v1/training/chesscom-brown-bases/digital-009-white-bottom.png",
+        "note": "Original bytes; original capture training group remains development for detection."
+      }
+    },
+    {
+      "id": "lichess-green-merida-digital-009-black-bottom",
+      "path": "data/detection/development/lichess-green-merida-digital-009-black-bottom.png",
+      "sha256": "13a0e075c9195332ccc74bb3db69203d747ab693dad6bb2eea9004faeb41d4e9",
+      "sourceGroupId": "digital-positions-v1-sequence-003",
+      "split": "development",
+      "platform": "lichess",
+      "imageSize": [
+        1280,
+        1000
+      ],
+      "box": [
+        190,
+        158,
+        774,
+        742
+      ],
+      "conditions": [
+        "clean"
+      ],
+      "configuration": {
+        "id": "lichess-green-merida",
+        "platform": "lichess",
+        "boardTheme": "green",
+        "pieceSet": "merida",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      "provenance": {
+        "kind": "automated-platform-capture",
+        "source": {
+          "url": "https://lichess.org/editor?fen=rnbqkbnr%2Fpp5p%2F2pp4%2F5pp1%2F1P6%2FP3P3%2F3P1PPP%2FRNBQKBNR&color=black",
+          "client": "desktop-web",
+          "locale": "en-GB",
+          "layoutId": "LC01",
+          "pageModification": "FEN/URL answer fields and resize handle hidden; native style selectors used",
+          "cssBoardBounds": {
+            "x": 189.890625,
+            "y": 158.46875,
+            "width": 584,
+            "height": 584
+          },
+          "selectorChoices": null,
+          "observedStyle": {
+            "board": "green",
+            "pieces": "merida",
+            "is3d": false
+          },
+          "boardArtwork": [
+            "https://lichess1.org/assets/hashed/green.2f5abd91.png"
+          ],
+          "pieceArtwork": [
+            {
+              "code": "br",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bR.e76c948d.svg"
+              ]
+            },
+            {
+              "code": "bn",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bN.16068e0d.svg"
+              ]
+            },
+            {
+              "code": "bb",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bB.5fd67791.svg"
+              ]
+            },
+            {
+              "code": "bq",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bQ.5c5bf0da.svg"
+              ]
+            },
+            {
+              "code": "bk",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bK.6838fd12.svg"
+              ]
+            },
+            {
+              "code": "bb",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bB.5fd67791.svg"
+              ]
+            },
+            {
+              "code": "bn",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bN.16068e0d.svg"
+              ]
+            },
+            {
+              "code": "br",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bR.e76c948d.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.09fe0648.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.09fe0648.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.09fe0648.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.09fe0648.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.09fe0648.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.09fe0648.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.09fe0648.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.2d49d363.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.2d49d363.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.2d49d363.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.2d49d363.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.2d49d363.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.2d49d363.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.2d49d363.svg"
+              ]
+            },
+            {
+              "code": "wr",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wR.e278fefe.svg"
+              ]
+            },
+            {
+              "code": "wn",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wN.081d2ca7.svg"
+              ]
+            },
+            {
+              "code": "wb",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wB.6de6976b.svg"
+              ]
+            },
+            {
+              "code": "wq",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wQ.af2097f7.svg"
+              ]
+            },
+            {
+              "code": "wk",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wK.3d029fd6.svg"
+              ]
+            },
+            {
+              "code": "wb",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wB.6de6976b.svg"
+              ]
+            },
+            {
+              "code": "wn",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wN.081d2ca7.svg"
+              ]
+            },
+            {
+              "code": "wr",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wR.e278fefe.svg"
+              ]
+            }
+          ],
+          "browser": "Chromium 153.0.8010.12",
+          "capturedAt": "2026-10-08T11:38:40.991809+00:00"
+        },
+        "originalPath": ".cache/configurable-captures/digital-positions-v1/g1-clean-pilot-v1/training/lichess-green-merida/digital-009-black-bottom.png",
+        "note": "Original bytes; original capture training group remains development for detection."
+      }
+    },
+    {
+      "id": "lichess-green-merida-digital-009-white-bottom",
+      "path": "data/detection/development/lichess-green-merida-digital-009-white-bottom.png",
+      "sha256": "bc46d8a434530945f107a9726a22f490951a24b85a68096439e2f36a68ee8a99",
+      "sourceGroupId": "digital-positions-v1-sequence-003",
+      "split": "development",
+      "platform": "lichess",
+      "imageSize": [
+        1280,
+        1000
+      ],
+      "box": [
+        190,
+        158,
+        774,
+        742
+      ],
+      "conditions": [
+        "clean"
+      ],
+      "configuration": {
+        "id": "lichess-green-merida",
+        "platform": "lichess",
+        "boardTheme": "green",
+        "pieceSet": "merida",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      "provenance": {
+        "kind": "automated-platform-capture",
+        "source": {
+          "url": "https://lichess.org/editor?fen=rnbqkbnr%2Fpp5p%2F2pp4%2F5pp1%2F1P6%2FP3P3%2F3P1PPP%2FRNBQKBNR&color=white",
+          "client": "desktop-web",
+          "locale": "en-GB",
+          "layoutId": "LC01",
+          "pageModification": "FEN/URL answer fields and resize handle hidden; native style selectors used",
+          "cssBoardBounds": {
+            "x": 189.890625,
+            "y": 158.46875,
+            "width": 584,
+            "height": 584
+          },
+          "selectorChoices": null,
+          "observedStyle": {
+            "board": "green",
+            "pieces": "merida",
+            "is3d": false
+          },
+          "boardArtwork": [
+            "https://lichess1.org/assets/hashed/green.2f5abd91.png"
+          ],
+          "pieceArtwork": [
+            {
+              "code": "br",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bR.e76c948d.svg"
+              ]
+            },
+            {
+              "code": "bn",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bN.16068e0d.svg"
+              ]
+            },
+            {
+              "code": "bb",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bB.5fd67791.svg"
+              ]
+            },
+            {
+              "code": "bq",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bQ.5c5bf0da.svg"
+              ]
+            },
+            {
+              "code": "bk",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bK.6838fd12.svg"
+              ]
+            },
+            {
+              "code": "bb",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bB.5fd67791.svg"
+              ]
+            },
+            {
+              "code": "bn",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bN.16068e0d.svg"
+              ]
+            },
+            {
+              "code": "br",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bR.e76c948d.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.09fe0648.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.09fe0648.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.09fe0648.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.09fe0648.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.09fe0648.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.09fe0648.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.09fe0648.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.2d49d363.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.2d49d363.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.2d49d363.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.2d49d363.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.2d49d363.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.2d49d363.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.2d49d363.svg"
+              ]
+            },
+            {
+              "code": "wr",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wR.e278fefe.svg"
+              ]
+            },
+            {
+              "code": "wn",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wN.081d2ca7.svg"
+              ]
+            },
+            {
+              "code": "wb",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wB.6de6976b.svg"
+              ]
+            },
+            {
+              "code": "wq",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wQ.af2097f7.svg"
+              ]
+            },
+            {
+              "code": "wk",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wK.3d029fd6.svg"
+              ]
+            },
+            {
+              "code": "wb",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wB.6de6976b.svg"
+              ]
+            },
+            {
+              "code": "wn",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wN.081d2ca7.svg"
+              ]
+            },
+            {
+              "code": "wr",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wR.e278fefe.svg"
+              ]
+            }
+          ],
+          "browser": "Chromium 153.0.8010.12",
+          "capturedAt": "2026-10-08T11:38:40.245022+00:00"
+        },
+        "originalPath": ".cache/configurable-captures/digital-positions-v1/g1-clean-pilot-v1/training/lichess-green-merida/digital-009-white-bottom.png",
+        "note": "Original bytes; original capture training group remains development for detection."
+      }
+    },
+    {
+      "id": "lichess-purple-alpha-digital-009-black-bottom",
+      "path": "data/detection/development/lichess-purple-alpha-digital-009-black-bottom.png",
+      "sha256": "2266eb94b998c83b36cc578d7f43b798691848729243c47656fb37103abf6025",
+      "sourceGroupId": "digital-positions-v1-sequence-003",
+      "split": "development",
+      "platform": "lichess",
+      "imageSize": [
+        1280,
+        1000
+      ],
+      "box": [
+        190,
+        158,
+        774,
+        742
+      ],
+      "conditions": [
+        "clean"
+      ],
+      "configuration": {
+        "id": "lichess-purple-alpha",
+        "platform": "lichess",
+        "boardTheme": "purple",
+        "pieceSet": "alpha",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      "provenance": {
+        "kind": "automated-platform-capture",
+        "source": {
+          "url": "https://lichess.org/editor?fen=rnbqkbnr%2Fpp5p%2F2pp4%2F5pp1%2F1P6%2FP3P3%2F3P1PPP%2FRNBQKBNR&color=black",
+          "client": "desktop-web",
+          "locale": "en-GB",
+          "layoutId": "LC01",
+          "pageModification": "FEN/URL answer fields and resize handle hidden; native style selectors used",
+          "cssBoardBounds": {
+            "x": 189.890625,
+            "y": 158.46875,
+            "width": 584,
+            "height": 584
+          },
+          "selectorChoices": null,
+          "observedStyle": {
+            "board": "purple",
+            "pieces": "alpha",
+            "is3d": false
+          },
+          "boardArtwork": [
+            "https://lichess1.org/assets/hashed/purple.0a9f76bd.png"
+          ],
+          "pieceArtwork": [
+            {
+              "code": "br",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bR.3b57773f.svg"
+              ]
+            },
+            {
+              "code": "bn",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bN.cb5efc83.svg"
+              ]
+            },
+            {
+              "code": "bb",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bB.d380ce9c.svg"
+              ]
+            },
+            {
+              "code": "bq",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bQ.bf26b6cf.svg"
+              ]
+            },
+            {
+              "code": "bk",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bK.ef96c6fc.svg"
+              ]
+            },
+            {
+              "code": "bb",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bB.d380ce9c.svg"
+              ]
+            },
+            {
+              "code": "bn",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bN.cb5efc83.svg"
+              ]
+            },
+            {
+              "code": "br",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bR.3b57773f.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.5345f64c.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.5345f64c.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.5345f64c.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.5345f64c.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.5345f64c.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.5345f64c.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.5345f64c.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.ee1c0be8.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.ee1c0be8.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.ee1c0be8.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.ee1c0be8.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.ee1c0be8.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.ee1c0be8.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.ee1c0be8.svg"
+              ]
+            },
+            {
+              "code": "wr",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wR.273d9146.svg"
+              ]
+            },
+            {
+              "code": "wn",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wN.64d597b5.svg"
+              ]
+            },
+            {
+              "code": "wb",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wB.4c185916.svg"
+              ]
+            },
+            {
+              "code": "wq",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wQ.d4831096.svg"
+              ]
+            },
+            {
+              "code": "wk",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wK.5a697a3b.svg"
+              ]
+            },
+            {
+              "code": "wb",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wB.4c185916.svg"
+              ]
+            },
+            {
+              "code": "wn",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wN.64d597b5.svg"
+              ]
+            },
+            {
+              "code": "wr",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wR.273d9146.svg"
+              ]
+            }
+          ],
+          "browser": "Chromium 153.0.8010.12",
+          "capturedAt": "2026-10-08T11:38:44.529416+00:00"
+        },
+        "originalPath": ".cache/configurable-captures/digital-positions-v1/g1-clean-pilot-v1/training/lichess-purple-alpha/digital-009-black-bottom.png",
+        "note": "Original bytes; original capture training group remains development for detection."
+      }
+    },
+    {
+      "id": "lichess-purple-alpha-digital-009-white-bottom",
+      "path": "data/detection/development/lichess-purple-alpha-digital-009-white-bottom.png",
+      "sha256": "68e52bcb84e611ba7c84ee38c6a7e65657b189f7b7dd9448afb5688e685d27a9",
+      "sourceGroupId": "digital-positions-v1-sequence-003",
+      "split": "development",
+      "platform": "lichess",
+      "imageSize": [
+        1280,
+        1000
+      ],
+      "box": [
+        190,
+        158,
+        774,
+        742
+      ],
+      "conditions": [
+        "clean"
+      ],
+      "configuration": {
+        "id": "lichess-purple-alpha",
+        "platform": "lichess",
+        "boardTheme": "purple",
+        "pieceSet": "alpha",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      "provenance": {
+        "kind": "automated-platform-capture",
+        "source": {
+          "url": "https://lichess.org/editor?fen=rnbqkbnr%2Fpp5p%2F2pp4%2F5pp1%2F1P6%2FP3P3%2F3P1PPP%2FRNBQKBNR&color=white",
+          "client": "desktop-web",
+          "locale": "en-GB",
+          "layoutId": "LC01",
+          "pageModification": "FEN/URL answer fields and resize handle hidden; native style selectors used",
+          "cssBoardBounds": {
+            "x": 189.890625,
+            "y": 158.46875,
+            "width": 584,
+            "height": 584
+          },
+          "selectorChoices": null,
+          "observedStyle": {
+            "board": "purple",
+            "pieces": "alpha",
+            "is3d": false
+          },
+          "boardArtwork": [
+            "https://lichess1.org/assets/hashed/purple.0a9f76bd.png"
+          ],
+          "pieceArtwork": [
+            {
+              "code": "br",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bR.3b57773f.svg"
+              ]
+            },
+            {
+              "code": "bn",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bN.cb5efc83.svg"
+              ]
+            },
+            {
+              "code": "bb",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bB.d380ce9c.svg"
+              ]
+            },
+            {
+              "code": "bq",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bQ.bf26b6cf.svg"
+              ]
+            },
+            {
+              "code": "bk",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bK.ef96c6fc.svg"
+              ]
+            },
+            {
+              "code": "bb",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bB.d380ce9c.svg"
+              ]
+            },
+            {
+              "code": "bn",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bN.cb5efc83.svg"
+              ]
+            },
+            {
+              "code": "br",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bR.3b57773f.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.5345f64c.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.5345f64c.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.5345f64c.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.5345f64c.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.5345f64c.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.5345f64c.svg"
+              ]
+            },
+            {
+              "code": "bp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/bP.5345f64c.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.ee1c0be8.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.ee1c0be8.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.ee1c0be8.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.ee1c0be8.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.ee1c0be8.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.ee1c0be8.svg"
+              ]
+            },
+            {
+              "code": "wp",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wP.ee1c0be8.svg"
+              ]
+            },
+            {
+              "code": "wr",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wR.273d9146.svg"
+              ]
+            },
+            {
+              "code": "wn",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wN.64d597b5.svg"
+              ]
+            },
+            {
+              "code": "wb",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wB.4c185916.svg"
+              ]
+            },
+            {
+              "code": "wq",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wQ.d4831096.svg"
+              ]
+            },
+            {
+              "code": "wk",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wK.5a697a3b.svg"
+              ]
+            },
+            {
+              "code": "wb",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wB.4c185916.svg"
+              ]
+            },
+            {
+              "code": "wn",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wN.64d597b5.svg"
+              ]
+            },
+            {
+              "code": "wr",
+              "artwork": [
+                "https://lichess1.org/assets/hashed/wR.273d9146.svg"
+              ]
+            }
+          ],
+          "browser": "Chromium 153.0.8010.12",
+          "capturedAt": "2026-10-08T11:38:43.811880+00:00"
+        },
+        "originalPath": ".cache/configurable-captures/digital-positions-v1/g1-clean-pilot-v1/training/lichess-purple-alpha/digital-009-white-bottom.png",
+        "note": "Original bytes; original capture training group remains development for detection."
+      }
+    }
+  ]
+}

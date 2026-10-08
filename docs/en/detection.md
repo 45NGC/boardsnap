@@ -2,151 +2,163 @@
 
 **English** | [Spanish](../es/detection.md) · [Overview](README.md)
 
-This guide records the original brown-profile implementation. See [evaluated profiles](profiles.md) for subsequent digital styles, the experimental book profile and current coverage.
-
 `boardsnap.detection.detect_board(image)` locates a complete, axis-aligned
-8 × 8 grid in a decoded RGB Pillow image. The initial implementation targets
-the brown board in `lichess-cburnett-brown-v1`. It uses only pixels; it does not
-read filenames, annotations, manifests, browser state or a known board position.
+8 × 8 grid in a decoded RGB Pillow image. Digital detection now combines known
+palette proposals with a **palette-independent structural path**. It reads
+pixels only: no filenames, annotations, browser state or known board position.
 
 ```python
 from boardsnap.image_input import read_image
 from boardsnap.detection import BoardDetectionError, detect_board
 
-with read_image("data/tuning/lichess-cburnett-brown-v1/pos-001-white.png") as image:
+with read_image("image.png") as image:
     try:
         bounds = detect_board(image)
-        print(bounds)  # BoardBounds(x=190, y=158, width=584, height=584)
-        print(bounds.as_box())  # (190, 158, 774, 742)
+        print(bounds.as_box())  # (left, top, right, bottom)
     except BoardDetectionError as error:
         print(error.to_dict())
 ```
 
-`BoardBounds` is an immutable dataclass with integer `x`, `y`, `width` and
-`height`. Coordinates refer to the image passed to the detector, after EXIF
-normalization if it came from `read_image`. Right and bottom edges are exclusive.
-`as_box()` provides Pillow-compatible crop coordinates. The function preserves
-the original image and does not crop, normalize, classify pieces or resolve
-chess orientation. Bounds are internal stage data, not extra public JSON fields.
+`BoardBounds` contains integer `x`, `y`, `width`, `height` in input-image pixels;
+right/bottom edges are exclusive. EXIF normalization happens in `read_image`.
+The detector preserves the input and does not crop, read orientation or classify
+pieces. These bounds are internal data, not additional recognition JSON fields.
+The public recognition output remains exclusively `piecePlacement`.
 
-## Visual previews
+## How it works
 
-From the repository root, generate previews for all tuning captures:
+1. Keep the existing palette masks as candidate proposals. Their strict
+   all-cell alternation check preserves exact bounds on supported legacy themes.
+2. Independently find connected RGB edges. RGB differences retain some boundaries
+   that grayscale would lose between colors of similar brightness. A small blur
+   and morphological closing suppress tiny seams; approximately square connected
+   regions supply candidate geometry.
+3. For each structural candidate, locate seven interior boundaries in each axis.
+   Fit regular spacing to at least five agreeing peaks: piece bases or text may
+   produce stronger peaks than one or two real boundaries. Refine the rectangle
+   in original-image pixels, rejecting extrapolation outside the image.
+4. Divide that rectangle into 8 × 8 cells. Sample each cell's inner rim to reduce
+   interference from piece centers and thin arrows. Estimate the two alternating
+   background appearances from the image, rather than comparing against fixed RGB
+   colors. Require at least 52 consistent cells and at least five per row/column.
+5. Require sustained changes along the predicted grid boundaries in both axes.
+   Alternation, regular spacing and boundary support are all required; a square
+   outline or a uniform lined table is insufficient.
+6. Merge proposals describing the same rectangle. Return one grid, or a structured
+   error for zero/multiple grids. The structural search always runs, even when a
+   palette proposal succeeds, so a second board of another color is not ignored.
+
+Edge proposals use images at most 1600 pixels on the longest side; boundary
+refinement uses original coordinates and samples rows to bound working memory.
+The minimum original board side is 128 pixels; candidates also need at least
+24 pixels at proposal scale. Large-image/small-board combinations can therefore
+be missed. This is deterministic OpenCV/NumPy processing, not a learned model.
+No new dependencies or PyTorch are required.
+
+Digital profiles share this structural path. The selected profile still supplies
+legacy palette proposals and, elsewhere, orientation/classification templates.
+**Detecting a new theme does not imply recognizing its pieces.** The experimental
+print profile retains its separate framed-diagram detector; see [profiles](profiles.md).
+
+## Previews and independent measurement
 
 ```bash
-.venv/bin/python -m tools.preview_detection
+# Real-use images, without classifying pieces
+python -m tools.preview_detection .cache/real-captures --output-dir .cache/detection-real
+# Versioned development corpus
+python -m tools.preview_detection data/detection/development --output-dir .cache/detection-development
+# Rectangle metrics only; choose the split explicitly
+python -m tools.evaluate_detection --split development
+python -m tools.evaluate_detection --split evaluation
 ```
 
-Open `.cache/detection-preview/lichess-cburnett-brown-v1/pos-001-white/`
-in VS Code. Each capture gets its own folder containing `detection.png`
-(the full image with a red rectangle around the detected grid) and `board.png`
-(the unmarked crop at its original resolution). The default command processes
-only `data/tuning`; evaluation images remain separate.
+Preview folders contain `detection.png` (rectangle on the full image) and
+`board.png` (unmarked crop). Originals are unchanged. Input/output folders must
+not overlap. Rerunning replaces previews; failed inputs remove stale previews.
+The preview command exits 1 if any image fails. `--squares` adds normalized/cell
+previews; `--recognition` explicitly enables the separate classification stage.
 
-To inspect a particular image:
+The evaluator emits a **detection report**, not the recognition JSON contract.
+It checks image hashes, reports each rectangle's maximum edge error and
+intersection-over-union (IoU), and counts failures. It also removes the annotated
+board from a copy and checks that the remaining interface is rejected. Use
+`--output path.json` to save a report. Exit 1 indicates missed/inaccurate rectangles
+or false positives on those paired negatives. No classification is run.
+
+## Reviewed dataset and results
+
+The [manifest](../../data/manifests/digital-detection-v1.json) contains **28 original
+PNGs** with reviewed integer rectangles and preserved SHA-256 hashes:
+
+| Split | Images | Source groups | Contents |
+| --- | ---: | ---: | --- |
+| Development | 20 | 7 | Real games 001–003 on each platform, plus eight automated style captures from one pre-existing training group |
+| Evaluation | 8 | 4 | Real games 004–005 on each platform, including arrows, circles and highlighted squares |
+
+Automated samples cover Lichess green/Merida and purple/Alpha, and Chess.com
+blue/Classic and brown/Bases, in both orientations. Real samples use the supplied
+brown boards and include last-move highlights; exact theme names and source
+URLs/FEN/PGN were not supplied. Files are copied unchanged into
+`data/detection/development/` and `tests/fixtures/detection/held-out/` so regression
+tests do not depend on `.cache/`. These are **detection fixtures only**; they are
+not imported into the 80-position training plan or used to build piece templates.
+
+Real-image rectangles were entered after assistant visual inspection and checked
+at border scanlines. Automated rectangles were rounded from DOM annotations and
+visually checked. Neither uses detector output as its reference. This is not an
+independent human annotation study. Games and all derived variants remain in
+one partition; the split and **2-pixel maximum edge error** were fixed before
+running the held-out cases. Visual inspection for annotation does not constitute
+blind collection. The four held-out games are a small evaluation sample.
+
+The [development report](../../data/reports/digital-detection-v1-development.json)
+and [evaluation report](../../data/reports/digital-detection-v1-evaluation.json)
+record original-image accuracy separately from recognition. Reports include
+manifest and detector hashes so changes are traceable.
+
+Measured originals: **20/20 development and 8/8 evaluation rectangles**, maximum
+integer-edge error **0 pixels**, mean IoU **1.0**. All 28 paired board-removal
+negatives were rejected. The 64 reserved regression cases (40 new variants and
+24 legacy variants) pass; they are derivatives of a small number of source
+images, not 64 independent captures.
+
 
 ```bash
-.venv/bin/python -m tools.preview_detection path/to/image.png
+python -m pytest tests/test_detection.py tests/test_detection_structure.py tests/test_detection_images.py tests/test_detection_corpus.py -m 'not evaluation'
+python -m pytest tests/test_detection_images.py tests/test_detection_corpus.py -m evaluation
+python -m pytest
 ```
 
-A single image produces `.cache/detection-preview/image/`. You can also pass
-a directory to scan PNG/JPEG files recursively and use `--output-dir` to choose
-a separate output directory. Input and output directories must not overlap.
-Rerunning replaces that image's previews; detection/input failures are printed
-with their error codes and old previews for that image are removed. The command
-exits with status 1 if any image fails. Original captures are never modified.
+Tests cover novel palettes, generated textures, piece-like occlusions, highlights,
+arrows, borders, margins, sizes up to 2400 pixels, multiple boards, solid squares,
+noise, stripes, nonalternating cells, plain grids, other grid dimensions and
+incomplete boards. Real images also have board-only, reduced, translated and
+board-removed variants; variants are generated in memory within the original
+split. **Texture evidence is synthetic**, not a validated catalogue of real wood
+or marble themes. Existing brown-profile references and other profile regressions
+remain in place.
 
-Add `--recognition` for [piece classification](classification.md) and a `result.json`
-containing piece placement. Without that flag the tool only saves previews. The detector
-and tests do not save previews automatically; run the command after changes.
-The default output is ignored by Git because it lives under `.cache`.
+## Errors and limitations
 
-## Method and dependencies
-
-1. Create masks around the profile's light and dark RGB colors, allowing a
-   difference of 12 per channel for rendering variation.
-2. Join those masks and close tiny seams with a 3 × 3 kernel. Find connected
-   regions with OpenCV and retain approximately square candidates at least
-   128 pixels per side.
-3. Divide each candidate geometrically into 8 × 8 cells. Every cell must retain
-   at least 25% expected background color and at most 10% opposite color in its
-   interior. Test both alternating color parities. Piece-shaped holes are allowed.
-4. Return the sole valid candidate. No candidates produce `BOARD_NOT_FOUND`;
-   multiple candidates produce `UNSUPPORTED_IMAGE`, without choosing arbitrarily.
-
-These are fixed initial-profile rules, not a learned model. OpenCV's
-[range masks](https://docs.opencv.org/4.x/da/d97/tutorial_threshold_inRange.html)
-and [connected components](https://docs.opencv.org/4.x/d3/dc0/group__imgproc__shape.html)
-provide the primitives. NumPy holds pixel arrays; `opencv-python-headless` avoids
-a GUI dependency. Install both through `python -m pip install -e '.[dev]'`.
-PyTorch is not needed for this stage.
-
-## Error contract
-
-`BoardDetectionError` exposes `code`, an English `message`, and `to_dict()`:
+`BoardDetectionError` exposes `code`, an English `message` and `to_dict()`:
 
 ```json
 {"error": {"code": "BOARD_NOT_FOUND", "message": "No supported chessboard was detected in the image."}}
 ```
 
-The same result applies when a board exists but its style, scale or condition
-does not pass the detector. It does not prove that the picture contains no board.
-`UNSUPPORTED_IMAGE` is used when multiple supported grids are detected.
-A non-Pillow input raises `TypeError`; a non-RGB image raises `ValueError`.
-Adapters remain responsible for JSON transport. No confidence, partial position
-or fabricated empty board is returned.
+`BOARD_NOT_FOUND` means no accepted grid, including unsupported conditions;
+`UNSUPPORTED_IMAGE` means multiple accepted grids. Non-Pillow and non-RGB inputs
+raise `TypeError` and `ValueError`. No confidence or guessed position is returned.
 
-## Tests and measured scope (2026-10-01)
+The detector still assumes complete, aligned, approximately square 2D boards.
+Perspective, arbitrary rotations, heavy occlusion, strong textures, very low
+contrast or edges joined to surrounding interface elements may fail. Tolerance
+of some highlighted cells does not guarantee tolerance of arbitrary overlays.
+An empty 8 × 8 checkerboard is visually indistinguishable from an empty chessboard
+at this stage. A larger board cropped to exactly eight intact rows/columns also
+cannot always be distinguished from a complete 8 × 8 image. Negative examples
+cannot establish that every unrelated square surface will be rejected.
 
-```bash
-# Development checks, excluding reserved images
-python -m pytest tests/test_detection.py tests/test_detection_images.py -m 'not evaluation'
-# Reserved cases after parameters are fixed
-python -m pytest tests/test_detection_images.py -m evaluation
-python -m pytest
-```
-
-The 35 synthetic unit cases have independently specified placement/size bounds.
-They include border-to-border grids, offsets, sides 128/193/256/584/1024 pixels,
-piece-like occlusions, distracting solid rectangles, stripes, uniform images,
-wrong grid dimensions, partial boards, another palette and multiple boards.
-They test geometry, not piece recognition.
-
-Real-image tests cover all 16 tuning and 4 reserved captures, each with six
-variants: original interface, board-only crop, a 192-pixel board, a 960-pixel
-board, translated interface, and an interface with the board removed. Variants
-stay in their parent's split and are generated only in memory. The negative
-variants retain the real menus and spare pieces. Resized/translated images are
-controlled transformations, not independently collected screenshots.
-
-Acceptance was fixed at **at most 2 pixels of error on any edge** before running
-the reserved cases. References are in
-[references.json](../../tests/fixtures/detection/references.json). Real-capture
-integer edges were visually reviewed and rounded from existing DOM annotations;
-they are not an independent subpixel measurement or human annotation study.
-Tests also compare the original fractional sidecars. Transformed expectations
-are calculated from the reference and the known transform, never detector output.
-
-Results: **131 development cases and 24 reserved cases passed**. All four
-original reserved captures returned `(190, 158, 774, 742)`, matching the integer
-reference exactly, with maximum error **0.46875 pixels** against the original
-fractional annotation. The 24 reserved cases represent only **two positions**
-in both orientations plus derivatives, not 24 independent scenes. Parameters
-were not changed after inspecting the reserved results.
-
-## Limitations and next step
-
-Coverage is limited to this two-color profile with a single complete, aligned
-grid and enough background visible. Other themes, books, perspective, arbitrary
-rotation, strong overlays or color changes are not supported. Large connected
-regions of matching colors attached to the grid may merge with it and cause a
-miss. An ordinary 8 × 8 checker pattern is visually indistinguishable from an
-empty chessboard at this stage and may be accepted.
-
-The initial corpus is small and shares one source layout. Broader negative
-images and independently captured sizes/layouts are still needed before claiming
-generalization. Reading JPEG is supported by input, but detection accuracy on
-compressed JPEGs has not been measured. The first-profile [recognition pipeline](classification.md)
-now generates piece placement. [Normalization and segmentation](normalization.md) produce
-64 square crops and preserve the full original image for orientation. Add
-`--squares` to the preview command to inspect `normalized.png` and `squares/`.
+More real themes, native mobile layouts and independent negative screenshots are
+still needed. New detection success does not change the measured classification
+scope or promise end-to-end recognition of marked screenshots.

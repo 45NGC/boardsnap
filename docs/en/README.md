@@ -15,7 +15,9 @@ specified as a future HTTPS adapter for Android, iOS and web; it is not implemen
 
 [Image input](image-input.md) reads static PNG/JPEG files as fully loaded RGB
 images and provides structured input errors through `ImageInputError`.
-[Board detection](detection.md) returns grid bounds for the brown lichess profile.
+[Board detection](detection.md) combines known palettes with structural grid
+checks. A separate 28-image rectangle corpus covers new digital styles and
+real-use markings; these results do not measure piece classification.
 [Normalization and segmentation](normalization.md) produce an 8 × 8 matrix of
 64 × 64 RGB crops while preserving the full source for later orientation.
 [Orientation](orientation.md) accepts an explicit image view through the pipeline

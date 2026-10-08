@@ -33,7 +33,11 @@ preserved orientation context and all 64 squares with exact ordering/coverage.
 do not classify pieces or resolve chess orientation. See the
 [normalization guide](../docs/en/normalization.md).
 
-`test_detection.py` covers exact synthetic grid geometry and negative cases.
+`test_detection.py` and `test_detection_structure.py` cover grid geometry,
+novel palettes, generated textures, overlays, regular boundaries and negatives.
+`test_detection_corpus.py` uses 28 hash-pinned originals with reviewed rectangles,
+source-group partitions and derived variants; it never classifies pieces.
+`tools.evaluate_detection` reports edge errors and IoU independently of recognition.
 `test_detection_images.py` compares real screenshot variants with reviewed
 bounds: tuning cases use `integration`, held-out cases use `evaluation`.
 See the [detection guide](../docs/en/detection.md) for scope and measurements.

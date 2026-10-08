@@ -83,8 +83,8 @@ the existing `LICENSE` file in distributions; it requires a setuptools version
 that supports `project.license-files`, as described in its
 [documentation](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html).
 
-OpenCV and NumPy implement color masks, connected regions and 8 × 8 pattern
-validation for [board detection](detection.md). The [input guide](image-input.md)
+OpenCV and NumPy implement palette proposals, connected RGB edges, regular
+boundary fitting and robust 8 × 8 alternation checks for [board detection](detection.md). The [input guide](image-input.md)
 specifies decoding. Only dependencies used by implemented stages are added.
 No machine learning framework or chess rules library is introduced now to
 serialize a single field.

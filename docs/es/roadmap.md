@@ -22,10 +22,18 @@ La [captura configurable](configurable-capture.md) está implementada para table
 limpios web de Lichess y Chess.com: fondos/piezas independientes, ambas vistas,
 viewport y densidad de píxeles, etiquetas verificadas y lotes atómicos. Un piloto
 local de entrenamiento contiene 16 imágenes de cuatro combinaciones. Se pueden
-importar capturas reales revisadas de posiciones del plan; aún no se han aportado.
+importar capturas reales revisadas de posiciones del plan. Se han aportado después
+20 capturas reales, incorporadas a pruebas solo de detección sin etiquetas FEN.
 Lo siguiente es ampliar el corpus limpio, desarrollar el reconocimiento de los
 nuevos estilos y automatizar marcas. No cambia la compatibilidad del reconocedor
 ni se demuestra cobertura de apps móviles nativas.
+
+La detección digital combina propuestas por paleta, bordes RGB, espaciado regular
+y alternancia robusta. La [guía de detección](detection.md) recoge 28 imágenes
+revisadas, particiones por grupo, métricas independientes y negativos. Las ocho
+originales reservadas tienen límites enteros exactos; esto no demuestra mejoras
+en clasificación. Lo siguiente es ampliar temas/texturas reales y mejorar la
+clasificación y normalización de casillas con marcas.
 
 ## 0. Base del proyecto (completada)
 

@@ -20,8 +20,10 @@ for Android, iOS and web; no server or Flutter client is implemented.
 With the package installed, run `boardsnap image.png` (or `python -m boardsnap image.png`).
 See the [CLI guide](docs/en/cli.md) for installation, errors and exit codes.
 
-`boardsnap.detection.detect_board(image)` returns grid bounds for the brown
-lichess profile. See [detection scope and tests](docs/en/detection.md).
+`boardsnap.detection.detect_board(image)` now combines palette proposals with
+structural 8 × 8 detection for digital boards. A separate 28-image rectangle
+corpus covers new backgrounds and real-use highlights/arrows; this does not
+extend piece-classification compatibility. See [detection and measurements](docs/en/detection.md).
 The [normalization guide](docs/en/normalization.md) explains square crops,
 preserved orientation context and the `--squares` preview option.
 The [orientation guide](docs/en/orientation.md) covers coordinate reading,

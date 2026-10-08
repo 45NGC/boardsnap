@@ -15,7 +15,9 @@ se documenta mediante un futuro adaptador HTTPS para Android, iOS y web; no est�
 
 La [entrada de imágenes](image-input.md) lee PNG/JPEG estáticos como imágenes
 RGB cargadas y ofrece errores estructurados mediante `ImageInputError`.
-La [detección](detection.md) devuelve los límites de la cuadrícula brown de lichess.
+La [detección](detection.md) combina paletas conocidas y estructura de cuadrícula.
+Un corpus independiente de 28 imágenes con límites anotados cubre nuevos estilos
+digitales y marcas reales; estos resultados no miden la clasificación de piezas.
 La [normalización y segmentación](normalization.md) producen una matriz de 8 × 8
 recortes RGB de 64 × 64, conservando el origen completo para orientar después.
 La [orientación](orientation.md) acepta la vista explícita mediante el flujo y la

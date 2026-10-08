@@ -85,8 +85,8 @@ licencias incluye el archivo `LICENSE` existente en las distribuciones; se
 requiere una versión de setuptools que admita `project.license-files`, según su
 [documentación](https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html).
 
-OpenCV y NumPy implementan máscaras de color, regiones conectadas y validación
-del patrón de 8 × 8 para la [detección](detection.md). La [guía de entrada](image-input.md)
+OpenCV y NumPy implementan propuestas por paleta, bordes RGB conectados, ajuste
+regular de límites y comprobación robusta de alternancia de 8 × 8 para la [detección](detection.md). La [guía de entrada](image-input.md)
 concreta la decodificación. Solo se añaden dependencias de etapas implementadas.
 No se incorpora ahora un framework de aprendizaje automático ni una biblioteca
 de reglas de ajedrez para serializar un único campo.
