@@ -46,6 +46,11 @@ orientaciones y dos tamaños. Sus 80 posiciones conservan las particiones fijada
 de entrenamiento/validación/evaluación. La comprobación separada de 36 imágenes
 queda excluida. El entrenamiento del modelo sigue pendiente.
 
+El [conjunto de casillas etiquetadas](square-dataset.md) proporciona 64 recortes
+RGB por tablero, etiquetas canónicas y particiones heredadas. Los límites
+verificados aíslan la clasificación; los detectados conservan errores anteriores
+para las futuras mediciones del flujo completo.
+
 ## Alcance
 
 El motor localizará un tablero, lo recortará y normalizará, lo dividirá en

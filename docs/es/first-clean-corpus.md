@@ -151,10 +151,10 @@ y ampliar la importación de partidas reales. Sus grupos reservados de evaluaci�
 deben seguir reservados. Otras interfaces, partidas reales y apps nativas
 necesitarán ejemplos adicionales más adelante.
 
-Lo siguiente es generar casillas etiquetadas conservando las particiones,
-comprobar cobertura por clase/fondo/estilo y después entrenar un modelo pequeño
-y compararlo con las plantillas. Recoger datos no demuestra precisión de
-reconocimiento.
+La [preparación de casillas](square-dataset.md) ya conserva las particiones y
+comprueba la cobertura por clase/fondo/estilo, separando límites verificados y
+detectados. Lo siguiente es entrenar un modelo pequeño y compararlo con las
+plantillas. Preparar datos no demuestra precisión de reconocimiento.
 
 Conserva [atribuciones y condiciones de los recursos](../../data/THIRD_PARTY_NOTICES.md).
 Alpha tiene condiciones de uso personal/no comercial; esta recogida experimental

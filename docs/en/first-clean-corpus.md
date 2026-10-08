@@ -145,9 +145,10 @@ real-game import schema needs extending. Their reserved evaluation groups must
 stay reserved. Actual games, other layouts and native apps will need additional
 examples later.
 
-Next generate labeled square crops while preserving partitions, audit coverage
-by class/background/style, and then train and compare a small model against the
-existing templates. Data collection alone does not establish recognition quality.
+[Square preparation](square-dataset.md) now preserves partitions and audits
+class/background/style coverage, with separate verified/detected-bound inputs.
+Next train and compare a small model against the existing templates. Data
+preparation alone does not establish recognition quality.
 
 Preserve [artwork attribution and terms](../../data/THIRD_PARTY_NOTICES.md).
 Alpha has personal/noncommercial-use terms; this experimental collection does

@@ -42,8 +42,15 @@ Las 80 posiciones usan la ventana estándar; 20 representantes de grupos de orig
 también usan la compacta. Hay 2520/540/540 imágenes de entrenamiento/validación/evaluación.
 La herramienta permite reanudar y verifica etiquetas, particiones, archivos y
 geometría renderizada. Esto demuestra integridad de captura, no nueva compatibilidad
-del reconocedor. Lo siguiente es generar casillas, revisar cobertura por clase,
-estilo y fondo, y después incorporar y evaluar PyTorch.
+del reconocedor.
+
+El paso 6.3 añade el [conjunto de casillas etiquetadas](square-dataset.md): recortes
+RGB de 64 × 64, etiquetas canónicas, procedencia, particiones fijas, cobertura por
+clase/fondo y pesos opcionales de entrenamiento (sin aplicar). Los límites
+verificados aíslan la clasificación; los detectados conservan y miden errores
+de localización sin corregirlos con las anotaciones. Lo siguiente es entrenar un
+clasificador pequeño, elegir ajustes con validación y compararlo con plantillas
+antes de la evaluación final.
 
 ## 0. Base del proyecto (completada)
 

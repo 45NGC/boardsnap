@@ -18,6 +18,9 @@ The [first clean classifier corpus](docs/en/first-clean-corpus.md) contains 3600
 verified local captures: six piece sets, three backgrounds per set, both
 orientations and two viewport sizes. All 80 positions keep their original
 partitions. Images remain in `.cache/`; model training is still pending.
+The [square dataset](docs/en/square-dataset.md) prepares 64 labeled RGB crops per
+image, with separate verified-bound and detected-bound inputs, inherited source
+groups and class/background coverage reports. Training remains a later step.
 [Flutter integration](docs/en/flutter-integration.md) is documented as an HTTPS API
 for Android, iOS and web; no server or Flutter client is implemented.
 
@@ -70,6 +73,7 @@ files. Spanish documentation is maintained in `docs/es/`.
 | Roadmap | [Read](docs/en/roadmap.md) | [Read](docs/es/roadmap.md) |
 | Testing | [Read](docs/en/testing.md) | [Read](docs/es/testing.md) |
 | Tuning data | [Read](docs/en/tuning-data.md) | [Read](docs/es/tuning-data.md) |
+| Labeled square dataset | [Read](docs/en/square-dataset.md) | [Read](docs/es/square-dataset.md) |
 | First clean classifier corpus | [Read](docs/en/first-clean-corpus.md) | [Read](docs/es/first-clean-corpus.md) |
 | Configurable platform captures | [Read](docs/en/configurable-capture.md) | [Read](docs/es/configurable-capture.md) |
 | Capture utility | [Read](docs/en/capture-data.md) | [Read](docs/es/capture-data.md) |

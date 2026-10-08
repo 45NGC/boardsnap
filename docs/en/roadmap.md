@@ -40,8 +40,14 @@ Chess.com Neo/Classic/Bases, each on three backgrounds and in both orientations.
 All 80 positions use the standard viewport; 20 source-group representatives also
 use a compact viewport. Training/validation/evaluation contain 2520/540/540 images.
 The resumable collector audits labels, partitions, files and rendered geometry;
-this is capture evidence, not new recognition compatibility. Next generate square
-data, audit class/style/background coverage, then introduce and evaluate PyTorch.
+this is capture evidence, not new recognition compatibility.
+
+Step 6.3 adds the [labeled square dataset](square-dataset.md): RGB 64 × 64 crops,
+canonical targets, traceable sources, fixed partitions, class/background coverage
+and optional training-only sampling weights (not applied). Verified-bound inputs
+isolate classification; detected-bound inputs retain and measure localization
+errors without ground-truth repairs. Next train a small classifier, select settings
+on validation and compare with templates before the final evaluation.
 
 ## 0. Project scaffold (completed)
 

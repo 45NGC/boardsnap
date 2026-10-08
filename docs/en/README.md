@@ -44,6 +44,10 @@ captures: six piece sets on three backgrounds each, both orientations and two
 viewport sizes. Its 80 positions retain the frozen training/validation/evaluation
 split. The separate 36-image style check is excluded. Model training remains pending.
 
+The [labeled square dataset](square-dataset.md) provides 64 RGB crops per board,
+canonical labels and inherited partitions. Verified bounds isolate classification;
+detected bounds retain upstream errors for future pipeline measurements.
+
 ## Scope
 
 The engine will locate a board, crop and normalize it, split it into 64 squares,
