@@ -91,6 +91,12 @@ concreta la decodificación. Solo se añaden dependencias de etapas implementada
 No se incorpora ahora un framework de aprendizaje automático ni una biblioteca
 de reglas de ajedrez para serializar un único campo.
 
+Fuera del núcleo, el extra opcional `dataset` fija `chess==1.11.2` para generar y
+verificar movimientos legales del [plan de posiciones](position-plan.md). Las
+comprobaciones estructurales de cobertura y particiones usan la biblioteca
+estándar. Esta dependencia no interviene en inferencia, corrección de legalidad
+ni salida de la app.
+
 PyTorch es un candidato para entrenar y ejecutar un clasificador de casillas con
 13 clases. Su [guía oficial](https://docs.pytorch.org/tutorials/beginner/basics/intro.html)
 describe el flujo de datos, construcción, entrenamiento y guardado de modelos.

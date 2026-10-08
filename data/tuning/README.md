@@ -1,5 +1,9 @@
 # Tuning data
 
+The separate [80-position plan](../../docs/en/position-plan.md) introduces fixed
+training/validation/evaluation source groups for a future capture batch. It does
+not move or rename the legacy tuning data in this directory.
+
 The first profile, `lichess-cburnett-brown-v1`, contains 16 PNGs and JSON
 annotations: eight positions captured in both orientations. Use them for
 developing detection, normalization and classification. This is a small initial

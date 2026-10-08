@@ -6,6 +6,11 @@ Esta guía describe la implementación original del perfil brown. Consulta los [
 
 Ubicación: [`tests/fixtures/evaluation/`](../../tests/fixtures/evaluation/).
 
+El nuevo [plan de posiciones](position-plan.md) reserva doce posiciones de tres
+secuencias para evaluación final, sin coincidencias con estos ejemplos anteriores.
+Las nuevas imágenes aún no se han capturado; las anteriores siguen reservadas
+para regresión y no se trasladan a entrenamiento ni validación.
+
 El primer perfil contiene cuatro PNG anotados: `pos-003` (final de peones) y
 `pos-010` (medio juego construido), cada uno en ambas orientaciones. Se asignaron
 a evaluación antes de capturar y solo se han usado para comprobar la herramienta

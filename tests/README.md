@@ -1,5 +1,12 @@
 # Tests
 
+`test_position_dataset.py` checks the frozen 80-position plan, group splits,
+legacy exclusions, class/background coverage, source identity for all variants
+and the committed report. Install `.[dev,dataset]` to run its optional legal
+move replay/reproduction check; other checks use the standard library.
+See the [position plan](../docs/en/position-plan.md). These are data integrity
+tests, not recognition accuracy measurements.
+
 `test_cli.py` checks adapter error and stream handling. `test_cli_process.py`
 executes both `boardsnap` and `python -m boardsnap` with real images, compares
 exact JSON, checks exit codes and ensures diagnostics stay outside stdout.

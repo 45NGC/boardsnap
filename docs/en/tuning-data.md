@@ -6,6 +6,10 @@ This guide records the original brown-profile implementation. See [evaluated pro
 
 Location: [`data/tuning/`](../../data/tuning/).
 
+The new [position plan](position-plan.md) defines separate `training`, `validation`
+and `evaluation` groups before capture. It does not rename or redistribute this
+legacy tuning corpus, and no new images have been collected from that plan yet.
+
 Use the [capture utility](capture-data.md) to collect the first lichess profile
 from a manifest with positions assigned to partitions in advance.
 

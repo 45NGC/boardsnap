@@ -288,6 +288,10 @@ legality, side to move or extra FEN fields.
 
 ## Ordered work batches
 
+The [80-position plan](position-plan.md) now fixes source-group partitions and
+label coverage for the first batch below. Its images still need to be captured;
+inventory recognition states are unchanged.
+
 1. **Expand evidence for C01–C03.** Gather independent positions covering all
    thirteen classes on both backgrounds, both views and clean geometry; establish
    the release acceptance plan before opening new held-out images.
@@ -344,4 +348,3 @@ movement, hidden/blindfold pieces (including Lichess `disguised`), transient eve
 themes, arbitrary user CSS/custom uploaded board artwork and book diagrams.
 Unknown future catalogue entries require an explicit scope revision. This boundary
 does not remove the existing experimental book profile; that work is simply deferred.
-

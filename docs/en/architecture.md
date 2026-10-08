@@ -89,6 +89,11 @@ specifies decoding. Only dependencies used by implemented stages are added.
 No machine learning framework or chess rules library is introduced now to
 serialize a single field.
 
+Outside the core, the optional `dataset` extra pins `chess==1.11.2` for generating
+and replaying legal source moves in the [position plan](position-plan.md).
+Structural coverage/split checks use the standard library. This dependency is
+not used for inference, legality correction or app output.
+
 PyTorch is a candidate for training and running a 13-class square classifier.
 Its [official guide](https://docs.pytorch.org/tutorials/beginner/basics/intro.html)
 describes data handling, model construction, training, and saving. In BoardSnap,

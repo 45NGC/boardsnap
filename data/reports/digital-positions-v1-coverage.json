@@ -1,0 +1,585 @@
+{
+  "datasetId": "digital-positions-v1",
+  "positionCount": 80,
+  "sourceGroupCount": 20,
+  "splits": {
+    "training": {
+      "positionCount": 56,
+      "groupCount": 14,
+      "categories": {
+        "opening": 14,
+        "middlegame": 14,
+        "endgame": 14,
+        "promotion": 14,
+        "dense": 14,
+        "sparse": 18
+      },
+      "classes": {
+        "empty": {
+          "light": {
+            "squares": 1268,
+            "positions": 56,
+            "groups": 14
+          },
+          "dark": {
+            "squares": 1181,
+            "positions": 56,
+            "groups": 14
+          }
+        },
+        "P": {
+          "light": {
+            "squares": 108,
+            "positions": 45,
+            "groups": 14
+          },
+          "dark": {
+            "squares": 142,
+            "positions": 48,
+            "groups": 14
+          }
+        },
+        "N": {
+          "light": {
+            "squares": 43,
+            "positions": 35,
+            "groups": 14
+          },
+          "dark": {
+            "squares": 53,
+            "positions": 39,
+            "groups": 14
+          }
+        },
+        "B": {
+          "light": {
+            "squares": 32,
+            "positions": 32,
+            "groups": 14
+          },
+          "dark": {
+            "squares": 39,
+            "positions": 39,
+            "groups": 14
+          }
+        },
+        "R": {
+          "light": {
+            "squares": 41,
+            "positions": 38,
+            "groups": 14
+          },
+          "dark": {
+            "squares": 37,
+            "positions": 36,
+            "groups": 14
+          }
+        },
+        "Q": {
+          "light": {
+            "squares": 22,
+            "positions": 22,
+            "groups": 13
+          },
+          "dark": {
+            "squares": 5,
+            "positions": 5,
+            "groups": 5
+          }
+        },
+        "K": {
+          "light": {
+            "squares": 11,
+            "positions": 11,
+            "groups": 7
+          },
+          "dark": {
+            "squares": 45,
+            "positions": 45,
+            "groups": 14
+          }
+        },
+        "p": {
+          "light": {
+            "squares": 106,
+            "positions": 46,
+            "groups": 14
+          },
+          "dark": {
+            "squares": 128,
+            "positions": 42,
+            "groups": 14
+          }
+        },
+        "n": {
+          "light": {
+            "squares": 40,
+            "positions": 36,
+            "groups": 14
+          },
+          "dark": {
+            "squares": 43,
+            "positions": 40,
+            "groups": 14
+          }
+        },
+        "b": {
+          "light": {
+            "squares": 36,
+            "positions": 35,
+            "groups": 14
+          },
+          "dark": {
+            "squares": 39,
+            "positions": 39,
+            "groups": 14
+          }
+        },
+        "r": {
+          "light": {
+            "squares": 41,
+            "positions": 37,
+            "groups": 14
+          },
+          "dark": {
+            "squares": 36,
+            "positions": 32,
+            "groups": 14
+          }
+        },
+        "q": {
+          "light": {
+            "squares": 8,
+            "positions": 7,
+            "groups": 4
+          },
+          "dark": {
+            "squares": 24,
+            "positions": 24,
+            "groups": 14
+          }
+        },
+        "k": {
+          "light": {
+            "squares": 36,
+            "positions": 36,
+            "groups": 14
+          },
+          "dark": {
+            "squares": 20,
+            "positions": 20,
+            "groups": 12
+          }
+        }
+      }
+    },
+    "validation": {
+      "positionCount": 12,
+      "groupCount": 3,
+      "categories": {
+        "opening": 3,
+        "middlegame": 3,
+        "endgame": 3,
+        "promotion": 3,
+        "dense": 3,
+        "sparse": 4
+      },
+      "classes": {
+        "empty": {
+          "light": {
+            "squares": 263,
+            "positions": 12,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 265,
+            "positions": 12,
+            "groups": 3
+          }
+        },
+        "P": {
+          "light": {
+            "squares": 31,
+            "positions": 10,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 20,
+            "positions": 11,
+            "groups": 3
+          }
+        },
+        "N": {
+          "light": {
+            "squares": 13,
+            "positions": 10,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 5,
+            "positions": 5,
+            "groups": 3
+          }
+        },
+        "B": {
+          "light": {
+            "squares": 8,
+            "positions": 8,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 6,
+            "positions": 6,
+            "groups": 3
+          }
+        },
+        "R": {
+          "light": {
+            "squares": 9,
+            "positions": 9,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 8,
+            "positions": 8,
+            "groups": 3
+          }
+        },
+        "Q": {
+          "light": {
+            "squares": 5,
+            "positions": 5,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 2,
+            "positions": 2,
+            "groups": 2
+          }
+        },
+        "K": {
+          "light": {
+            "squares": 3,
+            "positions": 3,
+            "groups": 2
+          },
+          "dark": {
+            "squares": 9,
+            "positions": 9,
+            "groups": 3
+          }
+        },
+        "p": {
+          "light": {
+            "squares": 17,
+            "positions": 9,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 36,
+            "positions": 10,
+            "groups": 3
+          }
+        },
+        "n": {
+          "light": {
+            "squares": 9,
+            "positions": 7,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 9,
+            "positions": 8,
+            "groups": 3
+          }
+        },
+        "b": {
+          "light": {
+            "squares": 8,
+            "positions": 7,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 6,
+            "positions": 6,
+            "groups": 3
+          }
+        },
+        "r": {
+          "light": {
+            "squares": 9,
+            "positions": 9,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 8,
+            "positions": 8,
+            "groups": 3
+          }
+        },
+        "q": {
+          "light": {
+            "squares": 2,
+            "positions": 2,
+            "groups": 1
+          },
+          "dark": {
+            "squares": 5,
+            "positions": 5,
+            "groups": 3
+          }
+        },
+        "k": {
+          "light": {
+            "squares": 7,
+            "positions": 7,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 5,
+            "positions": 5,
+            "groups": 3
+          }
+        }
+      }
+    },
+    "evaluation": {
+      "positionCount": 12,
+      "groupCount": 3,
+      "categories": {
+        "opening": 3,
+        "middlegame": 3,
+        "endgame": 3,
+        "promotion": 3,
+        "dense": 4,
+        "sparse": 4
+      },
+      "classes": {
+        "empty": {
+          "light": {
+            "squares": 258,
+            "positions": 12,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 258,
+            "positions": 12,
+            "groups": 3
+          }
+        },
+        "P": {
+          "light": {
+            "squares": 21,
+            "positions": 8,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 32,
+            "positions": 9,
+            "groups": 3
+          }
+        },
+        "N": {
+          "light": {
+            "squares": 8,
+            "positions": 7,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 8,
+            "positions": 8,
+            "groups": 3
+          }
+        },
+        "B": {
+          "light": {
+            "squares": 10,
+            "positions": 10,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 7,
+            "positions": 7,
+            "groups": 3
+          }
+        },
+        "R": {
+          "light": {
+            "squares": 10,
+            "positions": 8,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 12,
+            "positions": 9,
+            "groups": 3
+          }
+        },
+        "Q": {
+          "light": {
+            "squares": 8,
+            "positions": 7,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 2,
+            "positions": 2,
+            "groups": 2
+          }
+        },
+        "K": {
+          "light": {
+            "squares": 4,
+            "positions": 4,
+            "groups": 2
+          },
+          "dark": {
+            "squares": 8,
+            "positions": 8,
+            "groups": 3
+          }
+        },
+        "p": {
+          "light": {
+            "squares": 30,
+            "positions": 9,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 21,
+            "positions": 10,
+            "groups": 3
+          }
+        },
+        "n": {
+          "light": {
+            "squares": 8,
+            "positions": 8,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 11,
+            "positions": 9,
+            "groups": 3
+          }
+        },
+        "b": {
+          "light": {
+            "squares": 7,
+            "positions": 7,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 9,
+            "positions": 8,
+            "groups": 3
+          }
+        },
+        "r": {
+          "light": {
+            "squares": 8,
+            "positions": 7,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 9,
+            "positions": 9,
+            "groups": 3
+          }
+        },
+        "q": {
+          "light": {
+            "squares": 3,
+            "positions": 3,
+            "groups": 2
+          },
+          "dark": {
+            "squares": 4,
+            "positions": 4,
+            "groups": 2
+          }
+        },
+        "k": {
+          "light": {
+            "squares": 9,
+            "positions": 9,
+            "groups": 3
+          },
+          "dark": {
+            "squares": 3,
+            "positions": 3,
+            "groups": 2
+          }
+        }
+      }
+    }
+  },
+  "underrepresented": [
+    {
+      "split": "validation",
+      "class": "Q",
+      "background": "dark",
+      "squares": 2,
+      "positions": 2,
+      "groups": 2
+    },
+    {
+      "split": "validation",
+      "class": "K",
+      "background": "light",
+      "squares": 3,
+      "positions": 3,
+      "groups": 2
+    },
+    {
+      "split": "validation",
+      "class": "q",
+      "background": "light",
+      "squares": 2,
+      "positions": 2,
+      "groups": 1
+    },
+    {
+      "split": "evaluation",
+      "class": "Q",
+      "background": "dark",
+      "squares": 2,
+      "positions": 2,
+      "groups": 2
+    },
+    {
+      "split": "evaluation",
+      "class": "K",
+      "background": "light",
+      "squares": 4,
+      "positions": 4,
+      "groups": 2
+    },
+    {
+      "split": "evaluation",
+      "class": "q",
+      "background": "light",
+      "squares": 3,
+      "positions": 3,
+      "groups": 2
+    },
+    {
+      "split": "evaluation",
+      "class": "q",
+      "background": "dark",
+      "squares": 4,
+      "positions": 4,
+      "groups": 2
+    },
+    {
+      "split": "evaluation",
+      "class": "k",
+      "background": "dark",
+      "squares": 3,
+      "positions": 3,
+      "groups": 2
+    }
+  ],
+  "coverageOnly": true,
+  "manifestSha256": "507e33680fd9970a14d26f2d7ea9627b9cf1ae0c310a57cb182316af88c14b35"
+}

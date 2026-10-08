@@ -11,10 +11,15 @@ Further themes and overlays remain subsequent work; the book experiment is defer
 The next planning milestone is also complete: the bilingual [digital style and
 condition inventory](style-inventory.md) separates backgrounds, pieces and layouts,
 defines four evidence-based states and tracks browsers and native mobile apps
-independently. Its ordered work batches are the current expansion backlog. Next:
-broaden the independent corpus for the three existing combinations, then capture
-G1 backgrounds with fixed pieces. New capture support and recognition remain to
-be implemented; this inventory does not add compatible themes.
+independently. Its ordered work batches are the current expansion backlog.
+
+Position planning is now implemented: [80 placements in 20 source groups](position-plan.md),
+fixed training/validation/evaluation assignments (56/12/12), reproducible legal
+source sequences, legacy isolation and class/background coverage checks. Eight
+underrepresented combinations are documented; images for this batch are not yet
+captured. Next adapt capture tools to the new group-based three-partition plan,
+starting with the existing clean desktop profiles, then G1 backgrounds with fixed
+pieces. No additional theme compatibility is claimed by this planning work.
 
 ## 0. Project scaffold (completed)
 

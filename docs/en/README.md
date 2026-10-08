@@ -31,6 +31,10 @@ represent recognition results from images.
 A separate [capture utility](capture-data.md) collects screenshots and known
 labels from the lichess editor. It uses the optional `capture` dependency extra.
 
+The new [position plan](position-plan.md) contains 80 placements from 20 legal
+generated sequences, split into 56 training, 12 validation and 12 evaluation
+positions before capture. Its report checks coverage only; this batch has no images yet.
+
 ## Scope
 
 The engine will locate a board, crop and normalize it, split it into 64 squares,

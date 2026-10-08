@@ -296,6 +296,10 @@ no corregirlo inventando legalidad, turno ni campos adicionales del FEN.
 
 ## Lotes de trabajo ordenados
 
+El [plan de 80 posiciones](position-plan.md) ya fija las particiones por grupo y
+la cobertura de etiquetas del primer lote. Sus imágenes quedan por capturar;
+los estados de reconocimiento del inventario no cambian.
+
 1. **Ampliar evidencia de C01–C03.** Recoger posiciones independientes con las trece
    clases sobre ambos fondos, las dos vistas y geometría limpia; fijar el plan de
    aceptación antes de consultar las nuevas imágenes reservadas.
@@ -354,4 +358,3 @@ piezas ocultas/a ciegas (incluido `disguised` de Lichess), temas temporales de e
 CSS arbitrario del usuario/fondos de tablero subidos a medida y diagramas de libros.
 Las futuras entradas del catálogo necesitan una revisión explícita del alcance.
 Este límite no elimina el perfil experimental de libros; simplemente aplaza ese trabajo.
-

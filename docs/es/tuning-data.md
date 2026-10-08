@@ -6,6 +6,10 @@ Esta guía describe la implementación original del perfil brown. Consulta los [
 
 Ubicación: [`data/tuning/`](../../data/tuning/).
 
+El nuevo [plan de posiciones](position-plan.md) define grupos de `training`,
+`validation` y `evaluation` antes de capturar. No renombra ni redistribuye este
+corpus anterior de ajuste y todavía no se han recogido imágenes del nuevo plan.
+
 Utiliza la [herramienta de captura](capture-data.md) para recoger el primer perfil
 de lichess desde un manifiesto con las particiones asignadas de antemano.
 

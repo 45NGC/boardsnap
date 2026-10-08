@@ -11,10 +11,15 @@ Más temas y superposiciones quedan para después; el experimento de libros se a
 También queda completado el siguiente hito de planificación: el [inventario
 bilingüe de estilos y condiciones](style-inventory.md) separa fondos, piezas e
 interfaces, define cuatro estados según evidencia y distingue navegadores y apps
-nativas. Sus lotes ordenados son la lista actual de ampliación. Lo siguiente es
-ampliar el corpus independiente de las tres combinaciones existentes y después
-capturar fondos G1 con piezas fijas. Falta implementar las nuevas capturas y su
-reconocimiento; el inventario no añade temas compatibles.
+nativas. Sus lotes ordenados son la lista actual de ampliación.
+
+La preparación de posiciones ya está implementada: [80 posiciones en 20 grupos](position-plan.md),
+particiones fijas de entrenamiento/validación/evaluación (56/12/12), secuencias
+legales reproducibles, separación del corpus anterior y comprobación por clase y
+color de casilla. Hay ocho combinaciones escasas documentadas; aún no hay capturas
+del lote. Lo siguiente es adaptar las capturas al plan de tres particiones por
+grupo, primero con los perfiles limpios actuales y después con fondos G1 y piezas
+fijas. Este trabajo de preparación no declara nuevos temas compatibles.
 
 ## 0. Base del proyecto (completada)
 

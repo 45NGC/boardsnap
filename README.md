@@ -9,6 +9,9 @@ diagrams and returning piece placement to the Flutter app **chess-scanner**.
 The [profile guide](docs/en/profiles.md) records exact scope, datasets and results.
 The [style inventory](docs/en/style-inventory.md) tracks backgrounds, piece designs,
 interfaces and image conditions separately, with independent web/Android/iOS status.
+The [position plan](docs/en/position-plan.md) fixes 80 new placements in 20 source
+groups: 56 training, 12 validation and 12 final-evaluation positions. Images for
+this new batch have not been captured yet.
 [Flutter integration](docs/en/flutter-integration.md) is documented as an HTTPS API
 for Android, iOS and web; no server or Flutter client is implemented.
 
@@ -52,6 +55,7 @@ files. Spanish documentation is maintained in `docs/es/`.
 | Piece recognition | [Read](docs/en/classification.md) | [Read](docs/es/classification.md) |
 | Evaluated profiles | [Read](docs/en/profiles.md) | [Read](docs/es/profiles.md) |
 | Digital style and condition inventory | [Read](docs/en/style-inventory.md) | [Read](docs/es/style-inventory.md) |
+| Position plan and fixed partitions | [Read](docs/en/position-plan.md) | [Read](docs/es/position-plan.md) |
 | Flutter integration design | [Read](docs/en/flutter-integration.md) | [Read](docs/es/flutter-integration.md) |
 | Command-line interface | [Read](docs/en/cli.md) | [Read](docs/es/cli.md) |
 | Output implementation walkthrough | [Read](docs/en/output-walkthrough.md) | [Read](docs/es/output-walkthrough.md) |

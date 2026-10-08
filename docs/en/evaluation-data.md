@@ -6,6 +6,11 @@ This guide records the original brown-profile implementation. See [evaluated pro
 
 Location: [`tests/fixtures/evaluation/`](../../tests/fixtures/evaluation/).
 
+The new [position plan](position-plan.md) reserves twelve additional positions
+from three source sequences for final evaluation, with no overlap with these
+legacy fixtures. Those new images are not captured yet; existing fixtures remain
+reserved for regression and are not moved into training or validation.
+
 The first profile contains four annotated PNGs: `pos-003` (pawn ending) and
 `pos-010` (constructed middlegame), each in both orientations. They were assigned
 to evaluation before capture and have only been used to check the capture tool,

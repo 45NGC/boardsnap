@@ -32,6 +32,11 @@ no representan resultados del reconocimiento de imágenes.
 Una [herramienta de captura](capture-data.md) separada recoge imágenes y etiquetas
 conocidas del editor de lichess. Utiliza el extra opcional de dependencias `capture`.
 
+El nuevo [plan de posiciones](position-plan.md) contiene 80 colocaciones de 20
+secuencias legales generadas, repartidas antes de capturar en 56 de entrenamiento,
+12 de validación y 12 de evaluación. El informe comprueba cobertura; todavía no
+hay imágenes de este lote.
+
 ## Alcance
 
 El motor localizará un tablero, lo recortará y normalizará, lo dividirá en
