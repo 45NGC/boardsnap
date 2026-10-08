@@ -39,6 +39,11 @@ positions before capture. Its report checks coverage only.
 [Configurable captures](configurable-capture.md) now use this plan for both
 platforms; the local 16-image pilot verifies collection, not recognition accuracy.
 
+The [first clean classifier corpus](first-clean-corpus.md) contains 3600 verified
+captures: six piece sets on three backgrounds each, both orientations and two
+viewport sizes. Its 80 positions retain the frozen training/validation/evaluation
+split. The separate 36-image style check is excluded. Model training remains pending.
+
 ## Scope
 
 The engine will locate a board, crop and normalize it, split it into 64 squares,

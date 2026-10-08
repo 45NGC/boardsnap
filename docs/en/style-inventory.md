@@ -2,6 +2,11 @@
 
 **English** | [Español](../es/style-inventory.md) · [Overview](README.md)
 
+The [first clean classifier corpus](first-clean-corpus.md) contains 3600 verified
+captures: six piece sets on three backgrounds each, both orientations and two
+viewport sizes. Its 80 positions retain the frozen training/validation/evaluation
+split. The separate 36-image style check is excluded. Model training remains pending.
+
 Inventory v1, reviewed **2026-10-07**. This is the finite expansion backlog for
 Lichess and Chess.com. Book diagrams are deferred. Adding a row records work to
 do; it does not add a recognition profile or establish support.

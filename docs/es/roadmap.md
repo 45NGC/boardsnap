@@ -35,6 +35,16 @@ originales reservadas tienen límites enteros exactos; esto no demuestra mejoras
 en clasificación. Lo siguiente es ampliar temas/texturas reales y mejorar la
 clasificación y normalización de casillas con marcas.
 
+Los pasos 6.1 y 6.2 están completados: [el primer corpus limpio](first-clean-corpus.md)
+contiene 3600 pares PNG/JSON verificados de cburnett/Merida/Alpha de Lichess y
+Neo/Classic/Bases de Chess.com, sobre tres fondos y desde ambas orientaciones.
+Las 80 posiciones usan la ventana estándar; 20 representantes de grupos de origen
+también usan la compacta. Hay 2520/540/540 imágenes de entrenamiento/validación/evaluación.
+La herramienta permite reanudar y verifica etiquetas, particiones, archivos y
+geometría renderizada. Esto demuestra integridad de captura, no nueva compatibilidad
+del reconocedor. Lo siguiente es generar casillas, revisar cobertura por clase,
+estilo y fondo, y después incorporar y evaluar PyTorch.
+
 ## 0. Base del proyecto (completada)
 
 Paquete instalable `boardsnap` con un único `__init__.py`, arquitectura propuesta

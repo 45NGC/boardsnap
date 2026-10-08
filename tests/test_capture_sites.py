@@ -123,6 +123,64 @@ def test_selected_name_is_not_enough_when_actual_artwork_is_wrong():
         sites.verify_snapshot(changed, PLACEMENT, CONFIG, "white-bottom")
 
 
+@pytest.mark.integration
+@pytest.mark.parametrize("platform", ["lichess", "chesscom"])
+@pytest.mark.parametrize("fault", [None, "position-ignored", "artwork-changed"])
+def test_reused_page_checks_new_position_and_view_without_navigation(browser, monkeypatch, platform, fault):
+    config = dict(CONFIG, platform=platform)
+    context = browser.new_context(viewport=config["viewport"])
+    page = context.new_page()
+    setup(page, html("white-bottom", platform))
+    monkeypatch.setattr(sites, "select_chesscom", lambda p, b, c: (b.evaluate("e=>e.options.themeAssets"), {}))
+    try:
+        session = sites.CaptureSession(page, config)
+        session.capture(PLACEMENT, "white-bottom")
+        # A small native-renderer fixture makes updates observable in real DOM
+        # geometry. The production checks still inspect the resulting screenshot.
+        page.evaluate("""([platform, fault]) => {
+          const board=document.querySelector(platform==='lichess'?'cg-board':'wc-chess-board');
+          let current='R7/8/8/8/8/8/8/7k', flipped=false;
+          function render() {
+            const pieces=[...board.children];
+            for(const [row,rank] of current.split('/').entries()) {
+              let col=0;
+              for(const char of rank) {
+                if (/\\d/.test(char)) { col+=Number(char); continue; }
+                const piece=pieces[char==='R'?0:1];
+                piece.style.left=(flipped?7-col:col)*64+'px';
+                piece.style.top=(flipped?7-row:row)*64+'px';
+                col++;
+              }
+            }
+            board.state.isFlipped=flipped;
+            board.closest('.cg-wrap').className='cg-wrap orientation-'+(flipped?'black':'white');
+            if(fault==='artwork-changed') pieces[0].style.backgroundImage="url('https://fixture.test/wrong.svg')";
+          }
+          const flip=document.createElement('button');
+          flip.textContent='Flip board'; flip.setAttribute('aria-label','Flip Board');
+          flip.onclick=()=>{flipped=!flipped;render();};document.body.append(flip);
+          const input=document.createElement('input');input.className='copy-me__target';
+          input.onchange=()=>{if(fault!=='position-ignored')current=input.value;render();};
+          document.body.append(input);
+          board.game.load=({fen})=>{if(fault!=='position-ignored')current=fen;render();};
+          board.game.clearMarkings=()=>{};board.game.isAnimating=()=>false;
+        }""", [platform, fault])
+        navigations = []
+        page.on("request", lambda request: navigations.append(request.url) if request.is_navigation_request() else None)
+        moved = "1R6/8/8/8/8/8/8/6k1"
+        if fault:
+            with pytest.raises(ValueError, match="position|artwork"):
+                session.capture(moved, "black-bottom")
+        else:
+            _, annotation = session.capture(moved, "black-bottom")
+            assert annotation["source"]["renderedRows"] == [".k......", *["........"]*6, "......R."]
+            assert annotation["source"]["renderedOrientation"] == "black-bottom"
+            assert "page reused" in annotation["source"]["positionUpdate"]
+        assert navigations == []
+    finally:
+        context.close()
+
+
 def catalogue():
     """Small invented catalogue: no remote calls or redistributed theme assets."""
     return {

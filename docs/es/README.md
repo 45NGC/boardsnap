@@ -40,6 +40,12 @@ secuencias legales generadas, repartidas antes de capturar en 56 de entrenamient
 [capturas configurables](configurable-capture.md) ya utilizan este plan en ambas
 plataformas; el piloto local de 16 imágenes verifica la recogida, no el reconocimiento.
 
+El [primer corpus limpio de clasificación](first-clean-corpus.md) contiene 3600
+capturas verificadas: seis juegos de piezas sobre tres fondos cada uno, ambas
+orientaciones y dos tamaños. Sus 80 posiciones conservan las particiones fijadas
+de entrenamiento/validación/evaluación. La comprobación separada de 36 imágenes
+queda excluida. El entrenamiento del modelo sigue pendiente.
+
 ## Alcance
 
 El motor localizará un tablero, lo recortará y normalizará, lo dividirá en

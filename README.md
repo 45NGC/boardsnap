@@ -14,6 +14,10 @@ groups: 56 training, 12 validation and 12 final-evaluation positions.
 The [configurable capture tool](docs/en/configurable-capture.md) uses this plan
 for both platforms; a local 16-image training pilot verifies four new style
 combinations. It does not extend recognition compatibility.
+The [first clean classifier corpus](docs/en/first-clean-corpus.md) contains 3600
+verified local captures: six piece sets, three backgrounds per set, both
+orientations and two viewport sizes. All 80 positions keep their original
+partitions. Images remain in `.cache/`; model training is still pending.
 [Flutter integration](docs/en/flutter-integration.md) is documented as an HTTPS API
 for Android, iOS and web; no server or Flutter client is implemented.
 
@@ -66,6 +70,7 @@ files. Spanish documentation is maintained in `docs/es/`.
 | Roadmap | [Read](docs/en/roadmap.md) | [Read](docs/es/roadmap.md) |
 | Testing | [Read](docs/en/testing.md) | [Read](docs/es/testing.md) |
 | Tuning data | [Read](docs/en/tuning-data.md) | [Read](docs/es/tuning-data.md) |
+| First clean classifier corpus | [Read](docs/en/first-clean-corpus.md) | [Read](docs/es/first-clean-corpus.md) |
 | Configurable platform captures | [Read](docs/en/configurable-capture.md) | [Read](docs/es/configurable-capture.md) |
 | Capture utility | [Read](docs/en/capture-data.md) | [Read](docs/es/capture-data.md) |
 | Evaluation data | [Read](docs/en/evaluation-data.md) | [Read](docs/es/evaluation-data.md) |

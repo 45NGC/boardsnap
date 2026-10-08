@@ -125,19 +125,23 @@ def capture_samples(staging, manifest, recipe, headed=False):
                         for view in config["orientations"]:
                             print(f"Capturing {pid} {config['id']} {view}", file=sys.stderr, flush=True)
                             png, observed = capture_page(page, identity["piecePlacement"], config, view)
-                            annotation = dict(identity, **observed, configuration=config,
-                                              orientation=view, provenanceKind="automated-platform-capture")
-                            annotation["source"].update(browser=f"Chromium {browser.version}",
-                                                        capturedAt=datetime.now(timezone.utc).isoformat())
-                            validate_variants(manifest, [annotation])
-                            folder = staging / identity["split"] / config["id"]
-                            stem = f"{pid}-{view}"
-                            annotations.append(save_sample(folder, stem, png, annotation))
+                            annotations.append(record_capture(staging, manifest, pid, config, view,
+                                                              png, observed, browser.version))
                 finally:
                     context.close()
         finally:
             browser.close()
     return annotations
+
+
+def record_capture(staging, manifest, pid, config, view, png, observed, browser_version):
+    identity = variant_identity(manifest, pid)
+    annotation = dict(identity, **observed, configuration=config, orientation=view,
+                      provenanceKind="automated-platform-capture")
+    annotation["source"].update(browser=f"Chromium {browser_version}",
+                                capturedAt=datetime.now(timezone.utc).isoformat())
+    validate_variants(manifest, [annotation])
+    return save_sample(staging / identity["split"] / config["id"], f"{pid}-{view}", png, annotation)
 
 
 def import_samples(staging, manifest, specification, spec_dir):
@@ -213,7 +217,8 @@ def check_real_isolation(dataset_root, annotations, manifest):
                 raise ValueError("A real-game source already exists in a different partition")
 
 
-def run_batch(manifest, specification, output_root, *, mode="capture", spec_dir=Path("."), headed=False):
+def run_batch(manifest, specification, output_root, *, mode="capture", spec_dir=Path("."),
+              headed=False, capture_fn=None, audit_fn=None):
     validate_manifest(manifest)
     dataset_root = output_root / identifier(manifest["datasetId"])
     target = dataset_root / identifier(specification["batchId"])
@@ -231,7 +236,7 @@ def run_batch(manifest, specification, output_root, *, mode="capture", spec_dir=
         try:
             with tempfile.TemporaryDirectory(prefix=".capture-", dir=dataset_root) as tmp:
                 staging = Path(tmp)
-                annotations = (capture_samples(staging, manifest, specification, headed) if mode == "capture"
+                annotations = ((capture_fn or capture_samples)(staging, manifest, specification, headed) if mode == "capture"
                                else import_samples(staging, manifest, specification, spec_dir))
                 check_real_isolation(dataset_root, annotations, manifest)
                 (staging / "batch.json").write_text(json.dumps({
@@ -240,6 +245,8 @@ def run_batch(manifest, specification, output_root, *, mode="capture", spec_dir=
                     "positionPlanHashEncoding": "json.dumps(sort_keys=True), UTF-8",
                     "recipe": specification, "samples": annotations,
                 }, indent=2) + "\n")
+                if audit_fn is not None:
+                    audit_fn(staging, manifest, specification)
                 if target.exists():
                     raise ValueError("Batch destination appeared during capture")
                 staging.rename(target)

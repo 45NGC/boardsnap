@@ -2,6 +2,12 @@
 
 [English](../en/style-inventory.md) | **Español** · [Inicio](README.md)
 
+El [primer corpus limpio de clasificación](first-clean-corpus.md) contiene 3600
+capturas verificadas: seis juegos de piezas sobre tres fondos cada uno, ambas
+orientaciones y dos tamaños. Sus 80 posiciones conservan las particiones fijadas
+de entrenamiento/validación/evaluación. La comprobación separada de 36 imágenes
+queda excluida. El entrenamiento del modelo sigue pendiente.
+
 Inventario v1, revisado el **2026-10-07**. Esta es la lista delimitada de ampliación
 para Lichess y Chess.com. Los diagramas de libros quedan aplazados. Añadir una fila
 registra trabajo pendiente; no añade un perfil de reconocimiento ni demuestra

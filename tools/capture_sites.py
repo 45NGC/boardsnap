@@ -226,6 +226,16 @@ def capture_page(page, placement, config, view):
     page.add_style_tag(content=modifications)
     page.mouse.move(0, 0)
     page.wait_for_timeout(400)
+    return capture_verified(page, board, placement, config, view, expected_style, {
+        "url": url, "client": "desktop-web", "locale": "en-GB",
+        "layoutId": "LC01" if platform == "lichess" else "CC01",
+        "pageModification": description, "selectorChoices": choices,
+    })
+
+
+def capture_verified(page, board, placement, config, view, expected_style, source):
+    """Save only a stable rendered board; shared by navigation and session capture."""
+    platform = config["platform"]
     before = board.evaluate(SNAPSHOT, platform)
     verify_snapshot(before, placement, config, view, expected_style)
     png = page.screenshot(type="png", animations="disabled", full_page=False, scale="device")
@@ -238,8 +248,52 @@ def capture_page(page, placement, config, view):
     size = check_png(png, bounds, (config["viewport"]["width"] * factor, config["viewport"]["height"] * factor))
     return png, {"boardBounds": bounds, "imageSize": size,
                  "verification": "DOM pieces, computed artwork, orientation and geometry checked before/after screenshot",
-                 "source": {"url": url, "client": "desktop-web", "locale": "en-GB",
-                            "layoutId": "LC01" if platform == "lichess" else "CC01",
-                            "pageModification": description, "cssBoardBounds": before["bounds"],
-                            "selectorChoices": choices, "observedStyle": before["style"],
-                            "boardArtwork": before["boardArtwork"], "pieceArtwork": before["pieces"]}}
+                 "source": dict(source, cssBoardBounds=before["bounds"], observedStyle=before["style"],
+                                renderedRows=before["rows"], renderedOrientation=before["orientation"],
+                                boardArtwork=before["boardArtwork"], pieceArtwork=before["pieces"])}
+
+
+class CaptureSession:
+    """Reuse the actual platform renderer for one fixed appearance and viewport.
+
+    Positions are applied through the native editor change event or board API;
+    screenshots remain subject to exactly the same before/after DOM checks.
+    """
+
+    def __init__(self, page, config):
+        self.page = page
+        self.config = config
+        self.source = None
+        self.expected_style = None
+
+    def capture(self, placement, view):
+        page, config = self.page, self.config
+        platform = config["platform"]
+        if self.source is None:
+            png, annotation = capture_page(page, placement, config, view)
+            self.source = annotation["source"].copy()
+            self.expected_style = (select_lichess(page, config) if platform == "lichess"
+                                   else annotation["source"]["observedStyle"])
+            return png, annotation
+        selector = ".main-board cg-board" if platform == "lichess" else "wc-chess-board"
+        board = page.locator(selector)
+        if platform == "lichess":
+            page.locator('.copy-me__target:not([readonly])').evaluate("""(e, fen) => {
+                e.value=fen; e.dispatchEvent(new Event('change', {bubbles:true}));
+            }""", placement)
+            black = page.locator('.main-board .cg-wrap').get_attribute('class').split()
+            if ('orientation-black' in black) != (view == 'black-bottom'):
+                page.get_by_text('Flip board', exact=True).evaluate('e=>e.click()')
+            method = "native editor FEN change and flip controls; page reused"
+        else:
+            board.evaluate('(e,fen)=>{e.game.load({fen});e.game.clearMarkings();}', placement)
+            if board.evaluate('e=>Boolean(e.state.isFlipped)') != (view == 'black-bottom'):
+                page.locator('[aria-label="Flip Board"]').evaluate('e=>e.click()')
+            page.evaluate("url=>history.replaceState(null,'',url)",
+                          "https://www.chess.com/analysis?" + urlencode({"fen": placement}))
+            page.wait_for_function('b=>!b.game.isAnimating()', arg=board.element_handle())
+            method = "native board game.load and flip controls; analysis page reused"
+        page.mouse.move(0, 0)
+        page.evaluate('()=>new Promise(r=>requestAnimationFrame(()=>requestAnimationFrame(r)))')
+        source = dict(self.source, url=page.url, positionUpdate=method)
+        return capture_verified(page, board, placement, config, view, self.expected_style, source)

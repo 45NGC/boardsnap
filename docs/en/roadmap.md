@@ -34,6 +34,15 @@ rectangle metrics and negative tests. All 8 held-out originals have exact intege
 bounds; no piece-classification improvement is claimed. Next broaden real-theme
 and texture coverage and improve classification/normalization for markings.
 
+Steps 6.1 and 6.2 are complete: [the first clean classifier corpus](first-clean-corpus.md)
+contains 3600 verified PNG/JSON pairs covering Lichess cburnett/Merida/Alpha and
+Chess.com Neo/Classic/Bases, each on three backgrounds and in both orientations.
+All 80 positions use the standard viewport; 20 source-group representatives also
+use a compact viewport. Training/validation/evaluation contain 2520/540/540 images.
+The resumable collector audits labels, partitions, files and rendered geometry;
+this is capture evidence, not new recognition compatibility. Next generate square
+data, audit class/style/background coverage, then introduce and evaluate PyTorch.
+
 ## 0. Project scaffold (completed)
 
 An installable `boardsnap` package with a single `__init__.py`, a documented
