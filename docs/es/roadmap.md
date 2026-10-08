@@ -16,10 +16,16 @@ nativas. Sus lotes ordenados son la lista actual de ampliación.
 La preparación de posiciones ya está implementada: [80 posiciones en 20 grupos](position-plan.md),
 particiones fijas de entrenamiento/validación/evaluación (56/12/12), secuencias
 legales reproducibles, separación del corpus anterior y comprobación por clase y
-color de casilla. Hay ocho combinaciones escasas documentadas; aún no hay capturas
-del lote. Lo siguiente es adaptar las capturas al plan de tres particiones por
-grupo, primero con los perfiles limpios actuales y después con fondos G1 y piezas
-fijas. Este trabajo de preparación no declara nuevos temas compatibles.
+color de casilla. Hay ocho combinaciones escasas documentadas.
+
+La [captura configurable](configurable-capture.md) está implementada para tableros
+limpios web de Lichess y Chess.com: fondos/piezas independientes, ambas vistas,
+viewport y densidad de píxeles, etiquetas verificadas y lotes atómicos. Un piloto
+local de entrenamiento contiene 16 imágenes de cuatro combinaciones. Se pueden
+importar capturas reales revisadas de posiciones del plan; aún no se han aportado.
+Lo siguiente es ampliar el corpus limpio, desarrollar el reconocimiento de los
+nuevos estilos y automatizar marcas. No cambia la compatibilidad del reconocedor
+ni se demuestra cobertura de apps móviles nativas.
 
 ## 0. Base del proyecto (completada)
 

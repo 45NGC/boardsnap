@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "batchId": "g1-clean-pilot-v1",
+  "positionIds": [
+    "digital-009",
+    "digital-011"
+  ],
+  "configurations": [
+    {
+      "id": "lichess-green-merida",
+      "platform": "lichess",
+      "boardTheme": "green",
+      "pieceSet": "merida",
+      "orientations": [
+        "white-bottom",
+        "black-bottom"
+      ],
+      "viewport": {
+        "width": 1280,
+        "height": 1000
+      },
+      "deviceScaleFactor": 1,
+      "conditions": [
+        "clean"
+      ]
+    },
+    {
+      "id": "lichess-purple-alpha",
+      "platform": "lichess",
+      "boardTheme": "purple",
+      "pieceSet": "alpha",
+      "orientations": [
+        "white-bottom",
+        "black-bottom"
+      ],
+      "viewport": {
+        "width": 1280,
+        "height": 1000
+      },
+      "deviceScaleFactor": 1,
+      "conditions": [
+        "clean"
+      ]
+    },
+    {
+      "id": "chesscom-blue-classic",
+      "platform": "chesscom",
+      "boardTheme": "blue",
+      "pieceSet": "classic",
+      "orientations": [
+        "white-bottom",
+        "black-bottom"
+      ],
+      "viewport": {
+        "width": 1280,
+        "height": 1000
+      },
+      "deviceScaleFactor": 1,
+      "conditions": [
+        "clean"
+      ]
+    },
+    {
+      "id": "chesscom-brown-bases",
+      "platform": "chesscom",
+      "boardTheme": "brown",
+      "pieceSet": "bases",
+      "orientations": [
+        "white-bottom",
+        "black-bottom"
+      ],
+      "viewport": {
+        "width": 1280,
+        "height": 1000
+      },
+      "deviceScaleFactor": 1,
+      "conditions": [
+        "clean"
+      ]
+    }
+  ]
+}

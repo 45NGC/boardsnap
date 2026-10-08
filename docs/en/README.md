@@ -33,7 +33,9 @@ labels from the lichess editor. It uses the optional `capture` dependency extra.
 
 The new [position plan](position-plan.md) contains 80 placements from 20 legal
 generated sequences, split into 56 training, 12 validation and 12 evaluation
-positions before capture. Its report checks coverage only; this batch has no images yet.
+positions before capture. Its report checks coverage only.
+[Configurable captures](configurable-capture.md) now use this plan for both
+platforms; the local 16-image pilot verifies collection, not recognition accuracy.
 
 ## Scope
 

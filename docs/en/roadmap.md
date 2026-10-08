@@ -16,10 +16,15 @@ independently. Its ordered work batches are the current expansion backlog.
 Position planning is now implemented: [80 placements in 20 source groups](position-plan.md),
 fixed training/validation/evaluation assignments (56/12/12), reproducible legal
 source sequences, legacy isolation and class/background coverage checks. Eight
-underrepresented combinations are documented; images for this batch are not yet
-captured. Next adapt capture tools to the new group-based three-partition plan,
-starting with the existing clean desktop profiles, then G1 backgrounds with fixed
-pieces. No additional theme compatibility is claimed by this planning work.
+underrepresented combinations are documented.
+
+[Configurable capture](configurable-capture.md) is implemented for clean Lichess
+and Chess.com web boards: independent backgrounds/pieces, both views, viewport
+and pixel density, verified PNG labels and atomic batches. A local 16-image
+training pilot covers four combinations. Reviewed real-use import is available
+for planned positions; no real-use images have been supplied. Next expand the
+clean corpus, develop recognition for the new styles, and add automated marks.
+Recognition compatibility and native mobile coverage are unchanged.
 
 ## 0. Project scaffold (completed)
 

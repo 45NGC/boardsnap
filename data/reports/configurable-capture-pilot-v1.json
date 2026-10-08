@@ -1,0 +1,540 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Capture-tool verification only; no recognition accuracy or new supported profiles",
+  "datasetId": "digital-positions-v1",
+  "batchId": "g1-clean-pilot-v1",
+  "localOutputRoot": ".cache/configurable-captures/digital-positions-v1/g1-clean-pilot-v1",
+  "imagesVersioned": false,
+  "sampleCount": 16,
+  "positionCount": 2,
+  "sourceGroupCount": 1,
+  "positionPlanSha256": "edfc4a8635973cf086b868829a8a533026b2003dc0d0425c8579797bfc31fc9e",
+  "recipe": {
+    "schemaVersion": 1,
+    "batchId": "g1-clean-pilot-v1",
+    "positionIds": [
+      "digital-009",
+      "digital-011"
+    ],
+    "configurations": [
+      {
+        "id": "lichess-green-merida",
+        "platform": "lichess",
+        "boardTheme": "green",
+        "pieceSet": "merida",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "lichess-purple-alpha",
+        "platform": "lichess",
+        "boardTheme": "purple",
+        "pieceSet": "alpha",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "chesscom-blue-classic",
+        "platform": "chesscom",
+        "boardTheme": "blue",
+        "pieceSet": "classic",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "chesscom-brown-bases",
+        "platform": "chesscom",
+        "boardTheme": "brown",
+        "pieceSet": "bases",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      }
+    ]
+  },
+  "browser": "Chromium 153.0.8010.12",
+  "checks": [
+    "DOM placement, orientation, loaded computed artwork and uncovered geometry before/after screenshot",
+    "Decoded PNG dimensions, image hash and exact sidecar consistency",
+    "Frozen manifest identity and partition inheritance",
+    "Visual inspection of one example per style combination"
+  ],
+  "realUseSamples": 0,
+  "limitations": [
+    "Training-only pilot from one source group",
+    "Automated editor/analysis pages with recorded modifications",
+    "Automated board marks are not implemented",
+    "Native mobile apps are not exercised",
+    "Real-use import currently requires positions in the generated-sequence plan"
+  ],
+  "samples": [
+    {
+      "positionId": "digital-009",
+      "groupId": "sequence-003",
+      "split": "training",
+      "orientation": "white-bottom",
+      "sha256": "bc46d8a434530945f107a9726a22f490951a24b85a68096439e2f36a68ee8a99",
+      "boardBounds": {
+        "x": 189.890625,
+        "y": 158.46875,
+        "width": 584,
+        "height": 584
+      },
+      "imageSize": {
+        "width": 1280,
+        "height": 1000
+      },
+      "image": "training/lichess-green-merida/digital-009-white-bottom.png",
+      "configurationId": "lichess-green-merida",
+      "capturedAt": "2026-10-08T11:38:40.245022+00:00",
+      "url": "https://lichess.org/editor?fen=rnbqkbnr%2Fpp5p%2F2pp4%2F5pp1%2F1P6%2FP3P3%2F3P1PPP%2FRNBQKBNR&color=white"
+    },
+    {
+      "positionId": "digital-009",
+      "groupId": "sequence-003",
+      "split": "training",
+      "orientation": "black-bottom",
+      "sha256": "13a0e075c9195332ccc74bb3db69203d747ab693dad6bb2eea9004faeb41d4e9",
+      "boardBounds": {
+        "x": 189.890625,
+        "y": 158.46875,
+        "width": 584,
+        "height": 584
+      },
+      "imageSize": {
+        "width": 1280,
+        "height": 1000
+      },
+      "image": "training/lichess-green-merida/digital-009-black-bottom.png",
+      "configurationId": "lichess-green-merida",
+      "capturedAt": "2026-10-08T11:38:40.991809+00:00",
+      "url": "https://lichess.org/editor?fen=rnbqkbnr%2Fpp5p%2F2pp4%2F5pp1%2F1P6%2FP3P3%2F3P1PPP%2FRNBQKBNR&color=black"
+    },
+    {
+      "positionId": "digital-011",
+      "groupId": "sequence-003",
+      "split": "training",
+      "orientation": "white-bottom",
+      "sha256": "c491c3a30b6df6fd61ac396fd14646e6ce871fb561d1435d59f063814096c5b0",
+      "boardBounds": {
+        "x": 189.890625,
+        "y": 158.46875,
+        "width": 584,
+        "height": 584
+      },
+      "imageSize": {
+        "width": 1280,
+        "height": 1000
+      },
+      "image": "training/lichess-green-merida/digital-011-white-bottom.png",
+      "configurationId": "lichess-green-merida",
+      "capturedAt": "2026-10-08T11:38:41.670021+00:00",
+      "url": "https://lichess.org/editor?fen=6k1%2F8%2F7K%2Fp2p3P%2Fb6P%2F8%2F4r1N1%2F6N1&color=white"
+    },
+    {
+      "positionId": "digital-011",
+      "groupId": "sequence-003",
+      "split": "training",
+      "orientation": "black-bottom",
+      "sha256": "2337c68907368bfd930e2d2ff056350656dd0c80638094c8f286dde197c8aecd",
+      "boardBounds": {
+        "x": 189.890625,
+        "y": 158.46875,
+        "width": 584,
+        "height": 584
+      },
+      "imageSize": {
+        "width": 1280,
+        "height": 1000
+      },
+      "image": "training/lichess-green-merida/digital-011-black-bottom.png",
+      "configurationId": "lichess-green-merida",
+      "capturedAt": "2026-10-08T11:38:42.346912+00:00",
+      "url": "https://lichess.org/editor?fen=6k1%2F8%2F7K%2Fp2p3P%2Fb6P%2F8%2F4r1N1%2F6N1&color=black"
+    },
+    {
+      "positionId": "digital-009",
+      "groupId": "sequence-003",
+      "split": "training",
+      "orientation": "white-bottom",
+      "sha256": "68e52bcb84e611ba7c84ee38c6a7e65657b189f7b7dd9448afb5688e685d27a9",
+      "boardBounds": {
+        "x": 189.890625,
+        "y": 158.46875,
+        "width": 584,
+        "height": 584
+      },
+      "imageSize": {
+        "width": 1280,
+        "height": 1000
+      },
+      "image": "training/lichess-purple-alpha/digital-009-white-bottom.png",
+      "configurationId": "lichess-purple-alpha",
+      "capturedAt": "2026-10-08T11:38:43.811880+00:00",
+      "url": "https://lichess.org/editor?fen=rnbqkbnr%2Fpp5p%2F2pp4%2F5pp1%2F1P6%2FP3P3%2F3P1PPP%2FRNBQKBNR&color=white"
+    },
+    {
+      "positionId": "digital-009",
+      "groupId": "sequence-003",
+      "split": "training",
+      "orientation": "black-bottom",
+      "sha256": "2266eb94b998c83b36cc578d7f43b798691848729243c47656fb37103abf6025",
+      "boardBounds": {
+        "x": 189.890625,
+        "y": 158.46875,
+        "width": 584,
+        "height": 584
+      },
+      "imageSize": {
+        "width": 1280,
+        "height": 1000
+      },
+      "image": "training/lichess-purple-alpha/digital-009-black-bottom.png",
+      "configurationId": "lichess-purple-alpha",
+      "capturedAt": "2026-10-08T11:38:44.529416+00:00",
+      "url": "https://lichess.org/editor?fen=rnbqkbnr%2Fpp5p%2F2pp4%2F5pp1%2F1P6%2FP3P3%2F3P1PPP%2FRNBQKBNR&color=black"
+    },
+    {
+      "positionId": "digital-011",
+      "groupId": "sequence-003",
+      "split": "training",
+      "orientation": "white-bottom",
+      "sha256": "1627038298765953d18d08dc5e4d255aa3844e8730772111363e5eac318d78b6",
+      "boardBounds": {
+        "x": 189.890625,
+        "y": 158.46875,
+        "width": 584,
+        "height": 584
+      },
+      "imageSize": {
+        "width": 1280,
+        "height": 1000
+      },
+      "image": "training/lichess-purple-alpha/digital-011-white-bottom.png",
+      "configurationId": "lichess-purple-alpha",
+      "capturedAt": "2026-10-08T11:38:45.234774+00:00",
+      "url": "https://lichess.org/editor?fen=6k1%2F8%2F7K%2Fp2p3P%2Fb6P%2F8%2F4r1N1%2F6N1&color=white"
+    },
+    {
+      "positionId": "digital-011",
+      "groupId": "sequence-003",
+      "split": "training",
+      "orientation": "black-bottom",
+      "sha256": "4adcfe54b4b33c7d2e1794f75c8153737783d5365657e0f0da4f6e1ff929cfd2",
+      "boardBounds": {
+        "x": 189.890625,
+        "y": 158.46875,
+        "width": 584,
+        "height": 584
+      },
+      "imageSize": {
+        "width": 1280,
+        "height": 1000
+      },
+      "image": "training/lichess-purple-alpha/digital-011-black-bottom.png",
+      "configurationId": "lichess-purple-alpha",
+      "capturedAt": "2026-10-08T11:38:45.935317+00:00",
+      "url": "https://lichess.org/editor?fen=6k1%2F8%2F7K%2Fp2p3P%2Fb6P%2F8%2F4r1N1%2F6N1&color=black"
+    },
+    {
+      "positionId": "digital-009",
+      "groupId": "sequence-003",
+      "split": "training",
+      "orientation": "white-bottom",
+      "sha256": "e6fd5251c12377ed7488c19e663713ce5e6131ff7941a1bbfeeaefe503768e3f",
+      "boardBounds": {
+        "x": 228,
+        "y": 66,
+        "width": 704,
+        "height": 704
+      },
+      "imageSize": {
+        "width": 1280,
+        "height": 1000
+      },
+      "image": "training/chesscom-blue-classic/digital-009-white-bottom.png",
+      "configurationId": "chesscom-blue-classic",
+      "capturedAt": "2026-10-08T11:38:50.235496+00:00",
+      "url": "https://www.chess.com/analysis?fen=rnbqkbnr%2Fpp5p%2F2pp4%2F5pp1%2F1P6%2FP3P3%2F3P1PPP%2FRNBQKBNR"
+    },
+    {
+      "positionId": "digital-009",
+      "groupId": "sequence-003",
+      "split": "training",
+      "orientation": "black-bottom",
+      "sha256": "9a47f91062ac93bd4aa9dc04df42cb023360a084f76129f3449638f6873cb5e1",
+      "boardBounds": {
+        "x": 228,
+        "y": 66,
+        "width": 704,
+        "height": 704
+      },
+      "imageSize": {
+        "width": 1280,
+        "height": 1000
+      },
+      "image": "training/chesscom-blue-classic/digital-009-black-bottom.png",
+      "configurationId": "chesscom-blue-classic",
+      "capturedAt": "2026-10-08T11:38:53.944182+00:00",
+      "url": "https://www.chess.com/analysis?fen=rnbqkbnr%2Fpp5p%2F2pp4%2F5pp1%2F1P6%2FP3P3%2F3P1PPP%2FRNBQKBNR"
+    },
+    {
+      "positionId": "digital-011",
+      "groupId": "sequence-003",
+      "split": "training",
+      "orientation": "white-bottom",
+      "sha256": "0938b0c35493742dc902dd5468c856f0e3a5a5a57682e0c548be5846daaab9eb",
+      "boardBounds": {
+        "x": 228,
+        "y": 66,
+        "width": 704,
+        "height": 704
+      },
+      "imageSize": {
+        "width": 1280,
+        "height": 1000
+      },
+      "image": "training/chesscom-blue-classic/digital-011-white-bottom.png",
+      "configurationId": "chesscom-blue-classic",
+      "capturedAt": "2026-10-08T11:38:57.919178+00:00",
+      "url": "https://www.chess.com/analysis?fen=6k1%2F8%2F7K%2Fp2p3P%2Fb6P%2F8%2F4r1N1%2F6N1"
+    },
+    {
+      "positionId": "digital-011",
+      "groupId": "sequence-003",
+      "split": "training",
+      "orientation": "black-bottom",
+      "sha256": "272d58abeed43e970e0e5410906865f789ec7f95da387ce3d05f98c4d8e9f3dd",
+      "boardBounds": {
+        "x": 228,
+        "y": 66,
+        "width": 704,
+        "height": 704
+      },
+      "imageSize": {
+        "width": 1280,
+        "height": 1000
+      },
+      "image": "training/chesscom-blue-classic/digital-011-black-bottom.png",
+      "configurationId": "chesscom-blue-classic",
+      "capturedAt": "2026-10-08T11:39:01.531272+00:00",
+      "url": "https://www.chess.com/analysis?fen=6k1%2F8%2F7K%2Fp2p3P%2Fb6P%2F8%2F4r1N1%2F6N1"
+    },
+    {
+      "positionId": "digital-009",
+      "groupId": "sequence-003",
+      "split": "training",
+      "orientation": "white-bottom",
+      "sha256": "a63c3f0e0d1e12a3988878a7d971f27a97d4eea4d9f17c1a50d4e9c605fbb1d3",
+      "boardBounds": {
+        "x": 228,
+        "y": 66,
+        "width": 704,
+        "height": 704
+      },
+      "imageSize": {
+        "width": 1280,
+        "height": 1000
+      },
+      "image": "training/chesscom-brown-bases/digital-009-white-bottom.png",
+      "configurationId": "chesscom-brown-bases",
+      "capturedAt": "2026-10-08T11:39:06.027181+00:00",
+      "url": "https://www.chess.com/analysis?fen=rnbqkbnr%2Fpp5p%2F2pp4%2F5pp1%2F1P6%2FP3P3%2F3P1PPP%2FRNBQKBNR"
+    },
+    {
+      "positionId": "digital-009",
+      "groupId": "sequence-003",
+      "split": "training",
+      "orientation": "black-bottom",
+      "sha256": "026e572660d5c54ca1e1702d7c8b0f97856ce9e4f7e9386170a690082aa03ed7",
+      "boardBounds": {
+        "x": 228,
+        "y": 66,
+        "width": 704,
+        "height": 704
+      },
+      "imageSize": {
+        "width": 1280,
+        "height": 1000
+      },
+      "image": "training/chesscom-brown-bases/digital-009-black-bottom.png",
+      "configurationId": "chesscom-brown-bases",
+      "capturedAt": "2026-10-08T11:39:10.049734+00:00",
+      "url": "https://www.chess.com/analysis?fen=rnbqkbnr%2Fpp5p%2F2pp4%2F5pp1%2F1P6%2FP3P3%2F3P1PPP%2FRNBQKBNR"
+    },
+    {
+      "positionId": "digital-011",
+      "groupId": "sequence-003",
+      "split": "training",
+      "orientation": "white-bottom",
+      "sha256": "8b27659fad8a920b33cf755bab86e00364fcd6532dc9ff91a7a35e0507568e66",
+      "boardBounds": {
+        "x": 228,
+        "y": 66,
+        "width": 704,
+        "height": 704
+      },
+      "imageSize": {
+        "width": 1280,
+        "height": 1000
+      },
+      "image": "training/chesscom-brown-bases/digital-011-white-bottom.png",
+      "configurationId": "chesscom-brown-bases",
+      "capturedAt": "2026-10-08T11:39:13.753233+00:00",
+      "url": "https://www.chess.com/analysis?fen=6k1%2F8%2F7K%2Fp2p3P%2Fb6P%2F8%2F4r1N1%2F6N1"
+    },
+    {
+      "positionId": "digital-011",
+      "groupId": "sequence-003",
+      "split": "training",
+      "orientation": "black-bottom",
+      "sha256": "95adf32a0f5b97f4845675aa7df8eaf564a07292cd0f7152e55514551f5451f1",
+      "boardBounds": {
+        "x": 228,
+        "y": 66,
+        "width": 704,
+        "height": 704
+      },
+      "imageSize": {
+        "width": 1280,
+        "height": 1000
+      },
+      "image": "training/chesscom-brown-bases/digital-011-black-bottom.png",
+      "configurationId": "chesscom-brown-bases",
+      "capturedAt": "2026-10-08T11:39:17.301272+00:00",
+      "url": "https://www.chess.com/analysis?fen=6k1%2F8%2F7K%2Fp2p3P%2Fb6P%2F8%2F4r1N1%2F6N1"
+    }
+  ],
+  "additionalSizeCheck": {
+    "batchId": "g1-size-pilot-v1",
+    "localOutputRoot": ".cache/configurable-captures/digital-positions-v1/g1-size-pilot-v1",
+    "purpose": "Verify live responsive geometry at 1024x900 CSS pixels and device scale factor 2",
+    "sampleCount": 2,
+    "recipe": {
+      "schemaVersion": 1,
+      "batchId": "g1-size-pilot-v1",
+      "positionIds": [
+        "digital-009"
+      ],
+      "configurations": [
+        {
+          "id": "lichess-green-merida",
+          "platform": "lichess",
+          "boardTheme": "green",
+          "pieceSet": "merida",
+          "orientations": [
+            "black-bottom"
+          ],
+          "viewport": {
+            "width": 1024,
+            "height": 900
+          },
+          "deviceScaleFactor": 2,
+          "conditions": [
+            "clean"
+          ]
+        },
+        {
+          "id": "chesscom-blue-classic",
+          "platform": "chesscom",
+          "boardTheme": "blue",
+          "pieceSet": "classic",
+          "orientations": [
+            "black-bottom"
+          ],
+          "viewport": {
+            "width": 1024,
+            "height": 900
+          },
+          "deviceScaleFactor": 2,
+          "conditions": [
+            "clean"
+          ]
+        }
+      ]
+    },
+    "samples": [
+      {
+        "positionId": "digital-009",
+        "groupId": "sequence-003",
+        "split": "training",
+        "orientation": "black-bottom",
+        "sha256": "76f7c46a2760cfbd1be524c21c83ef28fd25fffd107771f351e46ff2df75c815",
+        "boardBounds": {
+          "x": 189.0,
+          "y": 295.75,
+          "width": 1040,
+          "height": 1040
+        },
+        "imageSize": {
+          "width": 2048,
+          "height": 1800
+        },
+        "image": "training/lichess-green-merida/digital-009-black-bottom.png",
+        "configurationId": "lichess-green-merida",
+        "capturedAt": "2026-10-08T11:44:58.085607+00:00",
+        "url": "https://lichess.org/editor?fen=rnbqkbnr%2Fpp5p%2F2pp4%2F5pp1%2F1P6%2FP3P3%2F3P1PPP%2FRNBQKBNR&color=black"
+      },
+      {
+        "positionId": "digital-009",
+        "groupId": "sequence-003",
+        "split": "training",
+        "orientation": "black-bottom",
+        "sha256": "93a3f329b74fcead87cefef08ee5b34eb694fe26cd46b79d27b7f89276e65df0",
+        "boardBounds": {
+          "x": 216,
+          "y": 132,
+          "width": 1136,
+          "height": 1136
+        },
+        "imageSize": {
+          "width": 2048,
+          "height": 1800
+        },
+        "image": "training/chesscom-blue-classic/digital-009-black-bottom.png",
+        "configurationId": "chesscom-blue-classic",
+        "capturedAt": "2026-10-08T11:45:02.795908+00:00",
+        "url": "https://www.chess.com/analysis?fen=rnbqkbnr%2Fpp5p%2F2pp4%2F5pp1%2F1P6%2FP3P3%2F3P1PPP%2FRNBQKBNR"
+      }
+    ]
+  }
+}

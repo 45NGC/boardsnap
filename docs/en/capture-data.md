@@ -1,5 +1,8 @@
 # Capturing lichess samples
 
+For the new three-partition plan, use [configurable platform captures](configurable-capture.md).
+This page documents the original fixed-profile collection tool.
+
 **English** | [Spanish](../es/capture-data.md) · [Overview](README.md)
 
 This guide records the original brown-profile implementation. See [evaluated profiles](profiles.md) for subsequent digital styles, the experimental book profile and current coverage.

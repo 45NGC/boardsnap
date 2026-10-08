@@ -34,8 +34,9 @@ conocidas del editor de lichess. Utiliza el extra opcional de dependencias `capt
 
 El nuevo [plan de posiciones](position-plan.md) contiene 80 colocaciones de 20
 secuencias legales generadas, repartidas antes de capturar en 56 de entrenamiento,
-12 de validación y 12 de evaluación. El informe comprueba cobertura; todavía no
-hay imágenes de este lote.
+12 de validación y 12 de evaluación. El informe comprueba cobertura. Las
+[capturas configurables](configurable-capture.md) ya utilizan este plan en ambas
+plataformas; el piloto local de 16 imágenes verifica la recogida, no el reconocimiento.
 
 ## Alcance
 

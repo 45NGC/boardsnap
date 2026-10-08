@@ -10,8 +10,10 @@ The [profile guide](docs/en/profiles.md) records exact scope, datasets and resul
 The [style inventory](docs/en/style-inventory.md) tracks backgrounds, piece designs,
 interfaces and image conditions separately, with independent web/Android/iOS status.
 The [position plan](docs/en/position-plan.md) fixes 80 new placements in 20 source
-groups: 56 training, 12 validation and 12 final-evaluation positions. Images for
-this new batch have not been captured yet.
+groups: 56 training, 12 validation and 12 final-evaluation positions.
+The [configurable capture tool](docs/en/configurable-capture.md) uses this plan
+for both platforms; a local 16-image training pilot verifies four new style
+combinations. It does not extend recognition compatibility.
 [Flutter integration](docs/en/flutter-integration.md) is documented as an HTTPS API
 for Android, iOS and web; no server or Flutter client is implemented.
 
@@ -62,6 +64,7 @@ files. Spanish documentation is maintained in `docs/es/`.
 | Roadmap | [Read](docs/en/roadmap.md) | [Read](docs/es/roadmap.md) |
 | Testing | [Read](docs/en/testing.md) | [Read](docs/es/testing.md) |
 | Tuning data | [Read](docs/en/tuning-data.md) | [Read](docs/es/tuning-data.md) |
+| Configurable platform captures | [Read](docs/en/configurable-capture.md) | [Read](docs/es/configurable-capture.md) |
 | Capture utility | [Read](docs/en/capture-data.md) | [Read](docs/es/capture-data.md) |
 | Evaluation data | [Read](docs/en/evaluation-data.md) | [Read](docs/es/evaluation-data.md) |
 

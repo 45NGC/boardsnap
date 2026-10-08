@@ -165,38 +165,15 @@ estructurales y se omite únicamente la de reproducción/legalidad. Las pruebas
 cubren fugas entre particiones, etiquetas incorrectas, colores, clases ausentes,
 identidad de variantes, informe congelado y reproducción.
 
-## Lo siguiente: capturar desde este plan
+## Capturar desde este plan
 
-Las herramientas anteriores aceptan manifiestos de perfil con `tuning/evaluation`.
-Todavía **no** aceptan este esquema de tres particiones independiente del perfil.
-No convertir validación en ajuste ni pasar este manifiesto al comando anterior.
+Utiliza [la herramienta de capturas configurables](configurable-capture.md) para
+las tres particiones. Emplea `variant_identity` y `validate_variants` para heredar
+sin cambios posición/grupo/partición, y añade hash del PNG, geometría comprobada,
+estilo, orientación y procedencia. Los scripts originales siguen aceptando solo
+los manifiestos anteriores de ajuste/evaluación.
 
-El próximo adaptador debe validar el plan completo una vez y después usar:
-
-```python
-from tools.position_dataset import variant_identity, validate_variants
-
-identity = variant_identity(manifest, "digital-001")
-annotation = {
-    **identity,
-    "orientation": "black-bottom",
-    "boardStyleId": "lichess-brown",
-    "pieceStyleId": "lichess-cburnett",
-    "layoutId": "LC01",
-    "conditions": ["K01"],
-}
-validate_variants(manifest, [annotation])
-```
-
-Este ejemplo compone metadatos; no dibuja ni reconoce una imagen. Añadir ruta/hash,
-procedencia de captura y límites comprobados independientemente al capturar.
-Incluir el ID del conjunto en las rutas para distinguirlo del corpus anterior;
-una estructura propuesta es
-`data/datasets/digital-positions-v1/<split>/<profile>/<position>-<variant>.png`.
-
-Empezar por las tres combinaciones limpias de escritorio del
-[inventario](style-inventory.md). Capturar ambas vistas, comprobar piezas y límites,
-conservar avisos de procedencia y verificar las anotaciones contra el manifiesto
-antes de recortar casillas. El entrenamiento y la construcción de plantillas
-solo leen entrenamiento; los ajustes leen validación; la evaluación final se
-reserva hasta congelar todas las decisiones.
+El ejemplo recoge un pequeño piloto de entrenamiento con cuatro combinaciones;
+amplía la receta al resto de posiciones y estilos tras revisarlo. El entrenamiento
+y las plantillas deben usar solo training; la selección de modelos, validation;
+evaluation sigue reservado hasta congelar las decisiones.

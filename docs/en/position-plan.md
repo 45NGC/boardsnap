@@ -160,39 +160,15 @@ response. Without `.[dataset]`, structural tests still run; only the legal
 replay/reproduction test is skipped. The test suite checks leaks, bad labels,
 parity, missing classes, variant identity, frozen report and reproducibility.
 
-## Next: capture from this plan
+## Capture from this plan
 
-The old capture tools accept `tuning/evaluation` profile manifests. They do **not**
-yet accept this profile-independent three-partition schema. Do not flatten
-validation into tuning or feed the new manifest to the old capture command.
+Use [the configurable capture tool](configurable-capture.md) for the three
+partitions. It calls `variant_identity` and `validate_variants` to inherit
+position/group/split labels unchanged and adds PNG hashes, checked geometry,
+style, orientation and provenance. The original capture scripts still accept
+only legacy tuning/evaluation manifests.
 
-The next capture adapter should validate the complete plan once, then call:
-
-```python
-from tools.position_dataset import variant_identity, validate_variants
-
-identity = variant_identity(manifest, "digital-001")
-annotation = {
-    **identity,
-    "orientation": "black-bottom",
-    "boardStyleId": "lichess-brown",
-    "pieceStyleId": "lichess-cburnett",
-    "layoutId": "LC01",
-    "conditions": ["K01"],
-}
-validate_variants(manifest, [annotation])
-```
-
-This example assembles annotation metadata; it neither renders nor recognizes an
-image. Add image path/hash, capture provenance and independently checked bounds
-at capture time. Keep the dataset ID in output paths to separate the new batch
-from legacy fixtures; a proposed layout is
-`data/datasets/digital-positions-v1/<split>/<profile>/<position>-<variant>.png`.
-
-Start with the three existing clean desktop combinations from the
-[style inventory](style-inventory.md). Capture both orientations, check rendered
-pieces and bounds, preserve source notices, and verify every saved annotation
-against the manifest before producing any square crops. Training and template
-builders must read only training; model selection reads validation; final
-evaluation is reserved until all choices are frozen.
-
+The example collects a small training pilot across four style combinations;
+expand its recipe to the remaining positions and target styles after review.
+Training and template builders must read only training; model selection reads
+validation; final evaluation stays reserved until choices are frozen.
