@@ -9,6 +9,9 @@ board**. It chooses one of thirteen classes for each square: empty (`None`),
 white `PNBRQK`, or black `pnbrqk`. Classification uses only square pixels, not
 annotations, expected positions, filenames or legality rules.
 
+An optional [PyTorch baseline](neural-classifier.md) now has its own measured
+comparison. This guide describes the template backend, which remains the default.
+
 ## API and method
 
 `classify_square(square)` requires a **64 × 64 RGB Pillow image** and returns one

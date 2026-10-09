@@ -48,9 +48,15 @@ El paso 6.3 añade el [conjunto de casillas etiquetadas](square-dataset.md): rec
 RGB de 64 × 64, etiquetas canónicas, procedencia, particiones fijas, cobertura por
 clase/fondo y pesos opcionales de entrenamiento (sin aplicar). Los límites
 verificados aíslan la clasificación; los detectados conservan y miden errores
-de localización sin corregirlos con las anotaciones. Lo siguiente es entrenar un
-clasificador pequeño, elegir ajustes con validación y compararlo con plantillas
-antes de la evaluación final.
+de localización sin corregirlos con las anotaciones. La referencia entrenada y su comparación se recogen en el paso 6.4 siguiente.
+
+El paso 6.4 completa la [primera referencia PyTorch](neural-classifier.md): una red
+CPU de 39709 parámetros, configuración fijada, selección por validación, checkpoints
+reanudables e inferencia opcional leyendo solo píxeles. La comparación reservada
+recoge 540/540 capturas limpias correctas para la red y 90/90 para ambos métodos
+en el subconjunto común. Son 12 posiciones/tres grupos con variantes, no reconocimiento
+universal. Se mantienen las plantillas por defecto. Lo siguiente es ampliar
+capturas reales, resaltados y flechas.
 
 ## 0. Base del proyecto (completada)
 

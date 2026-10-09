@@ -1,0 +1,8 @@
+{
+  "seed": 20261009,
+  "epochs": 12,
+  "batchSize": 512,
+  "learningRate": 0.002,
+  "weightDecay": 0.0001,
+  "threads": 4
+}

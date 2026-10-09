@@ -153,8 +153,8 @@ necesitarán ejemplos adicionales más adelante.
 
 La [preparación de casillas](square-dataset.md) ya conserva las particiones y
 comprueba la cobertura por clase/fondo/estilo, separando límites verificados y
-detectados. Lo siguiente es entrenar un modelo pequeño y compararlo con las
-plantillas. Preparar datos no demuestra precisión de reconocimiento.
+detectados. La [primera referencia PyTorch y su comparación](neural-classifier.md) ya están
+medidas. Preparar datos no demuestra precisión de reconocimiento.
 
 Conserva [atribuciones y condiciones de los recursos](../../data/THIRD_PARTY_NOTICES.md).
 Alpha tiene condiciones de uso personal/no comercial; esta recogida experimental

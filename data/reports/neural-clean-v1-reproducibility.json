@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "originalRun": ".cache/neural-clean-v1",
+  "repeatedRun": ".cache/neural-clean-v1-reproduction",
+  "completeRuns": 2,
+  "epochsPerRun": 12,
+  "datasetManifestSha256": "0fc0d8d903aefe9a772aef77fe134dca7c69e859799f3212837257306d69ec15",
+  "configuration": {
+    "seed": 20261009,
+    "epochs": 12,
+    "batchSize": 512,
+    "learningRate": 0.002,
+    "weightDecay": 0.0001,
+    "threads": 4
+  },
+  "environment": {
+    "torch": "2.14.1+cpu",
+    "numpy": "2.5.3",
+    "python": "3.12.3",
+    "device": "cpu"
+  },
+  "originalArtifactSha256": "3ecffeb21cc0221ec25349ee66d9b222ea9610ae56810dae8abc467bd4b40e0d",
+  "repeatedArtifactSha256": "3ecffeb21cc0221ec25349ee66d9b222ea9610ae56810dae8abc467bd4b40e0d",
+  "allSelectedWeightTensorsExactlyEqual": true,
+  "validationMetricsAllEpochsExactlyEqual": true,
+  "selectedEpoch": 12,
+  "timingsExpectedToMatch": false,
+  "scope": "same dataset, software and CPU thread configuration; no evaluation-based tuning"
+}

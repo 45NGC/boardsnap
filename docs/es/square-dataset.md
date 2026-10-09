@@ -155,6 +155,5 @@ y PNG originales mediante hashes.
 Las pruebas cubren la identidad de las 64 casillas en ambas vistas, dibujos sin
 girar, 13 etiquetas, paridad, límites fraccionarios, matrices guardadas, fuentes
 alteradas, filtraciones, publicación atómica, límites detectados incorrectos/fallos
-y pesos exclusivos de entrenamiento. Lo siguiente es entrenar y comparar un
-clasificador pequeño, elegir ajustes con validación y realizar después la
-evaluación final definida por separado.
+y pesos exclusivos de entrenamiento. La [primera red entrenada y su comparación independiente](neural-classifier.md)
+ya utilizan este conjunto; las plantillas siguen siendo la opción predeterminada.

@@ -44,7 +44,7 @@ El [primer corpus limpio de clasificación](first-clean-corpus.md) contiene 3600
 capturas verificadas: seis juegos de piezas sobre tres fondos cada uno, ambas
 orientaciones y dos tamaños. Sus 80 posiciones conservan las particiones fijadas
 de entrenamiento/validación/evaluación. La comprobación separada de 36 imágenes
-queda excluida. El entrenamiento del modelo sigue pendiente.
+queda excluida. La [referencia PyTorch](neural-classifier.md) ya está entrenada y evaluada; las plantillas siguen siendo la opción predeterminada.
 
 El [conjunto de casillas etiquetadas](square-dataset.md) proporciona 64 recortes
 RGB por tablero, etiquetas canónicas y particiones heredadas. Los límites
@@ -92,7 +92,7 @@ entornos virtuales de tu sistema antes de crear `.venv`.
 
 Pillow decodifica imágenes; NumPy y OpenCV sin interfaz gráfica permiten detectar
 el tablero. `setuptools` construye el paquete y el extra `dev` instala `pytest`.
-PyTorch todavía no se ha añadido; su comparación posterior puede usar este mismo perfil.
+El extra opcional `ml` instala PyTorch; consulta [entrenamiento, modelos guardados y mediciones en CPU](neural-classifier.md).
 
 ## Estructura
 

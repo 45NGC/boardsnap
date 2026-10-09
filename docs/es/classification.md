@@ -9,6 +9,9 @@ brown de lichess**. Elige una de trece clases por casilla: vacía (`None`), blan
 `PNBRQK` o negras `pnbrqk`. Utiliza solo píxeles, no anotaciones, posiciones
 esperadas, nombres de archivo ni reglas de legalidad.
 
+La [referencia opcional PyTorch](neural-classifier.md) ya tiene una comparación
+medida. Esta guía describe las plantillas, que siguen siendo la opción predeterminada.
+
 ## API y método
 
 `classify_square(square)` requiere una **imagen Pillow RGB de 64 × 64** y devuelve

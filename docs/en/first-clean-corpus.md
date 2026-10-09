@@ -147,8 +147,8 @@ examples later.
 
 [Square preparation](square-dataset.md) now preserves partitions and audits
 class/background/style coverage, with separate verified/detected-bound inputs.
-Next train and compare a small model against the existing templates. Data
-preparation alone does not establish recognition quality.
+The [first PyTorch baseline and comparison](neural-classifier.md) are now measured.
+Data preparation alone does not establish recognition quality.
 
 Preserve [artwork attribution and terms](../../data/THIRD_PARTY_NOTICES.md).
 Alpha has personal/noncommercial-use terms; this experimental collection does

@@ -46,8 +46,14 @@ Step 6.3 adds the [labeled square dataset](square-dataset.md): RGB 64 × 64 crop
 canonical targets, traceable sources, fixed partitions, class/background coverage
 and optional training-only sampling weights (not applied). Verified-bound inputs
 isolate classification; detected-bound inputs retain and measure localization
-errors without ground-truth repairs. Next train a small classifier, select settings
-on validation and compare with templates before the final evaluation.
+errors without ground-truth repairs. The trained baseline and comparison are recorded in step 6.4 below.
+
+Step 6.4 completes the [first PyTorch baseline](neural-classifier.md): a 39709-parameter
+CPU network, fixed training config, validation-based selection, resumable checkpoints
+and optional pixel-only inference. The reserved comparison records 540/540 complete
+clean captures for the network and 90/90 for both methods on the shared subset.
+These are 12 positions/three groups rendered in variants, not universal recognition.
+Templates remain the default. Next broaden real-use, highlight and arrow coverage.
 
 ## 0. Project scaffold (completed)
 

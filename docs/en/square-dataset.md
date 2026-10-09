@@ -154,5 +154,5 @@ its arrays and source PNGs.
 Tests cover all 64 pixel identities in both views, upright drawings, all 13 labels,
 square parity, fractional bounds, saved arrays, changed sources, split violations,
 atomic publication, detection failures/wrong bounds and training-only weights.
-The next step is to train and compare a small classifier using validation for
-choices, then perform the separately defined final evaluation.
+The [first trained classifier and independent comparison](neural-classifier.md)
+now use this dataset; templates remain the default recognition backend.

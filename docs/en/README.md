@@ -42,7 +42,7 @@ platforms; the local 16-image pilot verifies collection, not recognition accurac
 The [first clean classifier corpus](first-clean-corpus.md) contains 3600 verified
 captures: six piece sets on three backgrounds each, both orientations and two
 viewport sizes. Its 80 positions retain the frozen training/validation/evaluation
-split. The separate 36-image style check is excluded. Model training remains pending.
+split. The separate 36-image style check is excluded. The optional [PyTorch baseline](neural-classifier.md) is now trained and evaluated; templates remain the default.
 
 The [labeled square dataset](square-dataset.md) provides 64 RGB crops per board,
 canonical labels and inherited partitions. Verified bounds isolate classification;
@@ -89,7 +89,7 @@ virtual environment support before creating `.venv`.
 
 Pillow decodes images; NumPy and headless OpenCV provide board detection.
 `setuptools` builds the package and the `dev` extra installs `pytest`.
-PyTorch has not been added; its later comparison can use this same profile.
+The optional `ml` extra installs PyTorch; see [training, saved artifacts and CPU results](neural-classifier.md).
 
 ## Structure
 
