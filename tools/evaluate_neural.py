@@ -27,7 +27,7 @@ TEMPLATE_PROFILES = {"lichess-brown-cburnett": "lichess-cburnett-brown-v1",
 
 
 def template_profile(row):
-    return TEMPLATE_PROFILES.get(row["configurationId"].rsplit("-", 1)[0])
+    return TEMPLATE_PROFILES.get(row.get("baseConfigurationId", row["configurationId"]).rsplit("-", 1)[0])
 
 
 def template_ids(images, profile):
@@ -110,6 +110,7 @@ def worker(dataset, model_path, backend, split, threads):
         profile = template_profile(row)
         base = {key: row[key] for key in ("image", "positionId", "groupId", "configurationId", "orientation")}
         base.update(expected=expected.tolist(), coverage="shared" if profile else "new")
+        base.update(conditions=row.get("conditions", ["clean"]), pairId=row.get("pairId", row["image"]))
         started = time.perf_counter()
         predictions = classifier.predict_ids(pixels) if classifier else template_ids(pixels, profile)
         latencies["verified"].append(time.perf_counter() - started)
@@ -138,6 +139,8 @@ def worker(dataset, model_path, backend, split, threads):
                            "sharedLatency": timing([r["seconds"] for r in results if r["coverage"] == "shared"]),
                            "newLatency": timing([r["seconds"] for r in results if r["coverage"] == "new"]),
                            "processingFailures": sum("error" in row for row in results)}
+        summaries[mode]["conditions"] = {condition: score([r for r in results if condition in r["conditions"]])
+            for condition in sorted({c for r in results for c in r["conditions"]})}
     return {"backend": backend, "split": split, "summaries": summaries, "records": records,
             "peakEvaluationProcessRssMiB": resource.getrusage(resource.RUSAGE_SELF).ru_maxrss / 1024,
             "memoryScope": "fresh Linux worker, imports + dataset index + model + evaluation; not model-only",

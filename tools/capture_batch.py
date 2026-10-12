@@ -1,4 +1,4 @@
-"""Capture configurable clean datasets, or import reviewed real-use screenshots."""
+"""Capture verified boards with optional controlled marks, or import real screenshots."""
 
 import argparse
 from datetime import datetime, timezone
@@ -13,8 +13,10 @@ import tempfile
 
 from PIL import Image
 
+from tools.board_marks import KINDS, validate_marks
 from tools.position_dataset import (DEFAULT_MANIFEST, validate_manifest,
-                                    validate_variants, variant_identity)
+                                    validate_variants, variant_identity, placement_family)
+from tools.real_positions import external_identity, check_detection_reservation
 
 
 def identifier(value):
@@ -26,7 +28,7 @@ def identifier(value):
 def validate_config(config):
     required = {"id", "platform", "boardTheme", "pieceSet", "orientations", "viewport",
                 "deviceScaleFactor", "conditions"}
-    if not isinstance(config, dict) or set(config) != required:
+    if not isinstance(config, dict) or set(config) not in (required, required | {"marks"}):
         raise ValueError(f"Capture configuration must contain exactly {sorted(required)}")
     for key in ("id", "boardTheme", "pieceSet"):
         identifier(config[key])
@@ -43,8 +45,12 @@ def validate_config(config):
         raise ValueError("Viewport dimensions must be integers between 320 and 2560")
     if type(config["deviceScaleFactor"]) is not int or config["deviceScaleFactor"] not in (1, 2, 3):
         raise ValueError("deviceScaleFactor must be 1, 2 or 3")
-    if config["conditions"] != ["clean"]:
-        raise ValueError("Automated captures currently support only clean boards; markings are not implemented")
+    if "marks" in config:
+        validate_marks(config["marks"])
+        if config["conditions"] != [mark["kind"] for mark in config["marks"]]:
+            raise ValueError("Conditions must describe the requested marks, in rendering order")
+    elif config["conditions"] != ["clean"]:
+        raise ValueError("Marked capture conditions require explicit marks")
 
 
 def validate_recipe(recipe, manifest):
@@ -66,6 +72,9 @@ def validate_recipe(recipe, manifest):
     seen = set()
     for config in configs:
         validate_config(config)
+        if "marks" in config:
+            for pid in positions:
+                validate_marks(config["marks"], variant_identity(manifest, pid)["piecePlacement"])
         if config["id"] in seen:
             raise ValueError("Duplicate configuration id")
         seen.add(config["id"])
@@ -138,6 +147,11 @@ def record_capture(staging, manifest, pid, config, view, png, observed, browser_
     identity = variant_identity(manifest, pid)
     annotation = dict(identity, **observed, configuration=config, orientation=view,
                       provenanceKind="automated-platform-capture")
+    if "marks" in config:
+        evidence = observed["source"].get("controlledMarks", {})
+        if evidence.get("marks") != config["marks"]:
+            raise ValueError("Controlled capture marks disagree with their annotation")
+        annotation["provenanceKind"] = "controlled-mark-variant"
     annotation["source"].update(browser=f"Chromium {browser_version}",
                                 capturedAt=datetime.now(timezone.utc).isoformat())
     validate_variants(manifest, [annotation])
@@ -148,14 +162,18 @@ def import_samples(staging, manifest, specification, spec_dir):
     """Import original bytes with explicit human review, never claim DOM verification."""
     if (not isinstance(specification, dict)
             or set(specification) != {"schemaVersion", "batchId", "samples"}
-            or type(specification["schemaVersion"]) is not int or specification["schemaVersion"] != 1):
+            or type(specification["schemaVersion"]) is not int or specification["schemaVersion"] not in (1, 2)):
         raise ValueError("Invalid real-capture specification")
     samples = specification["samples"]
     if not isinstance(samples, list) or not samples:
         raise ValueError("Real capture samples must be a nonempty list")
     annotations, seen, game_splits = [], set(), {}
     for sample in samples:
-        identity = variant_identity(manifest, sample["positionId"])
+        external = "externalPosition" in sample
+        if external and (specification["schemaVersion"] != 2 or "positionId" in sample):
+            raise ValueError("Use schemaVersion 2 and only externalPosition for positions outside the plan")
+        identity = (external_identity(sample["externalPosition"], manifest) if external
+                    else variant_identity(manifest, sample["positionId"]))
         sid = identifier(sample["id"])
         if sid in seen:
             raise ValueError("Duplicate real capture id")
@@ -163,14 +181,23 @@ def import_samples(staging, manifest, specification, spec_dir):
         if sample.get("orientation") not in ("white-bottom", "black-bottom"):
             raise ValueError("Real capture needs explicit orientation")
         source = sample.get("source", {})
-        fields = ("url", "capturedAt", "client", "clientVersion", "sourceGroupId", "reviewedBy", "reviewedAt")
+        fields = (("url", "capturedAt", "clientVersion") if specification["schemaVersion"] == 1 else ()) + (
+                  "client", "sourceGroupId", "reviewedBy", "reviewedAt")
         if any(not isinstance(source.get(k), str) or not source[k].strip() for k in fields):
             raise ValueError("Real capture needs complete provenance and human review")
+        if specification["schemaVersion"] == 2:
+            for key in ("url", "capturedAt", "clientVersion"):
+                if key not in source or source[key] is not None and (not isinstance(source[key], str) or not source[key].strip()):
+                    raise ValueError("Record known provenance or explicit null values")
+            if any(source[k] is None for k in ("url", "capturedAt", "clientVersion")) and not source.get("provenanceNote"):
+                raise ValueError("Explain unknown provenance; do not invent source information")
+            if source.get("reviewMethod") not in ("manual-board-comparison", "source-fen", "source-pgn"):
+                raise ValueError("Position must be reviewed independently of recognition predictions")
         if source["client"] not in ("desktop-web", "mobile-web", "android-app", "ios-app"):
             raise ValueError("Unknown capture client")
         if sample.get("reviewedPlacement") != identity["piecePlacement"] or sample.get("reviewed") is not True:
             raise ValueError("Human-reviewed placement must match the frozen position")
-        origin = source["sourceGroupId"]
+        origin = (sample.get("configuration", {}).get("platform"), source["sourceGroupId"])
         if game_splits.setdefault(origin, identity["split"]) != identity["split"]:
             raise ValueError("Related real-game captures cannot cross splits")
         config = sample.get("configuration", {})
@@ -179,7 +206,7 @@ def import_samples(staging, manifest, specification, spec_dir):
         if config["platform"] not in ("lichess", "chesscom"):
             raise ValueError("Unsupported platform")
         conditions = config.get("conditions")
-        if not isinstance(conditions, list) or not conditions or any(c not in ("clean", "arrows", "highlights", "badges") for c in conditions):
+        if not isinstance(conditions, list) or not conditions or any(c not in ("clean", "arrows", "highlights", "badges", *KINDS) for c in conditions):
             raise ValueError("List observed image conditions explicitly")
         if "clean" in conditions and len(conditions) > 1:
             raise ValueError("A marked image cannot be labeled clean")
@@ -189,7 +216,11 @@ def import_samples(staging, manifest, specification, spec_dir):
         annotation = dict(identity, orientation=sample["orientation"], configuration=config,
                           source=source, boardBounds=sample["boardBounds"],
                           provenanceKind="reviewed-real-use", verification="human-reviewed; no DOM evidence")
-        validate_variants(manifest, [annotation])
+        check_detection_reservation(dict(sample, sha256=hashlib.sha256(png).hexdigest()), identity)
+        if external:
+            annotation["externalPosition"] = sample["externalPosition"]
+        else:
+            validate_variants(manifest, [annotation])
         annotations.append(save_sample(staging / identity["split"] / "real-use", sid, png, annotation))
     return annotations
 
@@ -200,7 +231,7 @@ def plan_hash(manifest):
 
 def check_real_isolation(dataset_root, annotations, manifest):
     """Check prior plan hashes and identities before publishing any batch."""
-    hashes, sources = {}, {}
+    hashes, sources, positions, groups, families = {}, {}, {}, {}, {}
     previous = []
     for path in dataset_root.glob("*/batch.json"):
         batch = json.loads(path.read_text())
@@ -208,10 +239,22 @@ def check_real_isolation(dataset_root, annotations, manifest):
             raise ValueError("Position plan changed for this dataset; use a separately reviewed dataset ID")
         previous.extend(batch["samples"])
     for item in [*previous, *annotations]:
+        if "externalPosition" in item:
+            expected = external_identity(item["externalPosition"], manifest)
+            if any(item.get(k) != v for k, v in expected.items()):
+                raise ValueError("External position identity changed")
         identity = (item["groupId"], item["split"], item["piecePlacement"])
         if hashes.setdefault(item["sha256"], identity) != identity:
             raise ValueError("Identical images cannot have conflicting identities or partitions")
+        if positions.setdefault(item["positionId"], identity) != identity:
+            raise ValueError("Position identity changed between captures")
+        if groups.setdefault(item["groupId"], item["split"]) != item["split"]:
+            raise ValueError("A source group cannot cross partitions")
+        family = placement_family(item["piecePlacement"])
+        if families.setdefault(family, item["split"]) != item["split"]:
+            raise ValueError("Equivalent positions cannot cross partitions")
         if item["provenanceKind"] == "reviewed-real-use":
+            check_detection_reservation(item, item)
             source = (item["configuration"]["platform"], item["source"]["sourceGroupId"])
             if sources.setdefault(source, item["split"]) != item["split"]:
                 raise ValueError("A real-game source already exists in a different partition")

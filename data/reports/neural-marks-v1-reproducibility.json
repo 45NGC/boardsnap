@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "identicalSelectedWeightTensors": true,
+  "identicalValidationHistory": true,
+  "selected": {
+    "epoch": 19,
+    "metrics": {
+      "loss": 1.2471578557964407e-06,
+      "squareAccuracy": 1.0,
+      "macroRecall": 1.0,
+      "exactBoards": 1620,
+      "boards": 1620
+    }
+  },
+  "epochs": 20,
+  "runs": [
+    {
+      "weightsSha256": "110d2c78e25d040ff737633ab1b5ca5f427c6b22a6322d35c7da132494defeea",
+      "trainingReportSha256": "a9bd01e040cd481d3f9b05951cb688322c113c5044cb98a5d1cb5e2dfb0aca0d",
+      "trainingCodeSha256": "600f58a890d960690830ec2c30933c2352fe2744d3296e684c3547e1ebf94cc2"
+    },
+    {
+      "weightsSha256": "a60927a6f01a23b997b4d2ac633b630752f2f326821fa3c71db040ee168da7d8",
+      "trainingReportSha256": "927d1d5b34fe7819a28b8a0373385084280b6e516dba41d5bdcd60cd33c529c9",
+      "trainingCodeSha256": "33fc3fda100dd8f15b41e1a4d5e25b8f55afb5b440be9e319e6750d9040ce59a"
+    }
+  ],
+  "artifactMetadataIdentical": false,
+  "scope": "Same CPU/software, dataset and configuration; tensor and validation equality, not serialized-artifact equality. Code provenance differs between recorded runs."
+}

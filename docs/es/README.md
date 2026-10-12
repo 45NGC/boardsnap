@@ -1,5 +1,10 @@
 # BoardSnap
 
+La [ampliación con marcas sencillas](simple-marks.md) incorpora resaltados,
+círculos/puntos controlados, una red entrenada y comparada e importación de partidas
+externas. Las capturas reales aún necesitan posiciones verificadas; las plantillas
+siguen siendo el backend predeterminado.
+
 [English](../en/README.md) | **Español**
 
 `boardsnap` será un motor Python que recibe una imagen de un tablero de ajedrez

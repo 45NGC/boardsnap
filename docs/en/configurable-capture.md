@@ -5,7 +5,8 @@
 The [first clean classifier corpus](first-clean-corpus.md) contains 3600 verified
 captures: six piece sets on three backgrounds each, both orientations and two
 viewport sizes. Its 80 positions retain the frozen training/validation/evaluation
-split. The separate 36-image style check is excluded. Model training remains pending.
+split. The separate 36-image style check is excluded. The [neural baseline](neural-classifier.md)
+and [simple-mark extension](simple-marks.md) have been trained and measured separately.
 
 Run these repository utilities from the repository root. They collect labeled
 images; they do not add recognition profiles or train a model. Legacy capture
@@ -45,7 +46,8 @@ Each configuration specifies:
 | `orientations` | One or both of `white-bottom`, `black-bottom` |
 | `viewport` | Browser CSS-pixel `width` and `height`, integers 320–2560 |
 | `deviceScaleFactor` | 1, 2 or 3; saved pixels per CSS pixel |
-| `conditions` | Currently exactly `["clean"]` |
+| `conditions` | `["clean"]`, or the ordered kinds in optional `marks` |
+| `marks` | Optional controlled overlays; see [schema and measured limits](simple-marks.md) |
 
 Viewport controls responsive board size; it does not prescribe a board width.
 Small viewports can fail if the complete board is not visible. Layouts remain
@@ -99,8 +101,9 @@ These are modified automated pages: resize/answer fields are hidden on Lichess;
 onboarding and consent dialogs are dismissed and arrows/highlights/answer inputs
 are hidden on Chess.com. All modifications are recorded. They are not untouched
 real-use captures. Browser integrations depend on live DOM/asset APIs and may
-need maintenance when the platforms change. Mark generation is deferred;
-automated requests for arrows or highlights explicitly fail.
+need maintenance when the platforms change. Explicit synthetic simple marks can
+now be composited after verification; arbitrary native overlays and arrows are
+not enabled. See [simple marks](simple-marks.md).
 
 ## Import real-use screenshots
 
@@ -109,11 +112,10 @@ the automated editor. Review the position, orientation, complete board bounds,
 style, layout and observed marks manually; keep related positions from a game in
 one source group. No real-use images are fabricated or supplied by this command.
 
-`import-real` currently accepts only positions already in the frozen plan. For
-an unrelated real game, the position-plan schema must first be extended to
-represent real-game provenance and freeze its group/split assignment. The current
-validator supports generated sequences only; `--manifest` does not bypass that
-constraint. Do not relabel a different board as an existing position to make it fit.
+`import-real` accepts planned positions with schema 1 and reviewed external games
+with [schema 2](simple-marks.md#real-screenshots-review-before-classification).
+The original generated plan is unchanged. Do not relabel a different board as
+an existing position to make it fit. The description below covers schema 1.
 
 Create a JSON file with `schemaVersion: 1`, a new `batchId` and a `samples` list.
 Every sample contains:
@@ -122,7 +124,8 @@ Every sample contains:
 - `orientation`, `reviewed: true`, `reviewedPlacement` (canonical first FEN field).
 - `boardBounds: {"x": ..., "y": ..., "width": ..., "height": ...}` in original PNG pixels.
 - `configuration`: `platform`, `boardTheme`, `pieceSet`, `layoutId`, `conditions`.
-  Conditions are `["clean"]` or observed `arrows`, `highlights`, `badges`; never
+  Conditions are `["clean"]` or observed `last-move`, `selection`, `check`, `circle`,
+  `move-dot`, `arrows`, `highlights`, `badges`; never
   combine clean with marks.
 - `source`: `url`, `capturedAt`, `client`, `clientVersion`, `sourceGroupId`,
   `reviewedBy`, `reviewedAt`. Use UTC ISO timestamps and a stable game/session ID.

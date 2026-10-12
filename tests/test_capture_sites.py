@@ -125,6 +125,30 @@ def test_selected_name_is_not_enough_when_actual_artwork_is_wrong():
 
 @pytest.mark.integration
 @pytest.mark.parametrize("platform", ["lichess", "chesscom"])
+@pytest.mark.parametrize("view", ["white-bottom", "black-bottom"])
+def test_controlled_marks_are_recorded_after_verified_clean_screenshot(browser, monkeypatch, platform, view):
+    from io import BytesIO
+    from PIL import Image
+    from tools.board_marks import COLORS
+    config = dict(CONFIG, platform=platform, conditions=["last-move"],
+                  marks=[{"kind": "last-move", "squares": ["a8", "b8"], "rgba": COLORS["last-move"]}])
+    context = browser.new_context(viewport=config["viewport"])
+    page = context.new_page()
+    setup(page, html(view, platform))
+    monkeypatch.setattr(sites, "select_chesscom", lambda p, b, c: (b.evaluate("e=>e.options.themeAssets"), {}))
+    try:
+        png, annotation = sites.capture_page(page, PLACEMENT, config, view)
+        assert annotation["source"]["controlledMarks"]["marks"] == config["marks"]
+        with Image.open(BytesIO(png)) as image:
+            marked = image.getpixel((64+32, 80+32) if view == "white-bottom" else (64+480, 80+480))
+            unchanged = image.getpixel((64+224, 80+224))
+            assert marked != unchanged
+    finally:
+        context.close()
+
+
+@pytest.mark.integration
+@pytest.mark.parametrize("platform", ["lichess", "chesscom"])
 @pytest.mark.parametrize("fault", [None, "position-ignored", "artwork-changed"])
 def test_reused_page_checks_new_position_and_view_without_navigation(browser, monkeypatch, platform, fault):
     config = dict(CONFIG, platform=platform)

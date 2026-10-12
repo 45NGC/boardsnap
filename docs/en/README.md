@@ -2,6 +2,10 @@
 
 **English** | [Spanish](../es/README.md)
 
+The [simple-mark extension](simple-marks.md) now provides controlled highlights,
+circles/dots, a trained model comparison and external-game imports. Real-use
+classification labels still require review; templates remain the default backend.
+
 `boardsnap` will be a Python engine that receives an image of a digital
 chessboard or a book diagram and returns a single piece placement to the
 Flutter application **chess-scanner**.

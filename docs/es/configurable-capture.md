@@ -6,7 +6,8 @@ El [primer corpus limpio de clasificación](first-clean-corpus.md) contiene 3600
 capturas verificadas: seis juegos de piezas sobre tres fondos cada uno, ambas
 orientaciones y dos tamaños. Sus 80 posiciones conservan las particiones fijadas
 de entrenamiento/validación/evaluación. La comprobación separada de 36 imágenes
-queda excluida. El entrenamiento del modelo sigue pendiente.
+queda excluida. La [red de referencia](neural-classifier.md) y la
+[ampliación con marcas sencillas](simple-marks.md) ya se han entrenado y medido por separado.
 
 Ejecuta estas herramientas desde la raíz del repositorio. Recogen imágenes
 etiquetadas; no añaden perfiles de reconocimiento ni entrenan un modelo. Los
@@ -47,7 +48,8 @@ Cada configuración especifica:
 | `orientations` | Una o ambas: `white-bottom`, `black-bottom` |
 | `viewport` | `width` y `height` del navegador en píxeles CSS, enteros 320–2560 |
 | `deviceScaleFactor` | 1, 2 o 3; píxeles guardados por píxel CSS |
-| `conditions` | Actualmente exactamente `["clean"]` |
+| `conditions` | `["clean"]` o los tipos de las marcas opcionales, en orden |
+| `marks` | Superposiciones controladas opcionales; consulta [esquema y límites](simple-marks.md) |
 
 El viewport determina el tamaño adaptable del tablero; no fija su anchura exacta.
 Un viewport pequeño puede fallar si no cabe todo el tablero. Sigue siendo web de
@@ -103,7 +105,8 @@ y control de tamaño; en Chess.com se cierran diálogos iniciales y de cookies, 
 ocultan flechas/resaltados/campos de respuesta. Las modificaciones quedan anotadas.
 No son capturas intactas de uso real. Los adaptadores dependen del DOM y de las
 API de recursos actuales y pueden necesitar mantenimiento si cambian las plataformas.
-Generar marcas queda pendiente; solicitarlas al capturador automático provoca error.
+Ahora se pueden añadir marcas sintéticas sencillas después de verificar la captura.
+No se habilitan marcas nativas arbitrarias ni flechas. Consulta [marcas sencillas](simple-marks.md).
 
 ## Importar capturas de uso real
 
@@ -112,11 +115,10 @@ del editor automatizado. Revisa manualmente posición, orientación, límites de
 tablero completo, estilos, interfaz y marcas visibles; agrupa las posiciones
 relacionadas de una misma partida. El comando no inventa ni aporta esas imágenes.
 
-Actualmente `import-real` solo acepta posiciones del plan congelado. Para una
-partida ajena al plan, primero habrá que ampliar el esquema para representar su
-procedencia real y congelar el grupo y la partición. El validador actual solo
-admite secuencias generadas; `--manifest` no evita esa restricción. No etiquetes
-una posición distinta como una existente para conseguir que encaje.
+`import-real` admite posiciones del plan con el esquema 1 y partidas externas
+revisadas con el [esquema 2](simple-marks.md#capturas-reales-revisar-antes-de-clasificar).
+El plan generado original no cambia. No etiquetes una posición distinta como una
+existente para conseguir que encaje. La descripción siguiente corresponde al esquema 1.
 
 Crea un JSON con `schemaVersion: 1`, un `batchId` nuevo y una lista `samples`.
 Cada elemento debe contener:
@@ -125,8 +127,8 @@ Cada elemento debe contener:
 - `orientation`, `reviewed: true`, `reviewedPlacement` (primer campo FEN canónico).
 - `boardBounds: {"x": ..., "y": ..., "width": ..., "height": ...}` en píxeles originales.
 - `configuration`: `platform`, `boardTheme`, `pieceSet`, `layoutId`, `conditions`.
-  Las condiciones son `["clean"]` o las marcas observadas `arrows`, `highlights`,
-  `badges`; nunca se combina clean con marcas.
+  Las condiciones son `["clean"]` o las marcas observadas `last-move`, `selection`,
+  `check`, `circle`, `move-dot`, `arrows`, `highlights`, `badges`; nunca se combina clean con marcas.
 - `source`: `url`, `capturedAt`, `client`, `clientVersion`, `sourceGroupId`,
   `reviewedBy`, `reviewedAt`. Usa fechas ISO UTC y un ID estable de partida/sesión.
   Clientes: `desktop-web`, `mobile-web`, `android-app`, `ios-app`.

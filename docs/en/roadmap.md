@@ -2,6 +2,13 @@
 
 **English** | [Spanish](../es/roadmap.md) · [Overview](README.md)
 
+Step 7 now has [controlled simple marks and measured neural training](simple-marks.md):
+7200 marked variants plus 3600 clean controls, preserved partitions and external
+real-game import schema 2. The candidate retains 540/540 clean evaluation boards
+and recognizes all 1080 controlled marked boards. Real-use classification remains
+pending position review; native rendering diversity, arrows and combined overlays
+are subsequent work. Earlier milestone descriptions below record their original scope.
+
 Current digital-roadmap milestone completed: explicit orientation input in the
 Python pipeline and CLI (`white-bottom`, `black-bottom`, default `auto`). Tests
 cover both views, missing/opposite labels, backward compatibility and invalid

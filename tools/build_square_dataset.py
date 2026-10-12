@@ -22,7 +22,8 @@ from boardsnap.segmentation import split_squares
 from tools.capture_lichess import expand_placement
 from tools.collect_clean_corpus import DEFAULT_RECIPE, audit_corpus, build_jobs
 from tools.evaluate_detection import rectangle_metrics
-from tools.position_dataset import DEFAULT_MANIFEST, LABELS, SPLITS, variant_identity
+from tools.position_dataset import DEFAULT_MANIFEST, LABELS, SPLITS, variant_identity, placement_family
+from tools.real_positions import external_identity, check_detection_reservation
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CAPTURES = ROOT / "data/reports/digital-clean-corpus-v1.json"
@@ -78,11 +79,26 @@ def extract_squares(image, bounds, orientation):
 
 def validate_records(records, manifest):
     """Never permit image variants, positions or source groups to cross splits."""
-    seen, groups, positions, hashes = set(), {}, {}, {}
+    seen, groups, positions, hashes, families, real_games = set(), {}, {}, {}, {}, {}
     for record in records:
-        identity = variant_identity(manifest, record["positionId"])
+        identity = (external_identity(record["externalPosition"], manifest) if "externalPosition" in record
+                    else variant_identity(manifest, record["positionId"]))
         if any(record.get(k) != v for k, v in identity.items()):
             raise ValueError("Source identity differs from frozen position plan.")
+        if "externalPosition" in record:
+            source = record.get("source", {})
+            if (record.get("provenanceKind") != "reviewed-real-use"
+                    or record.get("verification") != "human-reviewed; no DOM evidence"
+                    or source.get("reviewMethod") not in ("manual-board-comparison", "source-fen", "source-pgn")
+                    or not source.get("reviewedBy") or not source.get("reviewedAt")):
+                raise ValueError("External labels require a reviewed real-use import.")
+            check_detection_reservation(record, identity)
+            origin = (record["configuration"]["platform"], source["sourceGroupId"])
+            if real_games.setdefault(origin, record["split"]) != record["split"]:
+                raise ValueError("Related real-game positions cross partitions.")
+        family = placement_family(record["piecePlacement"])
+        if families.setdefault(family, record["split"]) != record["split"]:
+            raise ValueError("Equivalent positions cross partitions.")
         path = Path(record["image"])
         if path.is_absolute() or ".." in path.parts:
             raise ValueError("Unsafe source path.")

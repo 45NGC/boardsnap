@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "batchId": "controlled-last-move-example",
+  "positionIds": ["digital-009"],
+  "configurations": [
+    {
+      "id": "lichess-brown-cburnett-last-move",
+      "platform": "lichess",
+      "boardTheme": "brown",
+      "pieceSet": "cburnett",
+      "orientations": ["white-bottom", "black-bottom"],
+      "viewport": {"width": 1280, "height": 1000},
+      "deviceScaleFactor": 1,
+      "conditions": ["last-move"],
+      "marks": [{"kind": "last-move", "squares": ["e2", "e4"], "rgba": [205, 210, 0, 72]}]
+    },
+    {
+      "id": "chesscom-green-neo-last-move",
+      "platform": "chesscom",
+      "boardTheme": "green",
+      "pieceSet": "neo",
+      "orientations": ["white-bottom", "black-bottom"],
+      "viewport": {"width": 1280, "height": 1000},
+      "deviceScaleFactor": 1,
+      "conditions": ["last-move"],
+      "marks": [{"kind": "last-move", "squares": ["e2", "e4"], "rgba": [205, 210, 0, 72]}]
+    }
+  ]
+}

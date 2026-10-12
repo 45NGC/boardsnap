@@ -1,10 +1,11 @@
-"""Live-site adapters for clean captures; no recognition or synthetic artwork."""
+"""Verify live clean artwork, then optionally apply explicitly synthetic marks."""
 
 import re
 from urllib.parse import urlencode
 
 from tools.capture_batch import check_png
 from tools.capture_lichess import expand_placement
+from tools.board_marks import mark_png
 
 
 SNAPSHOT = r"""async (board, platform) => {
@@ -246,8 +247,12 @@ def capture_verified(page, board, placement, config, view, expected_style, sourc
     factor = config["deviceScaleFactor"]
     bounds = {key: value * factor for key, value in before["bounds"].items()}
     size = check_png(png, bounds, (config["viewport"]["width"] * factor, config["viewport"]["height"] * factor))
+    if "marks" in config:
+        png, evidence = mark_png(png, bounds, view, config["marks"], placement)
+        source = dict(source, controlledMarks=evidence)
     return png, {"boardBounds": bounds, "imageSize": size,
-                 "verification": "DOM pieces, computed artwork, orientation and geometry checked before/after screenshot",
+                 "verification": "DOM pieces, computed artwork, orientation and geometry checked before/after screenshot"
+                    + ("; controlled synthetic marks composited after the clean screenshot" if "marks" in config else ""),
                  "source": dict(source, cssBoardBounds=before["bounds"], observedStyle=before["style"],
                                 renderedRows=before["rows"], renderedOrientation=before["orientation"],
                                 boardArtwork=before["boardArtwork"], pieceArtwork=before["pieces"])}

@@ -134,18 +134,33 @@ def main(argv=None):
     parser.add_argument("--run", type=Path, required=True)
     parser.add_argument("--config", type=Path, default=ROOT / "tools/train-clean-v1.json")
     parser.add_argument("--resume", action="store_true")
+    parser.add_argument("--marked-cells-only", action="store_true",
+                        help="Training only: keep marked cells and resize neighbours; retain all clean cells")
+    parser.add_argument("--real-dataset", type=Path,
+                        help="Optional independently reviewed real-use square dataset; preserve its partitions")
     args = parser.parse_args(argv)
     config = json.loads(args.config.read_text())
     seed_run(config)
     metadata, rows = read_index(args.dataset)
     print("Loading verified training and validation arrays; evaluation arrays remain unopened.", flush=True)
-    train = load_split(args.dataset, rows, "training")
+    train = load_split(args.dataset, rows, "training", marked_cells_only=args.marked_cells_only)
     validation = load_split(args.dataset, rows, "validation")
+    real_version = None
+    if args.real_dataset:
+        from tools.real_training import add_real_training
+        train, validation, real_version = add_real_training(args.real_dataset, rows, train, validation)
     data_version = {"datasetId": metadata["datasetId"], "manifestSha256": digest(args.dataset / "dataset.json"),
                     "verifiedIndexSha256": metadata["indexes"]["verified"]["sha256"],
-                    "trainingBoards": len(train[1]) // 64, "validationBoards": len(validation[1]) // 64,
+                    "trainingBoards": sum(row["split"] == "training" for row in rows)
+                        + (real_version["trainingBoards"] if real_version else 0),
+                    "trainingSquares": len(train[1]), "validationBoards": len(validation[1]) // 64,
+                    "markedCellsOnlyInTraining": args.marked_cells_only,
                     "trainingCodeSha256": digest(Path(__file__)),
+                    "dataLoaderCodeSha256": digest(ROOT / "tools/neural_data.py"),
                     "modelCodeSha256": digest(ROOT / "src/boardsnap/neural.py")}
+    if real_version is not None:
+        data_version["reviewedRealData"] = real_version
+        data_version["realLoaderCodeSha256"] = digest(ROOT / "tools/real_training.py")
     fit(train, validation, config, args.run, data_version, resume=args.resume)
 
 
