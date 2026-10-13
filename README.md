@@ -27,6 +27,8 @@ templates remain the default pipeline/CLI backend. Model weights stay in `.cache
 The [simple-mark extension](docs/en/simple-marks.md) adds paired synthetic highlights,
 circles and dots, a measured neural candidate, and reviewed external-game imports.
 Real screenshots still need verified placements before classification training.
+The [arrow extension](docs/en/arrows.md) adds straight/knight arrows, crossings,
+combined overlays and separate detection/classification regression measurements.
 [Flutter integration](docs/en/flutter-integration.md) is documented as an HTTPS API
 for Android, iOS and web; no server or Flutter client is implemented.
 
@@ -81,6 +83,7 @@ files. Spanish documentation is maintained in `docs/es/`.
 | Tuning data | [Read](docs/en/tuning-data.md) | [Read](docs/es/tuning-data.md) |
 | PyTorch baseline and CPU comparison | [Read](docs/en/neural-classifier.md) | [Read](docs/es/neural-classifier.md) |
 | Simple marks and reviewed real-game data | [Read](docs/en/simple-marks.md) | [Read](docs/es/simple-marks.md) |
+| Arrows and combined overlays | [Read](docs/en/arrows.md) | [Read](docs/es/arrows.md) |
 | Labeled square dataset | [Read](docs/en/square-dataset.md) | [Read](docs/es/square-dataset.md) |
 | First clean classifier corpus | [Read](docs/en/first-clean-corpus.md) | [Read](docs/es/first-clean-corpus.md) |
 | Configurable platform captures | [Read](docs/en/configurable-capture.md) | [Read](docs/es/configurable-capture.md) |

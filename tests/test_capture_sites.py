@@ -126,12 +126,16 @@ def test_selected_name_is_not_enough_when_actual_artwork_is_wrong():
 @pytest.mark.integration
 @pytest.mark.parametrize("platform", ["lichess", "chesscom"])
 @pytest.mark.parametrize("view", ["white-bottom", "black-bottom"])
-def test_controlled_marks_are_recorded_after_verified_clean_screenshot(browser, monkeypatch, platform, view):
+@pytest.mark.parametrize("kind", ["last-move", "arrow"])
+def test_controlled_marks_are_recorded_after_verified_clean_screenshot(browser, monkeypatch, platform, view, kind):
     from io import BytesIO
     from PIL import Image
     from tools.board_marks import COLORS
     config = dict(CONFIG, platform=platform, conditions=["last-move"],
                   marks=[{"kind": "last-move", "squares": ["a8", "b8"], "rgba": COLORS["last-move"]}])
+    if kind == "arrow":
+        config.update(conditions=["arrow"], marks=[{"kind": "arrow", "from": "a8", "to": "b6", "path": "knight",
+                                                   "bend": "vertical-first", "width": .14, "rgba": [240, 145, 25, 144]}])
     context = browser.new_context(viewport=config["viewport"])
     page = context.new_page()
     setup(page, html(view, platform))

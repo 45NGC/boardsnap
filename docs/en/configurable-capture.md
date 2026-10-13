@@ -102,8 +102,8 @@ onboarding and consent dialogs are dismissed and arrows/highlights/answer inputs
 are hidden on Chess.com. All modifications are recorded. They are not untouched
 real-use captures. Browser integrations depend on live DOM/asset APIs and may
 need maintenance when the platforms change. Explicit synthetic simple marks can
-now be composited after verification; arbitrary native overlays and arrows are
-not enabled. See [simple marks](simple-marks.md).
+now be composited after verification, including [controlled arrows and combinations](arrows.md).
+Arbitrary native overlays are not enabled. See [simple marks](simple-marks.md).
 
 ## Import real-use screenshots
 
@@ -125,7 +125,7 @@ Every sample contains:
 - `boardBounds: {"x": ..., "y": ..., "width": ..., "height": ...}` in original PNG pixels.
 - `configuration`: `platform`, `boardTheme`, `pieceSet`, `layoutId`, `conditions`.
   Conditions are `["clean"]` or observed `last-move`, `selection`, `check`, `circle`,
-  `move-dot`, `arrows`, `highlights`, `badges`; never
+  `move-dot`, `arrow`, `arrows`, `highlights`, `badges`; never
   combine clean with marks.
 - `source`: `url`, `capturedAt`, `client`, `clientVersion`, `sourceGroupId`,
   `reviewedBy`, `reviewedAt`. Use UTC ISO timestamps and a stable game/session ID.

@@ -171,7 +171,7 @@ python -m tools.build_real_squares --imports .cache/reviewed-real/digital-positi
 Tras revisarlas, añade `--real-dataset .cache/real-squares-v1` a un entrenamiento
 **nuevo**. Se comprueba el aislamiento entre corpus, se mezclan únicamente los
 recortes de entrenamiento/validación y se registran sus hashes. No se abren
-recortes de evaluación para entrenar. Las flechas e insignias en entrenamiento
-o validación se rechazan en esta etapa; las capturas de la partida 005 conservan
-su partición reservada para trabajar después con flechas. Hasta revisar las
+recortes de evaluación para entrenar. La posterior [etapa de flechas](arrows.md)
+ya permite flechas reales revisadas en entrenamiento/validación; las insignias
+siguen excluidas. Las capturas de la partida 005 conservan su partición reservada. Hasta revisar las
 posiciones, esta parte del paso 7 con datos reales queda pendiente.

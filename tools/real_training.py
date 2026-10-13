@@ -14,8 +14,8 @@ def check_combined_partitions(base_rows, real_rows):
                 or row.get("verification") != "human-reviewed; no DOM evidence"
                 or not source.get("reviewedBy") or not source.get("reviewedAt")):
             raise ValueError("Additional data must come from reviewed real-use imports.")
-        if row["split"] != "evaluation" and any(c in ("arrows", "badges") for c in row.get("conditions", [])):
-            raise ValueError("Arrows and badges are outside this simple-mark training stage.")
+        if row["split"] != "evaluation" and "badges" in row.get("conditions", []):
+            raise ValueError("Badges are outside the current overlay training stage.")
         origin = (row["configuration"]["platform"], source["sourceGroupId"])
         if games.setdefault(origin, row["split"]) != row["split"]:
             raise ValueError("Related real-game captures cross partitions.")

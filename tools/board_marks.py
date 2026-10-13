@@ -20,12 +20,21 @@ COLORS = {"last-move": [205, 210, 0, 72], "selection": [20, 155, 85, 85],
           "move-dot": [25, 30, 25, 100]}
 
 
+def mark_conditions(marks):
+    """Unique kinds in drawing order; multiple arrows belong to one condition."""
+    return list(dict.fromkeys(m["kind"] for m in marks))
+
+
 def validate_marks(marks, placement=None):
     if not isinstance(marks, list) or not marks:
         raise ValueError("Marks must be a nonempty list.")
     rows = expand_placement(placement) if placement is not None else None
     seen = set()
     for mark in marks:
+        if isinstance(mark, dict) and mark.get("kind") == "arrow":
+            from tools.arrow_marks import validate_arrow
+            validate_arrow(mark)
+            continue
         if not isinstance(mark, dict) or set(mark) != {"kind", "squares", "rgba"}:
             raise ValueError("A mark requires exactly kind, squares and rgba.")
         kind, squares, rgba = mark["kind"], mark["squares"], mark["rgba"]
@@ -99,7 +108,10 @@ def render_marks(image, bounds, orientation, marks, placement=None):
     for mark in marks:
         overlay = Image.new("RGBA", image.size)
         draw = ImageDraw.Draw(overlay)
-        for square in mark["squares"]:
+        if mark["kind"] == "arrow":
+            from tools.arrow_marks import draw_arrow
+            draw_arrow(overlay, mark, bounds, orientation)
+        for square in mark.get("squares", []):
             row, col = 8 - int(square[1]), ord(square[0]) - 97
             if orientation == "black-bottom":
                 row, col = 7-row, 7-col
@@ -136,6 +148,9 @@ def mark_png(png, bounds, orientation, marks, placement):
             stream = BytesIO()
             marked.save(stream, format="PNG")
     result = stream.getvalue()
-    return result, {"renderer": RENDERER, "marks": marks,
+    version = RENDERER
+    if any(m["kind"] == "arrow" for m in marks):
+        from tools.arrow_marks import RENDERER as version
+    return result, {"renderer": version, "marks": marks,
                     "baseImageSha256": hashlib.sha256(png).hexdigest(),
                     "method": "synthetic alpha overlays before normalization; not native platform marks"}

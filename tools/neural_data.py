@@ -6,7 +6,7 @@ from pathlib import Path
 
 import numpy as np
 
-from tools.board_marks import validate_marks
+from tools.board_marks import validate_marks, mark_conditions
 from tools.build_square_dataset import square_labels
 from tools.position_dataset import LABELS as CLASSES
 
@@ -49,8 +49,13 @@ def read_index(root, mode="verified"):
                 raise ValueError("Square labels do not match canonical placement.")
             if "marks" in row:
                 validate_marks(row["marks"], row["piecePlacement"])
-                if row.get("conditions") != [m["kind"] for m in row["marks"]]:
+                if row.get("conditions") != mark_conditions(row["marks"]):
                     raise ValueError("Mark conditions disagree with annotations.")
+                if "arrowCoverage" in row:
+                    from tools.arrow_marks import validate_coverage
+                    validate_coverage(row["piecePlacement"], row["marks"], row["arrowCoverage"])
+                    if row.get("overlayCase") != row["arrowCoverage"]["case"]:
+                        raise ValueError("Arrow scenario differs from its coverage annotation.")
         elif mode != "detected" or row["status"] != "detection-failed":
             raise ValueError("Unexpected failed square record.")
     return metadata, rows
@@ -80,6 +85,10 @@ def training_indices(row):
         return list(range(64))
     result = set()
     for mark in row["marks"]:
+        if mark["kind"] == "arrow":
+            from tools.arrow_marks import affected_indices
+            result.update(affected_indices(mark))
+            continue
         for square in mark["squares"]:
             row_id, col = 8-int(square[1]), ord(square[0])-97
             result.add(row_id*8+col)

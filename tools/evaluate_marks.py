@@ -17,12 +17,13 @@ from tools.evaluate_neural import score
 from tools.neural_data import child, digest, load_board, read_index
 
 
-def paired_results(records):
+def paired_results(records, *, by_case=False):
     """Compare exact boards, not just similar predictions (both can be wrong)."""
     clean = {r["pairId"]: r for r in records if r["conditions"] == ["clean"]}
     output = {}
-    for condition in sorted({c for r in records for c in r["conditions"]} - {"clean"}):
-        rows = [r for r in records if condition in r["conditions"]]
+    labels = lambda r: [r.get("overlayCase", "+".join(r["conditions"]))] if by_case else r["conditions"]
+    for condition in sorted({c for r in records for c in labels(r)} - {"clean"}):
+        rows = [r for r in records if condition in labels(r)]
         counts = {"pairs": len(rows), "bothCorrect": 0, "cleanOnlyCorrect": 0,
                   "markedOnlyCorrect": 0, "neitherCorrect": 0, "identicalPredictions": 0}
         for row in rows:
@@ -42,19 +43,26 @@ def paired_results(records):
 def summarize(records):
     conditions = sorted({c for r in records for c in r["conditions"]})
     return {"all": score(records), "conditions": {c: score([r for r in records if c in r["conditions"]]) for c in conditions},
-            "paired": paired_results(records),
+            "paired": paired_results(records), "pairedCases": paired_results(records, by_case=True),
+            "cases": {c: score([r for r in records if r.get("overlayCase", "+".join(r["conditions"])) == c])
+                      for c in sorted({r.get("overlayCase", "+".join(r["conditions"])) for r in records})},
+            "geometries": {g: score([r for r in records if g in r.get("arrowGeometries", [])])
+                           for g in sorted({g for r in records for g in r.get("arrowGeometries", [])})},
             "errors": [{"image": r["image"], "condition": r["conditions"],
                         "wrongSquares": [i for i, (a, b) in enumerate(zip(r["expected"], r["predictions"])) if a != b]}
                        for r in records if r["expected"] != r["predictions"]]}
 
 
-def evaluate(dataset, baseline_path, candidate_path, split, threads=4):
+def evaluate(dataset, baseline_path, candidate_path, split, threads=4, *,
+             baseline_name="cleanBaseline", candidate_name="markedCandidate"):
     import torch
     from boardsnap.neural import NeuralClassifier
     torch.set_num_threads(threads)
     cv2.setNumThreads(1)
     metadata, rows = read_index(dataset)
-    models = {"cleanBaseline": NeuralClassifier(baseline_path), "markedCandidate": NeuralClassifier(candidate_path)}
+    if baseline_name == candidate_name:
+        raise ValueError("Comparison model names must differ.")
+    models = {baseline_name: NeuralClassifier(baseline_path), candidate_name: NeuralClassifier(candidate_path)}
     records = {name: {"verified": [], "detected": []} for name in models}
     detections = defaultdict(list)
     selected = [r for r in rows if r["split"] == split]
@@ -67,6 +75,8 @@ def evaluate(dataset, baseline_path, candidate_path, split, threads=4):
             raise ValueError("Source screenshot changed.")
         base = {k: row[k] for k in ("image", "positionId", "groupId", "pairId", "conditions")}
         base["expected"] = expected.tolist()
+        base["overlayCase"] = row.get("overlayCase", "+".join(row["conditions"]))
+        base["arrowGeometries"] = row.get("arrowCoverage", {}).get("geometries", [])
         for name, model in models.items():
             records[name]["verified"].append(dict(base, predictions=model.predict_ids(pixels).tolist()))
         with Image.open(path) as source, source.convert("RGB") as image:
@@ -79,24 +89,29 @@ def evaluate(dataset, baseline_path, candidate_path, split, threads=4):
                 metrics = rectangle_metrics(bounds.as_box(), raster_bounds(row["boardBounds"]).as_box())
                 metrics["withinTwoPixels"] = metrics["maxEdgeErrorPixels"] <= 2
                 detected = extract_squares(image, bounds, row["orientation"])
-            for condition in row["conditions"]:
-                detections[condition].append(dict(image=row["image"], **metrics))
+            detections[base["overlayCase"]].append(dict(image=row["image"], **metrics))
             for name, model in models.items():
                 predictions = [-1]*64 if detected is None else model.predict_ids(detected).tolist()
                 records[name]["detected"].append(dict(base, predictions=predictions))
         if number % 100 == 0:
             print(f"Compared {number}/{len(selected)} {split} boards", flush=True)
     results = {name: {mode: summarize(data) for mode, data in modes.items()} for name, modes in records.items()}
-    clean_ok = all(results["markedCandidate"][mode]["conditions"]["clean"]["exactBoards"] >=
-                   results["cleanBaseline"][mode]["conditions"]["clean"]["exactBoards"] for mode in ("verified", "detected"))
+    clean_ok = all(results[candidate_name][mode]["conditions"]["clean"]["exactBoards"] >=
+                   results[baseline_name][mode]["conditions"]["clean"]["exactBoards"] for mode in ("verified", "detected"))
     # Also check square accuracy: equal whole-board totals must not hide more square errors.
-    clean_ok &= all(results["markedCandidate"][mode]["conditions"]["clean"]["correctSquares"] >=
-                    results["cleanBaseline"][mode]["conditions"]["clean"]["correctSquares"] for mode in ("verified", "detected"))
+    clean_ok &= all(results[candidate_name][mode]["conditions"]["clean"]["correctSquares"] >=
+                    results[baseline_name][mode]["conditions"]["clean"]["correctSquares"] for mode in ("verified", "detected"))
+    controls = ["clean", "last-move", "selection", "check", "circle", "move-dot"]
+    regressions = {mode: {case: {
+        "exactBoardsDelta": results[candidate_name][mode]["cases"][case]["exactBoards"] - results[baseline_name][mode]["cases"][case]["exactBoards"],
+        "correctSquaresDelta": results[candidate_name][mode]["cases"][case]["correctSquares"] - results[baseline_name][mode]["cases"][case]["correctSquares"]}
+        for case in controls if case in results[candidate_name][mode]["cases"]} for mode in ("verified", "detected")}
     return {"schemaVersion": 1, "split": split, "datasetSha256": digest(dataset / "dataset.json"),
-            "models": {"cleanBaseline": digest(baseline_path), "markedCandidate": digest(candidate_path)},
+            "models": {baseline_name: digest(baseline_path), candidate_name: digest(candidate_path)},
             "evaluationCodeSha256": digest(Path(__file__)),
             "environment": {"python": platform.python_version(), "torch": str(torch.__version__), "threads": threads},
-            "scope": "controlled single-mark variants; both classifiers receive identical pixels; explicit orientation",
+            "scope": "controlled overlays and clean controls; identical input pixels for both models; explicit view; no removal",
+            "controlRegressions": regressions,
             "cleanPerformanceMaintained": bool(clean_ok), "templatesRemainDefault": True,
             "realUseClassificationIncluded": False,
             "detection": {c: {"images": len(values), "withinTwoPixels": sum(v["withinTwoPixels"] for v in values),
@@ -112,11 +127,14 @@ def main(argv=None):
     parser.add_argument("--split", choices=("validation", "evaluation"), required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--threads", type=int, default=4)
+    parser.add_argument("--baseline-name", default="cleanBaseline")
+    parser.add_argument("--candidate-name", default="markedCandidate")
     args = parser.parse_args(argv)
     training = json.loads((args.candidate.parent / "training.json").read_text())
     if not training["complete"] or training["weightsSha256"] != digest(args.candidate):
         raise ValueError("Compare only the completed, validation-selected candidate.")
-    report = evaluate(args.dataset, args.baseline, args.candidate, args.split, args.threads)
+    report = evaluate(args.dataset, args.baseline, args.candidate, args.split, args.threads,
+                      baseline_name=args.baseline_name, candidate_name=args.candidate_name)
     report["training"] = training
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2) + "\n")

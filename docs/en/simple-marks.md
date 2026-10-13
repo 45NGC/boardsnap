@@ -159,6 +159,7 @@ python -m tools.build_real_squares --imports .cache/reviewed-real/digital-positi
 Once reviewed, add `--real-dataset .cache/real-squares-v1` to a **new** training run.
 It checks cross-corpus group/position isolation, merges only training/validation
 arrays, records real-data hashes, and never loads evaluation arrays for training.
-Arrows/badges in real training or validation data are rejected at this stage;
-the held-out game-005 screenshots keep their partition for the later arrow work.
+The subsequent [arrow stage](arrows.md) now accepts reviewed real arrows for
+training/validation; badges remain excluded. The game-005 screenshots retain
+their held-out partition.
 Until labels are reviewed, the real-data portion of step 7 remains pending.

@@ -13,7 +13,7 @@ import tempfile
 
 from PIL import Image
 
-from tools.board_marks import KINDS, validate_marks
+from tools.board_marks import KINDS, validate_marks, mark_conditions
 from tools.position_dataset import (DEFAULT_MANIFEST, validate_manifest,
                                     validate_variants, variant_identity, placement_family)
 from tools.real_positions import external_identity, check_detection_reservation
@@ -47,7 +47,7 @@ def validate_config(config):
         raise ValueError("deviceScaleFactor must be 1, 2 or 3")
     if "marks" in config:
         validate_marks(config["marks"])
-        if config["conditions"] != [mark["kind"] for mark in config["marks"]]:
+        if config["conditions"] != mark_conditions(config["marks"]):
             raise ValueError("Conditions must describe the requested marks, in rendering order")
     elif config["conditions"] != ["clean"]:
         raise ValueError("Marked capture conditions require explicit marks")
@@ -206,7 +206,7 @@ def import_samples(staging, manifest, specification, spec_dir):
         if config["platform"] not in ("lichess", "chesscom"):
             raise ValueError("Unsupported platform")
         conditions = config.get("conditions")
-        if not isinstance(conditions, list) or not conditions or any(c not in ("clean", "arrows", "highlights", "badges", *KINDS) for c in conditions):
+        if not isinstance(conditions, list) or not conditions or any(c not in ("clean", "arrow", "arrows", "highlights", "badges", *KINDS) for c in conditions):
             raise ValueError("List observed image conditions explicitly")
         if "clean" in conditions and len(conditions) > 1:
             raise ValueError("A marked image cannot be labeled clean")

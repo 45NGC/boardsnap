@@ -1,12 +1,19 @@
 # Hoja de ruta incremental
 
+El paso 8 incorpora [flechas y superposiciones combinadas](arrows.md): dibujo sobre
+la imagen completa, etiquetas de geometría/ocupación, controles emparejados y
+selección por validación que prioriza conservar el acierto limpio y con marcas
+sencillas. Detección y posiciones completas se miden por separado. El piloto es
+sintético; siguen pendientes etiquetas reales verificadas, diversidad de flechas
+nativas y un corpus nuevo de aceptación antes de ampliar la compatibilidad.
+
 El paso 7 incorpora [marcas sencillas controladas y entrenamiento medido](simple-marks.md):
 7200 variantes marcadas y 3600 controles limpios, particiones conservadas y esquema 2
 de importación de partidas externas. El candidato mantiene 540/540 tableros limpios
 y acierta las 1080 variantes marcadas de evaluación. La clasificación con capturas
-reales sigue pendiente de revisar sus posiciones. Después quedan diversidad de
-marcas nativas, flechas y superposiciones combinadas. Los apartados anteriores
-describen el alcance que tenía cada hito al implementarlo.
+reales sigue pendiente de revisar sus posiciones; la diversidad de marcas nativas
+sigue fuera del piloto medido. El paso 8 amplía esta referencia con flechas
+controladas. Los apartados siguientes describen el alcance de cada hito al implementarlo.
 
 [English](../en/roadmap.md) | **Español** · [Inicio](README.md)
 

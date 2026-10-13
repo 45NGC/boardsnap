@@ -4,6 +4,8 @@ La [ampliación con marcas sencillas](simple-marks.md) incorpora resaltados,
 círculos/puntos controlados, una red entrenada y comparada e importación de partidas
 externas. Las capturas reales aún necesitan posiciones verificadas; las plantillas
 siguen siendo el backend predeterminado.
+La [ampliación con flechas](arrows.md) añade trayectorias rectas y de caballo,
+cruces y combinaciones, conservando las imágenes anteriores como controles.
 
 [English](../en/README.md) | **Español**
 

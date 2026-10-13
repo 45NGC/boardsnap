@@ -2,6 +2,7 @@
 
 import argparse
 from copy import deepcopy
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -41,7 +42,7 @@ def atomic_save(value, path):
 
 
 @torch.inference_mode()
-def validate(model, images, labels, batch_size):
+def validate(model, images, labels, batch_size, control_boards=None):
     model.eval()
     guesses, total_loss = [], 0.0
     for start in range(0, len(images), batch_size):
@@ -52,16 +53,22 @@ def validate(model, images, labels, batch_size):
     predictions = np.concatenate(guesses)
     correct = predictions == labels
     recalls = [float(correct[labels == i].mean()) for i in range(13) if np.any(labels == i)]
-    return {"loss": total_loss / len(labels), "squareAccuracy": float(correct.mean()),
+    metrics = {"loss": total_loss / len(labels), "squareAccuracy": float(correct.mean()),
             "macroRecall": float(np.mean(recalls)),
             "exactBoards": int(correct.reshape(-1, 64).all(1).sum()), "boards": len(labels) // 64}
+    if control_boards is not None:
+        if control_boards.dtype != np.bool_ or control_boards.shape != (len(labels)//64,) or not control_boards.any():
+            raise ValueError("Validation controls must identify existing whole boards.")
+        metrics["controlExactBoards"] = int(correct.reshape(-1, 64).all(1)[control_boards].sum())
+        metrics["controlBoards"] = int(control_boards.sum())
+    return metrics
 
 
 def selection_key(metrics):
-    return (metrics["exactBoards"], metrics["macroRecall"], -metrics["loss"])
+    return (metrics.get("controlExactBoards", 0), metrics["exactBoards"], metrics["macroRecall"], -metrics["loss"])
 
 
-def fit(train, validation, config, run, data_version, *, resume=False, stop_after=None):
+def fit(train, validation, config, run, data_version, *, resume=False, stop_after=None, control_boards=None):
     """Checkpoint every completed epoch; deterministic shuffle is seed + epoch.
 
     stop_after supports interrupted-run tests without changing the frozen horizon.
@@ -84,11 +91,17 @@ def fit(train, validation, config, run, data_version, *, resume=False, stop_afte
     criterion = nn.CrossEntropyLoss(weight=weights)
     metadata = {"formatVersion": 1, "architecture": ARCHITECTURE, "classOrder": list(CLASSES),
                 "preprocessing": PREPROCESSING, "dataVersion": data_version, "trainingConfig": config,
-                "selection": "maximum validation exact boards, then macro recall, then lower unweighted loss; earlier tie",
+                "selection": ("maximum clean/simple validation control exact boards first; " if control_boards is not None else "")
+                    + "maximum validation exact boards, then macro recall, then lower unweighted loss; earlier tie",
                 "loss": "cross entropy with inverse class frequency from training only",
                 "classWeights": weights.tolist(), "environment": {"torch": str(torch.__version__),
                     "numpy": np.__version__, "python": platform.python_version(), "device": "cpu"},
                 "parameterCount": sum(p.numel() for p in model.parameters())}
+    if control_boards is not None:
+        if (not isinstance(control_boards, np.ndarray) or control_boards.dtype != np.bool_
+                or control_boards.shape != (len(validation[1])//64,) or not control_boards.any()):
+            raise ValueError("Validation controls must identify existing whole boards.")
+        metadata["validationControlMaskSha256"] = hashlib.sha256(control_boards.tobytes()).hexdigest()
     start_epoch, history, best, best_state = 0, [], None, None
     if resume:
         saved = torch.load(checkpoint, map_location="cpu", weights_only=True)
@@ -110,7 +123,7 @@ def fit(train, validation, config, run, data_version, *, resume=False, stop_afte
                 raise ValueError("Nonfinite training loss.")
             loss.backward()
             optimizer.step()
-        metrics = validate(model, *validation, config["batchSize"])
+        metrics = validate(model, *validation, config["batchSize"], control_boards=control_boards)
         if best is None or selection_key(metrics) > selection_key(best["metrics"]):
             best = {"epoch": epoch + 1, "metrics": metrics}
             best_state = deepcopy(model.state_dict())
@@ -138,6 +151,8 @@ def main(argv=None):
                         help="Training only: keep marked cells and resize neighbours; retain all clean cells")
     parser.add_argument("--real-dataset", type=Path,
                         help="Optional independently reviewed real-use square dataset; preserve its partitions")
+    parser.add_argument("--preserve-controls", action="store_true",
+                        help="Prioritize clean/simple-mark whole-board validation accuracy before arrow accuracy")
     args = parser.parse_args(argv)
     config = json.loads(args.config.read_text())
     seed_run(config)
@@ -161,7 +176,18 @@ def main(argv=None):
     if real_version is not None:
         data_version["reviewedRealData"] = real_version
         data_version["realLoaderCodeSha256"] = digest(ROOT / "tools/real_training.py")
-    fit(train, validation, config, args.run, data_version, resume=args.resume)
+    controls = None
+    if args.preserve_controls:
+        validation_rows = [r for r in rows if r["split"] == "validation"]
+        if args.real_dataset:
+            _, real_rows = read_index(args.real_dataset)
+            validation_rows.extend(r for r in real_rows if r["split"] == "validation")
+        controls = np.asarray([not any(c in ("arrow", "arrows") for c in r.get("conditions", []))
+                               for r in validation_rows], dtype=np.bool_)
+        data_version["validationControlBoards"] = int(controls.sum())
+        # The array order is pinned by the parent/real index hashes above.
+        data_version["controlSelectionPolicy"] = "conditions without arrow/arrows; retain all clean/simple controls"
+    fit(train, validation, config, args.run, data_version, resume=args.resume, control_boards=controls)
 
 
 if __name__ == "__main__":

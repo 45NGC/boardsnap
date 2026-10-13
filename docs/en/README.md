@@ -5,6 +5,8 @@
 The [simple-mark extension](simple-marks.md) now provides controlled highlights,
 circles/dots, a trained model comparison and external-game imports. Real-use
 classification labels still require review; templates remain the default backend.
+The [arrow extension](arrows.md) adds straight and knight paths, crossings and
+combinations, with the earlier clean/simple images retained as regression controls.
 
 `boardsnap` will be a Python engine that receives an image of a digital
 chessboard or a book diagram and returns a single piece placement to the

@@ -143,6 +143,26 @@ def test_real_training_merge_rejects_cross_corpus_equivalent_positions(tmp_path)
         check_combined_partitions([], rows)
 
 
+@pytest.mark.parametrize("condition", ["arrow", "arrows"])
+def test_reviewed_arrows_can_train_without_reassigning_reserved_games(tmp_path, condition):
+    from tools.real_training import check_combined_partitions
+    spec = specification(tmp_path)
+    sample = spec["samples"][0]
+    sample["configuration"]["conditions"] = ["last-move", condition]
+    target = run_batch(MANIFEST, spec, tmp_path / "out", mode="import-real", spec_dir=tmp_path)
+    build_real_squares(target.parent, MANIFEST, tmp_path / "squares")
+    _, rows = read_index(tmp_path / "squares")
+    check_combined_partitions([], rows)
+    assert rows[0]["split"] == "training"
+    assert rows[0]["conditions"] == ["last-move", condition]
+    sample["source"]["sourceGroupId"] = "lichess-game-005"
+    with pytest.raises(ValueError, match="held-out"):
+        import_samples(tmp_path / "reserved", MANIFEST, spec, tmp_path)
+    rows[0]["conditions"].append("badges")
+    with pytest.raises(ValueError, match="Badges"):
+        check_combined_partitions([], rows)
+
+
 def test_real_merge_never_opens_evaluation_arrays(tmp_path, monkeypatch):
     import numpy as np
     from tools import real_training

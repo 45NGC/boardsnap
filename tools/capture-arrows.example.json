@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "batchId": "controlled-arrows-example",
+  "positionIds": ["digital-009"],
+  "configurations": [
+    {
+      "id": "lichess-brown-cburnett-crossed",
+      "platform": "lichess",
+      "boardTheme": "brown",
+      "pieceSet": "cburnett",
+      "orientations": ["white-bottom", "black-bottom"],
+      "viewport": {"width": 1280, "height": 1000},
+      "deviceScaleFactor": 1,
+      "conditions": ["last-move", "arrow"],
+      "marks": [
+        {"kind": "last-move", "squares": ["a4", "h4"], "rgba": [205, 210, 0, 72]},
+        {"kind": "arrow", "from": "a4", "to": "h4", "path": "straight", "width": 0.14, "rgba": [30, 160, 65, 144]},
+        {"kind": "arrow", "from": "d1", "to": "d8", "path": "straight", "width": 0.22, "rgba": [240, 145, 25, 192]}
+      ]
+    },
+    {
+      "id": "chesscom-green-neo-knight",
+      "platform": "chesscom",
+      "boardTheme": "green",
+      "pieceSet": "neo",
+      "orientations": ["white-bottom", "black-bottom"],
+      "viewport": {"width": 1280, "height": 1000},
+      "deviceScaleFactor": 1,
+      "conditions": ["arrow"],
+      "marks": [
+        {"kind": "arrow", "from": "e2", "to": "f4", "path": "knight", "bend": "vertical-first", "width": 0.14, "rgba": [45, 110, 220, 144]}
+      ]
+    }
+  ]
+}

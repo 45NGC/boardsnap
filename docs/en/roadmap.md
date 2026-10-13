@@ -2,12 +2,19 @@
 
 **English** | [Spanish](../es/roadmap.md) · [Overview](README.md)
 
+Step 8 adds [arrows and combined overlays](arrows.md): full-image rasterization,
+geometry/occupancy labels, paired controls, validation that prioritizes preserving
+clean/simple-mark accuracy, and separate detection and whole-position results.
+The documented pilot is synthetic; verified real labels, native arrow diversity
+and a fresh final acceptance corpus remain necessary before broader compatibility.
+
 Step 7 now has [controlled simple marks and measured neural training](simple-marks.md):
 7200 marked variants plus 3600 clean controls, preserved partitions and external
 real-game import schema 2. The candidate retains 540/540 clean evaluation boards
 and recognizes all 1080 controlled marked boards. Real-use classification remains
-pending position review; native rendering diversity, arrows and combined overlays
-are subsequent work. Earlier milestone descriptions below record their original scope.
+pending position review; native rendering diversity is still outside the measured
+pilot. Step 8 extends this baseline with controlled arrows. Earlier milestone
+descriptions below record their original scope.
 
 Current digital-roadmap milestone completed: explicit orientation input in the
 Python pipeline and CLI (`white-bottom`, `black-bottom`, default `auto`). Tests

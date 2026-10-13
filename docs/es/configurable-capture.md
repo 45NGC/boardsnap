@@ -106,7 +106,8 @@ ocultan flechas/resaltados/campos de respuesta. Las modificaciones quedan anotad
 No son capturas intactas de uso real. Los adaptadores dependen del DOM y de las
 API de recursos actuales y pueden necesitar mantenimiento si cambian las plataformas.
 Ahora se pueden añadir marcas sintéticas sencillas después de verificar la captura.
-No se habilitan marcas nativas arbitrarias ni flechas. Consulta [marcas sencillas](simple-marks.md).
+También se admiten [flechas y combinaciones controladas](arrows.md), pero no marcas
+nativas arbitrarias. Consulta [marcas sencillas](simple-marks.md).
 
 ## Importar capturas de uso real
 
@@ -128,7 +129,7 @@ Cada elemento debe contener:
 - `boardBounds: {"x": ..., "y": ..., "width": ..., "height": ...}` en píxeles originales.
 - `configuration`: `platform`, `boardTheme`, `pieceSet`, `layoutId`, `conditions`.
   Las condiciones son `["clean"]` o las marcas observadas `last-move`, `selection`,
-  `check`, `circle`, `move-dot`, `arrows`, `highlights`, `badges`; nunca se combina clean con marcas.
+  `check`, `circle`, `move-dot`, `arrow`, `arrows`, `highlights`, `badges`; nunca se combina clean con marcas.
 - `source`: `url`, `capturedAt`, `client`, `clientVersion`, `sourceGroupId`,
   `reviewedBy`, `reviewedAt`. Usa fechas ISO UTC y un ID estable de partida/sesión.
   Clientes: `desktop-web`, `mobile-web`, `android-app`, `ios-app`.
