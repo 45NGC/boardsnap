@@ -103,9 +103,10 @@ print(result)  # only {"piecePlacement": "..."}
 ```
 
 This method reads pixels only, runs detection/normalization/segmentation and
-reorders predictions using the explicit view. It accepts `white-bottom` or
-`black-bottom`; it does not implement automatic coordinate reading. The existing
-template API retains its `auto` behavior. `predict_ids` accepts uint8 square
+reorders predictions using the view. The original measured comparison uses explicit
+`white-bottom` or `black-bottom`. Step 9 also supports
+optional `auto` through a [layout-based reader](style-expansion.md), with measured
+limitations; explicit view remains recommended. `predict_ids` accepts uint8 square
 batches; `classify_squares` accepts an 8×8 matrix of Pillow crops. Runtime inference
 never reads training labels, position manifests or evaluation reports.
 

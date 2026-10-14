@@ -12,7 +12,7 @@ from boardsnap.classification import ClassificationError
 from boardsnap.detection import detect_board
 from boardsnap.image_input import read_image
 from boardsnap.normalization import normalize_board
-from boardsnap.orientation import to_canonical
+from boardsnap.orientation import to_canonical, detect_digital_orientation
 from boardsnap.output import build_result
 from boardsnap.segmentation import split_squares
 
@@ -88,9 +88,9 @@ class NeuralClassifier:
         return [labels[start:start + 8] for start in range(0, 64, 8)]
 
     def recognize_image(self, path, *, orientation):
-        """Pixel-only pipeline with explicit view; preserves piecePlacement-only output."""
-        if orientation not in ("white-bottom", "black-bottom"):
-            raise ValueError("Choose white-bottom or black-bottom explicitly.")
+        """Pixel-only multi-style pipeline; explicit view overrides all coordinate clues."""
+        if orientation not in ("white-bottom", "black-bottom", "auto"):
+            raise ValueError("Choose white-bottom, black-bottom or auto.")
         with ExitStack() as stack:
             image = stack.enter_context(read_image(path))
             board = stack.enter_context(normalize_board(image, detect_board(image)))
@@ -99,4 +99,5 @@ class NeuralClassifier:
                 for square in row:
                     stack.enter_context(square)
             labels = self.classify_squares(squares)
-            return build_result(to_canonical(labels, orientation))
+            resolved = detect_digital_orientation(board) if orientation == "auto" else orientation
+            return build_result(to_canonical(labels, resolved))

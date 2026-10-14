@@ -2,6 +2,7 @@
 
 from contextlib import ExitStack
 from os import PathLike
+import os
 from typing import Literal
 
 from boardsnap.classification import classify_squares
@@ -14,14 +15,18 @@ from boardsnap.segmentation import split_squares
 from boardsnap.profiles import DEFAULT_PROFILE, get_profile
 
 
-def recognize_image(path: str | PathLike[str], *, profile: str = DEFAULT_PROFILE,
+def recognize_image(path: str | PathLike[str], *, profile: str | None = None,
+                    model: str | PathLike[str] | None = None,
                     orientation: Literal["white-bottom", "black-bottom", "auto"] = "auto"
                     ) -> dict[str, str]:
     """Return only piecePlacement, or propagate a stage's structured exception.
 
     Reads pixels only: no sidecars, expected positions or filename-based hints.
     Adapters serialize success or error.to_dict(); the core writes nothing.
-    The explicit profile defaults to brown/cburnett. All owned images are closed.
+    A model path or BOARDSNAP_MODEL selects the multi-style neural classifier.
+    Explicit profiles select legacy templates and ignore the environment model.
+    Without either configuration, preserve the legacy brown/cburnett default.
+    All owned images are closed. No model is downloaded or guessed from the cwd.
 
     orientation describes the image view, not the side to move. An explicit
     white-bottom/black-bottom value bypasses coordinate reading and takes
@@ -30,6 +35,19 @@ def recognize_image(path: str | PathLike[str], *, profile: str = DEFAULT_PROFILE
     """
     if not isinstance(orientation, str) or orientation not in ("white-bottom", "black-bottom", "auto"):
         raise ValueError("Orientation must be white-bottom, black-bottom or auto.")
+    if profile is not None and model is not None:
+        raise ValueError("Choose a model or a legacy profile, not both.")
+    selected_model = model if model is not None else (os.environ.get("BOARDSNAP_MODEL") if profile is None else None)
+    if selected_model is not None:
+        from boardsnap.classification import ClassificationError
+        if not os.fspath(selected_model).strip():
+            raise ClassificationError("Model path is empty; configure BOARDSNAP_MODEL or pass model explicitly.")
+        try:
+            from boardsnap.neural import NeuralClassifier
+        except ImportError as error:
+            raise ClassificationError("Neural recognition requires the boardsnap[ml] extra.") from error
+        return NeuralClassifier(selected_model).recognize_image(path, orientation=orientation)
+    profile = DEFAULT_PROFILE if profile is None else profile
     get_profile(profile)
     with ExitStack() as stack:
         source = stack.enter_context(read_image(path))

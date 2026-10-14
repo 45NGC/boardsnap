@@ -1,0 +1,90 @@
+{
+  "complete": true,
+  "captureImages": 860,
+  "derivedImages": 3784,
+  "stylePolicy": {
+    "schemaVersion": 1,
+    "datasetId": "digital-styles-v2",
+    "heldOutCombinations": [
+      "lichess-blue-staunty",
+      "chesscom-blue-alpha"
+    ],
+    "policy": "Held-out combinations only use original evaluation positions. No training/validation images of these pairs are collected.",
+    "layouts": [
+      "captured-desktop",
+      "board-crop-384",
+      "synthetic-margins-256"
+    ],
+    "previousDataset": "digital-arrow-squares-v1",
+    "nativeMobileEvaluated": false
+  },
+  "recipeSha256": "58d74401d3794802331ab1b9e46838b9fe981e303b823775c4ebc748cb46febb",
+  "policySha256": "0a0029cbac442616dc78b5eba1010275ba8acdfd77ca6ebc668b8a0f78afa5b3",
+  "generatorSha256": "1727ce25a140834f78ef15aa62e5f6da5491ca384e643020301bbcba8c473f2d",
+  "boards": 21204,
+  "datasetSha256": "7cae41fdb1b28e7dc8442c70a01cc5c473ee47f7c206cdfcc9ec0cb715842525",
+  "splitCounts": {
+    "evaluation": 3456,
+    "training": 14616,
+    "validation": 3132
+  },
+  "coverage": {
+    "platform": {
+      "lichess": 10602,
+      "chesscom": 10602
+    },
+    "pieces": {
+      "cburnett": 2760,
+      "merida": 2760,
+      "alpha": 5082,
+      "neo": 2760,
+      "classic": 2760,
+      "bases": 2760,
+      "staunty": 2322
+    },
+    "background": {
+      "brown": 6600,
+      "blue": 5844,
+      "green": 6600,
+      "wood4": 1080,
+      "wood": 1080
+    },
+    "combination": {
+      "lichess-brown-cburnett": 920,
+      "lichess-blue-cburnett": 920,
+      "lichess-green-cburnett": 920,
+      "lichess-brown-merida": 920,
+      "lichess-blue-merida": 920,
+      "lichess-green-merida": 920,
+      "lichess-brown-alpha": 920,
+      "lichess-blue-alpha": 920,
+      "lichess-green-alpha": 920,
+      "chesscom-green-neo": 920,
+      "chesscom-brown-neo": 920,
+      "chesscom-blue-neo": 920,
+      "chesscom-green-classic": 920,
+      "chesscom-brown-classic": 920,
+      "chesscom-blue-classic": 920,
+      "chesscom-green-bases": 920,
+      "chesscom-brown-bases": 920,
+      "chesscom-blue-bases": 920,
+      "lichess-brown-staunty": 1080,
+      "lichess-wood4-staunty": 1080,
+      "lichess-blue-staunty": 162,
+      "chesscom-green-alpha": 1080,
+      "chesscom-wood-alpha": 1080,
+      "chesscom-blue-alpha": 162
+    },
+    "layout": {
+      "lichess-editor": 10258,
+      "chesscom-analysis": 10258,
+      "board-crop-384": 344,
+      "synthetic-margins-256": 344
+    },
+    "client": {
+      "desktop-web": 21204
+    }
+  },
+  "heldOutImages": 324,
+  "nativeMobileEvaluated": false
+}

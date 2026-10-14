@@ -90,8 +90,10 @@ def test_canonical_output_remains_piece_placement_only(artifact, monkeypatch):
     monkeypatch.setattr(neural, "detect_board", lambda _: BoardBounds(0, 0, 512, 512))
     assert classifier.recognize_image("unused", orientation="white-bottom") == {"piecePlacement": "R7/8/8/8/8/8/8/7k"}
     assert classifier.recognize_image("unused", orientation="black-bottom") == {"piecePlacement": "k7/8/8/8/8/8/8/7R"}
+    monkeypatch.setattr(neural, "detect_digital_orientation", lambda _: "black-bottom")
+    assert classifier.recognize_image("unused", orientation="auto") == {"piecePlacement": "k7/8/8/8/8/8/8/7R"}
     with pytest.raises(ValueError):
-        classifier.recognize_image("unused", orientation="auto")
+        classifier.recognize_image("unused", orientation="unknown")
 
 
 def test_resume_matches_uninterrupted_weights_and_validation(tmp_path):

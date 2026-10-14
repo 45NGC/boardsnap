@@ -41,15 +41,17 @@ def _coordinate_boxes(bounds: BoardBounds, profile: str = DEFAULT_PROFILE) -> tu
     )
 
 
-def _glyph_mask(image: Image.Image, profile: str = DEFAULT_PROFILE) -> np.ndarray | None:
+def _glyph_mask(image: Image.Image, profile: str | None = DEFAULT_PROFILE) -> np.ndarray | None:
     """Extract a contrasting glyph on one of the two known square backgrounds."""
     pixels = np.asarray(image, dtype=float)
     median = np.median(pixels, axis=(0, 1))
-    colors = np.asarray(get_profile(profile).colors, dtype=float)
-    distances = np.linalg.norm(colors - median, axis=1)
-    if distances.min() > 25:
-        return None
-    background = colors[distances.argmin()].mean()
+    background = median.mean()
+    if profile is not None:
+        colors = np.asarray(get_profile(profile).colors, dtype=float)
+        distances = np.linalg.norm(colors - median, axis=1)
+        if distances.min() > 25:
+            return None
+        background = colors[distances.argmin()].mean()
     # Grayscale tolerates Chromium's colored subpixel antialiasing on text.
     gray = pixels.mean(axis=2)
     mask = gray < background - 35 if background > 180 else gray > background + 35
@@ -85,8 +87,8 @@ def _templates(profile: str = DEFAULT_PROFILE) -> dict[str, list[np.ndarray]]:
     }
 
 
-def _read_coordinate(image: Image.Image, alphabet: str, profile: str = DEFAULT_PROFILE) -> str | None:
-    mask = _glyph_mask(image, profile)
+def _read_coordinate(image: Image.Image, alphabet: str, profile: str = DEFAULT_PROFILE, *, adaptive=False) -> str | None:
+    mask = _glyph_mask(image, None if adaptive else profile)
     if mask is None:
         return None
     glyph = _normalized_mask(mask)
@@ -145,6 +147,36 @@ def detect_orientation(board: NormalizedBoard, *, profile: str = DEFAULT_PROFILE
     if len(directions) >= 4 and all(direction == "black-bottom" for direction in directions):
         return "black-bottom"
     return "white-bottom"
+
+
+def detect_digital_orientation(board: NormalizedBoard) -> Orientation:
+    """Try known digital coordinate layouts with local background contrast.
+
+    Piece sets and user-selected profiles are irrelevant. Unknown fonts, textures,
+    missing labels or conflicting readable evidence fall back to white-bottom.
+    Explicit orientation remains preferable and bypasses this reader entirely.
+    """
+    if not isinstance(board, NormalizedBoard):
+        raise TypeError("Expected a NormalizedBoard with preserved source pixels.")
+    if min(board.source_bounds.width, board.source_bounds.height) < 256:
+        return "white-bottom"
+    votes = []
+    for layout in (DEFAULT_PROFILE, "chesscom-default-green-v1"):
+        directions = []
+        for boxes, expected in zip(_coordinate_boxes(board.source_bounds, layout), ("abcdefgh", "87654321"), strict=True):
+            for index, box in enumerate(boxes):
+                with board.source_image.crop(box) as patch:
+                    symbol = _read_coordinate(patch, expected, layout, adaptive=True)
+                if symbol is None:
+                    continue
+                if symbol not in (expected[index], expected[7-index]):
+                    return "white-bottom"
+                directions.append("white-bottom" if symbol == expected[index] else "black-bottom")
+        if len(set(directions)) > 1:
+            return "white-bottom"
+        if len(directions) >= 4:
+            votes.append(directions[0])
+    return "black-bottom" if votes and set(votes) == {"black-bottom"} else "white-bottom"
 
 
 def to_canonical(matrix: list[list[_T]] | tuple[tuple[_T, ...], ...],

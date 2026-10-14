@@ -42,7 +42,7 @@ def paired_results(records, *, by_case=False):
 
 def summarize(records):
     conditions = sorted({c for r in records for c in r["conditions"]})
-    return {"all": score(records), "conditions": {c: score([r for r in records if c in r["conditions"]]) for c in conditions},
+    result = {"all": score(records), "conditions": {c: score([r for r in records if c in r["conditions"]]) for c in conditions},
             "paired": paired_results(records), "pairedCases": paired_results(records, by_case=True),
             "cases": {c: score([r for r in records if r.get("overlayCase", "+".join(r["conditions"])) == c])
                       for c in sorted({r.get("overlayCase", "+".join(r["conditions"])) for r in records})},
@@ -51,6 +51,28 @@ def summarize(records):
             "errors": [{"image": r["image"], "condition": r["conditions"],
                         "wrongSquares": [i for i, (a, b) in enumerate(zip(r["expected"], r["predictions"])) if a != b]}
                        for r in records if r["expected"] != r["predictions"]]}
+    if any("dimensions" in r for r in records):
+        result["strata"] = {}
+        for field in sorted({k for r in records for k in r.get("dimensions", {})}):
+            groups = defaultdict(list)
+            for row in records:
+                groups[row["dimensions"][field]].append(row)
+            result["strata"][field] = {}
+            for value, group in sorted(groups.items()):
+                metrics = score(group)
+                del metrics["confusionRowsExpectedColumnsPredicted"]
+                result["strata"][field][value] = metrics
+    return result
+
+
+def dimensions(row):
+    style = row["style"]
+    result = dict(style, cohort=row["cohort"], orientation=row["orientation"],
+                  boardSide=str(round(row["boardBounds"]["width"])),
+                  generalization="held-out-combination" if row["generalization"] else "seen-combination")
+    for field in ("pieces", "background"):
+        result[field] = f"{style['platform']}/{style[field]}"
+    return result
 
 
 def evaluate(dataset, baseline_path, candidate_path, split, threads=4, *,
@@ -65,6 +87,7 @@ def evaluate(dataset, baseline_path, candidate_path, split, threads=4, *,
     models = {baseline_name: NeuralClassifier(baseline_path), candidate_name: NeuralClassifier(candidate_path)}
     records = {name: {"verified": [], "detected": []} for name in models}
     detections = defaultdict(list)
+    detection_strata = defaultdict(list)
     selected = [r for r in rows if r["split"] == split]
     if not selected:
         raise ValueError("No boards in requested split.")
@@ -77,6 +100,8 @@ def evaluate(dataset, baseline_path, candidate_path, split, threads=4, *,
         base["expected"] = expected.tolist()
         base["overlayCase"] = row.get("overlayCase", "+".join(row["conditions"]))
         base["arrowGeometries"] = row.get("arrowCoverage", {}).get("geometries", [])
+        if "style" in row:
+            base["dimensions"] = dimensions(row)
         for name, model in models.items():
             records[name]["verified"].append(dict(base, predictions=model.predict_ids(pixels).tolist()))
         with Image.open(path) as source, source.convert("RGB") as image:
@@ -90,6 +115,8 @@ def evaluate(dataset, baseline_path, candidate_path, split, threads=4, *,
                 metrics["withinTwoPixels"] = metrics["maxEdgeErrorPixels"] <= 2
                 detected = extract_squares(image, bounds, row["orientation"])
             detections[base["overlayCase"]].append(dict(image=row["image"], **metrics))
+            for field, value in base.get("dimensions", {}).items():
+                detection_strata[f"{field}:{value}"].append(dict(image=row["image"], **metrics))
             for name, model in models.items():
                 predictions = [-1]*64 if detected is None else model.predict_ids(detected).tolist()
                 records[name]["detected"].append(dict(base, predictions=predictions))
@@ -114,6 +141,8 @@ def evaluate(dataset, baseline_path, candidate_path, split, threads=4, *,
             "controlRegressions": regressions,
             "cleanPerformanceMaintained": bool(clean_ok), "templatesRemainDefault": True,
             "realUseClassificationIncluded": False,
+            "detectionStrata": {c: {"images": len(values), "withinTwoPixels": sum(v["withinTwoPixels"] for v in values),
+                "failures": [v for v in values if not v["withinTwoPixels"]]} for c, values in detection_strata.items()},
             "detection": {c: {"images": len(values), "withinTwoPixels": sum(v["withinTwoPixels"] for v in values),
                 "failures": [v for v in values if not v["withinTwoPixels"]]} for c, values in detections.items()},
             "results": results}

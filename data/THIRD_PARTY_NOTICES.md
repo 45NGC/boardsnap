@@ -69,6 +69,18 @@ redrawing, recoloring or geometric correction. Sidecars record original URLs
 and hashes. The book atlas contains crops only from tuning diagrams 1, 4, 5, 6
 and 8. Reserved diagrams 3 and 7 supplied no templates.
 
+## Local style expansion: digital-styles-v2
+
+The ignored step-9 capture corpus adds Lichess Staunty pieces on brown, wood4 and
+blue boards, and Chess.com Alpha pieces on green, wood and blue boards. These are
+platform artwork rendered by the live editor/analysis pages, not original
+BoardSnap drawings. Per-capture sidecars preserve the selected asset URLs, page
+modifications, browser version and image hashes. Derived crops, margins and
+synthetic marks retain the underlying artwork's third-party provenance. This
+notice asserts no additional artwork license grant; the existing platform
+attributions and separation from the BoardSnap code license still apply. Images
+and model artifacts remain local under `.cache/` in this milestone.
+
 ## Detection-only corpus: digital-detection-v1
 
 `data/detection/development/` and `tests/fixtures/detection/held-out/` add 28

@@ -2,6 +2,16 @@
 
 **English** | [Spanish](../es/roadmap.md) · [Overview](README.md)
 
+Step 9 adds [multi-style model configuration and a bounded expansion](style-expansion.md):
+Staunty/Alpha, wood textures, reserved blue/piece combinations, controlled layout
+probes and per-dimension regressions. Calls use image + orientation after model
+configuration. Step 10 remains a separate acceptance and distribution milestone;
+native mobile coverage and new live interfaces require their own captures.
+The measured candidate gets 3454/3456 exact boards with verified bounds and
+3450/3456 with detection. Before acceptance, address two previous Neo arrow
+regressions and four Staunty crop detection misses with development data. Preserve
+the old model; the new model is an opt-in candidate, not a regression-free replacement.
+
 Step 8 adds [arrows and combined overlays](arrows.md): full-image rasterization,
 geometry/occupancy labels, paired controls, validation that prioritizes preserving
 clean/simple-mark accuracy, and separate detection and whole-position results.

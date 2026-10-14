@@ -91,7 +91,7 @@ def fit(train, validation, config, run, data_version, *, resume=False, stop_afte
     criterion = nn.CrossEntropyLoss(weight=weights)
     metadata = {"formatVersion": 1, "architecture": ARCHITECTURE, "classOrder": list(CLASSES),
                 "preprocessing": PREPROCESSING, "dataVersion": data_version, "trainingConfig": config,
-                "selection": ("maximum clean/simple validation control exact boards first; " if control_boards is not None else "")
+                "selection": ("maximum designated validation control exact boards first; " if control_boards is not None else "")
                     + "maximum validation exact boards, then macro recall, then lower unweighted loss; earlier tie",
                 "loss": "cross entropy with inverse class frequency from training only",
                 "classWeights": weights.tolist(), "environment": {"torch": str(torch.__version__),
@@ -153,7 +153,11 @@ def main(argv=None):
                         help="Optional independently reviewed real-use square dataset; preserve its partitions")
     parser.add_argument("--preserve-controls", action="store_true",
                         help="Prioritize clean/simple-mark whole-board validation accuracy before arrow accuracy")
+    parser.add_argument("--control-cohort", choices=("previous",),
+                        help="Prioritize every validation board of the previous style cohort, including overlays")
     args = parser.parse_args(argv)
+    if args.preserve_controls and args.control_cohort:
+        parser.error("Choose one validation control policy.")
     config = json.loads(args.config.read_text())
     seed_run(config)
     metadata, rows = read_index(args.dataset)
@@ -177,16 +181,18 @@ def main(argv=None):
         data_version["reviewedRealData"] = real_version
         data_version["realLoaderCodeSha256"] = digest(ROOT / "tools/real_training.py")
     controls = None
-    if args.preserve_controls:
+    if args.preserve_controls or args.control_cohort:
         validation_rows = [r for r in rows if r["split"] == "validation"]
         if args.real_dataset:
             _, real_rows = read_index(args.real_dataset)
             validation_rows.extend(r for r in real_rows if r["split"] == "validation")
-        controls = np.asarray([not any(c in ("arrow", "arrows") for c in r.get("conditions", []))
+        controls = np.asarray([r.get("cohort") == args.control_cohort if args.control_cohort else
+                               not any(c in ("arrow", "arrows") for c in r.get("conditions", []))
                                for r in validation_rows], dtype=np.bool_)
         data_version["validationControlBoards"] = int(controls.sum())
         # The array order is pinned by the parent/real index hashes above.
-        data_version["controlSelectionPolicy"] = "conditions without arrow/arrows; retain all clean/simple controls"
+        data_version["controlSelectionPolicy"] = (f"cohort={args.control_cohort}; include all conditions"
+            if args.control_cohort else "conditions without arrow/arrows; retain all clean/simple controls")
     fit(train, validation, config, args.run, data_version, resume=args.resume, control_boards=controls)
 
 

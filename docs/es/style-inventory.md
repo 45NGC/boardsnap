@@ -2,11 +2,25 @@
 
 [English](../en/style-inventory.md) | **Español** · [Inicio](README.md)
 
+## Ampliación neuronal actual
+
+La evidencia actual se mantiene en [reconocimiento multitema](style-expansion.md):
+configuración de CLI/modelo, combinaciones medidas y generalización por separado.
+Los seis diseños iniciales son cburnett/Merida/Alpha de Lichess y Neo/Classic/Bases
+de Chess.com. El nuevo grupo añade Staunty de Lichess y Alpha de Chess.com, con
+texturas de madera y parejas azul/piezas reservadas. Android/iOS nativos siguen
+pendientes; un recorte controlado no demuestra compatibilidad con una app nativa.
+Las tablas siguientes conservan el **inventario histórico v1**, incluidas sus
+etiquetas E de plantillas; no sustituyen los informes neuronales posteriores.
+
+## Inventario histórico v1
+
 El [primer corpus limpio de clasificación](first-clean-corpus.md) contiene 3600
 capturas verificadas: seis juegos de piezas sobre tres fondos cada uno, ambas
 orientaciones y dos tamaños. Sus 80 posiciones conservan las particiones fijadas
 de entrenamiento/validación/evaluación. La comprobación separada de 36 imágenes
-queda excluida. El entrenamiento del modelo sigue pendiente.
+queda excluida. El entrenamiento y las ampliaciones con superposiciones están
+documentados en las guías posteriores enlazadas arriba.
 
 Inventario v1, revisado el **2026-10-07**. Esta es la lista delimitada de ampliación
 para Lichess y Chess.com. Los diagramas de libros quedan aplazados. Añadir una fila

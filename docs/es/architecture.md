@@ -20,15 +20,19 @@ la [guía de normalización](normalization.md) para la gestión de imágenes y g
 las casillas. Sus plantillas de caracteres se instalan con el paquete y proceden
 solo de datos de ajuste; consulta [orientación](orientation.md).
 `classification.py` compara características de las casillas con plantillas del perfil
-incluidas en el paquete. `pipeline.py` ofrece `recognize_image(path)` y gestiona
+incluidas en el paquete. `neural.py` aporta el clasificador opcional de PyTorch,
+el preprocesado compartido y la carga validada del modelo en CPU. `pipeline.py`
+lo selecciona mediante `model=RUTA` o `BOARDSNAP_MODEL`; un perfil explícito
+selecciona las plantillas anteriores. Ofrece `recognize_image(path)` y gestiona
 los recursos; devuelve solo colocación y propaga errores estructurados.
 Consulta [clasificación](classification.md).
 Los perfiles se definen en una tabla estática sencilla, sin un sistema dinámico
 de plugins. El [inventario de estilos](style-inventory.md) separa fondo del tablero,
-diseño de piezas e interfaz como dimensiones de recogida. Los perfiles de ejecución
-siguen agrupando sus ajustes evaluados; una entrada independiente del inventario
-no habilita combinaciones sin probar. Los futuros metadatos de recogida registrarán
-cada dimensión, cliente y condición por separado.
+diseño de piezas e interfaz como dimensiones de recogida. Los perfiles de plantillas
+siguen agrupando sus ajustes evaluados. El flujo neuronal no pide un perfil al
+usuario; su corpus registra cada dimensión, cliente y condición por separado.
+Una entrada del inventario no habilita combinaciones sin probar; consulta la
+[ampliación medida](style-expansion.md).
 Ya existen las etapas indicadas; no se añade servidor ni framework.
 La
 [guía de empaquetado de PyPA](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
@@ -45,7 +49,7 @@ interpretarla como turno. Consulta [orientación](orientation.md).
 Adaptador (CLI implementada; transporte HTTPS documentado)
     → pipeline
         → image_input → detection → normalization → segmentation
-        → classification → orientation → output
+        → classification (plantillas) o neural (modelo) → orientation → output
     → JSON
 ```
 
@@ -61,6 +65,7 @@ deduce coordenadas de ajedrez.
 | `normalization` | Recortar el tablero y ajustar tamaño y geometría sin perder la correspondencia con la imagen original. |
 | `segmentation` | Obtener exactamente 64 recortes, indexados por fila y columna en la vista de la imagen. |
 | `classification` | Elegir una de 13 clases por recorte: vacío o una de las seis piezas de cada color. |
+| `neural` | Aportar un clasificador aprendido opcional con las mismas 13 clases y un contrato validado de modelo y preprocesado. |
 | `orientation` | Usar pistas verificables o la convención documentada para reordenar la matriz a coordenadas de ajedrez. |
 | `output` | Comprobar la estructura de la matriz, comprimir casillas vacías y construir `piecePlacement` o el error acordado. |
 | `pipeline` | Coordinar etapas y propagar fallos sin sustituirlos por posiciones inventadas. |
@@ -68,9 +73,8 @@ deduce coordenadas de ajedrez.
 
 La entrada devuelve un objeto Pillow `Image.Image` RGB completamente cargado;
 `ImageInputError.to_dict()` representa los fallos para los futuros adaptadores.
-Las demás estructuras se elegirán al implementar sus etapas.
-El núcleo no importará los adaptadores ni conocerá HTTP, Flutter o una interfaz
-gráfica. El adaptador tampoco contendrá lógica de reconocimiento.
+El núcleo no importa los adaptadores ni conoce HTTP, Flutter o una interfaz
+gráfica. El adaptador tampoco contiene lógica de reconocimiento.
 
 La salida verificará la sintaxis de la colocación, no la legalidad de una partida.
 No se recolocarán piezas para forzar una posición legal ni se inventarán datos
@@ -88,8 +92,7 @@ requiere una versión de setuptools que admita `project.license-files`, según s
 OpenCV y NumPy implementan propuestas por paleta, bordes RGB conectados, ajuste
 regular de límites y comprobación robusta de alternancia de 8 × 8 para la [detección](detection.md). La [guía de entrada](image-input.md)
 concreta la decodificación. Solo se añaden dependencias de etapas implementadas.
-No se incorpora ahora un framework de aprendizaje automático ni una biblioteca
-de reglas de ajedrez para serializar un único campo.
+La generación de salida por sí misma no usa aprendizaje automático ni reglas de ajedrez.
 
 Fuera del núcleo, el extra opcional `dataset` fija `chess==1.11.2` para generar y
 verificar movimientos legales del [plan de posiciones](position-plan.md). Las
@@ -97,18 +100,18 @@ comprobaciones estructurales de cobertura y particiones usan la biblioteca
 estándar. Esta dependencia no interviene en inferencia, corrección de legalidad
 ni salida de la app.
 
-PyTorch es un candidato para entrenar y ejecutar un clasificador de casillas con
-13 clases. Su [guía oficial](https://docs.pytorch.org/tutorials/beginner/basics/intro.html)
-describe el flujo de datos, construcción, entrenamiento y guardado de modelos.
-En BoardSnap podría combinarse con OpenCV para localizar y normalizar el tablero.
-La comparación inicial con plantillas no necesita una red neuronal; si se adopta
-un modelo aprendido, harán falta datos etiquetados y una evaluación independiente.
-La elección y la instalación de PyTorch se harán al abordar ese experimento.
+PyTorch se instala mediante el extra opcional `ml` y se utiliza para entrenar y
+ejecutar en CPU el clasificador de 13 clases. El flujo principal solo lo importa
+cuando se selecciona un modelo. La detección con OpenCV sigue siendo independiente.
+Las herramientas de entrenamiento, captura y evaluación viven en `tools/`, fuera
+del reconocimiento en ejecución; consulta la [guía del modelo](neural-classifier.md)
+y la [ampliación actual](style-expansion.md).
 
 ## Integración externa
 
-La [CLI](cli.md) y la API Python aceptan un perfil explícito, con brown como
-predeterminado. Los [perfiles evaluados](profiles.md) describen límites y el
+La [CLI](cli.md) y la API Python aceptan imagen y orientación con el modelo
+configurado una vez. Un perfil explícito conserva las plantillas; solo una instalación
+sin modelo configurado utiliza brown por defecto. Los [perfiles evaluados](profiles.md) describen límites y el
 experimento de libros. El [diseño de integración Flutter](flutter-integration.md)
 propone un adaptador HTTPS separado para Android, iOS y web. Utilizará el mismo
 núcleo; esta iteración no incorpora servidor, código Flutter ni framework web.

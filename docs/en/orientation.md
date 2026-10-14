@@ -2,7 +2,7 @@
 
 **English** | [Spanish](../es/orientation.md) · [Overview](README.md)
 
-This guide records the original brown-profile implementation. See [evaluated profiles](profiles.md) for subsequent digital styles, the experimental book profile and current coverage.
+This guide records the original brown-profile implementation. See [evaluated profiles](profiles.md) for the legacy template path and [multi-style recognition](style-expansion.md) for the current neural path and its measured orientation limits.
 
 `detect_orientation(board)` reads coordinate pixels from the full-resolution
 source retained by `normalize_board`. It returns `"white-bottom"` or
@@ -11,7 +11,7 @@ image order to chess order: ranks 8 to 1, files a to h.
 
 ## Explicit orientation input
 
-`recognize_image(path, *, profile=..., orientation="auto")` accepts exactly
+`recognize_image(path, *, profile=None, model=None, orientation="auto")` accepts exactly
 `"white-bottom"`, `"black-bottom"` or `"auto"`. This describes the board view,
 **not the side to move**. The default `auto` preserves existing calls.
 
@@ -29,9 +29,11 @@ files a–h. Drawings are not rotated and piece colors are not exchanged. A mist
 explicit choice is still honored; BoardSnap does not correct it from the pieces
 or ask for confirmation. Unsupported image geometry/styles remain unsupported.
 
-Only `auto` calls `detect_orientation`; missing, unreadable or contradictory
-coordinates then keep the White-at-the-bottom convention. That low-level reader
-is unchanged. Invalid Python values, including non-strings, raise `ValueError`
+Only `auto` reads coordinates: legacy templates call `detect_orientation`, while
+the neural path calls `detect_digital_orientation` with local contrast and known
+coordinate layouts, without a user-selected profile. Missing, unreadable or
+contradictory clues retain the White-at-the-bottom convention. The original
+profile-specific reader is unchanged. Invalid Python values, including non-strings, raise `ValueError`
 before opening the file. The JSON result still contains only `piecePlacement`.
 
 ```bash

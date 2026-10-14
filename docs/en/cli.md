@@ -42,6 +42,22 @@ batch processing, stdin images, HTTP and Flutter integration are not provided.
 Relative paths refer to the current working directory, and installed assets work
 outside the repository. The command does not write previews or modify inputs.
 
+## Multi-style model configuration
+
+With the `ml` extra installed, set `BOARDSNAP_MODEL` to an absolute weights path
+once, then send only image and view:
+
+```bash
+export BOARDSNAP_MODEL="$PWD/.cache/neural-styles-v2/best.pt"
+boardsnap image.png --orientation black-bottom
+```
+
+`--model PATH` overrides the environment for a one-off run. An explicit `--profile`
+selects legacy templates and ignores that environment setting; it cannot be
+combined with `--model`. Without model configuration the legacy default remains.
+An invalid configured model returns `PROCESSING_FAILED`, never a template fallback.
+See the [style expansion guide](style-expansion.md) for measured scope and API use.
+
 ## Orientation option
 
 Use `--orientation white-bottom`, `--orientation black-bottom` or `--orientation auto`.
@@ -89,8 +105,8 @@ An error result contains no partial position, confidence or invented empty board
 
 ## Coverage and tests
 
-Select a [profile](profiles.md) using `--profile PROFILE_ID`; omission retains
-brown/cburnett. The three digital profiles are evaluated on a small corpus;
+Select legacy [templates](profiles.md) using `--profile PROFILE_ID`; without any
+model configuration, omission retains brown/cburnett. The three digital profiles are evaluated on a small corpus;
 the book profile is experimental with two known full-position failures.
 Unknown profile IDs are usage errors (exit 2). [Flutter transport](flutter-integration.md)
 is documented separately; the CLI does not start a server.

@@ -2,10 +2,24 @@
 
 **English** | [Español](../es/style-inventory.md) · [Overview](README.md)
 
+## Current neural expansion
+
+The current evidence is maintained in [multi-style recognition](style-expansion.md),
+including the CLI/model configuration, exact measured combinations and separate
+generalization results. The six initial designs are Lichess cburnett/Merida/Alpha
+and Chess.com Neo/Classic/Bases. The next bounded group adds Lichess Staunty and
+Chess.com Alpha, including wood textures and held-out blue/piece pairs. Native
+Android/iOS remain pending; controlled layout crops are not native-app evidence.
+The tables below retain the **historical v1 inventory**, including its original
+template-only E labels, and must not override the newer measured neural reports.
+
+## Historical v1 inventory
+
 The [first clean classifier corpus](first-clean-corpus.md) contains 3600 verified
 captures: six piece sets on three backgrounds each, both orientations and two
 viewport sizes. Its 80 positions retain the frozen training/validation/evaluation
-split. The separate 36-image style check is excluded. Model training remains pending.
+split. The separate 36-image style check is excluded. Training and subsequent
+overlay extensions are recorded in the newer guides linked above.
 
 Inventory v1, reviewed **2026-10-07**. This is the finite expansion backlog for
 Lichess and Chess.com. Book diagrams are deferred. Adding a row records work to

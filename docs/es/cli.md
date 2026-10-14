@@ -44,6 +44,22 @@ Flutter. Las rutas relativas parten del directorio de trabajo actual y los
 recursos instalados funcionan fuera del repositorio. El comando no guarda vistas
 previas ni modifica las entradas.
 
+## Configuración del modelo multitema
+
+Con el extra `ml` instalado, configura una ruta absoluta al modelo una vez y envía
+solo imagen y vista:
+
+```bash
+export BOARDSNAP_MODEL="$PWD/.cache/neural-styles-v2/best.pt"
+boardsnap imagen.png --orientation black-bottom
+```
+
+`--model RUTA` prevalece sobre el entorno para una ejecución puntual. Un `--profile`
+explícito selecciona las plantillas e ignora esa variable; no se puede combinar
+con `--model`. Sin modelo configurado se conserva el comportamiento anterior.
+Un modelo configurado inválido devuelve `PROCESSING_FAILED`, sin volver a plantillas.
+Consulta la [ampliación de estilos](style-expansion.md) para el alcance medido y la API.
+
 ## Opción de orientación
 
 Usa `--orientation white-bottom`, `--orientation black-bottom` o `--orientation auto`.
@@ -91,8 +107,8 @@ Un error no incluye posiciones parciales, confianza ni un tablero vacío inventa
 
 ## Cobertura y pruebas
 
-Selecciona un [perfil](profiles.md) con `--profile ID`; si se omite, se mantiene
-brown/cburnett. Los tres perfiles digitales tienen evaluación sobre un corpus
+Selecciona [plantillas](profiles.md) con `--profile ID`; si se omite y no hay modelo
+configurado, se mantiene brown/cburnett. Los tres perfiles digitales tienen evaluación sobre un corpus
 pequeño; el perfil de libros es experimental, con dos posiciones completas
 fallidas. Un ID desconocido es error de uso (salida 2). El [transporte Flutter](flutter-integration.md)
 se documenta aparte; la CLI no inicia un servidor.

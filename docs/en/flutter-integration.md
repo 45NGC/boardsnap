@@ -12,7 +12,10 @@ an installed desktop Python command as its integration mechanism.
 ## Responsibilities and proposed request
 
 A separately implemented backend calls
-`recognize_image(temporary_path, profile=profile_id, orientation=orientation)`. It owns temporary uploads,
+`recognize_image(temporary_path, orientation=orientation)` with a model configured
+on the server via `BOARDSNAP_MODEL`, or reuses `NeuralClassifier(model_path)`.
+Model/version selection is deployment configuration, not a theme choice in Flutter.
+It owns temporary uploads,
 request limits, concurrency and response serialization. The core remains
 independent of its web framework. Flutter owns image selection, HTTP transport,
 the board editor and all remaining game state.
@@ -20,8 +23,6 @@ the board editor and all remaining game state.
 Proposed endpoint: `POST /v1/recognize`, multipart form data:
 
 - `image`: one PNG/JPEG file, sent as bytes; do not send a local device path.
-- `profile`: one of the [evaluated profile IDs](profiles.md). Omission uses
-  `lichess-cburnett-brown-v1`, matching the CLI. Unknown IDs are request errors.
 - `orientation`: `white-bottom`, `black-bottom` or `auto` (default). Flutter can
   ask which side is at the bottom after image selection and send that choice.
   It describes the image view, not the side to move. Explicit values override
@@ -40,7 +41,7 @@ Suggested mappings for the future adapter:
 
 | HTTP status | Code | Meaning |
 | --- | --- | --- |
-| 400 | `INVALID_REQUEST` | Missing/multiple files, unknown profile or invalid orientation; adapter validation. |
+| 400 | `INVALID_REQUEST` | Missing/multiple files or invalid orientation; adapter validation. |
 | 413 | `PAYLOAD_TOO_LARGE` | Upload exceeds the configured byte limit; adapter validation. |
 | 422 | `INVALID_IMAGE`, `UNSUPPORTED_IMAGE`, `BOARD_NOT_FOUND` | Core cannot process the supplied image. |
 | 500 | `INPUT_READ_ERROR`, `PROCESSING_FAILED` | Server could not read its temporary file or process the image. |
@@ -69,7 +70,7 @@ FEN are added. Only `auto` falls back to White at the bottom when readable clues
    configuration. Authentication/rate limits and hosting belong to deployment design.
 5. Test on Android, iOS and a real browser: known images, invalid upload, no board,
    timeout/offline, server failure, CORS and unchanged editor state on failure.
-   Verify that the exact placement matches the Python CLI for the same profile.
+   Verify that the exact placement matches the Python CLI for the same model and view.
 
 This approach requires connectivity, sends images to a server and introduces
 hosting/latency costs. If offline recognition becomes a requirement, revisit the

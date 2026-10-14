@@ -1,15 +1,19 @@
 # BoardSnap
 
+El [flujo multitema](style-expansion.md) configura el modelo neuronal una vez y
+acepta imagen + orientación desde el pipeline y la CLI. Amplía el piloto con
+piezas/texturas nuevas, combinaciones reservadas y regresiones desglosadas.
+
 La [ampliación con marcas sencillas](simple-marks.md) incorpora resaltados,
 círculos/puntos controlados, una red entrenada y comparada e importación de partidas
 externas. Las capturas reales aún necesitan posiciones verificadas; las plantillas
-siguen siendo el backend predeterminado.
+se conservan como opción anterior cuando no hay modelo configurado.
 La [ampliación con flechas](arrows.md) añade trayectorias rectas y de caballo,
 cruces y combinaciones, conservando las imágenes anteriores como controles.
 
 [English](../en/README.md) | **Español**
 
-`boardsnap` será un motor Python que recibe una imagen de un tablero de ajedrez
+`boardsnap` es un motor Python que recibe una imagen de un tablero de ajedrez
 digital o un diagrama de libro y devuelve una única colocación de piezas para
 la aplicación Flutter **chess-scanner**.
 

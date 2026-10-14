@@ -12,7 +12,10 @@ no puede integrar el motor ejecutando el comando Python instalado en tu ordenado
 ## Responsabilidades y petición propuesta
 
 Un backend independiente llamaría a
-`recognize_image(temporary_path, profile=profile_id, orientation=orientation)`. Gestionaría los archivos
+`recognize_image(temporary_path, orientation=orientation)` con el modelo configurado
+en el servidor mediante `BOARDSNAP_MODEL`, o reutilizaría `NeuralClassifier(model_path)`.
+El modelo y su versión son configuración del despliegue, no una elección de tema en Flutter.
+Gestionaría los archivos
 temporales, límites, concurrencia y serialización. El núcleo no conocería su
 framework web. Flutter se encarga de seleccionar la imagen, enviarla, mostrar el
 editor y gestionar el resto del estado de la partida.
@@ -20,8 +23,6 @@ editor y gestionar el resto del estado de la partida.
 Endpoint propuesto: `POST /v1/recognize`, formulario multipart:
 
 - `image`: un archivo PNG/JPEG enviado como bytes, no una ruta local del dispositivo.
-- `profile`: uno de los [perfiles evaluados](profiles.md). Si se omite se utiliza
-  `lichess-cburnett-brown-v1`, igual que en la CLI. Un ID desconocido es un error.
 - `orientation`: `white-bottom`, `black-bottom` o `auto` (predeterminado). Flutter
   puede preguntar qué lado está abajo después de elegir la imagen y enviar la
   elección. Describe la vista, no el turno. Los valores explícitos prevalecen
@@ -40,7 +41,7 @@ Correspondencias sugeridas para el adaptador futuro:
 
 | Estado HTTP | Código | Significado |
 | --- | --- | --- |
-| 400 | `INVALID_REQUEST` | Falta el archivo, llegan varios, el perfil es desconocido o la orientación es inválida; validación del adaptador. |
+| 400 | `INVALID_REQUEST` | Falta el archivo, llegan varios o la orientación es inválida; validación del adaptador. |
 | 413 | `PAYLOAD_TOO_LARGE` | Se supera el límite de bytes configurado; validación del adaptador. |
 | 422 | `INVALID_IMAGE`, `UNSUPPORTED_IMAGE`, `BOARD_NOT_FOUND` | El núcleo no puede procesar la imagen enviada. |
 | 500 | `INPUT_READ_ERROR`, `PROCESSING_FAILED` | El servidor no puede leer su archivo temporal o procesar la imagen. |
@@ -71,7 +72,7 @@ la convención de blancas abajo.
 5. Probar Android, iOS y un navegador real: posiciones conocidas, archivos
    inválidos, ausencia de tablero, desconexión, timeout, fallo de servidor y CORS.
    Un fallo no debe modificar el editor. La posición debe coincidir exactamente
-   con la CLI para la misma imagen y perfil.
+   con la CLI para la misma imagen, modelo y orientación.
 
 Esta opción necesita conexión, envía imágenes a un servidor y tiene costes de
 alojamiento y latencia. Si se requiere funcionamiento sin conexión, habrá que

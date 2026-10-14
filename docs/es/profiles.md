@@ -2,10 +2,13 @@
 
 [English](../en/profiles.md) · [Resumen](README.md)
 
+Esta página describe el flujo anterior de plantillas. El [flujo neuronal multitema](style-expansion.md)
+usa un modelo configurado y no necesita seleccionar perfil.
+
 Cada perfil especifica el fondo, las plantillas de piezas y las coordenadas.
 La selección es **explícita**: no se reconoce automáticamente el estilo.
-Las llamadas existentes y `boardsnap imagen.png` siguen utilizando
-`lichess-cburnett-brown-v1`. Otro diseño de piezas sobre un fondo compatible puede
+Las llamadas existentes y `boardsnap imagen.png` utilizan
+`lichess-cburnett-brown-v1` solo cuando no hay modelo configurado. Otro diseño de piezas sobre un fondo compatible puede
 producir piezas incorrectas; las plantillas no detectan estilos desconocidos.
 La salida sigue siendo solo `piecePlacement` o un error estructurado.
 

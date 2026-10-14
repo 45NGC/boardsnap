@@ -35,6 +35,10 @@ def read_index(root, mode="verified"):
     groups, positions, variants = {}, {}, set()
     for row in rows:
         split = row["split"]
+        if metadata.get("heldOutCombinations"):
+            combination = row["style"]["combination"]
+            if combination in metadata["heldOutCombinations"] and split != "evaluation":
+                raise ValueError("Reserved style combinations cannot enter training or validation.")
         if split not in ("training", "validation", "evaluation"):
             raise ValueError("Invalid split.")
         for seen, key in ((groups, "groupId"), (positions, "positionId")):

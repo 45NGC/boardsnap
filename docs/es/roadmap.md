@@ -1,5 +1,17 @@
 # Hoja de ruta incremental
 
+El paso 9 añade [configuración multitema y una ampliación delimitada](style-expansion.md):
+Staunty/Alpha, texturas de madera, parejas azul/piezas reservadas, variantes de
+distribución controladas y regresiones por dimensión. Las llamadas usan imagen +
+orientación tras configurar el modelo. El paso 10 sigue siendo un hito separado
+de aceptación y distribución; las apps nativas y nuevas interfaces reales necesitan
+capturas propias.
+El candidato medido acierta 3454/3456 tableros con límites verificados y 3450/3456
+con detección. Antes de la aceptación hay que abordar con datos de desarrollo dos
+regresiones anteriores de Neo con flechas y cuatro fallos al detectar recortes de
+Staunty. Se conserva el modelo anterior; el nuevo es un candidato opcional, no un
+sustituto libre de regresiones.
+
 El paso 8 incorpora [flechas y superposiciones combinadas](arrows.md): dibujo sobre
 la imagen completa, etiquetas de geometría/ocupación, controles emparejados y
 selección por validación que prioriza conservar el acierto limpio y con marcas

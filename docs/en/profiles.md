@@ -2,9 +2,12 @@
 
 [Spanish](../es/profiles.md) · [Overview](README.md)
 
+This page documents the legacy template path. The [multi-style neural path](style-expansion.md)
+uses a configured model and needs no profile selection.
+
 A profile specifies board appearance, piece templates and coordinate layout.
 Selection is **explicit**, not automatic style recognition. Existing calls and
-`boardsnap image.png` still select `lichess-cburnett-brown-v1`. A wrong piece style
+`boardsnap image.png` select `lichess-cburnett-brown-v1` only when no model is configured. A wrong piece style
 on a supported background can produce wrong pieces; templates are not an
 unknown-style detector. Output remains only `piecePlacement` or a structured error.
 

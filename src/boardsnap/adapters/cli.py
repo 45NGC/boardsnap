@@ -22,8 +22,10 @@ def main(argv: list[str] | None = None) -> int:
     """
     parser = argparse.ArgumentParser(prog="boardsnap", description="Recognize a chessboard image as piece placement JSON.")
     parser.add_argument("image", help="Path to a PNG or JPEG image.")
-    parser.add_argument("--profile", choices=tuple(PROFILES),
-                        help="Recognition profile (default: lichess-cburnett-brown-v1; book profile is experimental).")
+    backend = parser.add_mutually_exclusive_group()
+    backend.add_argument("--profile", choices=tuple(PROFILES),
+                        help="Use legacy templates for this profile, overriding BOARDSNAP_MODEL.")
+    backend.add_argument("--model", help="Multi-style neural model path (otherwise BOARDSNAP_MODEL; unconfigured legacy fallback).")
     parser.add_argument("--orientation", choices=("white-bottom", "black-bottom", "auto"), default="auto",
                         help="Image view, not side to move; explicit values override coordinates (default: auto).")
     args = parser.parse_args(argv)
@@ -31,8 +33,12 @@ def main(argv: list[str] | None = None) -> int:
     exit_code = 0
     with redirect_stdout(sys.stderr):
         try:
-            result = (recognize_image(args.image, profile=args.profile, orientation=args.orientation) if args.profile
-                      else recognize_image(args.image, orientation=args.orientation))
+            options = {"orientation": args.orientation}
+            if args.profile:
+                options["profile"] = args.profile
+            if args.model is not None:
+                options["model"] = args.model
+            result = recognize_image(args.image, **options)
         except (ImageInputError, BoardDetectionError, ClassificationError) as error:
             result = error.to_dict()
             exit_code = 1

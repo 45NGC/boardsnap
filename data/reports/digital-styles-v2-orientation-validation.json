@@ -1,0 +1,204 @@
+{
+  "split": "validation",
+  "scope": "new styles, verified bounds; optional auto only; explicit view bypasses this reader",
+  "images": 648,
+  "correctAutoViews": 604,
+  "groups": {
+    "lichess-brown-staunty/lichess-editor/clean": {
+      "images": 30,
+      "correctAutoViews": 30
+    },
+    "lichess-brown-staunty/lichess-editor/last-move": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "lichess-brown-staunty/lichess-editor/selection": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "lichess-brown-staunty/lichess-editor/check": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "lichess-brown-staunty/lichess-editor/circle": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "lichess-brown-staunty/lichess-editor/move-dot": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "lichess-brown-staunty/lichess-editor/arrow-empty": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "lichess-brown-staunty/lichess-editor/arrow-piece": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "lichess-brown-staunty/lichess-editor/arrow-crossed": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "lichess-brown-staunty/lichess-editor/arrow-combined": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "lichess-brown-staunty/board-crop-384/clean": {
+      "images": 12,
+      "correctAutoViews": 6
+    },
+    "lichess-brown-staunty/synthetic-margins-256/clean": {
+      "images": 12,
+      "correctAutoViews": 6
+    },
+    "lichess-wood4-staunty/lichess-editor/clean": {
+      "images": 30,
+      "correctAutoViews": 27
+    },
+    "lichess-wood4-staunty/lichess-editor/last-move": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "lichess-wood4-staunty/lichess-editor/selection": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "lichess-wood4-staunty/lichess-editor/check": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "lichess-wood4-staunty/lichess-editor/circle": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "lichess-wood4-staunty/lichess-editor/move-dot": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "lichess-wood4-staunty/lichess-editor/arrow-empty": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "lichess-wood4-staunty/lichess-editor/arrow-piece": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "lichess-wood4-staunty/lichess-editor/arrow-crossed": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "lichess-wood4-staunty/lichess-editor/arrow-combined": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "lichess-wood4-staunty/board-crop-384/clean": {
+      "images": 12,
+      "correctAutoViews": 9
+    },
+    "lichess-wood4-staunty/synthetic-margins-256/clean": {
+      "images": 12,
+      "correctAutoViews": 9
+    },
+    "chesscom-green-alpha/chesscom-analysis/clean": {
+      "images": 30,
+      "correctAutoViews": 30
+    },
+    "chesscom-green-alpha/chesscom-analysis/last-move": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "chesscom-green-alpha/chesscom-analysis/selection": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "chesscom-green-alpha/chesscom-analysis/check": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "chesscom-green-alpha/chesscom-analysis/circle": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "chesscom-green-alpha/chesscom-analysis/move-dot": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "chesscom-green-alpha/chesscom-analysis/arrow-empty": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "chesscom-green-alpha/chesscom-analysis/arrow-piece": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "chesscom-green-alpha/chesscom-analysis/arrow-crossed": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "chesscom-green-alpha/chesscom-analysis/arrow-combined": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "chesscom-green-alpha/board-crop-384/clean": {
+      "images": 12,
+      "correctAutoViews": 6
+    },
+    "chesscom-green-alpha/synthetic-margins-256/clean": {
+      "images": 12,
+      "correctAutoViews": 6
+    },
+    "chesscom-wood-alpha/chesscom-analysis/clean": {
+      "images": 30,
+      "correctAutoViews": 30
+    },
+    "chesscom-wood-alpha/chesscom-analysis/last-move": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "chesscom-wood-alpha/chesscom-analysis/selection": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "chesscom-wood-alpha/chesscom-analysis/check": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "chesscom-wood-alpha/chesscom-analysis/circle": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "chesscom-wood-alpha/chesscom-analysis/move-dot": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "chesscom-wood-alpha/chesscom-analysis/arrow-empty": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "chesscom-wood-alpha/chesscom-analysis/arrow-piece": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "chesscom-wood-alpha/chesscom-analysis/arrow-crossed": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "chesscom-wood-alpha/chesscom-analysis/arrow-combined": {
+      "images": 12,
+      "correctAutoViews": 12
+    },
+    "chesscom-wood-alpha/board-crop-384/clean": {
+      "images": 12,
+      "correctAutoViews": 10
+    },
+    "chesscom-wood-alpha/synthetic-margins-256/clean": {
+      "images": 12,
+      "correctAutoViews": 3
+    }
+  },
+  "sourceCaptureReportSha256": "71c82f109750cfa15f0e0ad98bc2bbbb2ba73ea6dcafe8883556017322c5a97e",
+  "orientationCodeSha256": "39d0297413484a1980f6564f3baea140af1278b2dbaed1a5a8d62903cf0c1926",
+  "normalizationCodeSha256": "51ca3052645be05d05291a2653fd8c0d808ace12ad5c1f896a06e00b061741c7",
+  "explicitOrientationBypassesReader": true
+}

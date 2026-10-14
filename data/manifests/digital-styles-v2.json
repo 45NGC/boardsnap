@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "digital-styles-v2",
+  "heldOutCombinations": [
+    "lichess-blue-staunty",
+    "chesscom-blue-alpha"
+  ],
+  "policy": "Held-out combinations only use original evaluation positions. No training/validation images of these pairs are collected.",
+  "layouts": [
+    "captured-desktop",
+    "board-crop-384",
+    "synthetic-margins-256"
+  ],
+  "previousDataset": "digital-arrow-squares-v1",
+  "nativeMobileEvaluated": false
+}

@@ -2,7 +2,7 @@
 
 [English](../en/orientation.md) | **Español** · [Inicio](README.md)
 
-Esta guía describe la implementación original del perfil brown. Consulta los [perfiles evaluados](profiles.md) para los nuevos estilos digitales, el experimento de libros y la cobertura actual.
+Esta guía describe la implementación original del perfil brown. Consulta los [perfiles evaluados](profiles.md) para las plantillas y el [reconocimiento multitema](style-expansion.md) para el flujo neuronal actual y sus límites de orientación medidos.
 
 `detect_orientation(board)` lee las coordenadas en los píxeles del origen a
 resolución completa conservado por `normalize_board`. Devuelve `"white-bottom"`
@@ -11,7 +11,7 @@ de 8 × 8 en orden visual al orden de ajedrez: filas 8 a 1, columnas a a h.
 
 ## Orientación explícita de entrada
 
-`recognize_image(path, *, profile=..., orientation="auto")` acepta exactamente
+`recognize_image(path, *, profile=None, model=None, orientation="auto")` acepta exactamente
 `"white-bottom"`, `"black-bottom"` o `"auto"`. Describe la vista del tablero,
 **no quién tiene el turno**. El valor predeterminado `auto` conserva las llamadas existentes.
 
@@ -30,8 +30,10 @@ colores de piezas. Una elección explícita equivocada también se respeta; Boar
 no la corrige según las piezas ni solicita confirmación. No amplía el soporte de
 geometrías ni de estilos de imagen.
 
-Solo `auto` llama a `detect_orientation`; sin coordenadas legibles y coherentes
-mantiene la convención de blancas abajo. Ese lector de bajo nivel no cambia.
+Solo `auto` lee coordenadas: las plantillas llaman a `detect_orientation` y el
+flujo neuronal a `detect_digital_orientation`, con contraste local y distribuciones
+conocidas, sin pedir un perfil al usuario. Sin pistas legibles y coherentes se
+mantiene la convención de blancas abajo. El lector original de cada perfil no cambia.
 Los valores Python inválidos, incluidos los que no sean cadenas, generan
 `ValueError` antes de abrir el archivo. El JSON sigue conteniendo solo `piecePlacement`.
 

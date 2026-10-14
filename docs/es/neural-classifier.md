@@ -106,9 +106,10 @@ print(result)  # únicamente {"piecePlacement": "..."}
 ```
 
 Este método lee píxeles, ejecuta detección/normalización/segmentación y ordena las
-predicciones según la vista indicada. Admite `white-bottom` y `black-bottom`;
-no incorpora lectura automática de coordenadas. La API existente de plantillas
-conserva `auto`. `predict_ids` recibe lotes uint8 y `classify_squares` una matriz
+predicciones según la vista indicada. La comparación original utilizó explícitamente
+`white-bottom` y `black-bottom`. El paso 9 también admite `auto` con
+un [lector por distribución](style-expansion.md), con limitaciones medidas;
+se recomienda indicar la vista. `predict_ids` recibe lotes uint8 y `classify_squares` una matriz
 8×8 de recortes Pillow. Al reconocer no se consultan etiquetas de entrenamiento,
 manifiestos de posiciones ni informes de evaluación.
 
