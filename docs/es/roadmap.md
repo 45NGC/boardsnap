@@ -1,5 +1,10 @@
 # Hoja de ruta incremental
 
+Preparación actual: [aceptación digital](digital-release.md). Los criterios, el
+plan reservado y las comprobaciones de instalación están preparados. Quedan seis
+fallos conocidos antes de ejecutar la evaluación final. Los datos de evaluación
+ya consultados son regresión, no una prueba final independiente.
+
 El paso 9 añade [configuración multitema y una ampliación delimitada](style-expansion.md):
 Staunty/Alpha, texturas de madera, parejas azul/piezas reservadas, variantes de
 distribución controladas y regresiones por dimensión. Las llamadas usan imagen +

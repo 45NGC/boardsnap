@@ -1,0 +1,71 @@
+{
+  "status": "blocked",
+  "ready": false,
+  "gates": [
+    {
+      "name": "new-regression-board-errors",
+      "actual": 2,
+      "threshold": 0,
+      "comparison": "<=",
+      "passed": false
+    },
+    {
+      "name": "unresolved-detection-misses",
+      "actual": 4,
+      "threshold": 0,
+      "comparison": "<=",
+      "passed": false
+    },
+    {
+      "name": "clean-install",
+      "passed": true
+    },
+    {
+      "name": "cpu-warm-samples",
+      "actual": 40,
+      "threshold": 40,
+      "comparison": ">=",
+      "passed": true
+    },
+    {
+      "name": "cpu-warm-p95-ms",
+      "actual": 168.0360397489494,
+      "threshold": 1000,
+      "comparison": "<=",
+      "passed": true
+    },
+    {
+      "name": "cpu-cold-ms",
+      "actual": 1379.942479001329,
+      "threshold": 5000,
+      "comparison": "<=",
+      "passed": true
+    },
+    {
+      "name": "cpu-peak-rss-mib",
+      "actual": 308.84765625,
+      "threshold": 1024,
+      "comparison": "<=",
+      "passed": true
+    }
+  ],
+  "finalEvaluationExecuted": false,
+  "reason": "Existing consulted images are regression evidence, never a fresh acceptance test.",
+  "policySha256": "4b39d05571f8fb778a1c279a76c434d6c1dba7a63ead6ed1909dcfb1c77d9b9f",
+  "modelSha256": "27c3f84c1d6dd87cbc0062472ccf87a979c99898fc360c80dc91877122373dfa",
+  "evidence": {
+    "regression": {
+      "path": "data/reports/neural-styles-v2-evaluation.json",
+      "sha256": "2dc933b415e61e427950db5e54d8191bd20558bd038037f81996cf2b35666963"
+    },
+    "benchmark": {
+      "path": "data/reports/digital-candidate-cpu-v1.json",
+      "sha256": "35b9873c869e3017f3d395d3611dd97fd853295f68ed8b14680da8034008619b"
+    },
+    "installation": {
+      "path": "data/reports/digital-clean-install-v1.json",
+      "sha256": "cca72b99edf0a1f4e01a4a82ace1dd7d95eed3eefba7e77c7904ea2ac35c5e5f"
+    }
+  },
+  "readinessCodeSha256": "b38763586d2f7cf3398103d485e38f80fb66c818b0e67822079fe9938d252e04"
+}

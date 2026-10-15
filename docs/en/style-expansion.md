@@ -197,3 +197,7 @@ python -m pytest tests/test_multistyle_runtime.py tests/test_style_expansion.py
 `collect_styles --audit-only` verifies an existing collection. Development
 measurements use `--split validation`; model choices must be frozen before the
 reserved comparison. Distribution and clean installation are part of step 10.
+
+Step 10 now provides the [digital acceptance protocol](digital-release.md), a
+verified local distribution and a reserved new plan. The known regressions above
+block final acceptance; these step 9 results remain regression evidence.

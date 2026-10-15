@@ -1,5 +1,10 @@
 # Incremental roadmap
 
+Current release preparation: [digital acceptance](digital-release.md). Criteria,
+reserved source plan and installation checks are ready; the candidate still has
+six known failures to resolve before final evaluation. Previously consulted
+evaluation images are regression data, not an independent final test.
+
 **English** | [Spanish](../es/roadmap.md) · [Overview](README.md)
 
 Step 9 adds [multi-style model configuration and a bounded expansion](style-expansion.md):

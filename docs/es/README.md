@@ -4,6 +4,10 @@ El [flujo multitema](style-expansion.md) configura el modelo neuronal una vez y
 acepta imagen + orientación desde el pipeline y la CLI. Amplía el piloto con
 piezas/texturas nuevas, combinaciones reservadas y regresiones desglosadas.
 
+La [guía de versión digital](digital-release.md) fija los criterios de aceptación,
+las fuentes reservadas, las mediciones de CPU y la instalación comprobada del
+paquete y modelo. Seis fallos conocidos bloquean todavía la evaluación final.
+
 La [ampliación con marcas sencillas](simple-marks.md) incorpora resaltados,
 círculos/puntos controlados, una red entrenada y comparada e importación de partidas
 externas. Las capturas reales aún necesitan posiciones verificadas; las plantillas
@@ -17,7 +21,7 @@ cruces y combinaciones, conservando las imágenes anteriores como controles.
 digital o un diagrama de libro y devuelve una única colocación de piezas para
 la aplicación Flutter **chess-scanner**.
 
-**Estado: flujo Python y CLI JSON con tres perfiles digitales evaluados.**
+**Estado: candidato neuronal multitema y tres perfiles digitales anteriores evaluados; aceptación digital final pendiente.**
 La [guía de perfiles](profiles.md) describe brown/cburnett, blue/cburnett y el
 estilo verde capturado de Chess.com. El perfil de libros es **experimental**:
 126/128 casillas reservadas correctas, pero 0/2 posiciones completas. Hay 65

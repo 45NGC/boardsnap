@@ -1,0 +1,7 @@
+{
+  "bundle": ".cache/releases/digital-preview-v1/model",
+  "manifestSha256": "2113d1cbb40556c9e21e05d007702fdfc14bf252e9bd9343c7535b34976df063",
+  "modelSha256": "27c3f84c1d6dd87cbc0062472ccf87a979c99898fc360c80dc91877122373dfa",
+  "policySha256": "4b39d05571f8fb778a1c279a76c434d6c1dba7a63ead6ed1909dcfb1c77d9b9f",
+  "status": "candidate-not-accepted"
+}

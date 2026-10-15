@@ -6,6 +6,10 @@ The [multi-style workflow](style-expansion.md) configures a neural model once an
 accepts image + orientation through the Python pipeline and CLI. It expands the
 pilot to new pieces/textures with reserved combinations and stratified regressions.
 
+The [digital release guide](digital-release.md) records frozen acceptance criteria,
+reserved sources, CPU measurements and verified wheel/model installation.
+The candidate remains blocked by six known failures; final evaluation has not run.
+
 The [simple-mark extension](simple-marks.md) now provides controlled highlights,
 circles/dots, a trained model comparison and external-game imports. Real-use
 classification labels still require review; templates remain the unconfigured legacy default.
@@ -16,7 +20,7 @@ combinations, with the earlier clean/simple images retained as regression contro
 chessboard or a book diagram and returns a single piece placement to the
 Flutter application **chess-scanner**.
 
-**Status: the Python pipeline and JSON CLI support three evaluated digital profiles.**
+**Status: multi-style neural candidate plus three evaluated legacy digital profiles; final digital acceptance pending.**
 The [profile guide](profiles.md) describes brown/cburnett, blue/cburnett and the
 captured Chess.com green style. The book profile is **experimental**: 126/128
 reserved squares correct, but 0/2 full positions. The dataset has 65 images

@@ -199,3 +199,7 @@ python -m pytest tests/test_multistyle_runtime.py tests/test_style_expansion.py
 `collect_styles --audit-only` comprueba una colección existente. Las mediciones de
 desarrollo usan `--split validation`; las decisiones se fijan antes de consultar la
 evaluación reservada. La distribución e instalación desde cero corresponden al paso 10.
+
+El paso 10 ya prepara el [protocolo de aceptación digital](digital-release.md),
+una distribución local comprobada y un plan nuevo reservado. Los fallos conocidos
+anteriores bloquean la aceptación final; los resultados del paso 9 son regresión.
