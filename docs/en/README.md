@@ -11,8 +11,9 @@ reserved sources, CPU measurements and verified wheel/model installation.
 The [six exposed failures are corrected](regression-fixes.md) in the new candidate.
 Its policy and distribution checks must be updated before final evaluation.
 The [video/page development corpus](video-development.md) now records 15 images of
-13 positions: 5/15 full-pipeline successes, 13/15 with reviewed bounds. Detection,
-refinement and the remaining classification failures precede candidate freezing.
+13 positions: interior-grid localization improves detection to 11/15 and the full
+pipeline to 12/15, with unchanged v8 weights (13/15 with reviewed bounds). Remaining
+boundary and classification failures precede candidate freezing.
 
 The [simple-mark extension](simple-marks.md) now provides controlled highlights,
 circles/dots, a trained model comparison and external-game imports. Real-use

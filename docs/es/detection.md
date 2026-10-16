@@ -50,6 +50,31 @@ sigue conteniendo exclusivamente `piecePlacement`.
    estructurado si hay cero o varios. La búsqueda estructural se ejecuta incluso
    cuando funciona la paleta, para no ignorar un segundo tablero de otro color.
 
+### Búsqueda interior en fondos conectados
+
+El detector también busca líneas interiores regulares cuando los bordes del
+tablero se unen a gráficos del vídeo, texto o bordes de interfaz. Una apertura
+morfológica direccional elimina trazos cortos. Cada eje propone siete picos con
+separación regular y exige al menos seis coincidentes; las propuestas horizontal
+y vertical deben coincidir en tamaño. Después se aplican el refinado en píxeles
+originales y las comprobaciones estructurales al **rectángulo local**: unas líneas
+en otra zona de la imagen no bastan para aceptar el tablero.
+
+Esta vía exige además fondos alternos inmediatamente dentro de los cuatro bordes
+exteriores, para rechazar cuadrículas extrapoladas alrededor de casillas cortadas.
+Rechaza ventanas de ocho casillas cuyo patrón continúe visiblemente en una
+cuadrícula mayor. Conserva los rectángulos ya aceptados frente a propuestas
+interiores coincidentes. La alternativa de usar la imagen completa no cambia;
+su revisión sigue perteneciendo al siguiente paso de ajuste de límites.
+
+La búsqueda se limita a 80 picos y 256 intervalos propuestos por eje. Un fondo
+muy denso todavía puede ocultar el tablero. La detección no utiliza anotaciones,
+predicciones del modelo ni nombres de archivo. Consulta el [informe de desarrollo
+de vídeos](video-development.md) para ver mejoras y errores de límites pendientes.
+Las nuevas pruebas incluyen redes de líneas conectadas, texto, tamaños y posiciones,
+dos tableros, eliminación del tablero, tableros incompletos y otras dimensiones de
+cuadrícula. Se conservan todos los controles negativos anteriores.
+
 Las propuestas usan imágenes de hasta 1600 píxeles en el lado mayor; el refinado
 conserva coordenadas originales y muestrea filas para limitar la memoria. El
 mínimo de tablero original es 128 píxeles, pero además se exigen 24 píxeles a

@@ -77,7 +77,7 @@ def _has_checker_pattern(masks: list[np.ndarray], bounds: BoardBounds) -> bool:
     return False
 
 
-def _structural_pattern(pixels: np.ndarray, bounds: BoardBounds) -> bool:
+def _structural_pattern(pixels: np.ndarray, bounds: BoardBounds, *, complete_edges: bool = False) -> bool:
     """Check eight alternating rows/columns, allowing a minority of changed cells."""
     patch = pixels[bounds.y:bounds.y + bounds.height, bounds.x:bounds.x + bounds.width]
     if patch.size == 0:
@@ -103,6 +103,19 @@ def _structural_pattern(pixels: np.ndarray, bounds: BoardBounds) -> bool:
     correct = (own < contrast * .65) & (other - own > contrast * .2)
     if correct.sum() < 52 or min(correct.sum(axis=0).min(), correct.sum(axis=1).min()) < 5:
         return False
+    if complete_edges:
+        # Interior lines can extrapolate a plausible rectangle around a clipped
+        # board. Require alternating background immediately inside all four
+        # outer edges too, not just the median of each cell's entire rim.
+        for array in (patch, patch.transpose(1, 0, 2)):
+            for band, first in ((array[1:3], 0), (array[-3:-1], 1)):
+                samples = np.array([np.median(band[:, c * 32 + 3:c * 32 + 29].reshape(-1, 3), axis=0)
+                                    for c in range(8)])
+                expected = (np.arange(8) + first) % 2
+                own = np.linalg.norm(samples - centers[expected], axis=1)
+                other = np.linalg.norm(samples - centers[1 - expected], axis=1)
+                if np.count_nonzero((own < contrast * .65) & (other - own > contrast * .2)) < 6:
+                    return False
     # Expected grid boundaries must carry sustained changes in both directions.
     # Sampling either side of each boundary tolerates antialiasing and grid lines.
     for array in (patch, patch.transpose(1, 0, 2)):
@@ -169,6 +182,94 @@ def _refine_grid(pixels: np.ndarray, bounds: BoardBounds) -> BoardBounds | None:
     return BoardBounds(x, y, right - x, bottom - y)
 
 
+def _axis_grids(work: np.ndarray, minimum_side: float) -> list[tuple[int, int]]:
+    """Propose column extents from seven regularly spaced long RGB edges.
+
+    The other axis uses a transposed image. Directional opening removes short
+    piece/text strokes without requiring the board to be a separate connected
+    component. These are bounded proposals, not accepted board rectangles.
+    """
+    smooth = cv2.GaussianBlur(work, (3, 3), .6).astype(np.int16)
+    edges = (np.max(np.abs(np.diff(smooth, axis=1)), axis=2) > 12).astype(np.uint8)
+    length = max(5, round(minimum_side / 8))
+    lines = cv2.morphologyEx(edges, cv2.MORPH_OPEN, np.ones((length, 1), np.uint8))
+    strength = lines.sum(axis=0)
+    active = strength >= max(length, float(strength.max()) * .12)
+    starts = np.flatnonzero(active & ~np.r_[False, active[:-1]])
+    stops = np.flatnonzero(active & ~np.r_[active[1:], False]) + 1
+    peaks = np.array([a + int(np.argmax(strength[a:b])) + 1
+                      for a, b in zip(starts, stops)], dtype=int)
+    # Bound the search on cluttered screenshots. Each contiguous ridge supplies
+    # one peak, so blur/thick edges cannot count as several grid boundaries.
+    peaks = np.sort(peaks[np.argsort(strength[peaks - 1])[-80:]])
+    proposals = []
+    indices = np.arange(1, 8)
+    for i, left in enumerate(peaks):
+        for right in peaks[i + 1:]:
+            step = (right - left) / 6
+            if step * 8 < minimum_side or left - step < 0 or right + step > work.shape[1]:
+                continue
+            targets = left + step * np.arange(7)
+            nearest = np.abs(peaks[:, None] - targets).argmin(axis=0)
+            residual = np.abs(peaks[nearest] - targets)
+            inliers = residual <= max(1.5, step * .025)
+            if inliers.sum() < 6:
+                continue
+            slope, intercept = np.polyfit(indices[inliers], peaks[nearest][inliers], 1)
+            first, last = round(intercept), round(intercept + 8 * slope)
+            if first < 0 or last > work.shape[1]:
+                continue
+            score = (int(inliers.sum()), float(strength[peaks[nearest][inliers] - 1].mean()))
+            proposals.append((score, first, last))
+    result = []
+    for _, first, last in sorted(proposals, reverse=True):
+        if not any(max(abs(first - a), abs(last - b)) <= 3 for a, b in result):
+            result.append((first, last))
+            if len(result) == 256:
+                break
+    return result
+
+
+def _grid_continues(pixels: np.ndarray, bounds: BoardBounds) -> bool:
+    """Reject an eight-cell window inside a visibly larger checker grid."""
+    height, width = pixels.shape[:2]
+    dx, dy = round(bounds.width / 8), round(bounds.height / 8)
+    for x, y in ((bounds.x - dx, bounds.y), (bounds.x + dx, bounds.y),
+                 (bounds.x, bounds.y - dy), (bounds.x, bounds.y + dy)):
+        if x >= 0 and y >= 0 and x + bounds.width <= width and y + bounds.height <= height:
+            shifted = BoardBounds(x, y, bounds.width, bounds.height)
+            if _structural_pattern(pixels, shifted):
+                return True
+    return False
+
+
+def _interior_grid_candidates(
+    pixels: np.ndarray, work: np.ndarray, scale: float, known: list[BoardBounds],
+) -> list[BoardBounds]:
+    """Locate grids inside connected clutter, then validate local 8x8 evidence."""
+    minimum_side = max(24, _MIN_BOARD_SIDE * scale)
+    columns = _axis_grids(work, minimum_side)
+    rows = _axis_grids(work.transpose(1, 0, 2), minimum_side)
+    candidates = []
+    for left, right in columns:
+        for top, bottom in rows:
+            if abs((right - left) - (bottom - top)) > max(2, (right - left) * .01):
+                continue
+            x, y, r, b = (round(v / scale) for v in (left, top, right, bottom))
+            proposal = BoardBounds(x, y, r - x, b - y)
+            if any(max(abs(a - b) for a, b in zip(proposal.as_box(), old.as_box())) <= 3
+                   for old in known + candidates):
+                continue
+            refined = _refine_grid(pixels, proposal)
+            if (refined is not None
+                    and not any(max(abs(a - b) for a, b in zip(refined.as_box(), old.as_box())) <= 3
+                                for old in known + candidates)
+                    and _structural_pattern(pixels, refined, complete_edges=True)
+                    and not _grid_continues(pixels, refined)):
+                candidates.append(refined)
+    return candidates
+
+
 def _structural_candidates(pixels: np.ndarray) -> list[BoardBounds]:
     """Propose connected edge grids without fixed light/dark RGB values."""
     height, width = pixels.shape[:2]
@@ -192,6 +293,7 @@ def _structural_candidates(pixels: np.ndarray) -> list[BoardBounds]:
         refined = _refine_grid(pixels, proposal)
         if refined is not None and _structural_pattern(pixels, refined):
             candidates.append(refined)
+    candidates.extend(_interior_grid_candidates(pixels, work, scale, candidates))
     # A tight crop supplies another possible outer boundary when piece bases
     # or resampling pull the interior peak fit outside the image. Prefer fitted
     # grids: a small margin can also pass the pattern check, but is not a second

@@ -6,6 +6,7 @@ import os
 from pathlib import Path
 
 import pytest
+from PIL import Image, ImageDraw
 
 from boardsnap.detection import BoardDetectionError, detect_board
 from boardsnap.image_input import read_image
@@ -14,11 +15,10 @@ from tools.neural_data import digest
 
 DATA = json.loads(MANIFEST.read_text())
 SAMPLES = DATA['samples']
-NOT_FOUND = {'chesscom-video-001', 'chesscom-video-004', 'chesscom-video-005',
-             'chesscom-video-006', 'chesscom-video-009', 'chesscom-video-010',
-             'lichess-video-002', 'lichess-video-003', 'lichess-page-001'}
-IMPRECISE = {'chesscom-video-002'}
+NOT_FOUND = {'chesscom-video-009', 'chesscom-video-010'}
+IMPRECISE = {'chesscom-video-002', 'lichess-video-003'}
 REVIEWED_CLASSIFICATION_FAILURES = {'chesscom-video-009', 'chesscom-video-010'}
+PIPELINE_FAILURES = {'chesscom-video-002', 'chesscom-video-009', 'chesscom-video-010'}
 
 
 def cases_for(stage):
@@ -29,10 +29,10 @@ def cases_for(stage):
         if stage == 'detection' and row['id'] in NOT_FOUND:
             failure = (BoardDetectionError, 'Known localization failure in video/page background')
         elif stage == 'detection' and row['id'] in IMPRECISE:
-            failure = (AssertionError, 'Known full-frame fallback includes residual margins')
+            failure = (AssertionError, 'Known boundary error exceeds two pixels; refinement remains pending')
         elif stage == 'reviewed' and row['id'] in REVIEWED_CLASSIFICATION_FAILURES:
             failure = (AssertionError, 'Known recognition failure even with reviewed visible bounds')
-        elif stage == 'pipeline' and row['id'] in NOT_FOUND | IMPRECISE | REVIEWED_CLASSIFICATION_FAILURES:
+        elif stage == 'pipeline' and row['id'] in PIPELINE_FAILURES:
             failure = (AssertionError, 'Known full-pipeline development failure')
         marks = () if failure is None else pytest.mark.xfail(strict=True, raises=failure[0], reason=failure[1])
         cases.append(pytest.param(row, id=row['id'], marks=marks))
@@ -128,6 +128,33 @@ def test_detector_returns_reviewed_board_bounds(sample):
     with read_image(ROOT / sample['path']) as image:
         actual = detect_board(image).as_box()
     assert max(abs(a-b) for a, b in zip(actual, sample['box'], strict=True)) <= DATA['maxEdgeErrorPixels']
+
+
+@pytest.mark.integration
+@pytest.mark.parametrize('sample', SAMPLES, ids=lambda r: r['id'])
+def test_video_background_without_board_is_rejected(sample):
+    with read_image(ROOT / sample['path']) as image:
+        x, y, right, bottom = sample['box']
+        ImageDraw.Draw(image).rectangle((x - 5, y - 5, right + 5, bottom + 5), fill='#cccccc')
+        with pytest.raises(BoardDetectionError) as caught:
+            detect_board(image)
+    assert caught.value.code == 'BOARD_NOT_FOUND'
+
+
+@pytest.mark.integration
+@pytest.mark.parametrize('scale,offset', [(1, (0, 0)), (.75, (139, 47)),
+                                         (1.5, (19, 83)), (2, (211, 13))])
+def test_first_video_localizes_after_resizing_and_translation(scale, offset):
+    sample = SAMPLES[0]
+    with read_image(ROOT / sample['path']) as image:
+        resized = image.resize((round(image.width * scale), round(image.height * scale)),
+                               Image.Resampling.LANCZOS)
+    x, y = offset
+    canvas = Image.new('RGB', (resized.width + x + 37, resized.height + y + 21), '#555555')
+    canvas.paste(resized, offset)
+    expected = tuple(round(v * scale) + delta
+                     for v, delta in zip(sample['box'], (x, y, x, y)))
+    assert max(abs(a - b) for a, b in zip(detect_board(canvas).as_box(), expected)) <= 2
 
 
 @pytest.fixture(scope='module')

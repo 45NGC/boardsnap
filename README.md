@@ -16,9 +16,10 @@ misses. The [correction guide](docs/en/regression-fixes.md) records fixes for al
 using the updated detector and `.cache/neural-styles-v8/best.pt`.
 
 The [video/page development corpus](docs/en/video-development.md) now contains 15
-images of 13 positions, including the three original variants. v8 succeeds on 5/15
-through the full pipeline and 13/15 with reviewed bounds. These additional
-localization and recognition failures must be addressed before freezing the next
+images of 13 positions, including the three original variants. Interior-grid
+localization raises accurate detections from 5/15 to 11/15 and full-pipeline
+successes from 5/15 to 12/15, using unchanged v8 weights (13/15 with reviewed bounds).
+Remaining boundary and recognition failures must be addressed before freezing the next
 candidate; these are development cases, not independent acceptance data.
 
 The [digital acceptance guide](docs/en/digital-release.md) fixes the target catalogue,

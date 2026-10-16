@@ -48,6 +48,28 @@ The public recognition output remains exclusively `piecePlacement`.
    error for zero/multiple grids. The structural search always runs, even when a
    palette proposal succeeds, so a second board of another color is not ignored.
 
+### Interior search in connected backgrounds
+
+The detector also searches for regular interior lines when the board's edges
+connect to video graphics, text or interface borders. Directional morphological
+opening suppresses short strokes. Each axis proposes seven regularly spaced
+edge peaks, with at least six agreeing; horizontal/vertical proposals must agree
+on board size. The original-pixel fitter and structural checks above then validate
+the **local rectangle**, so unrelated lines elsewhere cannot establish a board.
+
+This path additionally requires alternating backgrounds immediately inside all
+four outer edges, rejecting grids extrapolated around clipped cells. It rejects
+eight-cell windows whose checker pattern visibly continues into a larger grid.
+Existing accepted rectangles take precedence over matching interior proposals;
+the whole-image fallback is unchanged and still needs the separate refinement work.
+
+The search is bounded to 80 peaks and 256 proposed extents per axis. Dense clutter
+can therefore still hide a board. No annotations, model predictions or filenames
+guide production detection. See the [video development report](video-development.md)
+for improvements and remaining boundary errors. New tests include connected line
+networks, text, sizes/locations, two boards, board removal, incomplete boards and
+other grid dimensions. They retain all earlier negative controls.
+
 Edge proposals use images at most 1600 pixels on the longest side; boundary
 refinement uses original coordinates and samples rows to bound working memory.
 The minimum original board side is 128 pixels; candidates also need at least

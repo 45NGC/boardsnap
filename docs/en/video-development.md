@@ -6,8 +6,8 @@ The current [v2 manifest](../../data/manifests/video-development-v2.json) contai
 **15 screenshots of 13 distinct positions**. The user confirmed that only
 `chesscom-video-001`, `002` and `003` share a position. There are ten Chess.com video
 images, three Lichess video images and one page image from each platform.
-This step registers cases and measures the unchanged v8 runtime; it does not fix
-localization, refine bounds or retrain the classifier.
+The original registration measured v8 without runtime changes. The subsequent
+localization step improves detection while retaining the same model and annotations.
 
 The original three PNGs remain in `data/development/video-cases-v1/`; the twelve
 additions are unchanged copies in `data/development/video-cases-v2/`. All original
@@ -74,7 +74,7 @@ IDs are renamed, reflected/rotated or colors swapped, and excludes known group I
 Unknown related positions cannot automatically be identified without provenance.
 The reserved final corpus has not been captured or evaluated.
 
-## Current v8 baseline
+## Historical v8 baseline before the localization change
 
 The [15-image report](../../data/reports/video-development-v2-baseline.json)
 records **5/15 accurate detections** and **5/15 complete-pipeline successes**.
@@ -102,6 +102,55 @@ need separate follow-up measurements.
 | chesscom-page-001 | Correct | Correct | Correct |
 | lichess-page-001 | Fails | Correct | Fails |
 
+## Step 2: localization inside complex backgrounds
+
+The [new report](../../data/reports/video-development-v2-localization.json) uses
+the same 15 images, labels and v8 weights. The detector now proposes rectangles
+from regular interior lines even when edge components merge with surrounding
+graphics. It keeps the existing geometric/alternation checks and additionally
+checks complete outer cells and rejects visible continuation into larger grids.
+See [detection](detection.md) for the algorithm and bounded-search limitations.
+
+| Measurement | Before | After |
+| --- | ---: | ---: |
+| Rectangles within 2 pixels | 5/15 | 11/15 |
+| Exact placement with reviewed bounds | 13/15 | 13/15 |
+| Exact placement through the full pipeline | 5/15 | 12/15 |
+
+`chesscom-video-001` is localized at `[35, 17, 435, 418]` (maximum edge error
+1 pixel) and returns the expected placement. 003 retains its exact rectangle and
+placement. 004, 005, 006, Lichess video 002 and the Lichess page also gain accurate
+localization and correct placement. All five previous working cases stay correct.
+
+Remaining work is explicit: 002 still uses the imprecise full-frame fallback;
+Lichess video 003 now returns the correct placement but has a 3-pixel rectangle
+error. Chess.com videos 009/010 still fail localization and also fail classification
+with reviewed bounds. These are separate geometry/classification follow-ups,
+not reasons to change annotations to match predictions. Strict expected failures
+now track those four rectangle cases, two reviewed-bound classification cases,
+and three full-pipeline cases.
+
+The [older detection corpus recheck](../../data/reports/digital-detection-v3-localization-regression.json)
+retains all 28 rectangles and rejects all 28 board-removal negatives. Tests also
+reject the 15 video/page backgrounds after removing their boards, test resized
+and translated copies of 001, and exercise connected synthetic backgrounds with
+text, multiple boards, other grid sizes and incomplete boards. These controls do
+not establish a zero false-positive rate on arbitrary future screenshots.
+
+All reports remain development/regression evidence. No final holdout was opened,
+no classifier was retrained, and the public recognition JSON is unchanged.
+
+The complete test suite with the local v8 artifact passes **1490 tests**, with
+36 optional browser tests skipped and 11 expected failures (the nine development
+checks listed above and two experimental book-diagram cases).
+
+The [complete v8 regression recheck](../../data/reports/neural-styles-v8-localization-regression.json)
+preserves **3456/3456 exact boards and 221184/221184 correct squares**, with both
+verified and detected bounds. All 3456 rectangles remain within two pixels.
+These are variants of 12 previously consulted source positions, not independent
+final evidence. Dataset/model hashes and all aggregate candidate metrics match
+the historical v8 report; the new report records the updated detector hash.
+
 ## Reproduce and extend
 
 The default manifest is now v2. For the original three cases, explicitly pass
@@ -112,6 +161,13 @@ python -m tools.development_cases --output .cache/video-detection.json
 python -m tools.development_cases --model .cache/neural-styles-v8/best.pt --output .cache/video-v8.json
 python -m pytest tests/test_video_development.py
 BOARDSNAP_TEST_MODEL=.cache/neural-styles-v8/best.pt python -m pytest tests/test_video_development.py
+# Connected-background synthetic controls and the complete suite
+python -m pytest tests/test_detection_clutter.py
+BOARDSNAP_TEST_MODEL=.cache/neural-styles-v8/best.pt python -m pytest
+# View the fixed 001 rectangle and square crops (local ignored output)
+python -m tools.preview_detection data/development/video-cases-v1/chesscom-video-001.png --output-dir .cache/localization-step2/preview --squares
+# Recheck the already consulted recognition corpus with unchanged models
+python -m tools.evaluate_marks --dataset .cache/digital-style-squares-v2 --baseline .cache/neural-arrows-v1/best.pt --candidate .cache/neural-styles-v8/best.pt --baseline-name arrowBaseline --candidate-name styleCandidate --split evaluation --regression --output .cache/localization-step2/corpus-recheck.json
 ```
 
 The evaluator exits **1 while any measured case fails**. Without `--model` it

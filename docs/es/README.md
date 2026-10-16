@@ -10,9 +10,9 @@ paquete y modelo. Los [seis fallos conocidos están corregidos](regression-fixes
 en el nuevo candidato; falta actualizar su política y distribución antes de la
 evaluación final.
 El [corpus de desarrollo de vídeos/páginas](video-development.md) registra ahora
-15 imágenes de 13 posiciones: 5/15 aciertos del recorrido completo y 13/15 con
-límites revisados. Faltan detección, ajuste de límites y los errores restantes
-de clasificación antes de fijar el candidato.
+15 imágenes de 13 posiciones: la búsqueda de cuadrícula interior mejora la detección
+a 11/15 y el recorrido completo a 12/15, con los mismos pesos v8 (13/15 con límites
+revisados). Quedan errores de límites y clasificación antes de fijar el candidato.
 
 La [ampliación con marcas sencillas](simple-marks.md) incorpora resaltados,
 círculos/puntos controlados, una red entrenada y comparada e importación de partidas

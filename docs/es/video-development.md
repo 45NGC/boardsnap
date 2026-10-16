@@ -6,8 +6,8 @@ El [manifiesto v2](../../data/manifests/video-development-v2.json) contiene
 **15 capturas de 13 posiciones distintas**. El usuario confirmó que únicamente
 `chesscom-video-001`, `002` y `003` comparten posición. Hay diez imágenes de vídeos
 de Chess.com, tres de vídeos de Lichess y una de página de cada plataforma.
-Este paso registra casos y mide el funcionamiento actual de v8; no corrige la
-localización, no ajusta los límites ni reentrena el clasificador.
+El registro inicial midió v8 sin cambios en el motor. El paso posterior de
+localización mejora la detección conservando el mismo modelo y las anotaciones.
 
 Los tres PNG originales se conservan en `data/development/video-cases-v1/`; las
 doce incorporaciones son copias intactas en `data/development/video-cases-v2/`.
@@ -77,7 +77,7 @@ renombren, reflejen, giren o intercambien colores, y excluye los grupos conocido
 No se pueden identificar automáticamente posiciones relacionadas desconocidas sin
 su procedencia. El corpus final reservado no se ha capturado ni evaluado.
 
-## Referencia actual de v8
+## Referencia histórica de v8 antes del cambio de localización
 
 El [informe de 15 imágenes](../../data/reports/video-development-v2-baseline.json)
 registra **5/15 detecciones precisas** y **5/15 aciertos del recorrido completo**.
@@ -105,6 +105,60 @@ medir por separado geometría/remuestreo y robustez de clasificación en los sig
 | chesscom-page-001 | Correcto | Correcto | Correcto |
 | lichess-page-001 | Falla | Correcto | Falla |
 
+## Paso 2: localización dentro de fondos complejos
+
+El [nuevo informe](../../data/reports/video-development-v2-localization.json) usa
+las mismas 15 imágenes, etiquetas y pesos v8. El detector ahora propone rectángulos
+a partir de líneas interiores regulares aunque los bordes se unan al fondo.
+Conserva las comprobaciones geométricas y de alternancia, y añade controles de
+casillas exteriores completas y de continuación visible hacia cuadrículas mayores.
+Consulta [detección](detection.md) para el algoritmo y sus límites de búsqueda.
+
+| Medición | Antes | Después |
+| --- | ---: | ---: |
+| Rectángulos con error máximo de 2 píxeles | 5/15 | 11/15 |
+| Colocación exacta con límites revisados | 13/15 | 13/15 |
+| Colocación exacta mediante el recorrido completo | 5/15 | 12/15 |
+
+`chesscom-video-001` se localiza en `[35, 17, 435, 418]` (error máximo de 1 píxel)
+y devuelve la colocación esperada. La 003 conserva su rectángulo y colocación
+exactos. También pasan a localizarse correctamente 004, 005, 006, Lichess vídeo 002
+y la página de Lichess, con colocaciones correctas. Se mantienen los cinco casos
+que ya funcionaban.
+
+Quedan pendientes concretos: la 002 sigue usando la alternativa imprecisa de
+imagen completa; Lichess vídeo 003 devuelve ya la posición correcta, pero tiene
+un error de 3 píxeles en el rectángulo. Chess.com vídeos 009/010 siguen fallando en
+localización y también en clasificación con límites revisados. Son trabajos
+posteriores de geometría y clasificación; no se cambian las anotaciones para
+adaptarlas a las predicciones. Las pruebas con fallo esperado estricto registran
+esos cuatro casos de rectángulo, dos de clasificación con límites revisados y tres
+del recorrido completo.
+
+La [repetición del corpus anterior de detección](../../data/reports/digital-detection-v3-localization-regression.json)
+conserva los 28 rectángulos y rechaza los 28 negativos con tablero eliminado.
+Las pruebas también rechazan los 15 fondos de vídeos/páginas tras retirar sus
+tableros, comprueban copias de la 001 redimensionadas y trasladadas, y usan fondos
+sintéticos conectados con texto, varios tableros, otras dimensiones y tableros
+incompletos. Estos controles no demuestran ausencia de falsos positivos en
+cualquier captura futura.
+
+Todos los informes siguen siendo pruebas de desarrollo/regresión. No se ha
+consultado el conjunto final reservado ni reentrenado el clasificador. El JSON
+público de reconocimiento no cambia.
+
+La suite completa con el modelo v8 local supera **1490 pruebas**, con 36 pruebas
+opcionales de navegador omitidas y 11 fallos esperados (las nueve comprobaciones
+de desarrollo anteriores y dos casos experimentales de diagramas de libros).
+
+La [repetición completa de regresiones de v8](../../data/reports/neural-styles-v8-localization-regression.json)
+conserva **3456/3456 tableros exactos y 221184/221184 casillas correctas**, tanto con
+límites revisados como detectados. Los 3456 rectángulos permanecen dentro de dos
+píxeles. Son variantes de 12 posiciones ya consultadas, no una evaluación final
+independiente. Los hashes de datos/modelos y todas las métricas agregadas del
+candidato coinciden con el informe histórico de v8; el nuevo registra el hash
+del detector actualizado.
+
 ## Reproducir y ampliar
 
 El manifiesto predeterminado es ahora v2. Para los tres casos originales, añade
@@ -115,6 +169,13 @@ python -m tools.development_cases --output .cache/video-detection.json
 python -m tools.development_cases --model .cache/neural-styles-v8/best.pt --output .cache/video-v8.json
 python -m pytest tests/test_video_development.py
 BOARDSNAP_TEST_MODEL=.cache/neural-styles-v8/best.pt python -m pytest tests/test_video_development.py
+# Controles sintéticos de fondos conectados y suite completa
+python -m pytest tests/test_detection_clutter.py
+BOARDSNAP_TEST_MODEL=.cache/neural-styles-v8/best.pt python -m pytest
+# Ver el rectángulo corregido de la 001 y sus casillas (salida local ignorada)
+python -m tools.preview_detection data/development/video-cases-v1/chesscom-video-001.png --output-dir .cache/localization-step2/preview --squares
+# Repetir el corpus de reconocimiento ya consultado con los mismos modelos
+python -m tools.evaluate_marks --dataset .cache/digital-style-squares-v2 --baseline .cache/neural-arrows-v1/best.pt --candidate .cache/neural-styles-v8/best.pt --baseline-name arrowBaseline --candidate-name styleCandidate --split evaluation --regression --output .cache/localization-step2/corpus-recheck.json
 ```
 
 El evaluador devuelve **1 mientras falle algún caso medido**. Sin `--model` mide
