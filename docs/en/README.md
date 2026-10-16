@@ -10,6 +10,9 @@ The [digital release guide](digital-release.md) records frozen acceptance criter
 reserved sources, CPU measurements and verified wheel/model installation.
 The [six exposed failures are corrected](regression-fixes.md) in the new candidate.
 Its policy and distribution checks must be updated before final evaluation.
+The [video/page development corpus](video-development.md) now records 15 images of
+13 positions: 5/15 full-pipeline successes, 13/15 with reviewed bounds. Detection,
+refinement and the remaining classification failures precede candidate freezing.
 
 The [simple-mark extension](simple-marks.md) now provides controlled highlights,
 circles/dots, a trained model comparison and external-game imports. Real-use

@@ -8,6 +8,10 @@ cases that regressed during development also [pass](../../data/reports/digital-s
 This is regression evidence, **not final digital acceptance**. The reserved
 acceptance source plan has not been captured, trained on or evaluated here.
 
+Subsequent user screenshots exposed two additional failing images, now registered
+as [video development cases](video-development.md). The results below describe the
+original correction, not compatibility with those newly inspected video conditions.
+
 The [complete regression report](../../data/reports/neural-styles-v8-regression.json)
 measures **3456/3456 images correct**, with both verified and detected bounds:
 221184/221184 squares, zero new recognition failures, and all detected rectangles

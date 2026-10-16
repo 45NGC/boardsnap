@@ -8,6 +8,11 @@ Staunty que empeoraron durante el desarrollo también [pasan](../../data/reports
 Es evidencia de regresión, **no la aceptación digital final**. El plan de fuentes
 reservado para aceptación no se ha capturado, entrenado ni evaluado aquí.
 
+Capturas posteriores del usuario mostraron dos imágenes adicionales que fallan,
+registradas como [casos de desarrollo de vídeos](video-development.md). Los resultados
+de esta página describen la corrección original, no compatibilidad con esas nuevas
+condiciones de vídeo.
+
 El [informe completo de regresión](../../data/reports/neural-styles-v8-regression.json)
 mide **3456/3456 imágenes correctas**, tanto con límites verificados como detectados:
 221184/221184 casillas, ningún fallo nuevo de reconocimiento y todos los límites

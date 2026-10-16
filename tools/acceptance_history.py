@@ -30,6 +30,15 @@ def consulted(history=HISTORY):
 def require_unobserved(plan, history=HISTORY):
     games, families = identities(plan)
     old_games, old_families = consulted(history)
+    # Reviewed video examples are development data, even under new filenames,
+    # group IDs, orientations or equivalent piece-placement transformations.
+    from tools.development_cases import load_cases
+    development = load_cases(verify_images=False)['samples']
+    old_families.update(placement_family(row['piecePlacement']) for row in development)
+    known_groups = {row['sourceGroupId'] for row in development}
+    if any(group['groupId'] in known_groups or group['source'].get('sourceId') in known_groups
+           for group in plan['groups']):
+        raise ValueError('Development source groups cannot enter independent acceptance.')
     if games & old_games or families & old_families:
         raise ValueError('Acceptance sources were already consulted; prepare an independent plan.')
 

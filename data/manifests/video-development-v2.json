@@ -1,0 +1,780 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "video-development-v2",
+  "dataRole": "development-regression",
+  "independentFinalEvaluation": false,
+  "partitionPolicy": "All images, crops, scales, overlay variants and related game positions stay in the same development source group. Already inspected; never an independent final evaluation. Not automatically added to training.",
+  "boxConvention": "Integer [left, top, right, bottom], right/bottom exclusive; box is the visible board, gridBox preserves inferred pre-clipping extent.",
+  "maxEdgeErrorPixels": 2,
+  "review": {
+    "reviewedBy": "assistant",
+    "reviewedOn": "2026-10-16",
+    "method": "Assistant visual piece transcription and border-pixel inspection before measuring model outputs. Original three placements were also confirmed in the conversation. Lichess page placement agrees with the visible FEN field; only piece placement is retained.",
+    "limitations": "Assistant-reviewed, not an independent human annotation study. Source game/video links and timestamps are unknown. Grouping is conservative by platform and does not assert two independent games. The user confirmed 13 distinct positions and white-bottom orientation for the three coordinate-free captures."
+  },
+  "samples": [
+    {
+      "id": "chesscom-video-001",
+      "path": "data/development/video-cases-v1/chesscom-video-001.png",
+      "sha256": "29f3be6bb048d05c26f82f999dab855f86e96e37c3cc3feed4b53f70d0ced3e7",
+      "imageSize": [
+        465,
+        438
+      ],
+      "positionId": "real-chesscom-video-position-001",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "piecePlacement": "r4rk1/pb1n1pp1/1qpb1n1p/1p3N2/4P2B/2NB4/PP3PPP/2RQ1RK1",
+      "orientation": "black-bottom",
+      "box": [
+        35,
+        17,
+        435,
+        417
+      ],
+      "gridBox": [
+        35,
+        17,
+        435,
+        417
+      ],
+      "clippedBoardPixels": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "video-resampling"
+      ],
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "originalPath": ".cache/real-use-tests/chesscom-video-001.png",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "note": "Exact source video/game, timestamp, capture settings and theme names were not supplied. All three depict the same position and are conservatively grouped together."
+      }
+    },
+    {
+      "id": "chesscom-video-002",
+      "path": "data/development/video-cases-v1/chesscom-video-002.png",
+      "sha256": "0e52abacb79bb9a375078719f0273a8109911a893b52f96d63f3a7021e7e6825",
+      "imageSize": [
+        401,
+        404
+      ],
+      "positionId": "real-chesscom-video-position-001",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "piecePlacement": "r4rk1/pb1n1pp1/1qpb1n1p/1p3N2/4P2B/2NB4/PP3PPP/2RQ1RK1",
+      "orientation": "black-bottom",
+      "box": [
+        0,
+        1,
+        399,
+        401
+      ],
+      "gridBox": [
+        -1,
+        1,
+        399,
+        401
+      ],
+      "clippedBoardPixels": {
+        "left": 1,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "conditions": [
+        "tight-crop-with-residual-margins",
+        "square-highlights",
+        "video-resampling"
+      ],
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "originalPath": ".cache/real-use-tests/chesscom-video-002.png",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "note": "Exact source video/game, timestamp, capture settings and theme names were not supplied. All three depict the same position and are conservatively grouped together."
+      },
+      "derivedFrom": {
+        "sampleId": "chesscom-video-001",
+        "cropBox": [
+          36,
+          16,
+          437,
+          420
+        ]
+      }
+    },
+    {
+      "id": "chesscom-video-003",
+      "path": "data/development/video-cases-v1/chesscom-video-003.png",
+      "sha256": "8a8874d8f913d0905760763f0bf564a588697c963384878b858da84818c0865d",
+      "imageSize": [
+        303,
+        303
+      ],
+      "positionId": "real-chesscom-video-position-001",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "piecePlacement": "r4rk1/pb1n1pp1/1qpb1n1p/1p3N2/4P2B/2NB4/PP3PPP/2RQ1RK1",
+      "orientation": "black-bottom",
+      "box": [
+        2,
+        2,
+        299,
+        299
+      ],
+      "gridBox": [
+        2,
+        2,
+        299,
+        299
+      ],
+      "clippedBoardPixels": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "conditions": [
+        "working-small-board-control",
+        "square-highlights",
+        "video-resampling"
+      ],
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "originalPath": ".cache/real-use-tests/chesscom-video-003.png",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "note": "Exact source video/game, timestamp, capture settings and theme names were not supplied. All three depict the same position and are conservatively grouped together."
+      }
+    },
+    {
+      "id": "chesscom-video-004",
+      "path": "data/development/video-cases-v2/chesscom-video-004.png",
+      "sha256": "23b61bd7bd336a44cb7867ea286c5f59dd07c6e23dc7ef21dd9d60055f1b841a",
+      "imageSize": [
+        450,
+        440
+      ],
+      "positionId": "real-chesscom-video-004-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "piecePlacement": "8/8/2R4p/p4P2/5k2/7P/r5BK/2q1r3",
+      "orientation": "black-bottom",
+      "orientationEvidence": "visible-board-coordinates",
+      "box": [
+        35,
+        14,
+        435,
+        414
+      ],
+      "gridBox": [
+        35,
+        14,
+        435,
+        414
+      ],
+      "clippedBoardPixels": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "video-resampling"
+      ],
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "originalPath": ".cache/real-use-tests/chesscom-video-004.png",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      }
+    },
+    {
+      "id": "chesscom-video-005",
+      "path": "data/development/video-cases-v2/chesscom-video-005.png",
+      "sha256": "1d0d98c5e8be5b0201b06a2363723ae51ee7a280c36c3006cd5e131ef417561d",
+      "imageSize": [
+        459,
+        435
+      ],
+      "positionId": "real-chesscom-video-005-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "piecePlacement": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N1P3/PP3PPP/R1BQKBNR",
+      "orientation": "black-bottom",
+      "orientationEvidence": "visible-board-coordinates",
+      "box": [
+        28,
+        8,
+        428,
+        408
+      ],
+      "gridBox": [
+        28,
+        8,
+        428,
+        408
+      ],
+      "clippedBoardPixels": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "video-resampling"
+      ],
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "originalPath": ".cache/real-use-tests/chesscom-video-005.png",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      }
+    },
+    {
+      "id": "chesscom-video-006",
+      "path": "data/development/video-cases-v2/chesscom-video-006.png",
+      "sha256": "84721be820c413d858406e20916efda33032e4156a1639b8af3bcbf01712da0a",
+      "imageSize": [
+        444,
+        406
+      ],
+      "positionId": "real-chesscom-video-006-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "piecePlacement": "2r2rk1/pq3pp1/1p2pn1p/4N3/1P1Q4/P3P3/1B3PbP/2R2RK1",
+      "orientation": "white-bottom",
+      "orientationEvidence": "visible-board-coordinates",
+      "box": [
+        41,
+        11,
+        417,
+        387
+      ],
+      "gridBox": [
+        41,
+        11,
+        417,
+        387
+      ],
+      "clippedBoardPixels": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "video-resampling"
+      ],
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "originalPath": ".cache/real-use-tests/chesscom-video-006.png",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      }
+    },
+    {
+      "id": "chesscom-video-007",
+      "path": "data/development/video-cases-v2/chesscom-video-007.png",
+      "sha256": "7988877c635cd3aa9c0bcadb2eadd33cf3cff1839ee4496155be40812684848c",
+      "imageSize": [
+        592,
+        588
+      ],
+      "positionId": "real-chesscom-video-007-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "piecePlacement": "8/8/6P1/1p2R3/1r6/2k3K1/6P1/8",
+      "orientation": "black-bottom",
+      "orientationEvidence": "visible-board-coordinates",
+      "box": [
+        15,
+        13,
+        573,
+        570
+      ],
+      "gridBox": [
+        15,
+        13,
+        573,
+        570
+      ],
+      "clippedBoardPixels": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "textured-board",
+        "video-resampling"
+      ],
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "originalPath": ".cache/real-use-tests/chesscom-video-007.png",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      }
+    },
+    {
+      "id": "chesscom-video-008",
+      "path": "data/development/video-cases-v2/chesscom-video-008.png",
+      "sha256": "2f852222b63de70f0b73f81863457801966d969c59706fdb25cbe3f177f22835",
+      "imageSize": [
+        601,
+        593
+      ],
+      "positionId": "real-chesscom-video-008-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "piecePlacement": "2r3k1/r2n1pp1/2pq1n1p/1p1pNB2/p2P4/P3P1P1/1PQ2PP1/1RR3K1",
+      "orientation": "black-bottom",
+      "orientationEvidence": "visible-board-coordinates",
+      "box": [
+        22,
+        16,
+        580,
+        573
+      ],
+      "gridBox": [
+        22,
+        16,
+        580,
+        573
+      ],
+      "clippedBoardPixels": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "textured-board",
+        "video-resampling"
+      ],
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "originalPath": ".cache/real-use-tests/chesscom-video-008.png",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      }
+    },
+    {
+      "id": "chesscom-video-009",
+      "path": "data/development/video-cases-v2/chesscom-video-009.png",
+      "sha256": "e98c08965aa4a4444b53261abe62e2cccb72a4cae13a0c350baee36aa522d09e",
+      "imageSize": [
+        499,
+        515
+      ],
+      "positionId": "real-chesscom-video-009-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "piecePlacement": "3rkb1r/pp2qpp1/7p/2pP4/4p1QP/2N1P1B1/PP3PP1/n1K3NR",
+      "orientation": "white-bottom",
+      "orientationEvidence": "user-confirmed-white-bottom; no visible coordinates",
+      "box": [
+        13,
+        23,
+        467,
+        481
+      ],
+      "gridBox": [
+        13,
+        23,
+        467,
+        481
+      ],
+      "clippedBoardPixels": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "no-visible-coordinates",
+        "nonuniform-video-scaling",
+        "video-resampling"
+      ],
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "originalPath": ".cache/real-use-tests/chesscom-video-009.png",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      }
+    },
+    {
+      "id": "chesscom-video-010",
+      "path": "data/development/video-cases-v2/chesscom-video-010.png",
+      "sha256": "16d94bd236f43541319649f0cbba683fbc8a98fb4197734d69f16c3deba69cfb",
+      "imageSize": [
+        510,
+        507
+      ],
+      "positionId": "real-chesscom-video-010-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "piecePlacement": "8/8/8/p6p/P3K1kP/4P3/8/8",
+      "orientation": "white-bottom",
+      "orientationEvidence": "user-confirmed-white-bottom; no visible coordinates",
+      "box": [
+        12,
+        2,
+        466,
+        460
+      ],
+      "gridBox": [
+        12,
+        2,
+        466,
+        460
+      ],
+      "clippedBoardPixels": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "no-visible-coordinates",
+        "nonuniform-video-scaling",
+        "video-resampling"
+      ],
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "originalPath": ".cache/real-use-tests/chesscom-video-010.png",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      }
+    },
+    {
+      "id": "lichess-video-001",
+      "path": "data/development/video-cases-v2/lichess-video-001.png",
+      "sha256": "66cf78d388595f77e397573846d5564d7a7751dc78fe51c91cf903f6e6c10050",
+      "imageSize": [
+        927,
+        920
+      ],
+      "positionId": "real-lichess-video-001-position",
+      "sourceGroupId": "real-lichess-development-unresolved",
+      "split": "development",
+      "piecePlacement": "rn1qkb1r/pp3ppp/2p1pn2/3p1b2/3P1B2/2NBPN2/PPP2PPP/R2Q1RK1",
+      "orientation": "white-bottom",
+      "orientationEvidence": "visible-board-coordinates",
+      "box": [
+        15,
+        11,
+        903,
+        899
+      ],
+      "gridBox": [
+        15,
+        11,
+        903,
+        899
+      ],
+      "clippedBoardPixels": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "cursor-over-piece",
+        "video-resampling"
+      ],
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "lichess",
+        "originalPath": ".cache/real-use-tests/lichess-video-001.png",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      }
+    },
+    {
+      "id": "lichess-video-002",
+      "path": "data/development/video-cases-v2/lichess-video-002.png",
+      "sha256": "99c3e1a4c5b8ab6cd7e85e9b09bfbacca3447ed56fdcbdad4ce28b26e7a6aa77",
+      "imageSize": [
+        612,
+        607
+      ],
+      "positionId": "real-lichess-video-002-position",
+      "sourceGroupId": "real-lichess-development-unresolved",
+      "split": "development",
+      "piecePlacement": "r1bqkb1r/pp3ppp/3ppn2/2p5/2B1P3/2N5/PPPPQPPP/R1B2RK1",
+      "orientation": "white-bottom",
+      "orientationEvidence": "visible-board-coordinates",
+      "box": [
+        14,
+        8,
+        594,
+        586
+      ],
+      "gridBox": [
+        14,
+        8,
+        594,
+        586
+      ],
+      "clippedBoardPixels": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "nonuniform-video-scaling",
+        "video-resampling"
+      ],
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "lichess",
+        "originalPath": ".cache/real-use-tests/lichess-video-002.png",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      }
+    },
+    {
+      "id": "lichess-video-003",
+      "path": "data/development/video-cases-v2/lichess-video-003.png",
+      "sha256": "08931fee7aa4020406c2748b2186b00ae34fb63949067dcba411e6d4f59088bf",
+      "imageSize": [
+        650,
+        627
+      ],
+      "positionId": "real-lichess-video-003-position",
+      "sourceGroupId": "real-lichess-development-unresolved",
+      "split": "development",
+      "piecePlacement": "1B6/Pk5p/1N4p1/2p2p2/1p1p4/1P1P3P/2P3PK/5q2",
+      "orientation": "white-bottom",
+      "orientationEvidence": "visible-board-coordinates",
+      "box": [
+        28,
+        14,
+        608,
+        592
+      ],
+      "gridBox": [
+        28,
+        14,
+        608,
+        592
+      ],
+      "clippedBoardPixels": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "nonuniform-video-scaling",
+        "video-resampling"
+      ],
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "lichess",
+        "originalPath": ".cache/real-use-tests/lichess-video-003.png",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      }
+    },
+    {
+      "id": "chesscom-page-001",
+      "path": "data/development/video-cases-v2/chesscom-page-001.png",
+      "sha256": "696d2546c26df6fdeb06c8096d0cd1b876eb272caeeb6afe1e6e14d2ce86b351",
+      "imageSize": [
+        267,
+        268
+      ],
+      "positionId": "real-chesscom-page-001-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "piecePlacement": "r2qkbnr/ppN2ppp/3Pb1n1/8/3P4/5N2/PPP1Q1PP/R1B1KB1R",
+      "orientation": "white-bottom",
+      "orientationEvidence": "user-confirmed-white-bottom; no visible coordinates",
+      "box": [
+        9,
+        10,
+        257,
+        258
+      ],
+      "gridBox": [
+        9,
+        10,
+        257,
+        258
+      ],
+      "clippedBoardPixels": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "conditions": [
+        "tight-crop-with-margins",
+        "no-visible-coordinates"
+      ],
+      "provenance": {
+        "kind": "user-supplied-page-screenshot",
+        "platform": "chesscom",
+        "originalPath": ".cache/real-use-tests/chesscom-page-001.png",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      }
+    },
+    {
+      "id": "lichess-page-001",
+      "path": "data/development/video-cases-v2/lichess-page-001.png",
+      "sha256": "4c79749f1a29a3ec7c753c5135c532ea10978dac94da18873d00007ce141a2a0",
+      "imageSize": [
+        1433,
+        1209
+      ],
+      "positionId": "real-lichess-page-001-position",
+      "sourceGroupId": "real-lichess-development-unresolved",
+      "split": "development",
+      "piecePlacement": "r2qk2r/1b2pnbp/p3Nnp1/1pp5/3P4/2NB4/PPPB2PP/R2Q1RK1",
+      "orientation": "white-bottom",
+      "orientationEvidence": "visible-board-coordinates",
+      "box": [
+        55,
+        23,
+        1143,
+        1111
+      ],
+      "gridBox": [
+        55,
+        23,
+        1143,
+        1111
+      ],
+      "clippedBoardPixels": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "conditions": [
+        "page-interface",
+        "square-highlights",
+        "arrows",
+        "arrows-over-pieces"
+      ],
+      "provenance": {
+        "kind": "user-supplied-page-screenshot",
+        "platform": "lichess",
+        "originalPath": ".cache/real-use-tests/lichess-page-001.png",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      }
+    }
+  ],
+  "previousManifestSha256": "fff74738b4a375c95f87ed944668a9b154fa73b7cab24d30cfb5d36710a19950"
+}

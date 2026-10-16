@@ -105,3 +105,24 @@ no open-source license grant is asserted for Classic/Bases or user screenshots.
 These images are detection references, not newly licensed BoardSnap artwork.
 They supply no piece-training templates or verified position labels. Preserve
 these notices when using the corpus and review upstream terms for redistribution.
+
+## Reviewed video development cases: video-development-v1
+
+`data/development/video-cases-v1/` preserves three user-supplied screenshots of
+the same Chess.com position as unchanged PNG bytes. The manifest records the
+original local paths and checksums. One image contains video background content;
+exact video URL, creator, timestamp, game link and appearance names were not
+supplied. No attribution or license for that unknown video is invented here.
+The platform artwork and video content remain third-party material; the code
+license does not relicense them or assert permission for broader redistribution.
+These are already-consulted development fixtures with visually reviewed labels,
+not independent acceptance data or newly collected training examples.
+
+The `video-development-v2` manifest adds twelve unchanged PNGs in
+`data/development/video-cases-v2/` and retains those original three references.
+The additions comprise seven Chess.com video frames, three Lichess video frames,
+and one page screenshot from each platform. Source URLs, video creators,
+timestamps, actual game relationships and exact theme names were not supplied.
+Platform artwork, interface elements and video background content retain their
+third-party status. No additional license grant or attribution is inferred from
+visual similarity. These are development-only cases, not independent test games.

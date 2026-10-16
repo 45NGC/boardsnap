@@ -15,6 +15,12 @@ The earlier candidate had two arrow regressions and four cropped-board detection
 misses. The [correction guide](docs/en/regression-fixes.md) records fixes for all six
 using the updated detector and `.cache/neural-styles-v8/best.pt`.
 
+The [video/page development corpus](docs/en/video-development.md) now contains 15
+images of 13 positions, including the three original variants. v8 succeeds on 5/15
+through the full pipeline and 13/15 with reviewed bounds. These additional
+localization and recognition failures must be addressed before freezing the next
+candidate; these are development cases, not independent acceptance data.
+
 The [digital acceptance guide](docs/en/digital-release.md) fixes the target catalogue,
 thresholds and a new reserved source plan. A local wheel and model bundle pass
 isolated installation checks for the v1 preview. **Final acceptance remains pending:**

@@ -9,6 +9,10 @@ las fuentes reservadas, las mediciones de CPU y la instalación comprobada del
 paquete y modelo. Los [seis fallos conocidos están corregidos](regression-fixes.md)
 en el nuevo candidato; falta actualizar su política y distribución antes de la
 evaluación final.
+El [corpus de desarrollo de vídeos/páginas](video-development.md) registra ahora
+15 imágenes de 13 posiciones: 5/15 aciertos del recorrido completo y 13/15 con
+límites revisados. Faltan detección, ajuste de límites y los errores restantes
+de clasificación antes de fijar el candidato.
 
 La [ampliación con marcas sencillas](simple-marks.md) incorpora resaltados,
 círculos/puntos controlados, una red entrenada y comparada e importación de partidas

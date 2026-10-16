@@ -1,0 +1,170 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "video-development-v1",
+  "dataRole": "development-regression",
+  "independentFinalEvaluation": false,
+  "partitionPolicy": "All images, crops, scales, overlay variants and related game positions stay in the same development source group. Already inspected; never an independent final evaluation. Not automatically added to training.",
+  "boxConvention": "Integer [left, top, right, bottom], right/bottom exclusive; box is the visible board, gridBox preserves inferred pre-clipping extent.",
+  "maxEdgeErrorPixels": 2,
+  "review": {
+    "reviewedBy": "assistant",
+    "reviewedOn": "2026-10-16",
+    "method": "Visual piece transcription and printed edge coordinates, compared with the user-confirmed placement; border pixels inspected independently of detector/model outputs.",
+    "limitations": "Assistant-reviewed, not an independent human annotation study. Video URL and game moves are unknown. The 002 crop relationship is verified byte-for-byte at decoded-pixel level."
+  },
+  "samples": [
+    {
+      "id": "chesscom-video-001",
+      "path": "data/development/video-cases-v1/chesscom-video-001.png",
+      "sha256": "29f3be6bb048d05c26f82f999dab855f86e96e37c3cc3feed4b53f70d0ced3e7",
+      "imageSize": [
+        465,
+        438
+      ],
+      "positionId": "real-chesscom-video-position-001",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "piecePlacement": "r4rk1/pb1n1pp1/1qpb1n1p/1p3N2/4P2B/2NB4/PP3PPP/2RQ1RK1",
+      "orientation": "black-bottom",
+      "box": [
+        35,
+        17,
+        435,
+        417
+      ],
+      "gridBox": [
+        35,
+        17,
+        435,
+        417
+      ],
+      "clippedBoardPixels": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "video-resampling"
+      ],
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "originalPath": ".cache/real-use-tests/chesscom-video-001.png",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "note": "Exact source video/game, timestamp, capture settings and theme names were not supplied. All three depict the same position and are conservatively grouped together."
+      }
+    },
+    {
+      "id": "chesscom-video-002",
+      "path": "data/development/video-cases-v1/chesscom-video-002.png",
+      "sha256": "0e52abacb79bb9a375078719f0273a8109911a893b52f96d63f3a7021e7e6825",
+      "imageSize": [
+        401,
+        404
+      ],
+      "positionId": "real-chesscom-video-position-001",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "piecePlacement": "r4rk1/pb1n1pp1/1qpb1n1p/1p3N2/4P2B/2NB4/PP3PPP/2RQ1RK1",
+      "orientation": "black-bottom",
+      "box": [
+        0,
+        1,
+        399,
+        401
+      ],
+      "gridBox": [
+        -1,
+        1,
+        399,
+        401
+      ],
+      "clippedBoardPixels": {
+        "left": 1,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "conditions": [
+        "tight-crop-with-residual-margins",
+        "square-highlights",
+        "video-resampling"
+      ],
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "originalPath": ".cache/real-use-tests/chesscom-video-002.png",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "note": "Exact source video/game, timestamp, capture settings and theme names were not supplied. All three depict the same position and are conservatively grouped together."
+      },
+      "derivedFrom": {
+        "sampleId": "chesscom-video-001",
+        "cropBox": [
+          36,
+          16,
+          437,
+          420
+        ]
+      }
+    },
+    {
+      "id": "chesscom-video-003",
+      "path": "data/development/video-cases-v1/chesscom-video-003.png",
+      "sha256": "8a8874d8f913d0905760763f0bf564a588697c963384878b858da84818c0865d",
+      "imageSize": [
+        303,
+        303
+      ],
+      "positionId": "real-chesscom-video-position-001",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "piecePlacement": "r4rk1/pb1n1pp1/1qpb1n1p/1p3N2/4P2B/2NB4/PP3PPP/2RQ1RK1",
+      "orientation": "black-bottom",
+      "box": [
+        2,
+        2,
+        299,
+        299
+      ],
+      "gridBox": [
+        2,
+        2,
+        299,
+        299
+      ],
+      "clippedBoardPixels": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "conditions": [
+        "working-small-board-control",
+        "square-highlights",
+        "video-resampling"
+      ],
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "originalPath": ".cache/real-use-tests/chesscom-video-003.png",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "note": "Exact source video/game, timestamp, capture settings and theme names were not supplied. All three depict the same position and are conservatively grouped together."
+      }
+    }
+  ]
+}
