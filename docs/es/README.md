@@ -6,7 +6,9 @@ piezas/texturas nuevas, combinaciones reservadas y regresiones desglosadas.
 
 La [guía de versión digital](digital-release.md) fija los criterios de aceptación,
 las fuentes reservadas, las mediciones de CPU y la instalación comprobada del
-paquete y modelo. Seis fallos conocidos bloquean todavía la evaluación final.
+paquete y modelo. Los [seis fallos conocidos están corregidos](regression-fixes.md)
+en el nuevo candidato; falta actualizar su política y distribución antes de la
+evaluación final.
 
 La [ampliación con marcas sencillas](simple-marks.md) incorpora resaltados,
 círculos/puntos controlados, una red entrenada y comparada e importación de partidas

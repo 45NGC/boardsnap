@@ -8,7 +8,8 @@ pilot to new pieces/textures with reserved combinations and stratified regressio
 
 The [digital release guide](digital-release.md) records frozen acceptance criteria,
 reserved sources, CPU measurements and verified wheel/model installation.
-The candidate remains blocked by six known failures; final evaluation has not run.
+The [six exposed failures are corrected](regression-fixes.md) in the new candidate.
+Its policy and distribution checks must be updated before final evaluation.
 
 The [simple-mark extension](simple-marks.md) now provides controlled highlights,
 circles/dots, a trained model comparison and external-game imports. Real-use

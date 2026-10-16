@@ -199,5 +199,6 @@ measurements use `--split validation`; model choices must be frozen before the
 reserved comparison. Distribution and clean installation are part of step 10.
 
 Step 10 now provides the [digital acceptance protocol](digital-release.md), a
-verified local distribution and a reserved new plan. The known regressions above
-block final acceptance; these step 9 results remain regression evidence.
+verified local distribution and a reserved new plan. The [subsequent fixes](regression-fixes.md)
+address the six known cases with a new candidate. These step 9 measurements remain
+historical regression evidence; final acceptance still requires the new policy/checks.

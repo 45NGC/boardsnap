@@ -1,0 +1,61 @@
+{
+  "dataRole": "consulted-regression",
+  "modelSha256": "9546c6cfc34517f631cd58bf3eae0cdb3aa7790765b6f4ad1c0bf307ca4ad704",
+  "passed": true,
+  "cases": [
+    {
+      "image": ".cache/digital-arrow-captures-v1/arrow-piece/clean/clean-chesscom-blue-neo-standard-sequence-010/evaluation/chesscom-blue-neo-standard/digital-037-white-bottom.png",
+      "orientation": "white-bottom",
+      "exitCode": 0,
+      "stdout": {
+        "piecePlacement": "rnbqkb1r/p2p1p1p/1p2pnp1/P7/2pP1PP1/8/1PPKP2P/RNBQ1BNR"
+      },
+      "stderr": ""
+    },
+    {
+      "image": ".cache/digital-arrow-captures-v1/arrow-crossed/clean/clean-chesscom-brown-neo-standard-sequence-010/evaluation/chesscom-brown-neo-standard/digital-038-black-bottom.png",
+      "orientation": "black-bottom",
+      "exitCode": 0,
+      "stdout": {
+        "piecePlacement": "Rnb1k2r/2qp3p/1P5b/3n2p1/3PK1Q1/2P1p2P/1P6/1NB2BNR"
+      },
+      "stderr": ""
+    },
+    {
+      "image": ".cache/digital-style-derived-v2/layouts/lichess-wood4-staunty-compact-board-crop-384/digital-038-black-bottom.png",
+      "orientation": "black-bottom",
+      "exitCode": 0,
+      "stdout": {
+        "piecePlacement": "Rnb1k2r/2qp3p/1P5b/3n2p1/3PK1Q1/2P1p2P/1P6/1NB2BNR"
+      },
+      "stderr": ""
+    },
+    {
+      "image": ".cache/digital-style-derived-v2/layouts/lichess-blue-staunty-compact-board-crop-384/digital-001-black-bottom.png",
+      "orientation": "black-bottom",
+      "exitCode": 0,
+      "stdout": {
+        "piecePlacement": "rnb1kb1r/pppp3p/4p1pn/P4p2/1P3P2/N6N/2PPP1qP/R1BQKB1R"
+      },
+      "stderr": ""
+    },
+    {
+      "image": ".cache/digital-style-derived-v2/layouts/lichess-blue-staunty-compact-board-crop-384/digital-006-black-bottom.png",
+      "orientation": "black-bottom",
+      "exitCode": 0,
+      "stdout": {
+        "piecePlacement": "1n1qk1nr/1b4b1/r3pB1p/2p3pP/1p1Q1P2/8/3PP1P1/RN2KBNR"
+      },
+      "stderr": ""
+    },
+    {
+      "image": ".cache/digital-style-derived-v2/layouts/lichess-blue-staunty-compact-board-crop-384/digital-038-black-bottom.png",
+      "orientation": "black-bottom",
+      "exitCode": 0,
+      "stdout": {
+        "piecePlacement": "Rnb1k2r/2qp3p/1P5b/3n2p1/3PK1Q1/2P1p2P/1P6/1NB2BNR"
+      },
+      "stderr": ""
+    }
+  ]
+}

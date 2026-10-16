@@ -96,22 +96,63 @@ def test_canonical_output_remains_piece_placement_only(artifact, monkeypatch):
         classifier.recognize_image("unused", orientation="unknown")
 
 
-def test_resume_matches_uninterrupted_weights_and_validation(tmp_path):
+@pytest.mark.parametrize('initialization_mode', ['scratch', 'weights', 'distillation', 'dual-distillation'])
+def test_resume_matches_uninterrupted_weights_and_validation(tmp_path, artifact, initialization_mode):
     config = {"seed": 123, "epochs": 2, "batchSize": 64, "learningRate": .002, "weightDecay": 0., "threads": 1}
     labels = np.arange(128, dtype=np.int64) % 13
     pixels = np.zeros((128, 64, 64, 3), dtype=np.uint8)
     pixels[:] = (labels * 19).astype(np.uint8)[:, None, None, None]
     data = (pixels, labels)
-    full = fit(data, data, config, tmp_path / "full", {"version": "synthetic-test"})
-    fit(data, data, config, tmp_path / "resumed", {"version": "synthetic-test"}, stop_after=1)
-    resumed = fit(data, data, config, tmp_path / "resumed", {"version": "synthetic-test"}, resume=True)
+    initialization = {'initialize_from': artifact[0]} if initialization_mode != 'scratch' else {}
+    if initialization_mode in ('distillation', 'dual-distillation'):
+        config.update(distillationTemperature=4, distillationWeight=1)
+        initialization.update(teacher_from=artifact[0], teacher_mask=np.arange(len(labels)) % 2 == 0)
+        if initialization_mode == 'dual-distillation':
+            initialization['expansion_teacher_from'] = artifact[0]
+    full = fit(data, data, config, tmp_path / "full", {"version": "synthetic-test"}, **initialization)
+    fit(data, data, config, tmp_path / "resumed", {"version": "synthetic-test"}, stop_after=1, **initialization)
+    resumed = fit(data, data, config, tmp_path / "resumed", {"version": "synthetic-test"}, resume=True, **initialization)
     a = torch.load(tmp_path / "full/last.pt", weights_only=True)
     b = torch.load(tmp_path / "resumed/last.pt", weights_only=True)
     assert all(torch.equal(v, b["state_dict"][k]) for k, v in a["state_dict"].items())
     assert full["selected"] == resumed["selected"]
     assert [r["validation"] for r in full["history"]] == [r["validation"] for r in resumed["history"]]
     with pytest.raises(ValueError, match="changed"):
-        fit(data, data, config, tmp_path / "resumed", {"version": "changed"}, resume=True)
+        fit(data, data, config, tmp_path / "resumed", {"version": "changed"}, resume=True, **initialization)
+    if initialization_mode != 'scratch':
+        from tools.neural_data import digest
+        assert full['metadata']['initialization']['weightsSha256'] == digest(artifact[0])
+        payload = torch.load(artifact[0], weights_only=True)
+        next(iter(payload['state_dict'].values())).add_(0.01)
+        torch.save(payload, artifact[0])
+        with pytest.raises(ValueError, match='changed'):
+            fit(data, data, config, tmp_path / 'resumed', {'version': 'synthetic-test'}, resume=True, **initialization)
+    if initialization_mode in ('distillation', 'dual-distillation'):
+        assert full['metadata']['distillation']['trainingSquares'] == 64
+        assert full['metadata']['distillation']['temperature'] == 4
+        if initialization_mode == 'dual-distillation':
+            assert full['metadata']['distillation']['expansionTeacher']['trainingSquares'] == 64
+
+
+def test_distillation_requires_training_mask_and_pins_its_identity(tmp_path, artifact):
+    config={'seed':7,'epochs':1,'batchSize':64,'learningRate':.001,'weightDecay':0.,'threads':1}
+    data=(np.zeros((128,64,64,3),np.uint8),np.arange(128,dtype=np.int64)%13)
+    for mask in (None,np.zeros(128,dtype=np.bool_),np.ones(64,dtype=np.bool_)):
+        with pytest.raises(ValueError,match='training-only mask'):
+            fit(data,data,config,tmp_path/'invalid',{'version':'test'},teacher_from=artifact[0],teacher_mask=mask)
+    mask=np.arange(128)%2==0
+    run=tmp_path/'valid'
+    fit(data,data,config,run,{'version':'test'},teacher_from=artifact[0],teacher_mask=mask)
+    with pytest.raises(ValueError,match='changed'):
+        fit(data,data,config,run,{'version':'test'},resume=True,teacher_from=artifact[0],teacher_mask=~mask)
+
+
+@pytest.mark.parametrize('value', [0, -1, float('nan'), float('inf'), True])
+def test_invalid_distillation_temperature_is_rejected(value):
+    from tools.train_neural import seed_run
+    with pytest.raises(ValueError, match='distillationTemperature'):
+        seed_run({'seed':7,'epochs':1,'batchSize':64,'learningRate':.001,'weightDecay':0.,'threads':1,
+                  'distillationTemperature':value,'distillationWeight':1})
 
 
 def test_validation_selection_prioritizes_complete_boards():

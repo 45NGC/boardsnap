@@ -201,5 +201,6 @@ desarrollo usan `--split validation`; las decisiones se fijan antes de consultar
 evaluación reservada. La distribución e instalación desde cero corresponden al paso 10.
 
 El paso 10 ya prepara el [protocolo de aceptación digital](digital-release.md),
-una distribución local comprobada y un plan nuevo reservado. Los fallos conocidos
-anteriores bloquean la aceptación final; los resultados del paso 9 son regresión.
+una distribución local comprobada y un plan nuevo reservado. La [corrección posterior](regression-fixes.md)
+resuelve los seis casos con un candidato nuevo. Estos resultados del paso 9 son
+regresión histórica; la aceptación final requiere actualizar política y comprobaciones.

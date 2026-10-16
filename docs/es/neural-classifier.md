@@ -58,6 +58,34 @@ no otra prueba de hiperparámetros.
 
 ## Instalación y comandos
 
+El entrenador también permite `--initialize-from MODELO.pt` para continuar desde
+pesos compatibles con un optimizador nuevo. `--teacher MODELO.pt --control-cohort
+previous` añade una referencia del modelo anterior solo sobre las casillas de
+**entrenamiento** de sus estilos: pérdida supervisada más divergencia KL con
+temperatura 2 y peso 1 por defecto. Para cambiarlos, define juntos
+`distillationTemperature` y `distillationWeight` en la configuración. El modelo de
+referencia no se utiliza al reconocer imágenes.
+`--expansion-teacher MODELO.pt` permite conservar también las predicciones de otro
+modelo sobre las casillas de entrenamiento de estilos nuevos. Las dos referencias
+solo intervienen al entrenar; el artefacto utilizado para reconocer sigue siendo
+un único modelo.
+Se registran sus hashes, la máscara de entrenamiento y los pesos iniciales;
+conserva los mismos argumentos al reanudar. Cambiarlos invalida el checkpoint.
+La selección sigue usando posiciones completas de validación y nunca píxeles de
+evaluación como objetivos de entrenamiento. Actualmente esta opción excluye
+`--real-dataset`, que necesitaría alinear expresamente sus filas adicionales.
+
+Para el ajuste supervisado, `--extra-training-dataset DIRECTORIO` añade variantes
+verificadas de imágenes de entrenamiento existentes. Deben coincidir el hash de
+la fuente, posición, grupo, colocación, orientación y estilo. La validación se
+mantiene intacta; se rechazan variantes de fuentes reservadas aunque se etiqueten
+como entrenamiento. Actualmente no se combina con referencias ni `--real-dataset`.
+`tools.build_arrowhead_training` genera flechas azules sobre tableros completos,
+cubriendo las 13 clases, ambos colores de casilla y orientaciones de cada estilo
+presente en entrenamiento. Después produce los recortes normalizados; nunca
+genera variantes a partir de imágenes reservadas. La [receta de corrección de
+regresiones](regression-fixes.md) documenta la ejecución medida.
+
 Desde la raíz, con el entorno virtual existente. Para esta referencia Linux en
 CPU, instala primero la distribución oficial para CPU:
 

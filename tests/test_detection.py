@@ -83,6 +83,36 @@ def test_detects_previously_unsupported_palette():
     assert detect_board(draw_grid(colors=((255, 255, 255), (0, 0, 0)))) == BoardBounds(0, 0, 256, 256)
 
 
+@pytest.mark.parametrize('size', [128, 193, 384, 513])
+def test_tight_crop_with_repeated_piece_bases_retains_exact_bounds(size):
+    # Strong repeated bases near grid lines can extrapolate the interior peak
+    # fit beyond the image. This uses real pixels, without patching the fitter.
+    image = draw_grid(size, colors=((208, 224, 234), (96, 132, 158)))
+    draw = ImageDraw.Draw(image)
+    cell = size / 8
+    for row in range(8):
+        for col in range(8):
+            draw.rectangle((round((col+.15)*cell), round((row+.75)*cell),
+                            round((col+.85)*cell), round((row+.9)*cell)), fill='#101010')
+    assert detect_board(image) == BoardBounds(0, 0, size, size)
+
+
+@pytest.mark.parametrize('count', [6, 7, 9, 10])
+def test_full_frame_proposal_still_rejects_wrong_grid_size(monkeypatch, count):
+    from boardsnap import detection
+    monkeypatch.setattr(detection, '_refine_grid', lambda *_: None)
+    with pytest.raises(BoardDetectionError, match='No supported'):
+        detect_board(draw_grid(384, count=count, colors=((208, 224, 234), (96, 132, 158))))
+
+
+@pytest.mark.parametrize('margin', [4, 8])
+def test_nearly_full_frame_grid_prefers_fitted_bounds_to_image_boundary(margin):
+    board = draw_grid(384, colors=((208, 224, 234), (96, 132, 158)))
+    image = Image.new('RGB', (384+2*margin, 384+2*margin), '#999999')
+    image.paste(board, (margin, margin))
+    assert detect_board(image) == BoardBounds(margin, margin, 384, 384)
+
+
 def test_multiple_boards_are_an_explicit_error():
     image = Image.new("RGB", (600, 300), "white")
     image.paste(draw_grid(), (10, 10))

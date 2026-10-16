@@ -1,0 +1,140 @@
+{
+  "dataRole": "consulted-regression",
+  "independentFinalEvaluation": false,
+  "previousReportSha256": "2dc933b415e61e427950db5e54d8191bd20558bd038037f81996cf2b35666963",
+  "modelSha256": "0a43f92ac0dffa4fbb99950bf16f9481a995df14ac7eaf1f5368c2d1c961201d",
+  "runtimeSha256": {
+    "src/boardsnap/__init__.py": "5d4d88e1368be753e0359dfcbef042595cd6c2dcd793251aabc55724ffb015c8",
+    "src/boardsnap/__main__.py": "776c85059861da68cb7dcd3a92a43278d35589117f27ae3b9105c739d9e542ab",
+    "src/boardsnap/adapters/__init__.py": "f3b27a487ea86f5d962494c6633547cb2171f06ba0aca009fb2a13c61c2db2af",
+    "src/boardsnap/adapters/cli.py": "1261d4b300ee8edd1d125bd2a526c1b2d729f8492738d051fad9ed0c4a0138a0",
+    "src/boardsnap/classification.py": "295c5460b3c5174e036fe9eac0896ffe5eb2f3724c7485e0d9d3a20d0e028df4",
+    "src/boardsnap/detection.py": "4c4bcf4cdb63de2c406bc3566aa638071a8e3c8df4e47cead4873a58ad8e0d06",
+    "src/boardsnap/image_input.py": "4cb87bbd4fab43ed315cb3c0f258ed9c5a8f5758124c72a3eb8a8e964d66764e",
+    "src/boardsnap/neural.py": "1953f32f7fb4cc25ec63cae0302ddfeda927f6d9373eadf2541cb7f70950c13f",
+    "src/boardsnap/normalization.py": "51ca3052645be05d05291a2653fd8c0d808ace12ad5c1f896a06e00b061741c7",
+    "src/boardsnap/orientation.py": "39d0297413484a1980f6564f3baea140af1278b2dbaed1a5a8d62903cf0c1926",
+    "src/boardsnap/output.py": "64ed8612dae9b528d08963ae1db1fc9127802c7f3ba3140bcdc329bf4b4645b0",
+    "src/boardsnap/pipeline.py": "877f1adb395ffcf54e3e3e646b05377d0ee966c23384b4c4f16aa39d30fae97c",
+    "src/boardsnap/profiles.py": "8cc3bb7a0e0d5fed057887aa09ebdf4d1d4309dba57a3c9df2cd0731707a5b5b",
+    "src/boardsnap/segmentation.py": "eb0eccb596491a4ea1602b90baa8e491ff6f53932e88536495678fd59c603127"
+  },
+  "checkCodeSha256": "4a4c22cebd7a83704a354d92892537f090bbe8f10488c4cd057a5d8a07866af1",
+  "passed": false,
+  "images": [
+    {
+      "image": ".cache/digital-arrow-captures-v1/arrow-piece/clean/clean-chesscom-blue-neo-standard-sequence-010/evaluation/chesscom-blue-neo-standard/digital-037-white-bottom.png",
+      "sha256": "d4dcd2fe62b1ca5075ea6afd386a2e0e18a8857fd257879d028b71945abd7cd6",
+      "positionId": "digital-037",
+      "groupId": "sequence-010",
+      "orientation": "white-bottom",
+      "expected": {
+        "piecePlacement": "rnbqkb1r/p2p1p1p/1p2pnp1/P7/2pP1PP1/8/1PPKP2P/RNBQ1BNR"
+      },
+      "boundsCorrect": true,
+      "positionCorrect": false,
+      "geometry": {
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "actual": {
+        "piecePlacement": "rnbqkb1r/p2p1p1p/1p2pnp1/P7/2pP1Pp1/8/1PPKP2P/RNBQ1BNR"
+      }
+    },
+    {
+      "image": ".cache/digital-arrow-captures-v1/arrow-crossed/clean/clean-chesscom-brown-neo-standard-sequence-010/evaluation/chesscom-brown-neo-standard/digital-038-black-bottom.png",
+      "sha256": "950dff760b4840d81e33df54791c7d1855eda5f273eea808a388ccc8ced2985c",
+      "positionId": "digital-038",
+      "groupId": "sequence-010",
+      "orientation": "black-bottom",
+      "expected": {
+        "piecePlacement": "Rnb1k2r/2qp3p/1P5b/3n2p1/3PK1Q1/2P1p2P/1P6/1NB2BNR"
+      },
+      "boundsCorrect": true,
+      "positionCorrect": true,
+      "geometry": {
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "actual": {
+        "piecePlacement": "Rnb1k2r/2qp3p/1P5b/3n2p1/3PK1Q1/2P1p2P/1P6/1NB2BNR"
+      }
+    },
+    {
+      "image": ".cache/digital-style-derived-v2/layouts/lichess-wood4-staunty-compact-board-crop-384/digital-038-black-bottom.png",
+      "sha256": "5593838140d73ef485286c954b27af038261101cd4e0cce4ae6cd867d57e7403",
+      "positionId": "digital-038",
+      "groupId": "sequence-010",
+      "orientation": "black-bottom",
+      "expected": {
+        "piecePlacement": "Rnb1k2r/2qp3p/1P5b/3n2p1/3PK1Q1/2P1p2P/1P6/1NB2BNR"
+      },
+      "boundsCorrect": true,
+      "positionCorrect": true,
+      "geometry": {
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "actual": {
+        "piecePlacement": "Rnb1k2r/2qp3p/1P5b/3n2p1/3PK1Q1/2P1p2P/1P6/1NB2BNR"
+      }
+    },
+    {
+      "image": ".cache/digital-style-derived-v2/layouts/lichess-blue-staunty-compact-board-crop-384/digital-001-black-bottom.png",
+      "sha256": "f28fc01752e4060e7e6ae3374b3f3cde1e7156291cec3b9110feb97a59c87d03",
+      "positionId": "digital-001",
+      "groupId": "sequence-001",
+      "orientation": "black-bottom",
+      "expected": {
+        "piecePlacement": "rnb1kb1r/pppp3p/4p1pn/P4p2/1P3P2/N6N/2PPP1qP/R1BQKB1R"
+      },
+      "boundsCorrect": true,
+      "positionCorrect": true,
+      "geometry": {
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "actual": {
+        "piecePlacement": "rnb1kb1r/pppp3p/4p1pn/P4p2/1P3P2/N6N/2PPP1qP/R1BQKB1R"
+      }
+    },
+    {
+      "image": ".cache/digital-style-derived-v2/layouts/lichess-blue-staunty-compact-board-crop-384/digital-006-black-bottom.png",
+      "sha256": "1c714fc4c3e4389f6bb4d1cc0905ab09a8813d6b1e1ba9d4d0c10fdf2fd58637",
+      "positionId": "digital-006",
+      "groupId": "sequence-002",
+      "orientation": "black-bottom",
+      "expected": {
+        "piecePlacement": "1n1qk1nr/1b4b1/r3pB1p/2p3pP/1p1Q1P2/8/3PP1P1/RN2KBNR"
+      },
+      "boundsCorrect": true,
+      "positionCorrect": true,
+      "geometry": {
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "actual": {
+        "piecePlacement": "1n1qk1nr/1b4b1/r3pB1p/2p3pP/1p1Q1P2/8/3PP1P1/RN2KBNR"
+      }
+    },
+    {
+      "image": ".cache/digital-style-derived-v2/layouts/lichess-blue-staunty-compact-board-crop-384/digital-038-black-bottom.png",
+      "sha256": "23eaab050a9a7342daf4eecb0b5e9d527ff7fbf0a0cb53a6e9fa7dfeb4b41df4",
+      "positionId": "digital-038",
+      "groupId": "sequence-010",
+      "orientation": "black-bottom",
+      "expected": {
+        "piecePlacement": "Rnb1k2r/2qp3p/1P5b/3n2p1/3PK1Q1/2P1p2P/1P6/1NB2BNR"
+      },
+      "boundsCorrect": true,
+      "positionCorrect": true,
+      "geometry": {
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "actual": {
+        "piecePlacement": "Rnb1k2r/2qp3p/1P5b/3n2p1/3PK1Q1/2P1p2P/1P6/1NB2BNR"
+      }
+    }
+  ]
+}

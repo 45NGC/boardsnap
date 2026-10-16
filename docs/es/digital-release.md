@@ -2,7 +2,11 @@
 
 [English](../en/digital-release.md) | **Español** · [Inicio](README.md)
 
-**Estado actual: candidato, no versión digital aceptada.** El
+**Esta página documenta el paquete provisional v1 fijado.** La [corrección posterior](regression-fixes.md)
+resuelve sus seis fallos conocidos con otro modelo y código. Los artefactos v1
+se conservan; el nuevo candidato necesita su propia política y comprobación de distribución.
+
+**Estado del paquete provisional v1: candidato, no versión digital aceptada.** El
 [informe de preparación](../../data/reports/digital-readiness-v1.json) bloquea la
 evaluación final por las dos regresiones con flechas y los cuatro fallos de
 detección en recortes. Las [mediciones del paso 9](style-expansion.md) siguen siendo

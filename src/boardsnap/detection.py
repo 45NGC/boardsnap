@@ -192,6 +192,15 @@ def _structural_candidates(pixels: np.ndarray) -> list[BoardBounds]:
         refined = _refine_grid(pixels, proposal)
         if refined is not None and _structural_pattern(pixels, refined):
             candidates.append(refined)
+    # A tight crop supplies another possible outer boundary when piece bases
+    # or resampling pull the interior peak fit outside the image. Prefer fitted
+    # grids: a small margin can also pass the pattern check, but is not a second
+    # board. Squareness alone is never enough; do not pad or infer missing cells.
+    if (not candidates and min(width, height) >= _MIN_BOARD_SIDE
+            and abs(width - height) <= max(2, max(width, height) * .01)):
+        frame = BoardBounds(0, 0, width, height)
+        if _structural_pattern(pixels, frame):
+            candidates.append(frame)
     return candidates
 
 

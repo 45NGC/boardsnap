@@ -1,0 +1,283 @@
+{
+  "metadata": {
+    "formatVersion": 1,
+    "architecture": "small-square-cnn-v1",
+    "classOrder": [
+      "empty",
+      "P",
+      "N",
+      "B",
+      "R",
+      "Q",
+      "K",
+      "p",
+      "n",
+      "b",
+      "r",
+      "q",
+      "k"
+    ],
+    "preprocessing": {
+      "inputSize": [
+        64,
+        64
+      ],
+      "colorMode": "RGB",
+      "inputDtype": "uint8",
+      "tensorLayout": "NCHW",
+      "tensorDtype": "float32",
+      "scale": "divide by 255",
+      "additionalNormalization": null,
+      "augmentation": null
+    },
+    "dataVersion": {
+      "datasetId": "digital-style-squares-v2",
+      "manifestSha256": "7cae41fdb1b28e7dc8442c70a01cc5c473ee47f7c206cdfcc9ec0cb715842525",
+      "verifiedIndexSha256": "9bfe8473346998df5df546c7a74c449d14d9db1ad34669dc390e527993172f4a",
+      "trainingBoards": 15760,
+      "trainingSquares": 320783,
+      "validationBoards": 3132,
+      "markedCellsOnlyInTraining": true,
+      "trainingCodeSha256": "5471c8939e8031ede5ca49789a94ebc46fc9540ae8c53de465f8653e7a5a5bea",
+      "dataLoaderCodeSha256": "825cc064ec7d77b49075bf86657c6427d1a0e9a6f3484f28b818d1c08737a8ff",
+      "modelCodeSha256": "1953f32f7fb4cc25ec63cae0302ddfeda927f6d9373eadf2541cb7f70950c13f",
+      "trainingAugmentation": {
+        "datasetSha256": "c843b1dc4199a2619be2a32194cb19eb74a1ecbc7c264545b967f3180e6a19ca",
+        "indexSha256": "5bdc7de8be3fd6303317f0c5832740a48542404bb3b685049bfd6a02cd361b38",
+        "trainingBoards": 1144,
+        "trainingSquares": 6437,
+        "validationChanged": false,
+        "evaluationArraysLoaded": false
+      },
+      "augmentationLoaderCodeSha256": "968c0d4d790c4985b24976e23fc60a491d469bcd1235b2c1b62b65f1643aaff9",
+      "validationControlBoards": 2484,
+      "controlSelectionPolicy": "cohort=previous; include all conditions"
+    },
+    "trainingConfig": {
+      "seed": 20261015,
+      "epochs": 12,
+      "batchSize": 512,
+      "learningRate": 0.0002,
+      "weightDecay": 0.0001,
+      "threads": 4
+    },
+    "selection": "maximum designated validation control exact boards first; maximum validation exact boards, then macro recall, then lower unweighted loss; earlier tie",
+    "loss": "cross entropy with inverse class frequency from training only",
+    "classWeights": [
+      0.11661223322153091,
+      1.0713157653808594,
+      2.6461784839630127,
+      3.5060551166534424,
+      3.5417850017547607,
+      9.255669593811035,
+      3.8664393424987793,
+      1.1469029188156128,
+      3.051269292831421,
+      3.2357218265533447,
+      3.560694932937622,
+      7.962444305419922,
+      3.789834976196289
+    ],
+    "environment": {
+      "torch": "2.14.1+cpu",
+      "numpy": "2.5.3",
+      "python": "3.12.3",
+      "device": "cpu"
+    },
+    "parameterCount": 39709,
+    "initialization": {
+      "weightsSha256": "414956a4775d64d102332e786eefe7b29e8c88c4622d7d805894ac7106471fe7",
+      "dataVersion": {
+        "datasetId": "digital-style-squares-v2",
+        "manifestSha256": "7cae41fdb1b28e7dc8442c70a01cc5c473ee47f7c206cdfcc9ec0cb715842525",
+        "verifiedIndexSha256": "9bfe8473346998df5df546c7a74c449d14d9db1ad34669dc390e527993172f4a",
+        "trainingBoards": 14616,
+        "trainingSquares": 314346,
+        "validationBoards": 3132,
+        "markedCellsOnlyInTraining": true,
+        "trainingCodeSha256": "68ba0495c648c4e8444c73ab126da45b048bdc65085f710ce89e2edb4e74080d",
+        "dataLoaderCodeSha256": "825cc064ec7d77b49075bf86657c6427d1a0e9a6f3484f28b818d1c08737a8ff",
+        "modelCodeSha256": "1953f32f7fb4cc25ec63cae0302ddfeda927f6d9373eadf2541cb7f70950c13f",
+        "validationControlBoards": 2484,
+        "controlSelectionPolicy": "cohort=previous; include all conditions"
+      },
+      "optimizer": "new AdamW; previous optimizer state is not inherited"
+    },
+    "validationControlMaskSha256": "ba97580a390f6e306b75e66ae4bb0eb0372ce3afe564233fc96709ce6a471999"
+  },
+  "completedEpochs": 12,
+  "selected": {
+    "epoch": 12,
+    "metrics": {
+      "loss": 1.6718756724790463e-05,
+      "squareAccuracy": 0.999995011174968,
+      "macroRecall": 0.9999944699441463,
+      "exactBoards": 3131,
+      "boards": 3132,
+      "controlExactBoards": 2484,
+      "controlBoards": 2484
+    }
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "validation": {
+        "loss": 3.2617709663589784e-05,
+        "squareAccuracy": 0.999995011174968,
+        "macroRecall": 0.9999944699441463,
+        "exactBoards": 3131,
+        "boards": 3132,
+        "controlExactBoards": 2484,
+        "controlBoards": 2484
+      },
+      "seconds": 20.31841805899967
+    },
+    {
+      "epoch": 2,
+      "validation": {
+        "loss": 2.3567146166628063e-05,
+        "squareAccuracy": 0.999995011174968,
+        "macroRecall": 0.9999944699441463,
+        "exactBoards": 3131,
+        "boards": 3132,
+        "controlExactBoards": 2484,
+        "controlBoards": 2484
+      },
+      "seconds": 20.666884680002113
+    },
+    {
+      "epoch": 3,
+      "validation": {
+        "loss": 2.1042305171044416e-05,
+        "squareAccuracy": 0.999995011174968,
+        "macroRecall": 0.9999944699441463,
+        "exactBoards": 3131,
+        "boards": 3132,
+        "controlExactBoards": 2484,
+        "controlBoards": 2484
+      },
+      "seconds": 21.151390708997496
+    },
+    {
+      "epoch": 4,
+      "validation": {
+        "loss": 2.03696291828713e-05,
+        "squareAccuracy": 0.999995011174968,
+        "macroRecall": 0.9999944699441463,
+        "exactBoards": 3131,
+        "boards": 3132,
+        "controlExactBoards": 2484,
+        "controlBoards": 2484
+      },
+      "seconds": 23.533180795999215
+    },
+    {
+      "epoch": 5,
+      "validation": {
+        "loss": 2.094590429902126e-05,
+        "squareAccuracy": 0.999995011174968,
+        "macroRecall": 0.9999944699441463,
+        "exactBoards": 3131,
+        "boards": 3132,
+        "controlExactBoards": 2484,
+        "controlBoards": 2484
+      },
+      "seconds": 22.42689498099935
+    },
+    {
+      "epoch": 6,
+      "validation": {
+        "loss": 1.9321787070365337e-05,
+        "squareAccuracy": 0.999995011174968,
+        "macroRecall": 0.9999944699441463,
+        "exactBoards": 3131,
+        "boards": 3132,
+        "controlExactBoards": 2484,
+        "controlBoards": 2484
+      },
+      "seconds": 21.20756881300258
+    },
+    {
+      "epoch": 7,
+      "validation": {
+        "loss": 1.838850842413742e-05,
+        "squareAccuracy": 0.999995011174968,
+        "macroRecall": 0.9999944699441463,
+        "exactBoards": 3131,
+        "boards": 3132,
+        "controlExactBoards": 2484,
+        "controlBoards": 2484
+      },
+      "seconds": 21.25838964200011
+    },
+    {
+      "epoch": 8,
+      "validation": {
+        "loss": 1.7915044432678694e-05,
+        "squareAccuracy": 0.999995011174968,
+        "macroRecall": 0.9999944699441463,
+        "exactBoards": 3131,
+        "boards": 3132,
+        "controlExactBoards": 2484,
+        "controlBoards": 2484
+      },
+      "seconds": 21.40003633899687
+    },
+    {
+      "epoch": 9,
+      "validation": {
+        "loss": 1.7762421398766945e-05,
+        "squareAccuracy": 0.999995011174968,
+        "macroRecall": 0.9999944699441463,
+        "exactBoards": 3131,
+        "boards": 3132,
+        "controlExactBoards": 2484,
+        "controlBoards": 2484
+      },
+      "seconds": 20.850745777002885
+    },
+    {
+      "epoch": 10,
+      "validation": {
+        "loss": 1.7110451904453132e-05,
+        "squareAccuracy": 0.999995011174968,
+        "macroRecall": 0.9999944699441463,
+        "exactBoards": 3131,
+        "boards": 3132,
+        "controlExactBoards": 2484,
+        "controlBoards": 2484
+      },
+      "seconds": 21.265219663000607
+    },
+    {
+      "epoch": 11,
+      "validation": {
+        "loss": 1.677189688768605e-05,
+        "squareAccuracy": 0.999995011174968,
+        "macroRecall": 0.9999944699441463,
+        "exactBoards": 3131,
+        "boards": 3132,
+        "controlExactBoards": 2484,
+        "controlBoards": 2484
+      },
+      "seconds": 20.245240697000554
+    },
+    {
+      "epoch": 12,
+      "validation": {
+        "loss": 1.6718756724790463e-05,
+        "squareAccuracy": 0.999995011174968,
+        "macroRecall": 0.9999944699441463,
+        "exactBoards": 3131,
+        "boards": 3132,
+        "controlExactBoards": 2484,
+        "controlBoards": 2484
+      },
+      "seconds": 21.025083714001084
+    }
+  ],
+  "complete": true,
+  "weightsSha256": "9546c6cfc34517f631cd58bf3eae0cdb3aa7790765b6f4ad1c0bf307ca4ad704",
+  "evaluationUsedForSelection": false,
+  "templatesRemainDefault": true
+}

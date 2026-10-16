@@ -2,7 +2,11 @@
 
 **English** | [Español](../es/digital-release.md) · [Overview](README.md)
 
-**Current status: candidate, not an accepted digital release.** The
+**This page records the frozen v1 preview.** The [subsequent correction](regression-fixes.md)
+resolves its six exposed failures with a new model/runtime. v1 artifacts remain
+unchanged; the new candidate needs its own policy and distribution verification.
+
+**v1 preview status: candidate, not an accepted digital release.** The
 [readiness report](../../data/reports/digital-readiness-v1.json) blocks final
 evaluation because the current model adds two arrow regressions and the detector
 misses four cropped boards. The [step 9 measurements](style-expansion.md) remain

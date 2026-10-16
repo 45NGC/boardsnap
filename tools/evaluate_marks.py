@@ -136,6 +136,8 @@ def evaluate(dataset, baseline_path, candidate_path, split, threads=4, *,
     return {"schemaVersion": 1, "split": split, "datasetSha256": digest(dataset / "dataset.json"),
             "models": {baseline_name: digest(baseline_path), candidate_name: digest(candidate_path)},
             "evaluationCodeSha256": digest(Path(__file__)),
+            "runtimeSha256": {str(p.relative_to(Path(__file__).resolve().parents[1])): digest(p)
+                              for p in sorted((Path(__file__).resolve().parents[1]/'src/boardsnap').rglob('*.py'))},
             "environment": {"python": platform.python_version(), "torch": str(torch.__version__), "threads": threads},
             "scope": "controlled overlays and clean controls; identical input pixels for both models; explicit view; no removal",
             "controlRegressions": regressions,
@@ -158,6 +160,8 @@ def main(argv=None):
     parser.add_argument("--threads", type=int, default=4)
     parser.add_argument("--baseline-name", default="cleanBaseline")
     parser.add_argument("--candidate-name", default="markedCandidate")
+    parser.add_argument("--regression", action="store_true",
+                        help="Label already consulted images as regression evidence, not a new independent test")
     args = parser.parse_args(argv)
     training = json.loads((args.candidate.parent / "training.json").read_text())
     if not training["complete"] or training["weightsSha256"] != digest(args.candidate):
@@ -165,6 +169,7 @@ def main(argv=None):
     report = evaluate(args.dataset, args.baseline, args.candidate, args.split, args.threads,
                       baseline_name=args.baseline_name, candidate_name=args.candidate_name)
     report["training"] = training
+    report['dataRole'] = 'consulted-regression' if args.regression else args.split
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2) + "\n")
 

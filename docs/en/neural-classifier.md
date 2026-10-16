@@ -56,6 +56,31 @@ hyperparameter trial.
 
 ## Installation and commands
 
+The trainer also supports `--initialize-from MODEL.pt` for fine-tuning compatible
+weights with a new optimizer. `--teacher MODEL.pt --control-cohort previous` adds
+distillation on previous-cohort **training** squares only: supervised class loss
+plus KL divergence (defaults: temperature 2, weight 1). Set both
+`distillationTemperature` and `distillationWeight` in the configuration to change
+these values. The teacher is not used at inference.
+`--expansion-teacher MODEL.pt` additionally preserves a second model's predictions
+on the complementary expansion-cohort training squares. Both teachers remain
+training-only references; the deployed artifact still contains one model.
+Its checksum, training mask and initialization checksum are recorded; keep the
+same arguments when resuming. Changing any of them rejects the checkpoint.
+Validation still selects whole-board performance, and evaluation pixels never
+provide training targets. This option currently excludes `--real-dataset` because
+its additional rows would need explicit cohort alignment.
+
+For supervised fine-tuning, `--extra-training-dataset DIRECTORY` appends audited
+variants of existing training images. Source checksums, position/group, placement,
+view and style must match the parent training records. Validation remains unchanged;
+reserved-source variants are rejected even if relabeled as training. This option
+cannot currently be combined with teachers or `--real-dataset`.
+`tools.build_arrowhead_training` generates full-board blue-arrowhead variants
+covering all 13 classes, both square colors and views of each seen training style.
+It then builds normalized crops; it never generates variants from reserved images.
+See the [regression correction recipe](regression-fixes.md) for the measured run.
+
 Run from the repository root in the existing virtual environment. For this Linux
 CPU baseline, install the official CPU build first:
 

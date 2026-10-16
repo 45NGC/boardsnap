@@ -1,0 +1,696 @@
+{
+  "dataRole": "consulted-regression",
+  "independentFinalEvaluation": false,
+  "splits": {
+    "development": {
+      "datasetId": "digital-detection-v1",
+      "stage": "detection-only",
+      "split": "development",
+      "manifestSha256": "0b380ca4d363629f948aecbd334f0a1fdbcd411be09322362bce2fb5cbec0512",
+      "detectorSha256": "4c4bcf4cdb63de2c406bc3566aa638071a8e3c8df4e47cead4873a58ad8e0d06",
+      "classificationEvaluated": false,
+      "imageCount": 20,
+      "sourceGroupCount": 7,
+      "detectedCount": 20,
+      "withinToleranceCount": 20,
+      "maxAllowedEdgeErrorPixels": 2,
+      "maxObservedEdgeErrorPixels": 0,
+      "meanIntersectionOverUnion": 1.0,
+      "boardRemovalNegativeCount": 20,
+      "boardRemovalFalsePositives": 0,
+      "images": [
+        {
+          "id": "lichess-game-001-shot-001",
+          "sourceGroupId": "lichess-game-001",
+          "conditions": [
+            "last-move-highlights"
+          ],
+          "expectedBox": [
+            40,
+            14,
+            1120,
+            1094
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            40,
+            14,
+            1120,
+            1094
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "lichess-game-001-shot-002",
+          "sourceGroupId": "lichess-game-001",
+          "conditions": [
+            "last-move-highlights"
+          ],
+          "expectedBox": [
+            27,
+            17,
+            1107,
+            1097
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            27,
+            17,
+            1107,
+            1097
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "lichess-game-002-shot-001",
+          "sourceGroupId": "lichess-game-002",
+          "conditions": [
+            "last-move-highlights"
+          ],
+          "expectedBox": [
+            18,
+            9,
+            1098,
+            1089
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            18,
+            9,
+            1098,
+            1089
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "lichess-game-002-shot-002",
+          "sourceGroupId": "lichess-game-002",
+          "conditions": [
+            "last-move-highlights"
+          ],
+          "expectedBox": [
+            22,
+            11,
+            1102,
+            1091
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            22,
+            11,
+            1102,
+            1091
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "lichess-game-003-shot-001",
+          "sourceGroupId": "lichess-game-003",
+          "conditions": [
+            "last-move-highlights"
+          ],
+          "expectedBox": [
+            20,
+            8,
+            1100,
+            1088
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            20,
+            8,
+            1100,
+            1088
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "lichess-game-003-shot-002",
+          "sourceGroupId": "lichess-game-003",
+          "conditions": [
+            "last-move-highlights"
+          ],
+          "expectedBox": [
+            15,
+            8,
+            1095,
+            1088
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            15,
+            8,
+            1095,
+            1088
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "chesscom-game-001-shot-001",
+          "sourceGroupId": "chesscom-game-001",
+          "conditions": [
+            "last-move-highlights"
+          ],
+          "expectedBox": [
+            33,
+            29,
+            1257,
+            1253
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            33,
+            29,
+            1257,
+            1253
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "chesscom-game-001-shot-002",
+          "sourceGroupId": "chesscom-game-001",
+          "conditions": [
+            "last-move-highlights"
+          ],
+          "expectedBox": [
+            41,
+            34,
+            1265,
+            1258
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            41,
+            34,
+            1265,
+            1258
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "chesscom-game-002-shot-001",
+          "sourceGroupId": "chesscom-game-002",
+          "conditions": [
+            "last-move-highlights"
+          ],
+          "expectedBox": [
+            17,
+            42,
+            1241,
+            1266
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            17,
+            42,
+            1241,
+            1266
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "chesscom-game-002-shot-002",
+          "sourceGroupId": "chesscom-game-002",
+          "conditions": [
+            "last-move-highlights"
+          ],
+          "expectedBox": [
+            17,
+            12,
+            1241,
+            1236
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            17,
+            12,
+            1241,
+            1236
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "chesscom-game-003-shot-001",
+          "sourceGroupId": "chesscom-game-003",
+          "conditions": [
+            "last-move-highlights"
+          ],
+          "expectedBox": [
+            31,
+            22,
+            1255,
+            1246
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            31,
+            22,
+            1255,
+            1246
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "chesscom-game-003-shot-002",
+          "sourceGroupId": "chesscom-game-003",
+          "conditions": [
+            "last-move-highlights"
+          ],
+          "expectedBox": [
+            3,
+            13,
+            1227,
+            1237
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            3,
+            13,
+            1227,
+            1237
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "chesscom-blue-classic-digital-009-black-bottom",
+          "sourceGroupId": "digital-positions-v1-sequence-003",
+          "conditions": [
+            "clean"
+          ],
+          "expectedBox": [
+            228,
+            66,
+            932,
+            770
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            228,
+            66,
+            932,
+            770
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "chesscom-blue-classic-digital-009-white-bottom",
+          "sourceGroupId": "digital-positions-v1-sequence-003",
+          "conditions": [
+            "clean"
+          ],
+          "expectedBox": [
+            228,
+            66,
+            932,
+            770
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            228,
+            66,
+            932,
+            770
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "chesscom-brown-bases-digital-009-black-bottom",
+          "sourceGroupId": "digital-positions-v1-sequence-003",
+          "conditions": [
+            "clean"
+          ],
+          "expectedBox": [
+            228,
+            66,
+            932,
+            770
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            228,
+            66,
+            932,
+            770
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "chesscom-brown-bases-digital-009-white-bottom",
+          "sourceGroupId": "digital-positions-v1-sequence-003",
+          "conditions": [
+            "clean"
+          ],
+          "expectedBox": [
+            228,
+            66,
+            932,
+            770
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            228,
+            66,
+            932,
+            770
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "lichess-green-merida-digital-009-black-bottom",
+          "sourceGroupId": "digital-positions-v1-sequence-003",
+          "conditions": [
+            "clean"
+          ],
+          "expectedBox": [
+            190,
+            158,
+            774,
+            742
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            190,
+            158,
+            774,
+            742
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "lichess-green-merida-digital-009-white-bottom",
+          "sourceGroupId": "digital-positions-v1-sequence-003",
+          "conditions": [
+            "clean"
+          ],
+          "expectedBox": [
+            190,
+            158,
+            774,
+            742
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            190,
+            158,
+            774,
+            742
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "lichess-purple-alpha-digital-009-black-bottom",
+          "sourceGroupId": "digital-positions-v1-sequence-003",
+          "conditions": [
+            "clean"
+          ],
+          "expectedBox": [
+            190,
+            158,
+            774,
+            742
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            190,
+            158,
+            774,
+            742
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "lichess-purple-alpha-digital-009-white-bottom",
+          "sourceGroupId": "digital-positions-v1-sequence-003",
+          "conditions": [
+            "clean"
+          ],
+          "expectedBox": [
+            190,
+            158,
+            774,
+            742
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            190,
+            158,
+            774,
+            742
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        }
+      ]
+    },
+    "evaluation": {
+      "datasetId": "digital-detection-v1",
+      "stage": "detection-only",
+      "split": "evaluation",
+      "manifestSha256": "0b380ca4d363629f948aecbd334f0a1fdbcd411be09322362bce2fb5cbec0512",
+      "detectorSha256": "4c4bcf4cdb63de2c406bc3566aa638071a8e3c8df4e47cead4873a58ad8e0d06",
+      "classificationEvaluated": false,
+      "imageCount": 8,
+      "sourceGroupCount": 4,
+      "detectedCount": 8,
+      "withinToleranceCount": 8,
+      "maxAllowedEdgeErrorPixels": 2,
+      "maxObservedEdgeErrorPixels": 0,
+      "meanIntersectionOverUnion": 1.0,
+      "boardRemovalNegativeCount": 8,
+      "boardRemovalFalsePositives": 0,
+      "images": [
+        {
+          "id": "lichess-game-004-shot-001",
+          "sourceGroupId": "lichess-game-004",
+          "conditions": [
+            "last-move-highlights"
+          ],
+          "expectedBox": [
+            15,
+            10,
+            1095,
+            1090
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            15,
+            10,
+            1095,
+            1090
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "lichess-game-004-shot-002",
+          "sourceGroupId": "lichess-game-004",
+          "conditions": [
+            "last-move-highlights"
+          ],
+          "expectedBox": [
+            11,
+            10,
+            1091,
+            1090
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            11,
+            10,
+            1091,
+            1090
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "lichess-game-005-shot-001",
+          "sourceGroupId": "lichess-game-005",
+          "conditions": [
+            "last-move-highlights",
+            "arrows",
+            "circles"
+          ],
+          "expectedBox": [
+            12,
+            6,
+            1092,
+            1086
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            12,
+            6,
+            1092,
+            1086
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "lichess-game-005-shot-002",
+          "sourceGroupId": "lichess-game-005",
+          "conditions": [
+            "last-move-highlights",
+            "arrows",
+            "circles",
+            "check-highlight"
+          ],
+          "expectedBox": [
+            30,
+            11,
+            1110,
+            1091
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            30,
+            11,
+            1110,
+            1091
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "chesscom-game-004-shot-001",
+          "sourceGroupId": "chesscom-game-004",
+          "conditions": [
+            "last-move-highlights"
+          ],
+          "expectedBox": [
+            31,
+            32,
+            1255,
+            1256
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            31,
+            32,
+            1255,
+            1256
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "chesscom-game-004-shot-002",
+          "sourceGroupId": "chesscom-game-004",
+          "conditions": [
+            "last-move-highlights"
+          ],
+          "expectedBox": [
+            22,
+            20,
+            1246,
+            1244
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            22,
+            20,
+            1246,
+            1244
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "chesscom-game-005-shot-001",
+          "sourceGroupId": "chesscom-game-005",
+          "conditions": [
+            "last-move-highlights",
+            "arrows",
+            "manual-square-highlight"
+          ],
+          "expectedBox": [
+            35,
+            29,
+            1259,
+            1253
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            35,
+            29,
+            1259,
+            1253
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        },
+        {
+          "id": "chesscom-game-005-shot-002",
+          "sourceGroupId": "chesscom-game-005",
+          "conditions": [
+            "last-move-highlights",
+            "arrows"
+          ],
+          "expectedBox": [
+            17,
+            9,
+            1241,
+            1233
+          ],
+          "withinTolerance": true,
+          "actualBox": [
+            17,
+            9,
+            1241,
+            1233
+          ],
+          "maxEdgeErrorPixels": 0,
+          "intersectionOverUnion": 1.0,
+          "boardRemovalRejected": true
+        }
+      ]
+    }
+  }
+}

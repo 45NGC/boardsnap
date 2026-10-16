@@ -11,13 +11,15 @@ a configured PyTorch model (`BOARDSNAP_MODEL` or `--model`). Explicit profiles
 retain legacy templates. Step 9 expands the measured pilot with new pieces,
 textures and reserved piece/background combinations; native mobile support is
 not implied by browser captures.
-The new candidate has two known arrow regressions and four cropped-board detection
-misses; the guide records them alongside the improvements and preserves the previous model.
+The earlier candidate had two arrow regressions and four cropped-board detection
+misses. The [correction guide](docs/en/regression-fixes.md) records fixes for all six
+using the updated detector and `.cache/neural-styles-v8/best.pt`.
 
 The [digital acceptance guide](docs/en/digital-release.md) fixes the target catalogue,
 thresholds and a new reserved source plan. A local wheel and model bundle pass
-isolated installation checks. **The candidate is not accepted for release:** the
-six known failures block final evaluation, which remains unexecuted.
+isolated installation checks for the v1 preview. **Final acceptance remains pending:**
+the corrected candidate needs a new frozen policy and updated distribution checks
+before running the reserved final evaluation.
 
 The [profile guide](docs/en/profiles.md) records exact scope, datasets and results.
 The [style inventory](docs/en/style-inventory.md) tracks backgrounds, piece designs,

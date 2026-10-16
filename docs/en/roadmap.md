@@ -1,8 +1,9 @@
 # Incremental roadmap
 
 Current release preparation: [digital acceptance](digital-release.md). Criteria,
-reserved source plan and installation checks are ready; the candidate still has
-six known failures to resolve before final evaluation. Previously consulted
+reserved source plan and v1 installation checks are ready. The [six known failures
+are corrected](regression-fixes.md); new candidate/policy and distribution checks
+are required before final evaluation. Previously consulted
 evaluation images are regression data, not an independent final test.
 
 **English** | [Spanish](../es/roadmap.md) · [Overview](README.md)
