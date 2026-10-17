@@ -64,8 +64,8 @@ Esta vía exige además fondos alternos inmediatamente dentro de los cuatro bord
 exteriores, para rechazar cuadrículas extrapoladas alrededor de casillas cortadas.
 Rechaza ventanas de ocho casillas cuyo patrón continúe visiblemente en una
 cuadrícula mayor. Conserva los rectángulos ya aceptados frente a propuestas
-interiores coincidentes. La alternativa de usar la imagen completa no cambia;
-su revisión sigue perteneciendo al siguiente paso de ajuste de límites.
+interiores coincidentes. Después comprueba el rectángulo elegido mediante el
+ajuste de bordes visibles antes de recortar.
 
 La búsqueda se limita a 80 picos y 256 intervalos propuestos por eje. Un fondo
 muy denso todavía puede ocultar el tablero. La detección no utiliza anotaciones,
@@ -81,6 +81,36 @@ mínimo de tablero original es 128 píxeles, pero además se exigen 24 píxeles 
 escala de propuesta. Por ello pueden perderse tableros pequeños dentro de imágenes
 muy grandes. Son técnicas deterministas de OpenCV/NumPy; no se entrena un modelo
 ni se añaden dependencias o PyTorch.
+
+### Límites visibles antes de dividir en casillas
+
+Una imagen casi cuadrada ahora es **solo una región de búsqueda**, no un rectángulo
+aceptado automáticamente. Esa vía debe ajustar líneas interiores y localizar las
+transiciones exteriores reales. El ajuste alternativo muestrea cerca de los lados
+de las casillas y usa gradientes medianos para reducir la interferencia de bases de
+piezas repetidas. Las propuestas de componentes conectados también pueden usarlo
+cuando falla el ajuste original.
+
+Se estiman los colores alternos a partir de los bordes interiores de las casillas,
+se busca su presencia cerca de los cuatro límites propuestos y se localizan las
+transiciones de color con la dirección correcta. Esto conserva píxeles suavizados
+del borde y evita elegir una línea de interfaz adyacente más intensa. Al menos
+seis límites interiores por eje deben seguir alineados con la división uniforme
+final en ocho casillas.
+
+El ajuste puede salirse como máximo **un píxel de rasterización por borde de la
+imagen**. El rectángulo devuelto contiene únicamente píxeles visibles: no se añade
+relleno ni se reconstruye contenido; la normalización redimensiona ese recorte
+visible. Esto cubre la columna recortada de la 002, no casillas ausentes ni tableros
+recortados en general. También se intenta refinar el rectángulo digital finalmente
+seleccionado. Si no se puede establecer el ajuste opcional, se conserva la propuesta
+por paleta/estructura ya validada; la vía basada solo en el marco de la imagen
+siempre exige que el ajuste tenga éxito.
+
+Las pruebas cubren márgenes asimétricos, dimensiones no divisibles por ocho,
+escalado bilineal y LANCZOS, un píxel recortado por borde, recortes mayores rechazados
+y reconocimiento completo de los tres vídeos relacionados con márgenes añadidos.
+Consulta los [resultados del paso 3](video-development.md#paso-3-ajuste-de-bordes-visibles).
 
 Los perfiles digitales comparten esta vía estructural. El perfil sigue aportando
 propuestas por paleta y, en otras etapas, plantillas de orientación y piezas.

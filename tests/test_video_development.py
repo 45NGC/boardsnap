@@ -16,9 +16,9 @@ from tools.neural_data import digest
 DATA = json.loads(MANIFEST.read_text())
 SAMPLES = DATA['samples']
 NOT_FOUND = {'chesscom-video-009', 'chesscom-video-010'}
-IMPRECISE = {'chesscom-video-002', 'lichess-video-003'}
+IMPRECISE = set()
 REVIEWED_CLASSIFICATION_FAILURES = {'chesscom-video-009', 'chesscom-video-010'}
-PIPELINE_FAILURES = {'chesscom-video-002', 'chesscom-video-009', 'chesscom-video-010'}
+PIPELINE_FAILURES = {'chesscom-video-009', 'chesscom-video-010'}
 
 
 def cases_for(stage):
@@ -178,6 +178,33 @@ def test_classification_with_reviewed_bounds_matches_position(neural_report, sam
 def test_complete_pipeline_matches_reviewed_position(neural_report, sample):
     result = next(r for r in neural_report['results'] if r['id'] == sample['id'])
     assert result['fullPipeline']['correct']
+
+
+@pytest.fixture(scope='module')
+def neural_classifier():
+    model = os.environ.get('BOARDSNAP_TEST_MODEL')
+    if not model:
+        pytest.skip('Set BOARDSNAP_TEST_MODEL to test a local neural artifact.')
+    torch = pytest.importorskip('torch')
+    from boardsnap.neural import NeuralClassifier
+    torch.set_num_threads(4)
+    return NeuralClassifier(Path(model))
+
+
+@pytest.mark.integration
+@pytest.mark.parametrize('sample', SAMPLES[:3], ids=lambda r: r['id'])
+@pytest.mark.parametrize('margins', [(0, 0, 0, 0), (3, 5, 9, 2), (11, 1, 4, 7)])
+def test_same_video_position_with_asymmetric_margins(tmp_path, neural_classifier, sample, margins):
+    left, top, right, bottom = margins
+    with read_image(ROOT / sample['path']) as original:
+        image = Image.new('RGB', (original.width+left+right, original.height+top+bottom), '#555555')
+        image.paste(original, (left, top))
+    expected = tuple(a+b for a,b in zip(sample['box'], (left, top, left, top)))
+    assert max(abs(a-b) for a,b in zip(detect_board(image).as_box(), expected)) <= 2
+    path = tmp_path / 'padded.png'
+    image.save(path)
+    assert neural_classifier.recognize_image(path, orientation=sample['orientation']) == {
+        'piecePlacement': sample['piecePlacement']}
 
 
 @pytest.mark.unit

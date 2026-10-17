@@ -130,9 +130,72 @@ def _structural_pattern(pixels: np.ndarray, bounds: BoardBounds, *, complete_edg
     return True
 
 
-def _refine_grid(pixels: np.ndarray, bounds: BoardBounds) -> BoardBounds | None:
-    """Fit seven interior boundary peaks, independently of an outer shadow/frame."""
+def _visible_edges(pixels: np.ndarray, bounds: BoardBounds) -> BoardBounds | None:
+    """Locate actual outer transitions near an interior-line fit, without padding.
+
+    At most one raster pixel may lie outside the input. This permits a clipped
+    edge pixel, not a missing square. Returned bounds always describe visible
+    pixels; the alternating border must still exist on all four sides.
+    """
+    height, width = pixels.shape[:2]
+    x, y, right, bottom = bounds.as_box()
+    if min(x, y) < -1 or right > width + 1 or bottom > height + 1:
+        return None
+    patch = pixels[max(0, y):min(height, bottom), max(0, x):min(width, right)]
+    patch = cv2.resize(patch, (256, 256), interpolation=cv2.INTER_AREA).astype(np.float32)
+    values = np.empty((8, 8, 3), dtype=np.float32)
+    for row in range(8):
+        for col in range(8):
+            cell = patch[row * 32:(row + 1) * 32, col * 32:(col + 1) * 32]
+            rim = np.concatenate((cell[2:5, 2:-2].reshape(-1, 3), cell[-5:-2, 2:-2].reshape(-1, 3),
+                                  cell[5:-5, 2:5].reshape(-1, 3), cell[5:-5, -5:-2].reshape(-1, 3)))
+            values[row, col] = np.median(rim, axis=0)
+    parity = np.indices((8, 8)).sum(axis=0) % 2
+    centers = np.array([np.median(values[parity == p], axis=0) for p in (0, 1)])
+    contrast = np.linalg.norm(centers[0] - centers[1])
+    if contrast < 25:
+        return None
     coordinates = []
+    for axis in (0, 1):
+        image = pixels if axis == 0 else pixels.transpose(1, 0, 2)
+        start, stop = (x, right) if axis == 0 else (y, bottom)
+        lo, hi = (y, bottom) if axis == 0 else (x, right)
+        radius = max(2, round((stop - start) / 8 * .06))
+        offsets = np.r_[np.linspace(.03, .13, 8), np.linspace(.87, .97, 8)]
+        positions = np.rint(lo + (np.arange(8)[:, None] + offsets) * (hi - lo) / 8).astype(int)
+        positions = np.clip(positions, 0, image.shape[0] - 1)
+        for edge, first_color in ((start, 0), (stop, 1)):
+            a, b = max(0, edge - radius), min(image.shape[1], edge + radius + 1)
+            samples = np.median(image[positions[:, :, None], np.arange(a, b)[None, None, :]].astype(np.float32), axis=1)
+            expected = (np.arange(8) + first_color) % 2
+            own = np.linalg.norm(samples - centers[expected, None, :], axis=2)
+            other = np.linalg.norm(samples - centers[1 - expected, None, :], axis=2)
+            support = ((own < contrast * .4) & (other - own > contrast * .2)).sum(axis=0)
+            matching = np.flatnonzero(support >= 6) + a
+            if not len(matching):
+                return None
+            value = int(matching[0] if first_color == 0 else matching[-1] + 1)
+            # Require a transition, or the actual input boundary. A run which
+            # continues beyond the search window does not establish an edge.
+            if (first_color == 0 and value == a and a > 0) or (first_color == 1 and value == b and b < image.shape[1]):
+                return None
+            if 0 < value < image.shape[1]:
+                # Retain antialiased edge pixels: pure-background matching alone
+                # would trim them. Locate the nearby strongest sustained change.
+                lo_edge, hi_edge = max(a + 1, value - 1), min(b, value + 2)
+                # Use the change *towards/away from* the expected background.
+                # An adjacent interface line can have a stronger RGB gradient
+                # while moving away from the board's colors.
+                gradient = np.median(np.diff(own, axis=1), axis=0) * (-1 if first_color == 0 else 1)
+                value = lo_edge + int(np.argmax(gradient[lo_edge - a - 1:hi_edge - a - 1]))
+            coordinates.append(value)
+    x, right, y, bottom = coordinates
+    return BoardBounds(x, y, right - x, bottom - y)
+
+
+def _refine_grid(pixels: np.ndarray, bounds: BoardBounds, *, visible: bool = False) -> BoardBounds | None:
+    """Fit seven interior boundary peaks, independently of an outer shadow/frame."""
+    coordinates, observed = [], []
     for axis in (0, 1):
         # axis 0 fits columns; axis 1 fits rows.
         image = pixels if axis == 0 else pixels.transpose(1, 0, 2)
@@ -141,8 +204,17 @@ def _refine_grid(pixels: np.ndarray, bounds: BoardBounds) -> BoardBounds | None:
         lo, hi = ((bounds.y, bounds.y + bounds.height) if axis == 0
                   else (bounds.x, bounds.x + bounds.width))
         # Bound memory on large screenshots; sample across the full board height.
-        strip = image[lo:hi:max(1, (hi - lo) // 256)].astype(np.float32)
-        gradient = np.mean(np.linalg.norm(np.diff(strip, axis=1), axis=2), axis=0)
+        if visible:
+            # Cell-side samples avoid repeated pawn bases that can dominate a
+            # full-strip mean. The median also suppresses thin marks and labels.
+            offsets = np.array([.08, .12, .88, .92])
+            positions = np.unique(np.rint(lo + (np.arange(8)[:, None] + offsets) * (hi - lo) / 8).astype(int))
+            positions = positions[(positions >= 0) & (positions < image.shape[0])]
+            strip = image[positions].astype(np.float32)
+            gradient = np.median(np.linalg.norm(np.diff(strip, axis=1), axis=2), axis=0)
+        else:
+            strip = image[lo:hi:max(1, (hi - lo) // 256)].astype(np.float32)
+            gradient = np.mean(np.linalg.norm(np.diff(strip, axis=1), axis=2), axis=0)
         step = (stop - start) / 8
         peaks = []
         for i in range(1, 8):
@@ -173,10 +245,22 @@ def _refine_grid(pixels: np.ndarray, bounds: BoardBounds) -> BoardBounds | None:
         inliers = best[1]
         slope, intercept = np.polyfit(indices[inliers], peaks[inliers], 1)
         first, last = round(intercept), round(intercept + 8 * slope)
-        if first < 0 or last > image.shape[1]:
+        allowance = 1 if visible else 0
+        if first < -allowance or last > image.shape[1] + allowance:
             return None
         coordinates.extend((first, last))
+        observed.append(peaks)
     x, right, y, bottom = coordinates
+    if visible:
+        refined = _visible_edges(pixels, BoardBounds(x, y, right - x, bottom - y))
+        if refined is None:
+            return None
+        x, y, right, bottom = refined.as_box()
+        # Check alignment after snapping/clipping, before uniform segmentation.
+        for peaks, start, stop in zip(observed, (x, y), (right, bottom)):
+            step = (stop - start) / 8
+            if np.count_nonzero(np.abs(peaks - (start + step * np.arange(1, 8))) <= max(1.5, step * .025)) < 6:
+                return None
     if min(right - x, bottom - y) < _MIN_BOARD_SIDE or abs((right - x) - (bottom - y)) > max(2, (right - x) * .01):
         return None
     return BoardBounds(x, y, right - x, bottom - y)
@@ -293,16 +377,21 @@ def _structural_candidates(pixels: np.ndarray) -> list[BoardBounds]:
         refined = _refine_grid(pixels, proposal)
         if refined is not None and _structural_pattern(pixels, refined):
             candidates.append(refined)
+        else:
+            # A frame or small asymmetric margin can distort the component box;
+            # repeated piece bases can also defeat the full-strip edge fit.
+            refined = _refine_grid(pixels, proposal, visible=True)
+            if refined is not None and _structural_pattern(pixels, refined):
+                candidates.append(refined)
     candidates.extend(_interior_grid_candidates(pixels, work, scale, candidates))
-    # A tight crop supplies another possible outer boundary when piece bases
-    # or resampling pull the interior peak fit outside the image. Prefer fitted
-    # grids: a small margin can also pass the pattern check, but is not a second
-    # board. Squareness alone is never enough; do not pad or infer missing cells.
+    # A nearly square frame is only a search region, never an accepted rectangle
+    # by itself. Fit interior lines and actual outer transitions before cropping.
     if (not candidates and min(width, height) >= _MIN_BOARD_SIDE
             and abs(width - height) <= max(2, max(width, height) * .01)):
         frame = BoardBounds(0, 0, width, height)
-        if _structural_pattern(pixels, frame):
-            candidates.append(frame)
+        refined = _refine_grid(pixels, frame, visible=True)
+        if refined is not None and _structural_pattern(pixels, refined):
+            candidates.append(refined)
     return candidates
 
 
@@ -410,4 +499,11 @@ def detect_board(image: Image.Image, *, profile: str = DEFAULT_PROFILE) -> Board
         raise BoardDetectionError("BOARD_NOT_FOUND", "No supported chessboard was detected in the image.")
     if len(candidates) > 1:
         raise BoardDetectionError("UNSUPPORTED_IMAGE", "Images with multiple chessboards are not supported.")
-    return candidates[0]
+    bounds = candidates[0]
+    # Confirm the outer transitions against the interior grid before uniform
+    # cropping. Keep a validated proposal when occlusions prevent this optional
+    # refinement; the full-frame rescue above always requires the visible fit.
+    refined = _refine_grid(pixels, bounds, visible=True)
+    if refined is not None and _structural_pattern(pixels, refined):
+        return refined
+    return bounds

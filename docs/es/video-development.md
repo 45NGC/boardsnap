@@ -126,14 +126,14 @@ exactos. También pasan a localizarse correctamente 004, 005, 006, Lichess víde
 y la página de Lichess, con colocaciones correctas. Se mantienen los cinco casos
 que ya funcionaban.
 
-Quedan pendientes concretos: la 002 sigue usando la alternativa imprecisa de
+Al terminar el paso 2 quedaban pendientes concretos: la 002 seguía usando la alternativa imprecisa de
 imagen completa; Lichess vídeo 003 devuelve ya la posición correcta, pero tiene
 un error de 3 píxeles en el rectángulo. Chess.com vídeos 009/010 siguen fallando en
 localización y también en clasificación con límites revisados. Son trabajos
 posteriores de geometría y clasificación; no se cambian las anotaciones para
 adaptarlas a las predicciones. Las pruebas con fallo esperado estricto registran
 esos cuatro casos de rectángulo, dos de clasificación con límites revisados y tres
-del recorrido completo.
+del recorrido completo. El paso siguiente actualiza este estado.
 
 La [repetición del corpus anterior de detección](../../data/reports/digital-detection-v3-localization-regression.json)
 conserva los 28 rectángulos y rechaza los 28 negativos con tablero eliminado.
@@ -158,6 +158,70 @@ píxeles. Son variantes de 12 posiciones ya consultadas, no una evaluación fina
 independiente. Los hashes de datos/modelos y todas las métricas agregadas del
 candidato coinciden con el informe histórico de v8; el nuevo registra el hash
 del detector actualizado.
+
+## Paso 3: ajuste de bordes visibles
+
+El [informe de límites](../../data/reports/video-development-v2-bounds.json) registra
+**13/15 detecciones precisas y 13/15 posiciones exactas del recorrido completo**,
+frente a 11/15 y 12/15 tras el paso 2. La clasificación con límites revisados sigue
+en 13/15: no cambian pesos, etiquetas, imágenes de entrada ni preprocesado del clasificador.
+
+La 002 devuelve automáticamente los límites visibles **`[0, 1, 399, 401]`** y la
+colocación correcta con v8. No se reconstruye la columna izquierda que falta.
+La 001 y la 003 siguen devolviendo la misma posición esperada; añadir márgenes
+asimétricos a las tres conserva el resultado. Lichess vídeo 003 ahora coincide
+con su rectángulo revisado `[28, 14, 608, 592]`. Chess.com vídeo 003 conserva un
+error de un píxel respecto a su anotación (`[2, 2, 298, 299]` detectado), sin
+modificar la referencia para adaptarla al detector.
+
+El marco de una imagen casi cuadrada ya no se acepta únicamente porque su patrón
+global parezca de 8x8. Debe permitir ajustar líneas interiores, localizar bordes
+visibles y comprobar la alineación con las ocho filas y columnas. Se comprueba
+también el rectángulo finalmente seleccionado. Consulta [detección](detection.md#límites-visibles-antes-de-dividir-en-casillas)
+para los límites, incluida la tolerancia de un píxel y el refinado opcional de
+propuestas que ya estaban validadas.
+
+Los vídeos de Chess.com **009/010 siguen pendientes**, tanto en detección como en
+clasificación con límites revisados. Seis comprobaciones con fallo esperado
+estricto conservan esa distinción; no hay nuevo entrenamiento ni se declara
+compatibilidad general con vídeos. El [corpus anterior de detección](../../data/reports/digital-detection-v4-bounds-regression.json)
+conserva sus 28/28 rectángulos y rechaza 28/28 negativos con el tablero eliminado.
+Los seis fallos originales de flechas/tableros recortados también conservan sus
+colocaciones correctas.
+
+La suite completa con v8 supera ahora **1552 pruebas**, con 36 pruebas opcionales
+de navegador omitidas y ocho fallos esperados (seis comprobaciones de la 009/010
+y dos casos experimentales de libros). Las nuevas pruebas geométricas cubren un
+píxel recortado en cada uno de los cuatro lados, rechazan recortes mayores con/sin
+márgenes y comprueban dimensiones no múltiplos de ocho y dos métodos de remuestreo.
+Nueve pruebas neuronales confirman la posición compartida entre 001/002/003 con
+tres configuraciones de márgenes.
+
+La [regresión completa de reconocimiento](../../data/reports/neural-styles-v8-bounds-regression.json)
+conserva **3456/3456 tableros exactos y 221184/221184 casillas correctas**, tanto
+con límites revisados como detectados. Los 3456 rectángulos detectados mantienen
+un error máximo de dos píxeles, incluidas imágenes limpias, marcas sencillas y
+flechas. Son variantes de 12 posiciones ya consultadas, no evidencia final
+independiente. Los hashes del modelo y los datos, y todas las métricas agregadas
+del candidato, coinciden con el informe del paso 2; los hashes del código
+identifican el detector actualizado.
+
+```bash
+python -m tools.development_cases --model .cache/neural-styles-v8/best.pt --output .cache/bounds-step3/video-recheck.json
+BOARDSNAP_TEST_MODEL=.cache/neural-styles-v8/best.pt python -m pytest tests/test_detection_bounds.py tests/test_video_development.py
+python -m tools.preview_detection data/development/video-cases-v1/chesscom-video-002.png --output-dir .cache/bounds-step3/preview --squares
+boardsnap .cache/real-use-tests/chesscom-video-002.png --model .cache/neural-styles-v8/best.pt --orientation black-bottom
+```
+
+Para reproducir la regresión completa de reconocimiento:
+
+```bash
+python -m tools.evaluate_marks --dataset .cache/digital-style-squares-v2 --baseline .cache/neural-arrows-v1/best.pt --candidate .cache/neural-styles-v8/best.pt --baseline-name arrowBaseline --candidate-name styleCandidate --split evaluation --regression --output .cache/bounds-step3/corpus-recheck.json
+```
+
+El comando de casos de desarrollo sigue terminando con código 1 por la 009/010;
+`boardsnap` devuelve únicamente el `piecePlacement` correcto. Siguen siendo muestras consultadas de
+desarrollo/regresión. El conjunto final independiente permanece sin consultar.
 
 ## Reproducir y ampliar
 

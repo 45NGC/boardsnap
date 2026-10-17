@@ -60,8 +60,8 @@ the **local rectangle**, so unrelated lines elsewhere cannot establish a board.
 This path additionally requires alternating backgrounds immediately inside all
 four outer edges, rejecting grids extrapolated around clipped cells. It rejects
 eight-cell windows whose checker pattern visibly continues into a larger grid.
-Existing accepted rectangles take precedence over matching interior proposals;
-the whole-image fallback is unchanged and still needs the separate refinement work.
+Existing accepted rectangles take precedence over matching interior proposals.
+Visible-boundary refinement then checks the selected rectangle before cropping.
 
 The search is bounded to 80 peaks and 256 proposed extents per axis. Dense clutter
 can therefore still hide a board. No annotations, model predictions or filenames
@@ -76,6 +76,33 @@ The minimum original board side is 128 pixels; candidates also need at least
 24 pixels at proposal scale. Large-image/small-board combinations can therefore
 be missed. This is deterministic OpenCV/NumPy processing, not a learned model.
 No new dependencies or PyTorch are required.
+
+### Visible bounds before segmentation
+
+A nearly square image is now **only a search region**, not an automatically
+accepted rectangle. Its rescue path must fit interior lines and locate actual
+outer transitions. An alternate fit samples near cell sides and uses median
+gradients to reduce interference from repeated piece bases. Connected-component
+proposals can use the same rescue when the original fit fails.
+
+The fitter estimates alternating background colors from cell rims, finds their
+support near the four proposed outer edges, and locates nearby directional color
+transitions. This retains antialiased border pixels and avoids snapping to a
+stronger adjacent interface line. At least six interior boundaries per axis must
+still align with the final uniform eight-cell division.
+
+The fit may extend at most **one raster pixel beyond an input edge**. The returned
+rectangle contains only visible pixels: no padding or reconstruction occurs, and
+normalization continues to resize that visible crop. This covers the single
+clipped column in video 002, not missing squares or generally cropped boards.
+The same refinement is attempted on the final selected digital rectangle. An
+already validated palette/structural proposal is retained if the optional fit
+cannot be established; a frame-only rescue always requires the fit to succeed.
+
+Tests cover asymmetric margins, dimensions not divisible by eight, bilinear and
+LANCZOS scaling, clipped single edge pixels, larger rejected crops, and complete
+recognition of the three related videos with added margins. See the
+[step 3 results](video-development.md#step-3-visible-boundary-refinement).
 
 Digital profiles share this structural path. The selected profile still supplies
 legacy palette proposals and, elsewhere, orientation/classification templates.

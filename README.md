@@ -17,9 +17,10 @@ using the updated detector and `.cache/neural-styles-v8/best.pt`.
 
 The [video/page development corpus](docs/en/video-development.md) now contains 15
 images of 13 positions, including the three original variants. Interior-grid
-localization raises accurate detections from 5/15 to 11/15 and full-pipeline
-successes from 5/15 to 12/15, using unchanged v8 weights (13/15 with reviewed bounds).
-Remaining boundary and recognition failures must be addressed before freezing the next
+localization followed by visible-boundary refinement raises accurate detections
+and full-pipeline successes to 13/15, using unchanged v8 weights (also 13/15 with
+reviewed bounds). Chess.com videos 001, 002 and 003 now return the same placement.
+Remaining failures in videos 009/010 must be addressed before freezing the next
 candidate; these are development cases, not independent acceptance data.
 
 The [digital acceptance guide](docs/en/digital-release.md) fixes the target catalogue,

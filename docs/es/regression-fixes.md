@@ -13,6 +13,11 @@ registradas como [casos de desarrollo de vídeos](video-development.md). Los res
 de esta página describen la corrección original, no compatibilidad con esas nuevas
 condiciones de vídeo.
 
+La alternativa de usar la imagen completa descrita más abajo es histórica. El
+[ajuste posterior de bordes visibles](video-development.md#paso-3-ajuste-de-bordes-visibles)
+exige comprobar líneas interiores y perímetro antes de aceptar una propuesta
+basada en el marco de la imagen. Corrige la 002 y conserva los seis casos originales.
+
 El [informe completo de regresión](../../data/reports/neural-styles-v8-regression.json)
 mide **3456/3456 imágenes correctas**, tanto con límites verificados como detectados:
 221184/221184 casillas, ningún fallo nuevo de reconocimiento y todos los límites

@@ -122,13 +122,13 @@ See [detection](detection.md) for the algorithm and bounded-search limitations.
 placement. 004, 005, 006, Lichess video 002 and the Lichess page also gain accurate
 localization and correct placement. All five previous working cases stay correct.
 
-Remaining work is explicit: 002 still uses the imprecise full-frame fallback;
+At the end of step 2, remaining work was explicit: 002 still used the imprecise full-frame fallback;
 Lichess video 003 now returns the correct placement but has a 3-pixel rectangle
 error. Chess.com videos 009/010 still fail localization and also fail classification
 with reviewed bounds. These are separate geometry/classification follow-ups,
 not reasons to change annotations to match predictions. Strict expected failures
 now track those four rectangle cases, two reviewed-bound classification cases,
-and three full-pipeline cases.
+and three full-pipeline cases. The following step updates this status.
 
 The [older detection corpus recheck](../../data/reports/digital-detection-v3-localization-regression.json)
 retains all 28 rectangles and rejects all 28 board-removal negatives. Tests also
@@ -150,6 +150,66 @@ verified and detected bounds. All 3456 rectangles remain within two pixels.
 These are variants of 12 previously consulted source positions, not independent
 final evidence. Dataset/model hashes and all aggregate candidate metrics match
 the historical v8 report; the new report records the updated detector hash.
+
+## Step 3: visible-boundary refinement
+
+The [bounds report](../../data/reports/video-development-v2-bounds.json) records
+**13/15 accurate detections and 13/15 exact full-pipeline positions**, compared
+with 11/15 and 12/15 after step 2. Reviewed-bound classification remains 13/15:
+the weights, labels, input images and classifier preprocessing are unchanged.
+
+002 now returns visible bounds **`[0, 1, 399, 401]`** and the correct placement with
+v8 automatically. Its missing left raster column is not reconstructed. 001 and
+003 still return the identical expected placement; adding asymmetric margins to
+all three also preserves it. Lichess video 003 now matches its reviewed rectangle
+`[28, 14, 608, 592]`. Video 003 from Chess.com remains within one pixel of its
+annotation (`[2, 2, 298, 299]` detected), without changing the reference to fit it.
+
+The nearly square frame is no longer accepted solely because its overall pattern
+resembles an 8x8 grid. It must yield an interior-line fit, visible outer boundaries
+and alignment with all eight rows/columns. The same refinement checks the final
+selected rectangle. See [detection](detection.md#visible-bounds-before-segmentation)
+for limits, including the single-raster-pixel allowance and optional refinement of
+already validated proposals.
+
+Chess.com videos **009/010 remain unresolved** in detection and reviewed-bound
+classification. Six strict expected-failure checks retain these distinctions;
+no new training or broad video-compatibility claim is made. The
+[older detection corpus](../../data/reports/digital-detection-v4-bounds-regression.json)
+still passes 28/28 rectangles and rejects 28/28 board-removal negatives. The six
+original arrow/cropped-board failures also retain their correct placements.
+
+The complete suite with v8 now passes **1552 tests**, with 36 optional browser
+tests skipped and eight expected failures (six checks for videos 009/010 and two
+experimental book-diagram cases). The new geometry tests exercise all four
+single-pixel crop directions, reject larger cuts with/without surrounding margins,
+and check nonmultiple sizes and two resampling methods. Nine neural checks confirm
+the shared position across 001/002/003 and three margin configurations.
+
+The [complete recognition regression](../../data/reports/neural-styles-v8-bounds-regression.json)
+preserves **3456/3456 exact boards and 221184/221184 correct squares**, both with
+reviewed bounds and with detected bounds. All 3456 detected rectangles remain
+within two pixels, including clean images, simple marks and arrows. These are
+variants of 12 previously consulted positions, not independent final evidence.
+Model and dataset hashes, and all aggregate candidate metrics, match the step 2
+report; the runtime hashes identify the updated detector.
+
+```bash
+python -m tools.development_cases --model .cache/neural-styles-v8/best.pt --output .cache/bounds-step3/video-recheck.json
+BOARDSNAP_TEST_MODEL=.cache/neural-styles-v8/best.pt python -m pytest tests/test_detection_bounds.py tests/test_video_development.py
+python -m tools.preview_detection data/development/video-cases-v1/chesscom-video-002.png --output-dir .cache/bounds-step3/preview --squares
+boardsnap .cache/real-use-tests/chesscom-video-002.png --model .cache/neural-styles-v8/best.pt --orientation black-bottom
+```
+
+To reproduce the complete recognition regression:
+
+```bash
+python -m tools.evaluate_marks --dataset .cache/digital-style-squares-v2 --baseline .cache/neural-arrows-v1/best.pt --candidate .cache/neural-styles-v8/best.pt --baseline-name arrowBaseline --candidate-name styleCandidate --split evaluation --regression --output .cache/bounds-step3/corpus-recheck.json
+```
+
+The development-cases command still exits 1 because 009/010 fail; `boardsnap`
+returns only the correct `piecePlacement`. These remain consulted development/regression samples.
+The independent final acceptance set is untouched.
 
 ## Reproduce and extend
 

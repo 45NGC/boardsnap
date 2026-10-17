@@ -100,7 +100,7 @@ def test_tight_crop_with_repeated_piece_bases_retains_exact_bounds(size):
 @pytest.mark.parametrize('count', [6, 7, 9, 10])
 def test_full_frame_proposal_still_rejects_wrong_grid_size(monkeypatch, count):
     from boardsnap import detection
-    monkeypatch.setattr(detection, '_refine_grid', lambda *_: None)
+    monkeypatch.setattr(detection, '_refine_grid', lambda *_, **__: None)
     with pytest.raises(BoardDetectionError, match='No supported'):
         detect_board(draw_grid(384, count=count, colors=((208, 224, 234), (96, 132, 158))))
 

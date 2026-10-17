@@ -12,6 +12,11 @@ Subsequent user screenshots exposed two additional failing images, now registere
 as [video development cases](video-development.md). The results below describe the
 original correction, not compatibility with those newly inspected video conditions.
 
+The full-frame fallback described below is historical. The later
+[visible-boundary refinement](video-development.md#step-3-visible-boundary-refinement)
+requires interior-line and perimeter evidence before accepting a frame-based
+proposal, fixing video 002 while preserving the six original cases.
+
 The [complete regression report](../../data/reports/neural-styles-v8-regression.json)
 measures **3456/3456 images correct**, with both verified and detected bounds:
 221184/221184 squares, zero new recognition failures, and all detected rectangles
