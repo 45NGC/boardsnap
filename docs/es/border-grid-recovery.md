@@ -93,8 +93,8 @@ la CLI con ambos modelos y los controles negativos descritos arriba.
 ## Comandos
 
 ```bash
-boardsnap .cache/real-use-tests/chesscom-video-009.png --model .cache/neural-tolerance-v1-conservative/best.pt --orientation white-bottom
-boardsnap .cache/real-use-tests/chesscom-video-010.png --model .cache/neural-tolerance-v1-conservative/best.pt --orientation white-bottom
+boardsnap .cache/real-use-tests/real-use-19.png --model .cache/neural-tolerance-v1-conservative/best.pt --orientation white-bottom
+boardsnap .cache/real-use-tests/real-use-20.png --model .cache/neural-tolerance-v1-conservative/best.pt --orientation white-bottom
 python -m tools.development_cases --model .cache/neural-tolerance-v1-conservative/best.pt --grid-references data/manifests/video-grid-geometry-v1.json --output .cache/border-grid-development.json
 python -m pytest tests/test_detection_border_grid.py
 BOARDSNAP_TEST_MODEL=.cache/neural-tolerance-v1-conservative/best.pt python -m pytest tests/test_detection*.py tests/test_video_development.py tests/test_cli.py tests/test_cli_process.py

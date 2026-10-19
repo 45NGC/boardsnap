@@ -165,7 +165,7 @@ A paired tolerance comparison exits 1 when its validation gate fails.
 The selected candidate can be tested without changing the v8 reference:
 
 ```bash
-boardsnap .cache/real-use-tests/chesscom-video-002.png --model .cache/neural-tolerance-v1-conservative/best.pt --orientation black-bottom
+boardsnap .cache/real-use-tests/real-use-12.png --model .cache/neural-tolerance-v1-conservative/best.pt --orientation black-bottom
 ```
 
 Keep v8 and the candidate in different directories. Weights, prepared arrays and

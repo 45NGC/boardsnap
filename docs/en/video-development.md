@@ -202,7 +202,7 @@ report; the runtime hashes identify the updated detector.
 python -m tools.development_cases --model .cache/neural-styles-v8/best.pt --output .cache/bounds-step3/video-recheck.json
 BOARDSNAP_TEST_MODEL=.cache/neural-styles-v8/best.pt python -m pytest tests/test_detection_bounds.py tests/test_video_development.py
 python -m tools.preview_detection data/development/video-cases-v1/chesscom-video-002.png --output-dir .cache/bounds-step3/preview --squares
-boardsnap .cache/real-use-tests/chesscom-video-002.png --model .cache/neural-styles-v8/best.pt --orientation black-bottom
+boardsnap .cache/real-use-tests/real-use-12.png --model .cache/neural-styles-v8/best.pt --orientation black-bottom
 ```
 
 To reproduce the complete recognition regression:

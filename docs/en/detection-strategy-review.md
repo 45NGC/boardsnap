@@ -67,6 +67,9 @@ it does not automatically select this book path. The printed template experiment
 achieved 126/128 cells but **0/2 complete positions** on its historical held-out
 set. This does not establish photographic or general book support. [Local evidence](profiles.md).
 
+The image historically named `lichess-video-004` is now `real-use-25.png`;
+the following diagnosis retains its historical results.
+
 ## 2. Existing evidence and `lichess-video-004`
 
 This review reuses the diagnostic checks already performed in the conversation.

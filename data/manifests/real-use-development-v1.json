@@ -1,0 +1,1413 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "real-use-development-v1",
+  "dataRole": "development-regression",
+  "independentFinalEvaluation": false,
+  "groupingPolicy": "Preserve inherited identities and partitions. New unresolved sources share one conservative bucket. This complete corpus is development-only; do not split it into training/selection/final evaluation without source review. Distinct positions do not establish independent games.",
+  "renameMapSha256": "2cfeabab4f30a3fee9ada2110ead6d72dc54f34d93aa446b273c5abcb2bb6451",
+  "samples": [
+    {
+      "piecePlacement": "r3rk2/pb1n2pR/1p1qp1P1/5p2/3Pp1Q1/P2BP3/1P3PP1/R3K3",
+      "orientation": "white-bottom",
+      "positionId": "real-use-position-1",
+      "sourceGroupId": "real-new-screenshots-unresolved",
+      "split": "development",
+      "conditions": [
+        "highlights",
+        "video-context"
+      ],
+      "visibleBox": [
+        19,
+        11,
+        578,
+        571
+      ],
+      "gridBox": [
+        19,
+        11,
+        578,
+        571
+      ],
+      "annotationSource": {
+        "method": "Visual transcription before model comparison; grid boundaries reviewed against pixels and interior line measurements. Approximate raster uncertainty up to two pixels.",
+        "reviewedBy": "assistant",
+        "userVerified": false
+      },
+      "provenance": {
+        "kind": "user-supplied-screenshot",
+        "platform": "unknown",
+        "url": null,
+        "videoTimestamp": null,
+        "note": "Exact video/game and style names not confirmed. Similar UI does not prove the same game."
+      },
+      "id": "real-use-1",
+      "path": ".cache/real-use-tests/real-use-1.png",
+      "sha256": "d9bb2069f8ae30a90f6befd102b411e744e3bf90fb542dcf229bf5ebbf00d693",
+      "imageSize": [
+        612,
+        654
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "rnbqkb1r/p2p1ppp/1p2pn2/2p5/3P1B2/4PN2/PPPN1PPP/R2QKB1R",
+      "orientation": "white-bottom",
+      "positionId": "real-use-position-2",
+      "sourceGroupId": "real-new-screenshots-unresolved",
+      "split": "development",
+      "conditions": [
+        "arrows",
+        "cursor"
+      ],
+      "visibleBox": [
+        51,
+        26,
+        1024,
+        992
+      ],
+      "gridBox": [
+        51,
+        26,
+        1024,
+        992
+      ],
+      "annotationSource": {
+        "method": "Visual transcription before model comparison; grid boundaries reviewed against pixels and interior line measurements. Approximate raster uncertainty up to two pixels.",
+        "reviewedBy": "assistant",
+        "userVerified": false
+      },
+      "provenance": {
+        "kind": "user-supplied-screenshot",
+        "platform": "unknown",
+        "url": null,
+        "videoTimestamp": null,
+        "note": "Exact video/game and style names not confirmed. Similar UI does not prove the same game."
+      },
+      "id": "real-use-2",
+      "path": ".cache/real-use-tests/real-use-2.png",
+      "sha256": "23f1025413569a9bdf35d855916579f8a229ab0c471a345b7f34750f65b99879",
+      "imageSize": [
+        1076,
+        1049
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "r4rk1/p4ppp/2q1p3/4P3/2p3Nn/2Q2P2/P3KP1P/R6R",
+      "orientation": "black-bottom",
+      "positionId": "real-use-position-3",
+      "sourceGroupId": "real-new-screenshots-unresolved",
+      "split": "development",
+      "conditions": [
+        "cursor",
+        "texture"
+      ],
+      "visibleBox": [
+        45,
+        25,
+        1013,
+        993
+      ],
+      "gridBox": [
+        45,
+        25,
+        1013,
+        993
+      ],
+      "annotationSource": {
+        "method": "Visual transcription before model comparison; grid boundaries reviewed against pixels and interior line measurements. Approximate raster uncertainty up to two pixels.",
+        "reviewedBy": "assistant",
+        "userVerified": false
+      },
+      "provenance": {
+        "kind": "user-supplied-screenshot",
+        "platform": "unknown",
+        "url": null,
+        "videoTimestamp": null,
+        "note": "Exact video/game and style names not confirmed. Similar UI does not prove the same game."
+      },
+      "id": "real-use-3",
+      "path": ".cache/real-use-tests/real-use-3.png",
+      "sha256": "cbb6683bf149c48babeed75570a7c554de727b584c073d8b9f9839f8ef02efd4",
+      "imageSize": [
+        1047,
+        1043
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "rnbq1rk1/ppp1ppbp/5np1/3p4/2PP4/5NP1/PP2PPBP/RNBQK2R",
+      "orientation": "white-bottom",
+      "positionId": "real-use-position-4",
+      "sourceGroupId": "real-new-screenshots-unresolved",
+      "split": "development",
+      "conditions": [
+        "texture"
+      ],
+      "visibleBox": [
+        18,
+        30,
+        1008,
+        1019
+      ],
+      "gridBox": [
+        18,
+        30,
+        1008,
+        1019
+      ],
+      "annotationSource": {
+        "method": "Visual transcription before model comparison; grid boundaries reviewed against pixels and interior line measurements. Approximate raster uncertainty up to two pixels.",
+        "reviewedBy": "assistant",
+        "userVerified": false
+      },
+      "provenance": {
+        "kind": "user-supplied-screenshot",
+        "platform": "unknown",
+        "url": null,
+        "videoTimestamp": null,
+        "note": "Exact video/game and style names not confirmed. Similar UI does not prove the same game."
+      },
+      "id": "real-use-4",
+      "path": ".cache/real-use-tests/real-use-4.png",
+      "sha256": "e244c852224c8cd76116859d55903de3439171075c0f33b6f564fa157448e86f",
+      "imageSize": [
+        1124,
+        1063
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "r3q1kr/ppp5/3p2pQ/8/3PP1b1/5R2/PPP3P1/5RK1",
+      "orientation": "white-bottom",
+      "positionId": "real-use-position-5",
+      "sourceGroupId": "real-new-screenshots-unresolved",
+      "split": "development",
+      "conditions": [
+        "cursor"
+      ],
+      "visibleBox": [
+        44,
+        15,
+        1016,
+        986
+      ],
+      "gridBox": [
+        44,
+        15,
+        1016,
+        986
+      ],
+      "annotationSource": {
+        "method": "Visual transcription before model comparison; grid boundaries reviewed against pixels and interior line measurements. Approximate raster uncertainty up to two pixels.",
+        "reviewedBy": "assistant",
+        "userVerified": false
+      },
+      "provenance": {
+        "kind": "user-supplied-screenshot",
+        "platform": "unknown",
+        "url": null,
+        "videoTimestamp": null,
+        "note": "Exact video/game and style names not confirmed. Similar UI does not prove the same game."
+      },
+      "id": "real-use-5",
+      "path": ".cache/real-use-tests/real-use-5.png",
+      "sha256": "706fcbfe773c9018472a22dc49e30c1ed5778a358edda9d2b76af5db676940fd",
+      "imageSize": [
+        1065,
+        1026
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "r3k2r/ppp1nppp/8/3q4/3P4/5N2/PP3PPP/R2Q1RK1",
+      "orientation": "white-bottom",
+      "positionId": "real-use-position-6",
+      "sourceGroupId": "real-new-screenshots-unresolved",
+      "split": "development",
+      "conditions": [
+        "cursor",
+        "texture"
+      ],
+      "visibleBox": [
+        48,
+        44,
+        984,
+        981
+      ],
+      "gridBox": [
+        48,
+        44,
+        984,
+        981
+      ],
+      "annotationSource": {
+        "method": "Visual transcription before model comparison; grid boundaries reviewed against pixels and interior line measurements. Approximate raster uncertainty up to two pixels.",
+        "reviewedBy": "assistant",
+        "userVerified": false
+      },
+      "provenance": {
+        "kind": "user-supplied-screenshot",
+        "platform": "unknown",
+        "url": null,
+        "videoTimestamp": null,
+        "note": "Exact video/game and style names not confirmed. Similar UI does not prove the same game."
+      },
+      "id": "real-use-6",
+      "path": ".cache/real-use-tests/real-use-6.png",
+      "sha256": "ccf3eb7c163be829e43a9f0a1313486f84730ef60ed1c869a7a3a1ffd1c22439",
+      "imageSize": [
+        1075,
+        1030
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "r3kb1r/pppnpppp/5n2/1Q4B1/3qp3/2N5/PPP2PPP/3RK1NR",
+      "orientation": "white-bottom",
+      "positionId": "real-use-position-7",
+      "sourceGroupId": "real-new-screenshots-unresolved",
+      "split": "development",
+      "conditions": [
+        "highlights"
+      ],
+      "visibleBox": [
+        29,
+        28,
+        788,
+        788
+      ],
+      "gridBox": [
+        29,
+        28,
+        788,
+        788
+      ],
+      "annotationSource": {
+        "method": "Visual transcription before model comparison; grid boundaries reviewed against pixels and interior line measurements. Approximate raster uncertainty up to two pixels.",
+        "reviewedBy": "assistant",
+        "userVerified": false
+      },
+      "provenance": {
+        "kind": "user-supplied-screenshot",
+        "platform": "unknown",
+        "url": null,
+        "videoTimestamp": null,
+        "note": "Exact video/game and style names not confirmed. Similar UI does not prove the same game."
+      },
+      "id": "real-use-7",
+      "path": ".cache/real-use-tests/real-use-7.png",
+      "sha256": "304150fdbec36e425d6bd5b1dca4c37c0cc0cfe819fdea4072915734794d9044",
+      "imageSize": [
+        820,
+        844
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "rnb1kb1r/ppp1pppp/5n2/8/6q1/2N1B3/PPP2QPP/R3KBNR",
+      "orientation": "white-bottom",
+      "positionId": "real-use-position-8",
+      "sourceGroupId": "real-new-screenshots-unresolved",
+      "split": "development",
+      "conditions": [
+        "arrows",
+        "circles",
+        "texture"
+      ],
+      "visibleBox": [
+        37,
+        28,
+        963,
+        953
+      ],
+      "gridBox": [
+        37,
+        28,
+        963,
+        953
+      ],
+      "annotationSource": {
+        "method": "Visual transcription before model comparison; grid boundaries reviewed against pixels and interior line measurements. Approximate raster uncertainty up to two pixels.",
+        "reviewedBy": "assistant",
+        "userVerified": false
+      },
+      "provenance": {
+        "kind": "user-supplied-screenshot",
+        "platform": "unknown",
+        "url": null,
+        "videoTimestamp": null,
+        "note": "Exact video/game and style names not confirmed. Similar UI does not prove the same game."
+      },
+      "id": "real-use-8",
+      "path": ".cache/real-use-tests/real-use-8.png",
+      "sha256": "5d702583ab159a5d392d6dbad2a0480b3d44672e5032d48ddabe0b43c928f5b0",
+      "imageSize": [
+        1041,
+        1001
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "rnbq1rk1/ppn2ppp/3bp3/8/1pPP4/3B1N2/P4PPP/RNBQK2R",
+      "orientation": "white-bottom",
+      "positionId": "real-use-position-9",
+      "sourceGroupId": "real-new-screenshots-unresolved",
+      "split": "development",
+      "conditions": [
+        "highlights",
+        "circles",
+        "cursor"
+      ],
+      "visibleBox": [
+        23,
+        10,
+        799,
+        787
+      ],
+      "gridBox": [
+        23,
+        10,
+        799,
+        787
+      ],
+      "annotationSource": {
+        "method": "Visual transcription before model comparison; grid boundaries reviewed against pixels and interior line measurements. Approximate raster uncertainty up to two pixels.",
+        "reviewedBy": "assistant",
+        "userVerified": false
+      },
+      "provenance": {
+        "kind": "user-supplied-screenshot",
+        "platform": "unknown",
+        "url": null,
+        "videoTimestamp": null,
+        "note": "Exact video/game and style names not confirmed. Similar UI does not prove the same game."
+      },
+      "id": "real-use-9",
+      "path": ".cache/real-use-tests/real-use-9.png",
+      "sha256": "29ca9eee6aaf90a01bd196da816ce18ed8c593f129724956e73e9f374b6c06ce",
+      "imageSize": [
+        878,
+        827
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "r2qkbnr/ppN2ppp/3Pb1n1/8/3P4/5N2/PPP1Q1PP/R1B1KB1R",
+      "orientation": "white-bottom",
+      "positionId": "real-chesscom-page-001-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "conditions": [
+        "tight-crop-with-margins",
+        "no-visible-coordinates"
+      ],
+      "visibleBox": [
+        9,
+        10,
+        257,
+        258
+      ],
+      "gridBox": [
+        9,
+        10,
+        257,
+        258
+      ],
+      "annotationSource": {
+        "manifest": "data/manifests/video-development-v2.json",
+        "sourceSha256": "696d2546c26df6fdeb06c8096d0cd1b876eb272caeeb6afe1e6e14d2ce86b351",
+        "geometryManifest": null
+      },
+      "provenance": {
+        "kind": "user-supplied-page-screenshot",
+        "platform": "chesscom",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      },
+      "id": "real-use-10",
+      "path": ".cache/real-use-tests/real-use-10.png",
+      "sha256": "696d2546c26df6fdeb06c8096d0cd1b876eb272caeeb6afe1e6e14d2ce86b351",
+      "imageSize": [
+        267,
+        268
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "r4rk1/pb1n1pp1/1qpb1n1p/1p3N2/4P2B/2NB4/PP3PPP/2RQ1RK1",
+      "orientation": "black-bottom",
+      "positionId": "real-chesscom-video-position-001",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "video-resampling"
+      ],
+      "visibleBox": [
+        35,
+        17,
+        435,
+        417
+      ],
+      "gridBox": [
+        35,
+        17,
+        435,
+        417
+      ],
+      "annotationSource": {
+        "manifest": "data/manifests/video-development-v2.json",
+        "sourceSha256": "29f3be6bb048d05c26f82f999dab855f86e96e37c3cc3feed4b53f70d0ced3e7",
+        "geometryManifest": null
+      },
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "note": "Exact source video/game, timestamp, capture settings and theme names were not supplied. All three depict the same position and are conservatively grouped together."
+      },
+      "id": "real-use-11",
+      "path": ".cache/real-use-tests/real-use-11.png",
+      "sha256": "29f3be6bb048d05c26f82f999dab855f86e96e37c3cc3feed4b53f70d0ced3e7",
+      "imageSize": [
+        465,
+        438
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "r4rk1/pb1n1pp1/1qpb1n1p/1p3N2/4P2B/2NB4/PP3PPP/2RQ1RK1",
+      "orientation": "black-bottom",
+      "positionId": "real-chesscom-video-position-001",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "conditions": [
+        "tight-crop-with-residual-margins",
+        "square-highlights",
+        "video-resampling"
+      ],
+      "visibleBox": [
+        0,
+        1,
+        399,
+        401
+      ],
+      "gridBox": [
+        0,
+        1,
+        399,
+        401
+      ],
+      "annotationSource": {
+        "manifest": "data/manifests/video-development-v2.json",
+        "sourceSha256": "0e52abacb79bb9a375078719f0273a8109911a893b52f96d63f3a7021e7e6825",
+        "geometryManifest": null
+      },
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "note": "Exact source video/game, timestamp, capture settings and theme names were not supplied. All three depict the same position and are conservatively grouped together."
+      },
+      "id": "real-use-12",
+      "path": ".cache/real-use-tests/real-use-12.png",
+      "sha256": "0e52abacb79bb9a375078719f0273a8109911a893b52f96d63f3a7021e7e6825",
+      "imageSize": [
+        401,
+        404
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "r4rk1/pb1n1pp1/1qpb1n1p/1p3N2/4P2B/2NB4/PP3PPP/2RQ1RK1",
+      "orientation": "black-bottom",
+      "positionId": "real-chesscom-video-position-001",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "conditions": [
+        "working-small-board-control",
+        "square-highlights",
+        "video-resampling"
+      ],
+      "visibleBox": [
+        2,
+        2,
+        299,
+        299
+      ],
+      "gridBox": [
+        2,
+        2,
+        299,
+        299
+      ],
+      "annotationSource": {
+        "manifest": "data/manifests/video-development-v2.json",
+        "sourceSha256": "8a8874d8f913d0905760763f0bf564a588697c963384878b858da84818c0865d",
+        "geometryManifest": null
+      },
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "note": "Exact source video/game, timestamp, capture settings and theme names were not supplied. All three depict the same position and are conservatively grouped together."
+      },
+      "id": "real-use-13",
+      "path": ".cache/real-use-tests/real-use-13.png",
+      "sha256": "8a8874d8f913d0905760763f0bf564a588697c963384878b858da84818c0865d",
+      "imageSize": [
+        303,
+        303
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "8/8/2R4p/p4P2/5k2/7P/r5BK/2q1r3",
+      "orientation": "black-bottom",
+      "positionId": "real-chesscom-video-004-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "video-resampling"
+      ],
+      "visibleBox": [
+        35,
+        14,
+        435,
+        414
+      ],
+      "gridBox": [
+        35,
+        14,
+        435,
+        414
+      ],
+      "annotationSource": {
+        "manifest": "data/manifests/video-development-v2.json",
+        "sourceSha256": "23b61bd7bd336a44cb7867ea286c5f59dd07c6e23dc7ef21dd9d60055f1b841a",
+        "geometryManifest": null
+      },
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      },
+      "id": "real-use-14",
+      "path": ".cache/real-use-tests/real-use-14.png",
+      "sha256": "23b61bd7bd336a44cb7867ea286c5f59dd07c6e23dc7ef21dd9d60055f1b841a",
+      "imageSize": [
+        450,
+        440
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N1P3/PP3PPP/R1BQKBNR",
+      "orientation": "black-bottom",
+      "positionId": "real-chesscom-video-005-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "video-resampling"
+      ],
+      "visibleBox": [
+        28,
+        8,
+        428,
+        408
+      ],
+      "gridBox": [
+        28,
+        8,
+        428,
+        408
+      ],
+      "annotationSource": {
+        "manifest": "data/manifests/video-development-v2.json",
+        "sourceSha256": "1d0d98c5e8be5b0201b06a2363723ae51ee7a280c36c3006cd5e131ef417561d",
+        "geometryManifest": null
+      },
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      },
+      "id": "real-use-15",
+      "path": ".cache/real-use-tests/real-use-15.png",
+      "sha256": "1d0d98c5e8be5b0201b06a2363723ae51ee7a280c36c3006cd5e131ef417561d",
+      "imageSize": [
+        459,
+        435
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "2r2rk1/pq3pp1/1p2pn1p/4N3/1P1Q4/P3P3/1B3PbP/2R2RK1",
+      "orientation": "white-bottom",
+      "positionId": "real-chesscom-video-006-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "video-resampling"
+      ],
+      "visibleBox": [
+        41,
+        11,
+        417,
+        387
+      ],
+      "gridBox": [
+        41,
+        11,
+        417,
+        387
+      ],
+      "annotationSource": {
+        "manifest": "data/manifests/video-development-v2.json",
+        "sourceSha256": "84721be820c413d858406e20916efda33032e4156a1639b8af3bcbf01712da0a",
+        "geometryManifest": null
+      },
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      },
+      "id": "real-use-16",
+      "path": ".cache/real-use-tests/real-use-16.png",
+      "sha256": "84721be820c413d858406e20916efda33032e4156a1639b8af3bcbf01712da0a",
+      "imageSize": [
+        444,
+        406
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "8/8/6P1/1p2R3/1r6/2k3K1/6P1/8",
+      "orientation": "black-bottom",
+      "positionId": "real-chesscom-video-007-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "textured-board",
+        "video-resampling"
+      ],
+      "visibleBox": [
+        15,
+        13,
+        573,
+        570
+      ],
+      "gridBox": [
+        15,
+        13,
+        573,
+        570
+      ],
+      "annotationSource": {
+        "manifest": "data/manifests/video-development-v2.json",
+        "sourceSha256": "7988877c635cd3aa9c0bcadb2eadd33cf3cff1839ee4496155be40812684848c",
+        "geometryManifest": null
+      },
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      },
+      "id": "real-use-17",
+      "path": ".cache/real-use-tests/real-use-17.png",
+      "sha256": "7988877c635cd3aa9c0bcadb2eadd33cf3cff1839ee4496155be40812684848c",
+      "imageSize": [
+        592,
+        588
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "2r3k1/r2n1pp1/2pq1n1p/1p1pNB2/p2P4/P3P1P1/1PQ2PP1/1RR3K1",
+      "orientation": "black-bottom",
+      "positionId": "real-chesscom-video-008-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "textured-board",
+        "video-resampling"
+      ],
+      "visibleBox": [
+        22,
+        16,
+        580,
+        573
+      ],
+      "gridBox": [
+        22,
+        16,
+        580,
+        573
+      ],
+      "annotationSource": {
+        "manifest": "data/manifests/video-development-v2.json",
+        "sourceSha256": "2f852222b63de70f0b73f81863457801966d969c59706fdb25cbe3f177f22835",
+        "geometryManifest": null
+      },
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      },
+      "id": "real-use-18",
+      "path": ".cache/real-use-tests/real-use-18.png",
+      "sha256": "2f852222b63de70f0b73f81863457801966d969c59706fdb25cbe3f177f22835",
+      "imageSize": [
+        601,
+        593
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "3rkb1r/pp2qpp1/7p/2pP4/4p1QP/2N1P1B1/PP3PP1/n1K3NR",
+      "orientation": "white-bottom",
+      "positionId": "real-chesscom-video-009-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "no-visible-coordinates",
+        "nonuniform-video-scaling",
+        "video-resampling"
+      ],
+      "visibleBox": [
+        13,
+        23,
+        467,
+        481
+      ],
+      "gridBox": [
+        10,
+        24,
+        466,
+        480
+      ],
+      "annotationSource": {
+        "manifest": "data/manifests/video-development-v2.json",
+        "sourceSha256": "e98c08965aa4a4444b53261abe62e2cccb72a4cae13a0c350baee36aa522d09e",
+        "geometryManifest": "data/manifests/video-grid-geometry-v1.json"
+      },
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      },
+      "id": "real-use-19",
+      "path": ".cache/real-use-tests/real-use-19.png",
+      "sha256": "e98c08965aa4a4444b53261abe62e2cccb72a4cae13a0c350baee36aa522d09e",
+      "imageSize": [
+        499,
+        515
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "8/8/8/p6p/P3K1kP/4P3/8/8",
+      "orientation": "white-bottom",
+      "positionId": "real-chesscom-video-010-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "no-visible-coordinates",
+        "nonuniform-video-scaling",
+        "video-resampling"
+      ],
+      "visibleBox": [
+        12,
+        2,
+        466,
+        460
+      ],
+      "gridBox": [
+        9,
+        3,
+        465,
+        459
+      ],
+      "annotationSource": {
+        "manifest": "data/manifests/video-development-v2.json",
+        "sourceSha256": "16d94bd236f43541319649f0cbba683fbc8a98fb4197734d69f16c3deba69cfb",
+        "geometryManifest": "data/manifests/video-grid-geometry-v1.json"
+      },
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "chesscom",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      },
+      "id": "real-use-20",
+      "path": ".cache/real-use-tests/real-use-20.png",
+      "sha256": "16d94bd236f43541319649f0cbba683fbc8a98fb4197734d69f16c3deba69cfb",
+      "imageSize": [
+        510,
+        507
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "r2qk2r/1b2pnbp/p3Nnp1/1pp5/3P4/2NB4/PPPB2PP/R2Q1RK1",
+      "orientation": "white-bottom",
+      "positionId": "real-lichess-page-001-position",
+      "sourceGroupId": "real-lichess-development-unresolved",
+      "split": "development",
+      "conditions": [
+        "page-interface",
+        "square-highlights",
+        "arrows",
+        "arrows-over-pieces"
+      ],
+      "visibleBox": [
+        55,
+        23,
+        1143,
+        1111
+      ],
+      "gridBox": [
+        55,
+        23,
+        1143,
+        1111
+      ],
+      "annotationSource": {
+        "manifest": "data/manifests/video-development-v2.json",
+        "sourceSha256": "4c79749f1a29a3ec7c753c5135c532ea10978dac94da18873d00007ce141a2a0",
+        "geometryManifest": null
+      },
+      "provenance": {
+        "kind": "user-supplied-page-screenshot",
+        "platform": "lichess",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      },
+      "id": "real-use-21",
+      "path": ".cache/real-use-tests/real-use-21.png",
+      "sha256": "4c79749f1a29a3ec7c753c5135c532ea10978dac94da18873d00007ce141a2a0",
+      "imageSize": [
+        1433,
+        1209
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "rn1qkb1r/pp3ppp/2p1pn2/3p1b2/3P1B2/2NBPN2/PPP2PPP/R2Q1RK1",
+      "orientation": "white-bottom",
+      "positionId": "real-lichess-video-001-position",
+      "sourceGroupId": "real-lichess-development-unresolved",
+      "split": "development",
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "cursor-over-piece",
+        "video-resampling"
+      ],
+      "visibleBox": [
+        15,
+        11,
+        903,
+        899
+      ],
+      "gridBox": [
+        15,
+        11,
+        903,
+        899
+      ],
+      "annotationSource": {
+        "manifest": "data/manifests/video-development-v2.json",
+        "sourceSha256": "66cf78d388595f77e397573846d5564d7a7751dc78fe51c91cf903f6e6c10050",
+        "geometryManifest": null
+      },
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "lichess",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      },
+      "id": "real-use-22",
+      "path": ".cache/real-use-tests/real-use-22.png",
+      "sha256": "66cf78d388595f77e397573846d5564d7a7751dc78fe51c91cf903f6e6c10050",
+      "imageSize": [
+        927,
+        920
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "r1bqkb1r/pp3ppp/3ppn2/2p5/2B1P3/2N5/PPPPQPPP/R1B2RK1",
+      "orientation": "white-bottom",
+      "positionId": "real-lichess-video-002-position",
+      "sourceGroupId": "real-lichess-development-unresolved",
+      "split": "development",
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "nonuniform-video-scaling",
+        "video-resampling"
+      ],
+      "visibleBox": [
+        14,
+        8,
+        594,
+        586
+      ],
+      "gridBox": [
+        14,
+        8,
+        594,
+        586
+      ],
+      "annotationSource": {
+        "manifest": "data/manifests/video-development-v2.json",
+        "sourceSha256": "99c3e1a4c5b8ab6cd7e85e9b09bfbacca3447ed56fdcbdad4ce28b26e7a6aa77",
+        "geometryManifest": null
+      },
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "lichess",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      },
+      "id": "real-use-23",
+      "path": ".cache/real-use-tests/real-use-23.png",
+      "sha256": "99c3e1a4c5b8ab6cd7e85e9b09bfbacca3447ed56fdcbdad4ce28b26e7a6aa77",
+      "imageSize": [
+        612,
+        607
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "1B6/Pk5p/1N4p1/2p2p2/1p1p4/1P1P3P/2P3PK/5q2",
+      "orientation": "white-bottom",
+      "positionId": "real-lichess-video-003-position",
+      "sourceGroupId": "real-lichess-development-unresolved",
+      "split": "development",
+      "conditions": [
+        "video-background",
+        "square-highlights",
+        "nonuniform-video-scaling",
+        "video-resampling"
+      ],
+      "visibleBox": [
+        28,
+        14,
+        608,
+        592
+      ],
+      "gridBox": [
+        28,
+        14,
+        608,
+        592
+      ],
+      "annotationSource": {
+        "manifest": "data/manifests/video-development-v2.json",
+        "sourceSha256": "08931fee7aa4020406c2748b2186b00ae34fb63949067dcba411e6d4f59088bf",
+        "geometryManifest": null
+      },
+      "provenance": {
+        "kind": "user-supplied-video-screenshot",
+        "platform": "lichess",
+        "url": null,
+        "videoTimestamp": null,
+        "capturedAt": null,
+        "pieceSet": null,
+        "boardTheme": null,
+        "sourceGrouping": "conservative-platform-bucket-not-confirmed-game",
+        "note": "Source URLs, game relationships and settings not supplied. All known cases of this platform stay in one development group until provenance is confirmed; this does not imply that they are the same game."
+      },
+      "id": "real-use-24",
+      "path": ".cache/real-use-tests/real-use-24.png",
+      "sha256": "08931fee7aa4020406c2748b2186b00ae34fb63949067dcba411e6d4f59088bf",
+      "imageSize": [
+        650,
+        627
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "rnb1kb1r/pp3ppp/1q2p3/2npP1B1/8/2N2N2/PPP2PPP/R2QKB1R",
+      "orientation": "white-bottom",
+      "positionId": "real-use-position-25",
+      "sourceGroupId": "real-new-screenshots-unresolved",
+      "split": "development",
+      "conditions": [
+        "anisotropic",
+        "narrow-left-rim",
+        "highlights"
+      ],
+      "visibleBox": [
+        12,
+        14,
+        1017,
+        994
+      ],
+      "gridBox": [
+        6,
+        13,
+        1016,
+        994
+      ],
+      "annotationSource": {
+        "method": "Visual transcription before model comparison; grid boundaries reviewed against pixels and interior line measurements. Approximate raster uncertainty up to two pixels.",
+        "reviewedBy": "assistant",
+        "userVerified": false
+      },
+      "provenance": {
+        "kind": "user-supplied-screenshot",
+        "platform": "lichess",
+        "url": null,
+        "videoTimestamp": null,
+        "note": "Exact video/game and style names not confirmed. Similar UI does not prove the same game."
+      },
+      "id": "real-use-25",
+      "path": ".cache/real-use-tests/real-use-25.png",
+      "sha256": "173ca6a90f762d2f50f5c6f34a4bf6de9f7d72150004b22c52a39b75491b43a0",
+      "imageSize": [
+        1095,
+        1042
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "narrow-left-rim-origin-unresolved"
+    },
+    {
+      "piecePlacement": "1rb1k2r/p2n2pp/2Q1Pp2/3p2N1/8/8/P1P4P/2K5",
+      "orientation": "white-bottom",
+      "positionId": "real-use-position-26",
+      "sourceGroupId": "real-new-screenshots-unresolved",
+      "split": "development",
+      "conditions": [
+        "anisotropic",
+        "narrow-left-rim",
+        "highlights"
+      ],
+      "visibleBox": [
+        9,
+        8,
+        1014,
+        988
+      ],
+      "gridBox": [
+        3,
+        8,
+        1013,
+        988
+      ],
+      "annotationSource": {
+        "method": "Visual transcription before model comparison; grid boundaries reviewed against pixels and interior line measurements. Approximate raster uncertainty up to two pixels.",
+        "reviewedBy": "assistant",
+        "userVerified": false
+      },
+      "provenance": {
+        "kind": "user-supplied-screenshot",
+        "platform": "lichess",
+        "url": null,
+        "videoTimestamp": null,
+        "note": "Exact video/game and style names not confirmed. Similar UI does not prove the same game."
+      },
+      "id": "real-use-26",
+      "path": ".cache/real-use-tests/real-use-26.png",
+      "sha256": "a8b133a80e9dd14c3001fde2cffcce2900667f62632c98c1ecf37346760a0a5b",
+      "imageSize": [
+        1135,
+        1022
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "narrow-left-rim-origin-unresolved"
+    },
+    {
+      "piecePlacement": "2r1k1nr/pp1b1p1p/4p3/3pP1p1/3b4/P3B2P/1qB2PP1/RN1Q1RK1",
+      "orientation": "black-bottom",
+      "positionId": "real-use-position-27",
+      "sourceGroupId": "real-new-screenshots-unresolved",
+      "split": "development",
+      "conditions": [
+        "highlights",
+        "cursor"
+      ],
+      "visibleBox": [
+        22,
+        22,
+        727,
+        728
+      ],
+      "gridBox": [
+        22,
+        22,
+        727,
+        728
+      ],
+      "annotationSource": {
+        "method": "Visual transcription before model comparison; grid boundaries reviewed against pixels and interior line measurements. Approximate raster uncertainty up to two pixels.",
+        "reviewedBy": "assistant",
+        "userVerified": false
+      },
+      "provenance": {
+        "kind": "user-supplied-screenshot",
+        "platform": "lichess",
+        "url": null,
+        "videoTimestamp": null,
+        "note": "Exact video/game and style names not confirmed. Similar UI does not prove the same game."
+      },
+      "id": "real-use-27",
+      "path": ".cache/real-use-tests/real-use-27.png",
+      "sha256": "9f64bd7a570a14e2f837a418761f9e11c4e60911c8149f14fb22999511c49cda",
+      "imageSize": [
+        818,
+        776
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "2r1k1nr/pp1b3p/1q2pp2/3pP1p1/8/P6P/1PB1NbP1/RNBQ1K1R",
+      "orientation": "black-bottom",
+      "positionId": "real-use-position-28",
+      "sourceGroupId": "real-new-screenshots-unresolved",
+      "split": "development",
+      "conditions": [
+        "highlights"
+      ],
+      "visibleBox": [
+        25,
+        18,
+        730,
+        724
+      ],
+      "gridBox": [
+        25,
+        18,
+        730,
+        724
+      ],
+      "annotationSource": {
+        "method": "Visual transcription before model comparison; grid boundaries reviewed against pixels and interior line measurements. Approximate raster uncertainty up to two pixels.",
+        "reviewedBy": "assistant",
+        "userVerified": false
+      },
+      "provenance": {
+        "kind": "user-supplied-screenshot",
+        "platform": "lichess",
+        "url": null,
+        "videoTimestamp": null,
+        "note": "Exact video/game and style names not confirmed. Similar UI does not prove the same game."
+      },
+      "id": "real-use-28",
+      "path": ".cache/real-use-tests/real-use-28.png",
+      "sha256": "62db567dd196f1e2658a888e3fb451fa4dfa388b17671764080dd64e44c51e42",
+      "imageSize": [
+        816,
+        795
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    },
+    {
+      "piecePlacement": "rnb1kb1r/pp2pp1p/1qpp1np1/8/3P1B2/1P2PN1P/P1P2PP1/RN1QKB1R",
+      "orientation": "black-bottom",
+      "positionId": "real-use-position-29",
+      "sourceGroupId": "real-new-screenshots-unresolved",
+      "split": "development",
+      "conditions": [
+        "anisotropic",
+        "narrow-left-rim",
+        "highlights",
+        "cursor"
+      ],
+      "visibleBox": [
+        10,
+        11,
+        1015,
+        991
+      ],
+      "gridBox": [
+        4,
+        11,
+        1015,
+        991
+      ],
+      "annotationSource": {
+        "method": "Visual transcription before model comparison; grid boundaries reviewed against pixels and interior line measurements. Approximate raster uncertainty up to two pixels.",
+        "reviewedBy": "assistant",
+        "userVerified": false
+      },
+      "provenance": {
+        "kind": "user-supplied-screenshot",
+        "platform": "lichess",
+        "url": null,
+        "videoTimestamp": null,
+        "note": "Exact video/game and style names not confirmed. Similar UI does not prove the same game."
+      },
+      "id": "real-use-29",
+      "path": ".cache/real-use-tests/real-use-29.png",
+      "sha256": "c4ea8f67cf3445b0f655e331cf21f3868b14b0930557deda8301b6ff4f68bb4e",
+      "imageSize": [
+        1088,
+        1030
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "narrow-left-rim-origin-unresolved"
+    },
+    {
+      "piecePlacement": "r2qkb1r/pp1n1ppp/2n1p3/1Bpp4/Q2P1Bb1/2P1PN2/PP1N1PPP/R3K2R",
+      "orientation": "white-bottom",
+      "positionId": "real-use-position-30",
+      "sourceGroupId": "real-new-screenshots-unresolved",
+      "split": "development",
+      "conditions": [
+        "arrows",
+        "highlights"
+      ],
+      "visibleBox": [
+        35,
+        53,
+        859,
+        878
+      ],
+      "gridBox": [
+        35,
+        53,
+        859,
+        878
+      ],
+      "annotationSource": {
+        "method": "Visual transcription before model comparison; grid boundaries reviewed against pixels and interior line measurements. Approximate raster uncertainty up to two pixels.",
+        "reviewedBy": "assistant",
+        "userVerified": false
+      },
+      "provenance": {
+        "kind": "user-supplied-screenshot",
+        "platform": "lichess",
+        "url": null,
+        "videoTimestamp": null,
+        "note": "Exact video/game and style names not confirmed. Similar UI does not prove the same game."
+      },
+      "id": "real-use-30",
+      "path": ".cache/real-use-tests/real-use-30.png",
+      "sha256": "2664388cf90f22ebf0f9aa85e71afe9e4ccf5e1e9d4f51bc60bc8c94952ea00a",
+      "imageSize": [
+        966,
+        944
+      ],
+      "maxEdgeErrorPixels": 3,
+      "integrity": "reviewed-visible-grid"
+    }
+  ]
+}

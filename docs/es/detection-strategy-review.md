@@ -68,6 +68,9 @@ libros. El experimento impreso con plantillas obtuvo 126/128 casillas y **0/2
 posiciones completas** en su antiguo conjunto reservado. No demuestra soporte
 fotográfico ni de libros generales. [Fuente local](profiles.md).
 
+La captura denominada históricamente `lichess-video-004` se llama ahora
+`real-use-25.png`; el diagnóstico siguiente conserva sus resultados históricos.
+
 ## 2. Evidencia disponible y diagnóstico de `lichess-video-004`
 
 Se reutilizan las comprobaciones ya realizadas en esta conversación. La imagen

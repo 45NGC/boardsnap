@@ -1,0 +1,599 @@
+{
+  "schemaVersion": 1,
+  "dataRole": "development-regression",
+  "independentFinalEvaluation": false,
+  "acceptedForBoundedDigitalGeometry": true,
+  "releaseAccepted": false,
+  "trainingPerformed": false,
+  "modelWeightsChanged": false,
+  "photographicRouteImplemented": false,
+  "baselineCommit": "e38df0ed8e3058afe5e98a3108a7469933cd6145",
+  "manifestSha256": "9549171d61d708bc6877e83406e8bf013ddc95a6912666bf22cca5fdc6cc8733",
+  "modelSha256": {
+    "v8": "9546c6cfc34517f631cd58bf3eae0cdb3aa7790765b6f4ad1c0bf307ca4ad704",
+    "candidate": "4c14507ad700dbe8c6ea6bdcdfb7072c7f31ef9fd9c21c22a782498c2d09ce5f"
+  },
+  "runtimeSha256": {
+    "src/boardsnap/__init__.py": "5d4d88e1368be753e0359dfcbef042595cd6c2dcd793251aabc55724ffb015c8",
+    "src/boardsnap/__main__.py": "776c85059861da68cb7dcd3a92a43278d35589117f27ae3b9105c739d9e542ab",
+    "src/boardsnap/adapters/__init__.py": "f3b27a487ea86f5d962494c6633547cb2171f06ba0aca009fb2a13c61c2db2af",
+    "src/boardsnap/adapters/cli.py": "1261d4b300ee8edd1d125bd2a526c1b2d729f8492738d051fad9ed0c4a0138a0",
+    "src/boardsnap/classification.py": "295c5460b3c5174e036fe9eac0896ffe5eb2f3724c7485e0d9d3a20d0e028df4",
+    "src/boardsnap/detection.py": "4e19fbd0e9a7a4b87475ae25b714290aa223fc3fcc8d16c40dd1715194e0c11f",
+    "src/boardsnap/image_input.py": "4cb87bbd4fab43ed315cb3c0f258ed9c5a8f5758124c72a3eb8a8e964d66764e",
+    "src/boardsnap/neural.py": "1953f32f7fb4cc25ec63cae0302ddfeda927f6d9373eadf2541cb7f70950c13f",
+    "src/boardsnap/normalization.py": "51ca3052645be05d05291a2653fd8c0d808ace12ad5c1f896a06e00b061741c7",
+    "src/boardsnap/orientation.py": "39d0297413484a1980f6564f3baea140af1278b2dbaed1a5a8d62903cf0c1926",
+    "src/boardsnap/output.py": "64ed8612dae9b528d08963ae1db1fc9127802c7f3ba3140bcdc329bf4b4645b0",
+    "src/boardsnap/pipeline.py": "877f1adb395ffcf54e3e3e646b05377d0ee966c23384b4c4f16aa39d30fae97c",
+    "src/boardsnap/profiles.py": "8cc3bb7a0e0d5fed057887aa09ebdf4d1d4309dba57a3c9df2cd0731707a5b5b",
+    "src/boardsnap/segmentation.py": "eb0eccb596491a4ea1602b90baa8e491ff6f53932e88536495678fd59c603127"
+  },
+  "evidence": {
+    "real-use-geometry-before": {
+      "path": "data/reports/real-use-geometry-before.json",
+      "sha256": "1de0c21f1b140725252bd9e7369a14cd9aed7ad5b9834a5e8347fbae2c7479c3"
+    },
+    "real-use-geometry-after": {
+      "path": "data/reports/real-use-geometry-after.json",
+      "sha256": "034980365a700211193a78543271c919c899184c4cf88c9c077e829bdea52b5d"
+    },
+    "digital-geometry-synthetic-before": {
+      "path": "data/reports/digital-geometry-synthetic-before.json",
+      "sha256": "60b794e2748e9091397cc9f179de71646d7c7e58be13eec60da4c1b51e5d4c73"
+    },
+    "digital-geometry-synthetic-after": {
+      "path": "data/reports/digital-geometry-synthetic-after.json",
+      "sha256": "17300d378a765e702e02a1a65e3e7f509c20f7e1b824ff354d201c52302c2bc5"
+    },
+    "digital-regressions-anisotropic-v8": {
+      "path": "data/reports/digital-regressions-anisotropic-v8.json",
+      "sha256": "8126ef65f05b7f95731a419fa158d62ffc6391206b58cd24cbadf5cc73d11e80"
+    },
+    "digital-regressions-anisotropic-candidate": {
+      "path": "data/reports/digital-regressions-anisotropic-candidate.json",
+      "sha256": "8c50e4f33fc438b4dd92bfa7c8cb5afc69e6329f3e64af0e2f0999e309c08421"
+    }
+  },
+  "before": {
+    "images": 30,
+    "detected": 27,
+    "geometryCorrect": 27,
+    "models": {
+      "v8": {
+        "verifiedExactBoards": 29,
+        "verifiedCorrectSquares": 1918,
+        "pipelineExactBoards": 26,
+        "cliExactBoards": 26,
+        "cliMeasured": 30,
+        "verifiedConfusions": {
+          ".->n": 2
+        },
+        "verifiedClasses": {
+          "empty": {
+            "support": 1169,
+            "truePositive": 1167,
+            "falseNegative": 2,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 0.998289136013687
+          },
+          "P": {
+            "support": 181,
+            "truePositive": 181,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "N": {
+            "support": 42,
+            "truePositive": 42,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "B": {
+            "support": 41,
+            "truePositive": 41,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "R": {
+            "support": 51,
+            "truePositive": 51,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "Q": {
+            "support": 26,
+            "truePositive": 26,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "K": {
+            "support": 30,
+            "truePositive": 30,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "p": {
+            "support": 187,
+            "truePositive": 187,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "n": {
+            "support": 41,
+            "truePositive": 41,
+            "falseNegative": 0,
+            "falsePositive": 2,
+            "precision": 0.9534883720930233,
+            "recall": 1.0
+          },
+          "b": {
+            "support": 40,
+            "truePositive": 40,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "r": {
+            "support": 55,
+            "truePositive": 55,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "q": {
+            "support": 27,
+            "truePositive": 27,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "k": {
+            "support": 30,
+            "truePositive": 30,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        }
+      },
+      "candidate": {
+        "verifiedExactBoards": 29,
+        "verifiedCorrectSquares": 1918,
+        "pipelineExactBoards": 26,
+        "cliExactBoards": 26,
+        "cliMeasured": 30,
+        "verifiedConfusions": {
+          ".->n": 2
+        },
+        "verifiedClasses": {
+          "empty": {
+            "support": 1169,
+            "truePositive": 1167,
+            "falseNegative": 2,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 0.998289136013687
+          },
+          "P": {
+            "support": 181,
+            "truePositive": 181,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "N": {
+            "support": 42,
+            "truePositive": 42,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "B": {
+            "support": 41,
+            "truePositive": 41,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "R": {
+            "support": 51,
+            "truePositive": 51,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "Q": {
+            "support": 26,
+            "truePositive": 26,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "K": {
+            "support": 30,
+            "truePositive": 30,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "p": {
+            "support": 187,
+            "truePositive": 187,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "n": {
+            "support": 41,
+            "truePositive": 41,
+            "falseNegative": 0,
+            "falsePositive": 2,
+            "precision": 0.9534883720930233,
+            "recall": 1.0
+          },
+          "b": {
+            "support": 40,
+            "truePositive": 40,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "r": {
+            "support": 55,
+            "truePositive": 55,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "q": {
+            "support": 27,
+            "truePositive": 27,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "k": {
+            "support": 30,
+            "truePositive": 30,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        }
+      }
+    }
+  },
+  "after": {
+    "images": 30,
+    "detected": 30,
+    "geometryCorrect": 30,
+    "models": {
+      "v8": {
+        "verifiedExactBoards": 29,
+        "verifiedCorrectSquares": 1918,
+        "pipelineExactBoards": 29,
+        "cliExactBoards": 29,
+        "cliMeasured": 30,
+        "verifiedConfusions": {
+          ".->n": 2
+        },
+        "verifiedClasses": {
+          "empty": {
+            "support": 1169,
+            "truePositive": 1167,
+            "falseNegative": 2,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 0.998289136013687
+          },
+          "P": {
+            "support": 181,
+            "truePositive": 181,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "N": {
+            "support": 42,
+            "truePositive": 42,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "B": {
+            "support": 41,
+            "truePositive": 41,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "R": {
+            "support": 51,
+            "truePositive": 51,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "Q": {
+            "support": 26,
+            "truePositive": 26,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "K": {
+            "support": 30,
+            "truePositive": 30,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "p": {
+            "support": 187,
+            "truePositive": 187,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "n": {
+            "support": 41,
+            "truePositive": 41,
+            "falseNegative": 0,
+            "falsePositive": 2,
+            "precision": 0.9534883720930233,
+            "recall": 1.0
+          },
+          "b": {
+            "support": 40,
+            "truePositive": 40,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "r": {
+            "support": 55,
+            "truePositive": 55,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "q": {
+            "support": 27,
+            "truePositive": 27,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "k": {
+            "support": 30,
+            "truePositive": 30,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        }
+      },
+      "candidate": {
+        "verifiedExactBoards": 29,
+        "verifiedCorrectSquares": 1918,
+        "pipelineExactBoards": 29,
+        "cliExactBoards": 29,
+        "cliMeasured": 30,
+        "verifiedConfusions": {
+          ".->n": 2
+        },
+        "verifiedClasses": {
+          "empty": {
+            "support": 1169,
+            "truePositive": 1167,
+            "falseNegative": 2,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 0.998289136013687
+          },
+          "P": {
+            "support": 181,
+            "truePositive": 181,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "N": {
+            "support": 42,
+            "truePositive": 42,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "B": {
+            "support": 41,
+            "truePositive": 41,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "R": {
+            "support": 51,
+            "truePositive": 51,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "Q": {
+            "support": 26,
+            "truePositive": 26,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "K": {
+            "support": 30,
+            "truePositive": 30,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "p": {
+            "support": 187,
+            "truePositive": 187,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "n": {
+            "support": 41,
+            "truePositive": 41,
+            "falseNegative": 0,
+            "falsePositive": 2,
+            "precision": 0.9534883720930233,
+            "recall": 1.0
+          },
+          "b": {
+            "support": 40,
+            "truePositive": 40,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "r": {
+            "support": 55,
+            "truePositive": 55,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "q": {
+            "support": 27,
+            "truePositive": 27,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "k": {
+            "support": 30,
+            "truePositive": 30,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        }
+      }
+    }
+  },
+  "pairedDetectionGains": [
+    "real-use-25",
+    "real-use-26",
+    "real-use-29"
+  ],
+  "unchangedPreviouslyDetectedBoxes": 27,
+  "pairedPipelineRegressions": {
+    "v8": [],
+    "candidate": []
+  },
+  "cliProcesses": 120,
+  "cliContractsAllPassed": true,
+  "syntheticGeometry": {
+    "beforePositive": 0,
+    "afterPositive": 36,
+    "positiveCount": 36,
+    "negativeCount": 12,
+    "beforeNegativeRejected": 12,
+    "afterNegativeRejected": 12,
+    "classificationMeasured": false
+  },
+  "originalSixCases": {
+    "v8": 6,
+    "candidate": 6
+  },
+  "testRuns": [
+    {
+      "scope": "initial focused geometry tests (included in the broad run)",
+      "passed": 54,
+      "log": ".cache/digital-geometry-review/anisotropic-tests.log",
+      "logSha256": "63f6f9218f6d758a9f78cdb0d7fb05764a49c60e5f7f73e50b8f790b91cf19a4"
+    },
+    {
+      "scope": "broad detector, prior videos, CLI, normalization, segmentation, output and input regression suite",
+      "passed": 845,
+      "failed": 0,
+      "skipped": 0,
+      "seconds": 189.11,
+      "log": ".cache/digital-geometry-review/regression-tests.log",
+      "logSha256": "f22ed48e5ea601bb920abd86f18c9c359410e9d68ae25f226797f3951d014e5b"
+    },
+    {
+      "scope": "additional independently sized geometry/scope-boundary cases added after broad collection",
+      "passed": 8,
+      "failed": 0,
+      "deselected": 54,
+      "log": ".cache/digital-geometry-review/additional-tests.log",
+      "logSha256": "e731606bebada17d14964464c3b5e66a1cd5d764b02a9bb0853c5b5a24a7abbb"
+    }
+  ],
+  "limits": [
+    "Only small axis-aligned unequal scales, maximum larger/smaller side ratio 1.05.",
+    "Existing detections retain priority. This is not a global redesign of candidate selection.",
+    "One narrow inset rim uses the existing 8%-of-cell, six-pixel maximum; its physical cause cannot always be distinguished from a tiny crop.",
+    "New annotations were visually reviewed by the assistant, not confirmed by the user.",
+    "Exact sources are unresolved; different positions do not prove independent games. All images remain development-only.",
+    "Images remain local cache artifacts; reproduction requires matching hashes."
+  ],
+  "pendingOutsideThisChange": [
+    "real-use-4: empty a5 and h4 classified as black knights by both models with reviewed geometry.",
+    "Full neural automatic pipeline replay over the previously consulted 3456-image corpus.",
+    "Independent final acceptance, distribution, phone photography and homography support."
+  ]
+}

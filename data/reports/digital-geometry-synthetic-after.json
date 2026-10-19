@@ -1,0 +1,1272 @@
+{
+  "schemaVersion": 1,
+  "dataRole": "synthetic-development-geometry",
+  "independentFinalEvaluation": false,
+  "classificationMeasured": false,
+  "generatorSha256": "b5980a31ba98bc47470dc0e6f15a4168f8e715187c2a42d5c903d2f652599970",
+  "detectorSha256": "4e19fbd0e9a7a4b87475ae25b714290aa223fc3fcc8d16c40dd1715194e0c11f",
+  "positiveCount": 36,
+  "positivePassed": 36,
+  "negativeCount": 12,
+  "negativePassed": 12,
+  "cases": [
+    {
+      "specification": {
+        "id": "160-1.02-x-clean",
+        "side": 160,
+        "ratio": 1.02,
+        "axis": "x",
+        "condition": "clean",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        206,
+        177
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          206,
+          177
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "160-1.02-x-marks",
+        "side": 160,
+        "ratio": 1.02,
+        "axis": "x",
+        "condition": "marks",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        206,
+        177
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          206,
+          177
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "160-1.02-x-texture-jpeg",
+        "side": 160,
+        "ratio": 1.02,
+        "axis": "x",
+        "condition": "texture-jpeg",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        206,
+        177
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          206,
+          177
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "160-1.02-y-clean",
+        "side": 160,
+        "ratio": 1.02,
+        "axis": "y",
+        "condition": "clean",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        203,
+        180
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          203,
+          180
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "160-1.02-y-marks",
+        "side": 160,
+        "ratio": 1.02,
+        "axis": "y",
+        "condition": "marks",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        203,
+        180
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          203,
+          180
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "160-1.02-y-texture-jpeg",
+        "side": 160,
+        "ratio": 1.02,
+        "axis": "y",
+        "condition": "texture-jpeg",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        203,
+        180
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          203,
+          180
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "160-1.04-x-clean",
+        "side": 160,
+        "ratio": 1.04,
+        "axis": "x",
+        "condition": "clean",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        209,
+        177
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          209,
+          177
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "160-1.04-x-marks",
+        "side": 160,
+        "ratio": 1.04,
+        "axis": "x",
+        "condition": "marks",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        209,
+        177
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          209,
+          177
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "160-1.04-x-texture-jpeg",
+        "side": 160,
+        "ratio": 1.04,
+        "axis": "x",
+        "condition": "texture-jpeg",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        209,
+        177
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          209,
+          177
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "160-1.04-y-clean",
+        "side": 160,
+        "ratio": 1.04,
+        "axis": "y",
+        "condition": "clean",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        203,
+        183
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          203,
+          183
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "160-1.04-y-marks",
+        "side": 160,
+        "ratio": 1.04,
+        "axis": "y",
+        "condition": "marks",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        203,
+        183
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          203,
+          183
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "160-1.04-y-texture-jpeg",
+        "side": 160,
+        "ratio": 1.04,
+        "axis": "y",
+        "condition": "texture-jpeg",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        203,
+        183
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          203,
+          183
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "257-1.02-x-clean",
+        "side": 257,
+        "ratio": 1.02,
+        "axis": "x",
+        "condition": "clean",
+        "positive": true
+      },
+      "expectedBox": [
+        13,
+        29,
+        275,
+        286
+      ],
+      "measurement": {
+        "box": [
+          14,
+          30,
+          275,
+          286
+        ],
+        "maxEdgeErrorPixels": 1,
+        "intersectionOverUnion": 0.9923070068613182
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "257-1.02-x-marks",
+        "side": 257,
+        "ratio": 1.02,
+        "axis": "x",
+        "condition": "marks",
+        "positive": true
+      },
+      "expectedBox": [
+        13,
+        29,
+        275,
+        286
+      ],
+      "measurement": {
+        "box": [
+          14,
+          30,
+          275,
+          286
+        ],
+        "maxEdgeErrorPixels": 1,
+        "intersectionOverUnion": 0.9923070068613182
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "257-1.02-x-texture-jpeg",
+        "side": 257,
+        "ratio": 1.02,
+        "axis": "x",
+        "condition": "texture-jpeg",
+        "positive": true
+      },
+      "expectedBox": [
+        13,
+        29,
+        275,
+        286
+      ],
+      "measurement": {
+        "box": [
+          14,
+          30,
+          275,
+          286
+        ],
+        "maxEdgeErrorPixels": 1,
+        "intersectionOverUnion": 0.9923070068613182
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "257-1.02-y-clean",
+        "side": 257,
+        "ratio": 1.02,
+        "axis": "y",
+        "condition": "clean",
+        "positive": true
+      },
+      "expectedBox": [
+        13,
+        29,
+        270,
+        291
+      ],
+      "measurement": {
+        "box": [
+          14,
+          30,
+          270,
+          291
+        ],
+        "maxEdgeErrorPixels": 1,
+        "intersectionOverUnion": 0.9923070068613182
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "257-1.02-y-marks",
+        "side": 257,
+        "ratio": 1.02,
+        "axis": "y",
+        "condition": "marks",
+        "positive": true
+      },
+      "expectedBox": [
+        13,
+        29,
+        270,
+        291
+      ],
+      "measurement": {
+        "box": [
+          14,
+          30,
+          270,
+          291
+        ],
+        "maxEdgeErrorPixels": 1,
+        "intersectionOverUnion": 0.9923070068613182
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "257-1.02-y-texture-jpeg",
+        "side": 257,
+        "ratio": 1.02,
+        "axis": "y",
+        "condition": "texture-jpeg",
+        "positive": true
+      },
+      "expectedBox": [
+        13,
+        29,
+        270,
+        291
+      ],
+      "measurement": {
+        "box": [
+          14,
+          30,
+          270,
+          291
+        ],
+        "maxEdgeErrorPixels": 1,
+        "intersectionOverUnion": 0.9923070068613182
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "257-1.04-x-clean",
+        "side": 257,
+        "ratio": 1.04,
+        "axis": "x",
+        "condition": "clean",
+        "positive": true
+      },
+      "expectedBox": [
+        13,
+        29,
+        280,
+        286
+      ],
+      "measurement": {
+        "box": [
+          14,
+          30,
+          280,
+          286
+        ],
+        "maxEdgeErrorPixels": 1,
+        "intersectionOverUnion": 0.9923782042874423
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "257-1.04-x-marks",
+        "side": 257,
+        "ratio": 1.04,
+        "axis": "x",
+        "condition": "marks",
+        "positive": true
+      },
+      "expectedBox": [
+        13,
+        29,
+        280,
+        286
+      ],
+      "measurement": {
+        "box": [
+          14,
+          30,
+          280,
+          286
+        ],
+        "maxEdgeErrorPixels": 1,
+        "intersectionOverUnion": 0.9923782042874423
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "257-1.04-x-texture-jpeg",
+        "side": 257,
+        "ratio": 1.04,
+        "axis": "x",
+        "condition": "texture-jpeg",
+        "positive": true
+      },
+      "expectedBox": [
+        13,
+        29,
+        280,
+        286
+      ],
+      "measurement": {
+        "box": [
+          14,
+          30,
+          280,
+          286
+        ],
+        "maxEdgeErrorPixels": 1,
+        "intersectionOverUnion": 0.9923782042874423
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "257-1.04-y-clean",
+        "side": 257,
+        "ratio": 1.04,
+        "axis": "y",
+        "condition": "clean",
+        "positive": true
+      },
+      "expectedBox": [
+        13,
+        29,
+        270,
+        296
+      ],
+      "measurement": {
+        "box": [
+          14,
+          30,
+          270,
+          296
+        ],
+        "maxEdgeErrorPixels": 1,
+        "intersectionOverUnion": 0.9923782042874423
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "257-1.04-y-marks",
+        "side": 257,
+        "ratio": 1.04,
+        "axis": "y",
+        "condition": "marks",
+        "positive": true
+      },
+      "expectedBox": [
+        13,
+        29,
+        270,
+        296
+      ],
+      "measurement": {
+        "box": [
+          14,
+          30,
+          270,
+          296
+        ],
+        "maxEdgeErrorPixels": 1,
+        "intersectionOverUnion": 0.9923782042874423
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "257-1.04-y-texture-jpeg",
+        "side": 257,
+        "ratio": 1.04,
+        "axis": "y",
+        "condition": "texture-jpeg",
+        "positive": true
+      },
+      "expectedBox": [
+        13,
+        29,
+        270,
+        296
+      ],
+      "measurement": {
+        "box": [
+          14,
+          30,
+          270,
+          296
+        ],
+        "maxEdgeErrorPixels": 1,
+        "intersectionOverUnion": 0.9923782042874423
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "512-1.02-x-clean",
+        "side": 512,
+        "ratio": 1.02,
+        "axis": "x",
+        "condition": "clean",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        565,
+        529
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          565,
+          529
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "512-1.02-x-marks",
+        "side": 512,
+        "ratio": 1.02,
+        "axis": "x",
+        "condition": "marks",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        565,
+        529
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          565,
+          529
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "512-1.02-x-texture-jpeg",
+        "side": 512,
+        "ratio": 1.02,
+        "axis": "x",
+        "condition": "texture-jpeg",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        565,
+        529
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          565,
+          529
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "512-1.02-y-clean",
+        "side": 512,
+        "ratio": 1.02,
+        "axis": "y",
+        "condition": "clean",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        555,
+        539
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          555,
+          539
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "512-1.02-y-marks",
+        "side": 512,
+        "ratio": 1.02,
+        "axis": "y",
+        "condition": "marks",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        555,
+        539
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          555,
+          539
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "512-1.02-y-texture-jpeg",
+        "side": 512,
+        "ratio": 1.02,
+        "axis": "y",
+        "condition": "texture-jpeg",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        555,
+        539
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          555,
+          539
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "512-1.04-x-clean",
+        "side": 512,
+        "ratio": 1.04,
+        "axis": "x",
+        "condition": "clean",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        575,
+        529
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          575,
+          529
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "512-1.04-x-marks",
+        "side": 512,
+        "ratio": 1.04,
+        "axis": "x",
+        "condition": "marks",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        575,
+        529
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          575,
+          529
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "512-1.04-x-texture-jpeg",
+        "side": 512,
+        "ratio": 1.04,
+        "axis": "x",
+        "condition": "texture-jpeg",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        575,
+        529
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          576,
+          529
+        ],
+        "maxEdgeErrorPixels": 1,
+        "intersectionOverUnion": 0.99812382739212
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "512-1.04-y-clean",
+        "side": 512,
+        "ratio": 1.04,
+        "axis": "y",
+        "condition": "clean",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        555,
+        549
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          555,
+          549
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "512-1.04-y-marks",
+        "side": 512,
+        "ratio": 1.04,
+        "axis": "y",
+        "condition": "marks",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        555,
+        549
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          555,
+          549
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "512-1.04-y-texture-jpeg",
+        "side": 512,
+        "ratio": 1.04,
+        "axis": "y",
+        "condition": "texture-jpeg",
+        "positive": true
+      },
+      "expectedBox": [
+        43,
+        17,
+        555,
+        549
+      ],
+      "measurement": {
+        "box": [
+          43,
+          17,
+          555,
+          549
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "negative-x-hidden14",
+        "side": 384,
+        "ratio": 1.04,
+        "axis": "x",
+        "condition": "marks",
+        "positive": false,
+        "hidden": 14
+      },
+      "expectedBox": [
+        43,
+        17,
+        442,
+        401
+      ],
+      "measurement": {
+        "error": {
+          "code": "BOARD_NOT_FOUND",
+          "message": "No supported chessboard was detected in the image."
+        }
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "negative-x-cut14",
+        "side": 384,
+        "ratio": 1.04,
+        "axis": "x",
+        "condition": "marks",
+        "positive": false,
+        "cut": 14
+      },
+      "expectedBox": [
+        43,
+        17,
+        428,
+        401
+      ],
+      "measurement": {
+        "error": {
+          "code": "BOARD_NOT_FOUND",
+          "message": "No supported chessboard was detected in the image."
+        }
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "negative-x-missing-file",
+        "side": 384,
+        "ratio": 1.04,
+        "axis": "x",
+        "condition": "marks",
+        "positive": false,
+        "cut": 48
+      },
+      "expectedBox": [
+        43,
+        17,
+        394,
+        401
+      ],
+      "measurement": {
+        "error": {
+          "code": "BOARD_NOT_FOUND",
+          "message": "No supported chessboard was detected in the image."
+        }
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "negative-x-grid7",
+        "side": 384,
+        "ratio": 1.04,
+        "axis": "x",
+        "condition": "marks",
+        "positive": false,
+        "count": 7
+      },
+      "expectedBox": [
+        43,
+        17,
+        442,
+        401
+      ],
+      "measurement": {
+        "error": {
+          "code": "BOARD_NOT_FOUND",
+          "message": "No supported chessboard was detected in the image."
+        }
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "negative-x-grid9",
+        "side": 384,
+        "ratio": 1.04,
+        "axis": "x",
+        "condition": "marks",
+        "positive": false,
+        "count": 9
+      },
+      "expectedBox": [
+        43,
+        17,
+        442,
+        401
+      ],
+      "measurement": {
+        "error": {
+          "code": "BOARD_NOT_FOUND",
+          "message": "No supported chessboard was detected in the image."
+        }
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "negative-y-hidden14",
+        "side": 384,
+        "ratio": 1.04,
+        "axis": "y",
+        "condition": "marks",
+        "positive": false,
+        "hidden": 14
+      },
+      "expectedBox": [
+        43,
+        17,
+        427,
+        416
+      ],
+      "measurement": {
+        "error": {
+          "code": "BOARD_NOT_FOUND",
+          "message": "No supported chessboard was detected in the image."
+        }
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "negative-y-cut14",
+        "side": 384,
+        "ratio": 1.04,
+        "axis": "y",
+        "condition": "marks",
+        "positive": false,
+        "cut": 14
+      },
+      "expectedBox": [
+        43,
+        17,
+        413,
+        416
+      ],
+      "measurement": {
+        "error": {
+          "code": "BOARD_NOT_FOUND",
+          "message": "No supported chessboard was detected in the image."
+        }
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "negative-y-missing-file",
+        "side": 384,
+        "ratio": 1.04,
+        "axis": "y",
+        "condition": "marks",
+        "positive": false,
+        "cut": 48
+      },
+      "expectedBox": [
+        43,
+        17,
+        379,
+        416
+      ],
+      "measurement": {
+        "error": {
+          "code": "BOARD_NOT_FOUND",
+          "message": "No supported chessboard was detected in the image."
+        }
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "negative-y-grid7",
+        "side": 384,
+        "ratio": 1.04,
+        "axis": "y",
+        "condition": "marks",
+        "positive": false,
+        "count": 7
+      },
+      "expectedBox": [
+        43,
+        17,
+        427,
+        416
+      ],
+      "measurement": {
+        "error": {
+          "code": "BOARD_NOT_FOUND",
+          "message": "No supported chessboard was detected in the image."
+        }
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "negative-y-grid9",
+        "side": 384,
+        "ratio": 1.04,
+        "axis": "y",
+        "condition": "marks",
+        "positive": false,
+        "count": 9
+      },
+      "expectedBox": [
+        43,
+        17,
+        427,
+        416
+      ],
+      "measurement": {
+        "error": {
+          "code": "BOARD_NOT_FOUND",
+          "message": "No supported chessboard was detected in the image."
+        }
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "outside-scope-1.08",
+        "side": 384,
+        "ratio": 1.08,
+        "axis": "x",
+        "condition": "clean",
+        "positive": false
+      },
+      "expectedBox": [
+        43,
+        17,
+        458,
+        401
+      ],
+      "measurement": {
+        "error": {
+          "code": "BOARD_NOT_FOUND",
+          "message": "No supported chessboard was detected in the image."
+        }
+      },
+      "passed": true
+    },
+    {
+      "specification": {
+        "id": "outside-scope-1.15",
+        "side": 384,
+        "ratio": 1.15,
+        "axis": "x",
+        "condition": "clean",
+        "positive": false
+      },
+      "expectedBox": [
+        43,
+        17,
+        485,
+        401
+      ],
+      "measurement": {
+        "error": {
+          "code": "BOARD_NOT_FOUND",
+          "message": "No supported chessboard was detected in the image."
+        }
+      },
+      "passed": true
+    }
+  ]
+}

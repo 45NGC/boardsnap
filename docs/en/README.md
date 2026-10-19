@@ -1,5 +1,10 @@
 # BoardSnap
 
+The [30-screenshot geometry review](digital-geometry-review.md) adds recovery of
+small unequal axis scales: 30/30 localized boards and 29/30 exact positions with
+both models. A separate texture-classification failure remains; these are
+development results, not final acceptance.
+
 The [screenshot and photograph strategy review](detection-strategy-review.md)
 examines current geometric limits and proposes a photographic pilot and incremental
 rectification support. It is a proposal for review, not a new compatibility claim.

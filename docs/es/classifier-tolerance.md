@@ -172,7 +172,7 @@ La comparación de tolerancia devuelve código 1 si no cumple su criterio de val
 Puedes probar el candidato seleccionado conservando v8 como referencia:
 
 ```bash
-boardsnap .cache/real-use-tests/chesscom-video-002.png --model .cache/neural-tolerance-v1-conservative/best.pt --orientation black-bottom
+boardsnap .cache/real-use-tests/real-use-12.png --model .cache/neural-tolerance-v1-conservative/best.pt --orientation black-bottom
 ```
 
 Conserva v8 y el candidato en carpetas diferentes. Los pesos, arrays preparados y

@@ -1,5 +1,10 @@
 # BoardSnap
 
+La [revisión geométrica de 30 capturas](digital-geometry-review.md) añade recuperación
+de pequeñas diferencias de escala entre ejes: 30/30 tableros localizados y 29/30
+posiciones correctas con ambos modelos. Queda una confusión de textura separada
+del detector; estos resultados son de desarrollo, no aceptación final.
+
 La [revisión de estrategia para capturas y fotografías](detection-strategy-review.md)
 analiza las limitaciones geométricas actuales y propone un piloto de fotos y una
 evolución incremental con rectificación. Es una propuesta pendiente de revisión,

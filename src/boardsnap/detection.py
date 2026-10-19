@@ -11,6 +11,10 @@ from boardsnap.profiles import DEFAULT_PROFILE, get_profile
 
 
 _MIN_BOARD_SIDE = 128
+# Deliberate digital scope: at most 5% anisotropy, never perspective recovery.
+# This is well below the 1/8 loss of a complete rank/file; perimeter checks still
+# reject smaller clipping. Ordinary near-square proposals retain their 1% limit.
+_MAX_RECTANGULAR_RATIO = 1.05
 
 
 @dataclass(frozen=True)
@@ -208,21 +212,9 @@ class _BorderGrid:
     visible: BoardBounds
 
 
-def _recover_border_grid(pixels: np.ndarray, grid: BoardBounds) -> _BorderGrid | None:
-    """Recover one narrow inset rim only, after ordinary detection has failed.
-
-    All seven boundaries on each axis must agree with the grid, all four visible
-    edges must validate, and only one edge may differ by more than a raster pixel.
-    The allowed strip is at most 8% of a cell and never more than six input pixels.
-    Missing cells, multiple obscured edges and off-image extrapolation are rejected.
-    """
-    height, width = pixels.shape[:2]
+def _interior_lines_match(pixels: np.ndarray, grid: BoardBounds) -> bool:
+    """Require strong, independently aligned evidence at all fourteen boundaries."""
     x, y, right, bottom = grid.as_box()
-    if min(x, y) < 1 or right >= width or bottom >= height:
-        return None
-    limit = min(6, int(min(grid.width, grid.height) / 8 * .08))
-    if limit < 2 or not _structural_pattern(pixels, grid):
-        return None
     # Strong, independently aligned evidence at every interior boundary; a
     # five-line consensus alone is insufficient for this exceptional recovery.
     for axis in (0, 1):
@@ -239,7 +231,25 @@ def _recover_border_grid(pixels: np.ndarray, grid: BoardBounds) -> _BorderGrid |
             a, b = max(0, round(expected)-3), min(len(gradient), round(expected)+2)
             peak = a + int(np.argmax(gradient[a:b])) + 1
             if abs(peak-expected) > max(1, step*.02) or gradient[peak-1] < 12:
-                return None
+                return False
+    return True
+
+
+def _recover_border_grid(pixels: np.ndarray, grid: BoardBounds) -> _BorderGrid | None:
+    """Recover one narrow inset rim only, after ordinary detection has failed.
+
+    All seven boundaries on each axis must agree with the grid, all four visible
+    edges must validate, and only one edge may differ by more than a raster pixel.
+    The allowed strip is at most 8% of a cell and never more than six input pixels.
+    Missing cells, multiple obscured edges and off-image extrapolation are rejected.
+    """
+    height, width = pixels.shape[:2]
+    x, y, right, bottom = grid.as_box()
+    if min(x, y) < 1 or right >= width or bottom >= height:
+        return None
+    limit = min(6, int(min(grid.width, grid.height) / 8 * .08))
+    if limit < 2 or not _structural_pattern(pixels, grid) or not _interior_lines_match(pixels, grid):
+        return None
     visible = _visible_edges(pixels, grid, search_radius=limit+1)
     if visible is None:
         return None
@@ -253,7 +263,9 @@ def _recover_border_grid(pixels: np.ndarray, grid: BoardBounds) -> _BorderGrid |
     return _BorderGrid(grid, visible)
 
 
-def _refine_grid(pixels: np.ndarray, bounds: BoardBounds, *, visible: bool = False) -> BoardBounds | None:
+def _refine_grid(
+    pixels: np.ndarray, bounds: BoardBounds, *, visible: bool = False, rectangular: bool = False,
+) -> BoardBounds | None:
     """Fit seven interior boundary peaks, independently of an outer shadow/frame."""
     coordinates, observed = [], []
     for axis in (0, 1):
@@ -321,9 +333,55 @@ def _refine_grid(pixels: np.ndarray, bounds: BoardBounds, *, visible: bool = Fal
             step = (stop - start) / 8
             if np.count_nonzero(np.abs(peaks - (start + step * np.arange(1, 8))) <= max(1.5, step * .025)) < 6:
                 return None
-    if min(right - x, bottom - y) < _MIN_BOARD_SIDE or abs((right - x) - (bottom - y)) > max(2, (right - x) * .01):
+    w, h = right-x, bottom-y
+    if min(w, h) < _MIN_BOARD_SIDE:
+        return None
+    if rectangular:
+        if max(w, h) / min(w, h) > _MAX_RECTANGULAR_RATIO:
+            return None
+    elif abs(w-h) > max(2, w*.01):
         return None
     return BoardBounds(x, y, right - x, bottom - y)
+
+
+def _rectangular_grid_candidates(pixels: np.ndarray) -> list[BoardBounds]:
+    """Fallback for small unequal axis scales with independent grid/perimeter proof.
+
+    This route runs only after all legacy routes fail. Preserve the fitted grid
+    for segmentation; its visible rim is evidence, not a replacement crop. All
+    candidates stay inside the image. No resizing of source pixels or homography
+    is used to manufacture a square proposal.
+    """
+    height, width = pixels.shape[:2]
+    scale = min(1.,1600/max(height,width))
+    work = pixels if scale==1 else cv2.resize(
+        pixels,(round(width*scale),round(height*scale)),interpolation=cv2.INTER_AREA)
+    columns = _axis_grids(work,max(24,_MIN_BOARD_SIDE*scale))
+    rows = _axis_grids(work.transpose(1,0,2),max(24,_MIN_BOARD_SIDE*scale))
+    candidates = []
+    for left,right in columns:
+        for top,bottom in rows:
+            w,h = right-left,bottom-top
+            if max(w,h)/min(w,h)>_MAX_RECTANGULAR_RATIO:
+                continue
+            x,y,r,b = (round(v/scale) for v in (left,top,right,bottom))
+            grid = _refine_grid(pixels,BoardBounds(x,y,r-x,b-y),rectangular=True)
+            if grid is None or abs(grid.width-grid.height)<=max(2,max(grid.width,grid.height)*.01):
+                # Near-square failures remain the responsibility of the original
+                # detector; this fallback cannot reopen rejected square controls.
+                continue
+            if (any(max(abs(a-b) for a,b in zip(grid.as_box(),old.as_box()))<=3 for old in candidates)
+                    or not _structural_pattern(pixels,grid) or not _interior_lines_match(pixels,grid)):
+                continue
+            visible = _visible_edges(pixels,grid)
+            intact = (visible is not None
+                      and max(abs(a-b) for a,b in zip(visible.as_box(),grid.as_box()))<=1
+                      and _structural_pattern(pixels,visible,complete_edges=True))
+            if not intact and _recover_border_grid(pixels,grid) is None:
+                continue
+            if not _grid_continues(pixels,grid):
+                candidates.append(grid)
+    return candidates
 
 
 def _axis_grids(work: np.ndarray, minimum_side: float) -> list[tuple[int, int]]:
@@ -564,6 +622,9 @@ def detect_board(image: Image.Image, *, profile: str = DEFAULT_PROFILE) -> Board
         work = pixels if scale == 1 else cv2.resize(
             pixels, (round(image.width*scale), round(image.height*scale)), interpolation=cv2.INTER_AREA)
         candidates = _interior_grid_candidates(pixels, work, scale, [], True)
+        recovered_grid = bool(candidates)
+    if not candidates:
+        candidates = _rectangular_grid_candidates(pixels)
         recovered_grid = bool(candidates)
     if not candidates:
         raise BoardDetectionError("BOARD_NOT_FOUND", "No supported chessboard was detected in the image.")
