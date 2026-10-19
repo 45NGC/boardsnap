@@ -10,12 +10,11 @@ The [digital release guide](digital-release.md) records frozen acceptance criter
 reserved sources, CPU measurements and verified wheel/model installation.
 The [six exposed failures are corrected](regression-fixes.md) in the new candidate.
 Its policy and distribution checks must be updated before final evaluation.
-The [video/page development corpus](video-development.md) now records 15 images of
-13 positions: localization and visible-boundary refinement achieve 13/15 in both
-detection and the full pipeline, with unchanged v8 weights (13/15 with reviewed
-bounds). Videos 001/002/003 now agree; 009/010 remain deferred known limitations.
-The [classifier tolerance step](classifier-tolerance.md) measures small crop errors
-on validation and keeps v8 as the reference for a separately trained candidate.
+The [video/page development corpus](video-development.md) records 15 images of
+13 positions. [Bounded border/grid recovery](border-grid-recovery.md) now achieves
+15/15 with unchanged v8 and tolerance-candidate weights, including 009/010.
+The visible perimeter is validated separately from segmentation geometry.
+The [classifier tolerance step](classifier-tolerance.md) keeps v8 as reference.
 
 The [simple-mark extension](simple-marks.md) now provides controlled highlights,
 circles/dots, a trained model comparison and external-game imports. Real-use

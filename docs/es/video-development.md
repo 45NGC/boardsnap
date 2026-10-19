@@ -2,6 +2,10 @@
 
 [English](../en/video-development.md) | **Español** · [Inicio](README.md)
 
+El [diagnóstico de la 009/010](video-009-010-diagnosis.md) demuestra que ambos modelos
+reconocen las posiciones con la cuadrícula interior corregida. La [recuperación acotada posterior](border-grid-recovery.md)
+ya las reconoce automáticamente y mantiene separadas las referencias del borde y la cuadrícula.
+
 El [manifiesto v2](../../data/manifests/video-development-v2.json) contiene
 **15 capturas de 13 posiciones distintas**. El usuario confirmó que únicamente
 `chesscom-video-001`, `002` y `003` comparten posición. Hay diez imágenes de vídeos

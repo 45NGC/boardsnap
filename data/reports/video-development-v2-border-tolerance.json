@@ -1,0 +1,754 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "video-development-v2",
+  "dataRole": "development-regression",
+  "independentFinalEvaluation": false,
+  "manifestSha256": "03664487a50a98a9a3c3433c2c35f08a60b81170247e7158f070afa806314971",
+  "gridReferencesSha256": "a20879cddb36a04e499010bf756e9e7106a9a8b1a0f00214702bf9ca1b23e826",
+  "modelSha256": "4c14507ad700dbe8c6ea6bdcdfb7072c7f31ef9fd9c21c22a782498c2d09ce5f",
+  "runtimeSha256": {
+    "src/boardsnap/__init__.py": "5d4d88e1368be753e0359dfcbef042595cd6c2dcd793251aabc55724ffb015c8",
+    "src/boardsnap/__main__.py": "776c85059861da68cb7dcd3a92a43278d35589117f27ae3b9105c739d9e542ab",
+    "src/boardsnap/adapters/__init__.py": "f3b27a487ea86f5d962494c6633547cb2171f06ba0aca009fb2a13c61c2db2af",
+    "src/boardsnap/adapters/cli.py": "1261d4b300ee8edd1d125bd2a526c1b2d729f8492738d051fad9ed0c4a0138a0",
+    "src/boardsnap/classification.py": "295c5460b3c5174e036fe9eac0896ffe5eb2f3724c7485e0d9d3a20d0e028df4",
+    "src/boardsnap/detection.py": "3570657cb86dbba5ffb3203d158df5f108d7477b2a537332053bc7b7e5ee8d01",
+    "src/boardsnap/image_input.py": "4cb87bbd4fab43ed315cb3c0f258ed9c5a8f5758124c72a3eb8a8e964d66764e",
+    "src/boardsnap/neural.py": "1953f32f7fb4cc25ec63cae0302ddfeda927f6d9373eadf2541cb7f70950c13f",
+    "src/boardsnap/normalization.py": "51ca3052645be05d05291a2653fd8c0d808ace12ad5c1f896a06e00b061741c7",
+    "src/boardsnap/orientation.py": "39d0297413484a1980f6564f3baea140af1278b2dbaed1a5a8d62903cf0c1926",
+    "src/boardsnap/output.py": "64ed8612dae9b528d08963ae1db1fc9127802c7f3ba3140bcdc329bf4b4645b0",
+    "src/boardsnap/pipeline.py": "877f1adb395ffcf54e3e3e646b05377d0ee966c23384b4c4f16aa39d30fae97c",
+    "src/boardsnap/profiles.py": "8cc3bb7a0e0d5fed057887aa09ebdf4d1d4309dba57a3c9df2cd0731707a5b5b",
+    "src/boardsnap/segmentation.py": "eb0eccb596491a4ea1602b90baa8e491ff6f53932e88536495678fd59c603127"
+  },
+  "toolSha256": "c467c593812ca0c0a5a0517d678db680d462db17c9f8b96029bbbef9dfba3c50",
+  "images": 15,
+  "positions": 13,
+  "sourceGroups": 2,
+  "passed": true,
+  "results": [
+    {
+      "id": "chesscom-video-001",
+      "sha256": "29f3be6bb048d05c26f82f999dab855f86e96e37c3cc3feed4b53f70d0ced3e7",
+      "positionId": "real-chesscom-video-position-001",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "orientation": "black-bottom",
+      "expected": {
+        "piecePlacement": "r4rk1/pb1n1pp1/1qpb1n1p/1p3N2/4P2B/2NB4/PP3PPP/2RQ1RK1"
+      },
+      "expectedBox": [
+        35,
+        17,
+        435,
+        417
+      ],
+      "expectedVisibleBox": [
+        35,
+        17,
+        435,
+        417
+      ],
+      "detection": {
+        "box": [
+          35,
+          17,
+          435,
+          417
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0,
+        "correct": true
+      },
+      "reviewedBoundsRecognition": {
+        "result": {
+          "piecePlacement": "r4rk1/pb1n1pp1/1qpb1n1p/1p3N2/4P2B/2NB4/PP3PPP/2RQ1RK1"
+        },
+        "correct": true
+      },
+      "fullPipeline": {
+        "result": {
+          "piecePlacement": "r4rk1/pb1n1pp1/1qpb1n1p/1p3N2/4P2B/2NB4/PP3PPP/2RQ1RK1"
+        },
+        "correct": true
+      }
+    },
+    {
+      "id": "chesscom-video-002",
+      "sha256": "0e52abacb79bb9a375078719f0273a8109911a893b52f96d63f3a7021e7e6825",
+      "positionId": "real-chesscom-video-position-001",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "orientation": "black-bottom",
+      "expected": {
+        "piecePlacement": "r4rk1/pb1n1pp1/1qpb1n1p/1p3N2/4P2B/2NB4/PP3PPP/2RQ1RK1"
+      },
+      "expectedBox": [
+        0,
+        1,
+        399,
+        401
+      ],
+      "expectedVisibleBox": [
+        0,
+        1,
+        399,
+        401
+      ],
+      "detection": {
+        "box": [
+          0,
+          1,
+          399,
+          401
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0,
+        "correct": true
+      },
+      "reviewedBoundsRecognition": {
+        "result": {
+          "piecePlacement": "r4rk1/pb1n1pp1/1qpb1n1p/1p3N2/4P2B/2NB4/PP3PPP/2RQ1RK1"
+        },
+        "correct": true
+      },
+      "fullPipeline": {
+        "result": {
+          "piecePlacement": "r4rk1/pb1n1pp1/1qpb1n1p/1p3N2/4P2B/2NB4/PP3PPP/2RQ1RK1"
+        },
+        "correct": true
+      }
+    },
+    {
+      "id": "chesscom-video-003",
+      "sha256": "8a8874d8f913d0905760763f0bf564a588697c963384878b858da84818c0865d",
+      "positionId": "real-chesscom-video-position-001",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "orientation": "black-bottom",
+      "expected": {
+        "piecePlacement": "r4rk1/pb1n1pp1/1qpb1n1p/1p3N2/4P2B/2NB4/PP3PPP/2RQ1RK1"
+      },
+      "expectedBox": [
+        2,
+        2,
+        299,
+        299
+      ],
+      "expectedVisibleBox": [
+        2,
+        2,
+        299,
+        299
+      ],
+      "detection": {
+        "box": [
+          2,
+          2,
+          298,
+          299
+        ],
+        "maxEdgeErrorPixels": 1,
+        "intersectionOverUnion": 0.9966329966329966,
+        "correct": true
+      },
+      "reviewedBoundsRecognition": {
+        "result": {
+          "piecePlacement": "r4rk1/pb1n1pp1/1qpb1n1p/1p3N2/4P2B/2NB4/PP3PPP/2RQ1RK1"
+        },
+        "correct": true
+      },
+      "fullPipeline": {
+        "result": {
+          "piecePlacement": "r4rk1/pb1n1pp1/1qpb1n1p/1p3N2/4P2B/2NB4/PP3PPP/2RQ1RK1"
+        },
+        "correct": true
+      }
+    },
+    {
+      "id": "chesscom-video-004",
+      "sha256": "23b61bd7bd336a44cb7867ea286c5f59dd07c6e23dc7ef21dd9d60055f1b841a",
+      "positionId": "real-chesscom-video-004-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "orientation": "black-bottom",
+      "expected": {
+        "piecePlacement": "8/8/2R4p/p4P2/5k2/7P/r5BK/2q1r3"
+      },
+      "expectedBox": [
+        35,
+        14,
+        435,
+        414
+      ],
+      "expectedVisibleBox": [
+        35,
+        14,
+        435,
+        414
+      ],
+      "detection": {
+        "box": [
+          35,
+          14,
+          435,
+          414
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0,
+        "correct": true
+      },
+      "reviewedBoundsRecognition": {
+        "result": {
+          "piecePlacement": "8/8/2R4p/p4P2/5k2/7P/r5BK/2q1r3"
+        },
+        "correct": true
+      },
+      "fullPipeline": {
+        "result": {
+          "piecePlacement": "8/8/2R4p/p4P2/5k2/7P/r5BK/2q1r3"
+        },
+        "correct": true
+      }
+    },
+    {
+      "id": "chesscom-video-005",
+      "sha256": "1d0d98c5e8be5b0201b06a2363723ae51ee7a280c36c3006cd5e131ef417561d",
+      "positionId": "real-chesscom-video-005-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "orientation": "black-bottom",
+      "expected": {
+        "piecePlacement": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N1P3/PP3PPP/R1BQKBNR"
+      },
+      "expectedBox": [
+        28,
+        8,
+        428,
+        408
+      ],
+      "expectedVisibleBox": [
+        28,
+        8,
+        428,
+        408
+      ],
+      "detection": {
+        "box": [
+          28,
+          8,
+          428,
+          408
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0,
+        "correct": true
+      },
+      "reviewedBoundsRecognition": {
+        "result": {
+          "piecePlacement": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N1P3/PP3PPP/R1BQKBNR"
+        },
+        "correct": true
+      },
+      "fullPipeline": {
+        "result": {
+          "piecePlacement": "rnbqkb1r/pp3ppp/2p1pn2/3p4/2PP4/2N1P3/PP3PPP/R1BQKBNR"
+        },
+        "correct": true
+      }
+    },
+    {
+      "id": "chesscom-video-006",
+      "sha256": "84721be820c413d858406e20916efda33032e4156a1639b8af3bcbf01712da0a",
+      "positionId": "real-chesscom-video-006-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "orientation": "white-bottom",
+      "expected": {
+        "piecePlacement": "2r2rk1/pq3pp1/1p2pn1p/4N3/1P1Q4/P3P3/1B3PbP/2R2RK1"
+      },
+      "expectedBox": [
+        41,
+        11,
+        417,
+        387
+      ],
+      "expectedVisibleBox": [
+        41,
+        11,
+        417,
+        387
+      ],
+      "detection": {
+        "box": [
+          41,
+          11,
+          417,
+          388
+        ],
+        "maxEdgeErrorPixels": 1,
+        "intersectionOverUnion": 0.9973474801061007,
+        "correct": true
+      },
+      "reviewedBoundsRecognition": {
+        "result": {
+          "piecePlacement": "2r2rk1/pq3pp1/1p2pn1p/4N3/1P1Q4/P3P3/1B3PbP/2R2RK1"
+        },
+        "correct": true
+      },
+      "fullPipeline": {
+        "result": {
+          "piecePlacement": "2r2rk1/pq3pp1/1p2pn1p/4N3/1P1Q4/P3P3/1B3PbP/2R2RK1"
+        },
+        "correct": true
+      }
+    },
+    {
+      "id": "chesscom-video-007",
+      "sha256": "7988877c635cd3aa9c0bcadb2eadd33cf3cff1839ee4496155be40812684848c",
+      "positionId": "real-chesscom-video-007-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "orientation": "black-bottom",
+      "expected": {
+        "piecePlacement": "8/8/6P1/1p2R3/1r6/2k3K1/6P1/8"
+      },
+      "expectedBox": [
+        15,
+        13,
+        573,
+        570
+      ],
+      "expectedVisibleBox": [
+        15,
+        13,
+        573,
+        570
+      ],
+      "detection": {
+        "box": [
+          15,
+          13,
+          571,
+          569
+        ],
+        "maxEdgeErrorPixels": 2,
+        "intersectionOverUnion": 0.9946268733550833,
+        "correct": true
+      },
+      "reviewedBoundsRecognition": {
+        "result": {
+          "piecePlacement": "8/8/6P1/1p2R3/1r6/2k3K1/6P1/8"
+        },
+        "correct": true
+      },
+      "fullPipeline": {
+        "result": {
+          "piecePlacement": "8/8/6P1/1p2R3/1r6/2k3K1/6P1/8"
+        },
+        "correct": true
+      }
+    },
+    {
+      "id": "chesscom-video-008",
+      "sha256": "2f852222b63de70f0b73f81863457801966d969c59706fdb25cbe3f177f22835",
+      "positionId": "real-chesscom-video-008-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "orientation": "black-bottom",
+      "expected": {
+        "piecePlacement": "2r3k1/r2n1pp1/2pq1n1p/1p1pNB2/p2P4/P3P1P1/1PQ2PP1/1RR3K1"
+      },
+      "expectedBox": [
+        22,
+        16,
+        580,
+        573
+      ],
+      "expectedVisibleBox": [
+        22,
+        16,
+        580,
+        573
+      ],
+      "detection": {
+        "box": [
+          22,
+          16,
+          578,
+          572
+        ],
+        "maxEdgeErrorPixels": 2,
+        "intersectionOverUnion": 0.9946268733550833,
+        "correct": true
+      },
+      "reviewedBoundsRecognition": {
+        "result": {
+          "piecePlacement": "2r3k1/r2n1pp1/2pq1n1p/1p1pNB2/p2P4/P3P1P1/1PQ2PP1/1RR3K1"
+        },
+        "correct": true
+      },
+      "fullPipeline": {
+        "result": {
+          "piecePlacement": "2r3k1/r2n1pp1/2pq1n1p/1p1pNB2/p2P4/P3P1P1/1PQ2PP1/1RR3K1"
+        },
+        "correct": true
+      }
+    },
+    {
+      "id": "chesscom-video-009",
+      "sha256": "e98c08965aa4a4444b53261abe62e2cccb72a4cae13a0c350baee36aa522d09e",
+      "positionId": "real-chesscom-video-009-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "orientation": "white-bottom",
+      "expected": {
+        "piecePlacement": "3rkb1r/pp2qpp1/7p/2pP4/4p1QP/2N1P1B1/PP3PP1/n1K3NR"
+      },
+      "expectedBox": [
+        10,
+        24,
+        466,
+        480
+      ],
+      "expectedVisibleBox": [
+        13,
+        23,
+        467,
+        481
+      ],
+      "detection": {
+        "box": [
+          10,
+          24,
+          466,
+          480
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0,
+        "correct": true
+      },
+      "visibleBoundary": {
+        "box": [
+          13,
+          23,
+          467,
+          481
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "reviewedBoundsRecognition": {
+        "result": {
+          "piecePlacement": "3rkb1r/4qpp1/7p/2pP4/4p1QP/2Q1P1B1/1P3PP1/n1K3NR"
+        },
+        "correct": false
+      },
+      "gridBoundsRecognition": {
+        "result": {
+          "piecePlacement": "3rkb1r/pp2qpp1/7p/2pP4/4p1QP/2N1P1B1/PP3PP1/n1K3NR"
+        },
+        "correct": true
+      },
+      "fullPipeline": {
+        "result": {
+          "piecePlacement": "3rkb1r/pp2qpp1/7p/2pP4/4p1QP/2N1P1B1/PP3PP1/n1K3NR"
+        },
+        "correct": true
+      }
+    },
+    {
+      "id": "chesscom-video-010",
+      "sha256": "16d94bd236f43541319649f0cbba683fbc8a98fb4197734d69f16c3deba69cfb",
+      "positionId": "real-chesscom-video-010-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "orientation": "white-bottom",
+      "expected": {
+        "piecePlacement": "8/8/8/p6p/P3K1kP/4P3/8/8"
+      },
+      "expectedBox": [
+        9,
+        3,
+        465,
+        459
+      ],
+      "expectedVisibleBox": [
+        12,
+        2,
+        466,
+        460
+      ],
+      "detection": {
+        "box": [
+          9,
+          3,
+          465,
+          459
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0,
+        "correct": true
+      },
+      "visibleBoundary": {
+        "box": [
+          12,
+          2,
+          466,
+          460
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0
+      },
+      "reviewedBoundsRecognition": {
+        "result": {
+          "piecePlacement": "8/8/8/7p/4K1kP/4P3/8/8"
+        },
+        "correct": false
+      },
+      "gridBoundsRecognition": {
+        "result": {
+          "piecePlacement": "8/8/8/p6p/P3K1kP/4P3/8/8"
+        },
+        "correct": true
+      },
+      "fullPipeline": {
+        "result": {
+          "piecePlacement": "8/8/8/p6p/P3K1kP/4P3/8/8"
+        },
+        "correct": true
+      }
+    },
+    {
+      "id": "lichess-video-001",
+      "sha256": "66cf78d388595f77e397573846d5564d7a7751dc78fe51c91cf903f6e6c10050",
+      "positionId": "real-lichess-video-001-position",
+      "sourceGroupId": "real-lichess-development-unresolved",
+      "split": "development",
+      "orientation": "white-bottom",
+      "expected": {
+        "piecePlacement": "rn1qkb1r/pp3ppp/2p1pn2/3p1b2/3P1B2/2NBPN2/PPP2PPP/R2Q1RK1"
+      },
+      "expectedBox": [
+        15,
+        11,
+        903,
+        899
+      ],
+      "expectedVisibleBox": [
+        15,
+        11,
+        903,
+        899
+      ],
+      "detection": {
+        "box": [
+          15,
+          13,
+          902,
+          898
+        ],
+        "maxEdgeErrorPixels": 2,
+        "intersectionOverUnion": 0.9954992999756513,
+        "correct": true
+      },
+      "reviewedBoundsRecognition": {
+        "result": {
+          "piecePlacement": "rn1qkb1r/pp3ppp/2p1pn2/3p1b2/3P1B2/2NBPN2/PPP2PPP/R2Q1RK1"
+        },
+        "correct": true
+      },
+      "fullPipeline": {
+        "result": {
+          "piecePlacement": "rn1qkb1r/pp3ppp/2p1pn2/3p1b2/3P1B2/2NBPN2/PPP2PPP/R2Q1RK1"
+        },
+        "correct": true
+      }
+    },
+    {
+      "id": "lichess-video-002",
+      "sha256": "99c3e1a4c5b8ab6cd7e85e9b09bfbacca3447ed56fdcbdad4ce28b26e7a6aa77",
+      "positionId": "real-lichess-video-002-position",
+      "sourceGroupId": "real-lichess-development-unresolved",
+      "split": "development",
+      "orientation": "white-bottom",
+      "expected": {
+        "piecePlacement": "r1bqkb1r/pp3ppp/3ppn2/2p5/2B1P3/2N5/PPPPQPPP/R1B2RK1"
+      },
+      "expectedBox": [
+        14,
+        8,
+        594,
+        586
+      ],
+      "expectedVisibleBox": [
+        14,
+        8,
+        594,
+        586
+      ],
+      "detection": {
+        "box": [
+          14,
+          8,
+          594,
+          586
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0,
+        "correct": true
+      },
+      "reviewedBoundsRecognition": {
+        "result": {
+          "piecePlacement": "r1bqkb1r/pp3ppp/3ppn2/2p5/2B1P3/2N5/PPPPQPPP/R1B2RK1"
+        },
+        "correct": true
+      },
+      "fullPipeline": {
+        "result": {
+          "piecePlacement": "r1bqkb1r/pp3ppp/3ppn2/2p5/2B1P3/2N5/PPPPQPPP/R1B2RK1"
+        },
+        "correct": true
+      }
+    },
+    {
+      "id": "lichess-video-003",
+      "sha256": "08931fee7aa4020406c2748b2186b00ae34fb63949067dcba411e6d4f59088bf",
+      "positionId": "real-lichess-video-003-position",
+      "sourceGroupId": "real-lichess-development-unresolved",
+      "split": "development",
+      "orientation": "white-bottom",
+      "expected": {
+        "piecePlacement": "1B6/Pk5p/1N4p1/2p2p2/1p1p4/1P1P3P/2P3PK/5q2"
+      },
+      "expectedBox": [
+        28,
+        14,
+        608,
+        592
+      ],
+      "expectedVisibleBox": [
+        28,
+        14,
+        608,
+        592
+      ],
+      "detection": {
+        "box": [
+          28,
+          14,
+          608,
+          592
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0,
+        "correct": true
+      },
+      "reviewedBoundsRecognition": {
+        "result": {
+          "piecePlacement": "1B6/Pk5p/1N4p1/2p2p2/1p1p4/1P1P3P/2P3PK/5q2"
+        },
+        "correct": true
+      },
+      "fullPipeline": {
+        "result": {
+          "piecePlacement": "1B6/Pk5p/1N4p1/2p2p2/1p1p4/1P1P3P/2P3PK/5q2"
+        },
+        "correct": true
+      }
+    },
+    {
+      "id": "chesscom-page-001",
+      "sha256": "696d2546c26df6fdeb06c8096d0cd1b876eb272caeeb6afe1e6e14d2ce86b351",
+      "positionId": "real-chesscom-page-001-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "orientation": "white-bottom",
+      "expected": {
+        "piecePlacement": "r2qkbnr/ppN2ppp/3Pb1n1/8/3P4/5N2/PPP1Q1PP/R1B1KB1R"
+      },
+      "expectedBox": [
+        9,
+        10,
+        257,
+        258
+      ],
+      "expectedVisibleBox": [
+        9,
+        10,
+        257,
+        258
+      ],
+      "detection": {
+        "box": [
+          9,
+          10,
+          257,
+          258
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0,
+        "correct": true
+      },
+      "reviewedBoundsRecognition": {
+        "result": {
+          "piecePlacement": "r2qkbnr/ppN2ppp/3Pb1n1/8/3P4/5N2/PPP1Q1PP/R1B1KB1R"
+        },
+        "correct": true
+      },
+      "fullPipeline": {
+        "result": {
+          "piecePlacement": "r2qkbnr/ppN2ppp/3Pb1n1/8/3P4/5N2/PPP1Q1PP/R1B1KB1R"
+        },
+        "correct": true
+      }
+    },
+    {
+      "id": "lichess-page-001",
+      "sha256": "4c79749f1a29a3ec7c753c5135c532ea10978dac94da18873d00007ce141a2a0",
+      "positionId": "real-lichess-page-001-position",
+      "sourceGroupId": "real-lichess-development-unresolved",
+      "split": "development",
+      "orientation": "white-bottom",
+      "expected": {
+        "piecePlacement": "r2qk2r/1b2pnbp/p3Nnp1/1pp5/3P4/2NB4/PPPB2PP/R2Q1RK1"
+      },
+      "expectedBox": [
+        55,
+        23,
+        1143,
+        1111
+      ],
+      "expectedVisibleBox": [
+        55,
+        23,
+        1143,
+        1111
+      ],
+      "detection": {
+        "box": [
+          55,
+          23,
+          1143,
+          1111
+        ],
+        "maxEdgeErrorPixels": 0,
+        "intersectionOverUnion": 1.0,
+        "correct": true
+      },
+      "reviewedBoundsRecognition": {
+        "result": {
+          "piecePlacement": "r2qk2r/1b2pnbp/p3Nnp1/1pp5/3P4/2NB4/PPPB2PP/R2Q1RK1"
+        },
+        "correct": true
+      },
+      "fullPipeline": {
+        "result": {
+          "piecePlacement": "r2qk2r/1b2pnbp/p3Nnp1/1pp5/3P4/2NB4/PPPB2PP/R2Q1RK1"
+        },
+        "correct": true
+      }
+    }
+  ]
+}

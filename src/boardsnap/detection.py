@@ -15,7 +15,11 @@ _MIN_BOARD_SIDE = 128
 
 @dataclass(frozen=True)
 class BoardBounds:
-    """Integer bounds in input-image pixels, with exclusive right/bottom edges."""
+    """Grid crop in input pixels, with exclusive right/bottom edges.
+
+    A narrowly obscured exterior rim can differ from this uniform 8x8 geometry.
+    Recovery validates the visible rim separately, without synthesizing pixels.
+    """
 
     x: int
     y: int
@@ -130,7 +134,9 @@ def _structural_pattern(pixels: np.ndarray, bounds: BoardBounds, *, complete_edg
     return True
 
 
-def _visible_edges(pixels: np.ndarray, bounds: BoardBounds) -> BoardBounds | None:
+def _visible_edges(
+    pixels: np.ndarray, bounds: BoardBounds, *, search_radius: int | None = None,
+) -> BoardBounds | None:
     """Locate actual outer transitions near an interior-line fit, without padding.
 
     At most one raster pixel may lie outside the input. This permits a clipped
@@ -160,7 +166,8 @@ def _visible_edges(pixels: np.ndarray, bounds: BoardBounds) -> BoardBounds | Non
         image = pixels if axis == 0 else pixels.transpose(1, 0, 2)
         start, stop = (x, right) if axis == 0 else (y, bottom)
         lo, hi = (y, bottom) if axis == 0 else (x, right)
-        radius = max(2, round((stop - start) / 8 * .06))
+        radius = (max(2, round((stop - start) / 8 * .06))
+                  if search_radius is None else search_radius)
         offsets = np.r_[np.linspace(.03, .13, 8), np.linspace(.87, .97, 8)]
         positions = np.rint(lo + (np.arange(8)[:, None] + offsets) * (hi - lo) / 8).astype(int)
         positions = np.clip(positions, 0, image.shape[0] - 1)
@@ -191,6 +198,59 @@ def _visible_edges(pixels: np.ndarray, bounds: BoardBounds) -> BoardBounds | Non
             coordinates.append(value)
     x, right, y, bottom = coordinates
     return BoardBounds(x, y, right - x, bottom - y)
+
+
+@dataclass(frozen=True)
+class _BorderGrid:
+    """Separate the observed perimeter from the grid used for segmentation."""
+
+    grid: BoardBounds
+    visible: BoardBounds
+
+
+def _recover_border_grid(pixels: np.ndarray, grid: BoardBounds) -> _BorderGrid | None:
+    """Recover one narrow inset rim only, after ordinary detection has failed.
+
+    All seven boundaries on each axis must agree with the grid, all four visible
+    edges must validate, and only one edge may differ by more than a raster pixel.
+    The allowed strip is at most 8% of a cell and never more than six input pixels.
+    Missing cells, multiple obscured edges and off-image extrapolation are rejected.
+    """
+    height, width = pixels.shape[:2]
+    x, y, right, bottom = grid.as_box()
+    if min(x, y) < 1 or right >= width or bottom >= height:
+        return None
+    limit = min(6, int(min(grid.width, grid.height) / 8 * .08))
+    if limit < 2 or not _structural_pattern(pixels, grid):
+        return None
+    # Strong, independently aligned evidence at every interior boundary; a
+    # five-line consensus alone is insufficient for this exceptional recovery.
+    for axis in (0, 1):
+        image = pixels if axis == 0 else pixels.transpose(1, 0, 2)
+        start, stop = (x, right) if axis == 0 else (y, bottom)
+        lo, hi = (y, bottom) if axis == 0 else (x, right)
+        offsets = np.array([.08, .12, .88, .92])
+        positions = np.unique(np.rint(lo + (np.arange(8)[:, None] + offsets) * (hi-lo)/8).astype(int))
+        strip = image[positions].astype(np.float32)
+        gradient = np.median(np.linalg.norm(np.diff(strip, axis=1), axis=2), axis=0)
+        step = (stop-start)/8
+        for index in range(1, 8):
+            expected = start + step*index
+            a, b = max(0, round(expected)-3), min(len(gradient), round(expected)+2)
+            peak = a + int(np.argmax(gradient[a:b])) + 1
+            if abs(peak-expected) > max(1, step*.02) or gradient[peak-1] < 12:
+                return None
+    visible = _visible_edges(pixels, grid, search_radius=limit+1)
+    if visible is None:
+        return None
+    l, t, r, b = visible.as_box()
+    # Positive means the actual visible surface begins inside the inferred grid.
+    inset = np.array([l-x, t-y, right-r, bottom-b])
+    if np.count_nonzero(inset > 1) != 1 or np.any(inset < -1) or np.max(inset) > limit:
+        return None
+    if not _structural_pattern(pixels, visible, complete_edges=True):
+        return None
+    return _BorderGrid(grid, visible)
 
 
 def _refine_grid(pixels: np.ndarray, bounds: BoardBounds, *, visible: bool = False) -> BoardBounds | None:
@@ -328,7 +388,7 @@ def _grid_continues(pixels: np.ndarray, bounds: BoardBounds) -> bool:
 
 
 def _interior_grid_candidates(
-    pixels: np.ndarray, work: np.ndarray, scale: float, known: list[BoardBounds],
+    pixels: np.ndarray, work: np.ndarray, scale: float, known: list[BoardBounds], recover_border: bool = False,
 ) -> list[BoardBounds]:
     """Locate grids inside connected clutter, then validate local 8x8 evidence."""
     minimum_side = max(24, _MIN_BOARD_SIDE * scale)
@@ -348,7 +408,8 @@ def _interior_grid_candidates(
             if (refined is not None
                     and not any(max(abs(a - b) for a, b in zip(refined.as_box(), old.as_box())) <= 3
                                 for old in known + candidates)
-                    and _structural_pattern(pixels, refined, complete_edges=True)
+                    and ((_recover_border_grid(pixels, refined) is not None) if recover_border
+                         else _structural_pattern(pixels, refined, complete_edges=True))
                     and not _grid_continues(pixels, refined)):
                 candidates.append(refined)
     return candidates
@@ -495,11 +556,22 @@ def detect_board(image: Image.Image, *, profile: str = DEFAULT_PROFILE) -> Board
         if not any(max(abs(a - b) for a, b in zip(candidate.as_box(), known.as_box())) <= 3
                    for known in candidates):
             candidates.append(candidate)
+    recovered_grid = False
+    if not candidates:
+        # This fallback cannot alter a previously accepted rectangle. Keep its
+        # uniform geometry after checking the distinct visible perimeter.
+        scale = min(1., 1600 / max(image.size))
+        work = pixels if scale == 1 else cv2.resize(
+            pixels, (round(image.width*scale), round(image.height*scale)), interpolation=cv2.INTER_AREA)
+        candidates = _interior_grid_candidates(pixels, work, scale, [], True)
+        recovered_grid = bool(candidates)
     if not candidates:
         raise BoardDetectionError("BOARD_NOT_FOUND", "No supported chessboard was detected in the image.")
     if len(candidates) > 1:
         raise BoardDetectionError("UNSUPPORTED_IMAGE", "Images with multiple chessboards are not supported.")
     bounds = candidates[0]
+    if recovered_grid:
+        return bounds
     # Confirm the outer transitions against the interior grid before uniform
     # cropping. Keep a validated proposal when occlusions prevent this optional
     # refinement; the full-frame rescue above always requires the visible fit.

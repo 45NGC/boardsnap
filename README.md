@@ -15,15 +15,13 @@ The earlier candidate had two arrow regressions and four cropped-board detection
 misses. The [correction guide](docs/en/regression-fixes.md) records fixes for all six
 using the updated detector and `.cache/neural-styles-v8/best.pt`.
 
-The [video/page development corpus](docs/en/video-development.md) now contains 15
-images of 13 positions, including the three original variants. Interior-grid
-localization followed by visible-boundary refinement raises accurate detections
-and full-pipeline successes to 13/15, using unchanged v8 weights (also 13/15 with
-reviewed bounds). Chess.com videos 001, 002 and 003 now return the same placement.
-Videos 009/010 remain deferred known limitations; these are development cases,
-not independent acceptance data. Their failures remain visible in the reports.
-The [classifier tolerance step](docs/en/classifier-tolerance.md) measures small
-crop errors on validation and retains v8 as the reference for a separate candidate.
+The [video/page development corpus](docs/en/video-development.md) contains 15
+images of 13 positions. [Bounded border/grid recovery](docs/en/border-grid-recovery.md)
+now recognizes all 15 with unchanged v8 and tolerance-candidate weights, including
+009/010. Visible perimeter checks remain separate from segmentation geometry.
+These are consulted development regressions, not independent acceptance data.
+The [classifier tolerance step](docs/en/classifier-tolerance.md) retains v8 as the
+reference for the separate candidate.
 
 The [digital acceptance guide](docs/en/digital-release.md) fixes the target catalogue,
 thresholds and a new reserved source plan. A local wheel and model bundle pass

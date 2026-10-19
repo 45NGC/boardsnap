@@ -10,33 +10,12 @@ from PIL import Image, ImageDraw
 
 from boardsnap.detection import BoardDetectionError, detect_board
 from boardsnap.image_input import read_image
-from tools.development_cases import MANIFEST, ROOT, evaluate, load_cases
+from tools.development_cases import GRID_REFERENCES, MANIFEST, ROOT, evaluate, load_cases, load_grid_references
 from tools.neural_data import digest
 
 DATA = json.loads(MANIFEST.read_text())
 SAMPLES = DATA['samples']
-NOT_FOUND = {'chesscom-video-009', 'chesscom-video-010'}
-IMPRECISE = set()
-REVIEWED_CLASSIFICATION_FAILURES = {'chesscom-video-009', 'chesscom-video-010'}
-PIPELINE_FAILURES = {'chesscom-video-009', 'chesscom-video-010'}
-
-
-def cases_for(stage):
-    """Assert desired behavior; explicitly expose known defects as strict xfail."""
-    cases = []
-    for row in SAMPLES:
-        failure = None
-        if stage == 'detection' and row['id'] in NOT_FOUND:
-            failure = (BoardDetectionError, 'Known localization failure in video/page background')
-        elif stage == 'detection' and row['id'] in IMPRECISE:
-            failure = (AssertionError, 'Known boundary error exceeds two pixels; refinement remains pending')
-        elif stage == 'reviewed' and row['id'] in REVIEWED_CLASSIFICATION_FAILURES:
-            failure = (AssertionError, 'Known recognition failure even with reviewed visible bounds')
-        elif stage == 'pipeline' and row['id'] in PIPELINE_FAILURES:
-            failure = (AssertionError, 'Known full-pipeline development failure')
-        marks = () if failure is None else pytest.mark.xfail(strict=True, raises=failure[0], reason=failure[1])
-        cases.append(pytest.param(row, id=row['id'], marks=marks))
-    return cases
+GRIDS = load_grid_references(GRID_REFERENCES)
 
 
 @pytest.mark.unit
@@ -123,11 +102,12 @@ def test_related_game_positions_remain_excluded_from_acceptance(tmp_path):
 
 
 @pytest.mark.integration
-@pytest.mark.parametrize('sample', cases_for('detection'))
+@pytest.mark.parametrize('sample', SAMPLES, ids=lambda r: r['id'])
 def test_detector_returns_reviewed_board_bounds(sample):
     with read_image(ROOT / sample['path']) as image:
         actual = detect_board(image).as_box()
-    assert max(abs(a-b) for a, b in zip(actual, sample['box'], strict=True)) <= DATA['maxEdgeErrorPixels']
+    expected = GRIDS.get(sample['id'], {}).get('gridBox', sample['box'])
+    assert max(abs(a-b) for a, b in zip(actual, expected, strict=True)) <= DATA['maxEdgeErrorPixels']
 
 
 @pytest.mark.integration
@@ -163,18 +143,27 @@ def neural_report():
     if not model:
         pytest.skip('Set BOARDSNAP_TEST_MODEL to test a local neural artifact.')
     pytest.importorskip('torch')
-    return evaluate(model=Path(model))
+    return evaluate(model=Path(model), grid_references=GRID_REFERENCES)
 
 
 @pytest.mark.integration
-@pytest.mark.parametrize('sample', cases_for('reviewed'))
-def test_classification_with_reviewed_bounds_matches_position(neural_report, sample):
+@pytest.mark.parametrize('sample', SAMPLES, ids=lambda r: r['id'])
+def test_classification_with_reviewed_grid_matches_position(neural_report, sample):
     result = next(r for r in neural_report['results'] if r['id'] == sample['id'])
-    assert result['reviewedBoundsRecognition']['correct']
+    assert result.get('gridBoundsRecognition', result['reviewedBoundsRecognition'])['correct']
 
 
 @pytest.mark.integration
-@pytest.mark.parametrize('sample', cases_for('pipeline'))
+@pytest.mark.parametrize('sample_id', GRIDS)
+def test_visible_rectangle_is_not_silently_used_as_uniform_grid(neural_report, sample_id):
+    result = next(r for r in neural_report['results'] if r['id'] == sample_id)
+    assert not result['reviewedBoundsRecognition']['correct']
+    assert result['gridBoundsRecognition']['correct']
+    assert result['visibleBoundary']['maxEdgeErrorPixels'] == 0
+
+
+@pytest.mark.integration
+@pytest.mark.parametrize('sample', SAMPLES, ids=lambda r: r['id'])
 def test_complete_pipeline_matches_reviewed_position(neural_report, sample):
     result = next(r for r in neural_report['results'] if r['id'] == sample['id'])
     assert result['fullPipeline']['correct']
@@ -209,10 +198,11 @@ def test_same_video_position_with_asymmetric_margins(tmp_path, neural_classifier
 
 @pytest.mark.unit
 def test_detector_only_measurement_does_not_claim_classification():
-    report = evaluate()
+    report = evaluate(grid_references=GRID_REFERENCES)
     assert report['passed'] == all(r['detection']['correct'] for r in report['results'])
     assert report['modelSha256'] is None
     assert report['images'] == 15 and report['positions'] == 13
     assert report['sourceGroups'] == 2  # Do not interpret unresolved groups as a game count.
-    assert [r['expectedBox'] for r in report['results']] == [r['box'] for r in SAMPLES]
+    assert [r['expectedBox'] for r in report['results']] == [GRIDS.get(r['id'], {}).get('gridBox',r['box']) for r in SAMPLES]
+    assert [r['expectedVisibleBox'] for r in report['results']] == [r['box'] for r in SAMPLES]
     assert all('fullPipeline' not in r for r in report['results'])

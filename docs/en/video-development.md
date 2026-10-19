@@ -2,6 +2,10 @@
 
 **English** | [Español](../es/video-development.md) · [Overview](README.md)
 
+The [009/010 diagnosis](video-009-010-diagnosis.md) shows both models recognize the
+positions with corrected interior-grid geometry. [Subsequent bounded recovery](border-grid-recovery.md)
+now recognizes them automatically, keeping perimeter and grid references separate.
+
 The current [v2 manifest](../../data/manifests/video-development-v2.json) contains
 **15 screenshots of 13 distinct positions**. The user confirmed that only
 `chesscom-video-001`, `002` and `003` share a position. There are ten Chess.com video

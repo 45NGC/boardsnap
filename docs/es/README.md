@@ -9,13 +9,11 @@ las fuentes reservadas, las mediciones de CPU y la instalación comprobada del
 paquete y modelo. Los [seis fallos conocidos están corregidos](regression-fixes.md)
 en el nuevo candidato; falta actualizar su política y distribución antes de la
 evaluación final.
-El [corpus de desarrollo de vídeos/páginas](video-development.md) registra ahora
-15 imágenes de 13 posiciones: la localización y el ajuste de bordes visibles alcanzan
-13/15 tanto en detección como en el recorrido completo, con los mismos pesos v8
-(13/15 con límites revisados). La 001/002/003 ya coinciden; la 009/010 quedan
-como limitaciones conocidas aplazadas.
-El [paso de tolerancia del clasificador](classifier-tolerance.md) mide pequeños
-errores de recorte en validación y conserva v8 como referencia de un candidato separado.
+El [corpus de desarrollo de vídeos/páginas](video-development.md) registra
+15 imágenes de 13 posiciones. La [recuperación acotada de borde y cuadrícula](border-grid-recovery.md)
+alcanza ahora 15/15 con v8 y el candidato de tolerancia sin modificar sus pesos,
+incluidas la 009/010. El borde visible se valida por separado de la geometría
+de división. El [paso de tolerancia](classifier-tolerance.md) conserva v8 como referencia.
 
 La [ampliación con marcas sencillas](simple-marks.md) incorpora resaltados,
 círculos/puntos controlados, una red entrenada y comparada e importación de partidas

@@ -1,0 +1,896 @@
+{
+  "schemaVersion": 1,
+  "dataRole": "development-diagnosis",
+  "independentFinalEvaluation": false,
+  "manifestSha256": "03664487a50a98a9a3c3433c2c35f08a60b81170247e7158f070afa806314971",
+  "models": {
+    "v8": {
+      "path": ".cache/neural-styles-v8/best.pt",
+      "sha256": "9546c6cfc34517f631cd58bf3eae0cdb3aa7790765b6f4ad1c0bf307ca4ad704"
+    },
+    "candidate": {
+      "path": ".cache/neural-tolerance-v1-conservative/best.pt",
+      "sha256": "4c14507ad700dbe8c6ea6bdcdfb7072c7f31ef9fd9c21c22a782498c2d09ce5f"
+    }
+  },
+  "analysisCodeSha256": "08ce0d851ffe0ae884c82d1e39a141f258fa68ee87f5e587538684565360f9f6",
+  "runtimeSha256": {
+    "src/boardsnap/__init__.py": "5d4d88e1368be753e0359dfcbef042595cd6c2dcd793251aabc55724ffb015c8",
+    "src/boardsnap/__main__.py": "776c85059861da68cb7dcd3a92a43278d35589117f27ae3b9105c739d9e542ab",
+    "src/boardsnap/adapters/__init__.py": "f3b27a487ea86f5d962494c6633547cb2171f06ba0aca009fb2a13c61c2db2af",
+    "src/boardsnap/adapters/cli.py": "1261d4b300ee8edd1d125bd2a526c1b2d729f8492738d051fad9ed0c4a0138a0",
+    "src/boardsnap/classification.py": "295c5460b3c5174e036fe9eac0896ffe5eb2f3724c7485e0d9d3a20d0e028df4",
+    "src/boardsnap/detection.py": "3dec58a7d9bb1fcb4300c1f3c74912e4bd0c8d29b5a37aa49abcc6f7ea259484",
+    "src/boardsnap/image_input.py": "4cb87bbd4fab43ed315cb3c0f258ed9c5a8f5758124c72a3eb8a8e964d66764e",
+    "src/boardsnap/neural.py": "1953f32f7fb4cc25ec63cae0302ddfeda927f6d9373eadf2541cb7f70950c13f",
+    "src/boardsnap/normalization.py": "51ca3052645be05d05291a2653fd8c0d808ace12ad5c1f896a06e00b061741c7",
+    "src/boardsnap/orientation.py": "39d0297413484a1980f6564f3baea140af1278b2dbaed1a5a8d62903cf0c1926",
+    "src/boardsnap/output.py": "64ed8612dae9b528d08963ae1db1fc9127802c7f3ba3140bcdc329bf4b4645b0",
+    "src/boardsnap/pipeline.py": "877f1adb395ffcf54e3e3e646b05377d0ee966c23384b4c4f16aa39d30fae97c",
+    "src/boardsnap/profiles.py": "8cc3bb7a0e0d5fed057887aa09ebdf4d1d4309dba57a3c9df2cd0731707a5b5b",
+    "src/boardsnap/segmentation.py": "eb0eccb596491a4ea1602b90baa8e491ff6f53932e88536495678fd59c603127"
+  },
+  "environment": {
+    "torch": "2.14.1+cpu",
+    "numpy": "2.5.3",
+    "threads": 4
+  },
+  "trainingPerformed": false,
+  "productionChanged": false,
+  "annotationsChanged": false,
+  "results": [
+    {
+      "id": "chesscom-video-009",
+      "path": "data/development/video-cases-v2/chesscom-video-009.png",
+      "sha256": "e98c08965aa4a4444b53261abe62e2cccb72a4cae13a0c350baee36aa522d09e",
+      "positionId": "real-chesscom-video-009-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "orientation": "white-bottom",
+      "piecePlacement": "3rkb1r/pp2qpp1/7p/2pP4/4p1QP/2N1P1B1/PP3PP1/n1K3NR",
+      "box": [
+        13,
+        23,
+        467,
+        481
+      ],
+      "gridBox": [
+        13,
+        23,
+        467,
+        481
+      ],
+      "imageSize": [
+        499,
+        515
+      ],
+      "automaticDetection": {
+        "error": {
+          "code": "BOARD_NOT_FOUND",
+          "message": "No supported chessboard was detected in the image."
+        }
+      },
+      "detectorTrace": [
+        {
+          "function": "_refine_grid",
+          "returnLine": 244,
+          "inputBox": [
+            0,
+            0,
+            499,
+            515
+          ],
+          "result": null,
+          "coordinates": [],
+          "peaks": [
+            67,
+            124,
+            181,
+            252,
+            318,
+            368,
+            428
+          ],
+          "axis": 0,
+          "a": 427,
+          "b": 445
+        },
+        {
+          "function": "_refine_grid",
+          "returnLine": 244,
+          "inputBox": [
+            0,
+            0,
+            499,
+            515
+          ],
+          "result": null,
+          "coordinates": [],
+          "peaks": [
+            67,
+            124,
+            181,
+            241,
+            313,
+            377,
+            428
+          ],
+          "axis": 0,
+          "a": 427,
+          "b": 445
+        },
+        {
+          "function": "_refine_grid",
+          "returnLine": 266,
+          "inputBox": [
+            10,
+            23,
+            466,
+            480
+          ],
+          "result": {
+            "x": 10,
+            "y": 24,
+            "width": 456,
+            "height": 456
+          },
+          "coordinates": [
+            10,
+            466,
+            24,
+            480
+          ],
+          "peaks": [
+            81,
+            138,
+            195,
+            252,
+            309,
+            366,
+            423
+          ],
+          "axis": 1,
+          "a": 414,
+          "b": 431
+        },
+        {
+          "function": "_structural_pattern",
+          "returnLine": 118,
+          "inputBox": [
+            10,
+            24,
+            466,
+            480
+          ],
+          "result": false,
+          "complete_edges": true,
+          "rejectedOuterEdge": "left",
+          "matchingEdgeCells": 5
+        },
+        {
+          "function": "_refine_grid",
+          "returnLine": 266,
+          "inputBox": [
+            10,
+            18,
+            466,
+            475
+          ],
+          "result": {
+            "x": 10,
+            "y": 24,
+            "width": 456,
+            "height": 456
+          },
+          "coordinates": [
+            10,
+            466,
+            24,
+            480
+          ],
+          "peaks": [
+            81,
+            138,
+            195,
+            252,
+            309,
+            366,
+            423
+          ],
+          "axis": 1,
+          "a": 409,
+          "b": 426
+        },
+        {
+          "function": "_structural_pattern",
+          "returnLine": 118,
+          "inputBox": [
+            10,
+            24,
+            466,
+            480
+          ],
+          "result": false,
+          "complete_edges": true,
+          "rejectedOuterEdge": "left",
+          "matchingEdgeCells": 5
+        }
+      ],
+      "axisProposals": {
+        "columns": [
+          [
+            10,
+            466
+          ]
+        ],
+        "rows": [
+          [
+            23,
+            480
+          ],
+          [
+            18,
+            475
+          ]
+        ]
+      },
+      "interiorFit": [
+        10,
+        24,
+        466,
+        480
+      ],
+      "visibleRefinement": null,
+      "interiorFitStructuralCheck": true,
+      "interiorFitCompleteEdgesCheck": false,
+      "reviewedBoxStructuralCheck": true,
+      "reviewedBoxCompleteEdgesCheck": true,
+      "partialBoardNegativeControl": {
+        "hiddenFirstFilePixels": 14,
+        "structuralOnly": true,
+        "completeEdges": false
+      },
+      "classification": {
+        "reviewed": {
+          "box": [
+            13,
+            23,
+            467,
+            481
+          ],
+          "models": {
+            "v8": {
+              "result": {
+                "piecePlacement": "3rkb1r/4qpp1/7p/2pP4/4p1QP/2Q1P1B1/1R3PP1/n1K3NR"
+              },
+              "wrongCells": [
+                {
+                  "square": "a7",
+                  "expected": "p",
+                  "predicted": "empty"
+                },
+                {
+                  "square": "b7",
+                  "expected": "p",
+                  "predicted": "empty"
+                },
+                {
+                  "square": "c3",
+                  "expected": "N",
+                  "predicted": "Q"
+                },
+                {
+                  "square": "a2",
+                  "expected": "P",
+                  "predicted": "empty"
+                },
+                {
+                  "square": "b2",
+                  "expected": "P",
+                  "predicted": "R"
+                }
+              ]
+            },
+            "candidate": {
+              "result": {
+                "piecePlacement": "3rkb1r/4qpp1/7p/2pP4/4p1QP/2Q1P1B1/1P3PP1/n1K3NR"
+              },
+              "wrongCells": [
+                {
+                  "square": "a7",
+                  "expected": "p",
+                  "predicted": "empty"
+                },
+                {
+                  "square": "b7",
+                  "expected": "p",
+                  "predicted": "empty"
+                },
+                {
+                  "square": "c3",
+                  "expected": "N",
+                  "predicted": "Q"
+                },
+                {
+                  "square": "a2",
+                  "expected": "P",
+                  "predicted": "empty"
+                }
+              ]
+            }
+          }
+        },
+        "interior-grid": {
+          "box": [
+            10,
+            24,
+            466,
+            480
+          ],
+          "models": {
+            "v8": {
+              "result": {
+                "piecePlacement": "3rkb1r/pp2qpp1/7p/2pP4/4p1QP/2N1P1B1/PP3PP1/n1K3NR"
+              },
+              "wrongCells": []
+            },
+            "candidate": {
+              "result": {
+                "piecePlacement": "3rkb1r/pp2qpp1/7p/2pP4/4p1QP/2N1P1B1/PP3PP1/n1K3NR"
+              },
+              "wrongCells": []
+            }
+          }
+        },
+        "horizontal-grid-only": {
+          "box": [
+            10,
+            23,
+            466,
+            481
+          ],
+          "models": {
+            "v8": {
+              "result": {
+                "piecePlacement": "3rkb1r/pp2qpp1/7p/2pP4/4p1QP/2N1P1B1/PP3PP1/n1K3NR"
+              },
+              "wrongCells": []
+            },
+            "candidate": {
+              "result": {
+                "piecePlacement": "3rkb1r/pp2qpp1/7p/2pP4/4p1QP/2N1P1B1/PP3PP1/n1K3NR"
+              },
+              "wrongCells": []
+            }
+          }
+        }
+      },
+      "reviewedBoundsInterpolationProbe": {
+        "NEAREST": {
+          "v8": [
+            {
+              "square": "f8",
+              "expected": "b",
+              "predicted": "p"
+            },
+            {
+              "square": "a7",
+              "expected": "p",
+              "predicted": "empty"
+            },
+            {
+              "square": "b7",
+              "expected": "p",
+              "predicted": "empty"
+            },
+            {
+              "square": "d5",
+              "expected": "P",
+              "predicted": "empty"
+            },
+            {
+              "square": "e4",
+              "expected": "p",
+              "predicted": "empty"
+            },
+            {
+              "square": "c3",
+              "expected": "N",
+              "predicted": "Q"
+            },
+            {
+              "square": "a2",
+              "expected": "P",
+              "predicted": "empty"
+            },
+            {
+              "square": "c1",
+              "expected": "K",
+              "predicted": "empty"
+            }
+          ],
+          "candidate": [
+            {
+              "square": "a7",
+              "expected": "p",
+              "predicted": "empty"
+            },
+            {
+              "square": "b7",
+              "expected": "p",
+              "predicted": "empty"
+            },
+            {
+              "square": "c3",
+              "expected": "N",
+              "predicted": "Q"
+            },
+            {
+              "square": "a2",
+              "expected": "P",
+              "predicted": "empty"
+            }
+          ]
+        },
+        "BILINEAR": {
+          "v8": [
+            {
+              "square": "a7",
+              "expected": "p",
+              "predicted": "empty"
+            },
+            {
+              "square": "b7",
+              "expected": "p",
+              "predicted": "empty"
+            },
+            {
+              "square": "c3",
+              "expected": "N",
+              "predicted": "Q"
+            },
+            {
+              "square": "a2",
+              "expected": "P",
+              "predicted": "empty"
+            },
+            {
+              "square": "b2",
+              "expected": "P",
+              "predicted": "R"
+            }
+          ],
+          "candidate": [
+            {
+              "square": "a7",
+              "expected": "p",
+              "predicted": "empty"
+            },
+            {
+              "square": "b7",
+              "expected": "p",
+              "predicted": "empty"
+            },
+            {
+              "square": "c3",
+              "expected": "N",
+              "predicted": "Q"
+            },
+            {
+              "square": "a2",
+              "expected": "P",
+              "predicted": "empty"
+            }
+          ]
+        },
+        "BICUBIC": {
+          "v8": [
+            {
+              "square": "a7",
+              "expected": "p",
+              "predicted": "empty"
+            },
+            {
+              "square": "b7",
+              "expected": "p",
+              "predicted": "empty"
+            },
+            {
+              "square": "c3",
+              "expected": "N",
+              "predicted": "Q"
+            },
+            {
+              "square": "a2",
+              "expected": "P",
+              "predicted": "empty"
+            },
+            {
+              "square": "b2",
+              "expected": "P",
+              "predicted": "R"
+            }
+          ],
+          "candidate": [
+            {
+              "square": "a7",
+              "expected": "p",
+              "predicted": "empty"
+            },
+            {
+              "square": "b7",
+              "expected": "p",
+              "predicted": "empty"
+            },
+            {
+              "square": "c3",
+              "expected": "N",
+              "predicted": "Q"
+            },
+            {
+              "square": "a2",
+              "expected": "P",
+              "predicted": "empty"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "chesscom-video-010",
+      "path": "data/development/video-cases-v2/chesscom-video-010.png",
+      "sha256": "16d94bd236f43541319649f0cbba683fbc8a98fb4197734d69f16c3deba69cfb",
+      "positionId": "real-chesscom-video-010-position",
+      "sourceGroupId": "real-chesscom-video-game-001",
+      "split": "development",
+      "orientation": "white-bottom",
+      "piecePlacement": "8/8/8/p6p/P3K1kP/4P3/8/8",
+      "box": [
+        12,
+        2,
+        466,
+        460
+      ],
+      "gridBox": [
+        12,
+        2,
+        466,
+        460
+      ],
+      "imageSize": [
+        510,
+        507
+      ],
+      "automaticDetection": {
+        "error": {
+          "code": "BOARD_NOT_FOUND",
+          "message": "No supported chessboard was detected in the image."
+        }
+      },
+      "detectorTrace": [
+        {
+          "function": "_refine_grid",
+          "returnLine": 244,
+          "inputBox": [
+            0,
+            0,
+            510,
+            507
+          ],
+          "result": null,
+          "coordinates": [],
+          "peaks": [
+            66,
+            123,
+            182,
+            262,
+            316,
+            385,
+            444
+          ],
+          "axis": 0,
+          "a": 436,
+          "b": 455
+        },
+        {
+          "function": "_refine_grid",
+          "returnLine": 250,
+          "inputBox": [
+            0,
+            0,
+            510,
+            507
+          ],
+          "result": null,
+          "coordinates": [],
+          "peaks": [
+            66,
+            123,
+            182,
+            246,
+            310,
+            374,
+            437
+          ],
+          "axis": 0,
+          "a": 436,
+          "b": 455
+        },
+        {
+          "function": "_refine_grid",
+          "returnLine": 266,
+          "inputBox": [
+            8,
+            3,
+            465,
+            459
+          ],
+          "result": {
+            "x": 9,
+            "y": 3,
+            "width": 456,
+            "height": 456
+          },
+          "coordinates": [
+            9,
+            465,
+            3,
+            459
+          ],
+          "peaks": [
+            60,
+            117,
+            174,
+            231,
+            288,
+            345,
+            402
+          ],
+          "axis": 1,
+          "a": 393,
+          "b": 410
+        },
+        {
+          "function": "_structural_pattern",
+          "returnLine": 118,
+          "inputBox": [
+            9,
+            3,
+            465,
+            459
+          ],
+          "result": false,
+          "complete_edges": true,
+          "rejectedOuterEdge": "left",
+          "matchingEdgeCells": 4
+        },
+        {
+          "function": "_refine_grid",
+          "returnLine": 250,
+          "inputBox": [
+            0,
+            0,
+            510,
+            507
+          ],
+          "result": null,
+          "coordinates": [],
+          "peaks": [
+            66,
+            123,
+            182,
+            246,
+            310,
+            374,
+            437
+          ],
+          "axis": 0,
+          "a": 436,
+          "b": 455
+        }
+      ],
+      "axisProposals": {
+        "columns": [
+          [
+            8,
+            465
+          ]
+        ],
+        "rows": [
+          [
+            3,
+            459
+          ]
+        ]
+      },
+      "interiorFit": [
+        9,
+        3,
+        465,
+        459
+      ],
+      "visibleRefinement": null,
+      "interiorFitStructuralCheck": true,
+      "interiorFitCompleteEdgesCheck": false,
+      "reviewedBoxStructuralCheck": true,
+      "reviewedBoxCompleteEdgesCheck": true,
+      "partialBoardNegativeControl": {
+        "hiddenFirstFilePixels": 14,
+        "structuralOnly": true,
+        "completeEdges": false
+      },
+      "classification": {
+        "reviewed": {
+          "box": [
+            12,
+            2,
+            466,
+            460
+          ],
+          "models": {
+            "v8": {
+              "result": {
+                "piecePlacement": "8/8/8/7p/4K1kP/4P3/8/8"
+              },
+              "wrongCells": [
+                {
+                  "square": "a5",
+                  "expected": "p",
+                  "predicted": "empty"
+                },
+                {
+                  "square": "a4",
+                  "expected": "P",
+                  "predicted": "empty"
+                }
+              ]
+            },
+            "candidate": {
+              "result": {
+                "piecePlacement": "8/8/8/7p/4K1kP/4P3/8/8"
+              },
+              "wrongCells": [
+                {
+                  "square": "a5",
+                  "expected": "p",
+                  "predicted": "empty"
+                },
+                {
+                  "square": "a4",
+                  "expected": "P",
+                  "predicted": "empty"
+                }
+              ]
+            }
+          }
+        },
+        "interior-grid": {
+          "box": [
+            9,
+            3,
+            465,
+            459
+          ],
+          "models": {
+            "v8": {
+              "result": {
+                "piecePlacement": "8/8/8/p6p/P3K1kP/4P3/8/8"
+              },
+              "wrongCells": []
+            },
+            "candidate": {
+              "result": {
+                "piecePlacement": "8/8/8/p6p/P3K1kP/4P3/8/8"
+              },
+              "wrongCells": []
+            }
+          }
+        },
+        "horizontal-grid-only": {
+          "box": [
+            9,
+            2,
+            465,
+            460
+          ],
+          "models": {
+            "v8": {
+              "result": {
+                "piecePlacement": "8/8/8/p6p/P3K1kP/4P3/8/8"
+              },
+              "wrongCells": []
+            },
+            "candidate": {
+              "result": {
+                "piecePlacement": "8/8/8/p6p/P3K1kP/4P3/8/8"
+              },
+              "wrongCells": []
+            }
+          }
+        }
+      },
+      "reviewedBoundsInterpolationProbe": {
+        "NEAREST": {
+          "v8": [
+            {
+              "square": "a5",
+              "expected": "p",
+              "predicted": "empty"
+            },
+            {
+              "square": "a4",
+              "expected": "P",
+              "predicted": "empty"
+            }
+          ],
+          "candidate": [
+            {
+              "square": "a5",
+              "expected": "p",
+              "predicted": "empty"
+            },
+            {
+              "square": "a4",
+              "expected": "P",
+              "predicted": "empty"
+            }
+          ]
+        },
+        "BILINEAR": {
+          "v8": [
+            {
+              "square": "a5",
+              "expected": "p",
+              "predicted": "empty"
+            },
+            {
+              "square": "a4",
+              "expected": "P",
+              "predicted": "empty"
+            }
+          ],
+          "candidate": [
+            {
+              "square": "a5",
+              "expected": "p",
+              "predicted": "empty"
+            },
+            {
+              "square": "a4",
+              "expected": "P",
+              "predicted": "empty"
+            }
+          ]
+        },
+        "BICUBIC": {
+          "v8": [
+            {
+              "square": "a5",
+              "expected": "p",
+              "predicted": "empty"
+            },
+            {
+              "square": "a4",
+              "expected": "P",
+              "predicted": "empty"
+            }
+          ],
+          "candidate": [
+            {
+              "square": "a5",
+              "expected": "p",
+              "predicted": "empty"
+            },
+            {
+              "square": "a4",
+              "expected": "P",
+              "predicted": "empty"
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "previews": ".cache/video-failure-analysis",
+  "scope": "two reviewed development images; geometric hypotheses and interpolation controls, not release validation"
+}

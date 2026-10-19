@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "dataRole": "development-geometry-reference",
+  "independentFinalEvaluation": false,
+  "sourceManifestSha256": "03664487a50a98a9a3c3433c2c35f08a60b81170247e7158f070afa806314971",
+  "diagnosisSha256": "924adf64bff1b1705fbcc69c6a105b3c791949e461432e8880fce5bf94a257be",
+  "reviewMethod": "interior-line measurements checked against source pixels and canonical crops; visible rectangles retained",
+  "samples": [
+    {
+      "id": "chesscom-video-009",
+      "sourceSha256": "e98c08965aa4a4444b53261abe62e2cccb72a4cae13a0c350baee36aa522d09e",
+      "visibleBox": [
+        13,
+        23,
+        467,
+        481
+      ],
+      "gridBox": [
+        10,
+        24,
+        466,
+        480
+      ],
+      "verticalLines": [
+        67,
+        124,
+        181,
+        238,
+        295,
+        352,
+        409
+      ],
+      "horizontalLines": [
+        81,
+        138,
+        195,
+        252,
+        309,
+        366,
+        423
+      ]
+    },
+    {
+      "id": "chesscom-video-010",
+      "sourceSha256": "16d94bd236f43541319649f0cbba683fbc8a98fb4197734d69f16c3deba69cfb",
+      "visibleBox": [
+        12,
+        2,
+        466,
+        460
+      ],
+      "gridBox": [
+        9,
+        3,
+        465,
+        459
+      ],
+      "verticalLines": [
+        66,
+        123,
+        180,
+        237,
+        294,
+        351,
+        408
+      ],
+      "horizontalLines": [
+        60,
+        117,
+        174,
+        231,
+        288,
+        345,
+        402
+      ]
+    }
+  ]
+}
