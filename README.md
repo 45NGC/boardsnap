@@ -20,8 +20,10 @@ images of 13 positions, including the three original variants. Interior-grid
 localization followed by visible-boundary refinement raises accurate detections
 and full-pipeline successes to 13/15, using unchanged v8 weights (also 13/15 with
 reviewed bounds). Chess.com videos 001, 002 and 003 now return the same placement.
-Remaining failures in videos 009/010 must be addressed before freezing the next
-candidate; these are development cases, not independent acceptance data.
+Videos 009/010 remain deferred known limitations; these are development cases,
+not independent acceptance data. Their failures remain visible in the reports.
+The [classifier tolerance step](docs/en/classifier-tolerance.md) measures small
+crop errors on validation and retains v8 as the reference for a separate candidate.
 
 The [digital acceptance guide](docs/en/digital-release.md) fixes the target catalogue,
 thresholds and a new reserved source plan. A local wheel and model bundle pass

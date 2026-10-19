@@ -1,0 +1,381 @@
+{
+  "metadata": {
+    "formatVersion": 1,
+    "architecture": "small-square-cnn-v1",
+    "classOrder": [
+      "empty",
+      "P",
+      "N",
+      "B",
+      "R",
+      "Q",
+      "K",
+      "p",
+      "n",
+      "b",
+      "r",
+      "q",
+      "k"
+    ],
+    "preprocessing": {
+      "inputSize": [
+        64,
+        64
+      ],
+      "colorMode": "RGB",
+      "inputDtype": "uint8",
+      "tensorLayout": "NCHW",
+      "tensorDtype": "float32",
+      "scale": "divide by 255",
+      "additionalNormalization": null,
+      "augmentation": null
+    },
+    "dataVersion": {
+      "datasetId": "bounds-tolerance-v1",
+      "preparedDatasetSha256": "26c59813441674d689a1f73d2aa7a155606382cf654ddea93a62d7bb4192616b",
+      "originalValidationBoards": 3132,
+      "challengeValidationBoards": 3132
+    },
+    "trainingConfig": {
+      "method": "validation-selected-parameter-average",
+      "fractions": [
+        0.0,
+        0.0625,
+        0.125,
+        0.25,
+        0.5,
+        0.75,
+        1.0
+      ],
+      "threads": 4
+    },
+    "parameterAverage": {
+      "baselineSha256": "9546c6cfc34517f631cd58bf3eae0cdb3aa7790765b6f4ad1c0bf307ca4ad704",
+      "trainedSha256": "7489b23843ed34f0271c413a5b94c4798155730dfa123ddf2ae55863b58f51ed",
+      "trainedFraction": 0.125,
+      "trainedDataVersion": {
+        "datasetId": "bounds-tolerance-v1",
+        "preparedDatasetSha256": "26c59813441674d689a1f73d2aa7a155606382cf654ddea93a62d7bb4192616b",
+        "provenance": {
+          "complete": true,
+          "identity": {
+            "datasetSha256": "7cae41fdb1b28e7dc8442c70a01cc5c473ee47f7c206cdfcc9ec0cb715842525",
+            "indexSha256": "9bfe8473346998df5df546c7a74c449d14d9db1ad34669dc390e527993172f4a",
+            "extraDatasetSha256": "c843b1dc4199a2619be2a32194cb19eb74a1ecbc7c264545b967f3180e6a19ca",
+            "extraIndexSha256": "5bdc7de8be3fd6303317f0c5832740a48542404bb3b685049bfd6a02cd361b38",
+            "seed": 20261017,
+            "scenarios": [
+              {
+                "name": "reference",
+                "edges": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "scale": 1.0,
+                "resampling": "LANCZOS"
+              },
+              {
+                "name": "shift-x-1",
+                "edges": [
+                  -1,
+                  0,
+                  -1,
+                  0
+                ],
+                "scale": 1.0,
+                "resampling": "LANCZOS"
+              },
+              {
+                "name": "shift-y-1",
+                "edges": [
+                  0,
+                  -1,
+                  0,
+                  -1
+                ],
+                "scale": 1.0,
+                "resampling": "LANCZOS"
+              },
+              {
+                "name": "shift-x+1",
+                "edges": [
+                  1,
+                  0,
+                  1,
+                  0
+                ],
+                "scale": 1.0,
+                "resampling": "LANCZOS"
+              },
+              {
+                "name": "shift-y+1",
+                "edges": [
+                  0,
+                  1,
+                  0,
+                  1
+                ],
+                "scale": 1.0,
+                "resampling": "LANCZOS"
+              },
+              {
+                "name": "shift-x-2",
+                "edges": [
+                  -2,
+                  0,
+                  -2,
+                  0
+                ],
+                "scale": 1.0,
+                "resampling": "LANCZOS"
+              },
+              {
+                "name": "shift-y-2",
+                "edges": [
+                  0,
+                  -2,
+                  0,
+                  -2
+                ],
+                "scale": 1.0,
+                "resampling": "LANCZOS"
+              },
+              {
+                "name": "shift-x+2",
+                "edges": [
+                  2,
+                  0,
+                  2,
+                  0
+                ],
+                "scale": 1.0,
+                "resampling": "LANCZOS"
+              },
+              {
+                "name": "shift-y+2",
+                "edges": [
+                  0,
+                  2,
+                  0,
+                  2
+                ],
+                "scale": 1.0,
+                "resampling": "LANCZOS"
+              },
+              {
+                "name": "inset-2",
+                "edges": [
+                  2,
+                  2,
+                  -2,
+                  -2
+                ],
+                "scale": 1.0,
+                "resampling": "LANCZOS"
+              },
+              {
+                "name": "outset-2",
+                "edges": [
+                  -2,
+                  -2,
+                  2,
+                  2
+                ],
+                "scale": 1.0,
+                "resampling": "LANCZOS"
+              },
+              {
+                "name": "asymmetric-2",
+                "edges": [
+                  1,
+                  -2,
+                  2,
+                  -1
+                ],
+                "scale": 1.0,
+                "resampling": "LANCZOS"
+              },
+              {
+                "name": "resample-85-bilinear",
+                "edges": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "scale": 0.85,
+                "resampling": "BILINEAR"
+              },
+              {
+                "name": "resample-115-bicubic",
+                "edges": [
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                "scale": 1.15,
+                "resampling": "BICUBIC"
+              }
+            ],
+            "codeSha256": {
+              "tools/train_tolerance.py": "873e5d3b1e458293381add75ec3bcb0a06a9138f9e71f4b4055e372bab192b92",
+              "tools/bounds_tolerance.py": "897eeeb81a4045e27b40e2776b28dd5289ef7d0b3c8647daa3dfb64590f4b230",
+              "tools/neural_data.py": "825cc064ec7d77b49075bf86657c6427d1a0e9a6f3484f28b818d1c08737a8ff",
+              "tools/training_augmentation.py": "968c0d4d790c4985b24976e23fc60a491d469bcd1235b2c1b62b65f1643aaff9",
+              "tools/build_square_dataset.py": "d1f66ccba2e07f382884d1beadb8d05c9566332ce88b61d58ec86f422d623630",
+              "src/boardsnap/__init__.py": "5d4d88e1368be753e0359dfcbef042595cd6c2dcd793251aabc55724ffb015c8",
+              "src/boardsnap/__main__.py": "776c85059861da68cb7dcd3a92a43278d35589117f27ae3b9105c739d9e542ab",
+              "src/boardsnap/adapters/__init__.py": "f3b27a487ea86f5d962494c6633547cb2171f06ba0aca009fb2a13c61c2db2af",
+              "src/boardsnap/adapters/cli.py": "1261d4b300ee8edd1d125bd2a526c1b2d729f8492738d051fad9ed0c4a0138a0",
+              "src/boardsnap/classification.py": "295c5460b3c5174e036fe9eac0896ffe5eb2f3724c7485e0d9d3a20d0e028df4",
+              "src/boardsnap/detection.py": "3dec58a7d9bb1fcb4300c1f3c74912e4bd0c8d29b5a37aa49abcc6f7ea259484",
+              "src/boardsnap/image_input.py": "4cb87bbd4fab43ed315cb3c0f258ed9c5a8f5758124c72a3eb8a8e964d66764e",
+              "src/boardsnap/neural.py": "1953f32f7fb4cc25ec63cae0302ddfeda927f6d9373eadf2541cb7f70950c13f",
+              "src/boardsnap/normalization.py": "51ca3052645be05d05291a2653fd8c0d808ace12ad5c1f896a06e00b061741c7",
+              "src/boardsnap/orientation.py": "39d0297413484a1980f6564f3baea140af1278b2dbaed1a5a8d62903cf0c1926",
+              "src/boardsnap/output.py": "64ed8612dae9b528d08963ae1db1fc9127802c7f3ba3140bcdc329bf4b4645b0",
+              "src/boardsnap/pipeline.py": "877f1adb395ffcf54e3e3e646b05377d0ee966c23384b4c4f16aa39d30fae97c",
+              "src/boardsnap/profiles.py": "8cc3bb7a0e0d5fed057887aa09ebdf4d1d4309dba57a3c9df2cd0731707a5b5b",
+              "src/boardsnap/segmentation.py": "eb0eccb596491a4ea1602b90baa8e491ff6f53932e88536495678fd59c603127"
+            }
+          },
+          "files": {
+            "training-images.npy": "4a0e7c8eb03ab57e2043e9d88183d3afb3b0cdb17aade1253db18c922f4697fe",
+            "training-labels.npy": "d16d0c4a7bf7f721350707e5de7eccfdaa2f96ed7854204860a8a6bca22c0df6",
+            "validation-images.npy": "8310a74733c77d206ba709a8374f24507a615612054fa19593aeba0539cd1595",
+            "validation-labels.npy": "a4c3db9d08ba02cd7f5adc1196ce43a9499f48c737e58b227e8310af9c6ab351",
+            "variants.json": "829aebd3bd93f2314602532451e170056da7ee2cdc7f738dd893aa59dcc7fcac"
+          },
+          "originalTrainingSquares": 320783,
+          "augmentedTrainingBoards": 3549,
+          "originalValidationBoards": 3132,
+          "challengeValidationBoards": 3132,
+          "evaluationArraysLoaded": false,
+          "validationUsedForTraining": false,
+          "originalValidationDistributionChanged": false,
+          "trainingSelection": "sha256(source image path) modulo 4 == 0; all 64 cells",
+          "selection": "maximize original validation exact boards first, then total exact boards, macro recall and loss"
+        },
+        "trainingCodeSha256": "5471c8939e8031ede5ca49789a94ebc46fc9540ae8c53de465f8653e7a5a5bea"
+      }
+    },
+    "selection": "preserve every originally correct board and total original correct squares; then original exact boards, total exact boards, macro recall, lower loss; earlier tie",
+    "selectionCodeSha256": "e56a126efa26ec49492a186ef17a535e1c3390bc5b93e58e9bf316d31a736397",
+    "averagingCodeSha256": "523b92c0ba0049eb088798098b1d2e015d26cb65a4feba981eb9521168abf35a",
+    "validationCodeSha256": "5471c8939e8031ede5ca49789a94ebc46fc9540ae8c53de465f8653e7a5a5bea"
+  },
+  "complete": true,
+  "selected": {
+    "trainedFraction": 0.125,
+    "referencePreserved": true,
+    "metrics": {
+      "loss": 0.011733023858523548,
+      "squareAccuracy": 0.9987278496168582,
+      "macroRecall": 0.9951916465641647,
+      "exactBoards": 6037,
+      "boards": 6264,
+      "controlExactBoards": 3131,
+      "controlBoards": 3132
+    }
+  },
+  "history": [
+    {
+      "trainedFraction": 0.0,
+      "referencePreserved": true,
+      "metrics": {
+        "loss": 0.015648528768705823,
+        "squareAccuracy": 0.9984060704022989,
+        "macroRecall": 0.9938203676945506,
+        "exactBoards": 5986,
+        "boards": 6264,
+        "controlExactBoards": 3131,
+        "controlBoards": 3132
+      }
+    },
+    {
+      "trainedFraction": 0.0625,
+      "referencePreserved": true,
+      "metrics": {
+        "loss": 0.013562426052121716,
+        "squareAccuracy": 0.9985806792784163,
+        "macroRecall": 0.9944625757342268,
+        "exactBoards": 6006,
+        "boards": 6264,
+        "controlExactBoards": 3131,
+        "controlBoards": 3132
+      }
+    },
+    {
+      "trainedFraction": 0.125,
+      "referencePreserved": true,
+      "metrics": {
+        "loss": 0.011733023858523548,
+        "squareAccuracy": 0.9987278496168582,
+        "macroRecall": 0.9951916465641647,
+        "exactBoards": 6037,
+        "boards": 6264,
+        "controlExactBoards": 3131,
+        "controlBoards": 3132
+      }
+    },
+    {
+      "trainedFraction": 0.25,
+      "referencePreserved": false,
+      "metrics": {
+        "loss": 0.008753983477463846,
+        "squareAccuracy": 0.9990421455938697,
+        "macroRecall": 0.9963887286001953,
+        "exactBoards": 6079,
+        "boards": 6264,
+        "controlExactBoards": 3130,
+        "controlBoards": 3132
+      }
+    },
+    {
+      "trainedFraction": 0.5,
+      "referencePreserved": false,
+      "metrics": {
+        "loss": 0.00470186357235355,
+        "squareAccuracy": 0.9993788912835249,
+        "macroRecall": 0.9977450432809855,
+        "exactBoards": 6144,
+        "boards": 6264,
+        "controlExactBoards": 3130,
+        "controlBoards": 3132
+      }
+    },
+    {
+      "trainedFraction": 0.75,
+      "referencePreserved": false,
+      "metrics": {
+        "loss": 0.002441078719402818,
+        "squareAccuracy": 0.9995659722222222,
+        "macroRecall": 0.9986022173987141,
+        "exactBoards": 6189,
+        "boards": 6264,
+        "controlExactBoards": 3130,
+        "controlBoards": 3132
+      }
+    },
+    {
+      "trainedFraction": 1.0,
+      "referencePreserved": false,
+      "metrics": {
+        "loss": 0.0014060629360299229,
+        "squareAccuracy": 0.9997430755108557,
+        "macroRecall": 0.9990614520003898,
+        "exactBoards": 6215,
+        "boards": 6264,
+        "controlExactBoards": 3130,
+        "controlBoards": 3132
+      }
+    }
+  ],
+  "weightsSha256": "4c14507ad700dbe8c6ea6bdcdfb7072c7f31ef9fd9c21c22a782498c2d09ce5f",
+  "evaluationUsedForSelection": false,
+  "dataRole": "validation",
+  "independentFinalEvaluation": false
+}

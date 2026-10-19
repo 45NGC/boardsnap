@@ -1,0 +1,51 @@
+{
+  "dataRole": "validation-selection",
+  "independentFinalEvaluation": false,
+  "policy": "Among reference-preserving selections: maximize original validation exact boards, then total validation exact boards, macro recall, lower loss.",
+  "baseline": {
+    "path": ".cache/neural-styles-v8/best.pt",
+    "sha256": "9546c6cfc34517f631cd58bf3eae0cdb3aa7790765b6f4ad1c0bf307ca4ad704"
+  },
+  "selected": {
+    "path": ".cache/neural-tolerance-v1-conservative/best.pt",
+    "sha256": "4c14507ad700dbe8c6ea6bdcdfb7072c7f31ef9fd9c21c22a782498c2d09ce5f"
+  },
+  "compared": [
+    {
+      "path": ".cache/neural-tolerance-v1-conservative/best.pt",
+      "selectionReportSha256": "23e50e2cfed212a85b8f79087ac7022d9681d1e71df57420b3c4b8f5305fcddb",
+      "selected": {
+        "trainedFraction": 0.125,
+        "referencePreserved": true,
+        "metrics": {
+          "loss": 0.011733023858523548,
+          "squareAccuracy": 0.9987278496168582,
+          "macroRecall": 0.9951916465641647,
+          "exactBoards": 6037,
+          "boards": 6264,
+          "controlExactBoards": 3131,
+          "controlBoards": 3132
+        }
+      }
+    },
+    {
+      "path": ".cache/neural-tolerance-v2-selected/best.pt",
+      "selectionReportSha256": "b7c606529cfef0738a1dbd6d609ccf369f93db07114c3d625fb2514b2b987161",
+      "selected": {
+        "trainedFraction": 0.25,
+        "referencePreserved": true,
+        "metrics": {
+          "loss": 0.013226306702156548,
+          "squareAccuracy": 0.9986131066411239,
+          "macroRecall": 0.9947961315792669,
+          "exactBoards": 6028,
+          "boards": 6264,
+          "controlExactBoards": 3131,
+          "controlBoards": 3132
+        }
+      }
+    }
+  ],
+  "regressionsUsedForSelection": false,
+  "evaluationUsedForSelection": false
+}

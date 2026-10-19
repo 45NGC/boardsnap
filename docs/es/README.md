@@ -12,8 +12,10 @@ evaluación final.
 El [corpus de desarrollo de vídeos/páginas](video-development.md) registra ahora
 15 imágenes de 13 posiciones: la localización y el ajuste de bordes visibles alcanzan
 13/15 tanto en detección como en el recorrido completo, con los mismos pesos v8
-(13/15 con límites revisados). La 001/002/003 ya coinciden; la 009/010 siguen
-necesitando trabajo antes de fijar el candidato.
+(13/15 con límites revisados). La 001/002/003 ya coinciden; la 009/010 quedan
+como limitaciones conocidas aplazadas.
+El [paso de tolerancia del clasificador](classifier-tolerance.md) mide pequeños
+errores de recorte en validación y conserva v8 como referencia de un candidato separado.
 
 La [ampliación con marcas sencillas](simple-marks.md) incorpora resaltados,
 círculos/puntos controlados, una red entrenada y comparada e importación de partidas

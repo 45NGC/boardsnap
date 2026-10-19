@@ -76,7 +76,7 @@ def dimensions(row):
 
 
 def evaluate(dataset, baseline_path, candidate_path, split, threads=4, *,
-             baseline_name="cleanBaseline", candidate_name="markedCandidate"):
+             baseline_name="cleanBaseline", candidate_name="markedCandidate", verified_only=False):
     import torch
     from boardsnap.neural import NeuralClassifier
     torch.set_num_threads(threads)
@@ -85,7 +85,8 @@ def evaluate(dataset, baseline_path, candidate_path, split, threads=4, *,
     if baseline_name == candidate_name:
         raise ValueError("Comparison model names must differ.")
     models = {baseline_name: NeuralClassifier(baseline_path), candidate_name: NeuralClassifier(candidate_path)}
-    records = {name: {"verified": [], "detected": []} for name in models}
+    measured_modes = ("verified",) if verified_only else ("verified", "detected")
+    records = {name: {mode: [] for mode in measured_modes} for name in models}
     detections = defaultdict(list)
     detection_strata = defaultdict(list)
     selected = [r for r in rows if r["split"] == split]
@@ -104,6 +105,10 @@ def evaluate(dataset, baseline_path, candidate_path, split, threads=4, *,
             base["dimensions"] = dimensions(row)
         for name, model in models.items():
             records[name]["verified"].append(dict(base, predictions=model.predict_ids(pixels).tolist()))
+        if verified_only:
+            if number % 100 == 0:
+                print(f"Compared {number}/{len(selected)} {split} boards (verified bounds only)", flush=True)
+            continue
         with Image.open(path) as source, source.convert("RGB") as image:
             try:
                 bounds = detect_board(image)  # Pixel-only: no annotated bounds or mark labels.
@@ -124,15 +129,15 @@ def evaluate(dataset, baseline_path, candidate_path, split, threads=4, *,
             print(f"Compared {number}/{len(selected)} {split} boards", flush=True)
     results = {name: {mode: summarize(data) for mode, data in modes.items()} for name, modes in records.items()}
     clean_ok = all(results[candidate_name][mode]["conditions"]["clean"]["exactBoards"] >=
-                   results[baseline_name][mode]["conditions"]["clean"]["exactBoards"] for mode in ("verified", "detected"))
+                   results[baseline_name][mode]["conditions"]["clean"]["exactBoards"] for mode in measured_modes)
     # Also check square accuracy: equal whole-board totals must not hide more square errors.
     clean_ok &= all(results[candidate_name][mode]["conditions"]["clean"]["correctSquares"] >=
-                    results[baseline_name][mode]["conditions"]["clean"]["correctSquares"] for mode in ("verified", "detected"))
+                    results[baseline_name][mode]["conditions"]["clean"]["correctSquares"] for mode in measured_modes)
     controls = ["clean", "last-move", "selection", "check", "circle", "move-dot"]
     regressions = {mode: {case: {
         "exactBoardsDelta": results[candidate_name][mode]["cases"][case]["exactBoards"] - results[baseline_name][mode]["cases"][case]["exactBoards"],
         "correctSquaresDelta": results[candidate_name][mode]["cases"][case]["correctSquares"] - results[baseline_name][mode]["cases"][case]["correctSquares"]}
-        for case in controls if case in results[candidate_name][mode]["cases"]} for mode in ("verified", "detected")}
+        for case in controls if case in results[candidate_name][mode]["cases"]} for mode in measured_modes}
     return {"schemaVersion": 1, "split": split, "datasetSha256": digest(dataset / "dataset.json"),
             "models": {baseline_name: digest(baseline_path), candidate_name: digest(candidate_path)},
             "evaluationCodeSha256": digest(Path(__file__)),
@@ -140,6 +145,9 @@ def evaluate(dataset, baseline_path, candidate_path, split, threads=4, *,
                               for p in sorted((Path(__file__).resolve().parents[1]/'src/boardsnap').rglob('*.py'))},
             "environment": {"python": platform.python_version(), "torch": str(torch.__version__), "threads": threads},
             "scope": "controlled overlays and clean controls; identical input pixels for both models; explicit view; no removal",
+            "measuredModes": list(measured_modes),
+            "detectionMeasured": not verified_only,
+            "pipelineMeasured": not verified_only,
             "controlRegressions": regressions,
             "cleanPerformanceMaintained": bool(clean_ok), "templatesRemainDefault": True,
             "realUseClassificationIncluded": False,
@@ -162,12 +170,15 @@ def main(argv=None):
     parser.add_argument("--candidate-name", default="markedCandidate")
     parser.add_argument("--regression", action="store_true",
                         help="Label already consulted images as regression evidence, not a new independent test")
+    parser.add_argument("--verified-only", action="store_true",
+                        help="Measure classification with reviewed bounds only; do not run or score detection")
     args = parser.parse_args(argv)
     training = json.loads((args.candidate.parent / "training.json").read_text())
     if not training["complete"] or training["weightsSha256"] != digest(args.candidate):
         raise ValueError("Compare only the completed, validation-selected candidate.")
     report = evaluate(args.dataset, args.baseline, args.candidate, args.split, args.threads,
-                      baseline_name=args.baseline_name, candidate_name=args.candidate_name)
+                      baseline_name=args.baseline_name, candidate_name=args.candidate_name,
+                      verified_only=args.verified_only)
     report["training"] = training
     report['dataRole'] = 'consulted-regression' if args.regression else args.split
     args.output.parent.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "step": "classifier-boundary-tolerance",
+  "status": "completed-with-documented-limitations",
+  "releaseAccepted": false,
+  "independentFinalEvaluation": false,
+  "baseline": {
+    "path": ".cache/neural-styles-v8/best.pt",
+    "sha256": "9546c6cfc34517f631cd58bf3eae0cdb3aa7790765b6f4ad1c0bf307ca4ad704"
+  },
+  "candidate": {
+    "path": ".cache/neural-tolerance-v1-conservative/best.pt",
+    "sha256": "4c14507ad700dbe8c6ea6bdcdfb7072c7f31ef9fd9c21c22a782498c2d09ce5f"
+  },
+  "evidence": {
+    "selection": {
+      "path": "data/reports/neural-tolerance-candidate.json",
+      "sha256": "4500643e2f6e5b4e5c9f61520867d72d9acf5b0c0e44d841f700e27a23e46ee8"
+    },
+    "validation": {
+      "path": "data/reports/neural-tolerance-validation.json",
+      "sha256": "4b99334086e4f21f3d6de47f11bbf16b56795e033421e85d8a96ea639f60ac30"
+    },
+    "regression": {
+      "path": "data/reports/neural-tolerance-regression.json",
+      "sha256": "c7a8ac28ca27a6cfc69f79a12dc4d081ade212127a41870bc4ebb57c9cc5f00c"
+    },
+    "originalFailures": {
+      "path": "data/reports/digital-regressions-tolerance.json",
+      "sha256": "312608949ad10b5f71cef2f3dafd3cf2b64994b665e4414477238d098ab14444"
+    },
+    "development": {
+      "path": "data/reports/video-development-v2-tolerance.json",
+      "sha256": "62f2dec1d8e3c067159167e0cc49aa577ec84d8bafa2088551e6a319fb12b1b6"
+    }
+  },
+  "validationGatePassed": true,
+  "originalValidationCorrectBoardsPreserved": 3131,
+  "perturbedValidation": {
+    "v8": {
+      "images": 40236,
+      "exactBoards": 36955,
+      "correctSquares": 2567085,
+      "totalSquares": 2575104
+    },
+    "candidate": {
+      "images": 40236,
+      "exactBoards": 37618,
+      "correctSquares": 2568591,
+      "totalSquares": 2575104
+    }
+  },
+  "pairedPerturbedGains": 674,
+  "pairedPerturbedLosses": 11,
+  "consultedRegressionVerifiedBounds": {
+    "v8": {
+      "images": 3456,
+      "exactBoards": 3456,
+      "correctSquares": 221184,
+      "totalSquares": 221184
+    },
+    "toleranceCandidate": {
+      "images": 3456,
+      "exactBoards": 3456,
+      "correctSquares": 221184,
+      "totalSquares": 221184
+    }
+  },
+  "consultedRegressionFullPipelineRepeated": false,
+  "originalFailuresFullPipeline": {
+    "correct": 6,
+    "images": 6
+  },
+  "development": {
+    "detection": {
+      "correct": 13,
+      "failures": [
+        "chesscom-video-009",
+        "chesscom-video-010"
+      ]
+    },
+    "reviewedBoundsRecognition": {
+      "correct": 13,
+      "failures": [
+        "chesscom-video-009",
+        "chesscom-video-010"
+      ]
+    },
+    "fullPipeline": {
+      "correct": 13,
+      "failures": [
+        "chesscom-video-009",
+        "chesscom-video-010"
+      ]
+    }
+  },
+  "testRuns": {
+    "fullSuiteBeforeVerifiedOnlyToolAddition": {
+      "passed": 1582,
+      "skipped": 36,
+      "expectedFailures": 8
+    },
+    "targetedAfterVerifiedOnlyToolAddition": {
+      "passed": 107,
+      "command": "python -m pytest tests/test_bounds_tolerance.py tests/test_board_marks.py tests/test_arrow_marks.py tests/test_style_expansion.py -q"
+    }
+  },
+  "limitations": [
+    "11 perturbed variants correct with v8 are wrong with the candidate; originals are preserved.",
+    "Videos 009/010 remain deferred failures.",
+    "Validation variants are correlated views of 12 source positions.",
+    "Full detected-pipeline corpus regression and independent release acceptance remain later steps."
+  ]
+}

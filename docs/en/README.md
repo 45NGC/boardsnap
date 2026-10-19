@@ -13,7 +13,9 @@ Its policy and distribution checks must be updated before final evaluation.
 The [video/page development corpus](video-development.md) now records 15 images of
 13 positions: localization and visible-boundary refinement achieve 13/15 in both
 detection and the full pipeline, with unchanged v8 weights (13/15 with reviewed
-bounds). Videos 001/002/003 now agree; 009/010 still need work before candidate freezing.
+bounds). Videos 001/002/003 now agree; 009/010 remain deferred known limitations.
+The [classifier tolerance step](classifier-tolerance.md) measures small crop errors
+on validation and keeps v8 as the reference for a separately trained candidate.
 
 The [simple-mark extension](simple-marks.md) now provides controlled highlights,
 circles/dots, a trained model comparison and external-game imports. Real-use
