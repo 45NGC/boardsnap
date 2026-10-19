@@ -94,6 +94,10 @@ All choices used validation before running the consulted regressions.
 
 ## Completed verification
 
+The [analysis of the 11 losses](tolerance-regressions.md) identifies a local
+white-bishop/queen confusion and recommends retaining this candidate after rejecting
+a mixture closer to v8 that sacrificed 400 newly correct boards.
+
 The [full validation comparison](../../data/reports/neural-tolerance-validation.json)
 passes the documented development gate. Counts below are exact whole boards;
 perturbed variants are correlated views of the same 12 positions, not independent

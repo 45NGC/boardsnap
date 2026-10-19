@@ -100,6 +100,10 @@ Todas las decisiones utilizaron validación antes de ejecutar las regresiones co
 
 ## Verificación completada
 
+El [análisis de las 11 pérdidas](tolerance-regressions.md) identifica una confusión
+local de alfil blanco con dama y recomienda conservar este candidato tras descartar
+una mezcla más cercana a v8 que sacrificaba 400 aciertos nuevos.
+
 La [comparación completa de validación](../../data/reports/neural-tolerance-validation.json)
 cumple el criterio de desarrollo documentado. La tabla cuenta tableros completos
 exactos; las variantes perturbadas proceden de las mismas 12 posiciones y no son
