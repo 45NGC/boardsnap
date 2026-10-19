@@ -1,5 +1,9 @@
 # BoardSnap
 
+The [screenshot and photograph strategy review](detection-strategy-review.md)
+examines current geometric limits and proposes a photographic pilot and incremental
+rectification support. It is a proposal for review, not a new compatibility claim.
+
 **English** | [Spanish](../es/README.md)
 
 The [multi-style workflow](style-expansion.md) configures a neural model once and

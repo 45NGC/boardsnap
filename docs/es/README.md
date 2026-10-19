@@ -1,5 +1,10 @@
 # BoardSnap
 
+La [revisión de estrategia para capturas y fotografías](detection-strategy-review.md)
+analiza las limitaciones geométricas actuales y propone un piloto de fotos y una
+evolución incremental con rectificación. Es una propuesta pendiente de revisión,
+no una nueva declaración de compatibilidad.
+
 El [flujo multitema](style-expansion.md) configura el modelo neuronal una vez y
 acepta imagen + orientación desde el pipeline y la CLI. Amplía el piloto con
 piezas/texturas nuevas, combinaciones reservadas y regresiones desglosadas.
