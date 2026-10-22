@@ -2,6 +2,10 @@
 
 [English](docs/en/README.md) | [Spanish](docs/es/README.md)
 
+The [photographic intake pilot](docs/en/phone-photo-corpus.md) inventories 90 local
+screen photographs and prepares review copies. It does not change runtime
+recognition or declare photographic compatibility.
+
 BoardSnap is a Python project for recognizing digital chessboards and book
 diagrams and returning piece placement to the Flutter app **chess-scanner**.
 **The Python pipeline and JSON CLI support configured multi-style neural recognition and three legacy digital profiles. A book-diagram profile is experimental.**

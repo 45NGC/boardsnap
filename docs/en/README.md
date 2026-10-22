@@ -1,5 +1,9 @@
 # BoardSnap
 
+The [initial photograph corpus](phone-photo-corpus.md) organizes 90 screen HEICs
+and documents an 18-photo review pilot. Pending labels and partitions remain
+outside training; photographic support is not yet claimed.
+
 The [30-screenshot geometry review](digital-geometry-review.md) adds recovery of
 small unequal axis scales: 30/30 localized boards and 29/30 exact positions with
 both models. A separate texture-classification failure remains; these are

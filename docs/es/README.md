@@ -1,5 +1,10 @@
 # BoardSnap
 
+El [corpus fotográfico inicial](phone-photo-corpus.md) organiza 90 HEIC de
+pantallas y documenta un piloto de 18 revisiones. Las etiquetas y particiones
+pendientes se mantienen fuera del entrenamiento; todavía no declara
+compatibilidad con fotografías.
+
 La [revisión geométrica de 30 capturas](digital-geometry-review.md) añade recuperación
 de pequeñas diferencias de escala entre ejes: 30/30 tableros localizados y 29/30
 posiciones correctas con ambos modelos. Queda una confusión de textura separada

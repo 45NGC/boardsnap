@@ -1,0 +1,87 @@
+{
+  "sampleCount": 90,
+  "categories": {
+    "chesscom": 30,
+    "lichess": 30,
+    "video": 30
+  },
+  "labels": {
+    "visual-transcription": 17,
+    "pending": 72,
+    "ambiguous": 1
+  },
+  "cameras": {
+    "iPhone 8": 90
+  },
+  "reviewedOrientations": {
+    "black-bottom": 7,
+    "None": 72,
+    "white-bottom": 11
+  },
+  "exactDuplicateOriginals": 0,
+  "missingDirectReferences": 90,
+  "splitCounts": {
+    "development": 90,
+    "training": 0,
+    "validation": 0,
+    "evaluation": 0
+  },
+  "transcribedClassBackgroundCounts": {
+    "empty": {
+      "light": 332,
+      "dark": 346
+    },
+    "P": {
+      "light": 56,
+      "dark": 51
+    },
+    "N": {
+      "light": 9,
+      "dark": 11
+    },
+    "B": {
+      "light": 6,
+      "dark": 12
+    },
+    "R": {
+      "light": 13,
+      "dark": 15
+    },
+    "Q": {
+      "light": 11,
+      "dark": 4
+    },
+    "K": {
+      "light": 3,
+      "dark": 14
+    },
+    "p": {
+      "light": 62,
+      "dark": 43
+    },
+    "n": {
+      "light": 13,
+      "dark": 6
+    },
+    "b": {
+      "light": 12,
+      "dark": 11
+    },
+    "r": {
+      "light": 14,
+      "dark": 14
+    },
+    "q": {
+      "light": 2,
+      "dark": 11
+    },
+    "k": {
+      "light": 11,
+      "dark": 6
+    }
+  },
+  "coverageNote": "Canonical light/dark square parity in visual transcriptions only; counts do not measure image readability or recognition accuracy.",
+  "readyForTraining": false,
+  "fileIntegrityChecked": true,
+  "manifestSha256": "26032ff3688c50ad8eec41d3e3ec46c0a3919ad89ec5f3f93258b753982a48f7"
+}

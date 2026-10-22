@@ -1,5 +1,11 @@
 # Tests
 
+`test_phone_photos.py` checks photographic intake: source preservation, EXIF
+orientation, optional HEIC conversion, hash integrity, pending labels and
+development-only grouping. The manifest test needs no local corpus; install
+`.[photos]` to enable the generated HEIC fixture. See the
+[photo corpus guide](../docs/en/phone-photo-corpus.md).
+
 `test_position_dataset.py` checks the frozen 80-position plan, group splits,
 legacy exclusions, class/background coverage, source identity for all variants
 and the committed report. Install `.[dev,dataset]` to run its optional legal

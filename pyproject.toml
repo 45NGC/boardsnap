@@ -17,6 +17,7 @@ boardsnap = "boardsnap.adapters.cli:main"
 [project.optional-dependencies]
 dev = ["pytest>=8"]
 capture = ["playwright>=1.51,<2"]
+photos = ["pillow-heif>=1.8,<2"]
 dataset = ["chess==1.11.2"]
 ml = ["torch>=2.14.1,<2.15"]
 
