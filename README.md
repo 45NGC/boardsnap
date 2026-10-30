@@ -2,9 +2,17 @@
 
 [English](docs/en/README.md) | [Spanish](docs/es/README.md)
 
-The [photographic intake pilot](docs/en/phone-photo-corpus.md) inventories 90 local
-screen photographs and prepares review copies. It does not change runtime
-recognition or declare photographic compatibility.
+The [photographic intake pilot](docs/en/phone-photo-corpus.md) inventories 161 local
+screen photographs, with 160 visual placement transcriptions and one ambiguous
+image. All four-corner annotations and a rectified visual review are complete.
+The separate [validation photo batch](docs/en/phone-squares.md) now has 30 reviewed
+placements, orientations and corner annotations, with no position-family overlap
+against that original batch. The [photographic training dataset](docs/en/phone-training-data.md)
+now provides 10,240 training squares and 1,920 validation squares with verified
+loader-compatible indexes. The [first photographic classifier](docs/en/phone-training.md)
+has been trained: 19/30 validation photos are correct using reviewed corners,
+versus 18/30 before adaptation. Three digital validation boards regress, so the
+photo model remains experimental and separate. Automatic photo detection is pending.
 
 BoardSnap is a Python project for recognizing digital chessboards and book
 diagrams and returning piece placement to the Flutter app **chess-scanner**.

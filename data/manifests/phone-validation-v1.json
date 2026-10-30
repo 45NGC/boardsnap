@@ -1,0 +1,3923 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "phone-validation-v1",
+  "dataRole": "photo-validation-intake",
+  "independentFinalEvaluation": false,
+  "intendedSplit": "validation",
+  "readyForValidation": false,
+  "partitionPolicy": "All 30 annotated photos are assigned to validation as one conservative group. No photo or variant may enter training. Source separation is user-reported; exact/equivalent position overlap with the original photo development batch was checked. This is not a final evaluation set.",
+  "referenceDevelopmentManifest": "data/manifests/phone-photos-v1.json",
+  "referenceDevelopmentManifestSha256": "44e0f95efaa0afc1b51d1818b8485e90162c40d6cacc59e5f8cf0b6cd9e05e13",
+  "conversion": "Full-size EXIF-normalized RGB sRGB PNG and quality-95 JPEG review copies. Original HEICs retained. No cropping, inference or sharpening.",
+  "conversionVersions": {
+    "Pillow": "12.3.0",
+    "pillow-heif": "1.8.1"
+  },
+  "contactSheets": [
+    ".cache/phone-validation-v1/contact-video.jpg",
+    ".cache/phone-validation-v1/contact-chesscom.jpg",
+    ".cache/phone-validation-v1/contact-lichess.jpg"
+  ],
+  "samples": [
+    {
+      "id": "chesscom-img_5393",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/IMG_5393.HEIC",
+      "originalSha256": "0c5c3bd7f835bda38a1e670e9d37d7849b4a9447048220355e418a60b40eb076",
+      "originalBytes": 1634227,
+      "imagePath": ".cache/phone-validation-v1/images/chesscom-img_5393.png",
+      "imageSha256": "be4f178607778d8b8711a00ba9d6233648e3ccdf8877059e5001b7604543c0b9",
+      "pixelSha256": "af6242b5b3df4bebfc633278489b847a3067493a9b5f7046dbad7614222205fa",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/chesscom-img_5393.jpg",
+      "jpegSha256": "0a97a55d04f27021a65afd2f338b35c9796e1a038ccf40d4813fdff75e3ae635",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:32:34",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "chesscom",
+        "gameId": "186070655124",
+        "videoId": null,
+        "url": "https://www.chess.com/game/live/186070655124",
+        "visibleEvidence": "Chess.com game 186070655124; move 10",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visually transcribed from browser address; no network lookup."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "rn1qkb1r/ppp2ppp/3p1n2/4p3/4PP2/2N2b1P/PPPP2P1/R1BQKB1R",
+        "orientation": "white-bottom",
+        "visualRows": "rn1qkb1r/ppp2ppp/3p1n2/4p3/4PP2/2N2b1P/PPPP2P1/R1BQKB1R",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "0c5c3bd7f835bda38a1e670e9d37d7849b4a9447048220355e418a60b40eb076",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "be4f178607778d8b8711a00ba9d6233648e3ccdf8877059e5001b7604543c0b9",
+          "boardCorners": [
+            [
+              174,
+              762
+            ],
+            [
+              2589,
+              750
+            ],
+            [
+              2436,
+              2931
+            ],
+            [
+              390,
+              2937
+            ]
+          ],
+          "piecePlacement": "rn1qkb1r/ppp2ppp/3p1n2/4p3/4PP2/2N2b1P/PPPP2P1/R1BQKB1R",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          174,
+          762
+        ],
+        [
+          2589,
+          750
+        ],
+        [
+          2436,
+          2931
+        ],
+        [
+          390,
+          2937
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "be4f178607778d8b8711a00ba9d6233648e3ccdf8877059e5001b7604543c0b9",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "arrows",
+        "highlights"
+      ]
+    },
+    {
+      "id": "chesscom-img_5394",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/IMG_5394.HEIC",
+      "originalSha256": "07641fc758e3024be3cfcfa3dbd05a872ddfeac90ac360a4e3300d31b5066778",
+      "originalBytes": 1677937,
+      "imagePath": ".cache/phone-validation-v1/images/chesscom-img_5394.png",
+      "imageSha256": "012986da922195f3c99a9044ac816cb92b574bf05eedbaa9c45a881c205e1ed8",
+      "pixelSha256": "03d8657ccd8c78f89ebe203ec55708a0ff4e48fbf14ddea411e6849dbfaf9110",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/chesscom-img_5394.jpg",
+      "jpegSha256": "622d5fc406e11032a18f7851162b2db8634abb435a9267fe1d03f03ee9f6e890",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:32:52",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "chesscom",
+        "gameId": "186070655124",
+        "videoId": null,
+        "url": "https://www.chess.com/game/live/186070655124",
+        "visibleEvidence": "Chess.com game 186070655124; move 24",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visually transcribed from browser address; no network lookup."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "r2q1rk1/pp1nbpp1/2pp1n2/6p1/3PPB1P/2N2Q2/PPP5/2KR1B1R",
+        "orientation": "white-bottom",
+        "visualRows": "r2q1rk1/pp1nbpp1/2pp1n2/6p1/3PPB1P/2N2Q2/PPP5/2KR1B1R",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "07641fc758e3024be3cfcfa3dbd05a872ddfeac90ac360a4e3300d31b5066778",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "012986da922195f3c99a9044ac816cb92b574bf05eedbaa9c45a881c205e1ed8",
+          "boardCorners": [
+            [
+              222,
+              765
+            ],
+            [
+              2721,
+              774
+            ],
+            [
+              2559,
+              3048
+            ],
+            [
+              402,
+              3060
+            ]
+          ],
+          "piecePlacement": "r2q1rk1/pp1nbpp1/2pp1n2/6p1/3PPB1P/2N2Q2/PPP5/2KR1B1R",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          222,
+          765
+        ],
+        [
+          2721,
+          774
+        ],
+        [
+          2559,
+          3048
+        ],
+        [
+          402,
+          3060
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "012986da922195f3c99a9044ac816cb92b574bf05eedbaa9c45a881c205e1ed8",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "highlights"
+      ]
+    },
+    {
+      "id": "chesscom-img_5395",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/IMG_5395.HEIC",
+      "originalSha256": "21d632f7a5c0c713fd2c817f421da89bd1db96c9567621393343f43fa52fc9d8",
+      "originalBytes": 1728729,
+      "imagePath": ".cache/phone-validation-v1/images/chesscom-img_5395.png",
+      "imageSha256": "5e8695bcc5ddffaf1a0d8c2829ca730a43ace7dc61c6fdeb3e0ed74f300c5d13",
+      "pixelSha256": "4e29140590aa52b39e9395db08b837bc0e2b7316ff282492276d40b2a7e05f76",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/chesscom-img_5395.jpg",
+      "jpegSha256": "8a14c94e324cc4f790894f4f1b58d2bbf1e4e8a82e5f5047228a184c4c73b5d5",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:35:47",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "chesscom",
+        "gameId": "72892741065",
+        "videoId": null,
+        "url": "https://www.chess.com/game/live/72892741065",
+        "visibleEvidence": "Chess.com game 72892741065; move 14",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visually transcribed from browser address; no network lookup."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "r1bq1rk1/ppp2pbp/2np1np1/4p3/3P1B2/2PBPN2/PP3PPP/RN1Q1RK1",
+        "orientation": "black-bottom",
+        "visualRows": "1KR1Q1NR/PPP3PP/2NPBP2/2B1P3/3p4/1pn1pn2/pbp2ppp/1kr1qb1r",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "21d632f7a5c0c713fd2c817f421da89bd1db96c9567621393343f43fa52fc9d8",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "5e8695bcc5ddffaf1a0d8c2829ca730a43ace7dc61c6fdeb3e0ed74f300c5d13",
+          "boardCorners": [
+            [
+              180,
+              708
+            ],
+            [
+              2934,
+              717
+            ],
+            [
+              2718,
+              3264
+            ],
+            [
+              339,
+              3195
+            ]
+          ],
+          "piecePlacement": "r1bq1rk1/ppp2pbp/2np1np1/4p3/3P1B2/2PBPN2/PP3PPP/RN1Q1RK1",
+          "orientation": "black-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          180,
+          708
+        ],
+        [
+          2934,
+          717
+        ],
+        [
+          2718,
+          3264
+        ],
+        [
+          339,
+          3195
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "5e8695bcc5ddffaf1a0d8c2829ca730a43ace7dc61c6fdeb3e0ed74f300c5d13",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "arrows",
+        "highlights"
+      ]
+    },
+    {
+      "id": "chesscom-img_5396",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/IMG_5396.HEIC",
+      "originalSha256": "467732cc01cf0d33289d55bf9c00afa930e1aaae8c88b29374f733e2126164d6",
+      "originalBytes": 1555831,
+      "imagePath": ".cache/phone-validation-v1/images/chesscom-img_5396.png",
+      "imageSha256": "efe67ecbc84a197e572443221767542e4048959f77e601a3632d09b036204c49",
+      "pixelSha256": "63f91cfca5d1b21db75fdfd56ec1ad52830894f21b5d964df5d23d9998b72162",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/chesscom-img_5396.jpg",
+      "jpegSha256": "1d7c290bc69e515f1bf758cc1b1299d77ae97429db74a629352419bda730ff2d",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:36:04",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "chesscom",
+        "gameId": "72892741065",
+        "videoId": null,
+        "url": "https://www.chess.com/game/live/72892741065",
+        "visibleEvidence": "Chess.com game 72892741065; move 26",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visually transcribed from browser address; no network lookup."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "r1b2rk1/ppp2p1p/6p1/4b3/4n2q/N1P1P3/PP3PPP/R2Q1RK1",
+        "orientation": "black-bottom",
+        "visualRows": "1KR1Q2R/PPP3PP/3P1P1N/q2n4/3b4/1p6/p1p2ppp/1kr2b1r",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "467732cc01cf0d33289d55bf9c00afa930e1aaae8c88b29374f733e2126164d6",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "efe67ecbc84a197e572443221767542e4048959f77e601a3632d09b036204c49",
+          "boardCorners": [
+            [
+              279,
+              867
+            ],
+            [
+              2628,
+              867
+            ],
+            [
+              2484,
+              3033
+            ],
+            [
+              429,
+              3021
+            ]
+          ],
+          "piecePlacement": "r1b2rk1/ppp2p1p/6p1/4b3/4n2q/N1P1P3/PP3PPP/R2Q1RK1",
+          "orientation": "black-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          279,
+          867
+        ],
+        [
+          2628,
+          867
+        ],
+        [
+          2484,
+          3033
+        ],
+        [
+          429,
+          3021
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "efe67ecbc84a197e572443221767542e4048959f77e601a3632d09b036204c49",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "highlights"
+      ]
+    },
+    {
+      "id": "chesscom-img_5397",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/IMG_5397.HEIC",
+      "originalSha256": "f84a880d2327364a3ff2e331c084451f854ac02316386a0e10d2a41dca33ad65",
+      "originalBytes": 2032905,
+      "imagePath": ".cache/phone-validation-v1/images/chesscom-img_5397.png",
+      "imageSha256": "b0dd3f9d186f6ee68b874f7f8420de261fbbeb5bb0f9f22d26a3b61760a92e89",
+      "pixelSha256": "d9bc406413369e2468e268daa6dfc8463428552bc2fe885e53776e386c6f80ce",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/chesscom-img_5397.jpg",
+      "jpegSha256": "9f13b8b27b3cde3d256929f12ab5af878b795215d61bdae513d27bbb707f39e1",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:37:47",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "chesscom",
+        "gameId": "72999291685",
+        "videoId": null,
+        "url": "https://www.chess.com/game/live/72999291685",
+        "visibleEvidence": "Chess.com game 72999291685; move 9",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visually transcribed from browser address; no network lookup."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "r2qkbnr/ppp1pppp/8/3p1b2/1n6/3P1NP1/PPP1PPBP/RNBQ1RK1",
+        "orientation": "white-bottom",
+        "visualRows": "r2qkbnr/ppp1pppp/8/3p1b2/1n6/3P1NP1/PPP1PPBP/RNBQ1RK1",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "f84a880d2327364a3ff2e331c084451f854ac02316386a0e10d2a41dca33ad65",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "b0dd3f9d186f6ee68b874f7f8420de261fbbeb5bb0f9f22d26a3b61760a92e89",
+          "boardCorners": [
+            [
+              174,
+              804
+            ],
+            [
+              2772,
+              759
+            ],
+            [
+              2589,
+              3096
+            ],
+            [
+              423,
+              3084
+            ]
+          ],
+          "piecePlacement": "r2qkbnr/ppp1pppp/8/3p1b2/1n6/3P1NP1/PPP1PPBP/RNBQ1RK1",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          174,
+          804
+        ],
+        [
+          2772,
+          759
+        ],
+        [
+          2589,
+          3096
+        ],
+        [
+          423,
+          3084
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "b0dd3f9d186f6ee68b874f7f8420de261fbbeb5bb0f9f22d26a3b61760a92e89",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "arrows",
+        "textured-board",
+        "highlights"
+      ]
+    },
+    {
+      "id": "chesscom-img_5398",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/IMG_5398.HEIC",
+      "originalSha256": "2cb1ab6c6443b300f6cad138c665a7e94e352518b4c80948da1b8886fed870cb",
+      "originalBytes": 1883680,
+      "imagePath": ".cache/phone-validation-v1/images/chesscom-img_5398.png",
+      "imageSha256": "3f3cd9a92ce1dc6e7e356237ebc61e40675825d1d65aea962a7beff09669ad20",
+      "pixelSha256": "cddb84556a556dca99782ccafbc63653850d5cb1276f77e3bf50f91f3cfd4410",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/chesscom-img_5398.jpg",
+      "jpegSha256": "49727294527c479bde50d12eccfb7012bf6ee59e2a5beaeb865e99cd6aa9c589",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:37:59",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "chesscom",
+        "gameId": "72999291685",
+        "videoId": null,
+        "url": "https://www.chess.com/game/live/72999291685",
+        "visibleEvidence": "Chess.com game 72999291685; move 54",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visually transcribed from browser address; no network lookup."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "8/1k3p1p/1p2p3/p1p5/P6P/2n3P1/5PK1/R7",
+        "orientation": "white-bottom",
+        "visualRows": "8/1k3p1p/1p2p3/p1p5/P6P/2n3P1/5PK1/R7",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "2cb1ab6c6443b300f6cad138c665a7e94e352518b4c80948da1b8886fed870cb",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "3f3cd9a92ce1dc6e7e356237ebc61e40675825d1d65aea962a7beff09669ad20",
+          "boardCorners": [
+            [
+              399,
+              336
+            ],
+            [
+              2991,
+              579
+            ],
+            [
+              2535,
+              2991
+            ],
+            [
+              342,
+              2709
+            ]
+          ],
+          "piecePlacement": "8/1k3p1p/1p2p3/p1p5/P6P/2n3P1/5PK1/R7",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          399,
+          336
+        ],
+        [
+          2991,
+          579
+        ],
+        [
+          2535,
+          2991
+        ],
+        [
+          342,
+          2709
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "3f3cd9a92ce1dc6e7e356237ebc61e40675825d1d65aea962a7beff09669ad20",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "textured-board",
+        "highlights"
+      ]
+    },
+    {
+      "id": "chesscom-img_5399",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/IMG_5399.HEIC",
+      "originalSha256": "7b51993147f1fdc0c48bf88ddf07b3506bd582d7478b0cfe0626e0b34608792c",
+      "originalBytes": 1880390,
+      "imagePath": ".cache/phone-validation-v1/images/chesscom-img_5399.png",
+      "imageSha256": "959470d453e26bbae09e4d7ae823907c8a1969d578316a42436d2f45265aade5",
+      "pixelSha256": "e3488a0c6eef9614c3cc4d9920e83f47ad9dea5857992da3eb375f2196716d4b",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/chesscom-img_5399.jpg",
+      "jpegSha256": "b23a6f286c525209b7ac0235dc2c2e226f2a6e10eb13ae5ec151bd0c38113f09",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:40:36",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "chesscom",
+        "gameId": "73564386547",
+        "videoId": null,
+        "url": "https://www.chess.com/game/live/73564386547",
+        "visibleEvidence": "Chess.com game 73564386547; move 12",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visually transcribed from browser address; no network lookup."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "r2qkb1r/pp1n1ppp/4pn2/2pp2B1/6b1/3P1NP1/PPP1PPBP/RN1Q1RK1",
+        "orientation": "white-bottom",
+        "visualRows": "r2qkb1r/pp1n1ppp/4pn2/2pp2B1/6b1/3P1NP1/PPP1PPBP/RN1Q1RK1",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "7b51993147f1fdc0c48bf88ddf07b3506bd582d7478b0cfe0626e0b34608792c",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "959470d453e26bbae09e4d7ae823907c8a1969d578316a42436d2f45265aade5",
+          "boardCorners": [
+            [
+              276,
+              744
+            ],
+            [
+              2763,
+              783
+            ],
+            [
+              2565,
+              3054
+            ],
+            [
+              411,
+              3018
+            ]
+          ],
+          "piecePlacement": "r2qkb1r/pp1n1ppp/4pn2/2pp2B1/6b1/3P1NP1/PPP1PPBP/RN1Q1RK1",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          276,
+          744
+        ],
+        [
+          2763,
+          783
+        ],
+        [
+          2565,
+          3054
+        ],
+        [
+          411,
+          3018
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "959470d453e26bbae09e4d7ae823907c8a1969d578316a42436d2f45265aade5",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "highlights"
+      ]
+    },
+    {
+      "id": "chesscom-img_5400",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/IMG_5400.HEIC",
+      "originalSha256": "e0abd5b17a72c7e0f37b29609e05be7d60dd38af804dcbd944ca46dfaf82be42",
+      "originalBytes": 1583839,
+      "imagePath": ".cache/phone-validation-v1/images/chesscom-img_5400.png",
+      "imageSha256": "9fbbaeb4a2c6c766d6fa57a99e3a0f1a6a83e118c3b6abbc566b851f16eb75cb",
+      "pixelSha256": "497bbee03e850540e03f62aa978f16ad5ddb746c5d129d19e1342fcc15fbc8fb",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/chesscom-img_5400.jpg",
+      "jpegSha256": "cb26ceafc71aec3437583bb45ce332ac5c385b51633141a7469af3daeb91fb7d",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:40:43",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "chesscom",
+        "gameId": "73564386547",
+        "videoId": null,
+        "url": "https://www.chess.com/game/live/73564386547",
+        "visibleEvidence": "Chess.com game 73564386547; move 99",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visually transcribed from browser address; no network lookup."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "8/3k2p1/7p/K6P/P6P/8/8/8",
+        "orientation": "white-bottom",
+        "visualRows": "8/3k2p1/7p/K6P/P6P/8/8/8",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "e0abd5b17a72c7e0f37b29609e05be7d60dd38af804dcbd944ca46dfaf82be42",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "9fbbaeb4a2c6c766d6fa57a99e3a0f1a6a83e118c3b6abbc566b851f16eb75cb",
+          "boardCorners": [
+            [
+              318,
+              942
+            ],
+            [
+              2559,
+              993
+            ],
+            [
+              2394,
+              3045
+            ],
+            [
+              414,
+              3003
+            ]
+          ],
+          "piecePlacement": "8/3k2p1/7p/K6P/P6P/8/8/8",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          318,
+          942
+        ],
+        [
+          2559,
+          993
+        ],
+        [
+          2394,
+          3045
+        ],
+        [
+          414,
+          3003
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "9fbbaeb4a2c6c766d6fa57a99e3a0f1a6a83e118c3b6abbc566b851f16eb75cb",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "highlights"
+      ]
+    },
+    {
+      "id": "chesscom-img_5401",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/IMG_5401.HEIC",
+      "originalSha256": "0ed6c19c539dfa8490f95a4a8e05b49f9a9ef0700eb45a25b8fe3c9a6fa6522d",
+      "originalBytes": 1644415,
+      "imagePath": ".cache/phone-validation-v1/images/chesscom-img_5401.png",
+      "imageSha256": "7b21a0d24c7ea9d6bb16d371cb9cc7b04cfcd67e22645f00bb54b566c2ae2214",
+      "pixelSha256": "24c8c0404f4e7ebd646ef121eb67d01dccbd3829ee7bdf413543ebe5b1b633d9",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/chesscom-img_5401.jpg",
+      "jpegSha256": "13bf8d3475e7a10ef8c9150a1d206cf1cd1c8cfcbce93d6d7bf5aaac300a716f",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:42:40",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "chesscom",
+        "gameId": "74636000385",
+        "videoId": null,
+        "url": "https://www.chess.com/game/live/74636000385",
+        "visibleEvidence": "Chess.com game 74636000385; move 25",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visually transcribed from browser address; no network lookup."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "3r1rk1/ppp2ppp/4pn2/4n1B1/4N3/6P1/PPP2PBP/3R1RK1",
+        "orientation": "white-bottom",
+        "visualRows": "3r1rk1/ppp2ppp/4pn2/4n1B1/4N3/6P1/PPP2PBP/3R1RK1",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "0ed6c19c539dfa8490f95a4a8e05b49f9a9ef0700eb45a25b8fe3c9a6fa6522d",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "7b21a0d24c7ea9d6bb16d371cb9cc7b04cfcd67e22645f00bb54b566c2ae2214",
+          "boardCorners": [
+            [
+              90,
+              831
+            ],
+            [
+              2592,
+              816
+            ],
+            [
+              2466,
+              3108
+            ],
+            [
+              291,
+              3111
+            ]
+          ],
+          "piecePlacement": "3r1rk1/ppp2ppp/4pn2/4n1B1/4N3/6P1/PPP2PBP/3R1RK1",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          90,
+          831
+        ],
+        [
+          2592,
+          816
+        ],
+        [
+          2466,
+          3108
+        ],
+        [
+          291,
+          3111
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "7b21a0d24c7ea9d6bb16d371cb9cc7b04cfcd67e22645f00bb54b566c2ae2214",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire"
+      ]
+    },
+    {
+      "id": "chesscom-img_5402",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/IMG_5402.HEIC",
+      "originalSha256": "1719a41bf5205cf35302301e78be4f18e6bb37afb4235bb364c4b0eab79e4b7b",
+      "originalBytes": 1650719,
+      "imagePath": ".cache/phone-validation-v1/images/chesscom-img_5402.png",
+      "imageSha256": "98511f13f42d4c5ce06bbe2ee3d27ddfc5dbed0f90d39891a868fd260b5db46f",
+      "pixelSha256": "f23c73a59e7263e8340c6324c050256c73b60170cd84125717bb625408c20cf1",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/chesscom-img_5402.jpg",
+      "jpegSha256": "e91c1eba804df4fb8a24b1af3ea6348f3529602b8e6d1f60bf8a792b1c44b272",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:42:48",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "chesscom",
+        "gameId": "74636000385",
+        "videoId": null,
+        "url": "https://www.chess.com/game/live/74636000385",
+        "visibleEvidence": "Chess.com game 74636000385; move 58",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visually transcribed from browser address; no network lookup."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "6k1/2pR4/p5pp/2B5/1P2B1p1/6P1/P1P5/4K3",
+        "orientation": "white-bottom",
+        "visualRows": "6k1/2pR4/p5pp/2B5/1P2B1p1/6P1/P1P5/4K3",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "1719a41bf5205cf35302301e78be4f18e6bb37afb4235bb364c4b0eab79e4b7b",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "98511f13f42d4c5ce06bbe2ee3d27ddfc5dbed0f90d39891a868fd260b5db46f",
+          "boardCorners": [
+            [
+              210,
+              897
+            ],
+            [
+              2583,
+              876
+            ],
+            [
+              2472,
+              3057
+            ],
+            [
+              393,
+              3066
+            ]
+          ],
+          "piecePlacement": "6k1/2pR4/p5pp/2B5/1P2B1p1/6P1/P1P5/4K3",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          210,
+          897
+        ],
+        [
+          2583,
+          876
+        ],
+        [
+          2472,
+          3057
+        ],
+        [
+          393,
+          3066
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "98511f13f42d4c5ce06bbe2ee3d27ddfc5dbed0f90d39891a868fd260b5db46f",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire"
+      ]
+    },
+    {
+      "id": "lichess-img_5383",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/IMG_5383.HEIC",
+      "originalSha256": "4b44810a51265887df5d1f2bd8ff56fa74650361af24eab57d4a9085c8472062",
+      "originalBytes": 1749664,
+      "imagePath": ".cache/phone-validation-v1/images/lichess-img_5383.png",
+      "imageSha256": "67ef2f6ccdf8af11322d0c3e79baf9e8d816e28f840dd7a3e3c797f5860e8986",
+      "pixelSha256": "cc01e8d075a7c3d07da4e57e265c8029fb4ac0d68e5ad3aa5912ea08c05f2ac2",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/lichess-img_5383.jpg",
+      "jpegSha256": "2a0a9c63e850ffee024439f1dc4c02ad41f526dd751f5bbfaedaec469e489621",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:21:16",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "lichess",
+        "gameId": null,
+        "videoId": null,
+        "url": null,
+        "visibleEvidence": "NgC_45 versus Carlacotelo; same visible pairing as IMG_5384",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visible player names or video title, where available; not an independently verified source identity."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "rnb1kbnr/ppp2ppp/8/4P3/4p3/6PN/PPP2P1P/RNBK1B1R",
+        "orientation": "black-bottom",
+        "visualRows": "R1B1KBNR/P1P2PPP/NP6/3p4/3P4/8/ppp2ppp/rnbk1bnr",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "4b44810a51265887df5d1f2bd8ff56fa74650361af24eab57d4a9085c8472062",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "67ef2f6ccdf8af11322d0c3e79baf9e8d816e28f840dd7a3e3c797f5860e8986",
+          "boardCorners": [
+            [
+              426,
+              924
+            ],
+            [
+              2514,
+              939
+            ],
+            [
+              2367,
+              2835
+            ],
+            [
+              555,
+              2835
+            ]
+          ],
+          "piecePlacement": "rnb1kbnr/ppp2ppp/8/4P3/4p3/6PN/PPP2P1P/RNBK1B1R",
+          "orientation": "black-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          426,
+          924
+        ],
+        [
+          2514,
+          939
+        ],
+        [
+          2367,
+          2835
+        ],
+        [
+          555,
+          2835
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "67ef2f6ccdf8af11322d0c3e79baf9e8d816e28f840dd7a3e3c797f5860e8986",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "arrows",
+        "highlights"
+      ]
+    },
+    {
+      "id": "lichess-img_5384",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/IMG_5384.HEIC",
+      "originalSha256": "4d0f5bf978ed569a1327d0c10f1a69a85ecfe166e4c1588766bfc12563b944e7",
+      "originalBytes": 1866778,
+      "imagePath": ".cache/phone-validation-v1/images/lichess-img_5384.png",
+      "imageSha256": "3ed15840dd22f11030b573b94c29e263b9182843fc9d00dc56596e78d8b89e10",
+      "pixelSha256": "77fb4c94df84b009e408e18e9ced456a0e762249e3cf9d14cecc47b09d1813e0",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/lichess-img_5384.jpg",
+      "jpegSha256": "d1b71c7c892ffb1a10dc69c16fae10f4ddbdb79419baaff1a4f9ee4320ecf333",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:22:06",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "lichess",
+        "gameId": null,
+        "videoId": null,
+        "url": null,
+        "visibleEvidence": "NgC_45 versus Carlacotelo; same visible pairing as IMG_5383",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visible player names or video title, where available; not an independently verified source identity."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "7k/1p3Bpp/5p2/8/2P3P1/6r1/5K2/8",
+        "orientation": "black-bottom",
+        "visualRows": "8/2K5/1r6/1P3P2/8/2p5/ppB3p1/k7",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "4d0f5bf978ed569a1327d0c10f1a69a85ecfe166e4c1588766bfc12563b944e7",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "3ed15840dd22f11030b573b94c29e263b9182843fc9d00dc56596e78d8b89e10",
+          "boardCorners": [
+            [
+              477,
+              546
+            ],
+            [
+              2970,
+              930
+            ],
+            [
+              2457,
+              3132
+            ],
+            [
+              324,
+              2862
+            ]
+          ],
+          "piecePlacement": "7k/1p3Bpp/5p2/8/2P3P1/6r1/5K2/8",
+          "orientation": "black-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          477,
+          546
+        ],
+        [
+          2970,
+          930
+        ],
+        [
+          2457,
+          3132
+        ],
+        [
+          324,
+          2862
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "3ed15840dd22f11030b573b94c29e263b9182843fc9d00dc56596e78d8b89e10",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "highlights"
+      ]
+    },
+    {
+      "id": "lichess-img_5385",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/IMG_5385.HEIC",
+      "originalSha256": "8347c615d9add84be2d3826135f8aa04b9b3dd6ddd89a6ee545e73f3a06e5ec5",
+      "originalBytes": 1663473,
+      "imagePath": ".cache/phone-validation-v1/images/lichess-img_5385.png",
+      "imageSha256": "07bbec163906b36ee348ceac8067e9cd7449589db914c5b203b2093e51f9f5db",
+      "pixelSha256": "4bcf838824d522ca29a78b62e32934e812a0e02a921b6e0a3dd2b941d548092c",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/lichess-img_5385.jpg",
+      "jpegSha256": "157f70d05d62f21903e3a0b4083197e407233d792bb073f6ddb60ab0a32e732a",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:23:08",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "lichess",
+        "gameId": null,
+        "videoId": null,
+        "url": null,
+        "visibleEvidence": "NgC_45 versus elbruz1864; same visible pairing as IMG_5386",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visible player names or video title, where available; not an independently verified source identity."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "r1bqkb1r/1p1p1ppp/p1n1p3/2p5/4PP2/2N2N2/PPPP2PP/R1BQK2R",
+        "orientation": "white-bottom",
+        "visualRows": "r1bqkb1r/1p1p1ppp/p1n1p3/2p5/4PP2/2N2N2/PPPP2PP/R1BQK2R",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "8347c615d9add84be2d3826135f8aa04b9b3dd6ddd89a6ee545e73f3a06e5ec5",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "07bbec163906b36ee348ceac8067e9cd7449589db914c5b203b2093e51f9f5db",
+          "boardCorners": [
+            [
+              405,
+              627
+            ],
+            [
+              2589,
+              624
+            ],
+            [
+              2505,
+              2682
+            ],
+            [
+              531,
+              2718
+            ]
+          ],
+          "piecePlacement": "r1bqkb1r/1p1p1ppp/p1n1p3/2p5/4PP2/2N2N2/PPPP2PP/R1BQK2R",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          405,
+          627
+        ],
+        [
+          2589,
+          624
+        ],
+        [
+          2505,
+          2682
+        ],
+        [
+          531,
+          2718
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "07bbec163906b36ee348ceac8067e9cd7449589db914c5b203b2093e51f9f5db",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "arrows",
+        "circles",
+        "highlights"
+      ]
+    },
+    {
+      "id": "lichess-img_5386",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/IMG_5386.HEIC",
+      "originalSha256": "969ddc343c904402b20be33817e5fc1c8c92605d03bd76437616df6354293592",
+      "originalBytes": 1943807,
+      "imagePath": ".cache/phone-validation-v1/images/lichess-img_5386.png",
+      "imageSha256": "5c12148c2e85166ac672ca46a5e8181ebc9bf4cb86256619a9686a5addbbdee6",
+      "pixelSha256": "085610c0ba353370b748b3fac4195a249efa6448f66af4d19ddcf1c190ba53a7",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/lichess-img_5386.jpg",
+      "jpegSha256": "9055645d6dce503081b669acbef38e108267ef57bded52010ced3da69f6b30d0",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:23:41",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "lichess",
+        "gameId": null,
+        "videoId": null,
+        "url": null,
+        "visibleEvidence": "NgC_45 versus elbruz1864; same visible pairing as IMG_5385",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visible player names or video title, where available; not an independently verified source identity."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "3r1rk1/1p4b1/p1n1bp2/4q3/3p4/3P2R1/PPP2QPP/4R2K",
+        "orientation": "white-bottom",
+        "visualRows": "3r1rk1/1p4b1/p1n1bp2/4q3/3p4/3P2R1/PPP2QPP/4R2K",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "969ddc343c904402b20be33817e5fc1c8c92605d03bd76437616df6354293592",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "5c12148c2e85166ac672ca46a5e8181ebc9bf4cb86256619a9686a5addbbdee6",
+          "boardCorners": [
+            [
+              351,
+              744
+            ],
+            [
+              2826,
+              954
+            ],
+            [
+              2493,
+              3165
+            ],
+            [
+              336,
+              3030
+            ]
+          ],
+          "piecePlacement": "3r1rk1/1p4b1/p1n1bp2/4q3/3p4/3P2R1/PPP2QPP/4R2K",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          351,
+          744
+        ],
+        [
+          2826,
+          954
+        ],
+        [
+          2493,
+          3165
+        ],
+        [
+          336,
+          3030
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "5c12148c2e85166ac672ca46a5e8181ebc9bf4cb86256619a9686a5addbbdee6",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "arrows",
+        "cursor",
+        "highlights"
+      ]
+    },
+    {
+      "id": "lichess-img_5387",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/IMG_5387.HEIC",
+      "originalSha256": "08c05e6e065b8a81a6fbdc41f214c1a7d233b288f41fd693711f3455e7c1c589",
+      "originalBytes": 1484109,
+      "imagePath": ".cache/phone-validation-v1/images/lichess-img_5387.png",
+      "imageSha256": "c7845f970ec1ad2f9e6f095af97a029126b25575f4ef46e3c8ebdee2551b82fc",
+      "pixelSha256": "70b3a9bffe61ffd41e2673368c959fa5df1c1f7474a357f8679ad2d136be0e01",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/lichess-img_5387.jpg",
+      "jpegSha256": "03d5bfdde61d7a4c7668956a81e5b16b9e941c0149a7841565012dcd06f7dc07",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:24:41",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "lichess",
+        "gameId": null,
+        "videoId": null,
+        "url": null,
+        "visibleEvidence": "NgC_45 versus skiljdude; same visible pairing as IMG_5388",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visible player names or video title, where available; not an independently verified source identity."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "rnbqkbnr/ppp3pp/3p1p2/4P3/3P1B2/2N2N2/PPP3PP/R2QKB1R",
+        "orientation": "white-bottom",
+        "visualRows": "rnbqkbnr/ppp3pp/3p1p2/4P3/3P1B2/2N2N2/PPP3PP/R2QKB1R",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "08c05e6e065b8a81a6fbdc41f214c1a7d233b288f41fd693711f3455e7c1c589",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "c7845f970ec1ad2f9e6f095af97a029126b25575f4ef46e3c8ebdee2551b82fc",
+          "boardCorners": [
+            [
+              195,
+              576
+            ],
+            [
+              2679,
+              591
+            ],
+            [
+              2541,
+              2835
+            ],
+            [
+              393,
+              2913
+            ]
+          ],
+          "piecePlacement": "rnbqkbnr/ppp3pp/3p1p2/4P3/3P1B2/2N2N2/PPP3PP/R2QKB1R",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          195,
+          576
+        ],
+        [
+          2679,
+          591
+        ],
+        [
+          2541,
+          2835
+        ],
+        [
+          393,
+          2913
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "c7845f970ec1ad2f9e6f095af97a029126b25575f4ef46e3c8ebdee2551b82fc",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "textured-board",
+        "highlights"
+      ]
+    },
+    {
+      "id": "lichess-img_5388",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/IMG_5388.HEIC",
+      "originalSha256": "c0c986e4b87f2af8b53e5f7f2c78e48b9540f0954043c2f44d9ae5538d9fec50",
+      "originalBytes": 1732324,
+      "imagePath": ".cache/phone-validation-v1/images/lichess-img_5388.png",
+      "imageSha256": "6ac52d1a7d5b7cc13b686270d42c69ceb2bbf43e67ffbc82f885d73048114f7b",
+      "pixelSha256": "51b9b9f783ce854a5dcee5ffe366bb6e72b9c31abd0f0f417670910f21427419",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/lichess-img_5388.jpg",
+      "jpegSha256": "7e61881155ae52e7dbc30a1b5718f76c262de009a3eed08cf857390947f2b9b3",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:25:02",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "lichess",
+        "gameId": null,
+        "videoId": null,
+        "url": null,
+        "visibleEvidence": "NgC_45 versus skiljdude; same visible pairing as IMG_5387",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visible player names or video title, where available; not an independently verified source identity."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "8/1pk4p/2pp4/p1q5/2P5/1P4P1/PK5P/7R",
+        "orientation": "white-bottom",
+        "visualRows": "8/1pk4p/2pp4/p1q5/2P5/1P4P1/PK5P/7R",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "c0c986e4b87f2af8b53e5f7f2c78e48b9540f0954043c2f44d9ae5538d9fec50",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "6ac52d1a7d5b7cc13b686270d42c69ceb2bbf43e67ffbc82f885d73048114f7b",
+          "boardCorners": [
+            [
+              390,
+              828
+            ],
+            [
+              2589,
+              825
+            ],
+            [
+              2466,
+              2829
+            ],
+            [
+              543,
+              2853
+            ]
+          ],
+          "piecePlacement": "8/1pk4p/2pp4/p1q5/2P5/1P4P1/PK5P/7R",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          390,
+          828
+        ],
+        [
+          2589,
+          825
+        ],
+        [
+          2466,
+          2829
+        ],
+        [
+          543,
+          2853
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "6ac52d1a7d5b7cc13b686270d42c69ceb2bbf43e67ffbc82f885d73048114f7b",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "arrows",
+        "textured-board",
+        "highlights"
+      ]
+    },
+    {
+      "id": "lichess-img_5389",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/IMG_5389.HEIC",
+      "originalSha256": "c47c21eb781543eb72d6ed3cc0f8e2cca8d95cdc44eefcc6cfa6b70473abb2ad",
+      "originalBytes": 1820968,
+      "imagePath": ".cache/phone-validation-v1/images/lichess-img_5389.png",
+      "imageSha256": "24afc4d3c6fb202f55764592f6d362972572b2160b836bdbe964aee4695b1040",
+      "pixelSha256": "519fc4737a0380c01bfde5d13c465695d7779f319e453246958ee6d12cd1ad8f",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/lichess-img_5389.jpg",
+      "jpegSha256": "223ac129129573c06999a8a121b588b4eb220be7327e530a7eba59fb8248ddb8",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:26:03",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "lichess",
+        "gameId": null,
+        "videoId": null,
+        "url": null,
+        "visibleEvidence": "NgC_45 versus DimaCh1969; same visible pairing as IMG_5390",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visible player names or video title, where available; not an independently verified source identity."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "r1bqkbnr/pppp1pp1/2n4p/8/3pP3/2P2N2/PP3PPP/RNBQKB1R",
+        "orientation": "white-bottom",
+        "visualRows": "r1bqkbnr/pppp1pp1/2n4p/8/3pP3/2P2N2/PP3PPP/RNBQKB1R",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "c47c21eb781543eb72d6ed3cc0f8e2cca8d95cdc44eefcc6cfa6b70473abb2ad",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "24afc4d3c6fb202f55764592f6d362972572b2160b836bdbe964aee4695b1040",
+          "boardCorners": [
+            [
+              171,
+              804
+            ],
+            [
+              2781,
+              822
+            ],
+            [
+              2607,
+              3165
+            ],
+            [
+              351,
+              3195
+            ]
+          ],
+          "piecePlacement": "r1bqkbnr/pppp1pp1/2n4p/8/3pP3/2P2N2/PP3PPP/RNBQKB1R",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          171,
+          804
+        ],
+        [
+          2781,
+          822
+        ],
+        [
+          2607,
+          3165
+        ],
+        [
+          351,
+          3195
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "24afc4d3c6fb202f55764592f6d362972572b2160b836bdbe964aee4695b1040",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "textured-board",
+        "highlights"
+      ]
+    },
+    {
+      "id": "lichess-img_5390",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/IMG_5390.HEIC",
+      "originalSha256": "021991eb18f271f9b8fdf7d85c43f62e3d7e93b8352d7c5e645ddea14799b2bd",
+      "originalBytes": 1866103,
+      "imagePath": ".cache/phone-validation-v1/images/lichess-img_5390.png",
+      "imageSha256": "a03cfa6333c0bbcc747022f68711eb59788b5fcb7f81847ca7f3831a4093368c",
+      "pixelSha256": "847ae3f65673edd735fb2b74e7a2d43647b64882af0e6127384bb2fc1a91cc99",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/lichess-img_5390.jpg",
+      "jpegSha256": "f195cf8299b75b733e7db758a9a112bbc66a73b9b518ef88200bb156953d387e",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:26:21",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "lichess",
+        "gameId": null,
+        "videoId": null,
+        "url": null,
+        "visibleEvidence": "NgC_45 versus DimaCh1969; same visible pairing as IMG_5389",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visible player names or video title, where available; not an independently verified source identity."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "r4rk1/2pqbpp1/1p1p1n1p/pQ1P4/4P3/2N2N2/PP3PPP/R1B1K2R",
+        "orientation": "white-bottom",
+        "visualRows": "r4rk1/2pqbpp1/1p1p1n1p/pQ1P4/4P3/2N2N2/PP3PPP/R1B1K2R",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "021991eb18f271f9b8fdf7d85c43f62e3d7e93b8352d7c5e645ddea14799b2bd",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "a03cfa6333c0bbcc747022f68711eb59788b5fcb7f81847ca7f3831a4093368c",
+          "boardCorners": [
+            [
+              309,
+              873
+            ],
+            [
+              2544,
+              888
+            ],
+            [
+              2424,
+              2922
+            ],
+            [
+              456,
+              2964
+            ]
+          ],
+          "piecePlacement": "r4rk1/2pqbpp1/1p1p1n1p/pQ1P4/4P3/2N2N2/PP3PPP/R1B1K2R",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          309,
+          873
+        ],
+        [
+          2544,
+          888
+        ],
+        [
+          2424,
+          2922
+        ],
+        [
+          456,
+          2964
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "a03cfa6333c0bbcc747022f68711eb59788b5fcb7f81847ca7f3831a4093368c",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "textured-board",
+        "highlights"
+      ]
+    },
+    {
+      "id": "lichess-img_5391",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/IMG_5391.HEIC",
+      "originalSha256": "1fef6d970ddff02f78ef95656e2a8ee2d8f2aaeeab728f567816c57bd5732e76",
+      "originalBytes": 1753126,
+      "imagePath": ".cache/phone-validation-v1/images/lichess-img_5391.png",
+      "imageSha256": "25a83a9ed2ab90b72573723aa1de3e9458d89cc6e870e79672ac1abdf90890c7",
+      "pixelSha256": "34db07452d696b0b740cfbcbcb5dae53e2bb13ae01ff88f9dcab427da769e816",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/lichess-img_5391.jpg",
+      "jpegSha256": "f4032a55fa6e9fc5a53f22d58a05d5c92822d2f18f29fef1703ca4af0ac03823",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:27:31",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "lichess",
+        "gameId": null,
+        "videoId": null,
+        "url": null,
+        "visibleEvidence": "NgC_45 versus Bombero_104; same visible pairing as IMG_5392",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visible player names or video title, where available; not an independently verified source identity."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "r2q1rk1/ppp3bp/2np1np1/6B1/3p4/2PB3P/PP1N3P/R2QK2R",
+        "orientation": "black-bottom",
+        "visualRows": "R2KQ2R/P3N1PP/P3BP2/4p3/1B6/1pn1pn2/pb3ppp/1kr1q2r",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "1fef6d970ddff02f78ef95656e2a8ee2d8f2aaeeab728f567816c57bd5732e76",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "25a83a9ed2ab90b72573723aa1de3e9458d89cc6e870e79672ac1abdf90890c7",
+          "boardCorners": [
+            [
+              234,
+              702
+            ],
+            [
+              2817,
+              726
+            ],
+            [
+              2643,
+              3057
+            ],
+            [
+              402,
+              3105
+            ]
+          ],
+          "piecePlacement": "r2q1rk1/ppp3bp/2np1np1/6B1/3p4/2PB3P/PP1N3P/R2QK2R",
+          "orientation": "black-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          234,
+          702
+        ],
+        [
+          2817,
+          726
+        ],
+        [
+          2643,
+          3057
+        ],
+        [
+          402,
+          3105
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "25a83a9ed2ab90b72573723aa1de3e9458d89cc6e870e79672ac1abdf90890c7",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "textured-board",
+        "highlights"
+      ]
+    },
+    {
+      "id": "lichess-img_5392",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/IMG_5392.HEIC",
+      "originalSha256": "e1a0afe095e089a99c5d0c04e16dadc4f9c35e618007c358a3f11c628530e6d9",
+      "originalBytes": 1705880,
+      "imagePath": ".cache/phone-validation-v1/images/lichess-img_5392.png",
+      "imageSha256": "26cdae8f6e5db158b6a02eb7868c390d224e6bf8cb8cb1d513ecb97a86570b67",
+      "pixelSha256": "c07d090ba061e13990382d6006556379dfc1ab204a60abbf797c439d21eafb34",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/lichess-img_5392.jpg",
+      "jpegSha256": "cd9661348e2f7e2752d0187164ed3e7e8e010ba6cb778a58e62b448499677ba1",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:27:44",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "lichess",
+        "gameId": null,
+        "videoId": null,
+        "url": null,
+        "visibleEvidence": "NgC_45 versus Bombero_104; same visible pairing as IMG_5391",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visible player names or video title, where available; not an independently verified source identity."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "r4rk1/ppp3bp/3p2p1/6B1/3q4/7P/PP1K3P/R2Q3R",
+        "orientation": "black-bottom",
+        "visualRows": "R3Q2R/P3K1PP/P7/4q3/1B6/1p2p3/pb3ppp/1kr4r",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "e1a0afe095e089a99c5d0c04e16dadc4f9c35e618007c358a3f11c628530e6d9",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "26cdae8f6e5db158b6a02eb7868c390d224e6bf8cb8cb1d513ecb97a86570b67",
+          "boardCorners": [
+            [
+              228,
+              660
+            ],
+            [
+              2721,
+              639
+            ],
+            [
+              2598,
+              2880
+            ],
+            [
+              459,
+              3000
+            ]
+          ],
+          "piecePlacement": "r4rk1/ppp3bp/3p2p1/6B1/3q4/7P/PP1K3P/R2Q3R",
+          "orientation": "black-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          228,
+          660
+        ],
+        [
+          2721,
+          639
+        ],
+        [
+          2598,
+          2880
+        ],
+        [
+          459,
+          3000
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "26cdae8f6e5db158b6a02eb7868c390d224e6bf8cb8cb1d513ecb97a86570b67",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "textured-board",
+        "highlights"
+      ]
+    },
+    {
+      "id": "video-img_5403",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/IMG_5403.HEIC",
+      "originalSha256": "aa8492969d20223e2196cbeac648ee41e0cc0c6daac54682281d763e448745f1",
+      "originalBytes": 2318174,
+      "imagePath": ".cache/phone-validation-v1/images/video-img_5403.png",
+      "imageSha256": "c3f93f8d148fc5be94eab1120f87d618bc2a6399db95e8b9ca0dcbfa95b9793d",
+      "pixelSha256": "6db89df88792524addc8a5e9b36b92357e0ae964bce840dd3fb2259ef56e90b5",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/video-img_5403.jpg",
+      "jpegSha256": "92aa612be76c34cd318037d5423a0b8af2f3f4d8b20e6a3893864fc4a826b81b",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:45:23",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "video",
+        "gameId": null,
+        "videoId": null,
+        "url": null,
+        "visibleEvidence": "GothamChess / FC Bayern Munich: I MET HARRY KANE (Chess 1 v 1)",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visible player names or video title, where available; not an independently verified source identity."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "r1bq1rk1/3n1ppp/2pbpn2/p7/PpBP4/1Q3N1P/NB3PP1/3RR1K1",
+        "orientation": "black-bottom",
+        "visualRows": "1K1RR3/1PP3BN/P1N3Q1/4PBpP/7p/2npbp2/ppp1n3/1kr1qb1r",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "aa8492969d20223e2196cbeac648ee41e0cc0c6daac54682281d763e448745f1",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "c3f93f8d148fc5be94eab1120f87d618bc2a6399db95e8b9ca0dcbfa95b9793d",
+          "boardCorners": [
+            [
+              462,
+              822
+            ],
+            [
+              2355,
+              798
+            ],
+            [
+              2316,
+              2649
+            ],
+            [
+              528,
+              2643
+            ]
+          ],
+          "piecePlacement": "r1bq1rk1/3n1ppp/2pbpn2/p7/PpBP4/1Q3N1P/NB3PP1/3RR1K1",
+          "orientation": "black-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          462,
+          822
+        ],
+        [
+          2355,
+          798
+        ],
+        [
+          2316,
+          2649
+        ],
+        [
+          528,
+          2643
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "c3f93f8d148fc5be94eab1120f87d618bc2a6399db95e8b9ca0dcbfa95b9793d",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "strong-moire",
+        "highlights"
+      ]
+    },
+    {
+      "id": "video-img_5404",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/IMG_5404.HEIC",
+      "originalSha256": "8509997588ee2cdfebcc67e7f9d770271d3823dc59f3efcc7219ccbc90f42c7f",
+      "originalBytes": 2718682,
+      "imagePath": ".cache/phone-validation-v1/images/video-img_5404.png",
+      "imageSha256": "1cf23f532ce646af683fa4398f7c1a858c9897f2c079078174d52703ec479f94",
+      "pixelSha256": "83a6ccdc71c738867a41a948f33970b5e5f64c16a40527436be11f7f79703939",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/video-img_5404.jpg",
+      "jpegSha256": "ad57893649ee67d75db889043213cb60e7ff46e6a78b513dfbffaaf5bcfb28b1",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:45:51",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "video",
+        "gameId": null,
+        "videoId": null,
+        "url": null,
+        "visibleEvidence": "Video scene with two players, physical board foreground and digital diagram; title not visible",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visible player names or video title, where available; not an independently verified source identity."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "2kr1b1r/pp1npppp/1qp2n2/5b2/1PBP1B2/P1N2N2/2P2PPP/R2Q1RK1",
+        "orientation": "white-bottom",
+        "visualRows": "2kr1b1r/pp1npppp/1qp2n2/5b2/1PBP1B2/P1N2N2/2P2PPP/R2Q1RK1",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "8509997588ee2cdfebcc67e7f9d770271d3823dc59f3efcc7219ccbc90f42c7f",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Only the complete digital diagram is annotated; the physical board in the foreground is not a target.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "1cf23f532ce646af683fa4398f7c1a858c9897f2c079078174d52703ec479f94",
+          "boardCorners": [
+            [
+              480,
+              858
+            ],
+            [
+              2430,
+              858
+            ],
+            [
+              2400,
+              2754
+            ],
+            [
+              534,
+              2766
+            ]
+          ],
+          "piecePlacement": "2kr1b1r/pp1npppp/1qp2n2/5b2/1PBP1B2/P1N2N2/2P2PPP/R2Q1RK1",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          480,
+          858
+        ],
+        [
+          2430,
+          858
+        ],
+        [
+          2400,
+          2754
+        ],
+        [
+          534,
+          2766
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "1cf23f532ce646af683fa4398f7c1a858c9897f2c079078174d52703ec479f94",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "strong-moire",
+        "physical-board-in-background-scene",
+        "highlights"
+      ]
+    },
+    {
+      "id": "video-img_5405",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/IMG_5405.HEIC",
+      "originalSha256": "bdba0b361218614605108d2a35a5dac30c43344eda5e5084da610d5e2f639f10",
+      "originalBytes": 2274558,
+      "imagePath": ".cache/phone-validation-v1/images/video-img_5405.png",
+      "imageSha256": "dfc0d503b51a7ad13b2923bb7e6007c7997d54bb52af19de5fe782a9d702d143",
+      "pixelSha256": "d12644aee7852416b783564864878df40cc79f3d2d39cfe9f3f1401debe28f37",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/video-img_5405.jpg",
+      "jpegSha256": "ba6a8b4367d5563ed7cfba46557bbf5992fecec1c5c156b0b566733aae50e73c",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:46:01",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "video",
+        "gameId": null,
+        "videoId": null,
+        "url": null,
+        "visibleEvidence": "Daniel Naroditsky: Exposing CHEATERS In the Caro-Kann Defense: Fantasy Variation | GM Naroditsky’s Top Theory Speedrun",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visible player names or video title, where available; not an independently verified source identity."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "rnbqkb1r/pp3ppp/2p1pn2/3p4/3PP3/2N2P2/PPP3PP/R1BQKBNR",
+        "orientation": "white-bottom",
+        "visualRows": "rnbqkb1r/pp3ppp/2p1pn2/3p4/3PP3/2N2P2/PPP3PP/R1BQKBNR",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "bdba0b361218614605108d2a35a5dac30c43344eda5e5084da610d5e2f639f10",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "dfc0d503b51a7ad13b2923bb7e6007c7997d54bb52af19de5fe782a9d702d143",
+          "boardCorners": [
+            [
+              198,
+              732
+            ],
+            [
+              2907,
+              690
+            ],
+            [
+              2739,
+              3252
+            ],
+            [
+              366,
+              3168
+            ]
+          ],
+          "piecePlacement": "rnbqkb1r/pp3ppp/2p1pn2/3p4/3PP3/2N2P2/PPP3PP/R1BQKBNR",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          198,
+          732
+        ],
+        [
+          2907,
+          690
+        ],
+        [
+          2739,
+          3252
+        ],
+        [
+          366,
+          3168
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "dfc0d503b51a7ad13b2923bb7e6007c7997d54bb52af19de5fe782a9d702d143",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "arrows",
+        "textured-board"
+      ]
+    },
+    {
+      "id": "video-img_5406",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/IMG_5406.HEIC",
+      "originalSha256": "4836121576e532aac8580fab3fb76472d506e9eea38b34b1c59d0882739caa72",
+      "originalBytes": 2190799,
+      "imagePath": ".cache/phone-validation-v1/images/video-img_5406.png",
+      "imageSha256": "4ce3e8916c430c66d940bcfeda14fca1d6e93a91dee849880ecbcc6fc5b18628",
+      "pixelSha256": "67ced037163704de3e93a117e7c81875e2e28652b658090aa2dff990f5340f5f",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/video-img_5406.jpg",
+      "jpegSha256": "a1e00329d37da03939195cf7b2dce37b7c976b03272b0c1d2da659ef8d88fc79",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:46:15",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "video",
+        "gameId": null,
+        "videoId": null,
+        "url": null,
+        "visibleEvidence": "Daniel Naroditsky Top Theory Speedrun; possible same video as IMG_5405, retained in same batch",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visible player names or video title, where available; not an independently verified source identity."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "2k1r1r1/pb1n1Q1p/1pp1pn2/q7/2PP4/P2B3N/1BP3PP/R4RK1",
+        "orientation": "white-bottom",
+        "visualRows": "2k1r1r1/pb1n1Q1p/1pp1pn2/q7/2PP4/P2B3N/1BP3PP/R4RK1",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "4836121576e532aac8580fab3fb76472d506e9eea38b34b1c59d0882739caa72",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Only the large main board is annotated, not recommendation thumbnails at the right edge.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "4ce3e8916c430c66d940bcfeda14fca1d6e93a91dee849880ecbcc6fc5b18628",
+          "boardCorners": [
+            [
+              318,
+              651
+            ],
+            [
+              2967,
+              660
+            ],
+            [
+              2829,
+              3084
+            ],
+            [
+              474,
+              3150
+            ]
+          ],
+          "piecePlacement": "2k1r1r1/pb1n1Q1p/1pp1pn2/q7/2PP4/P2B3N/1BP3PP/R4RK1",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          318,
+          651
+        ],
+        [
+          2967,
+          660
+        ],
+        [
+          2829,
+          3084
+        ],
+        [
+          474,
+          3150
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "4ce3e8916c430c66d940bcfeda14fca1d6e93a91dee849880ecbcc6fc5b18628",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "arrows",
+        "additional-board-thumbnails",
+        "highlights"
+      ]
+    },
+    {
+      "id": "video-img_5407",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/IMG_5407.HEIC",
+      "originalSha256": "3290facf2772af3de946fdd8d7d682a45e6684833e65cf78f2a97630a7cff5aa",
+      "originalBytes": 2300522,
+      "imagePath": ".cache/phone-validation-v1/images/video-img_5407.png",
+      "imageSha256": "4c5d1f3a2080782ec9e42db097da2c581b7f92098479b2f3495880445748d016",
+      "pixelSha256": "6c15b186fd0e8ff93ba54ce06ac2b0c5484155dc40d5815c521d1d3efdfa2026",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/video-img_5407.jpg",
+      "jpegSha256": "d206e3c3f597485992a368e38ce6ce88bf554ecdabd74403d12d83072738fe71",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:46:53",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "video",
+        "gameId": null,
+        "videoId": null,
+        "url": null,
+        "visibleEvidence": "Lichess video: Molot_ua versus donnyrules visible below board",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visible player names or video title, where available; not an independently verified source identity."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "4k3/1p2pp2/3P4/3N4/1pKp4/r5p1/6P1/4R3",
+        "orientation": "black-bottom",
+        "visualRows": "3R4/1P6/1p5r/4pKp1/4N3/4P3/2pp2p1/3k4",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "3290facf2772af3de946fdd8d7d682a45e6684833e65cf78f2a97630a7cff5aa",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "4c5d1f3a2080782ec9e42db097da2c581b7f92098479b2f3495880445748d016",
+          "boardCorners": [
+            [
+              156,
+              510
+            ],
+            [
+              2808,
+              519
+            ],
+            [
+              2706,
+              3003
+            ],
+            [
+              309,
+              3072
+            ]
+          ],
+          "piecePlacement": "4k3/1p2pp2/3P4/3N4/1pKp4/r5p1/6P1/4R3",
+          "orientation": "black-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          156,
+          510
+        ],
+        [
+          2808,
+          519
+        ],
+        [
+          2706,
+          3003
+        ],
+        [
+          309,
+          3072
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "4c5d1f3a2080782ec9e42db097da2c581b7f92098479b2f3495880445748d016",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "highlights"
+      ]
+    },
+    {
+      "id": "video-img_5409",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/IMG_5409.HEIC",
+      "originalSha256": "990d91bab1d7c45639fb8c135f78d0d385a16b79c2d58048a4b617507c059bc9",
+      "originalBytes": 2135961,
+      "imagePath": ".cache/phone-validation-v1/images/video-img_5409.png",
+      "imageSha256": "04e055ce35049dc73c73ce1e5514fcd2f7e9b06b4a55f1f5d773f41315a20adf",
+      "pixelSha256": "5374d678dfeffa7cd2c2755b01f2c98ce8c03fc442200f897a9d9a6cbb7c3829",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/video-img_5409.jpg",
+      "jpegSha256": "cacb1b49e7780df9a7a1514872c56f2f9e356ed27dac295263cd42dc977ff4d1",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:47:08",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "video",
+        "gameId": null,
+        "videoId": null,
+        "url": null,
+        "visibleEvidence": "Eric Rosen: SO MUCH FUN; EricRosen versus andresgv36; related to IMG_5410 and IMG_5411",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visible player names or video title, where available; not an independently verified source identity."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "r1bq1bkr/pp1pn1p1/2NQ3p/6B1/4R3/2p5/PPP2PPP/R5K1",
+        "orientation": "white-bottom",
+        "visualRows": "r1bq1bkr/pp1pn1p1/2NQ3p/6B1/4R3/2p5/PPP2PPP/R5K1",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "990d91bab1d7c45639fb8c135f78d0d385a16b79c2d58048a4b617507c059bc9",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "04e055ce35049dc73c73ce1e5514fcd2f7e9b06b4a55f1f5d773f41315a20adf",
+          "boardCorners": [
+            [
+              345,
+              807
+            ],
+            [
+              2673,
+              816
+            ],
+            [
+              2541,
+              3033
+            ],
+            [
+              438,
+              2979
+            ]
+          ],
+          "piecePlacement": "r1bq1bkr/pp1pn1p1/2NQ3p/6B1/4R3/2p5/PPP2PPP/R5K1",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          345,
+          807
+        ],
+        [
+          2673,
+          816
+        ],
+        [
+          2541,
+          3033
+        ],
+        [
+          438,
+          2979
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "04e055ce35049dc73c73ce1e5514fcd2f7e9b06b4a55f1f5d773f41315a20adf",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "arrows",
+        "circles",
+        "cursor",
+        "highlights"
+      ]
+    },
+    {
+      "id": "video-img_5410",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/IMG_5410.HEIC",
+      "originalSha256": "6e5f8163b42028267cdc70ab9eeeea0eab5259fa6d6ae131461d9496d1dcb8c4",
+      "originalBytes": 2243771,
+      "imagePath": ".cache/phone-validation-v1/images/video-img_5410.png",
+      "imageSha256": "d5484d65687036d28d8bcfe21ed5ef28942badb392fd8a72c26708bdd6fbf288",
+      "pixelSha256": "41ca5079e43331948a8d76a5200249afa55e5e1ef0669b5e0ba8985d3dffc439",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/video-img_5410.jpg",
+      "jpegSha256": "bd42b45711160b12443385c5071e5a03197b64d6a9a66d9e5f0ed5b2109565fa",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:47:35",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "video",
+        "gameId": null,
+        "videoId": null,
+        "url": null,
+        "visibleEvidence": "Eric Rosen: SO MUCH FUN; same game analysis as IMG_5409 and IMG_5411",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visible player names or video title, where available; not an independently verified source identity."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "r1bq1b1r/pp1pnkpp/2pQ4/6B1/4R3/2p2N2/PPP2PPP/R5K1",
+        "orientation": "white-bottom",
+        "visualRows": "r1bq1b1r/pp1pnkpp/2pQ4/6B1/4R3/2p2N2/PPP2PPP/R5K1",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "6e5f8163b42028267cdc70ab9eeeea0eab5259fa6d6ae131461d9496d1dcb8c4",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "d5484d65687036d28d8bcfe21ed5ef28942badb392fd8a72c26708bdd6fbf288",
+          "boardCorners": [
+            [
+              207,
+              717
+            ],
+            [
+              2643,
+              729
+            ],
+            [
+              2487,
+              3018
+            ],
+            [
+              342,
+              2958
+            ]
+          ],
+          "piecePlacement": "r1bq1b1r/pp1pnkpp/2pQ4/6B1/4R3/2p2N2/PPP2PPP/R5K1",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          207,
+          717
+        ],
+        [
+          2643,
+          729
+        ],
+        [
+          2487,
+          3018
+        ],
+        [
+          342,
+          2958
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "d5484d65687036d28d8bcfe21ed5ef28942badb392fd8a72c26708bdd6fbf288",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "highlights"
+      ]
+    },
+    {
+      "id": "video-img_5411",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/IMG_5411.HEIC",
+      "originalSha256": "05400961fecb6ad93e52eba00a0fc065705d42117f2e06ffb093c1680142793c",
+      "originalBytes": 2647079,
+      "imagePath": ".cache/phone-validation-v1/images/video-img_5411.png",
+      "imageSha256": "0a83a9cd4d0e5fe6dfcf283c7eebf7905625de0f0112254bfb3f02b2b53d28cf",
+      "pixelSha256": "ae6f8c1da381ac9a90ebcdf43e8a5b1adb5ac35b19a1f9cf106b36c84786f4e8",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/video-img_5411.jpg",
+      "jpegSha256": "d9dfbdf902dfacb8a17fc4cc3c829813499827f5f0a6f727ab13632d5ac863e5",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:47:42",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "video",
+        "gameId": null,
+        "videoId": null,
+        "url": null,
+        "visibleEvidence": "Eric Rosen: SO MUCH FUN; same game analysis as IMG_5409 and IMG_5410; ChessBase interface",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visible player names or video title, where available; not an independently verified source identity."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "r1bqkb1r/pp1pn1pp/2p5/3Q4/4R3/2p2N2/PPP2PPP/R1B3K1",
+        "orientation": "white-bottom",
+        "visualRows": "r1bqkb1r/pp1pn1pp/2p5/3Q4/4R3/2p2N2/PPP2PPP/R1B3K1",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "05400961fecb6ad93e52eba00a0fc065705d42117f2e06ffb093c1680142793c",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "0a83a9cd4d0e5fe6dfcf283c7eebf7905625de0f0112254bfb3f02b2b53d28cf",
+          "boardCorners": [
+            [
+              264,
+              744
+            ],
+            [
+              2385,
+              765
+            ],
+            [
+              2271,
+              2757
+            ],
+            [
+              378,
+              2727
+            ]
+          ],
+          "piecePlacement": "r1bqkb1r/pp1pn1pp/2p5/3Q4/4R3/2p2N2/PPP2PPP/R1B3K1",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          264,
+          744
+        ],
+        [
+          2385,
+          765
+        ],
+        [
+          2271,
+          2757
+        ],
+        [
+          378,
+          2727
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "0a83a9cd4d0e5fe6dfcf283c7eebf7905625de0f0112254bfb3f02b2b53d28cf",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "arrows",
+        "strong-moire",
+        "textured-board"
+      ]
+    },
+    {
+      "id": "video-img_5412",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/IMG_5412.HEIC",
+      "originalSha256": "3a91b45b67622535481b3e7d42e4f72f6bc905ea04f956d4799cd5df1eac9365",
+      "originalBytes": 2024017,
+      "imagePath": ".cache/phone-validation-v1/images/video-img_5412.png",
+      "imageSha256": "9ca6368214811401251fc0d607ac9ce0342bab246f2804489efd58b38219122d",
+      "pixelSha256": "1ae88d998cb36bccaf021343fad21a0f69338381e544b7a98f3b8bcd880fcd20",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/video-img_5412.jpg",
+      "jpegSha256": "efd54dcf8fc98399863487f2d357651f9a0822a6c3296174bbe893edf27dc728",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:48:15",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "video",
+        "gameId": null,
+        "videoId": null,
+        "url": null,
+        "visibleEvidence": "Lichess study Von Popiel Gambit: Game 2; Rosenvald, Helmut versus Zaplava, Vladimir",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visible player names or video title, where available; not an independently verified source identity."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "Qn1qkb1r/p1p1pppp/8/5b2/4N3/4B3/PPP2PPP/R3KBNR",
+        "orientation": "white-bottom",
+        "visualRows": "Qn1qkb1r/p1p1pppp/8/5b2/4N3/4B3/PPP2PPP/R3KBNR",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "3a91b45b67622535481b3e7d42e4f72f6bc905ea04f956d4799cd5df1eac9365",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "9ca6368214811401251fc0d607ac9ce0342bab246f2804489efd58b38219122d",
+          "boardCorners": [
+            [
+              411,
+              813
+            ],
+            [
+              2505,
+              831
+            ],
+            [
+              2376,
+              2778
+            ],
+            [
+              522,
+              2751
+            ]
+          ],
+          "piecePlacement": "Qn1qkb1r/p1p1pppp/8/5b2/4N3/4B3/PPP2PPP/R3KBNR",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          411,
+          813
+        ],
+        [
+          2505,
+          831
+        ],
+        [
+          2376,
+          2778
+        ],
+        [
+          522,
+          2751
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "9ca6368214811401251fc0d607ac9ce0342bab246f2804489efd58b38219122d",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "highlights"
+      ]
+    },
+    {
+      "id": "video-img_5413",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/IMG_5413.HEIC",
+      "originalSha256": "e3e57375d926907d79540eb51705bed72156b54978afaa8ff9f4b6ce96e9537a",
+      "originalBytes": 1920478,
+      "imagePath": ".cache/phone-validation-v1/images/video-img_5413.png",
+      "imageSha256": "3367ad672f0d20221d6a8a5d1fb13025efd318a1a8d834fedc404f0084e6e46b",
+      "pixelSha256": "4339ac7d9f3630679728c4377f127e47233be331d665f7e22a93385e48e6f573",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "jpegPath": ".cache/phone-validation-v1/jpg/video-img_5413.jpg",
+      "jpegSha256": "14dc984c5de9f4693ec7435bea8544724109ae41fc026f5e4ed0200f94054517",
+      "captureMetadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:10:29 19:48:25",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "source": {
+        "category": "video",
+        "gameId": null,
+        "videoId": null,
+        "url": null,
+        "visibleEvidence": "Chess Vibes: You Will Make Your Opponents Quit Chess (Von Hennig Gambit vs Caro-Kann)",
+        "targetBoard": "main-digital-board",
+        "identityEvidence": "Visible player names or video title, where available; not an independently verified source identity."
+      },
+      "intendedSplit": "validation",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1",
+      "groupingStatus": "conservative-batch-user-confirmed-source-separation",
+      "label": {
+        "status": "visual-transcription",
+        "piecePlacement": "rn1qkb1r/pp4pp/2p1Nnb1/8/3P4/2N5/PPP3PP/R1BQ1RK1",
+        "orientation": "white-bottom",
+        "visualRows": "rn1qkb1r/pp4pp/2p1Nnb1/8/3P4/2N5/PPP3PP/R1BQ1RK1",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "visual-board-review",
+        "userVerified": false,
+        "sourceSha256": "e3e57375d926907d79540eb51705bed72156b54978afaa8ff9f4b6ce96e9537a",
+        "orientationEvidence": "Visible rank and/or file coordinates reviewed in the photographed board.",
+        "note": "Visually transcribed from the source photograph; no classifier predictions used.",
+        "rectifiedReview": {
+          "reviewedBy": "assistant",
+          "reviewedOn": "2026-10-29",
+          "independentReview": false,
+          "method": "rectified-photo-versus-transcription-diagram",
+          "outcome": "matches-visible-pieces",
+          "imageSha256": "3367ad672f0d20221d6a8a5d1fb13025efd318a1a8d834fedc404f0084e6e46b",
+          "boardCorners": [
+            [
+              297,
+              834
+            ],
+            [
+              2769,
+              816
+            ],
+            [
+              2607,
+              3162
+            ],
+            [
+              435,
+              3057
+            ]
+          ],
+          "piecePlacement": "rn1qkb1r/pp4pp/2p1Nnb1/8/3P4/2N5/PPP3PP/R1BQ1RK1",
+          "orientation": "white-bottom"
+        }
+      },
+      "boardCorners": [
+        [
+          297,
+          834
+        ],
+        [
+          2769,
+          816
+        ],
+        [
+          2607,
+          3162
+        ],
+        [
+          435,
+          3057
+        ]
+      ],
+      "exactOriginalOverlapWithDevelopment": null,
+      "exactPixelOverlapWithDevelopment": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29",
+        "method": "manual-grid-boundary-annotation",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "3367ad672f0d20221d6a8a5d1fb13025efd318a1a8d834fedc404f0084e6e46b",
+        "userVerified": false,
+        "note": "Four visible grid boundary corners manually annotated at one-third review scale and mapped to full RGB pixels; all eight rows and columns checked in the rectified view. No detector or classifier predictions used."
+      },
+      "screening": {
+        "status": "individual-and-rectified-review-complete",
+        "boardComplete": "visually-complete",
+        "targetBoard": "main-digital-board",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-10-29"
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "arrows",
+        "highlights"
+      ]
+    }
+  ],
+  "overviewReview": {
+    "reviewedBy": "assistant",
+    "date": "2026-10-29",
+    "method": "visual-contact-sheet-review",
+    "scope": "Initial quality and visible variety only; not a square-by-square label or corner review.",
+    "observations": [
+      "Different piece silhouettes, flat and wood-textured boards, and several board colors are visible.",
+      "Both board orientations, tilted views, moire/color bands, highlights and arrows are represented.",
+      "The main digital boards appear complete at overview scale; precise borders still need individual review.",
+      "The photographs show a similar monitor and capture setting; variety of cameras and screens is not established.",
+      "Some consecutive photographs may belong to the same game or video. Do not infer independence from different positions or styles."
+    ]
+  },
+  "sourceSeparationConfirmation": {
+    "reportedBy": "user",
+    "date": "2026-10-29",
+    "status": "user-confirmed-distinct-source-selection",
+    "statement": "The user deliberately avoided the games and videos used in the previous batch. An accidental repeated position remains possible.",
+    "independentlyVerified": false,
+    "individualSourceGroupsKnown": false,
+    "groupingPolicy": "Keep all 30 photographs in a single conservative validation batch. This is a partition safeguard, not a claim that they share one source or represent 30 independent sources. Never move a subset into training."
+  },
+  "annotationStatus": "visual-and-rectified-review-complete",
+  "readyForSquareExport": true,
+  "readinessNote": "All annotations reviewed; validation square arrays and a training-consumable index have not been exported.",
+  "partitionReview": {
+    "status": "validation-assigned",
+    "reviewedOn": "2026-10-29",
+    "basis": "User-confirmed distinct source selection, all samples held together, and no matching position families against the prior photo development manifest. Source separation is not independently proven.",
+    "referenceManifest": "data/manifests/phone-photos-v1.json",
+    "referenceManifestSha256": "44e0f95efaa0afc1b51d1818b8485e90162c40d6cacc59e5f8cf0b6cd9e05e13",
+    "finalEvaluationConsulted": false
+  }
+}

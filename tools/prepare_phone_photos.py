@@ -5,12 +5,13 @@ or a replacement for the reviewed, partitioned screenshot import format.
 """
 
 import argparse
-from collections import Counter
+from collections import Counter, defaultdict
 import hashlib
 from html import escape
 from importlib.metadata import PackageNotFoundError, version
 from io import BytesIO
 import json
+import math
 from pathlib import Path
 import tempfile
 
@@ -22,6 +23,32 @@ ROOT = Path(__file__).resolve().parents[1]
 EXTENSIONS = {".heic", ".heif", ".png", ".jpg", ".jpeg"}
 CATEGORIES = {"video-photos": "video", "chesscom-photos": "chesscom", "lichess-photos": "lichess"}
 UNRESOLVED_GROUP = "phone-photos-unresolved-origin-v1"
+CORNER_ORDER = ["top-left", "top-right", "bottom-right", "bottom-left"]
+
+
+def validate_corners(corners, size):
+    """Validate image-space TL/TR/BR/BL boundaries, independently of chess view.
+
+    Coordinates refer to the full EXIF-normalized RGB image, with x rightward
+    and y downward. Right/bottom image boundaries may equal width/height.
+    This validates annotation geometry, not the presence of a chessboard.
+    """
+    if (not isinstance(corners, list) or len(corners) != 4
+            or any(not isinstance(p, list) or len(p) != 2 for p in corners)):
+        raise ValueError("Board corners must contain four [x, y] points.")
+    if any(type(v) not in (int, float) or not math.isfinite(v) for p in corners for v in p):
+        raise ValueError("Board corners must be finite numbers.")
+    width, height = size
+    if any(not (0 <= x <= width and 0 <= y <= height) for x, y in corners):
+        raise ValueError("Board corners must stay inside the normalized image.")
+    for i in range(4):
+        a, b, c = corners[i], corners[(i + 1) % 4], corners[(i + 2) % 4]
+        cross = (b[0] - a[0]) * (c[1] - b[1]) - (b[1] - a[1]) * (c[0] - b[0])
+        if cross <= 0:
+            raise ValueError("Board corners must form a convex clockwise quadrilateral.")
+    tl, tr, br, bl = corners
+    if not (tl[0] < tr[0] and bl[0] < br[0] and tl[1] < bl[1] and tr[1] < br[1]):
+        raise ValueError("Board corners must follow image TL/TR/BR/BL order.")
 
 
 def digest(path):
@@ -85,21 +112,34 @@ def write_json(path, data):
 
 
 def write_review_index(destination, samples):
-    """Provide an offline filename-to-PNG map; no server or recognizer involved."""
+    """Link review copies, preferring exported JPEGs when available."""
     cards = []
     for row in samples:
         name = escape(Path(row["originalPath"]).name)
         sample_id = escape(row["id"])
-        cards.append(f'<figure><a href="images/{sample_id}.png"><img loading="lazy" '
+        label = row["label"]
+        details = escape(f"{label['status']} | {label['orientation'] or 'orientation pending'}")
+        placement = escape(label["piecePlacement"] or "No placement assigned")
+        note = escape(label.get("note", ""))
+        geometry = (f'<p><a href="geometry/{sample_id}.jpg">Corners, rectified board and label diagram</a></p>'
+                    if (destination / "geometry" / f"{row['id']}.jpg").is_file() else "")
+        jpeg = Path("jpg") / row["source"]["category"] / (Path(row["originalPath"]).stem + ".jpg")
+        target = escape(jpeg.as_posix()) if (destination / jpeg).is_file() else f"images/{sample_id}.png"
+        cards.append(f'<figure><a href="{target}"><img loading="lazy" '
                      f'src="thumbnails/{sample_id}.jpg" alt="{name}"></a>'
-                     f'<figcaption>{name} ({escape(row["source"]["category"])})</figcaption></figure>')
+                     f'<figcaption>{name} ({escape(row["source"]["category"])})'
+                     f'<p>{details}</p><code>{placement}</code><p>{note}</p>{geometry}'
+                     '</figcaption></figure>')
     (destination / "index.html").write_text(
         '<!doctype html><meta charset="utf-8"><title>BoardSnap photo review</title>'
         '<style>body{font-family:sans-serif}main{display:flex;flex-wrap:wrap}'
-        'figure{margin:10px}img{max-height:360px;max-width:270px}</style>'
-        '<h1>Photo review copies</h1><p>Open an image for the full-size RGB PNG. '
+        'figure{margin:10px;width:290px}code{overflow-wrap:anywhere}'
+        'img{max-height:360px;max-width:270px}</style>'
+        '<h1>Photo review copies</h1><p>Open an image for the full-size RGB review copy '
+        '(JPEG when exported, otherwise PNG). '
         'These are converted photographs, not direct screenshot references. '
-        'Labels and review status are in the intake manifest.</p><main>'
+        'Labels are assistant visual transcriptions, not user-confirmed references. '
+        'Canonical placement runs from a8 to h1, regardless of photo orientation.</p><main>'
         + "\n".join(cards) + '</main>\n', encoding="utf-8")
 
 
@@ -185,7 +225,10 @@ def audit(data, *, root=ROOT, verify_files=True):
         raise ValueError("Expected a development photographic intake manifest.")
     ids, paths, hashes = set(), set(), Counter()
     categories, labels, cameras, orientations = Counter(), Counter(), Counter(), Counter()
+    placements = defaultdict(list)
     coverage = {label: {"light": 0, "dark": 0} for label in ("empty", *"PNBRQKpnbrqk")}
+    annotated = 0
+    reviewed_labels = 0
     for row in data["samples"]:
         if row["id"] in ids or row["originalPath"] in paths:
             raise ValueError("Duplicate sample identity or original path.")
@@ -202,12 +245,40 @@ def audit(data, *, root=ROOT, verify_files=True):
                 raise ValueError("Predictions cannot supply photographic reference labels.")
             if label.get("sourceSha256") != row["originalSha256"]:
                 raise ValueError("Visual labels must identify the reviewed original bytes.")
+            if "visualRows" in label:
+                visual = expand_placement(label["visualRows"])
+                if label["orientation"] == "black-bottom":
+                    visual = [squares[::-1] for squares in visual[::-1]]
+                if visual != board:
+                    raise ValueError("Visual rows disagree with canonical placement and orientation.")
+            placements[label["piecePlacement"]].append(Path(row["originalPath"]).name)
             for rank, squares in enumerate(board):
                 for file, piece in enumerate(squares):
                     color = "light" if (rank + file) % 2 == 0 else "dark"
                     coverage["empty" if piece == "." else piece][color] += 1
         elif label["status"] not in {"pending", "ambiguous"} or label["piecePlacement"] is not None:
             raise ValueError("Pending or ambiguous photos cannot have ground-truth placement.")
+        if row.get("boardCorners") is not None:
+            validate_corners(row["boardCorners"], row["imageSize"])
+            review = row.get("geometryReview", {})
+            if (review.get("status") != "visual-reviewed"
+                    or review.get("imageSha256") != row["imageSha256"]
+                    or review.get("coordinateSpace") != "normalized-image-pixels"
+                    or review.get("cornerOrder") != CORNER_ORDER
+                    or not review.get("reviewedBy") or not review.get("reviewedOn")):
+                raise ValueError("Corner annotations require review provenance for the normalized image.")
+            annotated += 1
+        second = label.get("rectifiedReview")
+        if second is not None:
+            if (row.get("boardCorners") is None
+                    or second.get("imageSha256") != row["imageSha256"]
+                    or second.get("boardCorners") != row["boardCorners"]
+                    or second.get("piecePlacement") != label["piecePlacement"]
+                    or second.get("orientation") != label["orientation"]
+                    or not second.get("reviewedBy") or not second.get("reviewedOn")
+                    or second.get("outcome") != ("ambiguous-excluded" if label["status"] == "ambiguous" else "matches-visible-pieces")):
+                raise ValueError("Rectified review does not match the current image, corners or label.")
+            reviewed_labels += label["status"] == "visual-transcription"
         for key, sha in (("originalPath", "originalSha256"), ("imagePath", "imageSha256")):
             path = child(root, row[key])
             if verify_files and digest(path) != row[sha]:
@@ -225,8 +296,17 @@ def audit(data, *, root=ROOT, verify_files=True):
         orientations[str(label["orientation"])] += 1
     return {
         "sampleCount": len(ids), "categories": dict(categories), "labels": dict(labels),
+        "reviewedCornerAnnotations": annotated,
+        "placementsReviewedAfterRectification": reviewed_labels,
+        "classificationExclusions": [Path(r["originalPath"]).name for r in data["samples"]
+                                     if r["label"]["status"] != "visual-transcription"],
         "cameras": dict(cameras), "reviewedOrientations": dict(orientations),
         "exactDuplicateOriginals": sum(n - 1 for n in hashes.values()),
+        "distinctTranscribedPositions": len(placements),
+        "repeatedPlacements": [
+            {"piecePlacement": placement, "originals": names}
+            for placement, names in sorted(placements.items()) if len(names) > 1
+        ],
         "missingDirectReferences": sum(r["source"]["referenceScreenshot"] is None for r in data["samples"]),
         "splitCounts": {"development": len(ids), "training": 0, "validation": 0, "evaluation": 0},
         "transcribedClassBackgroundCounts": coverage,

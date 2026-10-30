@@ -1,0 +1,50 @@
+{
+  "datasetId": "phone-validation-v1",
+  "sampleCount": 30,
+  "byCategory": {
+    "chesscom": 10,
+    "lichess": 10,
+    "video": 10
+  },
+  "exactOriginalOverlapsWithDevelopment": [],
+  "exactPixelOverlapsWithDevelopment": [],
+  "duplicateOriginalHashesWithinIntake": [],
+  "duplicatePixelHashesWithinIntake": [],
+  "readyForValidation": false,
+  "modelInferenceRun": false,
+  "pending": [
+    "validation square export and training-consumable index"
+  ],
+  "limitation": "Different file/pixel hashes do not establish independence of positions, games or videos.",
+  "overviewReview": {
+    "reviewedBy": "assistant",
+    "date": "2026-10-29",
+    "method": "visual-contact-sheet-review",
+    "scope": "Initial quality and visible variety only; not a square-by-square label or corner review.",
+    "observations": [
+      "Different piece silhouettes, flat and wood-textured boards, and several board colors are visible.",
+      "Both board orientations, tilted views, moire/color bands, highlights and arrows are represented.",
+      "The main digital boards appear complete at overview scale; precise borders still need individual review.",
+      "The photographs show a similar monitor and capture setting; variety of cameras and screens is not established.",
+      "Some consecutive photographs may belong to the same game or video. Do not infer independence from different positions or styles."
+    ]
+  },
+  "artifactVerification": {
+    "originalHashesChecked": 30,
+    "rgbPngsChecked": 30,
+    "rgbJpegsChecked": 30,
+    "developmentManifestUnchanged": true
+  },
+  "sourceSeparationConfirmation": {
+    "reportedBy": "user",
+    "date": "2026-10-29",
+    "status": "user-confirmed-distinct-source-selection",
+    "statement": "The user deliberately avoided the games and videos used in the previous batch. An accidental repeated position remains possible.",
+    "independentlyVerified": false,
+    "individualSourceGroupsKnown": false,
+    "groupingPolicy": "Keep all 30 photographs in a single conservative validation batch. This is a partition safeguard, not a claim that they share one source or represent 30 independent sources. Never move a subset into training."
+  },
+  "annotationStatus": "visual-and-rectified-review-complete",
+  "currentAnnotationReport": "data/reports/phone-validation-annotations-v1.json",
+  "readyForSquareExport": true
+}

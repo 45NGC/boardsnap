@@ -1,0 +1,72 @@
+{
+  "datasetId": "phone-training-v1",
+  "datasetSha256": "0d95e16c39c5c08c73526cc9cc0ce6a68edce3d7616417520a82dd8260bffafa",
+  "verifiedIndexSha256": "78d6b03a9ad0fa381ca2e7e67a11692c340fb94a5e53655b019bfbf75194dfe4",
+  "loader": "tools.neural_data.read_index + load_split",
+  "loadedSplits": {
+    "training": {
+      "boards": 160,
+      "imageShape": [
+        10240,
+        64,
+        64,
+        3
+      ],
+      "labelShape": [
+        10240
+      ],
+      "imageDtype": "uint8",
+      "labelDtype": "int64",
+      "classesPresent": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "validation": {
+      "boards": 30,
+      "imageShape": [
+        1920,
+        64,
+        64,
+        3
+      ],
+      "labelShape": [
+        1920
+      ],
+      "imageDtype": "uint8",
+      "labelDtype": "int64",
+      "classesPresent": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+  },
+  "validationArraysMatchingReviewedRectifiedPixels": 30,
+  "byteIdenticalReusedTrainingArchives": 160,
+  "pinnedSourceDocumentsUnchanged": true,
+  "trainingRun": false,
+  "modelInferenceRun": false,
+  "finalEvaluationAccessed": false
+}

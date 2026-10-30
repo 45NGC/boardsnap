@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "phone-training-v1",
+  "dataRole": "photo-training-validation-squares",
+  "complete": true,
+  "readyForTraining": true,
+  "readyForValidation": true,
+  "independentFinalEvaluation": false,
+  "classOrder": [
+    "empty",
+    "P",
+    "N",
+    "B",
+    "R",
+    "Q",
+    "K",
+    "p",
+    "n",
+    "b",
+    "r",
+    "q",
+    "k"
+  ],
+  "preprocessing": {
+    "squareSize": 64,
+    "colorMode": "RGB",
+    "dtype": "uint8",
+    "rectification": "reviewed full-image quadrilateral to 512x512, OpenCV INTER_LINEAR",
+    "ordering": "a8 to h1; reorder cells for black-bottom without rotating pixels",
+    "orientation": "explicit reviewed view; no automatic orientation or detection"
+  },
+  "indexes": {
+    "verified": {
+      "path": "verified.jsonl",
+      "sha256": "78d6b03a9ad0fa381ca2e7e67a11692c340fb94a5e53655b019bfbf75194dfe4",
+      "boards": 190
+    },
+    "training": {
+      "path": "training.jsonl",
+      "sha256": "887fc2872ba9f3aea1feced2cd22bb93f2346e83ac923206d8dad823410357d7",
+      "boards": 160
+    },
+    "validation": {
+      "path": "validation.jsonl",
+      "sha256": "a9208f8a64b5b2307fff3c6ce60049ed5ee88653052198b8b66b8cef765b124c",
+      "boards": 30
+    }
+  },
+  "partitionPlan": {
+    "path": "partition-plan.json",
+    "sha256": "6ff840f3c57901ec821feef3cda9cfbc424635dc2eda1c097da245e7616d9869",
+    "sourceSha256": "6ff840f3c57901ec821feef3cda9cfbc424635dc2eda1c097da245e7616d9869"
+  },
+  "inputs": {
+    "developmentManifest": {
+      "path": "data/manifests/phone-photos-v1.json",
+      "sha256": "44e0f95efaa0afc1b51d1818b8485e90162c40d6cacc59e5f8cf0b6cd9e05e13"
+    },
+    "validationManifest": {
+      "path": "data/manifests/phone-validation-v1.json",
+      "sha256": "d461867923a346e17122ff35bef2bb7c284d9ed1354eab431060887200bfdd4f"
+    },
+    "developmentSquaresMetadata": {
+      "path": ".cache/phone-squares-v1/dataset.json",
+      "sha256": "0fa5e5ce915a71957abd998a41095c4c34e3f50d590c246351868c0261c9d33d"
+    }
+  },
+  "sourceRoot": "/home/nico/code/github/boardsnap",
+  "outputRoot": "/home/nico/code/github/boardsnap/.cache/phone-training-v1",
+  "splitCounts": {
+    "training": 160,
+    "validation": 30,
+    "evaluation": 0
+  },
+  "squareCounts": {
+    "training": 10240,
+    "validation": 1920
+  },
+  "reusedTrainingArchives": 160,
+  "newValidationArchives": 30,
+  "exclusions": [
+    {
+      "id": "phone-6830d9f5120e32a1",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-8.HEIC",
+      "reason": "Black king and white rook overlap on f7 during capture animation. No settled piece placement can be assigned from this photograph; retake after the animation finishes."
+    }
+  ],
+  "classBackgroundCounts": {
+    "training": {
+      "empty": {
+        "light": 3147,
+        "dark": 3123
+      },
+      "P": {
+        "light": 493,
+        "dark": 503
+      },
+      "N": {
+        "light": 91,
+        "dark": 102
+      },
+      "B": {
+        "light": 86,
+        "dark": 109
+      },
+      "R": {
+        "light": 116,
+        "dark": 159
+      },
+      "Q": {
+        "light": 123,
+        "dark": 27
+      },
+      "K": {
+        "light": 19,
+        "dark": 141
+      },
+      "p": {
+        "light": 552,
+        "dark": 457
+      },
+      "n": {
+        "light": 97,
+        "dark": 83
+      },
+      "b": {
+        "light": 110,
+        "dark": 113
+      },
+      "r": {
+        "light": 141,
+        "dark": 148
+      },
+      "q": {
+        "light": 23,
+        "dark": 117
+      },
+      "k": {
+        "light": 122,
+        "dark": 38
+      }
+    },
+    "validation": {
+      "empty": {
+        "light": 604,
+        "dark": 584
+      },
+      "P": {
+        "light": 85,
+        "dark": 93
+      },
+      "N": {
+        "light": 24,
+        "dark": 12
+      },
+      "B": {
+        "light": 17,
+        "dark": 23
+      },
+      "R": {
+        "light": 27,
+        "dark": 25
+      },
+      "Q": {
+        "light": 19,
+        "dark": 3
+      },
+      "K": {
+        "light": 4,
+        "dark": 26
+      },
+      "p": {
+        "light": 96,
+        "dark": 96
+      },
+      "n": {
+        "light": 15,
+        "dark": 24
+      },
+      "b": {
+        "light": 19,
+        "dark": 22
+      },
+      "r": {
+        "light": 21,
+        "dark": 28
+      },
+      "q": {
+        "light": 1,
+        "dark": 22
+      },
+      "k": {
+        "light": 28,
+        "dark": 2
+      }
+    }
+  },
+  "categories": {
+    "training": {
+      "chesscom": 55,
+      "lichess": 52,
+      "video": 53
+    },
+    "validation": {
+      "chesscom": 10,
+      "lichess": 10,
+      "video": 10
+    }
+  },
+  "balancing": {
+    "applied": false,
+    "augmentationApplied": false,
+    "policy": "All 64 cells retained; only future training may be balanced or augmented."
+  },
+  "classificationEvaluated": false,
+  "automaticDetectionEvaluated": false,
+  "trainingRun": false,
+  "checks": {
+    "archivesLoaded": 190,
+    "crossPartitionOverlap": false,
+    "sourceManifestsModified": false,
+    "existingSquareExportModified": false
+  },
+  "limitations": [
+    "Reviewed geometry isolates classification; no automatic photo detection is measured.",
+    "Source separation is user-reported, with conservative batch groups.",
+    "Only the two photo manifests are compared; this is not permission to mix arbitrary digital datasets.",
+    "This is a photographic pilot dataset, not a final independent evaluation."
+  ],
+  "codeSha256": {
+    "tools/build_phone_training_dataset.py": "0be7740f632d77dd7e05569e9978c25dec90851dc371b02a149ffae5400240c7",
+    "tools/build_phone_squares.py": "87ba00ff0fe9d2a415aa63c2eae72cdd1a91b56ec8144eb3be40c1f69860f6d3",
+    "tools/neural_data.py": "825cc064ec7d77b49075bf86657c6427d1a0e9a6f3484f28b818d1c08737a8ff"
+  }
+}

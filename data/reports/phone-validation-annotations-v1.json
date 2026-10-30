@@ -1,0 +1,91 @@
+{
+  "datasetId": "phone-validation-v1",
+  "reviewedPhotos": 30,
+  "reviewedPlacements": 30,
+  "reviewedCornerAnnotations": 30,
+  "distinctPlacements": 30,
+  "byCategory": {
+    "chesscom": 10,
+    "lichess": 10,
+    "video": 10
+  },
+  "orientations": {
+    "white-bottom": 22,
+    "black-bottom": 8
+  },
+  "labeledSquares": 1920,
+  "classBackgroundCounts": {
+    "empty": {
+      "light": 604,
+      "dark": 584
+    },
+    "P": {
+      "light": 85,
+      "dark": 93
+    },
+    "N": {
+      "light": 24,
+      "dark": 12
+    },
+    "B": {
+      "light": 17,
+      "dark": 23
+    },
+    "R": {
+      "light": 27,
+      "dark": 25
+    },
+    "Q": {
+      "light": 19,
+      "dark": 3
+    },
+    "K": {
+      "light": 4,
+      "dark": 26
+    },
+    "p": {
+      "light": 96,
+      "dark": 96
+    },
+    "n": {
+      "light": 15,
+      "dark": 24
+    },
+    "b": {
+      "light": 19,
+      "dark": 22
+    },
+    "r": {
+      "light": 21,
+      "dark": 28
+    },
+    "q": {
+      "light": 1,
+      "dark": 22
+    },
+    "k": {
+      "light": 28,
+      "dark": 2
+    }
+  },
+  "allClassesOnBothBackgrounds": true,
+  "developmentPositionFamilyOverlaps": [],
+  "developmentKnownGameOverlaps": [],
+  "developmentReference": "data/manifests/phone-photos-v1.json",
+  "developmentReferenceSha256": "44e0f95efaa0afc1b51d1818b8485e90162c40d6cacc59e5f8cf0b6cd9e05e13",
+  "filesVerified": true,
+  "readyForSquareExport": true,
+  "readyForValidation": false,
+  "pending": [
+    "validation square export and training-consumable index"
+  ],
+  "modelInferenceRun": false,
+  "independentFinalEvaluation": false,
+  "limitations": [
+    "Assistant visual review; not independent human verification.",
+    "Source separation is user-reported; most old game/video identities are unknown.",
+    "Overlap audit covers the pinned prior photo corpus, not every possible game position.",
+    "Known related photos stay together; 30 photos are not 30 independent sources."
+  ],
+  "manifestSha256": "d461867923a346e17122ff35bef2bb7c284d9ed1354eab431060887200bfdd4f"
+}

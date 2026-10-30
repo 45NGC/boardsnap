@@ -1,87 +1,142 @@
 {
-  "sampleCount": 90,
+  "sampleCount": 161,
   "categories": {
-    "chesscom": 30,
-    "lichess": 30,
-    "video": 30
+    "chesscom": 55,
+    "lichess": 53,
+    "video": 53
   },
   "labels": {
-    "visual-transcription": 17,
-    "pending": 72,
+    "visual-transcription": 160,
     "ambiguous": 1
   },
+  "reviewedCornerAnnotations": 161,
+  "placementsReviewedAfterRectification": 160,
+  "classificationExclusions": [
+    "lichess-photo-8.HEIC"
+  ],
   "cameras": {
-    "iPhone 8": 90
+    "iPhone 8": 161
   },
   "reviewedOrientations": {
-    "black-bottom": 7,
-    "None": 72,
-    "white-bottom": 11
+    "black-bottom": 72,
+    "white-bottom": 89
   },
   "exactDuplicateOriginals": 0,
-  "missingDirectReferences": 90,
+  "distinctTranscribedPositions": 153,
+  "repeatedPlacements": [
+    {
+      "piecePlacement": "2r2rk1/1b1nqppp/pp3B2/2pp4/8/bP2PNPB/P1RPNP1P/3Q1RK1",
+      "originals": [
+        "video-photo-37.HEIC",
+        "video-photo-40.HEIC"
+      ]
+    },
+    {
+      "piecePlacement": "3qrk1r/3Q4/p3p1n1/5p1p/8/7P/PPp3PB/4RRK1",
+      "originals": [
+        "video-photo-14.HEIC",
+        "video-photo-15.HEIC"
+      ]
+    },
+    {
+      "piecePlacement": "3qrk1r/4n3/p2B4/5Q1p/8/7P/PPp3P1/4R1K1",
+      "originals": [
+        "video-photo-16.HEIC",
+        "video-photo-18.HEIC"
+      ]
+    },
+    {
+      "piecePlacement": "6k1/2p4p/1p1p2r1/p4bq1/P1PP1p2/1P3P2/4PK1P/R2R1Q2",
+      "originals": [
+        "lichess-photo-31.HEIC",
+        "lichess-photo-39.HEIC"
+      ]
+    },
+    {
+      "piecePlacement": "r1bq1k1r/pp3pb1/4p1np/1B1pn3/3N4/1N4B1/PPP3PP/R2QR1K1",
+      "originals": [
+        "video-photo-9.HEIC",
+        "video-photo-10.HEIC"
+      ]
+    },
+    {
+      "piecePlacement": "r3r1k1/1ppnqppp/2np4/p3p3/2P1P1b1/PP1P4/1BQN1PPP/R3KB1R",
+      "originals": [
+        "video-photo-26.HEIC",
+        "video-photo-27.HEIC"
+      ]
+    },
+    {
+      "piecePlacement": "rnbqkbnr/pppp1ppp/8/4p3/4P3/2N5/PPPP1PPP/R1BQKBNR",
+      "originals": [
+        "chesscom-photo-26.HEIC",
+        "lichess-photo-1.HEIC"
+      ]
+    }
+  ],
+  "missingDirectReferences": 161,
   "splitCounts": {
-    "development": 90,
+    "development": 161,
     "training": 0,
     "validation": 0,
     "evaluation": 0
   },
   "transcribedClassBackgroundCounts": {
     "empty": {
-      "light": 332,
-      "dark": 346
+      "light": 3147,
+      "dark": 3123
     },
     "P": {
-      "light": 56,
-      "dark": 51
+      "light": 493,
+      "dark": 503
     },
     "N": {
-      "light": 9,
-      "dark": 11
+      "light": 91,
+      "dark": 102
     },
     "B": {
-      "light": 6,
-      "dark": 12
+      "light": 86,
+      "dark": 109
     },
     "R": {
-      "light": 13,
-      "dark": 15
+      "light": 116,
+      "dark": 159
     },
     "Q": {
-      "light": 11,
-      "dark": 4
+      "light": 123,
+      "dark": 27
     },
     "K": {
-      "light": 3,
-      "dark": 14
+      "light": 19,
+      "dark": 141
     },
     "p": {
-      "light": 62,
-      "dark": 43
+      "light": 552,
+      "dark": 457
     },
     "n": {
-      "light": 13,
-      "dark": 6
+      "light": 97,
+      "dark": 83
     },
     "b": {
-      "light": 12,
-      "dark": 11
+      "light": 110,
+      "dark": 113
     },
     "r": {
-      "light": 14,
-      "dark": 14
+      "light": 141,
+      "dark": 148
     },
     "q": {
-      "light": 2,
-      "dark": 11
+      "light": 23,
+      "dark": 117
     },
     "k": {
-      "light": 11,
-      "dark": 6
+      "light": 122,
+      "dark": 38
     }
   },
   "coverageNote": "Canonical light/dark square parity in visual transcriptions only; counts do not measure image readability or recognition accuracy.",
   "readyForTraining": false,
   "fileIntegrityChecked": true,
-  "manifestSha256": "26032ff3688c50ad8eec41d3e3ec46c0a3919ad89ec5f3f93258b753982a48f7"
+  "manifestSha256": "44e0f95efaa0afc1b51d1818b8485e90162c40d6cacc59e5f8cf0b6cd9e05e13"
 }

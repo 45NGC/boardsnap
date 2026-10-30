@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "phone-squares-v1",
+  "dataRole": "photo-development-squares",
+  "complete": true,
+  "readyForTraining": false,
+  "sourceManifestSha256": "44e0f95efaa0afc1b51d1818b8485e90162c40d6cacc59e5f8cf0b6cd9e05e13",
+  "sourceRoot": "/home/nico/code/github/boardsnap",
+  "outputRoot": "/home/nico/code/github/boardsnap/.cache/phone-squares-v1",
+  "classOrder": [
+    "empty",
+    "P",
+    "N",
+    "B",
+    "R",
+    "Q",
+    "K",
+    "p",
+    "n",
+    "b",
+    "r",
+    "q",
+    "k"
+  ],
+  "sourcePhotoCount": 161,
+  "writtenBoards": 160,
+  "squareCount": 10240,
+  "categories": {
+    "chesscom": 55,
+    "lichess": 52,
+    "video": 53
+  },
+  "exclusions": [
+    {
+      "id": "phone-6830d9f5120e32a1",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-8.HEIC",
+      "reason": "Black king and white rook overlap on f7 during capture animation. No settled piece placement can be assigned from this photograph; retake after the animation finishes."
+    }
+  ],
+  "splitCounts": {
+    "development": 160,
+    "training": 0,
+    "validation": 0,
+    "evaluation": 0
+  },
+  "classBackgroundCounts": {
+    "empty": {
+      "light": 3147,
+      "dark": 3123
+    },
+    "P": {
+      "light": 493,
+      "dark": 503
+    },
+    "N": {
+      "light": 91,
+      "dark": 102
+    },
+    "B": {
+      "light": 86,
+      "dark": 109
+    },
+    "R": {
+      "light": 116,
+      "dark": 159
+    },
+    "Q": {
+      "light": 123,
+      "dark": 27
+    },
+    "K": {
+      "light": 19,
+      "dark": 141
+    },
+    "p": {
+      "light": 552,
+      "dark": 457
+    },
+    "n": {
+      "light": 97,
+      "dark": 83
+    },
+    "b": {
+      "light": 110,
+      "dark": 113
+    },
+    "r": {
+      "light": 141,
+      "dark": 148
+    },
+    "q": {
+      "light": 23,
+      "dark": 117
+    },
+    "k": {
+      "light": 122,
+      "dark": 38
+    }
+  },
+  "preprocessing": {
+    "squareSize": 64,
+    "colorMode": "RGB",
+    "dtype": "uint8",
+    "rectification": "reviewed full-image quadrilateral to 512x512, OpenCV INTER_LINEAR",
+    "ordering": "a8 to h1; reorder cells for black-bottom without rotating pixels",
+    "orientation": "explicit reviewed view; no automatic orientation or detection"
+  },
+  "balancing": {
+    "applied": false,
+    "policy": "retain all 64 cells from every valid board"
+  },
+  "classificationEvaluated": false,
+  "automaticDetectionEvaluated": false,
+  "indexes": {
+    "verified": {
+      "path": "verified.jsonl",
+      "sha256": "5ece7325e3b9f6224caf707fae3ba65ddb77b84c6fd6300e86a0d5a66bec529d"
+    }
+  },
+  "partitionPlan": {
+    "path": "partition-plan.json",
+    "sha256": "f9a03b0416cab9a00d1d4f85757a9d0eb4858f3f1d675b10ab0441cda0dff5c3",
+    "status": "awaiting-independent-validation-sources"
+  },
+  "codeSha256": {
+    "tools/build_phone_squares.py": "87ba00ff0fe9d2a415aa63c2eae72cdd1a91b56ec8144eb3be40c1f69860f6d3",
+    "tools/review_phone_geometry.py": "0cdd30ebd4b6d2e860553bd7e467d17e6f42a59f17e25249e25ef4a917ae4eae",
+    "tools/build_square_dataset.py": "d1f66ccba2e07f382884d1beadb8d05c9566332ce88b61d58ec86f422d623630"
+  }
+}

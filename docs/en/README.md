@@ -1,8 +1,10 @@
 # BoardSnap
 
-The [initial photograph corpus](phone-photo-corpus.md) organizes 90 screen HEICs
-and documents an 18-photo review pilot. Pending labels and partitions remain
-outside training; photographic support is not yet claimed.
+[First photographic classifier](phone-training.md): training is complete using the [reviewed dataset](phone-training-data.md). It recognizes 19/30 validation photos with reviewed corners, versus 18/30 before adaptation. Three digital boards regress; the experimental photo model does not replace the digital candidate. Automatic photographic detection remains pending.
+
+The [initial photograph corpus](phone-photo-corpus.md) organizes 161 screen HEICs:
+160 visually reviewed placements, one ambiguous capture animation and 161
+four-corner annotations with rectified comparison views. The usable original group is assigned to training in a separate export, with 30 new photographs held in validation; photographic support is not yet claimed.
 
 The [30-screenshot geometry review](digital-geometry-review.md) adds recovery of
 small unequal axis scales: 30/30 localized boards and 29/30 exact positions with

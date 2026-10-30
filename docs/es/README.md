@@ -1,9 +1,10 @@
 # BoardSnap
 
-El [corpus fotográfico inicial](phone-photo-corpus.md) organiza 90 HEIC de
-pantallas y documenta un piloto de 18 revisiones. Las etiquetas y particiones
-pendientes se mantienen fuera del entrenamiento; todavía no declara
-compatibilidad con fotografías.
+[Primer clasificador fotográfico](phone-training.md): entrenamiento completado con el [conjunto revisado](phone-training-data.md). Acierta 19/30 fotos de validación con esquinas revisadas, frente a 18/30 antes de adaptarlo. Empeoran tres tableros digitales; el modelo fotográfico experimental no sustituye al candidato digital. La detección automática en fotos sigue pendiente.
+
+El [corpus fotográfico inicial](phone-photo-corpus.md) organiza 161 HEIC de
+pantallas: 160 colocaciones revisadas visualmente, una animación ambigua y
+161 anotaciones de esquinas con vistas rectificadas de comparación. El grupo original utilizable se asigna a entrenamiento en una exportación separada, con 30 fotos nuevas en validación; todavía no se declara compatibilidad con fotografías.
 
 La [revisión geométrica de 30 capturas](digital-geometry-review.md) añade recuperación
 de pequeñas diferencias de escala entre ejes: 30/30 tableros localizados y 29/30
