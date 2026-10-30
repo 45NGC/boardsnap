@@ -6,6 +6,8 @@ El primer entrenamiento fotográfico está terminado. Los pesos experimentales s
 `.cache/neural-phone-v1/best.pt`. **No sustituyen** al candidato digital
 `.cache/neural-tolerance-v1-conservative/best.pt`; v8 tampoco se ha modificado.
 Este entrenamiento no implementa la detección automática con perspectiva.
+El posterior [diagnóstico del clasificador](phone-classifier-analysis.md) completa
+el desglose por clase, apariencia y condición reutilizando estas predicciones.
 
 ## Datos y selección
 

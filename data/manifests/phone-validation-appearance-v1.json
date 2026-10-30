@@ -1,0 +1,341 @@
+{
+  "schemaVersion": 1,
+  "dataRole": "post-hoc-validation-appearance-review",
+  "reviewedBy": "assistant",
+  "reviewedOn": "2026-10-30",
+  "manifestSha256": "d461867923a346e17122ff35bef2bb7c284d9ed1354eab431060887200bfdd4f",
+  "predictionReportSha256": "3cdd2b80fbe6534b4beff0c6a631fa535d797e83329d2cc9deb62d23edde5db1",
+  "method": "Visual review of all 30 rectified photographs, video source previews and all 49 candidate error crops. No model inference or label changes.",
+  "limitations": [
+    "These are local descriptive appearance groups, not verified official theme identifiers. Similar groups across platforms are not asserted to be identical.",
+    "Appearance is reviewed after validation was consulted; these are descriptive slices, not independent acceptance tests.",
+    "Original grouping, partitions, placements, corners and condition annotations remain unchanged.",
+    "Background, design, source and optical artifacts covary; this review does not establish error causation."
+  ],
+  "pieceAppearances": {
+    "cc-classic": {
+      "description": "Detailed conventional silhouettes; local visual group, official theme unverified",
+      "officialTheme": null
+    },
+    "cc-flat": {
+      "description": "Flat silhouettes with large slotted bishops",
+      "officialTheme": null
+    },
+    "cc-shaded": {
+      "description": "Shaded illustrated pieces, outlined brick rooks and rounded bishops",
+      "officialTheme": null
+    },
+    "cc-thin-stem": {
+      "description": "Thin-stem pawns with broad caps, fine outlines and decorative knights",
+      "officialTheme": null
+    },
+    "lc-classic-a": {
+      "description": "Conventional outlined pieces; first three direct Lichess pairs",
+      "officialTheme": null
+    },
+    "lc-classic-b": {
+      "description": "Conventional detailed pieces; separate conservative visual group",
+      "officialTheme": null
+    },
+    "lc-rounded-king": {
+      "description": "Shaded pieces with a large rounded white king crown",
+      "officialTheme": null
+    },
+    "video-flat-brown": {
+      "description": "Flat silhouettes in the brown video overlay; strong interference limits identification",
+      "officialTheme": null
+    },
+    "video-flat-green": {
+      "description": "Green video diagram with strong interference; official identity unresolved",
+      "officialTheme": null
+    },
+    "video-classic-a": {
+      "description": "Detailed conventional silhouettes in two Naroditsky scenes",
+      "officialTheme": null
+    },
+    "video-classic-b": {
+      "description": "Conventional outlined silhouettes in Lichess video scenes",
+      "officialTheme": null
+    },
+    "video-chessbase": {
+      "description": "Conventional pieces in the ChessBase video scene",
+      "officialTheme": null
+    },
+    "video-flat-vibes": {
+      "description": "Flat silhouettes in the Chess Vibes video scene",
+      "officialTheme": null
+    }
+  },
+  "samples": [
+    {
+      "photoId": "chesscom-img_5393",
+      "imageSha256": "be4f178607778d8b8711a00ba9d6233648e3ccdf8877059e5001b7604543c0b9",
+      "pieceAppearance": "cc-classic",
+      "boardAppearance": "plain-brown",
+      "displayedPlatform": "chesscom",
+      "interface": "browser-page",
+      "platformEvidence": "Direct platform folder and visible interface"
+    },
+    {
+      "photoId": "chesscom-img_5394",
+      "imageSha256": "012986da922195f3c99a9044ac816cb92b574bf05eedbaa9c45a881c205e1ed8",
+      "pieceAppearance": "cc-classic",
+      "boardAppearance": "plain-brown",
+      "displayedPlatform": "chesscom",
+      "interface": "browser-page",
+      "platformEvidence": "Direct platform folder and visible interface"
+    },
+    {
+      "photoId": "chesscom-img_5395",
+      "imageSha256": "5e8695bcc5ddffaf1a0d8c2829ca730a43ace7dc61c6fdeb3e0ed74f300c5d13",
+      "pieceAppearance": "cc-flat",
+      "boardAppearance": "plain-green",
+      "displayedPlatform": "chesscom",
+      "interface": "browser-page",
+      "platformEvidence": "Direct platform folder and visible interface"
+    },
+    {
+      "photoId": "chesscom-img_5396",
+      "imageSha256": "efe67ecbc84a197e572443221767542e4048959f77e601a3632d09b036204c49",
+      "pieceAppearance": "cc-flat",
+      "boardAppearance": "plain-green",
+      "displayedPlatform": "chesscom",
+      "interface": "browser-page",
+      "platformEvidence": "Direct platform folder and visible interface"
+    },
+    {
+      "photoId": "chesscom-img_5397",
+      "imageSha256": "b0dd3f9d186f6ee68b874f7f8420de261fbbeb5bb0f9f22d26a3b61760a92e89",
+      "pieceAppearance": "cc-shaded",
+      "boardAppearance": "wood-texture",
+      "displayedPlatform": "chesscom",
+      "interface": "browser-page",
+      "platformEvidence": "Direct platform folder and visible interface"
+    },
+    {
+      "photoId": "chesscom-img_5398",
+      "imageSha256": "3f3cd9a92ce1dc6e7e356237ebc61e40675825d1d65aea962a7beff09669ad20",
+      "pieceAppearance": "cc-shaded",
+      "boardAppearance": "wood-texture",
+      "displayedPlatform": "chesscom",
+      "interface": "browser-page",
+      "platformEvidence": "Direct platform folder and visible interface"
+    },
+    {
+      "photoId": "chesscom-img_5399",
+      "imageSha256": "959470d453e26bbae09e4d7ae823907c8a1969d578316a42436d2f45265aade5",
+      "pieceAppearance": "cc-flat",
+      "boardAppearance": "plain-blue",
+      "displayedPlatform": "chesscom",
+      "interface": "browser-page",
+      "platformEvidence": "Direct platform folder and visible interface"
+    },
+    {
+      "photoId": "chesscom-img_5400",
+      "imageSha256": "9fbbaeb4a2c6c766d6fa57a99e3a0f1a6a83e118c3b6abbc566b851f16eb75cb",
+      "pieceAppearance": "cc-flat",
+      "boardAppearance": "plain-blue",
+      "displayedPlatform": "chesscom",
+      "interface": "browser-page",
+      "platformEvidence": "Direct platform folder and visible interface"
+    },
+    {
+      "photoId": "chesscom-img_5401",
+      "imageSha256": "7b21a0d24c7ea9d6bb16d371cb9cc7b04cfcd67e22645f00bb54b566c2ae2214",
+      "pieceAppearance": "cc-thin-stem",
+      "boardAppearance": "plain-purple",
+      "displayedPlatform": "chesscom",
+      "interface": "browser-page",
+      "platformEvidence": "Direct platform folder and visible interface"
+    },
+    {
+      "photoId": "chesscom-img_5402",
+      "imageSha256": "98511f13f42d4c5ce06bbe2ee3d27ddfc5dbed0f90d39891a868fd260b5db46f",
+      "pieceAppearance": "cc-thin-stem",
+      "boardAppearance": "plain-purple",
+      "displayedPlatform": "chesscom",
+      "interface": "browser-page",
+      "platformEvidence": "Direct platform folder and visible interface"
+    },
+    {
+      "photoId": "lichess-img_5383",
+      "imageSha256": "67ef2f6ccdf8af11322d0c3e79baf9e8d816e28f840dd7a3e3c797f5860e8986",
+      "pieceAppearance": "lc-classic-a",
+      "boardAppearance": "plain-brown",
+      "displayedPlatform": "lichess",
+      "interface": "browser-page",
+      "platformEvidence": "Direct platform folder and visible interface"
+    },
+    {
+      "photoId": "lichess-img_5384",
+      "imageSha256": "3ed15840dd22f11030b573b94c29e263b9182843fc9d00dc56596e78d8b89e10",
+      "pieceAppearance": "lc-classic-a",
+      "boardAppearance": "plain-brown",
+      "displayedPlatform": "lichess",
+      "interface": "browser-page",
+      "platformEvidence": "Direct platform folder and visible interface"
+    },
+    {
+      "photoId": "lichess-img_5385",
+      "imageSha256": "07bbec163906b36ee348ceac8067e9cd7449589db914c5b203b2093e51f9f5db",
+      "pieceAppearance": "lc-classic-a",
+      "boardAppearance": "plain-blue-gray",
+      "displayedPlatform": "lichess",
+      "interface": "browser-page",
+      "platformEvidence": "Direct platform folder and visible interface"
+    },
+    {
+      "photoId": "lichess-img_5386",
+      "imageSha256": "5c12148c2e85166ac672ca46a5e8181ebc9bf4cb86256619a9686a5addbbdee6",
+      "pieceAppearance": "lc-classic-a",
+      "boardAppearance": "plain-blue-gray",
+      "displayedPlatform": "lichess",
+      "interface": "browser-page",
+      "platformEvidence": "Direct platform folder and visible interface"
+    },
+    {
+      "photoId": "lichess-img_5387",
+      "imageSha256": "c7845f970ec1ad2f9e6f095af97a029126b25575f4ef46e3c8ebdee2551b82fc",
+      "pieceAppearance": "lc-classic-a",
+      "boardAppearance": "wood-texture",
+      "displayedPlatform": "lichess",
+      "interface": "browser-page",
+      "platformEvidence": "Direct platform folder and visible interface"
+    },
+    {
+      "photoId": "lichess-img_5388",
+      "imageSha256": "6ac52d1a7d5b7cc13b686270d42c69ceb2bbf43e67ffbc82f885d73048114f7b",
+      "pieceAppearance": "lc-classic-a",
+      "boardAppearance": "wood-texture",
+      "displayedPlatform": "lichess",
+      "interface": "browser-page",
+      "platformEvidence": "Direct platform folder and visible interface"
+    },
+    {
+      "photoId": "lichess-img_5389",
+      "imageSha256": "24afc4d3c6fb202f55764592f6d362972572b2160b836bdbe964aee4695b1040",
+      "pieceAppearance": "lc-classic-b",
+      "boardAppearance": "wood-texture",
+      "displayedPlatform": "lichess",
+      "interface": "browser-page",
+      "platformEvidence": "Direct platform folder and visible interface"
+    },
+    {
+      "photoId": "lichess-img_5390",
+      "imageSha256": "a03cfa6333c0bbcc747022f68711eb59788b5fcb7f81847ca7f3831a4093368c",
+      "pieceAppearance": "lc-classic-b",
+      "boardAppearance": "wood-texture",
+      "displayedPlatform": "lichess",
+      "interface": "browser-page",
+      "platformEvidence": "Direct platform folder and visible interface"
+    },
+    {
+      "photoId": "lichess-img_5391",
+      "imageSha256": "25a83a9ed2ab90b72573723aa1de3e9458d89cc6e870e79672ac1abdf90890c7",
+      "pieceAppearance": "lc-rounded-king",
+      "boardAppearance": "wood-texture",
+      "displayedPlatform": "lichess",
+      "interface": "browser-page",
+      "platformEvidence": "Direct platform folder and visible interface"
+    },
+    {
+      "photoId": "lichess-img_5392",
+      "imageSha256": "26cdae8f6e5db158b6a02eb7868c390d224e6bf8cb8cb1d513ecb97a86570b67",
+      "pieceAppearance": "lc-rounded-king",
+      "boardAppearance": "wood-texture",
+      "displayedPlatform": "lichess",
+      "interface": "browser-page",
+      "platformEvidence": "Direct platform folder and visible interface"
+    },
+    {
+      "photoId": "video-img_5403",
+      "imageSha256": "c3f93f8d148fc5be94eab1120f87d618bc2a6399db95e8b9ca0dcbfa95b9793d",
+      "pieceAppearance": "video-flat-brown",
+      "boardAppearance": "plain-brown",
+      "displayedPlatform": "unknown",
+      "interface": "video",
+      "platformEvidence": "Video overlay does not establish its rendering application"
+    },
+    {
+      "photoId": "video-img_5404",
+      "imageSha256": "1cf23f532ce646af683fa4398f7c1a858c9897f2c079078174d52703ec479f94",
+      "pieceAppearance": "video-flat-green",
+      "boardAppearance": "plain-green",
+      "displayedPlatform": "unknown",
+      "interface": "video",
+      "platformEvidence": "Video overlay does not establish its rendering application"
+    },
+    {
+      "photoId": "video-img_5405",
+      "imageSha256": "dfc0d503b51a7ad13b2923bb7e6007c7997d54bb52af19de5fe782a9d702d143",
+      "pieceAppearance": "video-classic-a",
+      "boardAppearance": "wood-texture",
+      "displayedPlatform": "unknown",
+      "interface": "video",
+      "platformEvidence": "Video overlay does not establish its rendering application"
+    },
+    {
+      "photoId": "video-img_5406",
+      "imageSha256": "4ce3e8916c430c66d940bcfeda14fca1d6e93a91dee849880ecbcc6fc5b18628",
+      "pieceAppearance": "video-classic-a",
+      "boardAppearance": "plain-blue",
+      "displayedPlatform": "unknown",
+      "interface": "video",
+      "platformEvidence": "Video overlay does not establish its rendering application"
+    },
+    {
+      "photoId": "video-img_5407",
+      "imageSha256": "4c5d1f3a2080782ec9e42db097da2c581b7f92098479b2f3495880445748d016",
+      "pieceAppearance": "video-classic-b",
+      "boardAppearance": "plain-brown",
+      "displayedPlatform": "lichess",
+      "interface": "video",
+      "platformEvidence": "Existing visible-interface annotation"
+    },
+    {
+      "photoId": "video-img_5409",
+      "imageSha256": "04e055ce35049dc73c73ce1e5514fcd2f7e9b06b4a55f1f5d773f41315a20adf",
+      "pieceAppearance": "video-classic-b",
+      "boardAppearance": "plain-blue-gray",
+      "displayedPlatform": "lichess",
+      "interface": "video",
+      "platformEvidence": "Existing visible-interface annotation"
+    },
+    {
+      "photoId": "video-img_5410",
+      "imageSha256": "d5484d65687036d28d8bcfe21ed5ef28942badb392fd8a72c26708bdd6fbf288",
+      "pieceAppearance": "video-classic-b",
+      "boardAppearance": "plain-blue-gray",
+      "displayedPlatform": "lichess",
+      "interface": "video",
+      "platformEvidence": "Existing visible-interface annotation"
+    },
+    {
+      "photoId": "video-img_5411",
+      "imageSha256": "0a83a9cd4d0e5fe6dfcf283c7eebf7905625de0f0112254bfb3f02b2b53d28cf",
+      "pieceAppearance": "video-chessbase",
+      "boardAppearance": "wood-texture",
+      "displayedPlatform": "chessbase",
+      "interface": "video",
+      "platformEvidence": "Existing visible-interface annotation"
+    },
+    {
+      "photoId": "video-img_5412",
+      "imageSha256": "9ca6368214811401251fc0d607ac9ce0342bab246f2804489efd58b38219122d",
+      "pieceAppearance": "video-classic-b",
+      "boardAppearance": "plain-blue-gray",
+      "displayedPlatform": "lichess",
+      "interface": "video",
+      "platformEvidence": "Existing visible-interface annotation"
+    },
+    {
+      "photoId": "video-img_5413",
+      "imageSha256": "3367ad672f0d20221d6a8a5d1fb13025efd318a1a8d834fedc404f0084e6e46b",
+      "pieceAppearance": "video-flat-vibes",
+      "boardAppearance": "plain-green",
+      "displayedPlatform": "unknown",
+      "interface": "video",
+      "platformEvidence": "Video overlay does not establish its rendering application"
+    }
+  ]
+}

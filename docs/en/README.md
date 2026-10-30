@@ -1,5 +1,7 @@
 # BoardSnap
 
+The [photo classifier diagnosis](phone-classifier-analysis.md) breaks down the existing validation by piece, observed appearance and photographic condition. It identifies targeted data gaps without new training or inference; general photographic compatibility remains unproven.
+
 [First photographic classifier](phone-training.md): training is complete using the [reviewed dataset](phone-training-data.md). It recognizes 19/30 validation photos with reviewed corners, versus 18/30 before adaptation. Three digital boards regress; the experimental photo model does not replace the digital candidate. Automatic photographic detection remains pending.
 
 The [initial photograph corpus](phone-photo-corpus.md) organizes 161 screen HEICs:

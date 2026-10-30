@@ -13,6 +13,9 @@ loader-compatible indexes. The [first photographic classifier](docs/en/phone-tra
 has been trained: 19/30 validation photos are correct using reviewed corners,
 versus 18/30 before adaptation. Three digital validation boards regress, so the
 photo model remains experimental and separate. Automatic photo detection is pending.
+The [photo classifier diagnosis](docs/en/phone-classifier-analysis.md) identifies
+which observed appearances fail, class/color confusions and targeted data priorities
+using the existing validation predictions, without retraining.
 
 BoardSnap is a Python project for recognizing digital chessboards and book
 diagrams and returning piece placement to the Flutter app **chess-scanner**.

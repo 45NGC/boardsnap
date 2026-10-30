@@ -6,6 +6,8 @@ The first photographic fine-tuning run is complete. Its experimental weights are
 `.cache/neural-phone-v1/best.pt`. They **do not replace** the digital candidate at
 `.cache/neural-tolerance-v1-conservative/best.pt`; v8 is also unchanged.
 Automatic perspective detection has not been implemented by this training step.
+The subsequent [classifier diagnosis](phone-classifier-analysis.md) completes
+the class, appearance and condition breakdown using these same saved predictions.
 
 ## Data and selection
 
