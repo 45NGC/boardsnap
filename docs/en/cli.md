@@ -9,6 +9,16 @@ in the CLI, and the core does not import adapters or depend on Flutter or a web 
 
 ## Install and run
 
+For screen photographs, the [photo pipeline](photo-pipeline.md) adds corner
+detection and perspective correction:
+
+```bash
+boardsnap "my-photo.jpg" --input-type photo --model .cache/neural-phone-v1/best.pt --orientation white-bottom
+```
+
+It requires an explicit view (`white-bottom` or `black-bottom`) and a neural model;
+`auto` and `--profile` are not supported. Without `--input-type photo`, the digital path is preserved.
+
 From the repository root, using the existing environment:
 
 ```bash

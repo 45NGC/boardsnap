@@ -9,6 +9,16 @@ adaptadores ni depende de Flutter o de un framework web.
 
 ## Instalación y uso
 
+Para fotografías de pantallas, el [recorrido fotográfico](photo-pipeline.md)
+añade detección de esquinas y corrección de perspectiva:
+
+```bash
+boardsnap "mi-foto.jpg" --input-type photo --model .cache/neural-phone-v1/best.pt --orientation white-bottom
+```
+
+Exige orientación explícita (`white-bottom` o `black-bottom`) y un modelo neuronal;
+no admite `auto` ni `--profile`. Sin `--input-type photo` se conserva el recorrido digital.
+
 Desde la raíz del repositorio, con el entorno existente:
 
 ```bash

@@ -28,12 +28,18 @@ def main(argv: list[str] | None = None) -> int:
     backend.add_argument("--model", help="Multi-style neural model path (otherwise BOARDSNAP_MODEL; unconfigured legacy fallback).")
     parser.add_argument("--orientation", choices=("white-bottom", "black-bottom", "auto"), default="auto",
                         help="Image view, not side to move; explicit values override coordinates (default: auto).")
+    parser.add_argument("--input-type", choices=("digital", "photo"), default="digital",
+                        help="Use photo for automatic perspective correction; requires a model and explicit orientation.")
     args = parser.parse_args(argv)
+    if args.input_type == "photo" and (args.orientation == "auto" or args.profile is not None):
+        parser.error("--input-type photo requires --orientation white-bottom or black-bottom and cannot use --profile.")
 
     exit_code = 0
     with redirect_stdout(sys.stderr):
         try:
             options = {"orientation": args.orientation}
+            if args.input_type == "photo":
+                options["input_type"] = "photo"
             if args.profile:
                 options["profile"] = args.profile
             if args.model is not None:

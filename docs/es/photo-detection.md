@@ -9,7 +9,7 @@ posiciones esperadas, anotaciones, nombres de archivo ni colores de temas conoci
 
 El detector digital, los modelos de piezas y el comportamiento de `boardsnap`
 permanecen intactos. Esta etapa mide **localización**, no reconocimiento completo:
-la conexión automática con el clasificador fotográfico corresponde al siguiente paso.
+la conexión posterior con el clasificador se documenta en el [recorrido fotográfico](photo-pipeline.md).
 
 ## Cómo funciona
 
@@ -125,6 +125,6 @@ extremas, reflejos intensos, oclusión importante, muaré severo, casillas de ba
 contraste o distorsión de lente. Un patrón ajedrezado decorativo de 8×8 puede ser
 geométricamente indistinguible de un tablero vacío.
 
-El siguiente paso es integrar explícitamente este detector y la rectificación
-en el recorrido fotográfico, comprobando posiciones completas y preservando el
-recorrido digital. No se declara todavía aceptada la versión fotográfica.
+El [recorrido fotográfico](photo-pipeline.md) ya integra este detector y la
+rectificación mediante `--input-type photo`, conservando el recorrido digital.
+No se declara todavía aceptada la versión fotográfica.

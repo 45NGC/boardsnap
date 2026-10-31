@@ -4,7 +4,7 @@ El [diagnóstico del clasificador fotográfico](phone-classifier-analysis.md) de
 
 [Primer clasificador fotográfico](phone-training.md): entrenamiento completado con el [conjunto revisado](phone-training-data.md). Acierta 19/30 fotos de validación con esquinas revisadas, frente a 18/30 antes de adaptarlo. Empeoran tres tableros digitales; el modelo fotográfico experimental no sustituye al candidato digital.
 
-El [detector fotográfico](photo-detection.md) ya localiza las cuatro esquinas dentro del criterio geométrico en 132/161 fotos de desarrollo y 27/30 de validación. Rechaza los 18 controles negativos construidos. Su comando de diagnóstico guarda el contorno y el tablero rectificado; queda pendiente conectarlo automáticamente con el reconocimiento.
+El [detector fotográfico](photo-detection.md) ya localiza las cuatro esquinas dentro del criterio geométrico en 132/161 fotos de desarrollo y 27/30 de validación. Rechaza los 18 controles negativos construidos. Su comando de diagnóstico guarda el contorno y el tablero rectificado. El [recorrido fotográfico automático](photo-pipeline.md) ya lo conecta con la clasificación mediante `--input-type photo`, un modelo configurado y orientación explícita.
 
 El [corpus fotográfico inicial](phone-photo-corpus.md) organiza 161 HEIC de
 pantallas: 160 colocaciones revisadas visualmente, una animación ambigua y

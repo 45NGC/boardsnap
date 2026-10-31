@@ -1,0 +1,2052 @@
+{
+  "schemaVersion": 1,
+  "scope": "Consulted validation, full photo CLI versus annotated geometry; no training or final evaluation.",
+  "finalEvaluationAccessed": false,
+  "manifest": "/home/nico/code/github/boardsnap/data/manifests/phone-validation-v1.json",
+  "manifestSha256": "d461867923a346e17122ff35bef2bb7c284d9ed1354eab431060887200bfdd4f",
+  "model": ".cache/neural-phone-v1/best.pt",
+  "modelSha256": "bca969fc9fb42811a5daa4c11b968c68f805cb0b1404604b7fb6d5486dc8c60e",
+  "detectionReport": "/home/nico/code/github/boardsnap/data/reports/photo-detection-validation-v1.json",
+  "detectionReportSha256": "2185fdd3c00d3e5c49f357ad5ce674e852373cfca0a16431841b11a287c81fd1",
+  "codeSha256": {
+    "src/boardsnap/photo_detection.py": "bc13c44c6f62b047fb32a91d2ff2a00763011fcf3b8cb7e76b58dbca4e234d0e",
+    "tools/evaluate_photo_pipeline.py": "12c3e173f373497aa4edf71d8600baeb08d2517ccd87e6538cf7e0ede1666cd7",
+    "src/boardsnap/rectification.py": "9609048b79395f64a9d40f4f5d3c5bc850117ac4c67d8aa51798a06e5ae8eec3",
+    "src/boardsnap/pipeline.py": "919abbf44c030585383721ba1850e5af9e848a9c8c16d4f76a7be514e7cf9ce3",
+    "src/boardsnap/neural.py": "a1ec8a7254f8b8d14ea223d8a0118ac6be8c0afc5d8b5eddfc2e3acb81b1f125",
+    "src/boardsnap/adapters/cli.py": "7455ff6fe03a4b836aefd66a7e62fdff37c0ce05be938471bbf9f1631a8946b8",
+    "src/boardsnap/image_input.py": "4cb87bbd4fab43ed315cb3c0f258ed9c5a8f5758124c72a3eb8a8e964d66764e",
+    "src/boardsnap/segmentation.py": "eb0eccb596491a4ea1602b90baa8e491ff6f53932e88536495678fd59c603127",
+    "src/boardsnap/orientation.py": "39d0297413484a1980f6564f3baea140af1278b2dbaed1a5a8d62903cf0c1926",
+    "src/boardsnap/output.py": "64ed8612dae9b528d08963ae1db1fc9127802c7f3ba3140bcdc329bf4b4645b0"
+  },
+  "versions": {
+    "torch": "2.14.1+cpu"
+  },
+  "threads": 4,
+  "timingScope": "Each CLI process includes Python/PyTorch startup, model loading, decoding, detection, rectification and classification.",
+  "summary": {
+    "images": 30,
+    "detected": 27,
+    "annotatedExactBoards": 19,
+    "automaticExactBoards": 19
+  },
+  "byCategory": {
+    "chesscom": {
+      "images": 10,
+      "detected": 10,
+      "annotatedExactBoards": 3,
+      "automaticExactBoards": 5
+    },
+    "lichess": {
+      "images": 10,
+      "detected": 10,
+      "annotatedExactBoards": 8,
+      "automaticExactBoards": 8
+    },
+    "video": {
+      "images": 10,
+      "detected": 7,
+      "annotatedExactBoards": 8,
+      "automaticExactBoards": 6
+    }
+  },
+  "annotatedClassification": {
+    "images": 30,
+    "positions": 30,
+    "exactBoards": 19,
+    "exactPositionsAllVariants": 19,
+    "correctSquares": 1871,
+    "totalSquares": 1920,
+    "squareAccuracy": 0.9744791666666667,
+    "macroRecall": 0.9415079932858833,
+    "classes": {
+      "empty": {
+        "total": 1188,
+        "correct": 1185,
+        "predicted": 1211,
+        "recall": 0.9974747474747475,
+        "precision": 0.9785301403798513,
+        "f1": 0.9879116298457691
+      },
+      "P": {
+        "total": 178,
+        "correct": 167,
+        "predicted": 168,
+        "recall": 0.9382022471910112,
+        "precision": 0.9940476190476191,
+        "f1": 0.9653179190751445
+      },
+      "N": {
+        "total": 36,
+        "correct": 34,
+        "predicted": 40,
+        "recall": 0.9444444444444444,
+        "precision": 0.85,
+        "f1": 0.8947368421052632
+      },
+      "B": {
+        "total": 40,
+        "correct": 39,
+        "predicted": 43,
+        "recall": 0.975,
+        "precision": 0.9069767441860465,
+        "f1": 0.9397590361445783
+      },
+      "R": {
+        "total": 52,
+        "correct": 49,
+        "predicted": 54,
+        "recall": 0.9423076923076923,
+        "precision": 0.9074074074074074,
+        "f1": 0.9245283018867925
+      },
+      "Q": {
+        "total": 22,
+        "correct": 21,
+        "predicted": 22,
+        "recall": 0.9545454545454546,
+        "precision": 0.9545454545454546,
+        "f1": 0.9545454545454546
+      },
+      "K": {
+        "total": 30,
+        "correct": 28,
+        "predicted": 28,
+        "recall": 0.9333333333333333,
+        "precision": 1.0,
+        "f1": 0.9655172413793104
+      },
+      "p": {
+        "total": 192,
+        "correct": 178,
+        "predicted": 179,
+        "recall": 0.9270833333333334,
+        "precision": 0.994413407821229,
+        "f1": 0.9595687331536388
+      },
+      "n": {
+        "total": 39,
+        "correct": 36,
+        "predicted": 39,
+        "recall": 0.9230769230769231,
+        "precision": 0.9230769230769231,
+        "f1": 0.9230769230769231
+      },
+      "b": {
+        "total": 41,
+        "correct": 36,
+        "predicted": 37,
+        "recall": 0.8780487804878049,
+        "precision": 0.972972972972973,
+        "f1": 0.9230769230769231
+      },
+      "r": {
+        "total": 49,
+        "correct": 49,
+        "predicted": 49,
+        "recall": 1.0,
+        "precision": 1.0,
+        "f1": 1.0
+      },
+      "q": {
+        "total": 23,
+        "correct": 19,
+        "predicted": 20,
+        "recall": 0.8260869565217391,
+        "precision": 0.95,
+        "f1": 0.8837209302325582
+      },
+      "k": {
+        "total": 30,
+        "correct": 30,
+        "predicted": 30,
+        "recall": 1.0,
+        "precision": 1.0,
+        "f1": 1.0
+      }
+    },
+    "confusionRowsExpectedColumnsPredicted": [
+      [
+        1185,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        5,
+        167,
+        1,
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        0,
+        34,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        39,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0,
+        0,
+        49,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        0,
+        0,
+        21,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        28,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        14,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        178,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        36,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        36,
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        49,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        1,
+        0,
+        19,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        30,
+        0
+      ]
+    ],
+    "lastConfusionColumn": "processing-error"
+  },
+  "automaticClassificationOnDetectedOnly": {
+    "images": 27,
+    "positions": 27,
+    "exactBoards": 19,
+    "exactPositionsAllVariants": 19,
+    "correctSquares": 1697,
+    "totalSquares": 1728,
+    "squareAccuracy": 0.9820601851851852,
+    "macroRecall": 0.9612613237922686,
+    "classes": {
+      "empty": {
+        "total": 1062,
+        "correct": 1060,
+        "predicted": 1078,
+        "recall": 0.9981167608286252,
+        "precision": 0.9833024118738405,
+        "f1": 0.9906542056074766
+      },
+      "P": {
+        "total": 165,
+        "correct": 161,
+        "predicted": 161,
+        "recall": 0.9757575757575757,
+        "precision": 1.0,
+        "f1": 0.9877300613496932
+      },
+      "N": {
+        "total": 32,
+        "correct": 31,
+        "predicted": 36,
+        "recall": 0.96875,
+        "precision": 0.8611111111111112,
+        "f1": 0.9117647058823529
+      },
+      "B": {
+        "total": 36,
+        "correct": 36,
+        "predicted": 40,
+        "recall": 1.0,
+        "precision": 0.9,
+        "f1": 0.9473684210526315
+      },
+      "R": {
+        "total": 47,
+        "correct": 45,
+        "predicted": 46,
+        "recall": 0.9574468085106383,
+        "precision": 0.9782608695652174,
+        "f1": 0.967741935483871
+      },
+      "Q": {
+        "total": 20,
+        "correct": 20,
+        "predicted": 21,
+        "recall": 1.0,
+        "precision": 0.9523809523809523,
+        "f1": 0.975609756097561
+      },
+      "K": {
+        "total": 27,
+        "correct": 25,
+        "predicted": 25,
+        "recall": 0.9259259259259259,
+        "precision": 1.0,
+        "f1": 0.9615384615384616
+      },
+      "p": {
+        "total": 174,
+        "correct": 161,
+        "predicted": 162,
+        "recall": 0.9252873563218391,
+        "precision": 0.9938271604938271,
+        "f1": 0.9583333333333334
+      },
+      "n": {
+        "total": 35,
+        "correct": 32,
+        "predicted": 32,
+        "recall": 0.9142857142857143,
+        "precision": 1.0,
+        "f1": 0.9552238805970149
+      },
+      "b": {
+        "total": 38,
+        "correct": 37,
+        "predicted": 38,
+        "recall": 0.9736842105263158,
+        "precision": 0.9736842105263158,
+        "f1": 0.9736842105263158
+      },
+      "r": {
+        "total": 44,
+        "correct": 44,
+        "predicted": 44,
+        "recall": 1.0,
+        "precision": 1.0,
+        "f1": 1.0
+      },
+      "q": {
+        "total": 21,
+        "correct": 18,
+        "predicted": 18,
+        "recall": 0.8571428571428571,
+        "precision": 1.0,
+        "f1": 0.9230769230769231
+      },
+      "k": {
+        "total": 27,
+        "correct": 27,
+        "predicted": 27,
+        "recall": 1.0,
+        "precision": 1.0,
+        "f1": 1.0
+      }
+    },
+    "confusionRowsExpectedColumnsPredicted": [
+      [
+        1060,
+        0,
+        0,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        4,
+        161,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        31,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        36,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2,
+        45,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        20,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        25,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        13,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        161,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        32,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        37,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        44,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        18,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        27,
+        0
+      ]
+    ],
+    "lastConfusionColumn": "processing-error"
+  },
+  "gainedExactBoards": [
+    "chesscom-img_5396",
+    "chesscom-img_5399"
+  ],
+  "lostExactBoards": [
+    "video-img_5406",
+    "video-img_5407"
+  ],
+  "records": [
+    {
+      "id": "chesscom-img_5393",
+      "image": ".cache/phone-validation-v1/images/chesscom-img_5393.png",
+      "imageSha256": "be4f178607778d8b8711a00ba9d6233648e3ccdf8877059e5001b7604543c0b9",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "chesscom",
+      "orientation": "white-bottom",
+      "expected": "rn1qkb1r/ppp2ppp/3p1n2/4p3/4PP2/2N2b1P/PPPP2P1/R1BQKB1R",
+      "annotatedPlacement": "rn1qkb1r/ppp2ppp/3p1n2/4p3/4PP2/2N2b1P/PPPP2P1/R1BQKB1R",
+      "annotatedExact": true,
+      "automaticCorners": [
+        [
+          172.02445312499998,
+          762.2385791015624
+        ],
+        [
+          2588.03794921875,
+          752.4575830078124
+        ],
+        [
+          2433.0805078125,
+          2921.100615234375
+        ],
+        [
+          389.8734338378906,
+          2928.6099609375
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.9941265407949191,
+        "maxCornerErrorPixels": 10.320924758911133,
+        "maxCornerErrorBoardFraction": 0.004673751003582937,
+        "maxGridErrorCellFraction": 0.0373900080286635,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 7.554599761962891,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "rn1qkb1r/ppp2ppp/3p1n2/4p3/4PP2/2N2b1P/PPPP2P1/R1BQKB1R"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 2.126498856000012,
+      "automaticExact": true,
+      "changedSquaresVsAnnotated": []
+    },
+    {
+      "id": "chesscom-img_5394",
+      "image": ".cache/phone-validation-v1/images/chesscom-img_5394.png",
+      "imageSha256": "012986da922195f3c99a9044ac816cb92b574bf05eedbaa9c45a881c205e1ed8",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "chesscom",
+      "orientation": "white-bottom",
+      "expected": "r2q1rk1/pp1nbpp1/2pp1n2/6p1/3PPB1P/2N2Q2/PPP5/2KR1B1R",
+      "annotatedPlacement": "r2q1rk1/pp1nbpp1/2pp1n2/6p1/3PPB1P/2N2Q2/PPP5/2KR1B1R",
+      "annotatedExact": true,
+      "automaticCorners": [
+        [
+          225.61054687499998,
+          771.544306640625
+        ],
+        [
+          2723.409609375,
+          778.602685546875
+        ],
+        [
+          2562.46470703125,
+          3035.7854296875
+        ],
+        [
+          406.5653576660156,
+          3060.8004492187497
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.992309147443703,
+        "maxCornerErrorPixels": 12.696452140808105,
+        "maxCornerErrorBoardFraction": 0.005497572666233525,
+        "maxGridErrorCellFraction": 0.0439805813298682,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 10.695761362711588,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "r2q1rk1/pp1nbpp1/2pp1n2/6p1/3PPB1P/2N2Q2/PPP5/2KR1B1R"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 2.2000333830000045,
+      "automaticExact": true,
+      "changedSquaresVsAnnotated": []
+    },
+    {
+      "id": "chesscom-img_5395",
+      "image": ".cache/phone-validation-v1/images/chesscom-img_5395.png",
+      "imageSha256": "5e8695bcc5ddffaf1a0d8c2829ca730a43ace7dc61c6fdeb3e0ed74f300c5d13",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "chesscom",
+      "orientation": "black-bottom",
+      "expected": "r1bq1rk1/ppp2pbp/2np1np1/4p3/3P1B2/2PBPN2/PP3PPP/RN1Q1RK1",
+      "annotatedPlacement": "r1bq1rk1/ppp2pbp/2np1np1/8/3P1B2/2PBPN2/PP3PPP/RN1Q1RK1",
+      "annotatedExact": false,
+      "automaticCorners": [
+        [
+          182.98553283691405,
+          711.0737915039062
+        ],
+        [
+          2935.050029296875,
+          718.8737329101563
+        ],
+        [
+          2723.9239453125,
+          3269.570390625
+        ],
+        [
+          337.00001220703126,
+          3190.944052734375
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.9961166932499338,
+        "maxCornerErrorPixels": 8.131427764892578,
+        "maxCornerErrorBoardFraction": 0.003194358599713483,
+        "maxGridErrorCellFraction": 0.025554868797707863,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 4.406406402587891,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "r1bq1rk1/ppp2pbp/2np1np1/8/3P1B2/2PBPN2/PP3PPP/RN1Q1RK1"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 2.4722927050000294,
+      "automaticExact": false,
+      "changedSquaresVsAnnotated": []
+    },
+    {
+      "id": "chesscom-img_5396",
+      "image": ".cache/phone-validation-v1/images/chesscom-img_5396.png",
+      "imageSha256": "efe67ecbc84a197e572443221767542e4048959f77e601a3632d09b036204c49",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "chesscom",
+      "orientation": "black-bottom",
+      "expected": "r1b2rk1/ppp2p1p/6p1/4b3/4n2q/N1P1P3/PP3PPP/R2Q1RK1",
+      "annotatedPlacement": "r1b2rk1/ppp2p1p/6p1/4B3/4n2q/N1P1P3/PP3PPP/R2Q1RK1",
+      "annotatedExact": false,
+      "automaticCorners": [
+        [
+          282.74444091796875,
+          865.7899072265625
+        ],
+        [
+          2626.332802734375,
+          872.46796875
+        ],
+        [
+          2488.1733105468747,
+          3028.1956933593747
+        ],
+        [
+          430.70410400390625,
+          3017.301123046875
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.994964857838825,
+        "maxCornerErrorPixels": 6.363732814788818,
+        "maxCornerErrorBoardFraction": 0.002914453227639163,
+        "maxGridErrorCellFraction": 0.024150991555461136,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 5.964059193929036,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "r1b2rk1/ppp2p1p/6p1/4b3/4n2q/N1P1P3/PP3PPP/R2Q1RK1"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 2.015346061999992,
+      "automaticExact": true,
+      "changedSquaresVsAnnotated": [
+        28
+      ]
+    },
+    {
+      "id": "chesscom-img_5397",
+      "image": ".cache/phone-validation-v1/images/chesscom-img_5397.png",
+      "imageSha256": "b0dd3f9d186f6ee68b874f7f8420de261fbbeb5bb0f9f22d26a3b61760a92e89",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "chesscom",
+      "orientation": "white-bottom",
+      "expected": "r2qkbnr/ppp1pppp/8/3p1b2/1n6/3P1NP1/PPP1PPBP/RNBQ1RK1",
+      "annotatedPlacement": "r2pkBnr/ppp1pppp/8/n2p1B2/1n6/3P2P1/PPP1PPBP/2BQ1RK1",
+      "annotatedExact": false,
+      "automaticCorners": [
+        [
+          176.036806640625,
+          801.9803100585938
+        ],
+        [
+          2769.4316015625,
+          762.5691650390625
+        ],
+        [
+          2595.2973046875,
+          3090.1951171875
+        ],
+        [
+          423.386455078125,
+          3075.16001953125
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.9946398068710209,
+        "maxCornerErrorPixels": 8.848530769348145,
+        "maxCornerErrorBoardFraction": 0.003764477710215797,
+        "maxGridErrorCellFraction": 0.030872875355027144,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 12.166584014892578,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "r2pkBnr/ppp1pppp/8/3p1b2/1n6/3P1NP1/PPP1PPBP/B1BQ1RK1"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 2.245060120000005,
+      "automaticExact": false,
+      "changedSquaresVsAnnotated": [
+        24,
+        29,
+        45,
+        56
+      ]
+    },
+    {
+      "id": "chesscom-img_5398",
+      "image": ".cache/phone-validation-v1/images/chesscom-img_5398.png",
+      "imageSha256": "3f3cd9a92ce1dc6e7e356237ebc61e40675825d1d65aea962a7beff09669ad20",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "chesscom",
+      "orientation": "white-bottom",
+      "expected": "8/1k3p1p/1p2p3/p1p5/P6P/2n3P1/5PK1/R7",
+      "annotatedPlacement": "8/1k3p1p/1p6/p1p5/P6P/2n3P1/1n3PK1/8",
+      "annotatedExact": false,
+      "automaticCorners": [
+        [
+          398.0191369628906,
+          339.20862670898435
+        ],
+        [
+          2993.802041015625,
+          585.5212719726562
+        ],
+        [
+          2533.19185546875,
+          2986.471318359375
+        ],
+        [
+          345.56033203124997,
+          2687.364052734375
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.9916273029799351,
+        "maxCornerErrorPixels": 21.92696762084961,
+        "maxCornerErrorBoardFraction": 0.00909565377854606,
+        "maxGridErrorCellFraction": 0.07276523022836848,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 10.246381123860678,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "8/1k3p1p/1p2p3/p1p5/P6P/2n3P1/5PK1/B7"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 2.3848833960000206,
+      "automaticExact": false,
+      "changedSquaresVsAnnotated": [
+        20,
+        49,
+        56
+      ]
+    },
+    {
+      "id": "chesscom-img_5399",
+      "image": ".cache/phone-validation-v1/images/chesscom-img_5399.png",
+      "imageSha256": "959470d453e26bbae09e4d7ae823907c8a1969d578316a42436d2f45265aade5",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "chesscom",
+      "orientation": "white-bottom",
+      "expected": "r2qkb1r/pp1n1ppp/4pn2/2pp2B1/6b1/3P1NP1/PPP1PPBP/RN1Q1RK1",
+      "annotatedPlacement": "r2qkB1r/pp1n1ppp/4pn2/2pp2B1/6b1/3P1NP1/PPP1PPBP/RN1Q1RK1",
+      "annotatedExact": false,
+      "automaticCorners": [
+        [
+          275.4095141601562,
+          740.8444702148437
+        ],
+        [
+          2764.40513671875,
+          788.7354418945313
+        ],
+        [
+          2561.1300585937497,
+          3051.579931640625
+        ],
+        [
+          407.19779296875,
+          3019.186611328125
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.9968196079026767,
+        "maxCornerErrorPixels": 5.905003547668457,
+        "maxCornerErrorBoardFraction": 0.0025676089764317587,
+        "maxGridErrorCellFraction": 0.02054087181145407,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 4.583108266194661,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "r2qkb1r/pp1n1ppp/4pn2/2pp2B1/6b1/3P1NP1/PPP1PPBP/RN1Q1RK1"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 2.316197326000008,
+      "automaticExact": true,
+      "changedSquaresVsAnnotated": [
+        5
+      ]
+    },
+    {
+      "id": "chesscom-img_5400",
+      "image": ".cache/phone-validation-v1/images/chesscom-img_5400.png",
+      "imageSha256": "9fbbaeb4a2c6c766d6fa57a99e3a0f1a6a83e118c3b6abbc566b851f16eb75cb",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "chesscom",
+      "orientation": "white-bottom",
+      "expected": "8/3k2p1/7p/K6P/P6P/8/8/8",
+      "annotatedPlacement": "8/3k2p1/7p/K6P/P6P/8/8/8",
+      "annotatedExact": true,
+      "automaticCorners": [
+        [
+          323.063671875,
+          939.5293359374999
+        ],
+        [
+          2554.7287499999998,
+          997.9021582031249
+        ],
+        [
+          2392.1020019531247,
+          3042.231240234375
+        ],
+        [
+          413.5659814453125,
+          3002.752470703125
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.9956917682743118,
+        "maxCornerErrorPixels": 6.501897811889648,
+        "maxCornerErrorBoardFraction": 0.0031169650667428514,
+        "maxGridErrorCellFraction": 0.02493572053394281,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 3.000586191813151,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "8/3k2p1/7p/K6P/P6P/8/8/8"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 1.8435538090000136,
+      "automaticExact": true,
+      "changedSquaresVsAnnotated": []
+    },
+    {
+      "id": "chesscom-img_5401",
+      "image": ".cache/phone-validation-v1/images/chesscom-img_5401.png",
+      "imageSha256": "7b21a0d24c7ea9d6bb16d371cb9cc7b04cfcd67e22645f00bb54b566c2ae2214",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "chesscom",
+      "orientation": "white-bottom",
+      "expected": "3r1rk1/ppp2ppp/4pn2/4n1B1/4N3/6P1/PPP2PBP/3R1RK1",
+      "annotatedPlacement": "3r1rk1/8/5N2/4N1B1/4N3/6R1/1R3RBR/3R1RK1",
+      "annotatedExact": false,
+      "automaticCorners": [
+        [
+          94.71936950683593,
+          831.5102270507812
+        ],
+        [
+          2588.816015625,
+          819.05701171875
+        ],
+        [
+          2462.757568359375,
+          3101.278154296875
+        ],
+        [
+          288.1943408203125,
+          3110.12255859375
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.9953555400012684,
+        "maxCornerErrorPixels": 7.4630842208862305,
+        "maxCornerErrorBoardFraction": 0.0032233243528079934,
+        "maxGridErrorCellFraction": 0.025786594822463947,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 5.816427866617839,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "3r1rk1/8/5N2/4N1B1/4N3/6P1/1P3PBP/3R1RK1"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 2.2309881330000394,
+      "automaticExact": false,
+      "changedSquaresVsAnnotated": [
+        46,
+        49,
+        53,
+        55
+      ]
+    },
+    {
+      "id": "chesscom-img_5402",
+      "image": ".cache/phone-validation-v1/images/chesscom-img_5402.png",
+      "imageSha256": "98511f13f42d4c5ce06bbe2ee3d27ddfc5dbed0f90d39891a868fd260b5db46f",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "chesscom",
+      "orientation": "white-bottom",
+      "expected": "6k1/2pR4/p5pp/2B5/1P2B1p1/6P1/P1P5/4K3",
+      "annotatedPlacement": "6k1/3R4/8/2B5/1P2B3/6R1/8/4K3",
+      "annotatedExact": false,
+      "automaticCorners": [
+        [
+          208.0173175048828,
+          897.6319775390625
+        ],
+        [
+          2581.769326171875,
+          877.561494140625
+        ],
+        [
+          2469.5189941406247,
+          3049.3620117187497
+        ],
+        [
+          390.6661376953125,
+          3070.598466796875
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.996107962962045,
+        "maxCornerErrorPixels": 8.030770301818848,
+        "maxCornerErrorBoardFraction": 0.003645113764932855,
+        "maxGridErrorCellFraction": 0.02916091011946284,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 3.8879903157552085,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "6k1/3R4/8/2B5/1P2B3/6P1/8/4K3"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 2.1085434880000093,
+      "automaticExact": false,
+      "changedSquaresVsAnnotated": [
+        46
+      ]
+    },
+    {
+      "id": "lichess-img_5383",
+      "image": ".cache/phone-validation-v1/images/lichess-img_5383.png",
+      "imageSha256": "67ef2f6ccdf8af11322d0c3e79baf9e8d816e28f840dd7a3e3c797f5860e8986",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "lichess",
+      "orientation": "black-bottom",
+      "expected": "rnb1kbnr/ppp2ppp/8/4P3/4p3/6PN/PPP2P1P/RNBK1B1R",
+      "annotatedPlacement": "rnb1kbnr/ppp2ppp/8/4P3/4p3/6PN/PPP2P1P/RNBK1B1R",
+      "annotatedExact": true,
+      "automaticCorners": [
+        [
+          425.90073852539064,
+          920.36642578125
+        ],
+        [
+          2514.393369140625,
+          945.0989501953125
+        ],
+        [
+          2365.158837890625,
+          2824.29533203125
+        ],
+        [
+          560.482822265625,
+          2830.49361328125
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.9927463625425518,
+        "maxCornerErrorPixels": 10.861756324768066,
+        "maxCornerErrorBoardFraction": 0.005629972818210538,
+        "maxGridErrorCellFraction": 0.045039782545684304,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 9.8413937886556,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "rnb1kbnr/ppp2ppp/8/4P3/4p3/6PN/PPP2P1P/RNBK1B1R"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 1.7011821099999906,
+      "automaticExact": true,
+      "changedSquaresVsAnnotated": []
+    },
+    {
+      "id": "lichess-img_5384",
+      "image": ".cache/phone-validation-v1/images/lichess-img_5384.png",
+      "imageSha256": "3ed15840dd22f11030b573b94c29e263b9182843fc9d00dc56596e78d8b89e10",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "lichess",
+      "orientation": "black-bottom",
+      "expected": "7k/1p3Bpp/5p2/8/2P3P1/6r1/5K2/8",
+      "annotatedPlacement": "7k/1p3Bpp/5p2/8/2P3P1/6r1/5K2/8",
+      "annotatedExact": true,
+      "automaticCorners": [
+        [
+          481.326357421875,
+          545.4831518554687
+        ],
+        [
+          2977.9974902343747,
+          932.9292041015625
+        ],
+        [
+          2457.85353515625,
+          3136.03705078125
+        ],
+        [
+          326.10710815429684,
+          2857.254462890625
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.9952775968465303,
+        "maxCornerErrorPixels": 8.517109870910645,
+        "maxCornerErrorBoardFraction": 0.003681308505637709,
+        "maxGridErrorCellFraction": 0.029450468045101673,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 5.489620208740234,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "7k/1p3Bpp/5p2/8/2P3P1/6r1/5K2/8"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 2.2295819339999525,
+      "automaticExact": true,
+      "changedSquaresVsAnnotated": []
+    },
+    {
+      "id": "lichess-img_5385",
+      "image": ".cache/phone-validation-v1/images/lichess-img_5385.png",
+      "imageSha256": "07bbec163906b36ee348ceac8067e9cd7449589db914c5b203b2093e51f9f5db",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "lichess",
+      "orientation": "white-bottom",
+      "expected": "r1bqkb1r/1p1p1ppp/p1n1p3/2p5/4PP2/2N2N2/PPPP2PP/R1BQK2R",
+      "annotatedPlacement": "r1bqkb1r/1p1p1ppp/p1n1p3/2p5/4PP2/2N2N2/PPPP2PP/R1BQK2R",
+      "annotatedExact": true,
+      "automaticCorners": [
+        [
+          404.62524169921875,
+          627.9486547851562
+        ],
+        [
+          2594.2192089843747,
+          621.9376611328124
+        ],
+        [
+          2497.4249999999997,
+          2677.197919921875
+        ],
+        [
+          540.0414038085937,
+          2715.7411230468747
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.9942375664267016,
+        "maxCornerErrorPixels": 9.319265365600586,
+        "maxCornerErrorBoardFraction": 0.0044842767695035856,
+        "maxGridErrorCellFraction": 0.035874214156028685,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 7.030066172281901,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "r1bqkb1r/1p1p1ppp/p1n1p3/2p5/4PP2/2N2N2/PPPP2PP/R1BQK2R"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 1.7142818830000124,
+      "automaticExact": true,
+      "changedSquaresVsAnnotated": []
+    },
+    {
+      "id": "lichess-img_5386",
+      "image": ".cache/phone-validation-v1/images/lichess-img_5386.png",
+      "imageSha256": "5c12148c2e85166ac672ca46a5e8181ebc9bf4cb86256619a9686a5addbbdee6",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "lichess",
+      "orientation": "white-bottom",
+      "expected": "3r1rk1/1p4b1/p1n1bp2/4q3/3p4/3P2R1/PPP2QPP/4R2K",
+      "annotatedPlacement": "3r1rk1/1p4b1/p1n1bp2/4q3/3p4/3P2R1/PPP2QPP/4R2K",
+      "annotatedExact": true,
+      "automaticCorners": [
+        [
+          353.4282824707031,
+          742.046279296875
+        ],
+        [
+          2824.6322753906247,
+          951.4498095703125
+        ],
+        [
+          2491.336435546875,
+          3167.405390625
+        ],
+        [
+          337.48894409179684,
+          3035.499140625
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.995795364057537,
+        "maxCornerErrorPixels": 5.697037696838379,
+        "maxCornerErrorBoardFraction": 0.0024858626783163295,
+        "maxGridErrorCellFraction": 0.019886901426530636,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 6.041440327962239,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "3r1rk1/1p4b1/p1n1bp2/4q3/3p4/3P2R1/PPP2QPP/4R2K"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 2.126972416000001,
+      "automaticExact": true,
+      "changedSquaresVsAnnotated": []
+    },
+    {
+      "id": "lichess-img_5387",
+      "image": ".cache/phone-validation-v1/images/lichess-img_5387.png",
+      "imageSha256": "c7845f970ec1ad2f9e6f095af97a029126b25575f4ef46e3c8ebdee2551b82fc",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "lichess",
+      "orientation": "white-bottom",
+      "expected": "rnbqkbnr/ppp3pp/3p1p2/4P3/3P1B2/2N2N2/PPP3PP/R2QKB1R",
+      "annotatedPlacement": "rnbqkbnr/ppp3pp/3p1p2/4P3/3P1B2/2N2N2/PPP3PP/R2QKB1R",
+      "annotatedExact": true,
+      "automaticCorners": [
+        [
+          194.72544799804686,
+          575.280849609375
+        ],
+        [
+          2685.3508007812497,
+          592.4678320312499
+        ],
+        [
+          2537.6151855468747,
+          2831.6713769531248
+        ],
+        [
+          397.73128417968746,
+          2916.06328125
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.9969637724081767,
+        "maxCornerErrorPixels": 6.51824951171875,
+        "maxCornerErrorBoardFraction": 0.0028257064967409716,
+        "maxGridErrorCellFraction": 0.02377020084464004,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 8.246051788330078,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "rnbqkbnr/ppp3pp/3p1p2/4P3/3P1B2/2N2N2/PPP3PP/R2QKB1R"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 2.246652675000007,
+      "automaticExact": true,
+      "changedSquaresVsAnnotated": []
+    },
+    {
+      "id": "lichess-img_5388",
+      "image": ".cache/phone-validation-v1/images/lichess-img_5388.png",
+      "imageSha256": "6ac52d1a7d5b7cc13b686270d42c69ceb2bbf43e67ffbc82f885d73048114f7b",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "lichess",
+      "orientation": "white-bottom",
+      "expected": "8/1pk4p/2pp4/p1q5/2P5/1P4P1/PK5P/7R",
+      "annotatedPlacement": "8/1pk4p/2pp4/p1q5/2P5/1P4P1/PK5P/7R",
+      "annotatedExact": true,
+      "automaticCorners": [
+        [
+          393.0692944335937,
+          830.4061376953125
+        ],
+        [
+          2591.959248046875,
+          824.9796166992187
+        ],
+        [
+          2460.3239062499997,
+          2827.8651269531247
+        ],
+        [
+          548.80259765625,
+          2851.1591308593747
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.9953709260237527,
+        "maxCornerErrorPixels": 6.087604522705078,
+        "maxCornerErrorBoardFraction": 0.002983865966353822,
+        "maxGridErrorCellFraction": 0.023870927730830577,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 6.148464202880859,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "8/1pk4p/2pp4/p1q5/2P5/1P4P1/PK5P/7R"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 1.7839788119999866,
+      "automaticExact": true,
+      "changedSquaresVsAnnotated": []
+    },
+    {
+      "id": "lichess-img_5389",
+      "image": ".cache/phone-validation-v1/images/lichess-img_5389.png",
+      "imageSha256": "24afc4d3c6fb202f55764592f6d362972572b2160b836bdbe964aee4695b1040",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "lichess",
+      "orientation": "white-bottom",
+      "expected": "r1bqkbnr/pppp1pp1/2n4p/8/3pP3/2P2N2/PP3PPP/RNBQKB1R",
+      "annotatedPlacement": "r1bqkbnr/pppp1pp1/2n4p/8/3pP3/2P2N2/PP3PPP/RNBQKB1R",
+      "annotatedExact": true,
+      "automaticCorners": [
+        [
+          172.38801818847656,
+          804.5147680664062
+        ],
+        [
+          2783.567431640625,
+          823.5499145507812
+        ],
+        [
+          2607.615732421875,
+          3170.57794921875
+        ],
+        [
+          349.79732299804687,
+          3198.9382031249997
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.996632445217985,
+        "maxCornerErrorPixels": 5.611761569976807,
+        "maxCornerErrorBoardFraction": 0.0023349554443996127,
+        "maxGridErrorCellFraction": 0.0186796435551969,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 7.802945454915364,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "r1bqkbnr/pppp1pp1/2n4p/8/3pP3/2P2N2/PP3PPP/RNBQKB1R"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 2.451681706000045,
+      "automaticExact": true,
+      "changedSquaresVsAnnotated": []
+    },
+    {
+      "id": "lichess-img_5390",
+      "image": ".cache/phone-validation-v1/images/lichess-img_5390.png",
+      "imageSha256": "a03cfa6333c0bbcc747022f68711eb59788b5fcb7f81847ca7f3831a4093368c",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "lichess",
+      "orientation": "white-bottom",
+      "expected": "r4rk1/2pqbpp1/1p1p1n1p/pQ1P4/4P3/2N2N2/PP3PPP/R1B1K2R",
+      "annotatedPlacement": "r4rk1/2pqbpp1/1p1p1n1p/pQ1P4/4P3/2N2N2/PP3PPP/R1B1K2R",
+      "annotatedExact": true,
+      "automaticCorners": [
+        [
+          310.7115856933594,
+          874.6605615234374
+        ],
+        [
+          2546.191552734375,
+          894.02619140625
+        ],
+        [
+          2423.434658203125,
+          2918.416552734375
+        ],
+        [
+          456.16137451171875,
+          2963.5191796874997
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.99617463477681,
+        "maxCornerErrorPixels": 6.412349224090576,
+        "maxCornerErrorBoardFraction": 0.003076501500871647,
+        "maxGridErrorCellFraction": 0.024612012006973175,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 7.75628662109375,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "r4rk1/2pqbpp1/1p1p1n1p/pQ1P4/4P3/2N2N2/PP3PPP/R1B1K2R"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 1.913906639000004,
+      "automaticExact": true,
+      "changedSquaresVsAnnotated": []
+    },
+    {
+      "id": "lichess-img_5391",
+      "image": ".cache/phone-validation-v1/images/lichess-img_5391.png",
+      "imageSha256": "25a83a9ed2ab90b72573723aa1de3e9458d89cc6e870e79672ac1abdf90890c7",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "lichess",
+      "orientation": "black-bottom",
+      "expected": "r2q1rk1/ppp3bp/2np1np1/6B1/3p4/2PB3P/PP1N3P/R2QK2R",
+      "annotatedPlacement": "r2b1rk1/ppp3bp/2np1Np1/6B1/3p4/2PB3P/PP1N3P/R2QN2R",
+      "annotatedExact": false,
+      "automaticCorners": [
+        [
+          233.4901611328125,
+          704.6522827148438
+        ],
+        [
+          2819.542236328125,
+          726.2095825195312
+        ],
+        [
+          2647.1166503906247,
+          3058.742900390625
+        ],
+        [
+          404.2567419433594,
+          3103.1029394531247
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.9971883251551827,
+        "maxCornerErrorPixels": 4.470456600189209,
+        "maxCornerErrorBoardFraction": 0.0018683389420646264,
+        "maxGridErrorCellFraction": 0.014946711536517011,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 4.8180898030598955,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "r2b1rk1/ppp3bp/2np1Np1/6B1/3p4/2PB3P/PP1N3P/R2QN2R"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 2.49675295499992,
+      "automaticExact": false,
+      "changedSquaresVsAnnotated": []
+    },
+    {
+      "id": "lichess-img_5392",
+      "image": ".cache/phone-validation-v1/images/lichess-img_5392.png",
+      "imageSha256": "26cdae8f6e5db158b6a02eb7868c390d224e6bf8cb8cb1d513ecb97a86570b67",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "lichess",
+      "orientation": "black-bottom",
+      "expected": "r4rk1/ppp3bp/3p2p1/6B1/3q4/7P/PP1K3P/R2Q3R",
+      "annotatedPlacement": "r4rk1/ppp3bp/3p2p1/6B1/3Q4/7P/PP1N3P/R2Q3R",
+      "annotatedExact": false,
+      "automaticCorners": [
+        [
+          225.23909912109374,
+          661.6634985351562
+        ],
+        [
+          2721.975908203125,
+          640.5214306640624
+        ],
+        [
+          2603.5810253906247,
+          2882.246923828125
+        ],
+        [
+          457.2323950195312,
+          3000.43693359375
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.9962128550560215,
+        "maxCornerErrorPixels": 6.0163445472717285,
+        "maxCornerErrorBoardFraction": 0.0026069611996030148,
+        "maxGridErrorCellFraction": 0.020855689596824118,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 4.211631774902344,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "r4rk1/ppp3bp/3p2p1/6B1/3Q4/7P/PP1N3P/R2Q3R"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 2.2986895909999703,
+      "automaticExact": false,
+      "changedSquaresVsAnnotated": []
+    },
+    {
+      "id": "video-img_5403",
+      "image": ".cache/phone-validation-v1/images/video-img_5403.png",
+      "imageSha256": "c3f93f8d148fc5be94eab1120f87d618bc2a6399db95e8b9ca0dcbfa95b9793d",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "video",
+      "orientation": "black-bottom",
+      "expected": "r1bq1rk1/3n1ppp/2pbpn2/p7/PpBP4/1Q3N1P/NB3PP1/3RR1K1",
+      "annotatedPlacement": "r1bn1rk1/3n1ppp/2pbpn2/p7/PpBP4/1Q3N1P/NB3PP1/4R1K1",
+      "annotatedExact": false,
+      "cliResult": {
+        "error": {
+          "code": "BOARD_NOT_FOUND",
+          "message": "No complete supported photographic chessboard was detected."
+        }
+      },
+      "cliExitCode": 1,
+      "cliSeconds": 2.439364017999992,
+      "automaticExact": false
+    },
+    {
+      "id": "video-img_5404",
+      "image": ".cache/phone-validation-v1/images/video-img_5404.png",
+      "imageSha256": "1cf23f532ce646af683fa4398f7c1a858c9897f2c079078174d52703ec479f94",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "video",
+      "orientation": "white-bottom",
+      "expected": "2kr1b1r/pp1npppp/1qp2n2/5b2/1PBP1B2/P1N2N2/2P2PPP/R2Q1RK1",
+      "annotatedPlacement": "2kr1q1r/pp1npppp/1qp2n2/5b2/1P1N1B2/P1N2N2/4PPPP/R4RK1",
+      "annotatedExact": false,
+      "automaticCorners": [
+        [
+          480.6770288085937,
+          854.9338916015624
+        ],
+        [
+          2432.82662109375,
+          851.7903002929687
+        ],
+        [
+          2393.359541015625,
+          2743.2669140625
+        ],
+        [
+          548.1130737304687,
+          2764.61267578125
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.9890508338824886,
+        "maxCornerErrorPixels": 14.181110382080078,
+        "maxCornerErrorBoardFraction": 0.007443136532228251,
+        "maxGridErrorCellFraction": 0.05954509225782601,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 21.13226064046224,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "2kr1b1r/pp1npppp/1qp2n2/2R2b2/1PBP1B2/P1N2N2/2P2PPP/R2QBRK1"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 1.7183743150000055,
+      "automaticExact": false,
+      "changedSquaresVsAnnotated": [
+        5,
+        26,
+        34,
+        35,
+        50,
+        52,
+        59,
+        60
+      ]
+    },
+    {
+      "id": "video-img_5405",
+      "image": ".cache/phone-validation-v1/images/video-img_5405.png",
+      "imageSha256": "dfc0d503b51a7ad13b2923bb7e6007c7997d54bb52af19de5fe782a9d702d143",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "video",
+      "orientation": "white-bottom",
+      "expected": "rnbqkb1r/pp3ppp/2p1pn2/3p4/3PP3/2N2P2/PPP3PP/R1BQKBNR",
+      "annotatedPlacement": "rnbqkb1r/pp3ppp/2p1pn2/3p4/3PP3/2N2P2/PPP3PP/R1BQKBNR",
+      "annotatedExact": true,
+      "automaticCorners": [
+        [
+          199.06137634277343,
+          734.0691503906249
+        ],
+        [
+          2908.16736328125,
+          687.8474633789062
+        ],
+        [
+          2743.8148828125,
+          3254.172919921875
+        ],
+        [
+          368.50844604492187,
+          3173.0934374999997
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.9964523390359578,
+        "maxCornerErrorPixels": 5.677688121795654,
+        "maxCornerErrorBoardFraction": 0.0022501264397211122,
+        "maxGridErrorCellFraction": 0.018001011517768898,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 10.16159439086914,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "rnbqkb1r/pp3ppp/2p1pn2/3p4/3PP3/2N2P2/PPP3PP/R1BQKBNR"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 2.6642578419999836,
+      "automaticExact": true,
+      "changedSquaresVsAnnotated": []
+    },
+    {
+      "id": "video-img_5406",
+      "image": ".cache/phone-validation-v1/images/video-img_5406.png",
+      "imageSha256": "4ce3e8916c430c66d940bcfeda14fca1d6e93a91dee849880ecbcc6fc5b18628",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "video",
+      "orientation": "white-bottom",
+      "expected": "2k1r1r1/pb1n1Q1p/1pp1pn2/q7/2PP4/P2B3N/1BP3PP/R4RK1",
+      "annotatedPlacement": "2k1r1r1/pb1n1Q1p/1pp1pn2/q7/2PP4/P2B3N/1BP3PP/R4RK1",
+      "annotatedExact": true,
+      "cliResult": {
+        "error": {
+          "code": "BOARD_NOT_FOUND",
+          "message": "No complete supported photographic chessboard was detected."
+        }
+      },
+      "cliExitCode": 1,
+      "cliSeconds": 3.7865714950000893,
+      "automaticExact": false
+    },
+    {
+      "id": "video-img_5407",
+      "image": ".cache/phone-validation-v1/images/video-img_5407.png",
+      "imageSha256": "4c5d1f3a2080782ec9e42db097da2c581b7f92098479b2f3495880445748d016",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "video",
+      "orientation": "black-bottom",
+      "expected": "4k3/1p2pp2/3P4/3N4/1pKp4/r5p1/6P1/4R3",
+      "annotatedPlacement": "4k3/1p2pp2/3P4/3N4/1pKp4/r5p1/6P1/4R3",
+      "annotatedExact": true,
+      "cliResult": {
+        "error": {
+          "code": "BOARD_NOT_FOUND",
+          "message": "No complete supported photographic chessboard was detected."
+        }
+      },
+      "cliExitCode": 1,
+      "cliSeconds": 4.59030024599997,
+      "automaticExact": false
+    },
+    {
+      "id": "video-img_5409",
+      "image": ".cache/phone-validation-v1/images/video-img_5409.png",
+      "imageSha256": "04e055ce35049dc73c73ce1e5514fcd2f7e9b06b4a55f1f5d773f41315a20adf",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "video",
+      "orientation": "white-bottom",
+      "expected": "r1bq1bkr/pp1pn1p1/2NQ3p/6B1/4R3/2p5/PPP2PPP/R5K1",
+      "annotatedPlacement": "r1bq1bkr/pp1pn1p1/2NQ3p/6B1/4R3/2p5/PPP2PPP/R5K1",
+      "annotatedExact": true,
+      "automaticCorners": [
+        [
+          344.88026733398436,
+          801.3518481445312
+        ],
+        [
+          2674.494990234375,
+          820.3314697265624
+        ],
+        [
+          2537.1229980468747,
+          3031.390400390625
+        ],
+        [
+          437.3382275390625,
+          2978.104130859375
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.9974019857655602,
+        "maxCornerErrorPixels": 5.6494011878967285,
+        "maxCornerErrorBoardFraction": 0.0025601631145843774,
+        "maxGridErrorCellFraction": 0.02048130491667502,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 7.022513071695964,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "r1bq1bkr/pp1pn1p1/2NQ3p/6B1/4R3/2p5/PPP2PPP/R5K1"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 1.9836108239999248,
+      "automaticExact": true,
+      "changedSquaresVsAnnotated": []
+    },
+    {
+      "id": "video-img_5410",
+      "image": ".cache/phone-validation-v1/images/video-img_5410.png",
+      "imageSha256": "d5484d65687036d28d8bcfe21ed5ef28942badb392fd8a72c26708bdd6fbf288",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "video",
+      "orientation": "white-bottom",
+      "expected": "r1bq1b1r/pp1pnkpp/2pQ4/6B1/4R3/2p2N2/PPP2PPP/R5K1",
+      "annotatedPlacement": "r1bq1b1r/pp1pnkpp/2pQ4/6B1/4R3/2p2N2/PPP2PPP/R5K1",
+      "annotatedExact": true,
+      "automaticCorners": [
+        [
+          206.82153259277342,
+          717.5032983398437
+        ],
+        [
+          2643.044208984375,
+          736.3993505859374
+        ],
+        [
+          2480.85755859375,
+          3011.6071289062497
+        ],
+        [
+          340.5839575195312,
+          2954.28615234375
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.9944563667046732,
+        "maxCornerErrorPixels": 8.865463256835938,
+        "maxCornerErrorBoardFraction": 0.0038878319526097598,
+        "maxGridErrorCellFraction": 0.031102655620878078,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 8.504940032958984,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "r1bq1b1r/pp1pnkpp/2pQ4/6B1/4R3/2p2N2/PPP2PPP/R5K1"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 2.1289441989999887,
+      "automaticExact": true,
+      "changedSquaresVsAnnotated": []
+    },
+    {
+      "id": "video-img_5411",
+      "image": ".cache/phone-validation-v1/images/video-img_5411.png",
+      "imageSha256": "0a83a9cd4d0e5fe6dfcf283c7eebf7905625de0f0112254bfb3f02b2b53d28cf",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "video",
+      "orientation": "white-bottom",
+      "expected": "r1bqkb1r/pp1pn1pp/2p5/3Q4/4R3/2p2N2/PPP2PPP/R1B3K1",
+      "annotatedPlacement": "r1bqkb1r/pp1pn1pp/2p5/3Q4/4R3/2p2N2/PPP2PPP/R1B3K1",
+      "annotatedExact": true,
+      "automaticCorners": [
+        [
+          259.02172119140624,
+          738.4755102539062
+        ],
+        [
+          2385.1857421874997,
+          768.1213989257812
+        ],
+        [
+          2265.1166015625,
+          2753.322919921875
+        ],
+        [
+          378.5345361328125,
+          2730.014970703125
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.9954734978635699,
+        "maxCornerErrorPixels": 7.4365997314453125,
+        "maxCornerErrorBoardFraction": 0.0037202181031821095,
+        "maxGridErrorCellFraction": 0.029761744825456876,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 16.00015640258789,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "r1bqkb1r/pp1pn1pp/2p5/3Q4/4R3/2p2N2/PPP2PPP/R1B3K1"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 1.8058769780000148,
+      "automaticExact": true,
+      "changedSquaresVsAnnotated": []
+    },
+    {
+      "id": "video-img_5412",
+      "image": ".cache/phone-validation-v1/images/video-img_5412.png",
+      "imageSha256": "9ca6368214811401251fc0d607ac9ce0342bab246f2804489efd58b38219122d",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "video",
+      "orientation": "white-bottom",
+      "expected": "Qn1qkb1r/p1p1pppp/8/5b2/4N3/4B3/PPP2PPP/R3KBNR",
+      "annotatedPlacement": "Qn1qkb1r/p1p1pppp/8/5b2/4N3/4B3/PPP2PPP/R3KBNR",
+      "annotatedExact": true,
+      "automaticCorners": [
+        [
+          409.79515869140624,
+          812.3646459960937
+        ],
+        [
+          2501.97076171875,
+          833.7773657226562
+        ],
+        [
+          2367.28119140625,
+          2775.984052734375
+        ],
+        [
+          525.0719311523437,
+          2747.07234375
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.9942730329033479,
+        "maxCornerErrorPixels": 8.948760986328125,
+        "maxCornerErrorBoardFraction": 0.004565275564331911,
+        "maxGridErrorCellFraction": 0.036522204514655286,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 9.718668619791666,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "Qn1qkb1r/p1p1pppp/8/5b2/4N3/4B3/PPP2PPP/R3KBNR"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 1.7558633800000507,
+      "automaticExact": true,
+      "changedSquaresVsAnnotated": []
+    },
+    {
+      "id": "video-img_5413",
+      "image": ".cache/phone-validation-v1/images/video-img_5413.png",
+      "imageSha256": "3367ad672f0d20221d6a8a5d1fb13025efd318a1a8d834fedc404f0084e6e46b",
+      "groupId": "phone-validation-batch-v1",
+      "split": "validation",
+      "category": "video",
+      "orientation": "white-bottom",
+      "expected": "rn1qkb1r/pp4pp/2p1Nnb1/8/3P4/2N5/PPP3PP/R1BQ1RK1",
+      "annotatedPlacement": "rn1qkb1r/pp4pp/2p1Nnb1/8/3P4/2N5/PPP3PP/R1BQ1RK1",
+      "annotatedExact": true,
+      "automaticCorners": [
+        [
+          301.3449499511719,
+          835.8443481445312
+        ],
+        [
+          2769.6793359374997,
+          819.1812377929688
+        ],
+        [
+          2607.4707421875,
+          3163.6130859375
+        ],
+        [
+          436.3943041992187,
+          3055.561728515625
+        ]
+      ],
+      "geometryMetrics": {
+        "intersectionOverUnion": 0.996982825042742,
+        "maxCornerErrorPixels": 4.720187664031982,
+        "maxCornerErrorBoardFraction": 0.002046589844676232,
+        "maxGridErrorCellFraction": 0.016372718757409855,
+        "withinPolicy": true
+      },
+      "cropMeanAbsoluteRgbDifference": 4.720726013183594,
+      "cropDifferenceScope": "Mean absolute RGB difference on 0..255; includes geometric alignment, not an acceptance threshold.",
+      "cliResult": {
+        "piecePlacement": "rn1qkb1r/pp4pp/2p1Nnb1/8/3P4/2N5/PPP3PP/R1BQ1RK1"
+      },
+      "cliExitCode": 0,
+      "cliSeconds": 2.1679357610000807,
+      "automaticExact": true,
+      "changedSquaresVsAnnotated": []
+    }
+  ]
+}

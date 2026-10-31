@@ -15,6 +15,8 @@ from boardsnap.normalization import normalize_board
 from boardsnap.orientation import to_canonical, detect_digital_orientation
 from boardsnap.output import build_result
 from boardsnap.segmentation import split_squares
+from boardsnap.photo_detection import detect_photo_board
+from boardsnap.rectification import rectify_board
 
 CLASSES = ("empty", *"PNBRQKpnbrqk")
 ARCHITECTURE = "small-square-cnn-v1"
@@ -101,3 +103,20 @@ class NeuralClassifier:
             labels = self.classify_squares(squares)
             resolved = detect_digital_orientation(board) if orientation == "auto" else orientation
             return build_result(to_canonical(labels, resolved))
+
+    def recognize_photo(self, path, *, orientation):
+        """Detect and rectify a photograph using pixels only and an explicit view."""
+        if orientation not in ("white-bottom", "black-bottom"):
+            raise ValueError("Photographs require white-bottom or black-bottom.")
+        with ExitStack() as stack:
+            image = stack.enter_context(read_image(path))
+            stack.callback(image.close)
+            corners = detect_photo_board(image).corners
+            board = stack.enter_context(rectify_board(image, corners))
+            stack.callback(board.close)
+            squares = split_squares(board)
+            for row in squares:
+                for square in row:
+                    stack.callback(square.close)
+            labels = self.classify_squares(squares)
+            return build_result(to_canonical(labels, orientation))

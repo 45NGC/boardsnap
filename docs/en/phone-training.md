@@ -6,7 +6,7 @@ The first photographic fine-tuning run is complete. Its experimental weights are
 `.cache/neural-phone-v1/best.pt`. They **do not replace** the digital candidate at
 `.cache/neural-tolerance-v1-conservative/best.pt`; v8 is also unchanged.
 The subsequent [photographic detector](photo-detection.md) implements automatic
-four-corner localization separately; its integration with recognition is pending.
+four-corner localization separately; the [photo pipeline](photo-pipeline.md) now connects it to recognition.
 The subsequent [classifier diagnosis](phone-classifier-analysis.md) completes
 the class, appearance and condition breakdown using these same saved predictions.
 
@@ -68,12 +68,13 @@ From the repository root with `.venv` activated, the existing automatic CLI can
 use the experimental model explicitly:
 
 ```bash
-boardsnap "my-photo.jpg" --model .cache/neural-phone-v1/best.pt --orientation white-bottom
+boardsnap "my-photo.jpg" --input-type photo --model .cache/neural-phone-v1/best.pt --orientation white-bottom
 ```
 
-This still uses the **digital detector**. A `BOARD_NOT_FOUND` result on a tilted
-photograph does not test the new classifier. The camera input must be PNG/JPEG;
-export HEIC to JPEG first. Use `black-bottom` when appropriate.
+This uses the [automatic photo pipeline](photo-pipeline.md), including perspective
+correction. A `BOARD_NOT_FOUND` result means classification was not reached.
+The camera input must be PNG/JPEG; export HEIC to JPEG first.
+Use `black-bottom` when appropriate; photo mode requires an explicit view.
 
 To test classification independently, use the development helper with manual
 board corners, measured on the full image after EXIF orientation:
@@ -114,6 +115,6 @@ The 71 targeted tests pass; manual-corner inference also matches known placement
 through actual CLI subprocesses in both orientations. Next, inspect the remaining
 photographic style errors and consider audited digital replay before training a
 shared replacement. The [photographic localization pilot](photo-detection.md) is now
-measured; its integration with recognition and independent final acceptance remain
-pending. Keep collecting new trials as development
+measured and [integrated with recognition](photo-pipeline.md); independent final
+acceptance remains pending. Keep collecting new trials as development
 data once their results have been inspected.

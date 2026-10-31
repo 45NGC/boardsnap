@@ -4,7 +4,7 @@ The [photo classifier diagnosis](phone-classifier-analysis.md) breaks down the e
 
 [First photographic classifier](phone-training.md): training is complete using the [reviewed dataset](phone-training-data.md). It recognizes 19/30 validation photos with reviewed corners, versus 18/30 before adaptation. Three digital boards regress; the experimental photo model does not replace the digital candidate.
 
-The [photographic detector](photo-detection.md) now finds four corners within the geometric criteria on 132/161 development photos and 27/30 validation photos. All 18 constructed negative controls are rejected. Its diagnostic command saves an outline and rectified board; automatic integration with recognition remains pending.
+The [photographic detector](photo-detection.md) now finds four corners within the geometric criteria on 132/161 development photos and 27/30 validation photos. All 18 constructed negative controls are rejected. Its diagnostic command saves an outline and rectified board. The [automatic photo pipeline](photo-pipeline.md) now connects it to classification using `--input-type photo`, a configured model and explicit orientation.
 
 The [initial photograph corpus](phone-photo-corpus.md) organizes 161 screen HEICs:
 160 visually reviewed placements, one ambiguous capture animation and 161

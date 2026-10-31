@@ -9,7 +9,7 @@ annotation, filename or known theme palette.
 
 The digital detector, piece models and `boardsnap` behavior are unchanged.
 This stage measures **localization**, not complete recognition. Automatic connection
-to the photographic classifier is the next step.
+to the photographic classifier is documented in the subsequent [photo pipeline](photo-pipeline.md).
 
 ## Method
 
@@ -112,6 +112,6 @@ major occlusion, low-contrast squares and lens distortion are not guaranteed.
 A decorative 8×8 checkerboard can be geometrically indistinguishable from an empty
 chessboard.
 
-Next, explicitly integrate photo detection and rectification into recognition,
-testing whole positions while retaining the digital path. Photographic acceptance
-has not yet been declared.
+The [photo pipeline](photo-pipeline.md) now integrates detection and rectification
+with recognition through `--input-type photo`, preserving the digital path.
+Photographic acceptance has not yet been declared.

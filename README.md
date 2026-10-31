@@ -15,8 +15,10 @@ versus 18/30 before adaptation. Three digital validation boards regress, so the
 photo model remains experimental and separate. The new [photographic detector](docs/en/photo-detection.md)
 locates four corners within the geometric criteria on 132/161 development photos
 and 27/30 validation photos; 18 constructed negative controls are rejected.
-It has a diagnostic command with outline and rectified previews. Integration into
-the automatic recognition pipeline remains the next step.
+It has a diagnostic command with outline and rectified previews. The
+[automatic photo pipeline](docs/en/photo-pipeline.md) now connects detection,
+rectification and recognition through `--input-type photo`, a configured neural
+model and explicit orientation.
 The [photo classifier diagnosis](docs/en/phone-classifier-analysis.md) identifies
 which observed appearances fail, class/color confusions and targeted data priorities
 using the existing validation predictions, without retraining.

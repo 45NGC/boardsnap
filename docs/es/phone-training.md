@@ -6,7 +6,7 @@ El primer entrenamiento fotográfico está terminado. Los pesos experimentales s
 `.cache/neural-phone-v1/best.pt`. **No sustituyen** al candidato digital
 `.cache/neural-tolerance-v1-conservative/best.pt`; v8 tampoco se ha modificado.
 El posterior [detector fotográfico](photo-detection.md) implementa por separado la
-localización automática de las cuatro esquinas; falta integrarlo con el reconocimiento.
+localización automática de las cuatro esquinas; el [recorrido fotográfico](photo-pipeline.md) ya lo conecta con el reconocimiento.
 El posterior [diagnóstico del clasificador](phone-classifier-analysis.md) completa
 el desglose por clase, apariencia y condición reutilizando estas predicciones.
 
@@ -72,13 +72,14 @@ Desde la raíz del repositorio y con `.venv` activado, puedes seleccionar el mod
 experimental en la CLI existente:
 
 ```bash
-boardsnap "mi-foto.jpg" --model .cache/neural-phone-v1/best.pt --orientation white-bottom
+boardsnap "mi-foto.jpg" --input-type photo --model .cache/neural-phone-v1/best.pt --orientation white-bottom
 ```
 
-Este comando sigue utilizando el **detector digital**. Si devuelve
-`BOARD_NOT_FOUND` con una foto inclinada, no habrá llegado a probar el clasificador.
-Utiliza PNG/JPEG; convierte HEIC a JPEG previamente. Cambia a `black-bottom`
-cuando las negras estén abajo.
+Este comando utiliza el [recorrido fotográfico automático](photo-pipeline.md),
+incluida la corrección de perspectiva. Si devuelve `BOARD_NOT_FOUND`, no habrá
+llegado al clasificador. Utiliza PNG/JPEG; convierte HEIC a JPEG previamente.
+Cambia a `black-bottom` cuando las negras estén abajo; el modo fotográfico exige
+orientación explícita.
 
 Para probar las piezas independientemente del detector, utiliza la herramienta
 de desarrollo con cuatro esquinas manuales, medidas sobre la imagen completa
@@ -122,6 +123,6 @@ Pasan las 71 pruebas dirigidas y la inferencia con esquinas manuales coincide co
 posiciones conocidas al ejecutar la CLI en ambas orientaciones. El siguiente paso
 es revisar los estilos fotográficos que fallan y estudiar una mezcla auditada con
 datos digitales antes de buscar un sustituto común. El [piloto de localización
-fotográfica](photo-detection.md) ya está medido; quedan pendientes su integración
-con el reconocimiento y la aceptación final independiente. Las nuevas
+fotográfica](photo-detection.md) ya está medido e [integrado con el reconocimiento](photo-pipeline.md);
+queda pendiente la aceptación final independiente. Las nuevas
 pruebas inspeccionadas se conservarán como material de desarrollo.
