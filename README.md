@@ -12,7 +12,11 @@ now provides 10,240 training squares and 1,920 validation squares with verified
 loader-compatible indexes. The [first photographic classifier](docs/en/phone-training.md)
 has been trained: 19/30 validation photos are correct using reviewed corners,
 versus 18/30 before adaptation. Three digital validation boards regress, so the
-photo model remains experimental and separate. Automatic photo detection is pending.
+photo model remains experimental and separate. The new [photographic detector](docs/en/photo-detection.md)
+locates four corners within the geometric criteria on 132/161 development photos
+and 27/30 validation photos; 18 constructed negative controls are rejected.
+It has a diagnostic command with outline and rectified previews. Integration into
+the automatic recognition pipeline remains the next step.
 The [photo classifier diagnosis](docs/en/phone-classifier-analysis.md) identifies
 which observed appearances fail, class/color confusions and targeted data priorities
 using the existing validation predictions, without retraining.

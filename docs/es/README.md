@@ -2,7 +2,9 @@
 
 El [diagnóstico del clasificador fotográfico](phone-classifier-analysis.md) desglosa la validación existente por pieza, apariencia observada y condición fotográfica. Identifica carencias concretas sin repetir entrenamiento ni inferencia; la compatibilidad fotográfica general sigue sin demostrarse.
 
-[Primer clasificador fotográfico](phone-training.md): entrenamiento completado con el [conjunto revisado](phone-training-data.md). Acierta 19/30 fotos de validación con esquinas revisadas, frente a 18/30 antes de adaptarlo. Empeoran tres tableros digitales; el modelo fotográfico experimental no sustituye al candidato digital. La detección automática en fotos sigue pendiente.
+[Primer clasificador fotográfico](phone-training.md): entrenamiento completado con el [conjunto revisado](phone-training-data.md). Acierta 19/30 fotos de validación con esquinas revisadas, frente a 18/30 antes de adaptarlo. Empeoran tres tableros digitales; el modelo fotográfico experimental no sustituye al candidato digital.
+
+El [detector fotográfico](photo-detection.md) ya localiza las cuatro esquinas dentro del criterio geométrico en 132/161 fotos de desarrollo y 27/30 de validación. Rechaza los 18 controles negativos construidos. Su comando de diagnóstico guarda el contorno y el tablero rectificado; queda pendiente conectarlo automáticamente con el reconocimiento.
 
 El [corpus fotográfico inicial](phone-photo-corpus.md) organiza 161 HEIC de
 pantallas: 160 colocaciones revisadas visualmente, una animación ambigua y

@@ -5,7 +5,8 @@
 El primer entrenamiento fotográfico está terminado. Los pesos experimentales son
 `.cache/neural-phone-v1/best.pt`. **No sustituyen** al candidato digital
 `.cache/neural-tolerance-v1-conservative/best.pt`; v8 tampoco se ha modificado.
-Este entrenamiento no implementa la detección automática con perspectiva.
+El posterior [detector fotográfico](photo-detection.md) implementa por separado la
+localización automática de las cuatro esquinas; falta integrarlo con el reconocimiento.
 El posterior [diagnóstico del clasificador](phone-classifier-analysis.md) completa
 el desglose por clase, apariencia y condición reutilizando estas predicciones.
 
@@ -120,6 +121,7 @@ python -m pytest tests/test_phone_inference.py tests/test_neural.py tests/test_p
 Pasan las 71 pruebas dirigidas y la inferencia con esquinas manuales coincide con
 posiciones conocidas al ejecutar la CLI en ambas orientaciones. El siguiente paso
 es revisar los estilos fotográficos que fallan y estudiar una mezcla auditada con
-datos digitales antes de buscar un sustituto común. Quedan pendientes la
-localización automática en fotos y la aceptación final independiente. Las nuevas
+datos digitales antes de buscar un sustituto común. El [piloto de localización
+fotográfica](photo-detection.md) ya está medido; quedan pendientes su integración
+con el reconocimiento y la aceptación final independiente. Las nuevas
 pruebas inspeccionadas se conservarán como material de desarrollo.

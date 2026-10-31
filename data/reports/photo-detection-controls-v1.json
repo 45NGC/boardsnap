@@ -1,0 +1,534 @@
+{
+  "schemaVersion": 1,
+  "dataRole": "constructed-development-negative-controls",
+  "manifestSha256": "44e0f95efaa0afc1b51d1818b8485e90162c40d6cacc59e5f8cf0b6cd9e05e13",
+  "detectorSha256": "bc13c44c6f62b047fb32a91d2ff2a00763011fcf3b8cb7e76b58dbca4e234d0e",
+  "evaluationCodeSha256": "cca4d8c3526027d16815b6ef78566d465f4724f552923ae8b35295999ce2634b",
+  "finalEvaluationAccessed": false,
+  "images": 18,
+  "rejected": 18,
+  "records": [
+    {
+      "id": "phone-357e135f4522a8f7",
+      "imageSha256": "a23a128ee23438ae8be9f798e6cb3eb64083f175a582a8469dd3e87c0640ec36",
+      "variant": "board-removed",
+      "maskPolygon": [
+        [
+          340.239990234375,
+          434.1499938964844
+        ],
+        [
+          2872.570068359375,
+          734.3400268554688
+        ],
+        [
+          2411.110107421875,
+          3035.030029296875
+        ],
+        [
+          267.70001220703125,
+          2743.22998046875
+        ]
+      ],
+      "seconds": 0.24370514200018079,
+      "rejected": true,
+      "error": {
+        "code": "BOARD_NOT_FOUND",
+        "message": "No complete supported photographic chessboard was detected."
+      }
+    },
+    {
+      "id": "phone-357e135f4522a8f7",
+      "imageSha256": "a23a128ee23438ae8be9f798e6cb3eb64083f175a582a8469dd3e87c0640ec36",
+      "variant": "first-file-14-of-64-hidden",
+      "maskPolygon": [
+        [
+          340.239990234375,
+          434.1499938964844
+        ],
+        [
+          408.2130432128906,
+          442.2077331542969
+        ],
+        [
+          325.3957214355469,
+          2751.08447265625
+        ],
+        [
+          267.70001220703125,
+          2743.22998046875
+        ]
+      ],
+      "seconds": 2.3928248110000823,
+      "rejected": true,
+      "error": {
+        "code": "BOARD_NOT_FOUND",
+        "message": "No complete supported photographic chessboard was detected."
+      }
+    },
+    {
+      "id": "phone-357e135f4522a8f7",
+      "imageSha256": "a23a128ee23438ae8be9f798e6cb3eb64083f175a582a8469dd3e87c0640ec36",
+      "variant": "first-file-missing",
+      "maskPolygon": [
+        [
+          340.239990234375,
+          434.1499938964844
+        ],
+        [
+          651.5474243164062,
+          471.0533142089844
+        ],
+        [
+          531.8650512695312,
+          2779.19287109375
+        ],
+        [
+          267.70001220703125,
+          2743.22998046875
+        ]
+      ],
+      "seconds": 1.7372401469997385,
+      "rejected": true,
+      "error": {
+        "code": "BOARD_NOT_FOUND",
+        "message": "No complete supported photographic chessboard was detected."
+      }
+    },
+    {
+      "id": "phone-f4434cf704b97964",
+      "imageSha256": "d90ead455deeebfcb2d761787cba3178d205c43bed9b6e71525414667e5651fe",
+      "variant": "board-removed",
+      "maskPolygon": [
+        [
+          525.8699951171875,
+          797.8200073242188
+        ],
+        [
+          2321.52001953125,
+          801.9400024414062
+        ],
+        [
+          2239.159912109375,
+          2465.830078125
+        ],
+        [
+          654.3200073242188,
+          2498.39990234375
+        ]
+      ],
+      "seconds": 0.16322674799994275,
+      "rejected": true,
+      "error": {
+        "code": "BOARD_NOT_FOUND",
+        "message": "No complete supported photographic chessboard was detected."
+      }
+    },
+    {
+      "id": "phone-f4434cf704b97964",
+      "imageSha256": "d90ead455deeebfcb2d761787cba3178d205c43bed9b6e71525414667e5651fe",
+      "variant": "first-file-14-of-64-hidden",
+      "maskPolygon": [
+        [
+          525.8699951171875,
+          797.8200073242188
+        ],
+        [
+          576.1476440429688,
+          797.9353637695312
+        ],
+        [
+          698.572021484375,
+          2497.490478515625
+        ],
+        [
+          654.3200073242188,
+          2498.39990234375
+        ]
+      ],
+      "seconds": 3.003440839999712,
+      "rejected": true,
+      "error": {
+        "code": "BOARD_NOT_FOUND",
+        "message": "No complete supported photographic chessboard was detected."
+      }
+    },
+    {
+      "id": "phone-f4434cf704b97964",
+      "imageSha256": "d90ead455deeebfcb2d761787cba3178d205c43bed9b6e71525414667e5651fe",
+      "variant": "first-file-missing",
+      "maskPolygon": [
+        [
+          525.8699951171875,
+          797.8200073242188
+        ],
+        [
+          755.1583862304688,
+          798.3460693359375
+        ],
+        [
+          856.1862182617188,
+          2494.25146484375
+        ],
+        [
+          654.3200073242188,
+          2498.39990234375
+        ]
+      ],
+      "seconds": 2.6464944240001387,
+      "rejected": true,
+      "error": {
+        "code": "BOARD_NOT_FOUND",
+        "message": "No complete supported photographic chessboard was detected."
+      }
+    },
+    {
+      "id": "phone-f2893766b8090cc7",
+      "imageSha256": "e20f07d5adbcae54ce4649655cb02318836b7b027074701565ba221f55ac7336",
+      "variant": "board-removed",
+      "maskPolygon": [
+        [
+          203.97000122070312,
+          884.3900146484375
+        ],
+        [
+          2448.489990234375,
+          821.739990234375
+        ],
+        [
+          2388.8798828125,
+          2878.2099609375
+        ],
+        [
+          428.5400085449219,
+          2944.909912109375
+        ]
+      ],
+      "seconds": 0.19732482500012338,
+      "rejected": true,
+      "error": {
+        "code": "BOARD_NOT_FOUND",
+        "message": "No complete supported photographic chessboard was detected."
+      }
+    },
+    {
+      "id": "phone-f2893766b8090cc7",
+      "imageSha256": "e20f07d5adbcae54ce4649655cb02318836b7b027074701565ba221f55ac7336",
+      "variant": "first-file-14-of-64-hidden",
+      "maskPolygon": [
+        [
+          203.97000122070312,
+          884.3900146484375
+        ],
+        [
+          265.7421569824219,
+          882.6658325195312
+        ],
+        [
+          482.447021484375,
+          2943.07568359375
+        ],
+        [
+          428.5400085449219,
+          2944.909912109375
+        ]
+      ],
+      "seconds": 3.584030621999773,
+      "rejected": true,
+      "error": {
+        "code": "BOARD_NOT_FOUND",
+        "message": "No complete supported photographic chessboard was detected."
+      }
+    },
+    {
+      "id": "phone-f2893766b8090cc7",
+      "imageSha256": "e20f07d5adbcae54ce4649655cb02318836b7b027074701565ba221f55ac7336",
+      "variant": "first-file-missing",
+      "maskPolygon": [
+        [
+          203.97000122070312,
+          884.3900146484375
+        ],
+        [
+          486.1729736328125,
+          876.5130615234375
+        ],
+        [
+          674.8318481445312,
+          2936.530029296875
+        ],
+        [
+          428.5400085449219,
+          2944.909912109375
+        ]
+      ],
+      "seconds": 3.3937341689997993,
+      "rejected": true,
+      "error": {
+        "code": "BOARD_NOT_FOUND",
+        "message": "No complete supported photographic chessboard was detected."
+      }
+    },
+    {
+      "id": "phone-e61819279f91c91e",
+      "imageSha256": "4f7e689069247511be51a52c683d365dd475369f35ff15842556b9ecc0138b36",
+      "variant": "board-removed",
+      "maskPolygon": [
+        [
+          366.739990234375,
+          695.1099853515625
+        ],
+        [
+          2789.340087890625,
+          684.1599731445312
+        ],
+        [
+          2616.780029296875,
+          2910.52001953125
+        ],
+        [
+          533.77001953125,
+          2901.0
+        ]
+      ],
+      "seconds": 0.1369020349998209,
+      "rejected": true,
+      "error": {
+        "code": "BOARD_NOT_FOUND",
+        "message": "No complete supported photographic chessboard was detected."
+      }
+    },
+    {
+      "id": "phone-e61819279f91c91e",
+      "imageSha256": "4f7e689069247511be51a52c683d365dd475369f35ff15842556b9ecc0138b36",
+      "variant": "first-file-14-of-64-hidden",
+      "maskPolygon": [
+        [
+          366.739990234375,
+          695.1099853515625
+        ],
+        [
+          432.345703125,
+          694.8134765625
+        ],
+        [
+          590.255859375,
+          2901.258056640625
+        ],
+        [
+          533.77001953125,
+          2901.0
+        ]
+      ],
+      "seconds": 3.2288105739999082,
+      "rejected": true,
+      "error": {
+        "code": "BOARD_NOT_FOUND",
+        "message": "No complete supported photographic chessboard was detected."
+      }
+    },
+    {
+      "id": "phone-e61819279f91c91e",
+      "imageSha256": "4f7e689069247511be51a52c683d365dd475369f35ff15842556b9ecc0138b36",
+      "variant": "first-file-missing",
+      "maskPolygon": [
+        [
+          366.739990234375,
+          695.1099853515625
+        ],
+        [
+          666.9417114257812,
+          693.7531127929688
+        ],
+        [
+          792.2058715820312,
+          2902.18115234375
+        ],
+        [
+          533.77001953125,
+          2901.0
+        ]
+      ],
+      "seconds": 1.756938361000266,
+      "rejected": true,
+      "error": {
+        "code": "BOARD_NOT_FOUND",
+        "message": "No complete supported photographic chessboard was detected."
+      }
+    },
+    {
+      "id": "phone-8dae9671e0f390e4",
+      "imageSha256": "45a122408ff66a0c04e383efa3a4841dba76cc076f30e56179d331275fa8f20e",
+      "variant": "board-removed",
+      "maskPolygon": [
+        [
+          485.7300109863281,
+          418.239990234375
+        ],
+        [
+          2806.27001953125,
+          630.3400268554688
+        ],
+        [
+          2479.080078125,
+          2672.22998046875
+        ],
+        [
+          533.6599731445312,
+          2632.25
+        ]
+      ],
+      "seconds": 0.1421555509996324,
+      "rejected": true,
+      "error": {
+        "code": "BOARD_NOT_FOUND",
+        "message": "No complete supported photographic chessboard was detected."
+      }
+    },
+    {
+      "id": "phone-8dae9671e0f390e4",
+      "imageSha256": "45a122408ff66a0c04e383efa3a4841dba76cc076f30e56179d331275fa8f20e",
+      "variant": "first-file-14-of-64-hidden",
+      "maskPolygon": [
+        [
+          485.7300109863281,
+          418.239990234375
+        ],
+        [
+          554.12451171875,
+          424.4913330078125
+        ],
+        [
+          590.291015625,
+          2633.413818359375
+        ],
+        [
+          533.6599731445312,
+          2632.25
+        ]
+      ],
+      "seconds": 1.3197072919997481,
+      "rejected": true,
+      "error": {
+        "code": "BOARD_NOT_FOUND",
+        "message": "No complete supported photographic chessboard was detected."
+      }
+    },
+    {
+      "id": "phone-8dae9671e0f390e4",
+      "imageSha256": "45a122408ff66a0c04e383efa3a4841dba76cc076f30e56179d331275fa8f20e",
+      "variant": "first-file-missing",
+      "maskPolygon": [
+        [
+          485.7300109863281,
+          418.239990234375
+        ],
+        [
+          795.964599609375,
+          446.5957946777344
+        ],
+        [
+          790.876708984375,
+          2637.5361328125
+        ],
+        [
+          533.6599731445312,
+          2632.25
+        ]
+      ],
+      "seconds": 0.7826380799997423,
+      "rejected": true,
+      "error": {
+        "code": "BOARD_NOT_FOUND",
+        "message": "No complete supported photographic chessboard was detected."
+      }
+    },
+    {
+      "id": "phone-c714791042aeccb1",
+      "imageSha256": "b17017be91c8399e7290939d89389a3d832c81c7127a2a1be7d6ccb3c93a87cf",
+      "variant": "board-removed",
+      "maskPolygon": [
+        [
+          558.1500244140625,
+          719.2999877929688
+        ],
+        [
+          2715.820068359375,
+          745.5999755859375
+        ],
+        [
+          2554.110107421875,
+          2752.97998046875
+        ],
+        [
+          657.5700073242188,
+          2725.659912109375
+        ]
+      ],
+      "seconds": 0.1517123309999988,
+      "rejected": true,
+      "error": {
+        "code": "BOARD_NOT_FOUND",
+        "message": "No complete supported photographic chessboard was detected."
+      }
+    },
+    {
+      "id": "phone-c714791042aeccb1",
+      "imageSha256": "b17017be91c8399e7290939d89389a3d832c81c7127a2a1be7d6ccb3c93a87cf",
+      "variant": "first-file-14-of-64-hidden",
+      "maskPolygon": [
+        [
+          558.1500244140625,
+          719.2999877929688
+        ],
+        [
+          617.0122680664062,
+          720.0174560546875
+        ],
+        [
+          709.322998046875,
+          2726.405517578125
+        ],
+        [
+          657.5700073242188,
+          2725.659912109375
+        ]
+      ],
+      "seconds": 1.8932784000003267,
+      "rejected": true,
+      "error": {
+        "code": "BOARD_NOT_FOUND",
+        "message": "No complete supported photographic chessboard was detected."
+      }
+    },
+    {
+      "id": "phone-c714791042aeccb1",
+      "imageSha256": "b17017be91c8399e7290939d89389a3d832c81c7127a2a1be7d6ccb3c93a87cf",
+      "variant": "first-file-missing",
+      "maskPolygon": [
+        [
+          558.1500244140625,
+          719.2999877929688
+        ],
+        [
+          827.297119140625,
+          722.5806274414062
+        ],
+        [
+          894.2034912109375,
+          2729.068603515625
+        ],
+        [
+          657.5700073242188,
+          2725.659912109375
+        ]
+      ],
+      "seconds": 0.5404193459999078,
+      "rejected": true,
+      "error": {
+        "code": "BOARD_NOT_FOUND",
+        "message": "No complete supported photographic chessboard was detected."
+      }
+    }
+  ]
+}

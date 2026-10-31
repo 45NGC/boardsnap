@@ -5,7 +5,8 @@
 The first photographic fine-tuning run is complete. Its experimental weights are
 `.cache/neural-phone-v1/best.pt`. They **do not replace** the digital candidate at
 `.cache/neural-tolerance-v1-conservative/best.pt`; v8 is also unchanged.
-Automatic perspective detection has not been implemented by this training step.
+The subsequent [photographic detector](photo-detection.md) implements automatic
+four-corner localization separately; its integration with recognition is pending.
 The subsequent [classifier diagnosis](phone-classifier-analysis.md) completes
 the class, appearance and condition breakdown using these same saved predictions.
 
@@ -112,6 +113,7 @@ python -m pytest tests/test_phone_inference.py tests/test_neural.py tests/test_p
 The 71 targeted tests pass; manual-corner inference also matches known placements
 through actual CLI subprocesses in both orientations. Next, inspect the remaining
 photographic style errors and consider audited digital replay before training a
-shared replacement. Automatic photographic localization and an independent final
-acceptance remain separate pending work. Keep collecting new trials as development
+shared replacement. The [photographic localization pilot](photo-detection.md) is now
+measured; its integration with recognition and independent final acceptance remain
+pending. Keep collecting new trials as development
 data once their results have been inspected.
