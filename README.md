@@ -2,6 +2,11 @@
 
 [English](docs/en/README.md) | [Spanish](docs/es/README.md)
 
+The [first-version quality review](docs/en/photo-quality.md) prioritizes observed
+photo failures and records rejected resampling/training experiments. Keep the
+existing digital and photo-v1 models; targeted style data is needed before the
+next photographic training run. No replacement or final acceptance is claimed.
+
 The [photographic intake pilot](docs/en/phone-photo-corpus.md) inventories 161 local
 screen photographs, with 160 visual placement transcriptions and one ambiguous
 image. All four-corner annotations and a rectified visual review are complete.

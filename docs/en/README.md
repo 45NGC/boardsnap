@@ -1,5 +1,10 @@
 # BoardSnap
 
+The [first-version quality review](photo-quality.md) combines digital and photo
+evidence, audits training appearances and rejects changes that lose previous
+successes. Existing models remain recommended; photographic quality is still
+limited by specific styles and capture conditions.
+
 The [photo classifier diagnosis](phone-classifier-analysis.md) breaks down the existing validation by piece, observed appearance and photographic condition. It identifies targeted data gaps without new training or inference; general photographic compatibility remains unproven.
 
 [First photographic classifier](phone-training.md): training is complete using the [reviewed dataset](phone-training-data.md). It recognizes 19/30 validation photos with reviewed corners, versus 18/30 before adaptation. Three digital boards regress; the experimental photo model does not replace the digital candidate.

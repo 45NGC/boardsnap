@@ -1,0 +1,1019 @@
+{
+  "schemaVersion": 1,
+  "method": "Assistant visual inspection of representative black pawn, white pawn, black knight and white king crops for all 160 training photographs, compared with validation appearance references. Not an exhaustive review of every piece or an official theme identification.",
+  "reviewedOn": "2026-11-01",
+  "reviewedBy": "assistant",
+  "sourceManifestSha256": "44e0f95efaa0afc1b51d1818b8485e90162c40d6cacc59e5f8cf0b6cd9e05e13",
+  "trainingIndexSha256": "887fc2872ba9f3aea1feced2cd22bb93f2346e83ac923206d8dad823410357d7",
+  "trainingPhotos": 160,
+  "validationMovedToTraining": false,
+  "localContactSheets": [
+    ".cache/phone-chesscom-inventory.png",
+    ".cache/phone-lichess-inventory.png",
+    ".cache/phone-video-inventory.png"
+  ],
+  "observations": [
+    {
+      "appearance": "cc-thin-stem",
+      "validationExamples": [
+        "chesscom-img_5401",
+        "chesscom-img_5402"
+      ],
+      "finding": "No matching umbrella-shaped thin-stem pawn and king design identified in representative training crops. Other slender designs exist; they are not assumed equivalent. Prioritize real training examples of this appearance."
+    },
+    {
+      "appearance": "cc-shaded",
+      "validationExamples": [
+        "chesscom-img_5397",
+        "chesscom-img_5398"
+      ],
+      "trainingExamples": [
+        "chesscom-photo-46",
+        "chesscom-photo-47",
+        "chesscom-photo-48",
+        "chesscom-photo-49",
+        "chesscom-photo-50",
+        "chesscom-photo-51",
+        "chesscom-photo-52",
+        "chesscom-photo-53",
+        "chesscom-photo-54",
+        "chesscom-photo-55"
+      ],
+      "finding": "Similar shaded pieces are present in ten training photographs, mostly over plain brown/blue backgrounds. Validation wood texture remains a coverage gap; absence of the piece style alone does not explain errors."
+    },
+    {
+      "appearance": "lc-rounded-king",
+      "validationExamples": [
+        "lichess-img_5391",
+        "lichess-img_5392"
+      ],
+      "finding": "Related rounded king designs exist in Lichess/video training crops. Exact design, background and photographic degradation remain confounded; do not claim the entire family is absent."
+    },
+    {
+      "category": "chesscom",
+      "finding": "Forty of 55 direct-platform training photos use a conventional appearance; five a flatter appearance and ten a shaded appearance. Photo count overstates design diversity."
+    }
+  ],
+  "samples": [
+    {
+      "photoId": "phone-357e135f4522a8f7",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-1.HEIC",
+      "arraySha256": "59e1edf8dd70fb6b9cfc6671a8ef0f27aea732785e335a01d0bcdebd0c8e6408"
+    },
+    {
+      "photoId": "phone-f4434cf704b97964",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-2.HEIC",
+      "arraySha256": "fb327befefda5ffbd981252faf4c9cdcb18d789b22e99119761809faf83ae6b9"
+    },
+    {
+      "photoId": "phone-f2893766b8090cc7",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-3.HEIC",
+      "arraySha256": "e595ea88721cf18cab38915be6aa050be950329be3ff3f5500f0a0ad768afb16"
+    },
+    {
+      "photoId": "phone-af784bddea9dd3b3",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-4.HEIC",
+      "arraySha256": "1b11216099359764c7e79bd581c87ff09ffe9e0ab4c36fc687add448b1a40f9e"
+    },
+    {
+      "photoId": "phone-d1603360b12d8a5e",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-5.HEIC",
+      "arraySha256": "fc48e347e4437c50397e17fb9eb189daa7470870d5d845b73d5641e531b6b6f6"
+    },
+    {
+      "photoId": "phone-60a84f4256de0a73",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-6.HEIC",
+      "arraySha256": "3b325034d33b49c914fe78a66145de8f5c7e94fa04e1d94dd6a8e2586e657dc2"
+    },
+    {
+      "photoId": "phone-07db5044b893c799",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-7.HEIC",
+      "arraySha256": "fe3732eed8067d3b6e744c84cb81c3818b8a603132c0d910ed32e75796eb5d76"
+    },
+    {
+      "photoId": "phone-60913e118dc95b5a",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-8.HEIC",
+      "arraySha256": "50f852e7e12f2ff2e29778b76da14c9989ed801884c2947fdaa1e693170e45bd"
+    },
+    {
+      "photoId": "phone-769cc449230f0b48",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-9.HEIC",
+      "arraySha256": "01c575b660eb2a86133728ae7f2f400666714b8fde76601fc140b9406461bb96"
+    },
+    {
+      "photoId": "phone-e37e3ffa091f7fd8",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-10.HEIC",
+      "arraySha256": "263b585338508a9fa550fb79e46e3a16960f4e255ed8ab7be37240c688b6244d"
+    },
+    {
+      "photoId": "phone-2f789f63ee0010b9",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-11.HEIC",
+      "arraySha256": "4f43f57925ed3cf45374c3ad4ef7e35b2ebed74da4a05f2a71161d7193f5dded"
+    },
+    {
+      "photoId": "phone-4960b6bee5413fa8",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-12.HEIC",
+      "arraySha256": "265446f4dc5762440e5c95214e450393e7fd3d2d216dad38369d5fa5dca84e23"
+    },
+    {
+      "photoId": "phone-eba77b13130c195c",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-13.HEIC",
+      "arraySha256": "ae9a6e095314694fd5c5a0ca78c76f30b8d742dd7bf1560d9aa46110131ee098"
+    },
+    {
+      "photoId": "phone-12f61a23bf5ca5b5",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-14.HEIC",
+      "arraySha256": "69ae5e3efb06461076b752bccc881a73508811fddad56acf5e5d851c35693634"
+    },
+    {
+      "photoId": "phone-3919af681ea8ed08",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-15.HEIC",
+      "arraySha256": "5def84b0e6adc74d226398f49a67aa322e10a74c64f52c6839e8acae354a4d3c"
+    },
+    {
+      "photoId": "phone-b5f150c7d7b40482",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-16.HEIC",
+      "arraySha256": "02aaef54b31d7df4f8ecc261fb7928ea51960e09e45b7552f07f28954a149b13"
+    },
+    {
+      "photoId": "phone-d95dd8c771a465ae",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-17.HEIC",
+      "arraySha256": "1df7a998a6c5c8e2efcf141a7799dfc62eecf40056a5aa63e19359c4432d09d7"
+    },
+    {
+      "photoId": "phone-3fa9a4cdb5941c3a",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-18.HEIC",
+      "arraySha256": "41d331d717be1981f162bfd93254ba1a972ea7474e51124b335192faba030690"
+    },
+    {
+      "photoId": "phone-8933d535e0a58ce7",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-19.HEIC",
+      "arraySha256": "e09144fc201baf693219e470f029941d2e041fd17fcb523c90f5be11c5a95ef8"
+    },
+    {
+      "photoId": "phone-a11c46b55910c12b",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-20.HEIC",
+      "arraySha256": "3143ec88a5dedea58b576d593eadfcb5447660395f40cbd5815fba4dadd1e507"
+    },
+    {
+      "photoId": "phone-5401404735d66725",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-21.HEIC",
+      "arraySha256": "46c3b5373dc880133cba80bab7656f82ad27350c0e83ebdd75b5030299cbe265"
+    },
+    {
+      "photoId": "phone-97bcaac405ef13e9",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-22.HEIC",
+      "arraySha256": "0fd89a0d658ea537dcc9232dd9714142da72e545603519d4a6ee2b7077fff252"
+    },
+    {
+      "photoId": "phone-3143e97a6d00eaea",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-23.HEIC",
+      "arraySha256": "de6e54f0fd9318f248f98079e9073f71e0925c376a20da768c45cfa4a9924024"
+    },
+    {
+      "photoId": "phone-08a5490ba0c17d7f",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-24.HEIC",
+      "arraySha256": "928948d8402ad98ad6e342de555f96b7efc22c47100c187cafe7906437b556fa"
+    },
+    {
+      "photoId": "phone-d4d94e4c0b82caee",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-25.HEIC",
+      "arraySha256": "700f826ead826ccb2c0eb02af914ecc2fbea8208f1b8450b355c989d6a33e1d9"
+    },
+    {
+      "photoId": "phone-55585ae421e3e8d6",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-26.HEIC",
+      "arraySha256": "94a3ed264d0b38c83ee10538bfc1f98e368040d69719b4f1161b5f7e47b15da8"
+    },
+    {
+      "photoId": "phone-79c71dc753519eb8",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-27.HEIC",
+      "arraySha256": "00baab7bbd42eed786fb1f0c2c6c3d9af34b66b5b1b886fc5acc7f02bd2052ac"
+    },
+    {
+      "photoId": "phone-d18f815e674828d9",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-28.HEIC",
+      "arraySha256": "ed1582bcf7b46b5c25d6b9699c6af3928d5107497802eb1c312919edbe419bda"
+    },
+    {
+      "photoId": "phone-79eefdd283c5b77d",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-29.HEIC",
+      "arraySha256": "c9f5f1db81d496bd639b3a69e0a3d3279875ff500cd6e64462b81580dc84ce76"
+    },
+    {
+      "photoId": "phone-304a5e9f1f578036",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-30.HEIC",
+      "arraySha256": "bd612e5dcb2ee8c883bb24685e5cfd67dfdfae689a9fcd857d459d3cf53a6fd6"
+    },
+    {
+      "photoId": "phone-e61819279f91c91e",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-1.HEIC",
+      "arraySha256": "dab66c8b062fe0f8557df82b847f93889328be957dc83a4620acde49c024c71c"
+    },
+    {
+      "photoId": "phone-8dae9671e0f390e4",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-2.HEIC",
+      "arraySha256": "2f5b72bef1c14c8e7fe2c99878b857b0de02035e0836ae9203453f768991412a"
+    },
+    {
+      "photoId": "phone-c714791042aeccb1",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-3.HEIC",
+      "arraySha256": "a335cb593934e606011087b65e0c43a56782cc745ef2b99c875e995055f10c3c"
+    },
+    {
+      "photoId": "phone-459d6257d2fb3ab2",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-4.HEIC",
+      "arraySha256": "2e954a47f0066a0b205cd629ae966ee6c869b8f16829214fb8b896c7bca09553"
+    },
+    {
+      "photoId": "phone-ab9863dbc46ba8e9",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-5.HEIC",
+      "arraySha256": "b7503d33d30c54b7fc7fc7757280c5ed761e6b93e55628d8361c8cd1f449de19"
+    },
+    {
+      "photoId": "phone-ee72c36864a726a4",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-6.HEIC",
+      "arraySha256": "0d6febf2997ce1a03948c575625f75ad3793519b5011191cc2a4436fa9a56d8f"
+    },
+    {
+      "photoId": "phone-a39fed0ffbb76d9b",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-7.HEIC",
+      "arraySha256": "5a54ddb1a922b0e48885d11a6dda15084784dc79c501072d918074b00339330b"
+    },
+    {
+      "photoId": "phone-ea90bf646c79d0e6",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-9.HEIC",
+      "arraySha256": "c544b8a49a918ce445584df3a23196edc16ee3d05c0ff71f8392963702ac530b"
+    },
+    {
+      "photoId": "phone-04f9d06d2e080c60",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-10.HEIC",
+      "arraySha256": "1fa69a1b0218566bfcc4efd732731c12da686af89e6561f2cc06e9c1e64646c9"
+    },
+    {
+      "photoId": "phone-61e8274b36059552",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-11.HEIC",
+      "arraySha256": "c6e89d33b7ff509280ea78b07dc5557e9187f558674e6a486c9aa4eb95e5f7be"
+    },
+    {
+      "photoId": "phone-ea0e171bd7a7cdc3",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-12.HEIC",
+      "arraySha256": "7e4a8fbf6a8b1875818e399fb263fd4f7ca00192a07c5e843863407a75206249"
+    },
+    {
+      "photoId": "phone-d11a264f4952c3d8",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-13.HEIC",
+      "arraySha256": "4d51c8ad62b65f003b54fd55b750eac09b17a4b99e560e1846b91aa91b18ae6e"
+    },
+    {
+      "photoId": "phone-129de706cfb263c9",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-14.HEIC",
+      "arraySha256": "8c05c970d1b8bd9410b8dee0a3bad14522db9c4bb14d070876205bd6fed3b9e6"
+    },
+    {
+      "photoId": "phone-9c7f3baea6979bb8",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-15.HEIC",
+      "arraySha256": "807a6a8dba8f2e6841fe548bf9435eddc5017df443db727562cae1a6583b4f8d"
+    },
+    {
+      "photoId": "phone-335e5170d910dae4",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-16.HEIC",
+      "arraySha256": "b9db69765a5f5a80a6a231418807b72a080a7d63b043fadee2df0f3cdbc7beac"
+    },
+    {
+      "photoId": "phone-ef969598673e0e74",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-17.HEIC",
+      "arraySha256": "3f677ae0bbcb473c28c1fe4dbce1cb9ce0777ace227879566316e5426ce7a8f0"
+    },
+    {
+      "photoId": "phone-515ebe471d662834",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-18.HEIC",
+      "arraySha256": "3278016600ad30729473342165bf2fb123ef8b710d6a9d2c3cd4ed77fe99cfa2"
+    },
+    {
+      "photoId": "phone-fbba3d541b821831",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-19.HEIC",
+      "arraySha256": "757f9aa0f03f53e763363c34fc51136e9c97b547f5c3fea138dbc2c2558d813c"
+    },
+    {
+      "photoId": "phone-3a99ebcf13e6460e",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-20.HEIC",
+      "arraySha256": "4a2b0b5f7234dab8805b3f3f3e413265b2c46478313232c493ad8993446a70cd"
+    },
+    {
+      "photoId": "phone-3eced6d924e6139c",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-21.HEIC",
+      "arraySha256": "80f968dee841a28d9e3668261c9639753a858a51f3e8f67dfb48d98b9e92eefc"
+    },
+    {
+      "photoId": "phone-47c76ad4dfbca8a0",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-22.HEIC",
+      "arraySha256": "ecb77bae64704716ca1608bb9a49e182bd2496623693f1a5b0ef931b1ef0b2cd"
+    },
+    {
+      "photoId": "phone-fe90e48e3e6c9e17",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-23.HEIC",
+      "arraySha256": "39a33b567f8b69236f346527a0e1304ededad8961f6970204aa260bba9a495f8"
+    },
+    {
+      "photoId": "phone-5671d5ed953b62c0",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-24.HEIC",
+      "arraySha256": "d2487db603d66a0c52ae7de9ce10a079de3019605a071c432055e653614f4e2d"
+    },
+    {
+      "photoId": "phone-ccf04aa50e520746",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-25.HEIC",
+      "arraySha256": "6db225c584a062fa409f536796652e55fc1963e92d4a787b9e1115358355d41b"
+    },
+    {
+      "photoId": "phone-ec2c273d1ac4af8e",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-26.HEIC",
+      "arraySha256": "64f652793311437b34159715a768c4d9c4571fcdfa9f44caca5f059a4d22ac8c"
+    },
+    {
+      "photoId": "phone-06a12eccffbf1c3d",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-27.HEIC",
+      "arraySha256": "9e375e354d3afbf9171bd9352f5a00644e3a324b889e3bb2ec3b80622f5463c0"
+    },
+    {
+      "photoId": "phone-ba6617fe964fba0c",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-28.HEIC",
+      "arraySha256": "68379bc99a077d9b9a578bb86145bd17d07e1f8413244cf5455c89397576e377"
+    },
+    {
+      "photoId": "phone-68fbfe6cb128127d",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-29.HEIC",
+      "arraySha256": "51f4da5584fbce73bba55292d2bc210c7f5a020f611c3a4d8a0852637c4d3508"
+    },
+    {
+      "photoId": "phone-eb020c23f54e1a41",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-30.HEIC",
+      "arraySha256": "8945dea53722911250b7e110a6583b01f8ab4c05f856931c9d347b1a8abe7889"
+    },
+    {
+      "photoId": "phone-f7a04b143261e0f5",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-1.HEIC",
+      "arraySha256": "0807486c5c231d75f0c8c6a745d873822d3dd175f60d16603087d7fabce85b27"
+    },
+    {
+      "photoId": "phone-3d294a5eb6fcd0fa",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-2.HEIC",
+      "arraySha256": "f27ef03406f5cafd0cc4ae3d0b633d9f97e1b596c46c5aa555586048e2296f0a"
+    },
+    {
+      "photoId": "phone-2c1928374e5ff2be",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-3.HEIC",
+      "arraySha256": "8417e6da094889fefc78d2b4680e24a910d5e53cf8823d73decc1e9240ed022e"
+    },
+    {
+      "photoId": "phone-19fb0ff5251d6514",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-4.HEIC",
+      "arraySha256": "5a9983440a6849bd8978f63abb70bc5a8bba6031489105be7318a3d240ed258e"
+    },
+    {
+      "photoId": "phone-78609865d3135ad8",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-5.HEIC",
+      "arraySha256": "f9d08b3da80b551f0d074ee0f51f13c31dcc1bacbbd31c30ed8a30a8d6324522"
+    },
+    {
+      "photoId": "phone-d045f07954e513fb",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-6.HEIC",
+      "arraySha256": "77a7115476b5bf1d410f0a1e1e05649d0058d01e581d827103531cc58f00b7fc"
+    },
+    {
+      "photoId": "phone-77739890b8750422",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-7.HEIC",
+      "arraySha256": "11910b88b025462bb7160d50d082347442abfebc5a2e9e22c5942fe5db00db9e"
+    },
+    {
+      "photoId": "phone-369f8c62b80ae326",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-8.HEIC",
+      "arraySha256": "b6de3dfea922de81b5151f95bd8db2a5e4f32bc2909791a97f6f0bc03ef00374"
+    },
+    {
+      "photoId": "phone-c4905641ecd8ead9",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-9.HEIC",
+      "arraySha256": "86e506592900a4a568ba527fed24226bc6bc076fb8b66dad7184ce5f93aa26b6"
+    },
+    {
+      "photoId": "phone-703ef3bb0d658ebb",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-10.HEIC",
+      "arraySha256": "053ab71e7ccb1957c906c4c459b3e8207bd787934b6f2f67a69edf5867634ad9"
+    },
+    {
+      "photoId": "phone-3268d66de68b4ac3",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-11.HEIC",
+      "arraySha256": "c6a2e8cca0c09b7c01f8a2a20a9ddce0c2f9e4e476eb694331bc2b5437dcf59a"
+    },
+    {
+      "photoId": "phone-5e3e4216cd130a8a",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-12.HEIC",
+      "arraySha256": "0e9b70aa5eb40f116c381e800e336442d4f4c9a02e12d7d6daaa4e6af10a03e3"
+    },
+    {
+      "photoId": "phone-632760bf2c9f4f4b",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-13.HEIC",
+      "arraySha256": "c10b98ab9b92fd0852f27a3c2f3403e43fa84050bcceed4ff1ddffd9bbc7d9ac"
+    },
+    {
+      "photoId": "phone-5e8c256be9ef5897",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-14.HEIC",
+      "arraySha256": "d40c0591847cd08f69a948d6634618e1fbb88362af7d01adc886dac1934d8a0c"
+    },
+    {
+      "photoId": "phone-2f54c61243556b1e",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-15.HEIC",
+      "arraySha256": "74aaa27952f5e2d23425f2505f04dd1abdc25da1ba5a78e33599bdcb8c4a7b30"
+    },
+    {
+      "photoId": "phone-497b48679b527cf9",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-16.HEIC",
+      "arraySha256": "978774b40526134d2e41f9509f64dd51135fd92042d1383bbe5c465d64319057"
+    },
+    {
+      "photoId": "phone-83e47e9eafacde1f",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-17.HEIC",
+      "arraySha256": "7f698a97819c422c5a1aef746be919d7a8f5580890fc887cc7aeb8ae0f27b46d"
+    },
+    {
+      "photoId": "phone-a402498bd385294a",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-18.HEIC",
+      "arraySha256": "65dfbf870f5e34cc2e5c864480147cbb98fb44f187afddb674f9441fc7be47a4"
+    },
+    {
+      "photoId": "phone-7f91c2c3931c1bf4",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-19.HEIC",
+      "arraySha256": "5dc5f5fccc00aff25a50033736586f5089c5a584ec155a2d28833d27b62cecb1"
+    },
+    {
+      "photoId": "phone-17536706b058196a",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-20.HEIC",
+      "arraySha256": "a4fee4d5fe4b4931ba04b4fec6c675fc4c05f122783f822c822f32f85b78c75d"
+    },
+    {
+      "photoId": "phone-c29ea8667be9f0e4",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-21.HEIC",
+      "arraySha256": "622310795ca89d47f830e2ce0a62f06b419968cfba75243471c2c5a8137a3ab1"
+    },
+    {
+      "photoId": "phone-93319356e94bae92",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-22.HEIC",
+      "arraySha256": "5767c7f69115581a3c697027f8d5bbe3b4f33980adb6143d10649d5f42a45ef1"
+    },
+    {
+      "photoId": "phone-0a44e664e846f50f",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-23.HEIC",
+      "arraySha256": "0418900583e60c1c97dd4d37ab8a9413a15db5f1fc99250922048e907047a093"
+    },
+    {
+      "photoId": "phone-9eb693dc0fcfa29d",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-24.HEIC",
+      "arraySha256": "113cb2ff5b4f6cd5234249b817374e905490c1962c89abd7d53f7ffef33efff2"
+    },
+    {
+      "photoId": "phone-89dcbe0f9b34b2e2",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-25.HEIC",
+      "arraySha256": "1df5d9217dacd134a3b511d74487079d315a7916eb7577627636002223bf948a"
+    },
+    {
+      "photoId": "phone-ed8227c015a110d0",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-26.HEIC",
+      "arraySha256": "898e8c700e24cee2d62f55d3e4c43b2f6f51877ca494bef9c40cbf176ac95841"
+    },
+    {
+      "photoId": "phone-741c71aa7baa0c02",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-27.HEIC",
+      "arraySha256": "2bc6f2e1f258312d532662f98f5fc2f320265f2c3c160f3126d7bc15e3bc7900"
+    },
+    {
+      "photoId": "phone-4fae5747da5167d9",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-28.HEIC",
+      "arraySha256": "4a53af72dfce84683b7ee6a149112ed1c9ea02fe0b05779b27f1c9accd47416c"
+    },
+    {
+      "photoId": "phone-af61315a4af4e0e2",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-29.HEIC",
+      "arraySha256": "6b232c71bc6de6b6b277cb0272009a8e356d27bfde00b9809246e1b22d7431d3"
+    },
+    {
+      "photoId": "phone-8b68476184c1f9d9",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-31.HEIC",
+      "arraySha256": "95f8a693c3632a31e9a22b2829b87491bc34e5a9357003a6d918a9fca45f3659"
+    },
+    {
+      "photoId": "phone-8dc1a7d99d0eb3d6",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-32.HEIC",
+      "arraySha256": "a7a4c4e72722d2e44029bc6c862b9a35054b5d9025ec5818eeddb9318d6c3390"
+    },
+    {
+      "photoId": "phone-62e927b6a08e5a73",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-33.HEIC",
+      "arraySha256": "dc50caf528cdf36782556941e93ad479be01e99ed68c2be83229421001abb7f9"
+    },
+    {
+      "photoId": "phone-6959b615e211ede1",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-34.HEIC",
+      "arraySha256": "ebf8d8819cb43def340a83ab1baa26432a568e84f5e80b0b31855201ad1af6be"
+    },
+    {
+      "photoId": "phone-5e62603717d40d74",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-35.HEIC",
+      "arraySha256": "a3345b8ac8165de0274c3c92cb1f1e0741c71f8bbd498becc9bd4f8140535ac1"
+    },
+    {
+      "photoId": "phone-73ee8fd98e682c80",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-36.HEIC",
+      "arraySha256": "1f56ebc6b7852f2133fbf7d9d33791f1bb963b920961d90b227ec2ae0a3b21bf"
+    },
+    {
+      "photoId": "phone-dd5d557ef8096fa7",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-37.HEIC",
+      "arraySha256": "0e9ebb6bf39db2fac880ade458c3ab4211f3611ef79fcbfc391087f3b1306f6a"
+    },
+    {
+      "photoId": "phone-ce9e3c09195f7fcf",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-38.HEIC",
+      "arraySha256": "82518a95e273e75e39eda6d81ad5838dde572f4fcefe735fdee7cf2a9fa21084"
+    },
+    {
+      "photoId": "phone-2b8e213f8d3f3ca8",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-39.HEIC",
+      "arraySha256": "3534e5e9fb99322c7016c4e2bbdc9293d19c282328ef49b9f106ce5a19803bae"
+    },
+    {
+      "photoId": "phone-694f37ac04a3fc22",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-40.HEIC",
+      "arraySha256": "4bf6a06d9510a8a6e3d1601888c40a93623dadf892dcdd4fcfd490906ae82534"
+    },
+    {
+      "photoId": "phone-7617d3c9a0752fa8",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-41.HEIC",
+      "arraySha256": "e4dbc43f78c0112dce2467f91ae6b5992b68f9e1ae5a3094840b6b581d976a4c"
+    },
+    {
+      "photoId": "phone-9ae5242f2729aabb",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-42.HEIC",
+      "arraySha256": "e9f21b6b1a7cbbe592d61970dbd83422ab1f91a263b464639a07321b016c3712"
+    },
+    {
+      "photoId": "phone-40016a598f6015e6",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-43.HEIC",
+      "arraySha256": "8d042507b032f9927082e89601e77e9afe21580c6d969338e8a147ba773ae08d"
+    },
+    {
+      "photoId": "phone-5918b5bb0e18dca1",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-44.HEIC",
+      "arraySha256": "5bf752d2d164feb1e6cd2b6e2d0cd1aa21c30445a7d79ca05ac0ccf1d81bf1ca"
+    },
+    {
+      "photoId": "phone-3e6ec99cc93eab20",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-45.HEIC",
+      "arraySha256": "3189431b095773c4cbbbfaac0ce8ffc73adb2a6769e66c5a0d6d2ff0b12297ca"
+    },
+    {
+      "photoId": "phone-0155c166bd1a1341",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-46.HEIC",
+      "arraySha256": "1f67168ee182e9db37112acb84423a8a97993f015a4cefd110ee89532aa6b886"
+    },
+    {
+      "photoId": "phone-87dae87648d7bf12",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-47.HEIC",
+      "arraySha256": "2176b6c0be367b97fc86d0055316701d144c215050fa1968ffc0bdf500ce6f0d"
+    },
+    {
+      "photoId": "phone-bf695a5b43ced338",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-48.HEIC",
+      "arraySha256": "9d92af35f1eff00c69e0a09555ec42e360be57cb206603d143e2e2afbc254617"
+    },
+    {
+      "photoId": "phone-4ea615ff0c6ad77a",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-49.HEIC",
+      "arraySha256": "d5d0c65602202d09d98fd1559e198dd046ff862cac3086018ecd69462a5f46aa"
+    },
+    {
+      "photoId": "phone-49b0a8f84f1009fe",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-50.HEIC",
+      "arraySha256": "b0bd823d363f1b575f69a660c11884e56fe77986f4d69f483abb2da148f37494"
+    },
+    {
+      "photoId": "phone-0e291824b98cb1a2",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-51.HEIC",
+      "arraySha256": "a215bac3edb74bb2dee913e587138b8b926b6d34fec1c970909fc68a47e60051"
+    },
+    {
+      "photoId": "phone-e740681448815ce3",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-52.HEIC",
+      "arraySha256": "3d1030e119bc37b66e578e4b14838b081138e69db4d6e4acedfc6f11a75a20e2"
+    },
+    {
+      "photoId": "phone-d0e08280ebf8b742",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-53.HEIC",
+      "arraySha256": "3ee9419675b5134e69f8587978f2c58e82fe5197a4f51c0c6fc88cdea8df5061"
+    },
+    {
+      "photoId": "phone-ca7e49c7efbaadf7",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-54.HEIC",
+      "arraySha256": "7aa21eba821cdc1583ba18d1617c8ff63d68a463614c195b385f950d0cd4b389"
+    },
+    {
+      "photoId": "phone-90a25f7019fe18fb",
+      "source": "chesscom",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-55.HEIC",
+      "arraySha256": "1c1a920f78b2bd5a9e87a8d1f6a685039d446c60a440dbabdbcdbb86a3d6a4f7"
+    },
+    {
+      "photoId": "phone-c9f39529fbd5bbff",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-31.HEIC",
+      "arraySha256": "7e05d9c1dab65a3fd3178b537714341d9ada7334438677e703ad3b5740cad5d2"
+    },
+    {
+      "photoId": "phone-735003e11107efbd",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-32.HEIC",
+      "arraySha256": "6c84511234d6e8f689eb6c7561264004d57257a77bd4d4016f02bd92e70fd171"
+    },
+    {
+      "photoId": "phone-784c4ba9cbe4a2bd",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-33.HEIC",
+      "arraySha256": "88ea3fa72e380d3cacc5456245791e7fdd85c7ad6804858fa61215093c5f64f0"
+    },
+    {
+      "photoId": "phone-b0453b01066eaaa5",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-34.HEIC",
+      "arraySha256": "e3b5a4811d02a88555cd1e32ec8e3167ba1608bc926e0ebebc109b3878407f6a"
+    },
+    {
+      "photoId": "phone-1dccc21f5e11505f",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-35.HEIC",
+      "arraySha256": "88d279be53d6f57c8646fb3d24003345cbb10621b1e447485498229c9575bd47"
+    },
+    {
+      "photoId": "phone-72ff73dce55e25d5",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-36.HEIC",
+      "arraySha256": "0b7b655c08893685f69f92d4200bbeff766616755023b19977236d0f2cdb5aec"
+    },
+    {
+      "photoId": "phone-a0298df316da0825",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-37.HEIC",
+      "arraySha256": "07a3c23c27619b1ccb2e077cc811717c027bf4e325cfc807f60c50714d6b6232"
+    },
+    {
+      "photoId": "phone-2ec348f093102497",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-38.HEIC",
+      "arraySha256": "9e0773a1be4ed30cbfd031bfadff78cde0d24c7583ba3775e543c9c2a546ee9f"
+    },
+    {
+      "photoId": "phone-e21cc1bc39d12c14",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-39.HEIC",
+      "arraySha256": "72034a13bed2febd3e9e97a3cffc1c6071fc6cd72f9c57a2db229ab47ba88ba5"
+    },
+    {
+      "photoId": "phone-d1bd99f986904f82",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-40.HEIC",
+      "arraySha256": "79ae333ecca022ae050cc6e4d595fdb974f3e66851c22d3821cfcc7a9d236c28"
+    },
+    {
+      "photoId": "phone-d169bc677bc96b34",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-41.HEIC",
+      "arraySha256": "316ebc219c01996a2b59103de0494f409c345d5db5fee0168a90c874551ec6bb"
+    },
+    {
+      "photoId": "phone-cd1dbf1ffd266650",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-42.HEIC",
+      "arraySha256": "07c2521a3db341d80e2e4f3340e5034f9dfcdb1efc9f7befc8415b557d7a4add"
+    },
+    {
+      "photoId": "phone-3d6322d89640c189",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-43.HEIC",
+      "arraySha256": "4fbebfdfea5e3e8a744cb3e1cfeb85c303cdbddc8c33ce3b21953555ee91cdd0"
+    },
+    {
+      "photoId": "phone-41b31b4f182915a7",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-44.HEIC",
+      "arraySha256": "c2f7520b506648a128677d2d6af515ae3a32792ee55308f443fbeeee0d11bf13"
+    },
+    {
+      "photoId": "phone-19767eea9fbff91d",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-45.HEIC",
+      "arraySha256": "a92059784a2f2094cf92f936de47af2cb166a63a1354167294ae154fc4fb0716"
+    },
+    {
+      "photoId": "phone-d7510ffe055f9eef",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-46.HEIC",
+      "arraySha256": "b69759a99b78f31b206135edaf78ad56871f2c0965735713af90697c241d616f"
+    },
+    {
+      "photoId": "phone-30521cd5a02b2900",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-47.HEIC",
+      "arraySha256": "b7c554f6e88863ffeef09457463a77ce269d2e6782f707b0e60ccc2833519716"
+    },
+    {
+      "photoId": "phone-f64a6fdcea10684b",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-48.HEIC",
+      "arraySha256": "1dd4e2ab07fd88707d131d55d485d76cddb47e3b10c1bbb4cfe9c54f1926626b"
+    },
+    {
+      "photoId": "phone-fd2f15f0414950ca",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-49.HEIC",
+      "arraySha256": "4248958c2b0545d30349c91e46b7656cafb2e3bfc365a51c8a5bb6f4670c9a69"
+    },
+    {
+      "photoId": "phone-07654a913cdd899d",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-50.HEIC",
+      "arraySha256": "2f2dbe536ccae8ca20f09ec3743eb880d8d8ada4976578885330d329aa18ee20"
+    },
+    {
+      "photoId": "phone-72ea7638c691cb5d",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-51.HEIC",
+      "arraySha256": "62144a79025135f80fb99b1363f7697c3ce0a29bd8382834944bfa8dd8494406"
+    },
+    {
+      "photoId": "phone-e3ba3a3ddcd41719",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-52.HEIC",
+      "arraySha256": "de745fa4c6a06e6f32a152d6043eba78a412c3601b59defe42eb44a3362811a2"
+    },
+    {
+      "photoId": "phone-344a8a45379db795",
+      "source": "lichess",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-53.HEIC",
+      "arraySha256": "f69fb6f1a0de4fb740b1a58795ee1700bd737da00e21db558936ee6f11bf90e1"
+    },
+    {
+      "photoId": "phone-be7abe8650fc6d21",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-30.HEIC",
+      "arraySha256": "ba533ecdc7b57712dc1a652458968b9761d52fc1eded2e0d77b21f413d76bcba"
+    },
+    {
+      "photoId": "phone-2bee677d4784513d",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-31.HEIC",
+      "arraySha256": "947a14e298eed4ac1878593973ccbd3fb564bdf67737ea9032d4283ba4696344"
+    },
+    {
+      "photoId": "phone-046e1479136cf7ea",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-32.HEIC",
+      "arraySha256": "27157ac06c327f2f4de09be6ce646a41da30cd94beae4dae0f32279c05d6caa2"
+    },
+    {
+      "photoId": "phone-643436c2e0c78864",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-33.HEIC",
+      "arraySha256": "5b14b0947bb2119b01d33e11247e11c5651515bdbde09c423eb3d908e6133510"
+    },
+    {
+      "photoId": "phone-485c74810d773fc3",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-34.HEIC",
+      "arraySha256": "090494dc2589dbf31b47881ce74ddedb81685e5af7530975ce771920491ef81f"
+    },
+    {
+      "photoId": "phone-30b1c8754d02a459",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-35.HEIC",
+      "arraySha256": "d76f0de4bfd1a277a3fa4811544df3246a21af2757a6c4f149627c957f0c9512"
+    },
+    {
+      "photoId": "phone-0f3e689e21c1eae4",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-36.HEIC",
+      "arraySha256": "c220bb688231d05134956cdfef397ab4e4082559eff43ca4a9c503bbf5f883b3"
+    },
+    {
+      "photoId": "phone-e5232c9961498e5d",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-37.HEIC",
+      "arraySha256": "90a55604b1332a686a41a01ac58a0eec8f12b0a926766609391c68036fb542f4"
+    },
+    {
+      "photoId": "phone-5e13a3b0bd60fde4",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-38.HEIC",
+      "arraySha256": "6458027e4f3490def6ab2879abec1e0a850002200eb305b77104238b8546dc6d"
+    },
+    {
+      "photoId": "phone-412c9e5db61de850",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-39.HEIC",
+      "arraySha256": "e995359d5da277e60b6e1e7cdd68019f2fa04cc319d782ac9cad7c6a6039e2eb"
+    },
+    {
+      "photoId": "phone-c19f513652bf7961",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-40.HEIC",
+      "arraySha256": "910a952c8af7d8e816b9d0c595be85f656b82b49cf578a8f8ab662f9e65a1063"
+    },
+    {
+      "photoId": "phone-b6e5ca0918da446d",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-41.HEIC",
+      "arraySha256": "3f148ef15be87011199c57425f9a605e63d62e15be33c52c4a156c03cb19bebd"
+    },
+    {
+      "photoId": "phone-a4bcf1415c23f668",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-42.HEIC",
+      "arraySha256": "e28fe18b7b1f17106fa0db5be1c00413faa7527c318023d2e6538bbb203c9e76"
+    },
+    {
+      "photoId": "phone-ba03df27d1a0f4fd",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-43.HEIC",
+      "arraySha256": "4d75c832ce82230d0e3b551c869990601fc0fb21eede78b24f0100183b17971b"
+    },
+    {
+      "photoId": "phone-00f22dc260ad1b02",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-44.HEIC",
+      "arraySha256": "1c4258f5795f07e7498e973c1973481f9af936f1bd046f1ffb6fcc6c39707906"
+    },
+    {
+      "photoId": "phone-d99527227f1b6d6b",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-45.HEIC",
+      "arraySha256": "da7a668244fdad17c78c3c46be0753e17c40b2b601308fb70d1551122ac7b723"
+    },
+    {
+      "photoId": "phone-e6bbcb7a2f19404d",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-46.HEIC",
+      "arraySha256": "881025456e81491f0a3aa23a5f7a80937f0e15a6d2f4bcb0358e8e56468ae3be"
+    },
+    {
+      "photoId": "phone-90b6b827a87b1dcc",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-47.HEIC",
+      "arraySha256": "f2a55aec6b7ced3d9486b70cd5687f2a1026a246a75b81dba01279fb5b1ee38c"
+    },
+    {
+      "photoId": "phone-53008f192ac5c50d",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-48.HEIC",
+      "arraySha256": "f0370ee47bc4673c4d37298257e991b7fda6a80d02c3e972b3df0452a7758505"
+    },
+    {
+      "photoId": "phone-f38b9febed592a82",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-49.HEIC",
+      "arraySha256": "22fb2800dd798515253ceb6e3a9165f7e937e1325ebe0db867e2597975111616"
+    },
+    {
+      "photoId": "phone-7042f5131d9d7217",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-50.HEIC",
+      "arraySha256": "860347aab52c3e7b9ce80c732e64de8b6e328c9b69ab4333e01088406f360f6c"
+    },
+    {
+      "photoId": "phone-73574d8c694eaec0",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-51.HEIC",
+      "arraySha256": "abe49b907d1ce593b5259488b68aa4ac917304bfa1c5ddafd244c09f0a9600db"
+    },
+    {
+      "photoId": "phone-2105505a485fa736",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-52.HEIC",
+      "arraySha256": "38539741332ccc5f468aad862b5b3ce99e9a099d2a38a03a5cd6a48b2509482f"
+    },
+    {
+      "photoId": "phone-2a3077892eb91781",
+      "source": "video",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-53.HEIC",
+      "arraySha256": "94d3f2cfde095900e566f41817d2b42685f737243c940940c5dab71c294fc121"
+    }
+  ]
+}

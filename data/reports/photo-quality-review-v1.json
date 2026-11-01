@@ -1,0 +1,1076 @@
+{
+  "schemaVersion": 1,
+  "scope": "Consulted validation and development; not independent release acceptance.",
+  "reviewCodeSha256": "beb6d35f0b8e294289f201b72b5a34cfdf5e1c1da0b534f3b9d0793b80e14bde",
+  "finalEvaluationAccessed": false,
+  "runtimeChanged": false,
+  "modelPromoted": false,
+  "inputs": {
+    "pipeline": {
+      "path": "data/reports/photo-pipeline-validation-v1.json",
+      "sha256": "330bfdc4210aed9a2154d5c85b7c0eac0134a04b8b3f2a5c0d72f4a83017a0aa"
+    },
+    "resampling": {
+      "path": "data/reports/photo-resampling-validation-v1.json",
+      "sha256": "916fcf2c602885140e4527cbf83a522db8f51757ca0efbfebb17b3ac42d0ec13"
+    },
+    "training": {
+      "path": ".cache/neural-phone-robustness-v2/training.json",
+      "sha256": "bada1651507f6db2a5723b4d686637e902d93840c5a531fb9d88fc73ae301aa4"
+    },
+    "comparison": {
+      "path": ".cache/neural-phone-robustness-v2/validation.json",
+      "sha256": "29b19af39d406741803618b88dd1981dbb0614305dbd73dae9b855823e88adb7"
+    },
+    "digital": {
+      "path": "data/reports/neural-phone-v1.json",
+      "sha256": "176e464501576be6deebfbde66425617eb030e7f7fb574a83bccf9338930832b"
+    },
+    "realUse": {
+      "path": "data/reports/real-use-geometry-after.json",
+      "sha256": "034980365a700211193a78543271c919c899184c4cf88c9c077e829bdea52b5d"
+    },
+    "manifest": {
+      "path": "data/manifests/phone-validation-v1.json",
+      "sha256": "d461867923a346e17122ff35bef2bb7c284d9ed1354eab431060887200bfdd4f"
+    },
+    "appearances": {
+      "path": "data/manifests/phone-validation-appearance-v1.json",
+      "sha256": "c74d2a53ea611577f5d155b590f0f26ea4bd52930641a2e13d12d41c0a3cbc9e"
+    },
+    "styleAudit": {
+      "path": "data/reports/photo-training-style-audit-v1.json",
+      "sha256": "a255977e4a4419f5f9dc59da24f5393882f1c375ca00b9cdd0a5fba3231afb8c"
+    }
+  },
+  "photoAutomatic": {
+    "images": 30,
+    "detected": 27,
+    "annotatedExactBoards": 19,
+    "automaticExactBoards": 19
+  },
+  "photoConditions": {
+    "additional-board-thumbnails": {
+      "images": 1,
+      "detected": 0,
+      "exactBoards": 0
+    },
+    "arrows": {
+      "images": 12,
+      "detected": 11,
+      "exactBoards": 9
+    },
+    "circles": {
+      "images": 2,
+      "detected": 2,
+      "exactBoards": 2
+    },
+    "cursor": {
+      "images": 2,
+      "detected": 2,
+      "exactBoards": 2
+    },
+    "highlights": {
+      "images": 26,
+      "detected": 23,
+      "exactBoards": 17
+    },
+    "moire": {
+      "images": 30,
+      "detected": 27,
+      "exactBoards": 19
+    },
+    "perspective": {
+      "images": 30,
+      "detected": 27,
+      "exactBoards": 19
+    },
+    "physical-board-in-background-scene": {
+      "images": 1,
+      "detected": 1,
+      "exactBoards": 0
+    },
+    "screen-photograph": {
+      "images": 30,
+      "detected": 27,
+      "exactBoards": 19
+    },
+    "strong-moire": {
+      "images": 3,
+      "detected": 2,
+      "exactBoards": 1
+    },
+    "textured-board": {
+      "images": 10,
+      "detected": 10,
+      "exactBoards": 6
+    }
+  },
+  "photoFailures": [
+    {
+      "id": "chesscom-img_5395",
+      "stage": "classification",
+      "appearance": "cc-flat",
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "arrows",
+        "highlights"
+      ],
+      "wrongSquares": [
+        {
+          "square": "e5",
+          "expected": "p",
+          "predicted": "empty"
+        }
+      ]
+    },
+    {
+      "id": "chesscom-img_5397",
+      "stage": "classification",
+      "appearance": "cc-shaded",
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "arrows",
+        "textured-board",
+        "highlights"
+      ],
+      "wrongSquares": [
+        {
+          "square": "d8",
+          "expected": "q",
+          "predicted": "p"
+        },
+        {
+          "square": "f8",
+          "expected": "b",
+          "predicted": "B"
+        },
+        {
+          "square": "a1",
+          "expected": "R",
+          "predicted": "B"
+        },
+        {
+          "square": "b1",
+          "expected": "N",
+          "predicted": "empty"
+        }
+      ]
+    },
+    {
+      "id": "chesscom-img_5398",
+      "stage": "classification",
+      "appearance": "cc-shaded",
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "textured-board",
+        "highlights"
+      ],
+      "wrongSquares": [
+        {
+          "square": "a1",
+          "expected": "R",
+          "predicted": "B"
+        }
+      ]
+    },
+    {
+      "id": "chesscom-img_5401",
+      "stage": "classification",
+      "appearance": "cc-thin-stem",
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire"
+      ],
+      "wrongSquares": [
+        {
+          "square": "a7",
+          "expected": "p",
+          "predicted": "empty"
+        },
+        {
+          "square": "b7",
+          "expected": "p",
+          "predicted": "empty"
+        },
+        {
+          "square": "c7",
+          "expected": "p",
+          "predicted": "empty"
+        },
+        {
+          "square": "f7",
+          "expected": "p",
+          "predicted": "empty"
+        },
+        {
+          "square": "g7",
+          "expected": "p",
+          "predicted": "empty"
+        },
+        {
+          "square": "h7",
+          "expected": "p",
+          "predicted": "empty"
+        },
+        {
+          "square": "e6",
+          "expected": "p",
+          "predicted": "empty"
+        },
+        {
+          "square": "f6",
+          "expected": "n",
+          "predicted": "N"
+        },
+        {
+          "square": "e5",
+          "expected": "n",
+          "predicted": "N"
+        },
+        {
+          "square": "a2",
+          "expected": "P",
+          "predicted": "empty"
+        },
+        {
+          "square": "c2",
+          "expected": "P",
+          "predicted": "empty"
+        }
+      ]
+    },
+    {
+      "id": "chesscom-img_5402",
+      "stage": "classification",
+      "appearance": "cc-thin-stem",
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire"
+      ],
+      "wrongSquares": [
+        {
+          "square": "c7",
+          "expected": "p",
+          "predicted": "empty"
+        },
+        {
+          "square": "a6",
+          "expected": "p",
+          "predicted": "empty"
+        },
+        {
+          "square": "g6",
+          "expected": "p",
+          "predicted": "empty"
+        },
+        {
+          "square": "h6",
+          "expected": "p",
+          "predicted": "empty"
+        },
+        {
+          "square": "g4",
+          "expected": "p",
+          "predicted": "empty"
+        },
+        {
+          "square": "a2",
+          "expected": "P",
+          "predicted": "empty"
+        },
+        {
+          "square": "c2",
+          "expected": "P",
+          "predicted": "empty"
+        }
+      ]
+    },
+    {
+      "id": "lichess-img_5391",
+      "stage": "classification",
+      "appearance": "lc-rounded-king",
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "textured-board",
+        "highlights"
+      ],
+      "wrongSquares": [
+        {
+          "square": "d8",
+          "expected": "q",
+          "predicted": "b"
+        },
+        {
+          "square": "f6",
+          "expected": "n",
+          "predicted": "N"
+        },
+        {
+          "square": "e1",
+          "expected": "K",
+          "predicted": "N"
+        }
+      ]
+    },
+    {
+      "id": "lichess-img_5392",
+      "stage": "classification",
+      "appearance": "lc-rounded-king",
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "textured-board",
+        "highlights"
+      ],
+      "wrongSquares": [
+        {
+          "square": "d4",
+          "expected": "q",
+          "predicted": "Q"
+        },
+        {
+          "square": "d2",
+          "expected": "K",
+          "predicted": "N"
+        }
+      ]
+    },
+    {
+      "id": "video-img_5403",
+      "stage": "detection",
+      "appearance": "video-flat-brown",
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "strong-moire",
+        "highlights"
+      ],
+      "wrongSquares": []
+    },
+    {
+      "id": "video-img_5404",
+      "stage": "classification",
+      "appearance": "video-flat-green",
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "strong-moire",
+        "physical-board-in-background-scene",
+        "highlights"
+      ],
+      "wrongSquares": [
+        {
+          "square": "c5",
+          "expected": "empty",
+          "predicted": "R"
+        },
+        {
+          "square": "e1",
+          "expected": "empty",
+          "predicted": "B"
+        }
+      ]
+    },
+    {
+      "id": "video-img_5406",
+      "stage": "detection",
+      "appearance": "video-classic-a",
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "arrows",
+        "additional-board-thumbnails",
+        "highlights"
+      ],
+      "wrongSquares": []
+    },
+    {
+      "id": "video-img_5407",
+      "stage": "detection",
+      "appearance": "video-classic-b",
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "highlights"
+      ],
+      "wrongSquares": []
+    }
+  ],
+  "confusions": [
+    {
+      "expected": "p",
+      "predicted": "empty",
+      "count": 13
+    },
+    {
+      "expected": "P",
+      "predicted": "empty",
+      "count": 4
+    },
+    {
+      "expected": "n",
+      "predicted": "N",
+      "count": 3
+    },
+    {
+      "expected": "R",
+      "predicted": "B",
+      "count": 2
+    },
+    {
+      "expected": "K",
+      "predicted": "N",
+      "count": 2
+    },
+    {
+      "expected": "q",
+      "predicted": "p",
+      "count": 1
+    },
+    {
+      "expected": "b",
+      "predicted": "B",
+      "count": 1
+    },
+    {
+      "expected": "N",
+      "predicted": "empty",
+      "count": 1
+    },
+    {
+      "expected": "q",
+      "predicted": "b",
+      "count": 1
+    },
+    {
+      "expected": "q",
+      "predicted": "Q",
+      "count": 1
+    },
+    {
+      "expected": "empty",
+      "predicted": "R",
+      "count": 1
+    },
+    {
+      "expected": "empty",
+      "predicted": "B",
+      "count": 1
+    }
+  ],
+  "resamplingAccepted": {
+    "supersample2": false,
+    "supersample4": false,
+    "mean2": false
+  },
+  "trainingExperiment": {
+    "model": {
+      "path": ".cache/neural-phone-robustness-v2/best.pt",
+      "sha256": "d6b9ee410c484da146f4fa2e896681ea7a42ba1008cdd11cd651b613a8bfed12"
+    },
+    "baseline": {
+      "images": 30,
+      "exactBoards": 19,
+      "correctSquares": 1871,
+      "totalSquares": 1920,
+      "squareAccuracy": 0.9744791666666667
+    },
+    "candidate": {
+      "images": 30,
+      "exactBoards": 19,
+      "correctSquares": 1864,
+      "totalSquares": 1920,
+      "squareAccuracy": 0.9708333333333333
+    },
+    "paired": {
+      "gainedExactBoards": [
+        ".cache/phone-validation-v1/images/chesscom-img_5399.png",
+        ".cache/phone-validation-v1/images/video-img_5403.png"
+      ],
+      "lostExactBoards": [
+        ".cache/phone-validation-v1/images/lichess-img_5388.png",
+        ".cache/phone-validation-v1/images/lichess-img_5390.png"
+      ]
+    },
+    "accepted": false,
+    "training": {
+      "metadata": {
+        "formatVersion": 1,
+        "architecture": "small-square-cnn-v1",
+        "classOrder": [
+          "empty",
+          "P",
+          "N",
+          "B",
+          "R",
+          "Q",
+          "K",
+          "p",
+          "n",
+          "b",
+          "r",
+          "q",
+          "k"
+        ],
+        "preprocessing": {
+          "inputSize": [
+            64,
+            64
+          ],
+          "colorMode": "RGB",
+          "inputDtype": "uint8",
+          "tensorLayout": "NCHW",
+          "tensorDtype": "float32",
+          "scale": "divide by 255",
+          "additionalNormalization": null,
+          "augmentation": null
+        },
+        "dataVersion": {
+          "datasetId": "phone-robustness-v2",
+          "sourceDatasetSha256": "0d95e16c39c5c08c73526cc9cc0ce6a68edce3d7616417520a82dd8260bffafa",
+          "sourceIndexSha256": "78d6b03a9ad0fa381ca2e7e67a11692c340fb94a5e53655b019bfbf75194dfe4",
+          "trainingBoards": 160,
+          "trainingSquaresWithVariants": 20480,
+          "validationBoards": 30,
+          "validationChanged": false,
+          "augmentationCodeSha256": "ddc7d26115940607dff2f1ae2cbad5a21c974342e2e822db763fe9276c60b957",
+          "trainingCodeSha256": "5471c8939e8031ede5ca49789a94ebc46fc9540ae8c53de465f8653e7a5a5bea",
+          "augmentedPixelsSha256": "62fea9cb79eb9cba62d22dc2778449c4dcaef96ac6262080fd9c15c11b5dfff7",
+          "baselineSha256": "bca969fc9fb42811a5daa4c11b968c68f805cb0b1404604b7fb6d5486dc8c60e",
+          "baselineExactValidationBoards": 19,
+          "controlMaskSha256": "2554f24f3175c9768bce0298d1a61d3c8a555bb57e2b554bd72b1f5b3eee4026",
+          "controlPolicy": "Preserve baseline-exact annotated validation boards first; then total exact boards. Reject candidate if baseline controls are lost.",
+          "finalEvaluationAccessed": false
+        },
+        "trainingConfig": {
+          "seed": 20261101,
+          "epochs": 12,
+          "batchSize": 256,
+          "learningRate": 2e-05,
+          "weightDecay": 0.0001,
+          "threads": 4,
+          "distillationTemperature": 2,
+          "distillationWeight": 1
+        },
+        "selection": "maximum designated validation control exact boards first; maximum validation exact boards, then macro recall, then lower unweighted loss; earlier tie",
+        "loss": "cross entropy with inverse class frequency from training only",
+        "classWeights": [
+          0.1256287544965744,
+          0.7908557057380676,
+          4.081307411193848,
+          4.039447784423828,
+          2.864335775375366,
+          5.251282215118408,
+          4.92307710647583,
+          0.7806662917137146,
+          4.376068592071533,
+          3.532252550125122,
+          2.725579023361206,
+          5.626373767852783,
+          4.92307710647583
+        ],
+        "environment": {
+          "torch": "2.14.1+cpu",
+          "numpy": "2.5.3",
+          "python": "3.12.3",
+          "device": "cpu"
+        },
+        "parameterCount": 39709,
+        "initialization": {
+          "weightsSha256": "bca969fc9fb42811a5daa4c11b968c68f805cb0b1404604b7fb6d5486dc8c60e",
+          "dataVersion": {
+            "datasetId": "phone-training-v1",
+            "manifestSha256": "0d95e16c39c5c08c73526cc9cc0ce6a68edce3d7616417520a82dd8260bffafa",
+            "verifiedIndexSha256": "78d6b03a9ad0fa381ca2e7e67a11692c340fb94a5e53655b019bfbf75194dfe4",
+            "trainingBoards": 160,
+            "trainingSquares": 10240,
+            "validationBoards": 30,
+            "markedCellsOnlyInTraining": false,
+            "trainingCodeSha256": "5471c8939e8031ede5ca49789a94ebc46fc9540ae8c53de465f8653e7a5a5bea",
+            "dataLoaderCodeSha256": "825cc064ec7d77b49075bf86657c6427d1a0e9a6f3484f28b818d1c08737a8ff",
+            "modelCodeSha256": "1953f32f7fb4cc25ec63cae0302ddfeda927f6d9373eadf2541cb7f70950c13f"
+          },
+          "optimizer": "new AdamW; previous optimizer state is not inherited"
+        },
+        "distillation": {
+          "teacherSha256": "bca969fc9fb42811a5daa4c11b968c68f805cb0b1404604b7fb6d5486dc8c60e",
+          "dataVersion": {
+            "datasetId": "phone-training-v1",
+            "manifestSha256": "0d95e16c39c5c08c73526cc9cc0ce6a68edce3d7616417520a82dd8260bffafa",
+            "verifiedIndexSha256": "78d6b03a9ad0fa381ca2e7e67a11692c340fb94a5e53655b019bfbf75194dfe4",
+            "trainingBoards": 160,
+            "trainingSquares": 10240,
+            "validationBoards": 30,
+            "markedCellsOnlyInTraining": false,
+            "trainingCodeSha256": "5471c8939e8031ede5ca49789a94ebc46fc9540ae8c53de465f8653e7a5a5bea",
+            "dataLoaderCodeSha256": "825cc064ec7d77b49075bf86657c6427d1a0e9a6f3484f28b818d1c08737a8ff",
+            "modelCodeSha256": "1953f32f7fb4cc25ec63cae0302ddfeda927f6d9373eadf2541cb7f70950c13f"
+          },
+          "temperature": 2,
+          "weight": 1,
+          "trainingMaskSha256": "2cbc5e3c54339e2ef1cf83db941c52c69c853419c355ddc3adcde9cad41c13e7",
+          "trainingSquares": 10240,
+          "scope": "teacher predictions on designated training squares only; no validation/evaluation targets"
+        },
+        "validationControlMaskSha256": "2554f24f3175c9768bce0298d1a61d3c8a555bb57e2b554bd72b1f5b3eee4026"
+      },
+      "completedEpochs": 12,
+      "selected": {
+        "epoch": 6,
+        "metrics": {
+          "loss": 0.28129839964334075,
+          "squareAccuracy": 0.9708333333333333,
+          "macroRecall": 0.9491123533041345,
+          "exactBoards": 19,
+          "boards": 30,
+          "controlExactBoards": 17,
+          "controlBoards": 19
+        }
+      },
+      "history": [
+        {
+          "epoch": 1,
+          "validation": {
+            "loss": 0.2920700163732723,
+            "squareAccuracy": 0.971875,
+            "macroRecall": 0.9444102053813411,
+            "exactBoards": 18,
+            "boards": 30,
+            "controlExactBoards": 17,
+            "controlBoards": 19
+          },
+          "seconds": 0.9984343350000131
+        },
+        {
+          "epoch": 2,
+          "validation": {
+            "loss": 0.281286572159388,
+            "squareAccuracy": 0.9697916666666667,
+            "macroRecall": 0.9474919283691027,
+            "exactBoards": 18,
+            "boards": 30,
+            "controlExactBoards": 16,
+            "controlBoards": 19
+          },
+          "seconds": 0.9685465050000062
+        },
+        {
+          "epoch": 3,
+          "validation": {
+            "loss": 0.2780346345270118,
+            "squareAccuracy": 0.9697916666666667,
+            "macroRecall": 0.9493502552274296,
+            "exactBoards": 18,
+            "boards": 30,
+            "controlExactBoards": 16,
+            "controlBoards": 19
+          },
+          "seconds": 0.9840571539999701
+        },
+        {
+          "epoch": 4,
+          "validation": {
+            "loss": 0.2775603812980838,
+            "squareAccuracy": 0.9692708333333333,
+            "macroRecall": 0.9489181031098842,
+            "exactBoards": 18,
+            "boards": 30,
+            "controlExactBoards": 16,
+            "controlBoards": 19
+          },
+          "seconds": 0.968977725000002
+        },
+        {
+          "epoch": 5,
+          "validation": {
+            "loss": 0.27975210760081004,
+            "squareAccuracy": 0.9692708333333333,
+            "macroRecall": 0.9489181031098842,
+            "exactBoards": 18,
+            "boards": 30,
+            "controlExactBoards": 16,
+            "controlBoards": 19
+          },
+          "seconds": 0.9744289710000089
+        },
+        {
+          "epoch": 6,
+          "validation": {
+            "loss": 0.28129839964334075,
+            "squareAccuracy": 0.9708333333333333,
+            "macroRecall": 0.9491123533041345,
+            "exactBoards": 19,
+            "boards": 30,
+            "controlExactBoards": 17,
+            "controlBoards": 19
+          },
+          "seconds": 0.9342157080000106
+        },
+        {
+          "epoch": 7,
+          "validation": {
+            "loss": 0.2822033487805129,
+            "squareAccuracy": 0.9713541666666666,
+            "macroRecall": 0.9477625634928061,
+            "exactBoards": 19,
+            "boards": 30,
+            "controlExactBoards": 17,
+            "controlBoards": 19
+          },
+          "seconds": 0.941157306999969
+        },
+        {
+          "epoch": 8,
+          "validation": {
+            "loss": 0.28165922359295714,
+            "squareAccuracy": 0.9703125,
+            "macroRecall": 0.9457747365049791,
+            "exactBoards": 19,
+            "boards": 30,
+            "controlExactBoards": 17,
+            "controlBoards": 19
+          },
+          "seconds": 0.9417670410000483
+        },
+        {
+          "epoch": 9,
+          "validation": {
+            "loss": 0.27904973711047204,
+            "squareAccuracy": 0.9703125,
+            "macroRecall": 0.9457747365049791,
+            "exactBoards": 19,
+            "boards": 30,
+            "controlExactBoards": 17,
+            "controlBoards": 19
+          },
+          "seconds": 0.9599263279999946
+        },
+        {
+          "epoch": 10,
+          "validation": {
+            "loss": 0.2774172980348188,
+            "squareAccuracy": 0.9708333333333333,
+            "macroRecall": 0.9458394865697292,
+            "exactBoards": 19,
+            "boards": 30,
+            "controlExactBoards": 17,
+            "controlBoards": 19
+          },
+          "seconds": 0.9898779940000395
+        },
+        {
+          "epoch": 11,
+          "validation": {
+            "loss": 0.2760516937951252,
+            "squareAccuracy": 0.9708333333333333,
+            "macroRecall": 0.9458394865697292,
+            "exactBoards": 19,
+            "boards": 30,
+            "controlExactBoards": 17,
+            "controlBoards": 19
+          },
+          "seconds": 0.9488603740000485
+        },
+        {
+          "epoch": 12,
+          "validation": {
+            "loss": 0.27384190760080857,
+            "squareAccuracy": 0.9703125,
+            "macroRecall": 0.9457747365049791,
+            "exactBoards": 19,
+            "boards": 30,
+            "controlExactBoards": 17,
+            "controlBoards": 19
+          },
+          "seconds": 0.9736588410000309
+        }
+      ],
+      "complete": true,
+      "weightsSha256": "d6b9ee410c484da146f4fa2e896681ea7a42ba1008cdd11cd651b613a8bfed12",
+      "evaluationUsedForSelection": false,
+      "templatesRemainDefault": true
+    }
+  },
+  "digitalReference": {
+    "model": {
+      "path": ".cache/neural-tolerance-v1-conservative/best.pt",
+      "sha256": "4c14507ad700dbe8c6ea6bdcdfb7072c7f31ef9fd9c21c22a782498c2d09ce5f"
+    },
+    "measured": {
+      "images": 3132,
+      "exactBoards": 3131,
+      "correctSquares": 200447,
+      "totalSquares": 200448,
+      "squareAccuracy": 0.999995011174968
+    },
+    "photoModelOnDigital": {
+      "images": 3132,
+      "exactBoards": 3128,
+      "correctSquares": 200444,
+      "totalSquares": 200448,
+      "squareAccuracy": 0.9999800446998723
+    },
+    "scope": "Reused existing measured crops; no rerun, no change to digital runtime or weights."
+  },
+  "realUseScreenshots": {
+    "images": 30,
+    "detected": 30,
+    "geometryCorrect": 30,
+    "models": {
+      "v8": {
+        "verifiedExactBoards": 29,
+        "verifiedCorrectSquares": 1918,
+        "pipelineExactBoards": 29,
+        "cliExactBoards": 29,
+        "cliMeasured": 30,
+        "verifiedConfusions": {
+          ".->n": 2
+        },
+        "verifiedClasses": {
+          "empty": {
+            "support": 1169,
+            "truePositive": 1167,
+            "falseNegative": 2,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 0.998289136013687
+          },
+          "P": {
+            "support": 181,
+            "truePositive": 181,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "N": {
+            "support": 42,
+            "truePositive": 42,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "B": {
+            "support": 41,
+            "truePositive": 41,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "R": {
+            "support": 51,
+            "truePositive": 51,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "Q": {
+            "support": 26,
+            "truePositive": 26,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "K": {
+            "support": 30,
+            "truePositive": 30,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "p": {
+            "support": 187,
+            "truePositive": 187,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "n": {
+            "support": 41,
+            "truePositive": 41,
+            "falseNegative": 0,
+            "falsePositive": 2,
+            "precision": 0.9534883720930233,
+            "recall": 1.0
+          },
+          "b": {
+            "support": 40,
+            "truePositive": 40,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "r": {
+            "support": 55,
+            "truePositive": 55,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "q": {
+            "support": 27,
+            "truePositive": 27,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "k": {
+            "support": 30,
+            "truePositive": 30,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        }
+      },
+      "candidate": {
+        "verifiedExactBoards": 29,
+        "verifiedCorrectSquares": 1918,
+        "pipelineExactBoards": 29,
+        "cliExactBoards": 29,
+        "cliMeasured": 30,
+        "verifiedConfusions": {
+          ".->n": 2
+        },
+        "verifiedClasses": {
+          "empty": {
+            "support": 1169,
+            "truePositive": 1167,
+            "falseNegative": 2,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 0.998289136013687
+          },
+          "P": {
+            "support": 181,
+            "truePositive": 181,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "N": {
+            "support": 42,
+            "truePositive": 42,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "B": {
+            "support": 41,
+            "truePositive": 41,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "R": {
+            "support": 51,
+            "truePositive": 51,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "Q": {
+            "support": 26,
+            "truePositive": 26,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "K": {
+            "support": 30,
+            "truePositive": 30,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "p": {
+            "support": 187,
+            "truePositive": 187,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "n": {
+            "support": 41,
+            "truePositive": 41,
+            "falseNegative": 0,
+            "falsePositive": 2,
+            "precision": 0.9534883720930233,
+            "recall": 1.0
+          },
+          "b": {
+            "support": 40,
+            "truePositive": 40,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "r": {
+            "support": 55,
+            "truePositive": 55,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "q": {
+            "support": 27,
+            "truePositive": 27,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          },
+          "k": {
+            "support": 30,
+            "truePositive": 30,
+            "falseNegative": 0,
+            "falsePositive": 0,
+            "precision": 1.0,
+            "recall": 1.0
+          }
+        }
+      }
+    }
+  },
+  "decision": "Keep digital conservative and photo-v1. Reject all three resampling variants and photo robustness v2: baseline-correct boards are lost. Obtain targeted style examples before further training.",
+  "remainingEvidence": [
+    "No isolated validation of defocus or glare; do not declare tolerance.",
+    "Three photo detection rejections remain; classifier changes cannot recover them.",
+    "Frozen final evaluation remains untouched."
+  ]
+}

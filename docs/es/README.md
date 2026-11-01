@@ -1,5 +1,10 @@
 # BoardSnap
 
+La [revisión de calidad para la primera versión](photo-quality.md) reúne capturas
+y fotos, revisa los diseños del entrenamiento y descarta cambios que pierden
+aciertos anteriores. Se conservan los modelos actuales; quedan carencias
+fotográficas concretas de estilos y condiciones.
+
 El [diagnóstico del clasificador fotográfico](phone-classifier-analysis.md) desglosa la validación existente por pieza, apariencia observada y condición fotográfica. Identifica carencias concretas sin repetir entrenamiento ni inferencia; la compatibilidad fotográfica general sigue sin demostrarse.
 
 [Primer clasificador fotográfico](phone-training.md): entrenamiento completado con el [conjunto revisado](phone-training-data.md). Acierta 19/30 fotos de validación con esquinas revisadas, frente a 18/30 antes de adaptarlo. Empeoran tres tableros digitales; el modelo fotográfico experimental no sustituye al candidato digital.
