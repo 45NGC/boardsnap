@@ -1,0 +1,401 @@
+{
+  "modelSha256": "4c14507ad700dbe8c6ea6bdcdfb7072c7f31ef9fd9c21c22a782498c2d09ce5f",
+  "dataRole": "validation",
+  "warm": {
+    "samples": 40,
+    "medianMilliseconds": 459.0294054996775,
+    "p95Milliseconds": 545.7665583504422
+  },
+  "coldMilliseconds": 1499.3935129987221,
+  "peakRssMiB": 437.14453125,
+  "inputType": "digital",
+  "scope": "fresh Linux process; warm full pipeline with one resident model; cold includes imports, load and first image; all supplied validation images including failures",
+  "correctImages": 40,
+  "errors": [],
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.14.1+cpu",
+    "numpy": "2.5.4",
+    "pillow": "12.3.0",
+    "opencv": "4.14.0",
+    "platform": "Linux-7.0.0-42-generic-x86_64-with-glibc2.39",
+    "cpu": "Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz",
+    "logicalCpus": 12,
+    "torchThreads": 4,
+    "opencvThreads": 1
+  },
+  "samples": [
+    {
+      "id": ".cache/digital-arrow-captures-v1/arrow-empty/clean/clean-chesscom-blue-bases-standard-sequence-004/validation/chesscom-blue-bases-standard/digital-013-black-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/arrow-empty/clean/clean-chesscom-blue-bases-standard-sequence-004/validation/chesscom-blue-bases-standard/digital-013-black-bottom.png",
+      "imageSha256": "6aeb158cc0aaae3a34443a8db44bab04649e1d978057d99ac6fa827c83553fd8",
+      "orientation": "black-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/check/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-013-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/check/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-013-white-bottom.png",
+      "imageSha256": "b7f7611fa3c3034b377557f2b060dbbc6781997e87a0f598b6baab54eaf63046",
+      "orientation": "white-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/circle/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-013-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/circle/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-013-white-bottom.png",
+      "imageSha256": "f731b8d081ece54d48923b3078528966b58c10675c3e5fc9bb6a78775771f991",
+      "orientation": "white-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-style-derived-v2/layouts/chesscom-green-alpha-standard-board-crop-384/digital-013-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-style-derived-v2/layouts/chesscom-green-alpha-standard-board-crop-384/digital-013-white-bottom.png",
+      "imageSha256": "638770a733a060ee85751032acc07cb6d26909643f1efd50f7da40da3f520df6",
+      "orientation": "white-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/clean/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-013-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/clean/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-013-white-bottom.png",
+      "imageSha256": "921898009d224879824511e08673aec36ad0eb5f47ac4086b06247eba417dd39",
+      "orientation": "white-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-style-derived-v2/layouts/chesscom-green-alpha-standard-synthetic-margins-256/digital-013-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-style-derived-v2/layouts/chesscom-green-alpha-standard-synthetic-margins-256/digital-013-white-bottom.png",
+      "imageSha256": "c7377f95ceb76ef8da7b1eaf3e678411c7baa8f5ec02c577c44162ded5ecbdf9",
+      "orientation": "white-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/last-move/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-013-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/last-move/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-013-white-bottom.png",
+      "imageSha256": "69b1bddabe1c362e90a6e6f0aac532a23aefdf38ed46b6764807d5a56c2939b9",
+      "orientation": "white-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/arrow-combined/clean/clean-chesscom-blue-bases-standard-sequence-004/validation/chesscom-blue-bases-standard/digital-013-black-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/arrow-combined/clean/clean-chesscom-blue-bases-standard-sequence-004/validation/chesscom-blue-bases-standard/digital-013-black-bottom.png",
+      "imageSha256": "a620f48bcd1a62ae0632d9bf499471426757d68bc06220f9ae1304fa37eeff4d",
+      "orientation": "black-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/move-dot/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-013-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/move-dot/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-013-white-bottom.png",
+      "imageSha256": "d93c4b8b273dac28e86f54ea01a88a7fd55aba02c70869430d3df24f3cfc337a",
+      "orientation": "white-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/selection/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-013-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/selection/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-013-white-bottom.png",
+      "imageSha256": "75e2d247b0220ee77269aa262c862aacdf89d489b0c12e66fa4f757ef1174bd8",
+      "orientation": "white-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/arrow-empty/clean/clean-lichess-blue-alpha-standard-sequence-004/validation/lichess-blue-alpha-standard/digital-013-black-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/arrow-empty/clean/clean-lichess-blue-alpha-standard-sequence-004/validation/lichess-blue-alpha-standard/digital-013-black-bottom.png",
+      "imageSha256": "ff037fc1d2d61b83420c0198dae5f1826ab3396c8e5a814fc0b8d67aafa0ef70",
+      "orientation": "black-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/check/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-013-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/check/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-013-white-bottom.png",
+      "imageSha256": "a7d0c9f8e1ce4075e0f890e2e2318b931caf3638f572562fba724e615d155cdc",
+      "orientation": "white-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/circle/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-013-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/circle/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-013-white-bottom.png",
+      "imageSha256": "dda5c265846567d91b8730651aa00e175314eb0cdba395ba46952026aaa6e210",
+      "orientation": "white-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-style-derived-v2/layouts/lichess-brown-staunty-standard-board-crop-384/digital-013-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-style-derived-v2/layouts/lichess-brown-staunty-standard-board-crop-384/digital-013-white-bottom.png",
+      "imageSha256": "2bda671ebcb9cd11c83be200987eae0cd32575f7fbba4b0f61f24dbb6c3121ad",
+      "orientation": "white-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/clean/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-013-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/clean/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-013-white-bottom.png",
+      "imageSha256": "3772e031e9efe07c8fa5983143cf4e1de8c2985d00805f092a3c05d003081164",
+      "orientation": "white-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-style-derived-v2/layouts/lichess-brown-staunty-standard-synthetic-margins-256/digital-013-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-style-derived-v2/layouts/lichess-brown-staunty-standard-synthetic-margins-256/digital-013-white-bottom.png",
+      "imageSha256": "bfdefeb9a7d8fa8164632207d34feeaaf1d3feb48e28de24bf94eb08559e1af8",
+      "orientation": "white-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/last-move/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-013-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/last-move/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-013-white-bottom.png",
+      "imageSha256": "3350862b4932909a33e6ef7088a75f600a16d18c2901a36b9bbe76bdd42573a2",
+      "orientation": "white-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/arrow-combined/clean/clean-lichess-blue-alpha-standard-sequence-004/validation/lichess-blue-alpha-standard/digital-013-black-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/arrow-combined/clean/clean-lichess-blue-alpha-standard-sequence-004/validation/lichess-blue-alpha-standard/digital-013-black-bottom.png",
+      "imageSha256": "e8c9bdfe179050cd03630f902380fb0497d0dc1d512e533d93432b958672eb2e",
+      "orientation": "black-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/move-dot/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-013-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/move-dot/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-013-white-bottom.png",
+      "imageSha256": "a4d2d17d19867335b98bbf8c17050c7681da2b2bf4497f2d1077d87c563a364a",
+      "orientation": "white-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/selection/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-013-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/selection/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-013-white-bottom.png",
+      "imageSha256": "d54dbeded9435553791ce7669032f438b301e9523f424d939c4a20db4d98fafb",
+      "orientation": "white-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/arrow-piece/clean/clean-chesscom-blue-bases-standard-sequence-004/validation/chesscom-blue-bases-standard/digital-013-black-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/arrow-piece/clean/clean-chesscom-blue-bases-standard-sequence-004/validation/chesscom-blue-bases-standard/digital-013-black-bottom.png",
+      "imageSha256": "ef3f332d9ee44a9275b53135433d3c2909515b9caca1456e8cfa6399c7b18ec8",
+      "orientation": "black-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/check/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-014-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/check/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-014-white-bottom.png",
+      "imageSha256": "680c4e3f3ee0750cfa13684b85ea759339e2b33e2e1ca378e43465eb5db155dd",
+      "orientation": "white-bottom",
+      "piecePlacement": "2b1kbnr/2p5/1pn1qp1p/5P2/1P2P3/Q1p3pP/P3N1P1/RN2KB1R",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/circle/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-014-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/circle/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-014-white-bottom.png",
+      "imageSha256": "d274cfb49fb026f953840f928dcc1af49e0b7582df17bf1a33510e550726f4db",
+      "orientation": "white-bottom",
+      "piecePlacement": "2b1kbnr/2p5/1pn1qp1p/5P2/1P2P3/Q1p3pP/P3N1P1/RN2KB1R",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-style-derived-v2/layouts/chesscom-green-alpha-standard-board-crop-384/digital-014-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-style-derived-v2/layouts/chesscom-green-alpha-standard-board-crop-384/digital-014-white-bottom.png",
+      "imageSha256": "a8641ac6aad7e6213131265e8c93439ee81820b5ae2abd4ba09afaf4b42910b6",
+      "orientation": "white-bottom",
+      "piecePlacement": "2b1kbnr/2p5/1pn1qp1p/5P2/1P2P3/Q1p3pP/P3N1P1/RN2KB1R",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/clean/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-013-black-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/clean/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-013-black-bottom.png",
+      "imageSha256": "bf7cbe0d92fec941bf59f8272ebaaca4457dc4c739f5593294d6fbb3911460eb",
+      "orientation": "black-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-style-derived-v2/layouts/chesscom-green-alpha-standard-synthetic-margins-256/digital-014-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-style-derived-v2/layouts/chesscom-green-alpha-standard-synthetic-margins-256/digital-014-white-bottom.png",
+      "imageSha256": "da0ac377a79a23e5b79a489a26c921a59938fdcb3eefa7bd3fbf320d1a813d50",
+      "orientation": "white-bottom",
+      "piecePlacement": "2b1kbnr/2p5/1pn1qp1p/5P2/1P2P3/Q1p3pP/P3N1P1/RN2KB1R",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/last-move/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-014-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/last-move/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-014-white-bottom.png",
+      "imageSha256": "83ceb2755afc1fbe86910400aa75c4613b143dfc2960c8e2335bbd84a99494cf",
+      "orientation": "white-bottom",
+      "piecePlacement": "2b1kbnr/2p5/1pn1qp1p/5P2/1P2P3/Q1p3pP/P3N1P1/RN2KB1R",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/arrow-combined/clean/clean-chesscom-blue-classic-standard-sequence-004/validation/chesscom-blue-classic-standard/digital-013-black-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/arrow-combined/clean/clean-chesscom-blue-classic-standard-sequence-004/validation/chesscom-blue-classic-standard/digital-013-black-bottom.png",
+      "imageSha256": "8381f3745f14aad4a6a326324083e62ede55140e81df058cbc3f99a69ef65a5f",
+      "orientation": "black-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/move-dot/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-014-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/move-dot/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-014-white-bottom.png",
+      "imageSha256": "fc27dcd21643846dff0d1f450a8d94b1d7e82139977c0cf1ebeedd2683343966",
+      "orientation": "white-bottom",
+      "piecePlacement": "2b1kbnr/2p5/1pn1qp1p/5P2/1P2P3/Q1p3pP/P3N1P1/RN2KB1R",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/selection/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-014-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/selection/clean-chesscom-green-neo-standard-sequence-004/validation/chesscom-green-neo-standard/digital-014-white-bottom.png",
+      "imageSha256": "8d8a41a56d23e00d6e8106f44ffb3f39adac15ccc453a3b09620991ae5f3e2b9",
+      "orientation": "white-bottom",
+      "piecePlacement": "2b1kbnr/2p5/1pn1qp1p/5P2/1P2P3/Q1p3pP/P3N1P1/RN2KB1R",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/arrow-piece/clean/clean-lichess-blue-alpha-standard-sequence-004/validation/lichess-blue-alpha-standard/digital-013-black-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/arrow-piece/clean/clean-lichess-blue-alpha-standard-sequence-004/validation/lichess-blue-alpha-standard/digital-013-black-bottom.png",
+      "imageSha256": "b580943901c1759defffb44e95a35bc7fe283225305c351709d4c6a6440f9b88",
+      "orientation": "black-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/check/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-014-black-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/check/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-014-black-bottom.png",
+      "imageSha256": "365f753de8ae2eff60869dd46b4703c9c0a5fbb488d364dc9d524b3bdd421a67",
+      "orientation": "black-bottom",
+      "piecePlacement": "2b1kbnr/2p5/1pn1qp1p/5P2/1P2P3/Q1p3pP/P3N1P1/RN2KB1R",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/circle/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-014-black-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/circle/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-014-black-bottom.png",
+      "imageSha256": "23c6bc9be2bd7ab81184682e5d8287eeab92248c142d344a347eb57fb08ab217",
+      "orientation": "black-bottom",
+      "piecePlacement": "2b1kbnr/2p5/1pn1qp1p/5P2/1P2P3/Q1p3pP/P3N1P1/RN2KB1R",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-style-derived-v2/layouts/lichess-brown-staunty-standard-board-crop-384/digital-014-black-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-style-derived-v2/layouts/lichess-brown-staunty-standard-board-crop-384/digital-014-black-bottom.png",
+      "imageSha256": "2401a256ef00bfa471b1535084d1b2c47b2f5fd2052df3699eb465f322c87e4c",
+      "orientation": "black-bottom",
+      "piecePlacement": "2b1kbnr/2p5/1pn1qp1p/5P2/1P2P3/Q1p3pP/P3N1P1/RN2KB1R",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/clean/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-013-black-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/clean/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-013-black-bottom.png",
+      "imageSha256": "0f1f8ef17a48d4d29d08d3b73fea2a89156ac3caf4a5dd810d2734250150327a",
+      "orientation": "black-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-style-derived-v2/layouts/lichess-brown-staunty-standard-synthetic-margins-256/digital-014-black-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-style-derived-v2/layouts/lichess-brown-staunty-standard-synthetic-margins-256/digital-014-black-bottom.png",
+      "imageSha256": "fa3d5d133cb44ac74c28f01562bcbb28cfc909096ca9a99f2693a6fad4a78264",
+      "orientation": "black-bottom",
+      "piecePlacement": "2b1kbnr/2p5/1pn1qp1p/5P2/1P2P3/Q1p3pP/P3N1P1/RN2KB1R",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/last-move/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-014-black-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/last-move/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-014-black-bottom.png",
+      "imageSha256": "fa66fbc56f2ea40de7248d9bd5d7cc0c3e918a822b17fb481429ec54c0bc272c",
+      "orientation": "black-bottom",
+      "piecePlacement": "2b1kbnr/2p5/1pn1qp1p/5P2/1P2P3/Q1p3pP/P3N1P1/RN2KB1R",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/arrow-combined/clean/clean-lichess-blue-cburnett-standard-sequence-004/validation/lichess-blue-cburnett-standard/digital-013-white-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/arrow-combined/clean/clean-lichess-blue-cburnett-standard-sequence-004/validation/lichess-blue-cburnett-standard/digital-013-white-bottom.png",
+      "imageSha256": "3e2dbbe64ef07f8edd53f8d6ed1d53f7c8e1c90666bb148cceb7ac39fa93c1a8",
+      "orientation": "white-bottom",
+      "piecePlacement": "rnbqkbnr/1pp1p3/3p1p1p/p2P1P2/2P3p1/4B3/PP2P1PP/RN1QKBNR",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/move-dot/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-014-black-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/move-dot/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-014-black-bottom.png",
+      "imageSha256": "e8a1bc6ba03e355e258bba79955a2baf51367a9b930ef6f21fff395d262fb452",
+      "orientation": "black-bottom",
+      "piecePlacement": "2b1kbnr/2p5/1pn1qp1p/5P2/1P2P3/Q1p3pP/P3N1P1/RN2KB1R",
+      "split": "validation",
+      "groupId": "sequence-004"
+    },
+    {
+      "id": ".cache/digital-arrow-captures-v1/controls/selection/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-014-black-bottom.png",
+      "image": "/home/nico/code/github/boardsnap/.cache/digital-arrow-captures-v1/controls/selection/clean-lichess-brown-cburnett-standard-sequence-004/validation/lichess-brown-cburnett-standard/digital-014-black-bottom.png",
+      "imageSha256": "8b21b00f22380664c0ba0c5287f3c2f2ccedaff65da74a0ea6bc0e5ba1d13ba6",
+      "orientation": "black-bottom",
+      "piecePlacement": "2b1kbnr/2p5/1pn1qp1p/5P2/1P2P3/Q1p3pP/P3N1P1/RN2KB1R",
+      "split": "validation",
+      "groupId": "sequence-004"
+    }
+  ],
+  "provenance": {
+    ".cache/digital-style-squares-v2/dataset.json": "7cae41fdb1b28e7dc8442c70a01cc5c473ee47f7c206cdfcc9ec0cb715842525",
+    ".cache/digital-style-squares-v2/verified.jsonl": "9bfe8473346998df5df546c7a74c449d14d9db1ad34669dc390e527993172f4a"
+  },
+  "policySha256": "24ff67417ffc9584a5bd843a0792104f32b6d431ff3a1ebac682b9563c9e4ab7",
+  "benchmarkSha256": {
+    "tools/benchmark_cpu.py": "68fd1fa7ec1aa768f2f097bf63e613235ca9d151523b042b7b567e5a01fdf878",
+    "tools/benchmark_preview.py": "31ff0ead7abf75452572a20bbbf479b017ece92e633ef401ac280d2ed3cf4aac"
+  },
+  "runtimeLocation": "/home/nico/code/github/boardsnap/.cache/screen-preview-install-venv/lib/python3.12/site-packages/boardsnap/__init__.py",
+  "finalEvaluationAccessed": false,
+  "performancePassed": true
+}

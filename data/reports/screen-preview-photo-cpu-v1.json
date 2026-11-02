@@ -1,0 +1,374 @@
+{
+  "modelSha256": "bca969fc9fb42811a5daa4c11b968c68f805cb0b1404604b7fb6d5486dc8c60e",
+  "dataRole": "validation",
+  "warm": {
+    "samples": 30,
+    "medianMilliseconds": 1058.2654555000772,
+    "p95Milliseconds": 2839.4233791009347
+  },
+  "coldMilliseconds": 2129.9853159998747,
+  "peakRssMiB": 548.70703125,
+  "inputType": "photo",
+  "scope": "fresh Linux process; warm full pipeline with one resident model; cold includes imports, load and first image; all supplied validation images including failures",
+  "correctImages": 20,
+  "errors": [
+    {
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/chesscom-img_5395.png",
+      "result": {
+        "piecePlacement": "r1bq1rk1/ppp2pbp/2np1np1/8/3P1B2/2PBPN2/PP3PPP/RN1Q1RK1"
+      }
+    },
+    {
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/chesscom-img_5397.png",
+      "result": {
+        "piecePlacement": "r2pkBnr/ppp1pppp/8/3p1b2/1n6/3P1NP1/PPP1PPBP/B1BQ1RK1"
+      }
+    },
+    {
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/chesscom-img_5398.png",
+      "result": {
+        "piecePlacement": "8/1k3p1p/1p2p3/p1p5/P6P/2n3P1/5PK1/B7"
+      }
+    },
+    {
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/chesscom-img_5401.png",
+      "result": {
+        "piecePlacement": "3r1rk1/8/5N2/4N1B1/4N3/6P1/1P3PBP/3R1RK1"
+      }
+    },
+    {
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/chesscom-img_5402.png",
+      "result": {
+        "piecePlacement": "6k1/3R4/8/2B5/1P2B3/6P1/8/4K3"
+      }
+    },
+    {
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/lichess-img_5391.png",
+      "result": {
+        "piecePlacement": "r2b1rk1/ppp3bp/2np1Np1/6B1/3p4/2PB3P/PP1N3P/R2QN2R"
+      }
+    },
+    {
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/lichess-img_5392.png",
+      "result": {
+        "piecePlacement": "r4rk1/ppp3bp/3p2p1/6B1/3Q4/7P/PP1N3P/R2Q3R"
+      }
+    },
+    {
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/video-img_5403.png",
+      "result": {
+        "error": {
+          "code": "BOARD_NOT_FOUND",
+          "message": "No complete supported photographic chessboard was detected."
+        }
+      }
+    },
+    {
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/video-img_5404.png",
+      "result": {
+        "piecePlacement": "2kr1b1r/pp1npppp/1qp2n2/2R2b2/1PBP1B2/P1N2N2/2P2PPP/R2QBRK1"
+      }
+    },
+    {
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/video-img_5406.png",
+      "result": {
+        "piecePlacement": "2k1r1rn/pb1n1Q1p/1pp1pn2/q7/2PP4/P2B3N/1BP3PP/R4RK1"
+      }
+    }
+  ],
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.14.1+cpu",
+    "numpy": "2.5.4",
+    "pillow": "12.3.0",
+    "opencv": "4.14.0",
+    "platform": "Linux-7.0.0-42-generic-x86_64-with-glibc2.39",
+    "cpu": "Intel(R) Core(TM) i5-10400 CPU @ 2.90GHz",
+    "logicalCpus": 12,
+    "torchThreads": 4,
+    "opencvThreads": 1
+  },
+  "samples": [
+    {
+      "id": "chesscom-img_5393",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/chesscom-img_5393.png",
+      "imageSha256": "be4f178607778d8b8711a00ba9d6233648e3ccdf8877059e5001b7604543c0b9",
+      "orientation": "white-bottom",
+      "piecePlacement": "rn1qkb1r/ppp2ppp/3p1n2/4p3/4PP2/2N2b1P/PPPP2P1/R1BQKB1R",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "chesscom-img_5394",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/chesscom-img_5394.png",
+      "imageSha256": "012986da922195f3c99a9044ac816cb92b574bf05eedbaa9c45a881c205e1ed8",
+      "orientation": "white-bottom",
+      "piecePlacement": "r2q1rk1/pp1nbpp1/2pp1n2/6p1/3PPB1P/2N2Q2/PPP5/2KR1B1R",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "chesscom-img_5395",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/chesscom-img_5395.png",
+      "imageSha256": "5e8695bcc5ddffaf1a0d8c2829ca730a43ace7dc61c6fdeb3e0ed74f300c5d13",
+      "orientation": "black-bottom",
+      "piecePlacement": "r1bq1rk1/ppp2pbp/2np1np1/4p3/3P1B2/2PBPN2/PP3PPP/RN1Q1RK1",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "chesscom-img_5396",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/chesscom-img_5396.png",
+      "imageSha256": "efe67ecbc84a197e572443221767542e4048959f77e601a3632d09b036204c49",
+      "orientation": "black-bottom",
+      "piecePlacement": "r1b2rk1/ppp2p1p/6p1/4b3/4n2q/N1P1P3/PP3PPP/R2Q1RK1",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "chesscom-img_5397",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/chesscom-img_5397.png",
+      "imageSha256": "b0dd3f9d186f6ee68b874f7f8420de261fbbeb5bb0f9f22d26a3b61760a92e89",
+      "orientation": "white-bottom",
+      "piecePlacement": "r2qkbnr/ppp1pppp/8/3p1b2/1n6/3P1NP1/PPP1PPBP/RNBQ1RK1",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "chesscom-img_5398",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/chesscom-img_5398.png",
+      "imageSha256": "3f3cd9a92ce1dc6e7e356237ebc61e40675825d1d65aea962a7beff09669ad20",
+      "orientation": "white-bottom",
+      "piecePlacement": "8/1k3p1p/1p2p3/p1p5/P6P/2n3P1/5PK1/R7",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "chesscom-img_5399",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/chesscom-img_5399.png",
+      "imageSha256": "959470d453e26bbae09e4d7ae823907c8a1969d578316a42436d2f45265aade5",
+      "orientation": "white-bottom",
+      "piecePlacement": "r2qkb1r/pp1n1ppp/4pn2/2pp2B1/6b1/3P1NP1/PPP1PPBP/RN1Q1RK1",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "chesscom-img_5400",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/chesscom-img_5400.png",
+      "imageSha256": "9fbbaeb4a2c6c766d6fa57a99e3a0f1a6a83e118c3b6abbc566b851f16eb75cb",
+      "orientation": "white-bottom",
+      "piecePlacement": "8/3k2p1/7p/K6P/P6P/8/8/8",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "chesscom-img_5401",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/chesscom-img_5401.png",
+      "imageSha256": "7b21a0d24c7ea9d6bb16d371cb9cc7b04cfcd67e22645f00bb54b566c2ae2214",
+      "orientation": "white-bottom",
+      "piecePlacement": "3r1rk1/ppp2ppp/4pn2/4n1B1/4N3/6P1/PPP2PBP/3R1RK1",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "chesscom-img_5402",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/chesscom-img_5402.png",
+      "imageSha256": "98511f13f42d4c5ce06bbe2ee3d27ddfc5dbed0f90d39891a868fd260b5db46f",
+      "orientation": "white-bottom",
+      "piecePlacement": "6k1/2pR4/p5pp/2B5/1P2B1p1/6P1/P1P5/4K3",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "lichess-img_5383",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/lichess-img_5383.png",
+      "imageSha256": "67ef2f6ccdf8af11322d0c3e79baf9e8d816e28f840dd7a3e3c797f5860e8986",
+      "orientation": "black-bottom",
+      "piecePlacement": "rnb1kbnr/ppp2ppp/8/4P3/4p3/6PN/PPP2P1P/RNBK1B1R",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "lichess-img_5384",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/lichess-img_5384.png",
+      "imageSha256": "3ed15840dd22f11030b573b94c29e263b9182843fc9d00dc56596e78d8b89e10",
+      "orientation": "black-bottom",
+      "piecePlacement": "7k/1p3Bpp/5p2/8/2P3P1/6r1/5K2/8",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "lichess-img_5385",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/lichess-img_5385.png",
+      "imageSha256": "07bbec163906b36ee348ceac8067e9cd7449589db914c5b203b2093e51f9f5db",
+      "orientation": "white-bottom",
+      "piecePlacement": "r1bqkb1r/1p1p1ppp/p1n1p3/2p5/4PP2/2N2N2/PPPP2PP/R1BQK2R",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "lichess-img_5386",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/lichess-img_5386.png",
+      "imageSha256": "5c12148c2e85166ac672ca46a5e8181ebc9bf4cb86256619a9686a5addbbdee6",
+      "orientation": "white-bottom",
+      "piecePlacement": "3r1rk1/1p4b1/p1n1bp2/4q3/3p4/3P2R1/PPP2QPP/4R2K",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "lichess-img_5387",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/lichess-img_5387.png",
+      "imageSha256": "c7845f970ec1ad2f9e6f095af97a029126b25575f4ef46e3c8ebdee2551b82fc",
+      "orientation": "white-bottom",
+      "piecePlacement": "rnbqkbnr/ppp3pp/3p1p2/4P3/3P1B2/2N2N2/PPP3PP/R2QKB1R",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "lichess-img_5388",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/lichess-img_5388.png",
+      "imageSha256": "6ac52d1a7d5b7cc13b686270d42c69ceb2bbf43e67ffbc82f885d73048114f7b",
+      "orientation": "white-bottom",
+      "piecePlacement": "8/1pk4p/2pp4/p1q5/2P5/1P4P1/PK5P/7R",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "lichess-img_5389",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/lichess-img_5389.png",
+      "imageSha256": "24afc4d3c6fb202f55764592f6d362972572b2160b836bdbe964aee4695b1040",
+      "orientation": "white-bottom",
+      "piecePlacement": "r1bqkbnr/pppp1pp1/2n4p/8/3pP3/2P2N2/PP3PPP/RNBQKB1R",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "lichess-img_5390",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/lichess-img_5390.png",
+      "imageSha256": "a03cfa6333c0bbcc747022f68711eb59788b5fcb7f81847ca7f3831a4093368c",
+      "orientation": "white-bottom",
+      "piecePlacement": "r4rk1/2pqbpp1/1p1p1n1p/pQ1P4/4P3/2N2N2/PP3PPP/R1B1K2R",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "lichess-img_5391",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/lichess-img_5391.png",
+      "imageSha256": "25a83a9ed2ab90b72573723aa1de3e9458d89cc6e870e79672ac1abdf90890c7",
+      "orientation": "black-bottom",
+      "piecePlacement": "r2q1rk1/ppp3bp/2np1np1/6B1/3p4/2PB3P/PP1N3P/R2QK2R",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "lichess-img_5392",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/lichess-img_5392.png",
+      "imageSha256": "26cdae8f6e5db158b6a02eb7868c390d224e6bf8cb8cb1d513ecb97a86570b67",
+      "orientation": "black-bottom",
+      "piecePlacement": "r4rk1/ppp3bp/3p2p1/6B1/3q4/7P/PP1K3P/R2Q3R",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "video-img_5403",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/video-img_5403.png",
+      "imageSha256": "c3f93f8d148fc5be94eab1120f87d618bc2a6399db95e8b9ca0dcbfa95b9793d",
+      "orientation": "black-bottom",
+      "piecePlacement": "r1bq1rk1/3n1ppp/2pbpn2/p7/PpBP4/1Q3N1P/NB3PP1/3RR1K1",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "video-img_5404",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/video-img_5404.png",
+      "imageSha256": "1cf23f532ce646af683fa4398f7c1a858c9897f2c079078174d52703ec479f94",
+      "orientation": "white-bottom",
+      "piecePlacement": "2kr1b1r/pp1npppp/1qp2n2/5b2/1PBP1B2/P1N2N2/2P2PPP/R2Q1RK1",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "video-img_5405",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/video-img_5405.png",
+      "imageSha256": "dfc0d503b51a7ad13b2923bb7e6007c7997d54bb52af19de5fe782a9d702d143",
+      "orientation": "white-bottom",
+      "piecePlacement": "rnbqkb1r/pp3ppp/2p1pn2/3p4/3PP3/2N2P2/PPP3PP/R1BQKBNR",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "video-img_5406",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/video-img_5406.png",
+      "imageSha256": "4ce3e8916c430c66d940bcfeda14fca1d6e93a91dee849880ecbcc6fc5b18628",
+      "orientation": "white-bottom",
+      "piecePlacement": "2k1r1r1/pb1n1Q1p/1pp1pn2/q7/2PP4/P2B3N/1BP3PP/R4RK1",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "video-img_5407",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/video-img_5407.png",
+      "imageSha256": "4c5d1f3a2080782ec9e42db097da2c581b7f92098479b2f3495880445748d016",
+      "orientation": "black-bottom",
+      "piecePlacement": "4k3/1p2pp2/3P4/3N4/1pKp4/r5p1/6P1/4R3",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "video-img_5409",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/video-img_5409.png",
+      "imageSha256": "04e055ce35049dc73c73ce1e5514fcd2f7e9b06b4a55f1f5d773f41315a20adf",
+      "orientation": "white-bottom",
+      "piecePlacement": "r1bq1bkr/pp1pn1p1/2NQ3p/6B1/4R3/2p5/PPP2PPP/R5K1",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "video-img_5410",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/video-img_5410.png",
+      "imageSha256": "d5484d65687036d28d8bcfe21ed5ef28942badb392fd8a72c26708bdd6fbf288",
+      "orientation": "white-bottom",
+      "piecePlacement": "r1bq1b1r/pp1pnkpp/2pQ4/6B1/4R3/2p2N2/PPP2PPP/R5K1",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "video-img_5411",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/video-img_5411.png",
+      "imageSha256": "0a83a9cd4d0e5fe6dfcf283c7eebf7905625de0f0112254bfb3f02b2b53d28cf",
+      "orientation": "white-bottom",
+      "piecePlacement": "r1bqkb1r/pp1pn1pp/2p5/3Q4/4R3/2p2N2/PPP2PPP/R1B3K1",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "video-img_5412",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/video-img_5412.png",
+      "imageSha256": "9ca6368214811401251fc0d607ac9ce0342bab246f2804489efd58b38219122d",
+      "orientation": "white-bottom",
+      "piecePlacement": "Qn1qkb1r/p1p1pppp/8/5b2/4N3/4B3/PPP2PPP/R3KBNR",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    },
+    {
+      "id": "video-img_5413",
+      "image": "/home/nico/code/github/boardsnap/.cache/phone-validation-v1/images/video-img_5413.png",
+      "imageSha256": "3367ad672f0d20221d6a8a5d1fb13025efd318a1a8d834fedc404f0084e6e46b",
+      "orientation": "white-bottom",
+      "piecePlacement": "rn1qkb1r/pp4pp/2p1Nnb1/8/3P4/2N5/PPP3PP/R1BQ1RK1",
+      "split": "validation",
+      "groupId": "phone-validation-batch-v1"
+    }
+  ],
+  "provenance": {
+    "data/manifests/phone-validation-v1.json": "d461867923a346e17122ff35bef2bb7c284d9ed1354eab431060887200bfdd4f"
+  },
+  "policySha256": "24ff67417ffc9584a5bd843a0792104f32b6d431ff3a1ebac682b9563c9e4ab7",
+  "benchmarkSha256": {
+    "tools/benchmark_cpu.py": "68fd1fa7ec1aa768f2f097bf63e613235ca9d151523b042b7b567e5a01fdf878",
+    "tools/benchmark_preview.py": "31ff0ead7abf75452572a20bbbf479b017ece92e633ef401ac280d2ed3cf4aac"
+  },
+  "runtimeLocation": "/home/nico/code/github/boardsnap/.cache/screen-preview-install-venv/lib/python3.12/site-packages/boardsnap/__init__.py",
+  "finalEvaluationAccessed": false,
+  "performancePassed": true
+}

@@ -1,5 +1,9 @@
 # BoardSnap
 
+The [frozen screen preview](docs/en/screen-preview.md), package **0.1.0.dev1**,
+includes both models, offline CPU dependencies and clean-installation checks.
+It is ready for external testing; photographic recognition remains experimental.
+
 [English](docs/en/README.md) | [Spanish](docs/es/README.md)
 
 The [bounded photo detector recovery](docs/en/photo-recovery.md) raises automatic

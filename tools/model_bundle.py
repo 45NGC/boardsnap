@@ -71,10 +71,12 @@ def build_bundle(model, destination, policy_path, acceptance_report=None):
         manifest_hash = digest(stage/'manifest.json')
         (stage/'SHA256SUMS').write_text(''.join(
             f'{digest(path)}  {path.name}\n' for path in sorted(stage.iterdir()) if path.is_file()))
-        (stage/'README.md').write_text(f'# BoardSnap digital model\n\nStatus: {status}. Copy this directory intact.\n'
+        input_type = policy.get('inputType', 'digital')
+        (stage/'README.md').write_text(f'# BoardSnap {input_type} model\n\nStatus: {status}. Copy this directory intact.\n'
             'Verify manifest.json against the checksum recorded separately in the installation report.\n'
             'Install the matching BoardSnap wheel with its ml extra, then configure BOARDSNAP_MODEL\n'
             'with the absolute path to model.pt. Requests contain image and explicit orientation.\n'
+            f'Use --input-type {input_type}; do not interchange the digital and photographic models.\n'
             'Weights, class order, preprocessing and source data version are recorded in manifest.json.\n')
         verify_bundle(stage, manifest_hash)
         stage.rename(destination)

@@ -9,7 +9,9 @@ import resource
 import time
 
 
-def benchmark(model, samples):
+def benchmark(model, samples, *, input_type='digital'):
+    if input_type not in ('digital', 'photo') or not samples:
+        raise ValueError('Choose digital/photo and provide validation samples.')
     started = time.perf_counter()
     import cv2
     import torch
@@ -24,14 +26,18 @@ def benchmark(model, samples):
     torch.set_num_threads(4)
     cv2.setNumThreads(1)
     classifier = NeuralClassifier(model)
+    recognize = classifier.recognize_photo if input_type == 'photo' else classifier.recognize_image
     first = samples[0]
-    classifier.recognize_image(first['image'], orientation=first['orientation'])
+    try:
+        recognize(first['image'], orientation=first['orientation'])
+    except (ClassificationError, BoardDetectionError, ImageInputError):
+        pass  # A failed detection still contributes to measured latency.
     cold = (time.perf_counter()-started)*1000
     times, errors = [], []
     for sample in samples:
         start = time.perf_counter()
         try:
-            result = classifier.recognize_image(sample['image'], orientation=sample['orientation'])
+            result = recognize(sample['image'], orientation=sample['orientation'])
             if result != {'piecePlacement': sample['piecePlacement']}:
                 errors.append({'image': sample['image'], 'result': result})
         except (ClassificationError, BoardDetectionError, ImageInputError) as error:
@@ -41,7 +47,8 @@ def benchmark(model, samples):
                 if line.startswith('model name')), platform.processor())
     return {'modelSha256': digest(model), 'dataRole': 'validation', 'warm': timing(times),
             'coldMilliseconds': cold, 'peakRssMiB': resource.getrusage(resource.RUSAGE_SELF).ru_maxrss/1024,
-            'scope': 'fresh Linux process imports + model + 40 validation images; warm full pipeline; cold includes imports, load and first image',
+            'inputType': input_type,
+            'scope': 'fresh Linux process; warm full pipeline with one resident model; cold includes imports, load and first image; all supplied validation images including failures',
             'correctImages': len(samples)-len(errors), 'errors': errors,
             'environment': {'python': platform.python_version(), 'torch': str(torch.__version__),
                             'numpy':numpy.__version__,'pillow':PIL.__version__,'opencv':cv2.__version__,

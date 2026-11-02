@@ -1,5 +1,9 @@
 # BoardSnap
 
+The [frozen screen preview](screen-preview.md), **0.1.0.dev1**, packages both
+models with checksums and offline dependencies. Clean installation and CPU checks
+pass; photographic quality and independent final acceptance remain pending.
+
 The [bounded photo detector recovery](photo-recovery.md) reaches **20/30 exact
 CLI positions**, preserving all previous results and model weights. This is an
 improvement on consulted data, not independent final acceptance.

@@ -1,0 +1,974 @@
+{
+  "schemaVersion": 1,
+  "policyId": "screen-preview-v1",
+  "packageVersion": "0.1.0.dev1",
+  "status": "preview-not-accepted",
+  "models": {
+    "digital": {
+      "source": ".cache/neural-tolerance-v1-conservative/best.pt",
+      "sha256": "4c14507ad700dbe8c6ea6bdcdfb7072c7f31ef9fd9c21c22a782498c2d09ce5f",
+      "metadata": {
+        "formatVersion": 1,
+        "architecture": "small-square-cnn-v1",
+        "classOrder": [
+          "empty",
+          "P",
+          "N",
+          "B",
+          "R",
+          "Q",
+          "K",
+          "p",
+          "n",
+          "b",
+          "r",
+          "q",
+          "k"
+        ],
+        "preprocessing": {
+          "inputSize": [
+            64,
+            64
+          ],
+          "colorMode": "RGB",
+          "inputDtype": "uint8",
+          "tensorLayout": "NCHW",
+          "tensorDtype": "float32",
+          "scale": "divide by 255",
+          "additionalNormalization": null,
+          "augmentation": null
+        },
+        "dataVersion": {
+          "datasetId": "bounds-tolerance-v1",
+          "preparedDatasetSha256": "26c59813441674d689a1f73d2aa7a155606382cf654ddea93a62d7bb4192616b",
+          "originalValidationBoards": 3132,
+          "challengeValidationBoards": 3132
+        },
+        "trainingConfig": {
+          "method": "validation-selected-parameter-average",
+          "fractions": [
+            0.0,
+            0.0625,
+            0.125,
+            0.25,
+            0.5,
+            0.75,
+            1.0
+          ],
+          "threads": 4
+        },
+        "parameterAverage": {
+          "baselineSha256": "9546c6cfc34517f631cd58bf3eae0cdb3aa7790765b6f4ad1c0bf307ca4ad704",
+          "trainedSha256": "7489b23843ed34f0271c413a5b94c4798155730dfa123ddf2ae55863b58f51ed",
+          "trainedFraction": 0.125,
+          "trainedDataVersion": {
+            "datasetId": "bounds-tolerance-v1",
+            "preparedDatasetSha256": "26c59813441674d689a1f73d2aa7a155606382cf654ddea93a62d7bb4192616b",
+            "provenance": {
+              "complete": true,
+              "identity": {
+                "datasetSha256": "7cae41fdb1b28e7dc8442c70a01cc5c473ee47f7c206cdfcc9ec0cb715842525",
+                "indexSha256": "9bfe8473346998df5df546c7a74c449d14d9db1ad34669dc390e527993172f4a",
+                "extraDatasetSha256": "c843b1dc4199a2619be2a32194cb19eb74a1ecbc7c264545b967f3180e6a19ca",
+                "extraIndexSha256": "5bdc7de8be3fd6303317f0c5832740a48542404bb3b685049bfd6a02cd361b38",
+                "seed": 20261017,
+                "scenarios": [
+                  {
+                    "name": "reference",
+                    "edges": [
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    "scale": 1.0,
+                    "resampling": "LANCZOS"
+                  },
+                  {
+                    "name": "shift-x-1",
+                    "edges": [
+                      -1,
+                      0,
+                      -1,
+                      0
+                    ],
+                    "scale": 1.0,
+                    "resampling": "LANCZOS"
+                  },
+                  {
+                    "name": "shift-y-1",
+                    "edges": [
+                      0,
+                      -1,
+                      0,
+                      -1
+                    ],
+                    "scale": 1.0,
+                    "resampling": "LANCZOS"
+                  },
+                  {
+                    "name": "shift-x+1",
+                    "edges": [
+                      1,
+                      0,
+                      1,
+                      0
+                    ],
+                    "scale": 1.0,
+                    "resampling": "LANCZOS"
+                  },
+                  {
+                    "name": "shift-y+1",
+                    "edges": [
+                      0,
+                      1,
+                      0,
+                      1
+                    ],
+                    "scale": 1.0,
+                    "resampling": "LANCZOS"
+                  },
+                  {
+                    "name": "shift-x-2",
+                    "edges": [
+                      -2,
+                      0,
+                      -2,
+                      0
+                    ],
+                    "scale": 1.0,
+                    "resampling": "LANCZOS"
+                  },
+                  {
+                    "name": "shift-y-2",
+                    "edges": [
+                      0,
+                      -2,
+                      0,
+                      -2
+                    ],
+                    "scale": 1.0,
+                    "resampling": "LANCZOS"
+                  },
+                  {
+                    "name": "shift-x+2",
+                    "edges": [
+                      2,
+                      0,
+                      2,
+                      0
+                    ],
+                    "scale": 1.0,
+                    "resampling": "LANCZOS"
+                  },
+                  {
+                    "name": "shift-y+2",
+                    "edges": [
+                      0,
+                      2,
+                      0,
+                      2
+                    ],
+                    "scale": 1.0,
+                    "resampling": "LANCZOS"
+                  },
+                  {
+                    "name": "inset-2",
+                    "edges": [
+                      2,
+                      2,
+                      -2,
+                      -2
+                    ],
+                    "scale": 1.0,
+                    "resampling": "LANCZOS"
+                  },
+                  {
+                    "name": "outset-2",
+                    "edges": [
+                      -2,
+                      -2,
+                      2,
+                      2
+                    ],
+                    "scale": 1.0,
+                    "resampling": "LANCZOS"
+                  },
+                  {
+                    "name": "asymmetric-2",
+                    "edges": [
+                      1,
+                      -2,
+                      2,
+                      -1
+                    ],
+                    "scale": 1.0,
+                    "resampling": "LANCZOS"
+                  },
+                  {
+                    "name": "resample-85-bilinear",
+                    "edges": [
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    "scale": 0.85,
+                    "resampling": "BILINEAR"
+                  },
+                  {
+                    "name": "resample-115-bicubic",
+                    "edges": [
+                      0,
+                      0,
+                      0,
+                      0
+                    ],
+                    "scale": 1.15,
+                    "resampling": "BICUBIC"
+                  }
+                ],
+                "codeSha256": {
+                  "tools/train_tolerance.py": "873e5d3b1e458293381add75ec3bcb0a06a9138f9e71f4b4055e372bab192b92",
+                  "tools/bounds_tolerance.py": "897eeeb81a4045e27b40e2776b28dd5289ef7d0b3c8647daa3dfb64590f4b230",
+                  "tools/neural_data.py": "825cc064ec7d77b49075bf86657c6427d1a0e9a6f3484f28b818d1c08737a8ff",
+                  "tools/training_augmentation.py": "968c0d4d790c4985b24976e23fc60a491d469bcd1235b2c1b62b65f1643aaff9",
+                  "tools/build_square_dataset.py": "d1f66ccba2e07f382884d1beadb8d05c9566332ce88b61d58ec86f422d623630",
+                  "src/boardsnap/__init__.py": "5d4d88e1368be753e0359dfcbef042595cd6c2dcd793251aabc55724ffb015c8",
+                  "src/boardsnap/__main__.py": "776c85059861da68cb7dcd3a92a43278d35589117f27ae3b9105c739d9e542ab",
+                  "src/boardsnap/adapters/__init__.py": "f3b27a487ea86f5d962494c6633547cb2171f06ba0aca009fb2a13c61c2db2af",
+                  "src/boardsnap/adapters/cli.py": "1261d4b300ee8edd1d125bd2a526c1b2d729f8492738d051fad9ed0c4a0138a0",
+                  "src/boardsnap/classification.py": "295c5460b3c5174e036fe9eac0896ffe5eb2f3724c7485e0d9d3a20d0e028df4",
+                  "src/boardsnap/detection.py": "3dec58a7d9bb1fcb4300c1f3c74912e4bd0c8d29b5a37aa49abcc6f7ea259484",
+                  "src/boardsnap/image_input.py": "4cb87bbd4fab43ed315cb3c0f258ed9c5a8f5758124c72a3eb8a8e964d66764e",
+                  "src/boardsnap/neural.py": "1953f32f7fb4cc25ec63cae0302ddfeda927f6d9373eadf2541cb7f70950c13f",
+                  "src/boardsnap/normalization.py": "51ca3052645be05d05291a2653fd8c0d808ace12ad5c1f896a06e00b061741c7",
+                  "src/boardsnap/orientation.py": "39d0297413484a1980f6564f3baea140af1278b2dbaed1a5a8d62903cf0c1926",
+                  "src/boardsnap/output.py": "64ed8612dae9b528d08963ae1db1fc9127802c7f3ba3140bcdc329bf4b4645b0",
+                  "src/boardsnap/pipeline.py": "877f1adb395ffcf54e3e3e646b05377d0ee966c23384b4c4f16aa39d30fae97c",
+                  "src/boardsnap/profiles.py": "8cc3bb7a0e0d5fed057887aa09ebdf4d1d4309dba57a3c9df2cd0731707a5b5b",
+                  "src/boardsnap/segmentation.py": "eb0eccb596491a4ea1602b90baa8e491ff6f53932e88536495678fd59c603127"
+                }
+              },
+              "files": {
+                "training-images.npy": "4a0e7c8eb03ab57e2043e9d88183d3afb3b0cdb17aade1253db18c922f4697fe",
+                "training-labels.npy": "d16d0c4a7bf7f721350707e5de7eccfdaa2f96ed7854204860a8a6bca22c0df6",
+                "validation-images.npy": "8310a74733c77d206ba709a8374f24507a615612054fa19593aeba0539cd1595",
+                "validation-labels.npy": "a4c3db9d08ba02cd7f5adc1196ce43a9499f48c737e58b227e8310af9c6ab351",
+                "variants.json": "829aebd3bd93f2314602532451e170056da7ee2cdc7f738dd893aa59dcc7fcac"
+              },
+              "originalTrainingSquares": 320783,
+              "augmentedTrainingBoards": 3549,
+              "originalValidationBoards": 3132,
+              "challengeValidationBoards": 3132,
+              "evaluationArraysLoaded": false,
+              "validationUsedForTraining": false,
+              "originalValidationDistributionChanged": false,
+              "trainingSelection": "sha256(source image path) modulo 4 == 0; all 64 cells",
+              "selection": "maximize original validation exact boards first, then total exact boards, macro recall and loss"
+            },
+            "trainingCodeSha256": "5471c8939e8031ede5ca49789a94ebc46fc9540ae8c53de465f8653e7a5a5bea"
+          }
+        },
+        "selection": "preserve every originally correct board and total original correct squares; then original exact boards, total exact boards, macro recall, lower loss; earlier tie",
+        "selectionCodeSha256": "e56a126efa26ec49492a186ef17a535e1c3390bc5b93e58e9bf316d31a736397",
+        "averagingCodeSha256": "523b92c0ba0049eb088798098b1d2e015d26cb65a4feba981eb9521168abf35a",
+        "validationCodeSha256": "5471c8939e8031ede5ca49789a94ebc46fc9540ae8c53de465f8653e7a5a5bea"
+      },
+      "status": "candidate"
+    },
+    "photo": {
+      "source": ".cache/neural-phone-v1/best.pt",
+      "sha256": "bca969fc9fb42811a5daa4c11b968c68f805cb0b1404604b7fb6d5486dc8c60e",
+      "metadata": {
+        "formatVersion": 1,
+        "architecture": "small-square-cnn-v1",
+        "classOrder": [
+          "empty",
+          "P",
+          "N",
+          "B",
+          "R",
+          "Q",
+          "K",
+          "p",
+          "n",
+          "b",
+          "r",
+          "q",
+          "k"
+        ],
+        "preprocessing": {
+          "inputSize": [
+            64,
+            64
+          ],
+          "colorMode": "RGB",
+          "inputDtype": "uint8",
+          "tensorLayout": "NCHW",
+          "tensorDtype": "float32",
+          "scale": "divide by 255",
+          "additionalNormalization": null,
+          "augmentation": null
+        },
+        "dataVersion": {
+          "datasetId": "phone-training-v1",
+          "manifestSha256": "0d95e16c39c5c08c73526cc9cc0ce6a68edce3d7616417520a82dd8260bffafa",
+          "verifiedIndexSha256": "78d6b03a9ad0fa381ca2e7e67a11692c340fb94a5e53655b019bfbf75194dfe4",
+          "trainingBoards": 160,
+          "trainingSquares": 10240,
+          "validationBoards": 30,
+          "markedCellsOnlyInTraining": false,
+          "trainingCodeSha256": "5471c8939e8031ede5ca49789a94ebc46fc9540ae8c53de465f8653e7a5a5bea",
+          "dataLoaderCodeSha256": "825cc064ec7d77b49075bf86657c6427d1a0e9a6f3484f28b818d1c08737a8ff",
+          "modelCodeSha256": "1953f32f7fb4cc25ec63cae0302ddfeda927f6d9373eadf2541cb7f70950c13f"
+        },
+        "trainingConfig": {
+          "seed": 20261030,
+          "epochs": 20,
+          "batchSize": 256,
+          "learningRate": 0.0001,
+          "weightDecay": 0.0001,
+          "threads": 4
+        },
+        "selection": "maximum validation exact boards, then macro recall, then lower unweighted loss; earlier tie",
+        "loss": "cross entropy with inverse class frequency from training only",
+        "classWeights": [
+          0.1256287544965744,
+          0.7908557057380676,
+          4.081307411193848,
+          4.039447784423828,
+          2.864335775375366,
+          5.251282215118408,
+          4.92307710647583,
+          0.7806662917137146,
+          4.376068592071533,
+          3.532252550125122,
+          2.725579023361206,
+          5.626373767852783,
+          4.92307710647583
+        ],
+        "environment": {
+          "torch": "2.14.1+cpu",
+          "numpy": "2.5.3",
+          "python": "3.12.3",
+          "device": "cpu"
+        },
+        "parameterCount": 39709,
+        "initialization": {
+          "weightsSha256": "4c14507ad700dbe8c6ea6bdcdfb7072c7f31ef9fd9c21c22a782498c2d09ce5f",
+          "dataVersion": {
+            "datasetId": "bounds-tolerance-v1",
+            "preparedDatasetSha256": "26c59813441674d689a1f73d2aa7a155606382cf654ddea93a62d7bb4192616b",
+            "originalValidationBoards": 3132,
+            "challengeValidationBoards": 3132
+          },
+          "optimizer": "new AdamW; previous optimizer state is not inherited"
+        },
+        "selectedEpoch": 1
+      },
+      "status": "experimental"
+    }
+  },
+  "runtimeSha256": {
+    "src/boardsnap/__init__.py": "5d4d88e1368be753e0359dfcbef042595cd6c2dcd793251aabc55724ffb015c8",
+    "src/boardsnap/__main__.py": "776c85059861da68cb7dcd3a92a43278d35589117f27ae3b9105c739d9e542ab",
+    "src/boardsnap/adapters/__init__.py": "f3b27a487ea86f5d962494c6633547cb2171f06ba0aca009fb2a13c61c2db2af",
+    "src/boardsnap/adapters/cli.py": "7455ff6fe03a4b836aefd66a7e62fdff37c0ce05be938471bbf9f1631a8946b8",
+    "src/boardsnap/assets/README.md": "33117fc3fb333c29eee54c7e39a9c9aad3b737e64da67635c16699da3e0d1657",
+    "src/boardsnap/assets/THIRD_PARTY_NOTICES.md": "91028805e5de0c6a2942d06b4e78404232d0e9d64f59ff4795289dd1c4729fc4",
+    "src/boardsnap/assets/book-strategy-hatched-v1-pieces.json": "36512ed70acb6d9b09de377ce0c8279af3ba49f723bf569dccc21d5b56bf68cb",
+    "src/boardsnap/assets/book-strategy-hatched-v1-pieces.png": "c93098137c32c0a51453c1ac849c47e69ba43c02638c559f360cad32f719b476",
+    "src/boardsnap/assets/chesscom-default-green-v1-coordinates.json": "2b048b905f188f77a42a775504212b8c28ee406fd3e324f7c7cecda98414eca9",
+    "src/boardsnap/assets/chesscom-default-green-v1-pieces.json": "a731465b2646d6d1d30dfb56e24c6e2d1c5f4c9777915ace5b7f830cf865c47a",
+    "src/boardsnap/assets/chesscom-default-green-v1-pieces.png": "8b9f0a877478b906fb687ea10fadcc3bf7b572a8cbb9859aaaf68f6d350e6523",
+    "src/boardsnap/assets/coordinate-glyphs.json": "f97f42b5f34331a5eb7a7a94ed6c4a7ed2618e8541d7525a58fcf895bc8941ea",
+    "src/boardsnap/assets/lichess-cburnett-blue-v1-coordinates.json": "4f0591bc380fd7fa93023fb8faf9f2adf0cc07a38ea79fcae1aeb700456da07a",
+    "src/boardsnap/assets/lichess-cburnett-blue-v1-pieces.json": "30c3525909e4ea7ef6fc27cc0e38b44e62678dcc3cb41f3553d62ead8acaa432",
+    "src/boardsnap/assets/lichess-cburnett-blue-v1-pieces.png": "05292ae743f92a67c9ceb1842bc100448f6e39d5bd752575e2493fafb73e6920",
+    "src/boardsnap/assets/piece-templates.json": "d22077e6e6a0fcdbd1325bd875e3b0a24f14c0ce09c5bebc34d667c631b3d34a",
+    "src/boardsnap/assets/piece-templates.png": "7a695bb68805a49ee4d3cc06777c36915509ef9e3933796770650493876523b6",
+    "src/boardsnap/classification.py": "295c5460b3c5174e036fe9eac0896ffe5eb2f3724c7485e0d9d3a20d0e028df4",
+    "src/boardsnap/detection.py": "4e19fbd0e9a7a4b87475ae25b714290aa223fc3fcc8d16c40dd1715194e0c11f",
+    "src/boardsnap/image_input.py": "4cb87bbd4fab43ed315cb3c0f258ed9c5a8f5758124c72a3eb8a8e964d66764e",
+    "src/boardsnap/neural.py": "a1ec8a7254f8b8d14ea223d8a0118ac6be8c0afc5d8b5eddfc2e3acb81b1f125",
+    "src/boardsnap/normalization.py": "51ca3052645be05d05291a2653fd8c0d808ace12ad5c1f896a06e00b061741c7",
+    "src/boardsnap/orientation.py": "39d0297413484a1980f6564f3baea140af1278b2dbaed1a5a8d62903cf0c1926",
+    "src/boardsnap/output.py": "64ed8612dae9b528d08963ae1db1fc9127802c7f3ba3140bcdc329bf4b4645b0",
+    "src/boardsnap/photo_detection.py": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+    "src/boardsnap/pipeline.py": "919abbf44c030585383721ba1850e5af9e848a9c8c16d4f76a7be514e7cf9ce3",
+    "src/boardsnap/profiles.py": "8cc3bb7a0e0d5fed057887aa09ebdf4d1d4309dba57a3c9df2cd0731707a5b5b",
+    "src/boardsnap/rectification.py": "9609048b79395f64a9d40f4f5d3c5bc850117ac4c67d8aa51798a06e5ae8eec3",
+    "src/boardsnap/segmentation.py": "eb0eccb596491a4ea1602b90baa8e491ff6f53932e88536495678fd59c603127",
+    "pyproject.toml": "332e23f12e51e881ae2f88abf740d622eb46c3a513ce644cf69ce43bd16a6475"
+  },
+  "catalogue": {
+    "digital": [
+      {
+        "id": "lichess-brown-cburnett",
+        "platform": "lichess",
+        "boardTheme": "brown",
+        "pieceSet": "cburnett",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "lichess-blue-cburnett",
+        "platform": "lichess",
+        "boardTheme": "blue",
+        "pieceSet": "cburnett",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "lichess-green-cburnett",
+        "platform": "lichess",
+        "boardTheme": "green",
+        "pieceSet": "cburnett",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "lichess-brown-merida",
+        "platform": "lichess",
+        "boardTheme": "brown",
+        "pieceSet": "merida",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "lichess-blue-merida",
+        "platform": "lichess",
+        "boardTheme": "blue",
+        "pieceSet": "merida",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "lichess-green-merida",
+        "platform": "lichess",
+        "boardTheme": "green",
+        "pieceSet": "merida",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "lichess-brown-alpha",
+        "platform": "lichess",
+        "boardTheme": "brown",
+        "pieceSet": "alpha",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "lichess-blue-alpha",
+        "platform": "lichess",
+        "boardTheme": "blue",
+        "pieceSet": "alpha",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "lichess-green-alpha",
+        "platform": "lichess",
+        "boardTheme": "green",
+        "pieceSet": "alpha",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "chesscom-green-neo",
+        "platform": "chesscom",
+        "boardTheme": "green",
+        "pieceSet": "neo",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "chesscom-brown-neo",
+        "platform": "chesscom",
+        "boardTheme": "brown",
+        "pieceSet": "neo",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "chesscom-blue-neo",
+        "platform": "chesscom",
+        "boardTheme": "blue",
+        "pieceSet": "neo",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "chesscom-green-classic",
+        "platform": "chesscom",
+        "boardTheme": "green",
+        "pieceSet": "classic",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "chesscom-brown-classic",
+        "platform": "chesscom",
+        "boardTheme": "brown",
+        "pieceSet": "classic",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "chesscom-blue-classic",
+        "platform": "chesscom",
+        "boardTheme": "blue",
+        "pieceSet": "classic",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "chesscom-green-bases",
+        "platform": "chesscom",
+        "boardTheme": "green",
+        "pieceSet": "bases",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "chesscom-brown-bases",
+        "platform": "chesscom",
+        "boardTheme": "brown",
+        "pieceSet": "bases",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "chesscom-blue-bases",
+        "platform": "chesscom",
+        "boardTheme": "blue",
+        "pieceSet": "bases",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "lichess-brown-staunty",
+        "platform": "lichess",
+        "boardTheme": "brown",
+        "pieceSet": "staunty",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "lichess-wood4-staunty",
+        "platform": "lichess",
+        "boardTheme": "wood4",
+        "pieceSet": "staunty",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "lichess-blue-staunty",
+        "platform": "lichess",
+        "boardTheme": "blue",
+        "pieceSet": "staunty",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "chesscom-green-alpha",
+        "platform": "chesscom",
+        "boardTheme": "green",
+        "pieceSet": "alpha",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "chesscom-wood-alpha",
+        "platform": "chesscom",
+        "boardTheme": "wood",
+        "pieceSet": "alpha",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      },
+      {
+        "id": "chesscom-blue-alpha",
+        "platform": "chesscom",
+        "boardTheme": "blue",
+        "pieceSet": "alpha",
+        "orientations": [
+          "white-bottom",
+          "black-bottom"
+        ],
+        "viewport": {
+          "width": 1280,
+          "height": 1000
+        },
+        "deviceScaleFactor": 1,
+        "conditions": [
+          "clean"
+        ]
+      }
+    ],
+    "digitalConditions": [
+      "clean",
+      "last-move",
+      "selection",
+      "check",
+      "circle",
+      "move-dot",
+      "arrow-empty",
+      "arrow-piece",
+      "arrow-crossed",
+      "arrow-combined"
+    ],
+    "digitalLayouts": [
+      "captured-desktop",
+      "board-crop-384",
+      "synthetic-margins-256"
+    ],
+    "photo": {
+      "status": "experimental-only",
+      "sources": [
+        "lichess",
+        "chesscom",
+        "video"
+      ],
+      "deviceEvidence": "iPhone 8 photographs of screens; moderate perspective; 30 consulted validation photos",
+      "officialPieceThemesVerified": false,
+      "restrictions": [
+        "one complete visible 8x8 board",
+        "explicit orientation",
+        "PNG/JPEG",
+        "no guarantee for glare, blur, moire, thin pawns or occlusion"
+      ]
+    }
+  },
+  "excluded": [
+    "books",
+    "physical-3d-boards",
+    "native-mobile-compatibility",
+    "automatic-photo-orientation",
+    "fully-occluded-pieces",
+    "arbitrary-video-layouts",
+    "unmeasured-styles"
+  ],
+  "acceptance": {
+    "digital": {
+      "status": "pending-independent-evaluation",
+      "thresholds": {
+        "minimumImages": 4560,
+        "minimumNegatives": 200,
+        "minimumImagesPerCombination": 190,
+        "minimumImagesPerCondition": 240,
+        "minimumImagesPerLayout": 240,
+        "minimumClassSquares": 100,
+        "exactBoardRate": 0.99,
+        "stratumExactBoardRate": 0.98,
+        "classPrecision": 0.995,
+        "classRecall": 0.995,
+        "maximumDetectionMissRate": 0.005,
+        "maximumFalseDetectionRate": 0.005,
+        "minimumBoundsWithinTwoPixelsRate": 0.995,
+        "explicitOrientationMappingRate": 1.0,
+        "maximumWarmP95Milliseconds": 1000,
+        "maximumColdMilliseconds": 5000,
+        "maximumPeakRssMiB": 1024
+      }
+    },
+    "photo": {
+      "status": "blocked-by-current-quality",
+      "thresholds": {
+        "minimumImages": 120,
+        "minimumIndependentSourceGroups": 20,
+        "minimumImagesPerSourceCategory": 30,
+        "minimumNegatives": 100,
+        "minimumClassSquares": 50,
+        "exactBoardRate": 0.9,
+        "stratumExactBoardRate": 0.85,
+        "classPrecision": 0.98,
+        "classRecall": 0.98,
+        "maximumDetectionMissRate": 0.05,
+        "maximumFalseDetectionRate": 0.01,
+        "explicitOrientationMappingRate": 1.0,
+        "minimumGeometryWithinPolicyRate": 0.95
+      },
+      "geometryPolicy": {
+        "minIntersectionOverUnion": 0.95,
+        "maxCornerErrorBoardFraction": 0.01,
+        "maxGridErrorCellFraction": 0.08,
+        "scope": "Reviewed geometry agreement, not recognition or independent final acceptance."
+      },
+      "requiredStrata": [
+        "source-category",
+        "reviewed-piece-appearance",
+        "background",
+        "perspective",
+        "resolution",
+        "overlay",
+        "orientation"
+      ],
+      "minimumImagesPerDeclaredStratum": 10,
+      "note": "Proposed first-version utility gates fixed before new independent photos, not fitted to 20/30. Unmeasured strata fail; no general style claim."
+    }
+  },
+  "cpu": {
+    "platform": "Linux x86_64 CPython 3.12 CPU; not mobile or HTTP",
+    "torchThreads": 4,
+    "opencvThreads": 1,
+    "digital": {
+      "minimumSamples": 40,
+      "warmP95Ms": 1000,
+      "coldMs": 5000,
+      "peakRssMiB": 1024
+    },
+    "photo": {
+      "minimumSamples": 30,
+      "warmP95Ms": 5000,
+      "coldMs": 10000,
+      "peakRssMiB": 1024
+    }
+  },
+  "finalDataPolicy": "No final images read during preview preparation. Freeze source identities before acquisition; all related variants stay together. Final attempts consume the set even on failure. Consulted sets are regression only. Changing candidate or thresholds requires a new policy.",
+  "evidence": {
+    "data/reports/photo-recovery-comparison-v2.json": "741e71d45d4f33673c3d61b20862e9c72769e9e35cdf8155649e5a341e52c74f",
+    "data/reports/photo-pipeline-validation-v2.json": "c323e9b12b42572dba52a139faa057eaa86ccd8d67444ae91ff04658e9c8cec4",
+    "data/reports/photo-detection-development-v2.json": "ea1345c2bdaf9ef625f7436231e4194b9a21c5e40d7bdc58d9b141e829a0cc71",
+    "data/reports/digital-regressions-anisotropic-candidate.json": "8c50e4f33fc438b4dd92bfa7c8cb5afc69e6329f3e64af0e2f0999e309c08421"
+  },
+  "contract": {
+    "successFields": [
+      "piecePlacement"
+    ],
+    "fenFields": 1,
+    "errors": "existing structured errors; CLI processing exit 1, usage exit 2"
+  },
+  "distribution": "local preview only; no publication or final acceptance"
+}

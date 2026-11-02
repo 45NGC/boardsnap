@@ -1,0 +1,87 @@
+{
+  "passed": true,
+  "modelSha256": "bca969fc9fb42811a5daa4c11b968c68f805cb0b1404604b7fb6d5486dc8c60e",
+  "scope": "installed photo CLI and python -I -m boardsnap outside checkout; consulted validation only",
+  "referenceSha256": "c323e9b12b42572dba52a139faa057eaa86ccd8d67444ae91ff04658e9c8cec4",
+  "policySha256": "24ff67417ffc9584a5bd843a0792104f32b6d431ff3a1ebac682b9563c9e4ab7",
+  "checks": [
+    {
+      "check": "chesscom-img_5393",
+      "passed": true,
+      "returnCode": 0,
+      "stdout": "{\"piecePlacement\": \"rn1qkb1r/ppp2ppp/3p1n2/4p3/4PP2/2N2b1P/PPPP2P1/R1BQKB1R\"}\n",
+      "stderr": ""
+    },
+    {
+      "check": "chesscom-img_5396",
+      "passed": true,
+      "returnCode": 0,
+      "stdout": "{\"piecePlacement\": \"r1b2rk1/ppp2p1p/6p1/4b3/4n2q/N1P1P3/PP3PPP/R2Q1RK1\"}\n",
+      "stderr": ""
+    },
+    {
+      "check": "lichess-img_5383",
+      "passed": true,
+      "returnCode": 0,
+      "stdout": "{\"piecePlacement\": \"rnb1kbnr/ppp2ppp/8/4P3/4p3/6PN/PPP2P1P/RNBK1B1R\"}\n",
+      "stderr": ""
+    },
+    {
+      "check": "lichess-img_5385",
+      "passed": true,
+      "returnCode": 0,
+      "stdout": "{\"piecePlacement\": \"r1bqkb1r/1p1p1ppp/p1n1p3/2p5/4PP2/2N2N2/PPPP2PP/R1BQK2R\"}\n",
+      "stderr": ""
+    },
+    {
+      "check": "video-img_5405",
+      "passed": true,
+      "returnCode": 0,
+      "stdout": "{\"piecePlacement\": \"rnbqkb1r/pp3ppp/2p1pn2/3p4/3PP3/2N2P2/PPP3PP/R1BQKBNR\"}\n",
+      "stderr": ""
+    },
+    {
+      "check": "video-img_5407",
+      "passed": true,
+      "returnCode": 0,
+      "stdout": "{\"piecePlacement\": \"4k3/1p2pp2/3P4/3N4/1pKp4/r5p1/6P1/4R3\"}\n",
+      "stderr": ""
+    },
+    {
+      "check": "photo without board",
+      "passed": true,
+      "returnCode": 1,
+      "stdout": "{\"error\": {\"code\": \"BOARD_NOT_FOUND\", \"message\": \"No complete supported photographic chessboard was detected.\"}}\n",
+      "stderr": ""
+    },
+    {
+      "check": "empty image",
+      "passed": true,
+      "returnCode": 1,
+      "stdout": "{\"error\": {\"code\": \"INVALID_IMAGE\", \"message\": \"The image file is empty.\"}}\n",
+      "stderr": ""
+    },
+    {
+      "check": "missing image",
+      "passed": true,
+      "returnCode": 1,
+      "stdout": "{\"error\": {\"code\": \"INPUT_READ_ERROR\", \"message\": \"Could not read the image file.\"}}\n",
+      "stderr": ""
+    },
+    {
+      "check": "photo auto orientation is rejected",
+      "passed": true,
+      "returnCode": 2,
+      "stdout": "",
+      "stderr": "usage: boardsnap [-h]\n                 [--profile {lichess-cburnett-brown-v1,lichess-cburnett-blue-v1,chesscom-default-green-v1,book-strategy-hatched-v1} | --model MODEL]\n                 [--orientation {white-bottom,black-bottom,auto}]\n                 [--input-type {digital,photo}]\n                 image\nboardsnap: error: --input-type photo requires --orientation white-bottom or black-bottom and cannot use --profile.\n"
+    },
+    {
+      "check": "missing weights",
+      "passed": true,
+      "returnCode": 1,
+      "stdout": "{\"error\": {\"code\": \"PROCESSING_FAILED\", \"message\": \"Could not load a compatible neural model.\"}}\n",
+      "stderr": ""
+    }
+  ],
+  "verificationCodeSha256": "426787a6c96a17ec86fcd6793c3b0bd294f6377ada4ad9ec3493c58240b62299"
+}

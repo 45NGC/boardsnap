@@ -1,5 +1,9 @@
 # BoardSnap
 
+El [candidato congelado](screen-preview.md), **0.1.0.dev1**, incluye ambos modelos,
+checksums y dependencias sin conexión. Pasan instalación limpia y rendimiento en
+CPU; siguen pendientes la calidad fotográfica y la aceptación independiente.
+
 La [recuperación acotada del detector fotográfico](photo-recovery.md) alcanza
 **20/30 posiciones exactas mediante CLI**, conservando los resultados anteriores
 y los pesos. Es una mejora sobre datos consultados, no aceptación independiente.
