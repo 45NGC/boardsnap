@@ -150,3 +150,92 @@ def test_diagnostic_cli_saves_only_detection_outputs(tmp_path, monkeypatch, caps
     capsys.readouterr()
     assert main(['missing.jpg', '--output', '.cache/missing']) == 1
     assert json.loads(capsys.readouterr().out)['error']['code'] == 'INPUT_READ_ERROR'
+
+
+@pytest.mark.parametrize('drift,recover', [(5, True), (14, False)])
+def test_measured_boundary_recovery_is_bounded(monkeypatch, drift, recover):
+    from boardsnap import photo_detection as detector
+    corners = np.float32([[100, 100], [612, 100], [612, 612], [100, 612]])
+    monkeypatch.setattr(detector, '_contour_candidates', lambda _: [corners])
+    monkeypatch.setattr(detector, '_line_candidates', lambda _, **kwargs: [])
+    monkeypatch.setattr(detector, '_refine', lambda pixels, q: q + np.float32([0, drift]))
+    with grid(pieces=False) as board, photograph(board, corners, (712, 712), clutter=False) as image:
+        if recover:
+            assert np.array_equal(detect_photo_board(image).corners, corners)
+        else:
+            with pytest.raises(BoardDetectionError):
+                detect_photo_board(image)
+
+
+def test_recovery_keeps_original_success_and_skips_fragment_pass(monkeypatch):
+    from boardsnap import photo_detection as detector
+    def unexpected(*args, **kwargs):
+        pytest.fail('Do not run recovery after a supported contour result.')
+    monkeypatch.setattr(detector, '_line_candidates', unexpected)
+    corners = [[140, 80], [650, 110], [620, 650], [90, 590]]
+    with grid() as board, photograph(board, corners) as image:
+        assert geometry_metrics(detect_photo_board(image).corners, corners)['withinPolicy']
+
+
+def test_fragmented_edges_still_require_complete_grid(monkeypatch):
+    from boardsnap import photo_detection as detector
+    corners = np.float32([[140, 80], [650, 110], [620, 650], [90, 590]])
+    calls = []
+    monkeypatch.setattr(detector, '_contour_candidates', lambda _: [])
+    def proposals(pixels, *, fragmented_edges=False):
+        calls.append(fragmented_edges)
+        return [corners] if fragmented_edges else []
+    monkeypatch.setattr(detector, '_line_candidates', proposals)
+    with grid() as board, photograph(board, corners) as image:
+        assert geometry_metrics(detect_photo_board(image).corners, corners)['withinPolicy']
+    assert calls == [False, True]
+    calls.clear()
+    with grid() as board:
+        ImageDraw.Draw(board).rectangle((0, 0, 13, 511), fill='#343b42')
+        with photograph(board, corners) as image, pytest.raises(BoardDetectionError):
+            detect_photo_board(image)
+    assert calls == [False, True]
+
+
+@pytest.mark.integration
+@pytest.mark.parametrize('photo_id', ['video-img_5406', 'video-img_5407'])
+def test_reviewed_photo_recovery_and_hidden_file(photo_id):
+    import hashlib
+    import json
+    from pathlib import Path
+    from boardsnap.image_input import read_image
+    root = Path(__file__).resolve().parents[1]
+    rows = json.loads((root/'data/manifests/phone-validation-v1.json').read_text())['samples']
+    row = next(r for r in rows if r['id'] == photo_id)
+    path = root/row['imagePath']
+    if not path.is_file():
+        pytest.skip('Local consulted photo validation image is unavailable.')
+    assert row['split'] == 'validation'
+    assert hashlib.sha256(path.read_bytes()).hexdigest() == row['imageSha256']
+    with read_image(path) as image:
+        found = detect_photo_board(image)
+        assert geometry_metrics(found.corners, row['boardCorners'])['withinPolicy']
+        transform = cv2.getPerspectiveTransform(np.float32([[0, 0], [512, 0], [512, 512], [0, 512]]),
+                                                np.float32(row['boardCorners']))
+        hidden = cv2.perspectiveTransform(np.float32([[[0, 0], [14, 0], [14, 512], [0, 512]]]), transform)
+        pixels = np.array(image)
+        cv2.fillConvexPoly(pixels, np.rint(hidden[0]).astype(np.int32), (52, 59, 66))
+        with Image.fromarray(pixels) as incomplete, pytest.raises(BoardDetectionError) as error:
+            detect_photo_board(incomplete)
+        assert error.value.code == 'BOARD_NOT_FOUND'
+
+
+@pytest.mark.parametrize('count', [7, 9])
+def test_recovery_rejects_near_eight_grid_sizes(count):
+    corners = [[140, 80], [650, 110], [620, 650], [90, 590]]
+    with grid(count, pieces=False) as board, photograph(board, corners) as image, pytest.raises(BoardDetectionError):
+        detect_photo_board(image)
+
+
+@pytest.mark.parametrize('box', [(498, 0, 511, 511), (0, 0, 511, 13), (0, 498, 511, 511)])
+def test_recovery_rejects_other_incomplete_rims(box):
+    corners = [[140, 80], [650, 110], [620, 650], [90, 590]]
+    with grid() as board:
+        ImageDraw.Draw(board).rectangle(box, fill='#343b42')
+        with photograph(board, corners) as image, pytest.raises(BoardDetectionError):
+            detect_photo_board(image)

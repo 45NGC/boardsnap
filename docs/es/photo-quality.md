@@ -2,6 +2,12 @@
 
 [English](../en/photo-quality.md) | **Español**
 
+> **Registro v1:** las mediciones y decisiones de esta página corresponden a
+> la versión anterior. La [corrección geométrica posterior](photo-recovery.md)
+> conserva los modelos y alcanza 134/161 detecciones de desarrollo, 29/30
+> de validación consultada y 20/30 posiciones completas mediante CLI. Los
+> informes v1 se conservan como referencia histórica.
+
 **Decisión: conservar el candidato digital y foto v1. Ningún cambio experimental
 ha superado las comprobaciones para sustituirlos.** Esta revisión termina el
 análisis y las pruebas acotadas de mejora; no declara resuelto el paso de calidad

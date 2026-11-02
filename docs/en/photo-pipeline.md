@@ -2,6 +2,11 @@
 
 **English** | [Español](../es/photo-pipeline.md)
 
+> **V1 record:** measurements and decisions on this page describe the previous
+> version. The [subsequent geometry correction](photo-recovery.md) retains model
+> weights and reaches 134/161 development detections, 29/30 consulted validation
+> detections and 20/30 exact CLI positions. V1 reports remain historical references.
+
 The photo path now connects RGB input, four-corner detection, perspective
 rectification, 64 crops, the neural classifier and canonical piece placement.
 It is experimental and explicitly selected; the digital path stays the default.

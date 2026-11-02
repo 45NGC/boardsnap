@@ -2,6 +2,11 @@
 
 **English** | [Español](../es/photo-quality.md)
 
+> **V1 record:** measurements and decisions on this page describe the previous
+> version. The [subsequent geometry correction](photo-recovery.md) retains model
+> weights and reaches 134/161 development detections, 29/30 consulted validation
+> detections and 20/30 exact CLI positions. V1 reports remain historical references.
+
 **Decision: retain the digital candidate and photo v1. None of the experiments
 passed the replacement checks.** The review and bounded experiments are complete;
 photographic quality work and first-version acceptance are not declared complete.

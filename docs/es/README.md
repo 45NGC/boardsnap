@@ -1,5 +1,9 @@
 # BoardSnap
 
+La [recuperación acotada del detector fotográfico](photo-recovery.md) alcanza
+**20/30 posiciones exactas mediante CLI**, conservando los resultados anteriores
+y los pesos. Es una mejora sobre datos consultados, no aceptación independiente.
+
 La [revisión de calidad para la primera versión](photo-quality.md) reúne capturas
 y fotos, revisa los diseños del entrenamiento y descarta cambios que pierden
 aciertos anteriores. Se conservan los modelos actuales; quedan carencias
@@ -9,7 +13,7 @@ El [diagnóstico del clasificador fotográfico](phone-classifier-analysis.md) de
 
 [Primer clasificador fotográfico](phone-training.md): entrenamiento completado con el [conjunto revisado](phone-training-data.md). Acierta 19/30 fotos de validación con esquinas revisadas, frente a 18/30 antes de adaptarlo. Empeoran tres tableros digitales; el modelo fotográfico experimental no sustituye al candidato digital.
 
-El [detector fotográfico](photo-detection.md) ya localiza las cuatro esquinas dentro del criterio geométrico en 132/161 fotos de desarrollo y 27/30 de validación. Rechaza los 18 controles negativos construidos. Su comando de diagnóstico guarda el contorno y el tablero rectificado. El [recorrido fotográfico automático](photo-pipeline.md) ya lo conecta con la clasificación mediante `--input-type photo`, un modelo configurado y orientación explícita.
+El [detector fotográfico](photo-detection.md) ya localiza las cuatro esquinas dentro del criterio geométrico en 134/161 fotos de desarrollo y 29/30 de validación. Rechaza los 18 controles negativos construidos. Su comando de diagnóstico guarda el contorno y el tablero rectificado. El [recorrido fotográfico automático](photo-pipeline.md) ya lo conecta con la clasificación mediante `--input-type photo`, un modelo configurado y orientación explícita.
 
 El [corpus fotográfico inicial](phone-photo-corpus.md) organiza 161 HEIC de
 pantallas: 160 colocaciones revisadas visualmente, una animación ambigua y

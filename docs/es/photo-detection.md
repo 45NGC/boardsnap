@@ -2,6 +2,12 @@
 
 [English](../en/photo-detection.md) | **Español**
 
+> **Registro v1:** las mediciones y decisiones de esta página corresponden a
+> la versión anterior. La [corrección geométrica posterior](photo-recovery.md)
+> conserva los modelos y alcanza 134/161 detecciones de desarrollo, 29/30
+> de validación consultada y 20/30 posiciones completas mediante CLI. Los
+> informes v1 se conservan como referencia histórica.
+
 Hay un primer detector geométrico de fotografías en
 `boardsnap.photo_detection.detect_photo_board`. Recibe una imagen RGB y devuelve
 las cuatro esquinas de una cuadrícula completa de 8×8. No utiliza redes neuronales,

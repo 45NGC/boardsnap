@@ -1,5 +1,9 @@
 # BoardSnap
 
+The [bounded photo detector recovery](photo-recovery.md) reaches **20/30 exact
+CLI positions**, preserving all previous results and model weights. This is an
+improvement on consulted data, not independent final acceptance.
+
 The [first-version quality review](photo-quality.md) combines digital and photo
 evidence, audits training appearances and rejects changes that lose previous
 successes. Existing models remain recommended; photographic quality is still
@@ -9,7 +13,7 @@ The [photo classifier diagnosis](phone-classifier-analysis.md) breaks down the e
 
 [First photographic classifier](phone-training.md): training is complete using the [reviewed dataset](phone-training-data.md). It recognizes 19/30 validation photos with reviewed corners, versus 18/30 before adaptation. Three digital boards regress; the experimental photo model does not replace the digital candidate.
 
-The [photographic detector](photo-detection.md) now finds four corners within the geometric criteria on 132/161 development photos and 27/30 validation photos. All 18 constructed negative controls are rejected. Its diagnostic command saves an outline and rectified board. The [automatic photo pipeline](photo-pipeline.md) now connects it to classification using `--input-type photo`, a configured model and explicit orientation.
+The [photographic detector](photo-detection.md) now finds four corners within the geometric criteria on 134/161 development photos and 29/30 validation photos. All 18 constructed negative controls are rejected. Its diagnostic command saves an outline and rectified board. The [automatic photo pipeline](photo-pipeline.md) now connects it to classification using `--input-type photo`, a configured model and explicit orientation.
 
 The [initial photograph corpus](phone-photo-corpus.md) organizes 161 screen HEICs:
 160 visually reviewed placements, one ambiguous capture animation and 161

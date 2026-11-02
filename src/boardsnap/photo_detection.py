@@ -64,12 +64,15 @@ def _contour_candidates(pixels):
     return candidates
 
 
-def _line_candidates(pixels):
+def _line_candidates(pixels, *, fragmented_edges=False):
     """Propose quadrilaterals from two families of nearly regular grid lines."""
     gray = cv2.GaussianBlur(cv2.cvtColor(pixels, cv2.COLOR_RGB2GRAY), (5, 5), 1)
     edges = cv2.Canny(gray, 12, 40)
+    # A screen frame can share the light-square color: outer edges then appear
+    # as separate single-cell segments. Keep the old proposal pass first.
+    minimum_length = max(32, min(gray.shape)*.06) if fragmented_edges else max(45, min(gray.shape)*.12)
     segments = cv2.HoughLinesP(edges, 1, np.pi/720, 45,
-        minLineLength=max(45, min(gray.shape)*.12), maxLineGap=30)
+        minLineLength=minimum_length, maxLineGap=30)
     if segments is None:
         return []
     families = [[], []]
@@ -270,20 +273,40 @@ def detect_photo_board(image: Image.Image) -> BoardQuadrilateral:
         raise BoardDetectionError('BOARD_NOT_FOUND', 'Image is too small or narrow for a supported photographic grid.')
     work = cv2.resize(np.asarray(image), size, interpolation=cv2.INTER_AREA)
     accepted = []
+    recoverable = []
+
+    def supported(quad):
+        return (_valid_quad(quad, work.shape[1], work.shape[0])
+                and _grid_evidence(_warp(work, quad)[0])
+                and not _continues(work, quad))
+
+    def retain(quad):
+        if not any(np.max(np.linalg.norm(quad - old, axis=1)) < 12 for old in accepted):
+            accepted.append(quad)
+
     for propose in (_contour_candidates, _line_candidates):
         for proposal in propose(work):
             refined = _refine(work, proposal)
-            if not _valid_quad(refined, work.shape[1], work.shape[0]):
-                continue
-            patch, _ = _warp(work, refined)
-            if not _grid_evidence(patch):
-                continue
-            if _continues(work, refined):
-                continue
-            if not any(np.max(np.linalg.norm(refined - old, axis=1)) < 12 for old in accepted):
-                accepted.append(refined)
+            if supported(refined):
+                retain(refined)
+            else:
+                # A small fit error must not erase a fully supported measured
+                # boundary. Never use this to extrapolate a missing outer file.
+                side = np.linalg.norm(proposal - np.roll(proposal, -1, axis=0), axis=1).mean()
+                displacement = float(np.max(np.linalg.norm(refined - proposal, axis=1)))
+                if 0 < displacement <= side / 80:  # at most one tenth of a cell
+                    recoverable.append((displacement / side, proposal))
         if accepted:
             break
+    if not accepted:
+        for _, proposal in sorted(recoverable, key=lambda item: item[0]):
+            if supported(proposal):
+                retain(proposal)
+    if not accepted:
+        for proposal in _line_candidates(work, fragmented_edges=True):
+            refined = _refine(work, proposal)
+            if supported(refined):
+                retain(refined)
     if not accepted:
         raise BoardDetectionError('BOARD_NOT_FOUND', 'No complete supported photographic chessboard was detected.')
     if len(accepted) != 1:

@@ -2,6 +2,12 @@
 
 [English](../en/photo-pipeline.md) | **Español**
 
+> **Registro v1:** las mediciones y decisiones de esta página corresponden a
+> la versión anterior. La [corrección geométrica posterior](photo-recovery.md)
+> conserva los modelos y alcanza 134/161 detecciones de desarrollo, 29/30
+> de validación consultada y 20/30 posiciones completas mediante CLI. Los
+> informes v1 se conservan como referencia histórica.
+
 El recorrido fotográfico ya conecta entrada RGB, detección de cuatro esquinas,
 corrección de perspectiva, 64 recortes, clasificador neuronal y colocación canónica.
 Es experimental y se selecciona expresamente; el recorrido digital sigue siendo

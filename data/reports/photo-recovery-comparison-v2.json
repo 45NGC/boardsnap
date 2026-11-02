@@ -1,0 +1,188 @@
+{
+  "schemaVersion": 1,
+  "scope": "Consulted development/validation, not independent final acceptance.",
+  "codeSha256": "7b7b5359cafc66b4eb6afb268ca26e0ae2b8abbfef0e7eaa292719bacad3bf1a",
+  "finalEvaluationAccessed": false,
+  "modelChanged": false,
+  "inputs": {
+    "detection-development1": {
+      "path": "data/reports/photo-detection-development-v1.json",
+      "sha256": "6de84ff7b5bcb06da15db1a461e77722f4305585905e1eec39f039bcdf7be360"
+    },
+    "detection-development2": {
+      "path": "data/reports/photo-detection-development-v2.json",
+      "sha256": "ea1345c2bdaf9ef625f7436231e4194b9a21c5e40d7bdc58d9b141e829a0cc71"
+    },
+    "detection-validation1": {
+      "path": "data/reports/photo-detection-validation-v1.json",
+      "sha256": "2185fdd3c00d3e5c49f357ad5ce674e852373cfca0a16431841b11a287c81fd1"
+    },
+    "detection-validation2": {
+      "path": "data/reports/photo-detection-validation-v2.json",
+      "sha256": "69be9fe7a3dca7d8bdca988921c37e837db28075d7e5e387be5dcff9492df8ec"
+    },
+    "detection-controls1": {
+      "path": "data/reports/photo-detection-controls-v1.json",
+      "sha256": "d5261b54ab6d038cc3f7cbbdd250705e1350c7115be5dfa9a5397f31415a413c"
+    },
+    "detection-controls2": {
+      "path": "data/reports/photo-detection-controls-v2.json",
+      "sha256": "802562b45367090d9e271bf6b22a8452d36407881efd68deea18a3af88991d3a"
+    },
+    "pipeline-validation1": {
+      "path": "data/reports/photo-pipeline-validation-v1.json",
+      "sha256": "330bfdc4210aed9a2154d5c85b7c0eac0134a04b8b3f2a5c0d72f4a83017a0aa"
+    },
+    "pipeline-validation2": {
+      "path": "data/reports/photo-pipeline-validation-v2.json",
+      "sha256": "c323e9b12b42572dba52a139faa057eaa86ccd8d67444ae91ff04658e9c8cec4"
+    }
+  },
+  "accepted": true,
+  "geometry": {
+    "development": {
+      "before": {
+        "images": 161,
+        "detected": 132,
+        "withinPolicy": 132,
+        "failures": [
+          "phone-d95dd8c771a465ae",
+          "phone-3143e97a6d00eaea",
+          "phone-d4d94e4c0b82caee",
+          "phone-47c76ad4dfbca8a0",
+          "phone-f7a04b143261e0f5",
+          "phone-3d294a5eb6fcd0fa",
+          "phone-2c1928374e5ff2be",
+          "phone-19fb0ff5251d6514",
+          "phone-78609865d3135ad8",
+          "phone-d045f07954e513fb",
+          "phone-77739890b8750422",
+          "phone-369f8c62b80ae326",
+          "phone-703ef3bb0d658ebb",
+          "phone-632760bf2c9f4f4b",
+          "phone-5e8c256be9ef5897",
+          "phone-2f54c61243556b1e",
+          "phone-497b48679b527cf9",
+          "phone-83e47e9eafacde1f",
+          "phone-a402498bd385294a",
+          "phone-7f91c2c3931c1bf4",
+          "phone-17536706b058196a",
+          "phone-c29ea8667be9f0e4",
+          "phone-93319356e94bae92",
+          "phone-0a44e664e846f50f",
+          "phone-9eb693dc0fcfa29d",
+          "phone-4fae5747da5167d9",
+          "phone-af61315a4af4e0e2",
+          "phone-c19f513652bf7961",
+          "phone-e6bbcb7a2f19404d"
+        ],
+        "outOfTolerance": [],
+        "medianSeconds": 0.5752897170000324,
+        "p95Seconds": 2.6088063679999323
+      },
+      "after": {
+        "images": 161,
+        "detected": 134,
+        "withinPolicy": 134,
+        "failures": [
+          "phone-d95dd8c771a465ae",
+          "phone-3143e97a6d00eaea",
+          "phone-d4d94e4c0b82caee",
+          "phone-f7a04b143261e0f5",
+          "phone-3d294a5eb6fcd0fa",
+          "phone-2c1928374e5ff2be",
+          "phone-19fb0ff5251d6514",
+          "phone-78609865d3135ad8",
+          "phone-d045f07954e513fb",
+          "phone-77739890b8750422",
+          "phone-369f8c62b80ae326",
+          "phone-632760bf2c9f4f4b",
+          "phone-5e8c256be9ef5897",
+          "phone-2f54c61243556b1e",
+          "phone-497b48679b527cf9",
+          "phone-83e47e9eafacde1f",
+          "phone-a402498bd385294a",
+          "phone-7f91c2c3931c1bf4",
+          "phone-17536706b058196a",
+          "phone-c29ea8667be9f0e4",
+          "phone-93319356e94bae92",
+          "phone-0a44e664e846f50f",
+          "phone-9eb693dc0fcfa29d",
+          "phone-4fae5747da5167d9",
+          "phone-af61315a4af4e0e2",
+          "phone-c19f513652bf7961",
+          "phone-e6bbcb7a2f19404d"
+        ],
+        "outOfTolerance": [],
+        "medianSeconds": 0.6134350379998068,
+        "p95Seconds": 5.1486609389994555
+      },
+      "lostDetections": [],
+      "changedExistingCorners": [],
+      "newDetections": [
+        "phone-47c76ad4dfbca8a0",
+        "phone-703ef3bb0d658ebb"
+      ]
+    },
+    "validation": {
+      "before": {
+        "images": 30,
+        "detected": 27,
+        "withinPolicy": 27,
+        "failures": [
+          "video-img_5403",
+          "video-img_5406",
+          "video-img_5407"
+        ],
+        "outOfTolerance": [],
+        "medianSeconds": 0.6644715770000857,
+        "p95Seconds": 1.8939441852497982
+      },
+      "after": {
+        "images": 30,
+        "detected": 29,
+        "withinPolicy": 29,
+        "failures": [
+          "video-img_5403"
+        ],
+        "outOfTolerance": [],
+        "medianSeconds": 0.7192714089997025,
+        "p95Seconds": 2.4305898529996735
+      },
+      "lostDetections": [],
+      "changedExistingCorners": [],
+      "newDetections": [
+        "video-img_5406",
+        "video-img_5407"
+      ]
+    }
+  },
+  "controls": {
+    "images": 18,
+    "rejected": 18
+  },
+  "pipeline": {
+    "before": {
+      "images": 30,
+      "detected": 27,
+      "annotatedExactBoards": 19,
+      "automaticExactBoards": 19
+    },
+    "after": {
+      "images": 30,
+      "detected": 29,
+      "annotatedExactBoards": 19,
+      "automaticExactBoards": 20
+    },
+    "gainedExactBoards": [
+      "video-img_5407"
+    ],
+    "lostExactBoards": [],
+    "changedPreviouslyReturnedPositions": []
+  },
+  "remaining": [
+    "video-img_5403 remains undetected.",
+    "video-img_5406 is detected within geometry tolerance but has a false black knight on h8.",
+    "Photographic style/moire classification gaps remain; no new training was run."
+  ]
+}

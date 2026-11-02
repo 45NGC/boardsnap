@@ -2,6 +2,11 @@
 
 [English](docs/en/README.md) | [Spanish](docs/es/README.md)
 
+The [bounded photo detector recovery](docs/en/photo-recovery.md) raises automatic
+recognition to **20/30 complete positions**, preserving all previous results and
+the existing model weights. These are consulted development/validation results,
+not independent final acceptance.
+
 The [first-version quality review](docs/en/photo-quality.md) prioritizes observed
 photo failures and records rejected resampling/training experiments. Keep the
 existing digital and photo-v1 models; targeted style data is needed before the
@@ -18,8 +23,8 @@ loader-compatible indexes. The [first photographic classifier](docs/en/phone-tra
 has been trained: 19/30 validation photos are correct using reviewed corners,
 versus 18/30 before adaptation. Three digital validation boards regress, so the
 photo model remains experimental and separate. The new [photographic detector](docs/en/photo-detection.md)
-locates four corners within the geometric criteria on 132/161 development photos
-and 27/30 validation photos; 18 constructed negative controls are rejected.
+locates four corners within the geometric criteria on 134/161 development photos
+and 29/30 validation photos; 18 constructed negative controls are rejected.
 It has a diagnostic command with outline and rectified previews. The
 [automatic photo pipeline](docs/en/photo-pipeline.md) now connects detection,
 rectification and recognition through `--input-type photo`, a configured neural

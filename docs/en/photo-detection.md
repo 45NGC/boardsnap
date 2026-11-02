@@ -2,6 +2,11 @@
 
 **English** | [Español](../es/photo-detection.md)
 
+> **V1 record:** measurements and decisions on this page describe the previous
+> version. The [subsequent geometry correction](photo-recovery.md) retains model
+> weights and reaches 134/161 development detections, 29/30 consulted validation
+> detections and 20/30 exact CLI positions. V1 reports remain historical references.
+
 An initial geometric photo detector is available as
 `boardsnap.photo_detection.detect_photo_board`. It receives RGB pixels and returns
 four corners of a complete 8×8 grid. It uses no neural network, expected placement,
