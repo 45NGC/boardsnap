@@ -1,0 +1,28 @@
+id,category,conditions,errorCode,image,originalPath
+phone-0a44e664e846f50f,video,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-0a44e664e846f50f.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-23.HEIC
+phone-17536706b058196a,video,screen-photograph; perspective; moire; highlights,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-17536706b058196a.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-20.HEIC
+phone-19fb0ff5251d6514,video,screen-photograph; perspective; moire; cursor,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-19fb0ff5251d6514.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-4.HEIC
+phone-2c1928374e5ff2be,video,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-2c1928374e5ff2be.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-3.HEIC
+phone-2f54c61243556b1e,video,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-2f54c61243556b1e.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-15.HEIC
+phone-3143e97a6d00eaea,chesscom,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-3143e97a6d00eaea.png,.cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-23.HEIC
+phone-369f8c62b80ae326,video,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-369f8c62b80ae326.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-8.HEIC
+phone-3d294a5eb6fcd0fa,video,screen-photograph; perspective; moire; arrow; highlights; cursor,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-3d294a5eb6fcd0fa.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-2.HEIC
+phone-497b48679b527cf9,video,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-497b48679b527cf9.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-16.HEIC
+phone-4fae5747da5167d9,video,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-4fae5747da5167d9.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-28.HEIC
+phone-5e8c256be9ef5897,video,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-5e8c256be9ef5897.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-14.HEIC
+phone-632760bf2c9f4f4b,video,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-632760bf2c9f4f4b.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-13.HEIC
+phone-77739890b8750422,video,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-77739890b8750422.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-7.HEIC
+phone-78609865d3135ad8,video,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-78609865d3135ad8.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-5.HEIC
+phone-7f91c2c3931c1bf4,video,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-7f91c2c3931c1bf4.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-19.HEIC
+phone-83e47e9eafacde1f,video,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-83e47e9eafacde1f.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-17.HEIC
+phone-93319356e94bae92,video,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-93319356e94bae92.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-22.HEIC
+phone-9eb693dc0fcfa29d,video,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-9eb693dc0fcfa29d.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-24.HEIC
+phone-a402498bd385294a,video,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-a402498bd385294a.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-18.HEIC
+phone-af61315a4af4e0e2,video,screen-photograph; perspective; moire; highlights; cursor,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-af61315a4af4e0e2.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-29.HEIC
+phone-c19f513652bf7961,video,screen-photograph; perspective; moire; highlights; arrows; multiple-visible-boards,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-c19f513652bf7961.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-40.HEIC
+phone-c29ea8667be9f0e4,video,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-c29ea8667be9f0e4.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-21.HEIC
+phone-d045f07954e513fb,video,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-d045f07954e513fb.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-6.HEIC
+phone-d4d94e4c0b82caee,chesscom,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-d4d94e4c0b82caee.png,.cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-25.HEIC
+phone-d95dd8c771a465ae,chesscom,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-d95dd8c771a465ae.png,.cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-17.HEIC
+phone-e6bbcb7a2f19404d,video,screen-photograph; perspective; moire; highlights,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-e6bbcb7a2f19404d.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-46.HEIC
+phone-f7a04b143261e0f5,video,,BOARD_NOT_FOUND,.cache/phone-photos-v1/images/phone-f7a04b143261e0f5.png,.cache/real-use-tests/phone-photos/video-photos/video-photo-1.HEIC

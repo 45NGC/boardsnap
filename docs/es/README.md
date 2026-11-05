@@ -1,5 +1,17 @@
 # BoardSnap
 
+El [catálogo fotográfico inicial](photo-catalogue.md) fija siete entradas objetivo
+y catorce combinaciones con fondos, con evidencias, temas por identificar y
+cobertura pendiente. No declara nueva compatibilidad.
+
+El [inventario actual de errores fotográficos](photo-error-inventory.md) reúne
+los diez fallos automáticos y dos controles recuperados por el recorte, con
+casillas, apariencia y condiciones. No se ha repetido entrenamiento ni inferencia.
+
+La [revisión previa a la evaluación final](final-evaluation-readiness.md) confirma
+que el paso 7 sigue pendiente: calidad fotográfica, regresiones digitales
+actualizadas y corpus independiente. No se han consumido imágenes finales.
+
 El [candidato congelado](screen-preview.md), **0.1.0.dev1**, incluye ambos modelos,
 checksums y dependencias sin conexión. Pasan instalación limpia y rendimiento en
 CPU; siguen pendientes la calidad fotográfica y la aceptación independiente.

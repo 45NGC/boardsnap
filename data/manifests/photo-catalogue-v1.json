@@ -1,0 +1,390 @@
+{
+  "schemaVersion": 1,
+  "catalogueId": "photo-catalogue-v1",
+  "createdOn": "2026-11-03",
+  "status": "development-target-not-compatibility",
+  "scope": "Phone photographs of digital desktop-browser boards; first bounded photographic improvement group.",
+  "sources": {
+    "errorInventory": {
+      "path": "data/reports/photo-error-inventory-v1.json",
+      "sha256": "33c1b7bc3a212875bd851962ba48a1f8261b66a1db2de364f615b90b62ad0fac"
+    },
+    "appearanceReview": {
+      "path": "data/manifests/phone-validation-appearance-v1.json",
+      "sha256": "c74d2a53ea611577f5d155b590f0f26ea4bd52930641a2e13d12d41c0a3cbc9e"
+    },
+    "cleanRecipe": {
+      "path": "tools/capture-digital-clean-v1.json",
+      "sha256": "956c6412194442da216771fb9bbf0cf95e6a2dffab7fd6c04e7e0164bb20e76b"
+    },
+    "captureIntegrity": {
+      "path": "data/reports/digital-clean-corpus-v1.json",
+      "sha256": "580faf7dcf01f23856056f4d7361ca85db130fffc96f17e5ea7cd88a80001633"
+    }
+  },
+  "targetCount": 7,
+  "plannedPairCount": 14,
+  "distinctArtworkCount": null,
+  "identityNote": "Seven planning entries are not seven proven different designs. Unresolved appearances may alias named selectors; merge only with reviewed artwork evidence and preserve reference IDs.",
+  "targets": [
+    {
+      "id": "lichess-cburnett",
+      "platform": "lichess",
+      "pieceSet": "cburnett",
+      "identityStatus": "selector-verified-in-existing-capture-corpus",
+      "role": "conventional-baseline",
+      "appearanceGroup": null,
+      "photoReferenceIds": [],
+      "compatibility": "not-declared",
+      "reason": "Retain previously captured conventional 2D artwork on shared plain backgrounds.",
+      "pairs": [
+        {
+          "id": "lichess-brown-cburnett",
+          "boardTheme": "brown",
+          "boardAppearance": null,
+          "captureConfigurationId": "lichess-brown-cburnett",
+          "photoStatus": "pending-verified-photographic-pairs",
+          "existingCaptureCountsByOriginalSplit": {
+            "training": 140,
+            "validation": 30,
+            "evaluation": 30
+          },
+          "evidenceScope": "Recorded capture integrity only; not a new photographic measurement."
+        },
+        {
+          "id": "lichess-blue-cburnett",
+          "boardTheme": "blue",
+          "boardAppearance": null,
+          "captureConfigurationId": "lichess-blue-cburnett",
+          "photoStatus": "pending-verified-photographic-pairs",
+          "existingCaptureCountsByOriginalSplit": {
+            "training": 140,
+            "validation": 30,
+            "evaluation": 30
+          },
+          "evidenceScope": "Recorded capture integrity only; not a new photographic measurement."
+        }
+      ]
+    },
+    {
+      "id": "lichess-merida",
+      "platform": "lichess",
+      "pieceSet": "merida",
+      "identityStatus": "selector-verified-in-existing-capture-corpus",
+      "role": "conventional-baseline",
+      "appearanceGroup": null,
+      "photoReferenceIds": [],
+      "compatibility": "not-declared",
+      "reason": "Retain previously captured conventional 2D artwork on shared plain backgrounds.",
+      "pairs": [
+        {
+          "id": "lichess-brown-merida",
+          "boardTheme": "brown",
+          "boardAppearance": null,
+          "captureConfigurationId": "lichess-brown-merida",
+          "photoStatus": "pending-verified-photographic-pairs",
+          "existingCaptureCountsByOriginalSplit": {
+            "training": 140,
+            "validation": 30,
+            "evaluation": 30
+          },
+          "evidenceScope": "Recorded capture integrity only; not a new photographic measurement."
+        },
+        {
+          "id": "lichess-blue-merida",
+          "boardTheme": "blue",
+          "boardAppearance": null,
+          "captureConfigurationId": "lichess-blue-merida",
+          "photoStatus": "pending-verified-photographic-pairs",
+          "existingCaptureCountsByOriginalSplit": {
+            "training": 140,
+            "validation": 30,
+            "evaluation": 30
+          },
+          "evidenceScope": "Recorded capture integrity only; not a new photographic measurement."
+        }
+      ]
+    },
+    {
+      "id": "chesscom-neo",
+      "platform": "chesscom",
+      "pieceSet": "neo",
+      "identityStatus": "selector-verified-in-existing-capture-corpus",
+      "role": "conventional-baseline",
+      "appearanceGroup": null,
+      "photoReferenceIds": [],
+      "compatibility": "not-declared",
+      "reason": "Retain previously captured conventional 2D artwork on shared plain backgrounds.",
+      "pairs": [
+        {
+          "id": "chesscom-green-neo",
+          "boardTheme": "green",
+          "boardAppearance": null,
+          "captureConfigurationId": "chesscom-green-neo",
+          "photoStatus": "pending-verified-photographic-pairs",
+          "existingCaptureCountsByOriginalSplit": {
+            "training": 140,
+            "validation": 30,
+            "evaluation": 30
+          },
+          "evidenceScope": "Recorded capture integrity only; not a new photographic measurement."
+        },
+        {
+          "id": "chesscom-brown-neo",
+          "boardTheme": "brown",
+          "boardAppearance": null,
+          "captureConfigurationId": "chesscom-brown-neo",
+          "photoStatus": "pending-verified-photographic-pairs",
+          "existingCaptureCountsByOriginalSplit": {
+            "training": 140,
+            "validation": 30,
+            "evaluation": 30
+          },
+          "evidenceScope": "Recorded capture integrity only; not a new photographic measurement."
+        }
+      ]
+    },
+    {
+      "id": "chesscom-classic",
+      "platform": "chesscom",
+      "pieceSet": "classic",
+      "identityStatus": "selector-verified-in-existing-capture-corpus",
+      "role": "conventional-baseline",
+      "appearanceGroup": null,
+      "photoReferenceIds": [],
+      "compatibility": "not-declared",
+      "reason": "Retain previously captured conventional 2D artwork on shared plain backgrounds.",
+      "pairs": [
+        {
+          "id": "chesscom-green-classic",
+          "boardTheme": "green",
+          "boardAppearance": null,
+          "captureConfigurationId": "chesscom-green-classic",
+          "photoStatus": "pending-verified-photographic-pairs",
+          "existingCaptureCountsByOriginalSplit": {
+            "training": 140,
+            "validation": 30,
+            "evaluation": 30
+          },
+          "evidenceScope": "Recorded capture integrity only; not a new photographic measurement."
+        },
+        {
+          "id": "chesscom-brown-classic",
+          "boardTheme": "brown",
+          "boardAppearance": null,
+          "captureConfigurationId": "chesscom-brown-classic",
+          "photoStatus": "pending-verified-photographic-pairs",
+          "existingCaptureCountsByOriginalSplit": {
+            "training": 140,
+            "validation": 30,
+            "evaluation": 30
+          },
+          "evidenceScope": "Recorded capture integrity only; not a new photographic measurement."
+        }
+      ]
+    },
+    {
+      "id": "cc-thin-stem",
+      "platform": "chesscom",
+      "pieceSet": null,
+      "identityStatus": "visual-reference-only-selector-unresolved",
+      "role": "current-failure-priority",
+      "appearanceGroup": "cc-thin-stem",
+      "photoReferenceIds": [
+        "chesscom-img_5401",
+        "chesscom-img_5402"
+      ],
+      "referenceDescription": "Thin-stem pawns with broad caps, fine outlines and decorative knights",
+      "referenceMetrics": {
+        "images": 2,
+        "detected": 2,
+        "annotatedExact": 0,
+        "automaticExact": 0,
+        "automaticSquareErrorsOnDetectedOnly": 18
+      },
+      "compatibility": "not-declared",
+      "reason": "Prioritize a measured photographic failure while avoiding invented selector aliases.",
+      "pairs": [
+        {
+          "id": "cc-thin-stem-reference-background",
+          "boardTheme": null,
+          "boardAppearance": "plain-purple",
+          "captureConfigurationId": null,
+          "photoStatus": "existing-failing-reference-new-source-pairs-needed"
+        },
+        {
+          "id": "cc-thin-stem-brown",
+          "boardTheme": "brown",
+          "boardAppearance": "plain-brown",
+          "captureConfigurationId": null,
+          "photoStatus": "pending-selector-identification-and-paired-photos"
+        }
+      ]
+    },
+    {
+      "id": "cc-shaded",
+      "platform": "chesscom",
+      "pieceSet": null,
+      "identityStatus": "visual-reference-only-selector-unresolved",
+      "role": "current-failure-priority",
+      "appearanceGroup": "cc-shaded",
+      "photoReferenceIds": [
+        "chesscom-img_5397",
+        "chesscom-img_5398"
+      ],
+      "referenceDescription": "Shaded illustrated pieces, outlined brick rooks and rounded bishops",
+      "referenceMetrics": {
+        "images": 2,
+        "detected": 2,
+        "annotatedExact": 0,
+        "automaticExact": 0,
+        "automaticSquareErrorsOnDetectedOnly": 5
+      },
+      "compatibility": "not-declared",
+      "reason": "Prioritize a measured photographic failure while avoiding invented selector aliases.",
+      "pairs": [
+        {
+          "id": "cc-shaded-reference-background",
+          "boardTheme": null,
+          "boardAppearance": "wood-texture",
+          "captureConfigurationId": null,
+          "photoStatus": "existing-failing-reference-new-source-pairs-needed"
+        },
+        {
+          "id": "cc-shaded-brown",
+          "boardTheme": "brown",
+          "boardAppearance": "plain-brown",
+          "captureConfigurationId": null,
+          "photoStatus": "pending-selector-identification-and-paired-photos"
+        }
+      ]
+    },
+    {
+      "id": "lc-rounded-king",
+      "platform": "lichess",
+      "pieceSet": null,
+      "identityStatus": "visual-reference-only-selector-unresolved",
+      "role": "current-failure-priority",
+      "appearanceGroup": "lc-rounded-king",
+      "photoReferenceIds": [
+        "lichess-img_5391",
+        "lichess-img_5392"
+      ],
+      "referenceDescription": "Shaded pieces with a large rounded white king crown",
+      "referenceMetrics": {
+        "images": 2,
+        "detected": 2,
+        "annotatedExact": 0,
+        "automaticExact": 0,
+        "automaticSquareErrorsOnDetectedOnly": 5
+      },
+      "compatibility": "not-declared",
+      "reason": "Prioritize a measured photographic failure while avoiding invented selector aliases.",
+      "pairs": [
+        {
+          "id": "lc-rounded-king-reference-background",
+          "boardTheme": null,
+          "boardAppearance": "wood-texture",
+          "captureConfigurationId": null,
+          "photoStatus": "existing-failing-reference-new-source-pairs-needed"
+        },
+        {
+          "id": "lc-rounded-king-brown",
+          "boardTheme": "brown",
+          "boardAppearance": "plain-brown",
+          "captureConfigurationId": null,
+          "photoStatus": "pending-selector-identification-and-paired-photos"
+        }
+      ]
+    }
+  ],
+  "selectionRationale": "Four named conventional designs already captured plus three failing visual groups responsible for 28/32 current automatic square errors. Two backgrounds per entry constrain collection while separating piece design from background.",
+  "recognitionCompatibilityDeclared": false,
+  "referencePhotoLabelsAreOfficialThemeMappings": false,
+  "capturePolicy": {
+    "orientations": [
+      "white-bottom",
+      "black-bottom"
+    ],
+    "sourceClient": "desktop-web",
+    "initialConditions": [
+      "clean",
+      "last-move"
+    ],
+    "pairing": "For each physical photo, preserve a direct screenshot, expected placement, explicit view, source group, selected settings and matching visible pieces.",
+    "referenceReuse": "Reuse existing clean screenshots where their artwork, placement and source identity are known. All related photographs inherit the existing group and split.",
+    "identityGate": "Before automated capture of unresolved appearances, verify selector name and the twelve rendered pieces against the reference; record board setting/artwork and evidence. Do not silently substitute a similar style.",
+    "partitionRule": "Group before collecting/cropping. Same game/video, position, screenshots, photos, backgrounds and views stay together. Do not move consulted validation into training.",
+    "minimumClassCoverage": "All 13 classes on light and dark squares across each selected design; report gaps rather than declaring compatibility from a small sample.",
+    "pilotFirst": "Review 15\u201320 targeted new photos before enlarging the collection; not a prescribed training-set size.",
+    "finalEvaluation": "Not collected, consulted or reassigned in this step."
+  },
+  "deferred": [
+    {
+      "id": "other-digital-designs",
+      "items": [
+        "lichess-alpha",
+        "lichess-staunty",
+        "chesscom-bases",
+        "chesscom-alpha"
+      ],
+      "reason": "Retain existing digital regressions; postpone new photographic expansion until the bounded group is measured."
+    },
+    {
+      "id": "additional-backgrounds",
+      "items": [
+        "third-background-per-design",
+        "additional-textures",
+        "all-cartesian-combinations"
+      ],
+      "reason": "Two explicit backgrounds per entry first; do not infer support for unmeasured combinations."
+    },
+    {
+      "id": "additional-local-appearance-groups",
+      "items": [
+        "cc-classic",
+        "cc-flat",
+        "lc-classic-a",
+        "lc-classic-b",
+        "video-flat-brown",
+        "video-flat-green",
+        "video-classic-a",
+        "video-classic-b",
+        "video-chessbase",
+        "video-flat-vibes"
+      ],
+      "reason": "Preserve all consulted photos as controls. No mapping to named selectors or additional photographic support is claimed."
+    },
+    {
+      "id": "uncontrolled-interfaces",
+      "items": [
+        "native-android",
+        "native-ios",
+        "arbitrary-video-layouts",
+        "chessbase"
+      ],
+      "reason": "Desktop evidence does not establish these client/layout combinations; known video cases remain regressions."
+    },
+    {
+      "id": "difficult-conditions",
+      "items": [
+        "new-crossed-arrows",
+        "strong-glare",
+        "severe-blur",
+        "severe-perspective",
+        "opaque-occlusion"
+      ],
+      "reason": "Keep existing overlay regression cases; defer expanding these conditions, never silently discard their known failures."
+    },
+    {
+      "id": "other-domains",
+      "items": [
+        "book-diagrams",
+        "physical-3d-boards"
+      ],
+      "reason": "Outside this screen-photography milestone."
+    }
+  ],
+  "promotionRule": "After identification, paired capture and group-separated validation, measure complete boards, classes, geometry and conditions against a newly frozen candidate. This catalogue neither modifies screen-preview-v1 nor grants acceptance.",
+  "stepBoundary": "This step chooses targets and reuses existing evidence. It does not capture new images, identify unresolved official selectors, run inference or train."
+}

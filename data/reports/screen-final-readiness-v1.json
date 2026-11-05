@@ -1,0 +1,79 @@
+{
+  "status": "not-finally-evaluated",
+  "finalEvaluationExecuted": false,
+  "finalAcceptanceGranted": false,
+  "independentDataConsumed": false,
+  "technicalChecksPassed": {
+    "digital": true,
+    "photo": true
+  },
+  "photo": {
+    "exactBoards": 20,
+    "images": 30,
+    "gatesOnConsultedData": [
+      {
+        "name": "consulted-photo-exact-board-rate",
+        "actual": 0.6666666666666666,
+        "threshold": 0.9,
+        "comparison": ">=",
+        "passed": false
+      },
+      {
+        "name": "consulted-photo-source/lichess",
+        "actual": 0.8,
+        "threshold": 0.85,
+        "comparison": ">=",
+        "passed": false
+      },
+      {
+        "name": "consulted-photo-source/chesscom",
+        "actual": 0.5,
+        "threshold": 0.85,
+        "comparison": ">=",
+        "passed": false
+      },
+      {
+        "name": "consulted-photo-source/video",
+        "actual": 0.7,
+        "threshold": 0.85,
+        "comparison": ">=",
+        "passed": false
+      }
+    ],
+    "qualityReady": false,
+    "scope": "Readiness diagnostic only; not all final gates and not independent evidence."
+  },
+  "digital": {
+    "previousRegressionPassed": true,
+    "runtimeFilesDifferentFromPreviousRegression": [
+      "src/boardsnap/adapters/cli.py",
+      "src/boardsnap/neural.py",
+      "src/boardsnap/photo_detection.py",
+      "src/boardsnap/pipeline.py",
+      "src/boardsnap/rectification.py"
+    ],
+    "currentRegressionEvidenceComplete": false,
+    "note": "A 40-image CPU sample and clean installation do not replace full current regressions or independent acceptance."
+  },
+  "independentCorpus": {
+    "reviewed": false,
+    "note": "No independent corpus is supplied to this audit. Do not relabel consulted photos or screenshots."
+  },
+  "next": [
+    "Confirm digital-only acceptance with photos experimental, or require both modes.",
+    "Refresh digital regression evidence for the exact frozen runtime before final inference.",
+    "Photo quality must meet the frozen targets on development/validation before spending new independent photos.",
+    "Prepare and review independent source groups, labels and conditions; preserve final attempt history."
+  ],
+  "policySha256": "24ff67417ffc9584a5bd843a0792104f32b6d431ff3a1ebac682b9563c9e4ab7",
+  "releaseManifestSha256": "00d2736b465d79139584210cde724eac8e3c812d755248a6d33891c0f8b4d243",
+  "evidenceSha256": {
+    "data/reports/screen-preview-digital-cpu-v1.json": "d2f0a002a87a7014738e1f3e0fbcf5312c8218276f8507ead8667eba70392d6a",
+    "data/reports/screen-preview-digital-installation-v1.json": "96cddb2a0af10f2cb7293dd6f6b86de7659a5623fd5a06c42b24273cc81579bd",
+    "data/reports/screen-preview-photo-cpu-v1.json": "3ae3b2b4e673dc61a7641ef2e6d1ff28e221827332f2a7cefdd07f0a44ae7a1a",
+    "data/reports/screen-preview-photo-installation-v1.json": "665019fb02c2092058cf680cd6a62d7c1476663e879319aee7950fac866cca6c",
+    "data/reports/photo-pipeline-validation-v2.json": "c323e9b12b42572dba52a139faa057eaa86ccd8d67444ae91ff04658e9c8cec4",
+    "data/reports/digital-regressions-anisotropic-candidate.json": "8c50e4f33fc438b4dd92bfa7c8cb5afc69e6329f3e64af0e2f0999e309c08421"
+  },
+  "auditCodeSha256": "6eb77052537bc376b3ad77cb16ef76e29e0e86891660123a97744cd5479de6eb"
+}

@@ -1,5 +1,13 @@
 # BoardSnap
 
+The [initial photographic catalogue](docs/en/photo-catalogue.md) selects seven
+target entries with two backgrounds each, including measured failure cases.
+New photographic validation and unresolved selector identities remain pending.
+
+The [current photographic error inventory](docs/en/photo-error-inventory.md)
+compares reviewed and automatic corners for every validation failure and retains
+recovered positions as controls. It reuses existing predictions without inference.
+
 The [frozen screen preview](docs/en/screen-preview.md), package **0.1.0.dev1**,
 includes both models, offline CPU dependencies and clean-installation checks.
 It is ready for external testing; photographic recognition remains experimental.

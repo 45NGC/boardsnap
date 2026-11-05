@@ -1,5 +1,17 @@
 # BoardSnap
 
+The [initial photographic catalogue](photo-catalogue.md) defines seven target
+entries and fourteen background combinations, with evidence, unresolved theme
+identities and deferred coverage. It does not declare new compatibility.
+
+The [current photographic error inventory](photo-error-inventory.md) consolidates
+the 10 current automatic failures and two crop-recovered controls, including
+wrong squares, appearance and conditions. No training or inference was repeated.
+
+The [final-evaluation readiness review](final-evaluation-readiness.md) keeps
+step 7 pending: photographic quality, current digital regression evidence and an
+independent corpus. No final images have been consumed.
+
 The [frozen screen preview](screen-preview.md), **0.1.0.dev1**, packages both
 models with checksums and offline dependencies. Clean installation and CPU checks
 pass; photographic quality and independent final acceptance remain pending.
