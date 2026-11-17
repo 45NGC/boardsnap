@@ -1,0 +1,54 @@
+{
+  "schemaVersion": 1,
+  "configurationId": "local-trial-v1",
+  "createdOn": "2026-11-16",
+  "status": "local-trial-not-accepted",
+  "models": {
+    "digital": {
+      "path": ".cache/neural-tolerance-v1-conservative/best.pt",
+      "sha256": "4c14507ad700dbe8c6ea6bdcdfb7072c7f31ef9fd9c21c22a782498c2d09ce5f",
+      "role": "existing-digital-reference"
+    },
+    "photo": {
+      "path": ".cache/neural-mixed-sqrt-v1/last.pt",
+      "sha256": "41bbfa5cb3da6e6831ed4c293fd48a5680f831de9fa8568f39b513ff0f932275",
+      "role": "experimental-photographic-candidate"
+    }
+  },
+  "photoReference": {
+    "path": ".cache/neural-phone-v1/best.pt",
+    "sha256": "bca969fc9fb42811a5daa4c11b968c68f805cb0b1404604b7fb6d5486dc8c60e"
+  },
+  "cpu": {
+    "platform": "Linux x86_64 CPython 3.12 CPU; not mobile or HTTP",
+    "torchThreads": 4,
+    "opencvThreads": 1,
+    "digital": {
+      "minimumSamples": 40,
+      "warmP95Ms": 1000,
+      "coldMs": 5000,
+      "peakRssMiB": 1024
+    },
+    "photo": {
+      "minimumSamples": 30,
+      "warmP95Ms": 5000,
+      "coldMs": 10000,
+      "peakRssMiB": 1024
+    }
+  },
+  "classifierComparison": {
+    "threads": 4,
+    "warmupsPerTrial": 20,
+    "measuredBatchesPerTrial": 100,
+    "freshProcessTrialsPerModel": 3,
+    "maximumMedianLatencyRatio": 1.25,
+    "maximumP95LatencyRatio": 1.25,
+    "maximumPeakRssRatio": 1.25
+  },
+  "inputPolicy": {
+    "requireExplicitMode": true,
+    "requireExplicitOrientation": true,
+    "automaticModelSelection": false
+  },
+  "scope": "Local CPU trial only, not independent acceptance, deployment, mobile execution or distribution. Production defaults are unchanged."
+}

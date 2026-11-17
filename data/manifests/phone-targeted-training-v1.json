@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "phone-targeted-training-v1",
+  "frozenOn": "2026-11-13",
+  "authorization": "User requested preparing and executing a new training run after the overlap review.",
+  "inputs": {
+    "baseDataset": {
+      "path": ".cache/phone-training-v1/dataset.json",
+      "sha256": "0d95e16c39c5c08c73526cc9cc0ce6a68edce3d7616417520a82dd8260bffafa"
+    },
+    "targetedDataset": {
+      "path": ".cache/phone-targeted-squares-v1/dataset.json",
+      "sha256": "da3e6bbb255ee78ca3706af1f11b2ab6724615c81cb8aae05d2784a05c450f8d"
+    },
+    "targetedManifest": {
+      "path": "data/manifests/phone-targeted-intake-v1.json",
+      "sha256": "b50d76eda72620fd961f16c968db414ae0b8654c497251f57e2e8b377a6eaad3"
+    },
+    "overlapReport": {
+      "path": "data/reports/phone-targeted-overlap-v1.json",
+      "sha256": "4fbb3f59073411a6b0e0f8e4e76abde13193aff7cee1db644e2376e13cd3b3a7"
+    }
+  },
+  "addedPhotoIds": [
+    "position1-IMG_5470",
+    "position1-IMG_5471",
+    "position1-IMG_5472",
+    "position2-IMG_5473",
+    "position2-IMG_5474",
+    "position2-IMG_5475",
+    "position3-IMG_5476",
+    "position3-IMG_5477",
+    "position3-IMG_5478",
+    "position4-IMG_5479",
+    "position4-IMG_5480",
+    "position4-IMG_5481",
+    "position5-IMG_5482",
+    "position5-IMG_5483",
+    "position5-IMG_5485",
+    "position6-IMG_5486",
+    "position6-IMG_5487",
+    "position6-IMG_5488",
+    "position7-IMG_5490",
+    "position7-IMG_5491",
+    "position7-IMG_5492",
+    "position8-IMG_5493",
+    "position8-IMG_5494",
+    "position8-IMG_5495"
+  ],
+  "groupAssignments": {
+    "chesscom-game-186750194058": "training",
+    "chesscom-game-186559752718": "training",
+    "chesscom-game-187062563830": "training",
+    "chesscom-game-187014017568": "training",
+    "training2-lichess-position5": "training",
+    "training2-lichess-position6": "training",
+    "chesscom-game-186984581962": "training",
+    "chesscom-game-186840071668": "training"
+  },
+  "baseline": {
+    "path": ".cache/neural-phone-v1/best.pt",
+    "sha256": "bca969fc9fb42811a5daa4c11b968c68f805cb0b1404604b7fb6d5486dc8c60e"
+  },
+  "provenanceLimitations": [
+    "No observed overlap; game/video independence is not fully verified for unknown sources.",
+    "Keep each new group together. Existing validation is reused development evidence, not final acceptance."
+  ],
+  "counts": {
+    "previousTrainingBoards": 160,
+    "addedTrainingBoards": 24,
+    "validationBoards": 30
+  },
+  "trainingConfig": {
+    "seed": 20261113,
+    "epochs": 20,
+    "batchSize": 256,
+    "learningRate": 5e-05,
+    "weightDecay": 0.0001,
+    "threads": 4,
+    "distillationTemperature": 2,
+    "distillationWeight": 1
+  },
+  "candidatePolicy": {
+    "photoValidation": "Preserve all baseline-exact boards, do not reduce square accuracy, and improve exact boards or macro recall.",
+    "digitalValidation": "Compare the same existing digital validation crops; report every lost exact board. Do not replace the baseline if regressions remain.",
+    "newPhotos": "Training-set results are diagnostic only, not generalization evidence."
+  },
+  "finalEvaluationAccessed": false
+}

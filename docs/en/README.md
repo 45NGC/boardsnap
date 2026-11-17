@@ -1,5 +1,36 @@
 # BoardSnap
 
+The [HTTP adapter](http-server.md) is implemented and passes local HTTPS/CLI parity. The [overall project report](project-status.md) covers functionality, evidence, limitations and next steps.
+
+The [per-mode HTTP contract and parity probe](http-contract.md) specify required fields, models, errors and version headers. Local HTTPS parity passes; service deployment and Flutter remain pending.
+
+The [local trial configuration](local-trial.md) explicitly selects digital/photographic models and passes CPU measurements. The photographic candidate remains experimental.
+
+The [full CLI comparison](mixed-sqrt-cli.md) confirms improvement from 20 to 22 exact photos, but loses two real digital screenshots. The candidate remains photographic and experimental.
+
+The [square-root weighting experiment](mixed-sqrt-result.md) reduces false pieces from 8 to 5 without increasing omissions versus control. This is partial improvement; phone-v1 remains the reference and the new model is experimental.
+
+The [empty-label teacher guard experiment](mixed-empty-guard-result.md) is complete: final predictions do not improve over the mixed control. Keep phone-v1; no further training is started.
+
+The [bounded mixed-training review](mixed-training-review.md) identifies conflicting teacher targets on verified empty cells and proposes a single-variable test. No further training has started.
+
+The [mixed training result](mixed-training-result.md) completes the frozen 12-epoch run. Digital predictions are preserved at the last epoch, but a lost photo and additional false pieces block promotion; keep phone-v1.
+
+The [mixed training configuration and acceptance plan](mixed-training-plan.md) freezes one 12-epoch attempt, separate photo/digital regression gates and CPU/CLI requirements. The subsequent attempt is documented in the mixed training result.
+
+The [mixed training preparation](mixed-training.md) fixes 50% digital / 50% photographic sampling, checks overlap against existing validation and exports reproducible crops without training a model.
+
+The [training coverage inventory](training-coverage.md) identifies reusable digital overlays and photographic wood/thin-piece examples. No new training is started; prepare a balanced mixed corpus next.
+
+See the [targeted-training regression diagnosis](targeted-photo-regressions.md): ten of eleven newly broken boards contain false pieces on empty squares. The baseline remains recommended.
+
+The [targeted photographic training](targeted-photo-training.md) is complete: 184 training boards and unchanged validation. The candidate is not promoted because it loses previously correct photo and digital boards.
+
+The [targeted photo intake review](targeted-photo-intake.md) records 24 photographs,
+16 paired references, eight placements and targeted coverage gaps. All corners and
+rectified crops are reviewed, with 1,536 labeled development squares exported;
+the collection guide preserves the original plan.
+
 The [initial photographic catalogue](photo-catalogue.md) defines seven target
 entries and fourteen background combinations, with evidence, unresolved theme
 identities and deferred coverage. It does not declare new compatibility.

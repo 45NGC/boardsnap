@@ -1,5 +1,22 @@
 # BoardSnap
 
+The optional [HTTP adapter](docs/en/http-server.md) now passes local HTTPS/CLI parity. See the [overall project report](docs/en/project-status.md) for current capabilities, measured results and remaining work.
+
+A [local trial configuration](docs/en/local-trial.md) pins separate digital and photographic models with checksum verification and measured CPU performance. Photographic recognition remains experimental.
+
+The [square-root weighting experiment](docs/en/mixed-sqrt-result.md) partially improves photographic validation while retaining digital predictions. The model remains experimental; phone-v1 is still the reference.
+
+The [empty-label distillation experiment](docs/en/mixed-empty-guard-result.md) is complete. It does not improve the mixed control; phone-v1 remains the photographic reference.
+
+The [mixed training result](docs/en/mixed-training-result.md) completes the bounded 12-epoch run. No candidate passes every preservation gate; `neural-phone-v1` remains the photographic reference.
+
+The [targeted photographic training](docs/en/targeted-photo-training.md) is complete. The candidate learns from the new photos but introduces validation regressions; phone-v1 remains recommended.
+
+The [targeted photo intake review](docs/en/targeted-photo-intake.md) pairs 24
+photographs with 16 direct screenshots and records eight placements and coverage
+gaps. All 24 corner annotations and rectified boards are reviewed; 1,536 labeled
+squares are exported for development, retaining source groups.
+
 The [initial photographic catalogue](docs/en/photo-catalogue.md) selects seven
 target entries with two backgrounds each, including measured failure cases.
 New photographic validation and unresolved selector identities remain pending.
@@ -96,7 +113,7 @@ Real screenshots still need verified placements before classification training.
 The [arrow extension](docs/en/arrows.md) adds straight/knight arrows, crossings,
 combined overlays and separate detection/classification regression measurements.
 [Flutter integration](docs/en/flutter-integration.md) is documented as an HTTPS API
-for Android, iOS and web; no server or Flutter client is implemented.
+for Android, iOS and web. The HTTP adapter is implemented and locally verified; public deployment and the Flutter client remain pending.
 
 With the package installed, run `boardsnap image.png` (or `python -m boardsnap image.png`).
 See the [CLI guide](docs/en/cli.md) for installation, errors and exit codes.

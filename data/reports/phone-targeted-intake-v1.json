@@ -1,0 +1,431 @@
+{
+  "schemaVersion": 1,
+  "reportId": "phone-targeted-intake-v1",
+  "reviewedOn": "2026-11-13",
+  "scope": "Paired intake, visual geometry and crop/label review; no recognition accuracy evaluation.",
+  "counts": {
+    "phonePhotos": 24,
+    "directScreenshots": 16,
+    "totalFiles": 40,
+    "uniqueOriginalHashes": 40,
+    "distinctPlacements": 8,
+    "appearanceGroups": 3,
+    "observedCataloguePairs": 6,
+    "visuallyUsablePhotos": 24,
+    "photosWithReviewedCorners": 24,
+    "officialPieceSelectorsConfirmed": 0,
+    "knownChesscomGameIds": 6,
+    "photoOrientations": {
+      "black-bottom": 12,
+      "white-bottom": 12
+    },
+    "userConfirmedDistinctLichessGames": 2,
+    "lichessSessionsWithoutGameIds": 2,
+    "sourceGroupsInBatch": 8
+  },
+  "coverage": {
+    "unit": "Each of eight distinct positions counted once (512 squares); no multiplication by screenshots or photo variants.",
+    "byAppearance": {
+      "cc-thin-stem": {
+        "empty": {
+          "light": 72,
+          "dark": 76
+        },
+        "P": {
+          "light": 20,
+          "dark": 9
+        },
+        "N": {
+          "light": 2,
+          "dark": 2
+        },
+        "B": {
+          "light": 2,
+          "dark": 4
+        },
+        "R": {
+          "light": 4,
+          "dark": 4
+        },
+        "Q": {
+          "light": 2,
+          "dark": 1
+        },
+        "K": {
+          "light": 0,
+          "dark": 4
+        },
+        "p": {
+          "light": 13,
+          "dark": 15
+        },
+        "n": {
+          "light": 2,
+          "dark": 4
+        },
+        "b": {
+          "light": 3,
+          "dark": 2
+        },
+        "r": {
+          "light": 4,
+          "dark": 4
+        },
+        "q": {
+          "light": 1,
+          "dark": 2
+        },
+        "k": {
+          "light": 3,
+          "dark": 1
+        }
+      },
+      "cc-shaded": {
+        "empty": {
+          "light": 33,
+          "dark": 37
+        },
+        "P": {
+          "light": 6,
+          "dark": 9
+        },
+        "N": {
+          "light": 2,
+          "dark": 2
+        },
+        "B": {
+          "light": 2,
+          "dark": 1
+        },
+        "R": {
+          "light": 3,
+          "dark": 1
+        },
+        "Q": {
+          "light": 0,
+          "dark": 1
+        },
+        "K": {
+          "light": 0,
+          "dark": 2
+        },
+        "p": {
+          "light": 10,
+          "dark": 5
+        },
+        "n": {
+          "light": 2,
+          "dark": 1
+        },
+        "b": {
+          "light": 2,
+          "dark": 1
+        },
+        "r": {
+          "light": 2,
+          "dark": 2
+        },
+        "q": {
+          "light": 0,
+          "dark": 2
+        },
+        "k": {
+          "light": 2,
+          "dark": 0
+        }
+      },
+      "lc-rounded-king": {
+        "empty": {
+          "light": 36,
+          "dark": 35
+        },
+        "P": {
+          "light": 7,
+          "dark": 6
+        },
+        "N": {
+          "light": 2,
+          "dark": 1
+        },
+        "B": {
+          "light": 2,
+          "dark": 2
+        },
+        "R": {
+          "light": 0,
+          "dark": 4
+        },
+        "Q": {
+          "light": 2,
+          "dark": 0
+        },
+        "K": {
+          "light": 0,
+          "dark": 2
+        },
+        "p": {
+          "light": 6,
+          "dark": 8
+        },
+        "n": {
+          "light": 2,
+          "dark": 1
+        },
+        "b": {
+          "light": 2,
+          "dark": 2
+        },
+        "r": {
+          "light": 3,
+          "dark": 1
+        },
+        "q": {
+          "light": 0,
+          "dark": 2
+        },
+        "k": {
+          "light": 2,
+          "dark": 0
+        }
+      }
+    },
+    "allClasses": {
+      "empty": 289,
+      "P": 57,
+      "N": 11,
+      "B": 13,
+      "R": 16,
+      "Q": 6,
+      "K": 8,
+      "p": 57,
+      "n": 12,
+      "b": 12,
+      "r": 16,
+      "q": 7,
+      "k": 8
+    },
+    "missingClassSquareColors": {
+      "cc-thin-stem": {
+        "K": [
+          "light"
+        ]
+      },
+      "cc-shaded": {
+        "Q": [
+          "light"
+        ],
+        "K": [
+          "light"
+        ],
+        "q": [
+          "light"
+        ],
+        "k": [
+          "dark"
+        ]
+      },
+      "lc-rounded-king": {
+        "R": [
+          "light"
+        ],
+        "Q": [
+          "dark"
+        ],
+        "K": [
+          "light"
+        ],
+        "q": [
+          "light"
+        ],
+        "k": [
+          "dark"
+        ]
+      }
+    }
+  },
+  "overlapChecks": {
+    "withinBatchDuplicateOriginalHashes": [],
+    "originalHashMatchesExistingPhoneCorpora": [],
+    "positionFamilyMatchesExistingPhoneCorpora": [],
+    "knownGameMatchesExistingPhoneCorpora": [],
+    "independenceEstablished": false,
+    "scope": "191 previously registered phone photos, with incomplete source identities. No independent final data accessed.",
+    "followUpReport": {
+      "path": "data/reports/phone-targeted-overlap-v1.json",
+      "sha256": "4fbb3f59073411a6b0e0f8e4e76abde13193aff7cee1db644e2376e13cd3b3a7"
+    }
+  },
+  "deviations": [
+    "position1 and position2 both black-bottom; keep both, white-bottom thin-stem coverage supplied by position7 and position8.",
+    "position3 is brown/black-bottom and position4 is wood/white-bottom; actual pairs recorded without renumbering.",
+    "All baseline photos have last-move highlights; position6 also has check.",
+    "Several marked examples contain multiple or crossing arrows rather than only simple marks.",
+    "position1 oblique/marked tilt differs; no isolated marks-only effect can be measured.",
+    "No settings screenshots or measured lighting changes were supplied.",
+    "position7 and position8 retain last-move highlights; genuinely unmarked photographs remain absent.",
+    "position8 oblique/marked tilt differs; no isolated marks-only comparison.",
+    "position7 overlapping vertical arrow shafts have partial endpoint annotations; use paired screenshot as mark evidence."
+  ],
+  "nextDataPriorities": [
+    "Thin-stem white-knight gap and white-bottom views are covered by position7/8; no retakes needed.",
+    "Thin-stem white king on a light square is the only remaining missing class/square-color pair for that appearance.",
+    "Missing combinations in the shaded and rounded-king designs remain in coverage.missingClassSquareColors.",
+    "Genuinely unmarked baselines and same-framing simple-mark pairs are still absent.",
+    "Geometry and overlap screening are complete. Preserve all eight groups during training assembly and document unresolved game/video identity."
+  ],
+  "decision": {
+    "pilotCollectionReviewed": true,
+    "retakeCurrentBatchRequired": false,
+    "readyForTraining": false,
+    "nextStep": "Overlap screening is complete with no observed conflicts; source independence remains partly unresolved. Assemble a versioned training plan preserving groups and recording this limitation; keep existing validation unchanged.",
+    "largeUnfocusedBatchRequested": false,
+    "readyForSquareExport": true
+  },
+  "inferenceRun": false,
+  "trainingRun": false,
+  "finalEvaluationAccessed": false,
+  "manifest": {
+    "path": "data/manifests/phone-targeted-intake-v1.json",
+    "sha256": "b50d76eda72620fd961f16c968db414ae0b8654c497251f57e2e8b377a6eaad3"
+  },
+  "previousPilotSummary": {
+    "counts": {
+      "phonePhotos": 18,
+      "directScreenshots": 12,
+      "totalFiles": 30,
+      "uniqueOriginalHashes": 30,
+      "distinctPlacements": 6,
+      "appearanceGroups": 3,
+      "observedCataloguePairs": 6,
+      "visuallyUsablePhotos": 18,
+      "photosWithReviewedCorners": 0,
+      "officialPieceSelectorsConfirmed": 0,
+      "knownChesscomGameIds": 4,
+      "photoOrientations": {
+        "black-bottom": 12,
+        "white-bottom": 6
+      },
+      "userConfirmedDistinctLichessGames": 2,
+      "lichessSessionsWithoutGameIds": 2,
+      "sourceGroupsInBatch": 6
+    },
+    "missingClassSquareColors": {
+      "cc-thin-stem": {
+        "N": [
+          "light",
+          "dark"
+        ],
+        "B": [
+          "light"
+        ],
+        "Q": [
+          "light"
+        ],
+        "K": [
+          "light"
+        ],
+        "b": [
+          "dark"
+        ],
+        "q": [
+          "dark"
+        ]
+      },
+      "cc-shaded": {
+        "Q": [
+          "light"
+        ],
+        "K": [
+          "light"
+        ],
+        "q": [
+          "light"
+        ],
+        "k": [
+          "dark"
+        ]
+      },
+      "lc-rounded-king": {
+        "R": [
+          "light"
+        ],
+        "Q": [
+          "dark"
+        ],
+        "K": [
+          "light"
+        ],
+        "q": [
+          "light"
+        ],
+        "k": [
+          "dark"
+        ]
+      }
+    },
+    "manifestSha256": "df5094c886bbf5ce44b0c4859a175e85cbaf42674ed2394c7df21ec2c263d27a",
+    "note": "Historical first six positions, retained to show the effect of the targeted expansion."
+  },
+  "expansionReview": {
+    "sessionIds": [
+      "position7",
+      "position8"
+    ],
+    "phonePhotos": 6,
+    "directScreenshots": 4,
+    "whiteKnightsByPosition": {
+      "position7": {
+        "dark": [
+          "c3"
+        ],
+        "light": [
+          "f3"
+        ]
+      },
+      "position8": {
+        "dark": [
+          "c3"
+        ],
+        "light": [
+          "f3"
+        ]
+      }
+    },
+    "thinStemWhiteKnightCounts": {
+      "before": {
+        "light": 0,
+        "dark": 0
+      },
+      "after": {
+        "light": 2,
+        "dark": 2
+      }
+    },
+    "allThreeAppearancesHave13Classes": true,
+    "remainingThinStemClassSquareColorGaps": {
+      "K": [
+        "light"
+      ]
+    },
+    "newPhotosNeedRetake": false,
+    "previousSessionsAndImageRecordsUnchanged": true
+  },
+  "geometryPreparation": {
+    "reviewedOn": "2026-11-13",
+    "previousManifestSha256": "999693dc13f054674e49564dd28f01a7013a411ded3e20c4ed1007d02cc061c5",
+    "reviewedPhotos": 24,
+    "readyForSquareExport": true,
+    "gallery": ".cache/phone-targeted-squares-v1/index.html",
+    "cornerOrder": [
+      "top-left",
+      "top-right",
+      "bottom-right",
+      "bottom-left"
+    ],
+    "coordinateSpace": "full-resolution EXIF-normalized RGB image pixels",
+    "reviewMethod": "Detector-assisted proposals individually checked visually against complete boards, direct screenshots and transcribed piece diagrams.",
+    "accuracyMeasurement": false,
+    "trainingRun": false,
+    "detectorProposalsGenerated": true
+  }
+}

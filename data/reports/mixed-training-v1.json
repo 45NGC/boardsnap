@@ -1,0 +1,706 @@
+{
+  "schemaVersion": 1,
+  "format": "boardsnap-mixed-reference-dataset-v1",
+  "datasetId": "mixed-training-v1",
+  "complete": true,
+  "seed": 20261114,
+  "epoch": 0,
+  "classOrder": [
+    "empty",
+    "P",
+    "N",
+    "B",
+    "R",
+    "Q",
+    "K",
+    "p",
+    "n",
+    "b",
+    "r",
+    "q",
+    "k"
+  ],
+  "squareShape": [
+    64,
+    64,
+    3
+  ],
+  "dtype": "uint8",
+  "colorMode": "RGB",
+  "sampleCount": 32000,
+  "pools": {
+    "digital-clean": {
+      "quota": 6400,
+      "fraction": 0.2,
+      "boards": 3528,
+      "groups": 14,
+      "positions": 56,
+      "eligibleSquares": 225792,
+      "sampledBoards": 3481,
+      "uniqueBoardCells": 6400,
+      "sampledClasses": {
+        "empty": 4356,
+        "Q": 52,
+        "R": 153,
+        "r": 138,
+        "P": 438,
+        "p": 418,
+        "k": 101,
+        "N": 181,
+        "n": 161,
+        "q": 46,
+        "B": 132,
+        "b": 136,
+        "K": 88
+      },
+      "sampledClassColors": {
+        "empty|light": 2273,
+        "Q|light": 45,
+        "empty|dark": 2083,
+        "R|light": 82,
+        "r|dark": 53,
+        "P|dark": 255,
+        "P|light": 183,
+        "p|dark": 230,
+        "p|light": 188,
+        "k|dark": 32,
+        "N|dark": 96,
+        "n|dark": 82,
+        "r|light": 85,
+        "q|light": 13,
+        "N|light": 85,
+        "B|light": 57,
+        "b|dark": 71,
+        "n|light": 79,
+        "B|dark": 75,
+        "k|light": 69,
+        "b|light": 65,
+        "q|dark": 33,
+        "Q|dark": 7,
+        "K|light": 12,
+        "K|dark": 76,
+        "R|dark": 71
+      },
+      "sampledGroups": {
+        "sequence-013": 457,
+        "sequence-015": 457,
+        "sequence-003": 457,
+        "sequence-019": 457,
+        "sequence-020": 457,
+        "sequence-017": 457,
+        "sequence-012": 457,
+        "sequence-005": 457,
+        "sequence-008": 458,
+        "sequence-016": 457,
+        "sequence-007": 457,
+        "sequence-011": 457,
+        "sequence-014": 457,
+        "sequence-006": 458
+      }
+    },
+    "digital-simple-marks": {
+      "quota": 3200,
+      "fraction": 0.1,
+      "boards": 6160,
+      "groups": 14,
+      "positions": 56,
+      "eligibleSquares": 40788,
+      "sampledBoards": 3200,
+      "uniqueBoardCells": 3200,
+      "sampledClasses": {
+        "k": 404,
+        "N": 165,
+        "empty": 991,
+        "K": 404,
+        "p": 211,
+        "P": 222,
+        "B": 121,
+        "R": 138,
+        "q": 61,
+        "b": 144,
+        "n": 151,
+        "r": 135,
+        "Q": 53
+      },
+      "sampledClassColors": {
+        "k|light": 259,
+        "N|light": 63,
+        "empty|light": 511,
+        "K|dark": 328,
+        "K|light": 76,
+        "p|dark": 100,
+        "P|dark": 131,
+        "N|dark": 102,
+        "empty|dark": 480,
+        "B|dark": 67,
+        "P|light": 91,
+        "R|dark": 71,
+        "q|dark": 41,
+        "b|light": 69,
+        "p|light": 111,
+        "R|light": 67,
+        "n|light": 68,
+        "r|dark": 62,
+        "n|dark": 83,
+        "k|dark": 145,
+        "Q|light": 40,
+        "Q|dark": 13,
+        "B|light": 54,
+        "q|light": 20,
+        "r|light": 73,
+        "b|dark": 75
+      },
+      "sampledGroups": {
+        "sequence-012": 228,
+        "sequence-006": 228,
+        "sequence-008": 229,
+        "sequence-011": 229,
+        "sequence-005": 229,
+        "sequence-017": 229,
+        "sequence-019": 228,
+        "sequence-003": 228,
+        "sequence-020": 228,
+        "sequence-013": 229,
+        "sequence-016": 228,
+        "sequence-015": 229,
+        "sequence-014": 229,
+        "sequence-007": 229
+      }
+    },
+    "digital-arrows": {
+      "quota": 4800,
+      "fraction": 0.15,
+      "boards": 4928,
+      "groups": 14,
+      "positions": 56,
+      "eligibleSquares": 47766,
+      "sampledBoards": 4800,
+      "uniqueBoardCells": 4800,
+      "sampledClasses": {
+        "N": 89,
+        "empty": 3625,
+        "P": 310,
+        "B": 63,
+        "p": 285,
+        "n": 77,
+        "Q": 37,
+        "r": 54,
+        "b": 83,
+        "k": 61,
+        "q": 27,
+        "K": 49,
+        "R": 40
+      },
+      "sampledClassColors": {
+        "N|dark": 55,
+        "empty|light": 1854,
+        "empty|dark": 1771,
+        "P|dark": 172,
+        "B|light": 23,
+        "p|dark": 157,
+        "n|light": 31,
+        "P|light": 138,
+        "p|light": 128,
+        "B|dark": 40,
+        "Q|light": 28,
+        "N|light": 34,
+        "r|dark": 23,
+        "b|light": 47,
+        "r|light": 31,
+        "b|dark": 36,
+        "k|dark": 21,
+        "k|light": 40,
+        "q|light": 3,
+        "n|dark": 46,
+        "K|dark": 39,
+        "q|dark": 24,
+        "K|light": 10,
+        "R|dark": 12,
+        "R|light": 28,
+        "Q|dark": 9
+      },
+      "sampledGroups": {
+        "sequence-019": 342,
+        "sequence-012": 342,
+        "sequence-014": 343,
+        "sequence-013": 343,
+        "sequence-003": 343,
+        "sequence-008": 343,
+        "sequence-005": 343,
+        "sequence-011": 343,
+        "sequence-015": 343,
+        "sequence-020": 343,
+        "sequence-017": 343,
+        "sequence-016": 343,
+        "sequence-006": 343,
+        "sequence-007": 343
+      }
+    },
+    "digital-arrowheads": {
+      "quota": 1600,
+      "fraction": 0.05,
+      "boards": 1144,
+      "groups": 14,
+      "positions": 56,
+      "eligibleSquares": 6437,
+      "sampledBoards": 975,
+      "uniqueBoardCells": 1555,
+      "sampledClasses": {
+        "empty": 874,
+        "p": 123,
+        "b": 48,
+        "Q": 42,
+        "P": 123,
+        "k": 52,
+        "B": 43,
+        "N": 65,
+        "n": 58,
+        "K": 58,
+        "R": 36,
+        "q": 44,
+        "r": 34
+      },
+      "sampledClassColors": {
+        "empty|dark": 429,
+        "empty|light": 445,
+        "p|dark": 74,
+        "b|dark": 21,
+        "Q|light": 26,
+        "P|light": 58,
+        "k|dark": 29,
+        "p|light": 49,
+        "B|dark": 19,
+        "P|dark": 65,
+        "N|dark": 33,
+        "k|light": 23,
+        "n|dark": 25,
+        "N|light": 32,
+        "n|light": 33,
+        "K|light": 16,
+        "R|dark": 18,
+        "K|dark": 42,
+        "q|light": 15,
+        "q|dark": 29,
+        "b|light": 27,
+        "B|light": 24,
+        "r|dark": 15,
+        "Q|dark": 16,
+        "r|light": 19,
+        "R|light": 18
+      },
+      "sampledGroups": {
+        "sequence-008": 114,
+        "sequence-019": 114,
+        "sequence-017": 115,
+        "sequence-006": 114,
+        "sequence-020": 114,
+        "sequence-007": 114,
+        "sequence-003": 115,
+        "sequence-014": 115,
+        "sequence-013": 115,
+        "sequence-011": 114,
+        "sequence-012": 114,
+        "sequence-015": 114,
+        "sequence-016": 114,
+        "sequence-005": 114
+      }
+    },
+    "photo-old-other": {
+      "quota": 9600,
+      "fraction": 0.3,
+      "boards": 155,
+      "groups": 1,
+      "positions": 148,
+      "eligibleSquares": 9920,
+      "sampledBoards": 155,
+      "uniqueBoardCells": 9479,
+      "sampledClasses": {
+        "empty": 5873,
+        "k": 149,
+        "r": 270,
+        "P": 940,
+        "Q": 138,
+        "p": 952,
+        "B": 177,
+        "n": 171,
+        "q": 133,
+        "R": 252,
+        "N": 187,
+        "K": 149,
+        "b": 209
+      },
+      "sampledClassColors": {
+        "empty|light": 2967,
+        "empty|dark": 2906,
+        "k|light": 117,
+        "r|dark": 143,
+        "P|dark": 480,
+        "Q|light": 111,
+        "r|light": 127,
+        "p|light": 526,
+        "P|light": 460,
+        "B|dark": 100,
+        "n|dark": 77,
+        "q|dark": 111,
+        "Q|dark": 27,
+        "p|dark": 426,
+        "R|light": 103,
+        "B|light": 77,
+        "R|dark": 149,
+        "N|light": 90,
+        "K|dark": 130,
+        "n|light": 94,
+        "b|dark": 107,
+        "N|dark": 97,
+        "b|light": 102,
+        "k|dark": 32,
+        "K|light": 19,
+        "q|light": 22
+      },
+      "sampledGroups": {
+        "phone-photos-unresolved-origin-v1": 9600
+      }
+    },
+    "photo-old-wood": {
+      "quota": 1600,
+      "fraction": 0.05,
+      "boards": 5,
+      "groups": 1,
+      "positions": 5,
+      "eligibleSquares": 320,
+      "sampledBoards": 5,
+      "uniqueBoardCells": 320,
+      "sampledClasses": {
+        "empty": 970,
+        "p": 155,
+        "b": 40,
+        "P": 165,
+        "K": 25,
+        "k": 25,
+        "R": 50,
+        "n": 15,
+        "N": 25,
+        "B": 30,
+        "Q": 25,
+        "r": 50,
+        "q": 25
+      },
+      "sampledClassColors": {
+        "empty|light": 490,
+        "empty|dark": 480,
+        "p|light": 60,
+        "b|light": 25,
+        "P|dark": 75,
+        "p|dark": 95,
+        "P|light": 90,
+        "K|dark": 25,
+        "k|dark": 10,
+        "R|dark": 20,
+        "n|dark": 15,
+        "N|dark": 25,
+        "B|light": 25,
+        "b|dark": 15,
+        "Q|light": 25,
+        "R|light": 30,
+        "r|light": 35,
+        "q|dark": 20,
+        "k|light": 15,
+        "r|dark": 15,
+        "q|light": 5,
+        "B|dark": 5
+      },
+      "sampledGroups": {
+        "phone-photos-unresolved-origin-v1": 1600
+      }
+    },
+    "photo-targeted": {
+      "quota": 4800,
+      "fraction": 0.15,
+      "boards": 24,
+      "groups": 8,
+      "positions": 8,
+      "eligibleSquares": 1536,
+      "sampledBoards": 24,
+      "uniqueBoardCells": 1536,
+      "sampledClasses": {
+        "P": 530,
+        "empty": 2720,
+        "R": 153,
+        "B": 122,
+        "p": 527,
+        "K": 77,
+        "N": 100,
+        "k": 74,
+        "r": 151,
+        "b": 112,
+        "q": 64,
+        "Q": 57,
+        "n": 113
+      },
+      "sampledClassColors": {
+        "P|dark": 226,
+        "empty|dark": 1398,
+        "R|dark": 86,
+        "P|light": 304,
+        "empty|light": 1322,
+        "B|dark": 65,
+        "R|light": 67,
+        "p|dark": 259,
+        "K|dark": 77,
+        "N|dark": 46,
+        "k|light": 65,
+        "N|light": 54,
+        "r|dark": 66,
+        "r|light": 85,
+        "p|light": 268,
+        "b|light": 64,
+        "q|dark": 55,
+        "Q|light": 38,
+        "n|light": 56,
+        "n|dark": 57,
+        "Q|dark": 19,
+        "b|dark": 48,
+        "B|light": 57,
+        "q|light": 9,
+        "k|dark": 9
+      },
+      "sampledGroups": {
+        "chesscom-game-186559752718": 600,
+        "training2-lichess-position6": 600,
+        "chesscom-game-186750194058": 600,
+        "training2-lichess-position5": 600,
+        "chesscom-game-187014017568": 600,
+        "chesscom-game-186840071668": 600,
+        "chesscom-game-186984581962": 600,
+        "chesscom-game-187062563830": 600
+      }
+    }
+  },
+  "audit": {
+    "trainingBoards": 15944,
+    "validationBoards": 3162,
+    "validationCounts": {
+      ".cache/digital-style-squares-v2": 3132,
+      ".cache/phone-targeted-training-v1": 30
+    },
+    "observedConflicts": [],
+    "checks": [
+      "group",
+      "position-id",
+      "placement-family",
+      "known-source",
+      "image-file",
+      "archive",
+      "decoded-canonical-board-pixels"
+    ],
+    "fullyVerifiedSourceIndependence": false,
+    "unknownPhotoTrainingSources": 141,
+    "unknownPhotoValidationSources": 20,
+    "limitations": [
+      "Unknown photographic game/video origins remain unresolved; no observed overlap is not proof of independent sources.",
+      "Existing validation has already informed development, not independent final acceptance.",
+      "No partial group reassignment; any overlap blocks assembly.",
+      "Counts include repeated cells and related variants. The old wood pool has five photos; its 5% quota must be validated for overfitting.",
+      "Source crop preprocessing remains unchanged. No current trainer automatically consumes this custom reference dataset; use its checked loader when wiring the next training run."
+    ]
+  },
+  "sourcePreprocessing": [
+    {
+      "dataset": "digital-style-squares-v2",
+      "preprocessing": {
+        "squareSize": 64,
+        "colorMode": "RGB",
+        "dtype": "uint8",
+        "range": [
+          0,
+          255
+        ],
+        "resize": "Pillow LANCZOS whole board to 512x512",
+        "ordering": "a8 to h1; reorder cells for black-bottom without rotating pixels",
+        "boundsRounding": "nearest exclusive edges; ties to even",
+        "orientation": "explicit verified capture view; automatic reading not evaluated"
+      }
+    },
+    {
+      "dataset": "arrowhead-training-squares-v1",
+      "preprocessing": {
+        "squareSize": 64,
+        "colorMode": "RGB",
+        "dtype": "uint8",
+        "range": [
+          0,
+          255
+        ],
+        "resize": "Pillow LANCZOS whole board to 512x512",
+        "ordering": "a8 to h1; reorder cells for black-bottom without rotating pixels",
+        "boundsRounding": "nearest exclusive edges; ties to even",
+        "orientation": "explicit verified capture view; automatic reading not evaluated"
+      }
+    },
+    {
+      "dataset": "phone-targeted-training-v1",
+      "preprocessing": {
+        "squareSize": 64,
+        "colorMode": "RGB",
+        "dtype": "uint8",
+        "rectification": "reviewed full-image quadrilateral to 512x512, OpenCV INTER_LINEAR",
+        "ordering": "a8 to h1; reorder cells for black-bottom without rotating pixels",
+        "orientation": "explicit reviewed view; no automatic orientation or detection"
+      }
+    }
+  ],
+  "inputs": [
+    {
+      "path": ".cache/arrowhead-training-squares-v1/dataset.json",
+      "sha256": "c843b1dc4199a2619be2a32194cb19eb74a1ecbc7c264545b967f3180e6a19ca"
+    },
+    {
+      "path": ".cache/arrowhead-training-squares-v1/verified.jsonl",
+      "sha256": "5bdc7de8be3fd6303317f0c5832740a48542404bb3b685049bfd6a02cd361b38"
+    },
+    {
+      "path": ".cache/digital-style-squares-v2/dataset.json",
+      "sha256": "7cae41fdb1b28e7dc8442c70a01cc5c473ee47f7c206cdfcc9ec0cb715842525"
+    },
+    {
+      "path": ".cache/digital-style-squares-v2/verified.jsonl",
+      "sha256": "9bfe8473346998df5df546c7a74c449d14d9db1ad34669dc390e527993172f4a"
+    },
+    {
+      "path": ".cache/phone-targeted-training-v1/dataset.json",
+      "sha256": "8f413689357c4beb07fa199b65827d360ed9d6c955c9b90d16916b70bb618697"
+    },
+    {
+      "path": ".cache/phone-targeted-training-v1/training.jsonl",
+      "sha256": "0af4c88ce775634e6c0168d1e3b47892e991812dd627a87bce9f3ee770d0e165"
+    },
+    {
+      "path": ".cache/phone-targeted-training-v1/validation.jsonl",
+      "sha256": "a9208f8a64b5b2307fff3c6ce60049ed5ee88653052198b8b66b8cef765b124c"
+    },
+    {
+      "path": ".cache/phone-targeted-training-v1/verified.jsonl",
+      "sha256": "b2ea9e3d361bab16f78602318213e57989092392b4ec80ddcda035514db394a8"
+    },
+    {
+      "path": "data/manifests/phone-training-backgrounds-v1.json",
+      "sha256": "f648aa8a9dfb08ca94e50f8fd3864971b123b97808eb715b84f4061035eb569a"
+    },
+    {
+      "path": "data/reports/phone-targeted-overlap-v1.json",
+      "sha256": "4fbb3f59073411a6b0e0f8e4e76abde13193aff7cee1db644e2376e13cd3b3a7"
+    },
+    {
+      "path": "data/reports/training-coverage-v1.json",
+      "sha256": "aeab993f606d63a83417f8978c18a7e03bafd9601a4c0429274ac7b2f58ebb1b"
+    }
+  ],
+  "plan": {
+    "schemaVersion": 1,
+    "datasetId": "mixed-training-v1",
+    "preparedOn": "2026-11-14",
+    "purpose": "Preparation only; no training authorization inferred.",
+    "datasets": [
+      "digital-style-squares-v2",
+      "arrowhead-training-squares-v1",
+      "phone-targeted-training-v1"
+    ],
+    "validationDatasets": [
+      "digital-style-squares-v2",
+      "phone-targeted-training-v1"
+    ],
+    "backgroundReview": "data/manifests/phone-training-backgrounds-v1.json",
+    "inputs": [
+      {
+        "path": ".cache/arrowhead-training-squares-v1/dataset.json",
+        "sha256": "c843b1dc4199a2619be2a32194cb19eb74a1ecbc7c264545b967f3180e6a19ca"
+      },
+      {
+        "path": ".cache/arrowhead-training-squares-v1/verified.jsonl",
+        "sha256": "5bdc7de8be3fd6303317f0c5832740a48542404bb3b685049bfd6a02cd361b38"
+      },
+      {
+        "path": ".cache/digital-style-squares-v2/dataset.json",
+        "sha256": "7cae41fdb1b28e7dc8442c70a01cc5c473ee47f7c206cdfcc9ec0cb715842525"
+      },
+      {
+        "path": ".cache/digital-style-squares-v2/verified.jsonl",
+        "sha256": "9bfe8473346998df5df546c7a74c449d14d9db1ad34669dc390e527993172f4a"
+      },
+      {
+        "path": ".cache/phone-targeted-training-v1/dataset.json",
+        "sha256": "8f413689357c4beb07fa199b65827d360ed9d6c955c9b90d16916b70bb618697"
+      },
+      {
+        "path": ".cache/phone-targeted-training-v1/training.jsonl",
+        "sha256": "0af4c88ce775634e6c0168d1e3b47892e991812dd627a87bce9f3ee770d0e165"
+      },
+      {
+        "path": ".cache/phone-targeted-training-v1/validation.jsonl",
+        "sha256": "a9208f8a64b5b2307fff3c6ce60049ed5ee88653052198b8b66b8cef765b124c"
+      },
+      {
+        "path": ".cache/phone-targeted-training-v1/verified.jsonl",
+        "sha256": "b2ea9e3d361bab16f78602318213e57989092392b4ec80ddcda035514db394a8"
+      },
+      {
+        "path": "data/manifests/phone-training-backgrounds-v1.json",
+        "sha256": "f648aa8a9dfb08ca94e50f8fd3864971b123b97808eb715b84f4061035eb569a"
+      },
+      {
+        "path": "data/reports/phone-targeted-overlap-v1.json",
+        "sha256": "4fbb3f59073411a6b0e0f8e4e76abde13193aff7cee1db644e2376e13cd3b3a7"
+      },
+      {
+        "path": "data/reports/training-coverage-v1.json",
+        "sha256": "aeab993f606d63a83417f8978c18a7e03bafd9601a4c0429274ac7b2f58ebb1b"
+      }
+    ],
+    "seed": 20261114,
+    "poolQuotas": {
+      "digital-clean": 6400,
+      "digital-simple-marks": 3200,
+      "digital-arrows": 4800,
+      "digital-arrowheads": 1600,
+      "photo-old-other": 9600,
+      "photo-old-wood": 1600,
+      "photo-targeted": 4800
+    },
+    "samplingPolicy": "32000 draws per epoch: 50% digital and 50% photo. Exact pool quotas, balanced group/position/style/board allocation within pools; shuffled eligible cells before repeating. Digital marks use existing training_indices. No class reweighting, new transforms or validation sampling.",
+    "status": "Initial data recipe, not an optimized or accepted model.",
+    "limitations": [
+      "Unknown photographic game/video origins remain unresolved; no observed overlap is not proof of independent sources.",
+      "Existing validation has already informed development, not independent final acceptance.",
+      "No partial group reassignment; any overlap blocks assembly.",
+      "Counts include repeated cells and related variants. The old wood pool has five photos; its 5% quota must be validated for overfitting.",
+      "Source crop preprocessing remains unchanged. No current trainer automatically consumes this custom reference dataset; use its checked loader when wiring the next training run."
+    ]
+  },
+  "assemblyCodeSha256": "a22ef92bb3e3e21f57429e06add18074cea72aa399a51673f34ed052e7c8cf96",
+  "artifacts": {
+    "sampling-epoch-000.npz": {
+      "sha256": "f2349561a52cd1904e7fce7bc0456a409e5569664a92defb58d6411bce3e9ccc",
+      "bytes": 104484
+    },
+    "training-boards.jsonl": {
+      "sha256": "8dd2d3d593c9befd432a8d19c979ed68180ff4fa81e1cfd5261b1ce0ade5b648",
+      "bytes": 153728645
+    },
+    "training-images.npy": {
+      "sha256": "1dda7f5080ce4be92777b03d9b0cacda568135da76144bbe1bbd6084ad98f3ee",
+      "bytes": 393216128
+    },
+    "training-labels.npy": {
+      "sha256": "8078a75662d58693ae15f586b67f3c42e6612bff527166fc0b90477bac9091fd",
+      "bytes": 256128
+    },
+    "validation.jsonl": {
+      "sha256": "c39a8ed5de07c19f31c7a9af388584ce7bc2c4a9e561a80c1f1d843ad7e2eff2",
+      "bytes": 30103580
+    }
+  },
+  "validationSampling": "All original 64 cells of every existing validation board; no balancing.",
+  "trainingRun": false,
+  "inferenceRun": false,
+  "finalEvaluationAccessed": false
+}

@@ -1,0 +1,109 @@
+{
+  "planId": "neural-mixed-v1",
+  "status": "configuration-frozen-training-not-started",
+  "baselineMetrics": {
+    "phone": {
+      "boards": 30,
+      "squares": 1920,
+      "exactBoards": 19,
+      "correctSquares": 1871,
+      "falsePieces": 3,
+      "missedPieces": 26,
+      "classTotals": [
+        1188,
+        178,
+        36,
+        40,
+        52,
+        22,
+        30,
+        192,
+        39,
+        41,
+        49,
+        23,
+        30
+      ],
+      "classCorrect": [
+        1185,
+        167,
+        34,
+        39,
+        49,
+        21,
+        28,
+        178,
+        36,
+        36,
+        49,
+        19,
+        30
+      ],
+      "macroRecall": 0.9415079932858833
+    },
+    "digital": {
+      "boards": 3132,
+      "squares": 200448,
+      "exactBoards": 3128,
+      "correctSquares": 200444,
+      "falsePieces": 1,
+      "missedPieces": 0,
+      "classTotals": [
+        137456,
+        13366,
+        4764,
+        3676,
+        4426,
+        1838,
+        3132,
+        13910,
+        4720,
+        3676,
+        4470,
+        1882,
+        3132
+      ],
+      "classCorrect": [
+        137455,
+        13366,
+        4764,
+        3675,
+        4426,
+        1838,
+        3131,
+        13909,
+        4720,
+        3676,
+        4470,
+        1882,
+        3132
+      ],
+      "macroRecall": 0.999948424199701
+    }
+  },
+  "classCounts": [
+    19409,
+    2728,
+    812,
+    688,
+    822,
+    404,
+    850,
+    2671,
+    746,
+    772,
+    832,
+    400,
+    866
+  ],
+  "teacherSamples": 27200,
+  "supervisedOnlySamples": 4800,
+  "artifactsVerified": 5,
+  "trainingRun": false,
+  "inferenceRun": false,
+  "finalEvaluationAccessed": false,
+  "remainingImplementation": [
+    "Wire the mixed checked loader, masked training teacher, per-epoch dual-domain safety gate and resumable checkpoint selection into the runner before launching."
+  ],
+  "planSha256": "997fc7893a193579bf23016fe9e88add08339672041968a95f52ce175110b436"
+}

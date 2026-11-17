@@ -2,32 +2,42 @@
 
 [English](../en/flutter-integration.md) · [Resumen](README.md)
 
+El [contrato HTTP por modo y su prueba de paridad](http-contract.md) fija los campos obligatorios, modelos, errores y cabeceras de versión. La paridad HTTPS local ya está comprobada en el [adaptador implementado](http-server.md).
+
 Plataformas objetivo: **Android, iOS y web**, según lo indicado para chess-scanner.
 El mecanismo propuesto es **una API HTTPS que envuelva el núcleo Python**. Así,
 los tres clientes comparten el mismo reconocimiento. Este documento especifica
-ese adaptador; **aquí no se implementan servidor, despliegue ni cliente Flutter**.
+ese adaptador, que ya está [implementado y probado localmente](http-server.md).
+**El despliegue público y el cliente Flutter siguen pendientes.**
 La CLI sigue siendo una herramienta local de desarrollo. Un cliente móvil o web
 no puede integrar el motor ejecutando el comando Python instalado en tu ordenador.
 
 ## Responsabilidades y petición propuesta
 
-Un backend independiente llamaría a
-`recognize_image(temporary_path, orientation=orientation)` con el modelo configurado
-en el servidor mediante `BOARDSNAP_MODEL`, o reutilizaría `NeuralClassifier(model_path)`.
+El backend independiente reutiliza el clasificador con los mismos argumentos que
+`recognize_image(temporary_path, model=model_path, input_type=input_type, orientation=orientation)`
+con el modelo seleccionado explícitamente por modo en la configuración del servidor.
+La [configuración local de prueba](local-trial.md) fija una referencia digital y
+un candidato fotográfico experimental; sirve de ejemplo para el futuro backend.
+También se puede reutilizar un `NeuralClassifier(model_path)` por modelo cargado.
 El modelo y su versión son configuración del despliegue, no una elección de tema en Flutter.
 Gestionaría los archivos
 temporales, límites, concurrencia y serialización. El núcleo no conocería su
 framework web. Flutter se encarga de seleccionar la imagen, enviarla, mostrar el
 editor y gestionar el resto del estado de la partida.
 
-Endpoint propuesto: `POST /v1/recognize`, formulario multipart:
+Endpoint fijado para la prueba: `POST /v1/recognize`, formulario multipart:
 
 - `image`: un archivo PNG/JPEG enviado como bytes, no una ruta local del dispositivo.
-- `orientation`: `white-bottom`, `black-bottom` o `auto` (predeterminado). Flutter
+- `inputType`: `digital` o `photo`, seleccionado expresamente para esta prueba.
+  El servidor elige el modelo configurado para ese modo; el cliente no envía rutas
+  de pesos ni nombres de temas. En fotografía se exige orientación explícita.
+  Este campo HTTP está implementado en el adaptador.
+- `orientation`: `white-bottom`, `black-bottom` o `auto` (solo digital). Flutter
   puede preguntar qué lado está abajo después de elegir la imagen y enviar la
   elección. Describe la vista, no el turno. Los valores explícitos prevalecen
   sobre las coordenadas. Un valor inválido se mapearía a `INVALID_REQUEST` (400).
-  El parámetro Python/CLI está implementado; el campo HTTP y la interfaz Flutter siguen siendo un diseño.
+  El parámetro Python/CLI y el campo HTTP están implementados; la interfaz Flutter está pendiente.
 
 Éxito, HTTP 200, `Content-Type: application/json`:
 
@@ -37,7 +47,7 @@ Endpoint propuesto: `POST /v1/recognize`, formulario multipart:
 
 Se mantiene el [contrato actual](output-contract.md). Los errores contienen solo
 `{"error":{"code":"...","message":"..."}}`, sin una posición de éxito.
-Correspondencias sugeridas para el adaptador futuro:
+Correspondencias fijadas por el contrato para el adaptador futuro:
 
 | Estado HTTP | Código | Significado |
 | --- | --- | --- |
@@ -46,7 +56,7 @@ Correspondencias sugeridas para el adaptador futuro:
 | 422 | `INVALID_IMAGE`, `UNSUPPORTED_IMAGE`, `BOARD_NOT_FOUND` | El núcleo no puede procesar la imagen enviada. |
 | 500 | `INPUT_READ_ERROR`, `PROCESSING_FAILED` | El servidor no puede leer su archivo temporal o procesar la imagen. |
 
-Los dos códigos de validación de petición son **propuestas exclusivas de HTTP**,
+Los dos códigos de validación de petición son **exclusivos de HTTP**,
 no errores nuevos de la CLI o del núcleo. Los detalles de excepciones quedan en
 los registros del servidor. No se añaden confianza, confirmaciones, turno,
 enroques, captura al paso ni FEN completo. Solo en `auto`, sin coordenadas legibles se mantiene
@@ -54,9 +64,9 @@ la convención de blancas abajo.
 
 ## Trabajo en chess-scanner y en el backend futuro
 
-1. Implementar y desplegar el pequeño adaptador HTTP Python antes de conectar
-   Flutter. Fijar límites de bytes, dimensiones y tiempo, y borrar temporales tanto
-   al acertar como al fallar. No conservar imágenes enviadas por defecto.
+1. Desplegar el [adaptador HTTP implementado](http-server.md) en una URL accesible
+   por los dispositivos. Ya limita bytes, utiliza el límite de píxeles del decodificador
+   y elimina temporales; concretar tiempos/capacidad y controles de acceso del despliegue.
 2. Configurar la URL del servicio en Flutter y enviar bytes mediante multipart.
    El [paquete `http` de Dart](https://pub.dev/documentation/http/latest/http/MultipartRequest-class.html)
    ofrece `MultipartRequest`; `MultipartFile.fromBytes` sirve para compartir el

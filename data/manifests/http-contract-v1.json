@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "contractId": "boardsnap-http-v1",
+  "status": "implemented-local-https-verified",
+  "endpoint": {
+    "method": "POST",
+    "path": "/v1/recognize",
+    "transport": "HTTPS; loopback HTTP permitted for local tests",
+    "contentType": "multipart/form-data"
+  },
+  "fields": {
+    "image": {
+      "required": true,
+      "count": 1,
+      "kind": "file",
+      "formats": [
+        "PNG",
+        "JPEG"
+      ],
+      "formatDetection": "decoded content, not filename"
+    },
+    "inputType": {
+      "required": true,
+      "count": 1,
+      "kind": "text",
+      "values": [
+        "digital",
+        "photo"
+      ]
+    },
+    "orientation": {
+      "required": true,
+      "count": 1,
+      "kind": "text",
+      "values": [
+        "white-bottom",
+        "black-bottom",
+        "auto"
+      ],
+      "photoValues": [
+        "white-bottom",
+        "black-bottom"
+      ]
+    }
+  },
+  "rejectUnknownOrRepeatedParts": true,
+  "modelSelection": "server configuration per inputType; never client paths or automatic fallback",
+  "configuration": "data/manifests/local-trial-v1.json",
+  "limits": {
+    "imageBytes": 20971520,
+    "multipartBodyBytes": 22020096,
+    "clientProbeTimeoutSeconds": 90,
+    "pixelLimit": "existing image_input decoder limit"
+  },
+  "success": {
+    "status": 200,
+    "contentType": "application/json",
+    "exactFields": [
+      "piecePlacement"
+    ],
+    "value": "canonical piece placement only, eight ranks from a8 to h1"
+  },
+  "errors": {
+    "INVALID_REQUEST": 400,
+    "PAYLOAD_TOO_LARGE": 413,
+    "INVALID_IMAGE": 422,
+    "UNSUPPORTED_IMAGE": 422,
+    "BOARD_NOT_FOUND": 422,
+    "INPUT_READ_ERROR": 500,
+    "PROCESSING_FAILED": 500
+  },
+  "errorSchema": {
+    "exactFields": [
+      "error"
+    ],
+    "errorExactFields": [
+      "code",
+      "message"
+    ],
+    "message": "nonempty human-readable string; clients branch on code"
+  },
+  "processingResponseHeaders": {
+    "X-BoardSnap-Model-SHA256": "64 lowercase hexadecimal SHA-256 of the selected model file",
+    "X-BoardSnap-Config-SHA256": "64 lowercase hexadecimal SHA-256 of the fixed model configuration file"
+  },
+  "parity": {
+    "success": "exact JSON object equality with CLI using identical input bytes/model/mode/orientation",
+    "failure": "same error code and corresponding HTTP status; messages may differ",
+    "diagnosticHeaders": "required on recognition results, including decoder/detection errors; optional before a valid mode has been selected"
+  },
+  "acceptanceEvidence": "Eight real HTTPS/CLI parity cases and thirteen real request/CORS checks pass locally. This is transport verification, not final recognition acceptance."
+}

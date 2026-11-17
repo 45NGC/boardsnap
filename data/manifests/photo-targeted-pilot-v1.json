@@ -1,0 +1,281 @@
+{
+  "schemaVersion": 1,
+  "planId": "photo-targeted-pilot-v1",
+  "createdOn": "2026-11-05",
+  "status": "awaiting-manual-collection",
+  "dataRole": "targeted-development-collection-plan",
+  "independentFinalEvaluation": false,
+  "readyForTraining": false,
+  "sources": {
+    "catalogue": {
+      "path": "data/manifests/photo-catalogue-v1.json",
+      "sha256": "e960e572df52744a14e1adf7121fa57d3c56aa454e158d129bb2c1b9d01249ea"
+    },
+    "errorInventory": {
+      "path": "data/reports/photo-error-inventory-v1.json",
+      "sha256": "33c1b7bc3a212875bd851962ba48a1f8261b66a1db2de364f615b90b62ad0fac"
+    },
+    "developmentManifest": {
+      "path": "data/manifests/phone-photos-v1.json",
+      "sha256": "44e0f95efaa0afc1b51d1818b8485e90162c40d6cacc59e5f8cf0b6cd9e05e13"
+    },
+    "validationManifest": {
+      "path": "data/manifests/phone-validation-v1.json",
+      "sha256": "d461867923a346e17122ff35bef2bb7c284d9ed1354eab431060887200bfdd4f"
+    }
+  },
+  "existingIntakeCheck": {
+    "root": ".cache/real-use-tests/phone-photos",
+    "registeredOriginals": 191,
+    "presentOriginals": 191,
+    "unregisteredImagePaths": [],
+    "missingOriginalPaths": [],
+    "changedOriginalHashes": [],
+    "method": "Original paths and SHA256 against the two registered manifests; no inference."
+  },
+  "localCollectionRoot": ".cache/phone-targeted-v1/incoming",
+  "plannedCounts": {
+    "sessions": 6,
+    "distinctPositions": 6,
+    "phonePhotos": 18,
+    "directScreenshots": 12
+  },
+  "countsAreTargetsNotReceivedData": true,
+  "variants": [
+    {
+      "id": "clean-front",
+      "filenameStem": "photo-01",
+      "reference": "reference-clean.png",
+      "instructions": "Clean complete board, nearly frontal camera, usual comfortable distance and diffuse light."
+    },
+    {
+      "id": "clean-oblique",
+      "filenameStem": "photo-02",
+      "reference": "reference-clean.png",
+      "instructions": "Same position and view; moderate side angle, slightly changed distance and modest lighting variation. Keep every edge visible and pieces readable. Record actual conditions."
+    },
+    {
+      "id": "marked-oblique",
+      "filenameStem": "photo-03",
+      "reference": "reference-marked.png",
+      "instructions": "Keep photo-02 camera geometry, distance, lighting and piece placement. Add only recorded usual marks; capture the newly marked screen reference too."
+    }
+  ],
+  "marksPolicy": {
+    "preferred": [
+      "last-move",
+      "selection",
+      "legal-move-dots"
+    ],
+    "optional": [
+      "single-arrow"
+    ],
+    "requirements": "Record exact squares/endpoints and appearance; include empty and occupied, light and dark squares across sessions. Prefer ordinary marks; no opaque occlusion or crossed-arrow expansion. Do not change pieces to add a last-move mark."
+  },
+  "sessions": [
+    {
+      "id": "session-01",
+      "targetId": "cc-thin-stem",
+      "cataloguePairId": "cc-thin-stem-reference-background",
+      "platform": "chesscom",
+      "requestedPieceSet": null,
+      "requestedBoardTheme": null,
+      "requestedBoardAppearance": "plain-purple",
+      "requestedOrientation": "white-bottom",
+      "referencePhotoIds": [
+        "chesscom-img_5401",
+        "chesscom-img_5402"
+      ],
+      "focus": [
+        "White and black pawns on both square colors, including advanced pawns.",
+        "Black and white knights; empty squares beside thin pieces."
+      ],
+      "requestedDistinctNewPosition": true,
+      "photoVariants": [
+        "clean-front",
+        "clean-oblique",
+        "marked-oblique"
+      ],
+      "referenceScreenshots": [
+        "reference-clean.png",
+        "reference-marked.png"
+      ],
+      "status": "awaiting-identity-and-new-photos"
+    },
+    {
+      "id": "session-02",
+      "targetId": "cc-thin-stem",
+      "cataloguePairId": "cc-thin-stem-brown",
+      "platform": "chesscom",
+      "requestedPieceSet": null,
+      "requestedBoardTheme": "brown",
+      "requestedBoardAppearance": "plain-brown",
+      "requestedOrientation": "black-bottom",
+      "referencePhotoIds": [
+        "chesscom-img_5401",
+        "chesscom-img_5402"
+      ],
+      "focus": [
+        "White and black pawns on both square colors, including advanced pawns.",
+        "Black and white knights; empty squares beside thin pieces."
+      ],
+      "requestedDistinctNewPosition": true,
+      "photoVariants": [
+        "clean-front",
+        "clean-oblique",
+        "marked-oblique"
+      ],
+      "referenceScreenshots": [
+        "reference-clean.png",
+        "reference-marked.png"
+      ],
+      "status": "awaiting-identity-and-new-photos"
+    },
+    {
+      "id": "session-03",
+      "targetId": "cc-shaded",
+      "cataloguePairId": "cc-shaded-reference-background",
+      "platform": "chesscom",
+      "requestedPieceSet": null,
+      "requestedBoardTheme": null,
+      "requestedBoardAppearance": "wood-texture",
+      "requestedOrientation": "white-bottom",
+      "referencePhotoIds": [
+        "chesscom-img_5397",
+        "chesscom-img_5398"
+      ],
+      "focus": [
+        "White rooks, knights, black bishops and queens on textured and plain backgrounds.",
+        "Both piece colors on both square colors; empty squares near outlined pieces."
+      ],
+      "requestedDistinctNewPosition": true,
+      "photoVariants": [
+        "clean-front",
+        "clean-oblique",
+        "marked-oblique"
+      ],
+      "referenceScreenshots": [
+        "reference-clean.png",
+        "reference-marked.png"
+      ],
+      "status": "awaiting-identity-and-new-photos"
+    },
+    {
+      "id": "session-04",
+      "targetId": "cc-shaded",
+      "cataloguePairId": "cc-shaded-brown",
+      "platform": "chesscom",
+      "requestedPieceSet": null,
+      "requestedBoardTheme": "brown",
+      "requestedBoardAppearance": "plain-brown",
+      "requestedOrientation": "black-bottom",
+      "referencePhotoIds": [
+        "chesscom-img_5397",
+        "chesscom-img_5398"
+      ],
+      "focus": [
+        "White rooks, knights, black bishops and queens on textured and plain backgrounds.",
+        "Both piece colors on both square colors; empty squares near outlined pieces."
+      ],
+      "requestedDistinctNewPosition": true,
+      "photoVariants": [
+        "clean-front",
+        "clean-oblique",
+        "marked-oblique"
+      ],
+      "referenceScreenshots": [
+        "reference-clean.png",
+        "reference-marked.png"
+      ],
+      "status": "awaiting-identity-and-new-photos"
+    },
+    {
+      "id": "session-05",
+      "targetId": "lc-rounded-king",
+      "cataloguePairId": "lc-rounded-king-reference-background",
+      "platform": "lichess",
+      "requestedPieceSet": null,
+      "requestedBoardTheme": null,
+      "requestedBoardAppearance": "wood-texture",
+      "requestedOrientation": "white-bottom",
+      "referencePhotoIds": [
+        "lichess-img_5391",
+        "lichess-img_5392"
+      ],
+      "focus": [
+        "White kings, black queens and knights on both square colors across the batch.",
+        "Both piece colors and empty squares near rounded silhouettes."
+      ],
+      "requestedDistinctNewPosition": true,
+      "photoVariants": [
+        "clean-front",
+        "clean-oblique",
+        "marked-oblique"
+      ],
+      "referenceScreenshots": [
+        "reference-clean.png",
+        "reference-marked.png"
+      ],
+      "status": "awaiting-identity-and-new-photos"
+    },
+    {
+      "id": "session-06",
+      "targetId": "lc-rounded-king",
+      "cataloguePairId": "lc-rounded-king-brown",
+      "platform": "lichess",
+      "requestedPieceSet": null,
+      "requestedBoardTheme": "brown",
+      "requestedBoardAppearance": "plain-brown",
+      "requestedOrientation": "black-bottom",
+      "referencePhotoIds": [
+        "lichess-img_5391",
+        "lichess-img_5392"
+      ],
+      "focus": [
+        "White kings, black queens and knights on both square colors across the batch.",
+        "Both piece colors and empty squares near rounded silhouettes."
+      ],
+      "requestedDistinctNewPosition": true,
+      "photoVariants": [
+        "clean-front",
+        "clean-oblique",
+        "marked-oblique"
+      ],
+      "referenceScreenshots": [
+        "reference-clean.png",
+        "reference-marked.png"
+      ],
+      "status": "awaiting-identity-and-new-photos"
+    }
+  ],
+  "identityGate": "Use the local reference gallery to identify all three selectors. Preserve a screenshot of the selected piece/background settings. Similar-looking artwork is not a verified match; leave unknown values null and review before collecting a larger batch.",
+  "sourceAndSplitPolicy": {
+    "initialSplit": "development",
+    "trainingAssignment": "pending-source-and-overlap-review",
+    "groupId": "assigned-from-provenance-not-session-number",
+    "rules": [
+      "Record game ID or video URL and timestamp, or an explicitly identified new editor position. A local source label suffices to link related sessions.",
+      "Same game/video, related positions, screenshots and every photo/background/orientation/mark variant stay together.",
+      "Check hashes, placement families and available source IDs against existing development and validation before admission.",
+      "If a position or source overlaps validation, retain that partition; do not admit it to new training.",
+      "Unknown provenance stays conservatively grouped; no random square/photo split or claim of independent validation."
+    ]
+  },
+  "reviewGate": [
+    "Match photo to direct screenshot, placement, orientation and actual piece/background selector. Do not use model predictions as labels.",
+    "Review all four board corners, readability, absence of animation and correct target board.",
+    "Count 13 classes by design and canonical square color; inspect light/dark empty squares and color-confusion pairs explicitly.",
+    "Record angle, distance, lighting, marks, texture and moire as observed, not assumed from the planned slot.",
+    "Report received and usable counts, rejected/ambiguous samples, source-group count and coverage gaps before expanding.",
+    "Compare reviewed-corner classification and automatic geometry later; this preparation step runs neither."
+  ],
+  "existingRegressionControls": [
+    "video-img_5404",
+    "video-img_5406",
+    "chesscom-img_5396",
+    "chesscom-img_5399"
+  ],
+  "falseKnightNote": "Empty-square examples in the pilot probe false pieces across target styles. video-img_5406 (false knight h8) has a different visual group and remains an explicit control; recovery is not assumed. video-img_5404 produced false rook/bishop, not knights.",
+  "scopeLimit": "Six of the fourteen planned catalogue pairs, not full catalogue coverage. Four named baseline designs remain existing controls. No training or final acceptance until separate review.",
+  "expansionRule": "After the 18-photo pilot, collect only missing class/color/style/background/condition/source coverage. Several photos of one position are variants, not independent positions."
+}

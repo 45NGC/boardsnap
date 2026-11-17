@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "phone-targeted-squares-v1",
+  "complete": true,
+  "dataRole": "photo-development-squares",
+  "readyForTraining": false,
+  "sourceManifestSha256": "b50d76eda72620fd961f16c968db414ae0b8654c497251f57e2e8b377a6eaad3",
+  "writtenBoards": 24,
+  "squareCount": 1536,
+  "groups": {
+    "chesscom-game-186750194058": 3,
+    "chesscom-game-186559752718": 3,
+    "chesscom-game-187062563830": 3,
+    "chesscom-game-187014017568": 3,
+    "training2-lichess-position5": 3,
+    "training2-lichess-position6": 3,
+    "chesscom-game-186984581962": 3,
+    "chesscom-game-186840071668": 3
+  },
+  "splitCounts": {
+    "development": 24,
+    "training": 0,
+    "validation": 0,
+    "evaluation": 0
+  },
+  "classOrder": [
+    "empty",
+    "P",
+    "N",
+    "B",
+    "R",
+    "Q",
+    "K",
+    "p",
+    "n",
+    "b",
+    "r",
+    "q",
+    "k"
+  ],
+  "classBackgroundCounts": {
+    "empty": {
+      "light": 423,
+      "dark": 444
+    },
+    "P": {
+      "light": 99,
+      "dark": 72
+    },
+    "N": {
+      "light": 18,
+      "dark": 15
+    },
+    "B": {
+      "light": 18,
+      "dark": 21
+    },
+    "R": {
+      "light": 21,
+      "dark": 27
+    },
+    "Q": {
+      "light": 12,
+      "dark": 6
+    },
+    "K": {
+      "light": 0,
+      "dark": 24
+    },
+    "p": {
+      "light": 87,
+      "dark": 84
+    },
+    "n": {
+      "light": 18,
+      "dark": 18
+    },
+    "b": {
+      "light": 21,
+      "dark": 15
+    },
+    "r": {
+      "light": 27,
+      "dark": 21
+    },
+    "q": {
+      "light": 3,
+      "dark": 18
+    },
+    "k": {
+      "light": 21,
+      "dark": 3
+    }
+  },
+  "distinctPlacements": 8,
+  "preprocessing": {
+    "boardSize": 512,
+    "squareSize": 64,
+    "colorMode": "RGB",
+    "dtype": "uint8",
+    "interpolation": "opencv-linear",
+    "ordering": "a8..h1; reorder cells, never rotate glyphs"
+  },
+  "independentFinalEvaluation": false,
+  "trainingRun": false,
+  "balancingApplied": false,
+  "review": "Assistant visual check of all rectified boards, grid boundaries and paired references; not independent human verification or detector accuracy measurement.",
+  "pending": "Assign training membership after cross-corpus source/position overlap review; preserve existing groups and partitions.",
+  "indexes": {
+    "verified": {
+      "path": "verified.jsonl",
+      "sha256": "ba57c4e5e06058210a0dcabac6f7358a5463c499e7e290e0f0dd2154b7fc8dcb"
+    }
+  },
+  "codeSha256": {
+    "tools/build_targeted_photo_squares.py": "d8725c71245243e66706dde23a59504679e775593d9855cf16169c4cde827d6f",
+    "tools/build_phone_squares.py": "87ba00ff0fe9d2a415aa63c2eae72cdd1a91b56ec8144eb3be40c1f69860f6d3",
+    "tools/review_phone_geometry.py": "0cdd30ebd4b6d2e860553bd7e467d17e6f42a59f17e25249e25ef4a917ae4eae",
+    "tools/build_square_dataset.py": "d1f66ccba2e07f382884d1beadb8d05c9566332ce88b61d58ec86f422d623630"
+  },
+  "verification": {
+    "originalAndNormalizedImageChecksums": 40,
+    "reviewedQuadrilaterals": 24,
+    "serializedSquarePixelsAndLabelsChecked": 1536,
+    "referencePairsChecked": 24,
+    "canonicalOrderingChecked": true,
+    "rectifiedPngMatchesArrays": true,
+    "reviewedOn": "2026-11-13"
+  }
+}

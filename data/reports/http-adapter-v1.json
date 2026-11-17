@@ -1,0 +1,305 @@
+{
+  "schemaVersion": 1,
+  "status": "implemented-local-https-verified",
+  "checksExecutedOn": "2026-11-16",
+  "reportFinalizedOn": "2026-11-17",
+  "endpoint": "https://localhost:8443/v1/recognize",
+  "publiclyDeployed": false,
+  "tlsCertificateVerificationEnabled": true,
+  "configuration": {
+    "path": "data/manifests/local-trial-v1.json",
+    "sha256": "a31053d4737c8facfeeb0bf7558854468a9a80934aa56ab8695a8ca86d8de875"
+  },
+  "contract": {
+    "path": "data/manifests/http-contract-v1.json",
+    "sha256": "910c4c6730d16665bb89da0e0637340a89c0af87e47d41481ee9052d9ca42576"
+  },
+  "models": {
+    "digital": {
+      "path": ".cache/neural-tolerance-v1-conservative/best.pt",
+      "sha256": "4c14507ad700dbe8c6ea6bdcdfb7072c7f31ef9fd9c21c22a782498c2d09ce5f",
+      "role": "existing-digital-reference"
+    },
+    "photo": {
+      "path": ".cache/neural-mixed-sqrt-v1/last.pt",
+      "sha256": "41bbfa5cb3da6e6831ed4c293fd48a5680f831de9fa8568f39b513ff0f932275",
+      "role": "experimental-photographic-candidate"
+    }
+  },
+  "runtimeSha256": {
+    "src/boardsnap/__init__.py": "5d4d88e1368be753e0359dfcbef042595cd6c2dcd793251aabc55724ffb015c8",
+    "src/boardsnap/__main__.py": "776c85059861da68cb7dcd3a92a43278d35589117f27ae3b9105c739d9e542ab",
+    "src/boardsnap/adapters/__init__.py": "f3b27a487ea86f5d962494c6633547cb2171f06ba0aca009fb2a13c61c2db2af",
+    "src/boardsnap/adapters/cli.py": "7455ff6fe03a4b836aefd66a7e62fdff37c0ce05be938471bbf9f1631a8946b8",
+    "src/boardsnap/adapters/http.py": "9112e97885bbb11cce6bbd6123b4605daf2f613939fc4cb4ae11eccd99814b3f",
+    "src/boardsnap/adapters/http_contract.py": "02f805bccefc42b70cba0538fe15507b365ce4273f7cf800e9d1fd4bba698e05",
+    "src/boardsnap/classification.py": "295c5460b3c5174e036fe9eac0896ffe5eb2f3724c7485e0d9d3a20d0e028df4",
+    "src/boardsnap/detection.py": "4e19fbd0e9a7a4b87475ae25b714290aa223fc3fcc8d16c40dd1715194e0c11f",
+    "src/boardsnap/image_input.py": "4cb87bbd4fab43ed315cb3c0f258ed9c5a8f5758124c72a3eb8a8e964d66764e",
+    "src/boardsnap/neural.py": "a1ec8a7254f8b8d14ea223d8a0118ac6be8c0afc5d8b5eddfc2e3acb81b1f125",
+    "src/boardsnap/normalization.py": "51ca3052645be05d05291a2653fd8c0d808ace12ad5c1f896a06e00b061741c7",
+    "src/boardsnap/orientation.py": "39d0297413484a1980f6564f3baea140af1278b2dbaed1a5a8d62903cf0c1926",
+    "src/boardsnap/output.py": "64ed8612dae9b528d08963ae1db1fc9127802c7f3ba3140bcdc329bf4b4645b0",
+    "src/boardsnap/photo_detection.py": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+    "src/boardsnap/pipeline.py": "919abbf44c030585383721ba1850e5af9e848a9c8c16d4f76a7be514e7cf9ce3",
+    "src/boardsnap/profiles.py": "8cc3bb7a0e0d5fed057887aa09ebdf4d1d4309dba57a3c9df2cd0731707a5b5b",
+    "src/boardsnap/rectification.py": "9609048b79395f64a9d40f4f5d3c5bc850117ac4c67d8aa51798a06e5ae8eec3",
+    "src/boardsnap/segmentation.py": "eb0eccb596491a4ea1602b90baa8e491ff6f53932e88536495678fd59c603127"
+  },
+  "transportParity": {
+    "passed": true,
+    "caseCount": 8,
+    "source": ".cache/http-adapter-v1/https-parity-final.json",
+    "sha256": "394c3fe3c57646b502f504431be76e2f48a26c85ea819811ac139d5137bc3f93",
+    "cases": [
+      {
+        "id": "digital-white-bottom",
+        "mode": "digital",
+        "orientation": "white-bottom",
+        "status": 200,
+        "result": {
+          "piecePlacement": "r3rk2/pb1n2pR/1p1qp1P1/5p2/3Pp1Q1/P2BP3/1P3PP1/R3K3"
+        },
+        "parityPassed": true
+      },
+      {
+        "id": "photo-white-bottom",
+        "mode": "photo",
+        "orientation": "white-bottom",
+        "status": 200,
+        "result": {
+          "piecePlacement": "rn1qkb1r/ppp2ppp/3p1n2/4p3/4PP2/2N2b1P/PPPP2P1/R1BQKB1R"
+        },
+        "parityPassed": true
+      },
+      {
+        "id": "digital-black-bottom",
+        "mode": "digital",
+        "orientation": "black-bottom",
+        "status": 200,
+        "result": {
+          "piecePlacement": "r4rk1/p4ppp/2q1p3/4P3/2p3Nn/2Q2P2/P3KP1P/R6R"
+        },
+        "parityPassed": true
+      },
+      {
+        "id": "photo-black-bottom",
+        "mode": "photo",
+        "orientation": "black-bottom",
+        "status": 200,
+        "result": {
+          "piecePlacement": "r1bq1rk1/ppp2pbp/2np1np1/8/3P1B2/2PBPN2/PP3PPP/RN1Q1RK1"
+        },
+        "parityPassed": true
+      },
+      {
+        "id": "digital-no-board",
+        "mode": "digital",
+        "orientation": "white-bottom",
+        "status": 422,
+        "result": {
+          "error": {
+            "code": "BOARD_NOT_FOUND",
+            "message": "No supported chessboard was detected in the image."
+          }
+        },
+        "parityPassed": true
+      },
+      {
+        "id": "digital-corrupt",
+        "mode": "digital",
+        "orientation": "white-bottom",
+        "status": 422,
+        "result": {
+          "error": {
+            "code": "INVALID_IMAGE",
+            "message": "The file is not a valid, fully decodable image."
+          }
+        },
+        "parityPassed": true
+      },
+      {
+        "id": "photo-no-board",
+        "mode": "photo",
+        "orientation": "white-bottom",
+        "status": 422,
+        "result": {
+          "error": {
+            "code": "BOARD_NOT_FOUND",
+            "message": "No complete supported photographic chessboard was detected."
+          }
+        },
+        "parityPassed": true
+      },
+      {
+        "id": "photo-corrupt",
+        "mode": "photo",
+        "orientation": "white-bottom",
+        "status": 422,
+        "result": {
+          "error": {
+            "code": "INVALID_IMAGE",
+            "message": "The file is not a valid, fully decodable image."
+          }
+        },
+        "parityPassed": true
+      }
+    ]
+  },
+  "realRequestChecks": {
+    "passed": true,
+    "caseCount": 13,
+    "source": ".cache/http-adapter-v1/request-checks.json",
+    "sha256": "1050d22e3516795060ca4efd8b652ef77d094c9a149e6f43934f454f8473ade8",
+    "records": [
+      {
+        "id": "missing-orientation",
+        "status": 400,
+        "result": {
+          "error": {
+            "code": "INVALID_REQUEST",
+            "message": "Provide exactly one image, inputType and orientation."
+          }
+        }
+      },
+      {
+        "id": "photo-auto",
+        "status": 400,
+        "result": {
+          "error": {
+            "code": "INVALID_REQUEST",
+            "message": "Photographs require an explicit orientation."
+          }
+        }
+      },
+      {
+        "id": "unknown-field",
+        "status": 400,
+        "result": {
+          "error": {
+            "code": "INVALID_REQUEST",
+            "message": "Invalid multipart request."
+          }
+        }
+      },
+      {
+        "id": "duplicate-field",
+        "status": 400,
+        "result": {
+          "error": {
+            "code": "INVALID_REQUEST",
+            "message": "Invalid multipart request."
+          }
+        }
+      },
+      {
+        "id": "extra-file",
+        "status": 400,
+        "result": {
+          "error": {
+            "code": "INVALID_REQUEST",
+            "message": "Invalid multipart request."
+          }
+        }
+      },
+      {
+        "id": "malformed-multipart",
+        "status": 400,
+        "result": {
+          "error": {
+            "code": "INVALID_REQUEST",
+            "message": "Invalid multipart request."
+          }
+        }
+      },
+      {
+        "id": "wrong-content-type",
+        "status": 400,
+        "result": {
+          "error": {
+            "code": "INVALID_REQUEST",
+            "message": "Expected multipart/form-data."
+          }
+        }
+      },
+      {
+        "id": "empty-image",
+        "status": 422,
+        "result": {
+          "error": {
+            "code": "INVALID_IMAGE",
+            "message": "The image file is empty."
+          }
+        }
+      },
+      {
+        "id": "unsupported-format",
+        "status": 422,
+        "result": {
+          "error": {
+            "code": "UNSUPPORTED_IMAGE",
+            "message": "Only static PNG and JPEG images are supported."
+          }
+        }
+      },
+      {
+        "id": "file-limit",
+        "status": 413,
+        "result": {
+          "error": {
+            "code": "PAYLOAD_TOO_LARGE",
+            "message": "Image exceeds the 20 MiB upload limit."
+          }
+        }
+      },
+      {
+        "id": "body-limit",
+        "status": 413,
+        "result": {
+          "error": {
+            "code": "PAYLOAD_TOO_LARGE",
+            "message": "Request exceeds the 21 MiB body limit."
+          }
+        }
+      },
+      {
+        "id": "allowed-cors",
+        "status": 200
+      },
+      {
+        "id": "rejected-cors",
+        "status": 400
+      }
+    ]
+  },
+  "tests": {
+    "passed": 97,
+    "command": "python -m pytest tests/test_http_adapter.py tests/test_http_contract.py tests/test_http_cli_probe.py tests/test_local_trial.py tests/test_cli.py tests/test_photo_pipeline.py -q",
+    "warnings": [
+      "Starlette testclient deprecates the installed httpx transport in favor of httpx2; tests pass."
+    ]
+  },
+  "versions": {
+    "starlette": "1.10.0",
+    "uvicorn": "0.54.0",
+    "python-multipart": "0.0.34",
+    "httpx": "0.28.1",
+    "torch": "2.14.1+cpu",
+    "boardsnap": "0.1.0.dev1"
+  },
+  "implementationSha256": {
+    "src/boardsnap/adapters/http.py": "9112e97885bbb11cce6bbd6123b4605daf2f613939fc4cb4ae11eccd99814b3f",
+    "tools/check_http_requests.py": "a512883a48c86d3e9692a733fefd7074c270a7145b6ce6266c9d931ea718d063",
+    "pyproject.toml": "ef2cc4770af88e5f38344fb7a9d0dd78ef600b16451711fa3a23f499d3969744"
+  },
+  "dependenciesChecked": true,
+  "trainingRun": false,
+  "finalEvaluationAccessed": false,
+  "recognitionQualityAccepted": false,
+  "pending": [
+    "Public service deployment and trusted public TLS/domain.",
+    "Actual Flutter Android/iOS/web client tests.",
+    "Deployment authentication/quotas/deadlines/capacity decisions.",
+    "Independent recognition acceptance."
+  ]
+}

@@ -1,0 +1,1205 @@
+{
+  "schemaVersion": 1,
+  "reportId": "targeted-photo-regressions-v1",
+  "inputs": {
+    "appearanceManifest": {
+      "path": "data/manifests/phone-validation-appearance-v1.json",
+      "sha256": "c74d2a53ea611577f5d155b590f0f26ea4bd52930641a2e13d12d41c0a3cbc9e"
+    },
+    "phone": {
+      "path": ".cache/neural-phone-targeted-v1/phone-validation.json",
+      "sha256": "a84434385b5f123e80ef7366b8277964d76f91c1f1c849a7781c5d6e23180911",
+      "datasetSha256": "8f413689357c4beb07fa199b65827d360ed9d6c955c9b90d16916b70bb618697",
+      "indexSha256": "b2ea9e3d361bab16f78602318213e57989092392b4ec80ddcda035514db394a8"
+    },
+    "digital": {
+      "path": ".cache/neural-phone-targeted-v1/digital-validation.json",
+      "sha256": "7d9e617d492a7ba319c113c3fb9139348fb175db215ab24c156258d0af4983ef",
+      "datasetSha256": "7cae41fdb1b28e7dc8442c70a01cc5c473ee47f7c206cdfcc9ec0cb715842525",
+      "indexSha256": "9bfe8473346998df5df546c7a74c449d14d9db1ad34669dc390e527993172f4a"
+    },
+    "training": {
+      "path": ".cache/neural-phone-targeted-v1/training.json",
+      "sha256": "d8b7e79e87c870fb4cba8f6d60d8cf1cc2c8a13b358584fc0a1d6b5ab7468705"
+    },
+    "baselineTraining": {
+      "path": ".cache/neural-phone-v1/training.json",
+      "sha256": "79a9d1a549944f9d0dee42377d09a074abcdc96600b44eebb2e34de7e7718132"
+    },
+    "trainingIndex": {
+      "path": ".cache/phone-targeted-training-v1/training.jsonl",
+      "sha256": "0af4c88ce775634e6c0168d1e3b47892e991812dd627a87bce9f3ee770d0e165"
+    }
+  },
+  "scope": "Saved validation predictions and original verified crop archives; no detection rerun, inference, training or final evaluation.",
+  "summary": {
+    "phone": {
+      "validationBoards": 30,
+      "lostExactBoards": 2,
+      "changedSquares": {
+        "changed-error": 2,
+        "recovery": 12,
+        "regression": 10
+      },
+      "newFalsePieces": 9,
+      "changes": [
+        {
+          "image": ".cache/phone-validation-v1/images/chesscom-img_5396.png",
+          "index": 28,
+          "square": "e5",
+          "expected": "b",
+          "baseline": "B",
+          "candidate": "k",
+          "change": "changed-error"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/chesscom-img_5397.png",
+          "index": 3,
+          "square": "d8",
+          "expected": "q",
+          "baseline": "p",
+          "candidate": "Q",
+          "change": "changed-error"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/chesscom-img_5397.png",
+          "index": 29,
+          "square": "f5",
+          "expected": "b",
+          "baseline": "B",
+          "candidate": "b",
+          "change": "recovery"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/chesscom-img_5397.png",
+          "index": 37,
+          "square": "f4",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "q",
+          "change": "regression"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/chesscom-img_5397.png",
+          "index": 44,
+          "square": "e3",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "n",
+          "change": "regression"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/chesscom-img_5398.png",
+          "index": 20,
+          "square": "e6",
+          "expected": "p",
+          "baseline": "empty",
+          "candidate": "p",
+          "change": "recovery"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/chesscom-img_5398.png",
+          "index": 44,
+          "square": "e3",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "n",
+          "change": "regression"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/chesscom-img_5399.png",
+          "index": 5,
+          "square": "f8",
+          "expected": "b",
+          "baseline": "B",
+          "candidate": "b",
+          "change": "recovery"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/chesscom-img_5401.png",
+          "index": 9,
+          "square": "b7",
+          "expected": "p",
+          "baseline": "empty",
+          "candidate": "p",
+          "change": "recovery"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/chesscom-img_5401.png",
+          "index": 10,
+          "square": "c7",
+          "expected": "p",
+          "baseline": "empty",
+          "candidate": "p",
+          "change": "recovery"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/chesscom-img_5401.png",
+          "index": 20,
+          "square": "e6",
+          "expected": "p",
+          "baseline": "empty",
+          "candidate": "p",
+          "change": "recovery"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/chesscom-img_5401.png",
+          "index": 21,
+          "square": "f6",
+          "expected": "n",
+          "baseline": "N",
+          "candidate": "n",
+          "change": "recovery"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/chesscom-img_5401.png",
+          "index": 28,
+          "square": "e5",
+          "expected": "n",
+          "baseline": "N",
+          "candidate": "n",
+          "change": "recovery"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/chesscom-img_5402.png",
+          "index": 10,
+          "square": "c7",
+          "expected": "p",
+          "baseline": "empty",
+          "candidate": "p",
+          "change": "recovery"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/lichess-img_5388.png",
+          "index": 3,
+          "square": "d8",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "q",
+          "change": "regression"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/lichess-img_5390.png",
+          "index": 3,
+          "square": "d8",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "q",
+          "change": "regression"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/lichess-img_5392.png",
+          "index": 8,
+          "square": "a7",
+          "expected": "p",
+          "baseline": "p",
+          "candidate": "r",
+          "change": "regression"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/lichess-img_5392.png",
+          "index": 26,
+          "square": "c5",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "q",
+          "change": "regression"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/lichess-img_5392.png",
+          "index": 60,
+          "square": "e1",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "q",
+          "change": "regression"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/video-img_5403.png",
+          "index": 3,
+          "square": "d8",
+          "expected": "q",
+          "baseline": "n",
+          "candidate": "q",
+          "change": "recovery"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/video-img_5403.png",
+          "index": 59,
+          "square": "d1",
+          "expected": "R",
+          "baseline": "empty",
+          "candidate": "R",
+          "change": "recovery"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/video-img_5404.png",
+          "index": 35,
+          "square": "d4",
+          "expected": "P",
+          "baseline": "N",
+          "candidate": "P",
+          "change": "recovery"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/video-img_5404.png",
+          "index": 36,
+          "square": "e4",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "K",
+          "change": "regression"
+        },
+        {
+          "image": ".cache/phone-validation-v1/images/video-img_5404.png",
+          "index": 44,
+          "square": "e3",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "n",
+          "change": "regression"
+        }
+      ]
+    },
+    "digital": {
+      "validationBoards": 3132,
+      "lostExactBoards": 9,
+      "changedSquares": {
+        "regression": 10
+      },
+      "newFalsePieces": 9,
+      "changes": [
+        {
+          "image": ".cache/digital-arrow-captures-v1/arrow-piece/clean/clean-lichess-green-cburnett-standard-sequence-004/validation/lichess-green-cburnett-standard/digital-014-black-bottom.png",
+          "index": 22,
+          "square": "g6",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "P",
+          "change": "regression"
+        },
+        {
+          "image": ".cache/digital-arrow-captures-v1/arrow-combined/clean/clean-chesscom-green-neo-standard-sequence-009/validation/chesscom-green-neo-standard/digital-034-black-bottom.png",
+          "index": 25,
+          "square": "b5",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "K",
+          "change": "regression"
+        },
+        {
+          "image": ".cache/digital-arrow-captures-v1/arrow-piece/clean/clean-lichess-green-alpha-standard-sequence-009/validation/lichess-green-alpha-standard/digital-034-black-bottom.png",
+          "index": 38,
+          "square": "g4",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "P",
+          "change": "regression"
+        },
+        {
+          "image": ".cache/digital-arrow-captures-v1/arrow-crossed/clean/clean-chesscom-blue-classic-standard-sequence-009/validation/chesscom-blue-classic-standard/digital-036-white-bottom.png",
+          "index": 61,
+          "square": "f1",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "B",
+          "change": "regression"
+        },
+        {
+          "image": ".cache/digital-arrow-captures-v1/arrow-crossed/clean/clean-chesscom-blue-neo-standard-sequence-009/validation/chesscom-blue-neo-standard/digital-036-black-bottom.png",
+          "index": 50,
+          "square": "c2",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "N",
+          "change": "regression"
+        },
+        {
+          "image": ".cache/digital-arrow-captures-v1/arrow-crossed/clean/clean-lichess-blue-merida-compact-sequence-018/validation/lichess-blue-merida-compact/digital-070-white-bottom.png",
+          "index": 35,
+          "square": "d4",
+          "expected": "p",
+          "baseline": "p",
+          "candidate": "b",
+          "change": "regression"
+        },
+        {
+          "image": ".cache/digital-arrow-captures-v1/arrow-crossed/clean/clean-chesscom-brown-bases-standard-sequence-018/validation/chesscom-brown-bases-standard/digital-071-black-bottom.png",
+          "index": 32,
+          "square": "a4",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "N",
+          "change": "regression"
+        },
+        {
+          "image": ".cache/digital-style-derived-v2/marked/lichess-wood4-staunty-standard-arrow-piece/digital-033-white-bottom.png",
+          "index": 15,
+          "square": "h7",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "N",
+          "change": "regression"
+        },
+        {
+          "image": ".cache/digital-style-derived-v2/marked/lichess-wood4-staunty-standard-arrow-crossed/digital-035-white-bottom.png",
+          "index": 3,
+          "square": "d8",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "k",
+          "change": "regression"
+        },
+        {
+          "image": ".cache/digital-style-derived-v2/marked/chesscom-green-alpha-standard-arrow-combined/digital-014-white-bottom.png",
+          "index": 45,
+          "square": "f3",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "K",
+          "change": "regression"
+        }
+      ]
+    }
+  },
+  "lostBoardCases": [
+    {
+      "caseId": "phone-01",
+      "kind": "phone",
+      "image": ".cache/phone-validation-v1/images/lichess-img_5388.png",
+      "positionId": "photo-position-d15402b6b6765dd7",
+      "groupId": "phone-validation-batch-v1",
+      "orientation": "white-bottom",
+      "style": null,
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "arrows",
+        "textured-board",
+        "highlights"
+      ],
+      "marks": [],
+      "array": "validation/lichess-img_5388.npz",
+      "arraySha256": "afc31b1a069902b54116ad84dd2a184547743d1a5711a87771bff2e83e57b838",
+      "changes": [
+        {
+          "index": 3,
+          "square": "d8",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "q",
+          "change": "regression",
+          "pixelSha256": "a67c539d2ac5bcacbc5622411c0d050a72bb9286eb0577d7e1caa2c0b61ea618",
+          "background": "dark"
+        }
+      ],
+      "cleanControl": null,
+      "observedAppearance": {
+        "photoId": "lichess-img_5388",
+        "imageSha256": "6ac52d1a7d5b7cc13b686270d42c69ceb2bbf43e67ffbc82f885d73048114f7b",
+        "pieceAppearance": "lc-classic-a",
+        "boardAppearance": "wood-texture",
+        "displayedPlatform": "lichess",
+        "interface": "browser-page",
+        "platformEvidence": "Direct platform folder and visible interface"
+      },
+      "preview": ".cache/phone-targeted-regressions-v1/phone-01.jpg"
+    },
+    {
+      "caseId": "phone-02",
+      "kind": "phone",
+      "image": ".cache/phone-validation-v1/images/lichess-img_5390.png",
+      "positionId": "photo-position-3e597536551839e0",
+      "groupId": "phone-validation-batch-v1",
+      "orientation": "white-bottom",
+      "style": null,
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "textured-board",
+        "highlights"
+      ],
+      "marks": [],
+      "array": "validation/lichess-img_5390.npz",
+      "arraySha256": "27bf8815f7fc22062a4aa17e266b57795775da540d4e37f59aad09a96ef7ef9d",
+      "changes": [
+        {
+          "index": 3,
+          "square": "d8",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "q",
+          "change": "regression",
+          "pixelSha256": "6008a58ad2ab0cf64ee9a4fece4230f75d36671e9588b2fc2405e15994c9970b",
+          "background": "dark"
+        }
+      ],
+      "cleanControl": null,
+      "observedAppearance": {
+        "photoId": "lichess-img_5390",
+        "imageSha256": "a03cfa6333c0bbcc747022f68711eb59788b5fcb7f81847ca7f3831a4093368c",
+        "pieceAppearance": "lc-classic-b",
+        "boardAppearance": "wood-texture",
+        "displayedPlatform": "lichess",
+        "interface": "browser-page",
+        "platformEvidence": "Direct platform folder and visible interface"
+      },
+      "preview": ".cache/phone-targeted-regressions-v1/phone-02.jpg"
+    },
+    {
+      "caseId": "digital-01",
+      "kind": "digital",
+      "image": ".cache/digital-arrow-captures-v1/arrow-piece/clean/clean-lichess-green-cburnett-standard-sequence-004/validation/lichess-green-cburnett-standard/digital-014-black-bottom.png",
+      "positionId": "digital-014",
+      "groupId": "sequence-004",
+      "orientation": "black-bottom",
+      "style": {
+        "platform": "lichess",
+        "pieces": "cburnett",
+        "background": "green",
+        "combination": "lichess-green-cburnett",
+        "layout": "lichess-editor",
+        "client": "desktop-web"
+      },
+      "conditions": [
+        "arrow"
+      ],
+      "marks": [
+        {
+          "kind": "arrow",
+          "from": "f6",
+          "to": "g6",
+          "path": "straight",
+          "width": 0.22,
+          "rgba": [
+            215,
+            50,
+            65,
+            192
+          ]
+        }
+      ],
+      "array": "previous/verified/validation/lichess-green-cburnett-standard-arrow-piece/digital-014-black-bottom.npz",
+      "arraySha256": "6a3e61a0866ed22741aafb66ad8a3f61dc43e2f37f14322288ff664ccf297253",
+      "changes": [
+        {
+          "index": 22,
+          "square": "g6",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "P",
+          "change": "regression",
+          "pixelSha256": "5e1e653a287d425e53764d358b618dc2b40babb0221a1912ed4ce360371f626b",
+          "background": "light"
+        }
+      ],
+      "cleanControl": {
+        "image": ".cache/digital-arrow-captures-v1/controls/clean/clean-lichess-green-cburnett-standard-sequence-004/validation/lichess-green-cburnett-standard/digital-014-black-bottom.png",
+        "baselineExact": true,
+        "candidateExact": true,
+        "affectedCellPredictions": [
+          {
+            "square": "g6",
+            "baseline": "empty",
+            "candidate": "empty"
+          }
+        ]
+      },
+      "preview": ".cache/phone-targeted-regressions-v1/digital-01.jpg"
+    },
+    {
+      "caseId": "digital-02",
+      "kind": "digital",
+      "image": ".cache/digital-arrow-captures-v1/arrow-combined/clean/clean-chesscom-green-neo-standard-sequence-009/validation/chesscom-green-neo-standard/digital-034-black-bottom.png",
+      "positionId": "digital-034",
+      "groupId": "sequence-009",
+      "orientation": "black-bottom",
+      "style": {
+        "platform": "chesscom",
+        "pieces": "neo",
+        "background": "green",
+        "combination": "chesscom-green-neo",
+        "layout": "chesscom-analysis",
+        "client": "desktop-web"
+      },
+      "conditions": [
+        "last-move",
+        "circle",
+        "arrow"
+      ],
+      "marks": [
+        {
+          "kind": "last-move",
+          "squares": [
+            "b4",
+            "b5"
+          ],
+          "rgba": [
+            205,
+            210,
+            0,
+            72
+          ]
+        },
+        {
+          "kind": "circle",
+          "squares": [
+            "b5"
+          ],
+          "rgba": [
+            28,
+            154,
+            60,
+            190
+          ]
+        },
+        {
+          "kind": "arrow",
+          "from": "b4",
+          "to": "b5",
+          "path": "straight",
+          "width": 0.14,
+          "rgba": [
+            30,
+            160,
+            65,
+            192
+          ]
+        }
+      ],
+      "array": "previous/verified/validation/chesscom-green-neo-standard-arrow-combined/digital-034-black-bottom.npz",
+      "arraySha256": "3b61f045831dc3f459bf28423408a975f2cd4c1d9143e2f7b75567a6d5e01e9e",
+      "changes": [
+        {
+          "index": 25,
+          "square": "b5",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "K",
+          "change": "regression",
+          "pixelSha256": "f28a9d11f13a49b8e8b94f3312c0e1f98441fccdcf266734fffd4ddceca88ee9",
+          "background": "light"
+        }
+      ],
+      "cleanControl": {
+        "image": ".cache/digital-arrow-captures-v1/controls/clean/clean-chesscom-green-neo-standard-sequence-009/validation/chesscom-green-neo-standard/digital-034-black-bottom.png",
+        "baselineExact": true,
+        "candidateExact": true,
+        "affectedCellPredictions": [
+          {
+            "square": "b5",
+            "baseline": "empty",
+            "candidate": "empty"
+          }
+        ]
+      },
+      "preview": ".cache/phone-targeted-regressions-v1/digital-02.jpg"
+    },
+    {
+      "caseId": "digital-03",
+      "kind": "digital",
+      "image": ".cache/digital-arrow-captures-v1/arrow-piece/clean/clean-lichess-green-alpha-standard-sequence-009/validation/lichess-green-alpha-standard/digital-034-black-bottom.png",
+      "positionId": "digital-034",
+      "groupId": "sequence-009",
+      "orientation": "black-bottom",
+      "style": {
+        "platform": "lichess",
+        "pieces": "alpha",
+        "background": "green",
+        "combination": "lichess-green-alpha",
+        "layout": "lichess-editor",
+        "client": "desktop-web"
+      },
+      "conditions": [
+        "arrow"
+      ],
+      "marks": [
+        {
+          "kind": "arrow",
+          "from": "e4",
+          "to": "g4",
+          "path": "straight",
+          "width": 0.22,
+          "rgba": [
+            215,
+            50,
+            65,
+            192
+          ]
+        }
+      ],
+      "array": "previous/verified/validation/lichess-green-alpha-standard-arrow-piece/digital-034-black-bottom.npz",
+      "arraySha256": "e8f9c58690fc829e2d1d1602f00b48f8778a635c937e2081730a580d5a6a3a8b",
+      "changes": [
+        {
+          "index": 38,
+          "square": "g4",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "P",
+          "change": "regression",
+          "pixelSha256": "5e1e653a287d425e53764d358b618dc2b40babb0221a1912ed4ce360371f626b",
+          "background": "light"
+        }
+      ],
+      "cleanControl": {
+        "image": ".cache/digital-arrow-captures-v1/controls/clean/clean-lichess-green-alpha-standard-sequence-009/validation/lichess-green-alpha-standard/digital-034-black-bottom.png",
+        "baselineExact": true,
+        "candidateExact": true,
+        "affectedCellPredictions": [
+          {
+            "square": "g4",
+            "baseline": "empty",
+            "candidate": "empty"
+          }
+        ]
+      },
+      "preview": ".cache/phone-targeted-regressions-v1/digital-03.jpg"
+    },
+    {
+      "caseId": "digital-04",
+      "kind": "digital",
+      "image": ".cache/digital-arrow-captures-v1/arrow-crossed/clean/clean-chesscom-blue-classic-standard-sequence-009/validation/chesscom-blue-classic-standard/digital-036-white-bottom.png",
+      "positionId": "digital-036",
+      "groupId": "sequence-009",
+      "orientation": "white-bottom",
+      "style": {
+        "platform": "chesscom",
+        "pieces": "classic",
+        "background": "blue",
+        "combination": "chesscom-blue-classic",
+        "layout": "chesscom-analysis",
+        "client": "desktop-web"
+      },
+      "conditions": [
+        "arrow"
+      ],
+      "marks": [
+        {
+          "kind": "arrow",
+          "from": "d3",
+          "to": "h3",
+          "path": "straight",
+          "width": 0.22,
+          "rgba": [
+            30,
+            160,
+            65,
+            96
+          ]
+        },
+        {
+          "kind": "arrow",
+          "from": "f5",
+          "to": "f1",
+          "path": "straight",
+          "width": 0.08,
+          "rgba": [
+            30,
+            160,
+            65,
+            192
+          ]
+        }
+      ],
+      "array": "previous/verified/validation/chesscom-blue-classic-standard-arrow-crossed/digital-036-white-bottom.npz",
+      "arraySha256": "1175af943eea1764d1b78641305eff3690854a1bf83f527f9cbf979472f9c4e9",
+      "changes": [
+        {
+          "index": 61,
+          "square": "f1",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "B",
+          "change": "regression",
+          "pixelSha256": "3336dd9adc2ec52888a35fac98f9935c0147f55b731353676fa49a5d88827800",
+          "background": "light"
+        }
+      ],
+      "cleanControl": {
+        "image": ".cache/digital-arrow-captures-v1/controls/clean/clean-chesscom-blue-classic-standard-sequence-009/validation/chesscom-blue-classic-standard/digital-036-white-bottom.png",
+        "baselineExact": true,
+        "candidateExact": true,
+        "affectedCellPredictions": [
+          {
+            "square": "f1",
+            "baseline": "empty",
+            "candidate": "empty"
+          }
+        ]
+      },
+      "preview": ".cache/phone-targeted-regressions-v1/digital-04.jpg"
+    },
+    {
+      "caseId": "digital-05",
+      "kind": "digital",
+      "image": ".cache/digital-arrow-captures-v1/arrow-crossed/clean/clean-chesscom-blue-neo-standard-sequence-009/validation/chesscom-blue-neo-standard/digital-036-black-bottom.png",
+      "positionId": "digital-036",
+      "groupId": "sequence-009",
+      "orientation": "black-bottom",
+      "style": {
+        "platform": "chesscom",
+        "pieces": "neo",
+        "background": "blue",
+        "combination": "chesscom-blue-neo",
+        "layout": "chesscom-analysis",
+        "client": "desktop-web"
+      },
+      "conditions": [
+        "arrow"
+      ],
+      "marks": [
+        {
+          "kind": "arrow",
+          "from": "c6",
+          "to": "g2",
+          "path": "straight",
+          "width": 0.08,
+          "rgba": [
+            215,
+            50,
+            65,
+            96
+          ]
+        },
+        {
+          "kind": "arrow",
+          "from": "c2",
+          "to": "g6",
+          "path": "straight",
+          "width": 0.22,
+          "rgba": [
+            215,
+            50,
+            65,
+            192
+          ]
+        }
+      ],
+      "array": "previous/verified/validation/chesscom-blue-neo-standard-arrow-crossed/digital-036-black-bottom.npz",
+      "arraySha256": "92e12f4126156d2246630ca40e38f7d63ec17ecf008a2794be52602f255457fc",
+      "changes": [
+        {
+          "index": 50,
+          "square": "c2",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "N",
+          "change": "regression",
+          "pixelSha256": "8951a416c3772789d3b86c998f0e77693b7387abba364637e58f21c57dec1898",
+          "background": "light"
+        }
+      ],
+      "cleanControl": {
+        "image": ".cache/digital-arrow-captures-v1/controls/clean/clean-chesscom-blue-neo-standard-sequence-009/validation/chesscom-blue-neo-standard/digital-036-black-bottom.png",
+        "baselineExact": true,
+        "candidateExact": true,
+        "affectedCellPredictions": [
+          {
+            "square": "c2",
+            "baseline": "empty",
+            "candidate": "empty"
+          }
+        ]
+      },
+      "preview": ".cache/phone-targeted-regressions-v1/digital-05.jpg"
+    },
+    {
+      "caseId": "digital-06",
+      "kind": "digital",
+      "image": ".cache/digital-arrow-captures-v1/arrow-crossed/clean/clean-lichess-blue-merida-compact-sequence-018/validation/lichess-blue-merida-compact/digital-070-white-bottom.png",
+      "positionId": "digital-070",
+      "groupId": "sequence-018",
+      "orientation": "white-bottom",
+      "style": {
+        "platform": "lichess",
+        "pieces": "merida",
+        "background": "blue",
+        "combination": "lichess-blue-merida",
+        "layout": "lichess-editor",
+        "client": "desktop-web"
+      },
+      "conditions": [
+        "arrow"
+      ],
+      "marks": [
+        {
+          "kind": "arrow",
+          "from": "b4",
+          "to": "f4",
+          "path": "straight",
+          "width": 0.08,
+          "rgba": [
+            45,
+            110,
+            220,
+            144
+          ]
+        },
+        {
+          "kind": "arrow",
+          "from": "d6",
+          "to": "d2",
+          "path": "straight",
+          "width": 0.22,
+          "rgba": [
+            240,
+            145,
+            25,
+            192
+          ]
+        }
+      ],
+      "array": "previous/verified/validation/lichess-blue-merida-compact-arrow-crossed/digital-070-white-bottom.npz",
+      "arraySha256": "15d4dfed838aaea479fb2593bbf35a9fc1d4851f71c6e8fe91b02dde2c1cd9da",
+      "changes": [
+        {
+          "index": 35,
+          "square": "d4",
+          "expected": "p",
+          "baseline": "p",
+          "candidate": "b",
+          "change": "regression",
+          "pixelSha256": "ef4c7d58beae5060c789fd3a88fcb85dbde10575a3cff832a3544b02bd8e6b9d",
+          "background": "dark"
+        }
+      ],
+      "cleanControl": {
+        "image": ".cache/digital-arrow-captures-v1/controls/clean/clean-lichess-blue-merida-compact-sequence-018/validation/lichess-blue-merida-compact/digital-070-white-bottom.png",
+        "baselineExact": true,
+        "candidateExact": true,
+        "affectedCellPredictions": [
+          {
+            "square": "d4",
+            "baseline": "p",
+            "candidate": "p"
+          }
+        ]
+      },
+      "preview": ".cache/phone-targeted-regressions-v1/digital-06.jpg"
+    },
+    {
+      "caseId": "digital-07",
+      "kind": "digital",
+      "image": ".cache/digital-style-derived-v2/marked/lichess-wood4-staunty-standard-arrow-piece/digital-033-white-bottom.png",
+      "positionId": "digital-033",
+      "groupId": "sequence-009",
+      "orientation": "white-bottom",
+      "style": {
+        "platform": "lichess",
+        "pieces": "staunty",
+        "background": "wood4",
+        "combination": "lichess-wood4-staunty",
+        "layout": "lichess-editor",
+        "client": "desktop-web"
+      },
+      "conditions": [
+        "arrow"
+      ],
+      "marks": [
+        {
+          "kind": "arrow",
+          "from": "h7",
+          "to": "d3",
+          "path": "straight",
+          "width": 0.14,
+          "rgba": [
+            215,
+            50,
+            65,
+            192
+          ]
+        }
+      ],
+      "array": "expansion/verified/validation/lichess-wood4-staunty-standard-arrow-piece/digital-033-white-bottom.npz",
+      "arraySha256": "3fe2816eecd45ebd993c39efc25468a2b417aaea728132fc0bdf61e801cf103b",
+      "changes": [
+        {
+          "index": 15,
+          "square": "h7",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "N",
+          "change": "regression",
+          "pixelSha256": "041017d85212b753e20a0b843f4bab91338ab7baee241997fdf1df2450f069f4",
+          "background": "light"
+        }
+      ],
+      "cleanControl": {
+        "image": ".cache/digital-style-derived-v2/clean/lichess-wood4-staunty-standard/digital-033-white-bottom.png",
+        "baselineExact": true,
+        "candidateExact": true,
+        "affectedCellPredictions": [
+          {
+            "square": "h7",
+            "baseline": "empty",
+            "candidate": "empty"
+          }
+        ]
+      },
+      "preview": ".cache/phone-targeted-regressions-v1/digital-07.jpg"
+    },
+    {
+      "caseId": "digital-08",
+      "kind": "digital",
+      "image": ".cache/digital-style-derived-v2/marked/lichess-wood4-staunty-standard-arrow-crossed/digital-035-white-bottom.png",
+      "positionId": "digital-035",
+      "groupId": "sequence-009",
+      "orientation": "white-bottom",
+      "style": {
+        "platform": "lichess",
+        "pieces": "staunty",
+        "background": "wood4",
+        "combination": "lichess-wood4-staunty",
+        "layout": "lichess-editor",
+        "client": "desktop-web"
+      },
+      "conditions": [
+        "arrow"
+      ],
+      "marks": [
+        {
+          "kind": "arrow",
+          "from": "b6",
+          "to": "f6",
+          "path": "straight",
+          "width": 0.08,
+          "rgba": [
+            45,
+            110,
+            220,
+            96
+          ]
+        },
+        {
+          "kind": "arrow",
+          "from": "d8",
+          "to": "d4",
+          "path": "straight",
+          "width": 0.14,
+          "rgba": [
+            240,
+            145,
+            25,
+            144
+          ]
+        }
+      ],
+      "array": "expansion/verified/validation/lichess-wood4-staunty-standard-arrow-crossed/digital-035-white-bottom.npz",
+      "arraySha256": "e87b9221e886ac1a7f3c6594cc9edcc6b0ab7ad2c5099947ec9469761da73a5a",
+      "changes": [
+        {
+          "index": 3,
+          "square": "d8",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "k",
+          "change": "regression",
+          "pixelSha256": "4b2b55de5aa5b26e6421e8b02223a67f319b9b15b4e2213fa5dc45117947e0ca",
+          "background": "dark"
+        }
+      ],
+      "cleanControl": {
+        "image": ".cache/digital-style-derived-v2/clean/lichess-wood4-staunty-standard/digital-035-white-bottom.png",
+        "baselineExact": true,
+        "candidateExact": true,
+        "affectedCellPredictions": [
+          {
+            "square": "d8",
+            "baseline": "empty",
+            "candidate": "empty"
+          }
+        ]
+      },
+      "preview": ".cache/phone-targeted-regressions-v1/digital-08.jpg"
+    },
+    {
+      "caseId": "digital-09",
+      "kind": "digital",
+      "image": ".cache/digital-style-derived-v2/marked/chesscom-green-alpha-standard-arrow-combined/digital-014-white-bottom.png",
+      "positionId": "digital-014",
+      "groupId": "sequence-004",
+      "orientation": "white-bottom",
+      "style": {
+        "platform": "chesscom",
+        "pieces": "alpha",
+        "background": "green",
+        "combination": "chesscom-green-alpha",
+        "layout": "chesscom-analysis",
+        "client": "desktop-web"
+      },
+      "conditions": [
+        "last-move",
+        "circle",
+        "arrow"
+      ],
+      "marks": [
+        {
+          "kind": "last-move",
+          "squares": [
+            "h5",
+            "f3"
+          ],
+          "rgba": [
+            205,
+            210,
+            0,
+            72
+          ]
+        },
+        {
+          "kind": "circle",
+          "squares": [
+            "f3"
+          ],
+          "rgba": [
+            28,
+            154,
+            60,
+            190
+          ]
+        },
+        {
+          "kind": "arrow",
+          "from": "h5",
+          "to": "f3",
+          "path": "straight",
+          "width": 0.22,
+          "rgba": [
+            30,
+            160,
+            65,
+            192
+          ]
+        }
+      ],
+      "array": "expansion/verified/validation/chesscom-green-alpha-standard-arrow-combined/digital-014-white-bottom.npz",
+      "arraySha256": "63913b2a7c6f63f06aeafaedbcf99ea4cea6b09e3045604b340c045e0b93927b",
+      "changes": [
+        {
+          "index": 45,
+          "square": "f3",
+          "expected": "empty",
+          "baseline": "empty",
+          "candidate": "K",
+          "change": "regression",
+          "pixelSha256": "39c72f4cbbe8c5a361e8732c0d1879bd58450647f6cc0303f31146f86b98f5e0",
+          "background": "light"
+        }
+      ],
+      "cleanControl": {
+        "image": ".cache/digital-style-derived-v2/clean/chesscom-green-alpha-standard/digital-014-white-bottom.png",
+        "baselineExact": true,
+        "candidateExact": true,
+        "affectedCellPredictions": [
+          {
+            "square": "f3",
+            "baseline": "empty",
+            "candidate": "empty"
+          }
+        ]
+      },
+      "preview": ".cache/phone-targeted-regressions-v1/digital-09.jpg"
+    }
+  ],
+  "trainingContext": {
+    "composition": {
+      "previous": {
+        "boards": 160,
+        "classCounts": {
+          "r": 289,
+          "n": 180,
+          "b": 223,
+          "q": 140,
+          "k": 160,
+          "empty": 6270,
+          "p": 1009,
+          "P": 996,
+          "B": 195,
+          "N": 193,
+          "R": 275,
+          "Q": 150,
+          "K": 160
+        }
+      },
+      "targeted": {
+        "boards": 24,
+        "classCounts": {
+          "r": 48,
+          "empty": 867,
+          "k": 24,
+          "p": 171,
+          "n": 36,
+          "R": 48,
+          "P": 171,
+          "b": 36,
+          "B": 39,
+          "K": 24,
+          "q": 21,
+          "Q": 18,
+          "N": 33
+        }
+      }
+    },
+    "baselineClassWeights": {
+      "empty": 0.1256287544965744,
+      "P": 0.7908557057380676,
+      "N": 4.081307411193848,
+      "B": 4.039447784423828,
+      "R": 2.864335775375366,
+      "Q": 5.251282215118408,
+      "K": 4.92307710647583,
+      "p": 0.7806662917137146,
+      "n": 4.376068592071533,
+      "b": 3.532252550125122,
+      "r": 2.725579023361206,
+      "q": 5.626373767852783,
+      "k": 4.92307710647583
+    },
+    "candidateClassWeights": {
+      "empty": 0.12692253291606903,
+      "P": 0.7762177586555481,
+      "N": 4.008168697357178,
+      "B": 3.8711373805999756,
+      "R": 2.8044772148132324,
+      "Q": 5.391941547393799,
+      "K": 4.92307710647583,
+      "p": 0.767666220664978,
+      "n": 4.193732261657715,
+      "b": 3.4974753856658936,
+      "r": 2.6879708766937256,
+      "q": 5.626373767852783,
+      "k": 4.92307710647583
+    },
+    "distillation": {
+      "teacherSha256": "bca969fc9fb42811a5daa4c11b968c68f805cb0b1404604b7fb6d5486dc8c60e",
+      "dataVersion": {
+        "datasetId": "phone-training-v1",
+        "manifestSha256": "0d95e16c39c5c08c73526cc9cc0ce6a68edce3d7616417520a82dd8260bffafa",
+        "verifiedIndexSha256": "78d6b03a9ad0fa381ca2e7e67a11692c340fb94a5e53655b019bfbf75194dfe4",
+        "trainingBoards": 160,
+        "trainingSquares": 10240,
+        "validationBoards": 30,
+        "markedCellsOnlyInTraining": false,
+        "trainingCodeSha256": "5471c8939e8031ede5ca49789a94ebc46fc9540ae8c53de465f8653e7a5a5bea",
+        "dataLoaderCodeSha256": "825cc064ec7d77b49075bf86657c6427d1a0e9a6f3484f28b818d1c08737a8ff",
+        "modelCodeSha256": "1953f32f7fb4cc25ec63cae0302ddfeda927f6d9373eadf2541cb7f70950c13f"
+      },
+      "temperature": 2,
+      "weight": 1,
+      "trainingMaskSha256": "e52f94499e06e8c995ad99fda21115bdc2840cf5e8814b314d52d092c6c63298",
+      "trainingSquares": 10240,
+      "scope": "teacher predictions on designated training squares only; no validation/evaluation targets"
+    },
+    "digitalTrainingBoardsInThisRun": 0
+  },
+  "lostBoardErrorCount": 11,
+  "lostBoardFalsePieceCount": 10,
+  "uniqueLostCropHashes": 10,
+  "finalEvaluationAccessed": false,
+  "trainingRun": false,
+  "inferenceRun": false,
+  "analysisCodeSha256": "8cdadf86e3ef26c69a18559794c04961339711a4c9e3327719e60cab00c8cf6c"
+}

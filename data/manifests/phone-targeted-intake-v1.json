@@ -1,0 +1,3497 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "phone-targeted-intake-v1",
+  "dataRole": "paired-photographic-development-intake",
+  "reviewedOn": "2026-11-13",
+  "reviewStatus": "paired-intake-and-rectified-geometry-visually-reviewed",
+  "independentFinalEvaluation": false,
+  "readyForTraining": false,
+  "inferenceRun": false,
+  "trainingRun": false,
+  "sourceRoot": ".cache/real-use-tests/training2",
+  "sources": {
+    "plan": {
+      "path": "data/manifests/photo-targeted-pilot-v1.json",
+      "sha256": "796edb910b0dd7981cd5bf1921f15358db68862c3de6d4d834a4230188b5f9d5"
+    },
+    "catalogue": {
+      "path": "data/manifests/photo-catalogue-v1.json",
+      "sha256": "e960e572df52744a14e1adf7121fa57d3c56aa454e158d129bb2c1b9d01249ea"
+    },
+    "errorInventory": {
+      "path": "data/reports/photo-error-inventory-v1.json",
+      "sha256": "33c1b7bc3a212875bd851962ba48a1f8261b66a1db2de364f615b90b62ad0fac"
+    },
+    "existingDevelopment": {
+      "path": "data/manifests/phone-photos-v1.json",
+      "sha256": "44e0f95efaa0afc1b51d1818b8485e90162c40d6cacc59e5f8cf0b6cd9e05e13"
+    },
+    "existingValidation": {
+      "path": "data/manifests/phone-validation-v1.json",
+      "sha256": "d461867923a346e17122ff35bef2bb7c284d9ed1354eab431060887200bfdd4f"
+    }
+  },
+  "conversion": {
+    "method": "tools.prepare_phone_photos.decode_photo",
+    "versions": {
+      "Pillow": "12.3.0",
+      "pillow-heif": "1.8.1"
+    },
+    "originalsUnmodified": true,
+    "normalizedImages": "RGB sRGB with EXIF orientation applied once; lossless PNG. JPEG copies for review only."
+  },
+  "partitionPolicy": "All variants and direct references inherit the same source group. Development-only intake; no promotion to training without source review. Position overlap is checked against registered phone annotations, not all project datasets. Keep consulted validation separate.",
+  "sessions": [
+    {
+      "id": "position1",
+      "plannedSessionId": "session-01",
+      "actualCataloguePairId": "cc-thin-stem-reference-background",
+      "appearanceGroup": "cc-thin-stem",
+      "boardAppearance": "plain-purple",
+      "officialPieceSelector": null,
+      "officialBoardSelector": null,
+      "styleReview": {
+        "status": "visually-matches-local-reference-appearance",
+        "referencePhotoIds": [
+          "chesscom-img_5401",
+          "chesscom-img_5402"
+        ],
+        "settingsScreenshotProvided": false
+      },
+      "source": {
+        "platform": "chesscom",
+        "client": "desktop-web",
+        "gameId": "186750194058",
+        "url": "https://www.chess.com/game/live/186750194058",
+        "moveParameter": "37",
+        "evidenceImageId": "position1-IMG_5470",
+        "method": "visual-browser-address-transcription",
+        "networkLookup": false
+      },
+      "groupId": "chesscom-game-186750194058",
+      "split": "development",
+      "trainingAssignment": "pending-source-overlap-review",
+      "label": {
+        "piecePlacement": "r4rk1/ppp2ppp/2n5/3RPb2/8/5P2/P1PB2PP/5RK1",
+        "orientation": "black-bottom",
+        "visualRows": [
+          ".KR.....",
+          "PP..BP.P",
+          "..P.....",
+          "........",
+          "..bPR...",
+          ".....n..",
+          "ppp..ppp",
+          ".kr....r"
+        ],
+        "status": "visual-transcription",
+        "method": "direct-screenshot-transcription-and-photo-comparison",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "userVerified": false,
+        "referenceImageSha256": "77329198ed946f2b3def9fba0944d1df275ad1597d11b9f88882e9c42cb991c5"
+      },
+      "overlapReview": {
+        "positionFamilyMatches": [],
+        "knownGameMatches": [],
+        "scope": "Existing 161 development and 30 validation phone photos only; unresolved sources and other corpora are not cleared."
+      },
+      "referenceImageIds": [
+        "position1-2026-11-12_18-07",
+        "position1-2026-11-12_18-11"
+      ],
+      "photoImageIds": [
+        "position1-IMG_5470",
+        "position1-IMG_5471",
+        "position1-IMG_5472"
+      ],
+      "cameraPairReview": "Marked shot uses opposite tilt to baseline oblique shot; not a controlled marks-only comparison.",
+      "contactSheet": ".cache/phone-targeted-v1/review/position1-contact.jpg"
+    },
+    {
+      "id": "position2",
+      "plannedSessionId": "session-02",
+      "actualCataloguePairId": "cc-thin-stem-brown",
+      "appearanceGroup": "cc-thin-stem",
+      "boardAppearance": "plain-brown",
+      "officialPieceSelector": null,
+      "officialBoardSelector": null,
+      "styleReview": {
+        "status": "visually-matches-local-reference-appearance",
+        "referencePhotoIds": [
+          "chesscom-img_5401",
+          "chesscom-img_5402"
+        ],
+        "settingsScreenshotProvided": false
+      },
+      "source": {
+        "platform": "chesscom",
+        "client": "desktop-web",
+        "gameId": "186559752718",
+        "url": "https://www.chess.com/game/live/186559752718",
+        "moveParameter": "38",
+        "evidenceImageId": "position2-IMG_5473",
+        "method": "visual-browser-address-transcription",
+        "networkLookup": false
+      },
+      "groupId": "chesscom-game-186559752718",
+      "split": "development",
+      "trainingAssignment": "pending-source-overlap-review",
+      "label": {
+        "piecePlacement": "r2r4/ppp3kp/5pp1/3Pnq2/3Q1B2/7P/PPP2PP1/R3R1K1",
+        "orientation": "black-bottom",
+        "visualRows": [
+          ".K.R...R",
+          ".PP..PPP",
+          "P.......",
+          "..B.Q...",
+          "..qnP...",
+          ".pp.....",
+          "pk...ppp",
+          "....r..r"
+        ],
+        "status": "visual-transcription",
+        "method": "direct-screenshot-transcription-and-photo-comparison",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "userVerified": false,
+        "referenceImageSha256": "3948fc4d5bc3fca86dda28484f2e7cbaf9d5699368a0b1b2894ce277dbe6820b"
+      },
+      "overlapReview": {
+        "positionFamilyMatches": [],
+        "knownGameMatches": [],
+        "scope": "Existing 161 development and 30 validation phone photos only; unresolved sources and other corpora are not cleared."
+      },
+      "referenceImageIds": [
+        "position2-2026-11-12_18-16",
+        "position2-2026-11-12_18-18"
+      ],
+      "photoImageIds": [
+        "position2-IMG_5473",
+        "position2-IMG_5474",
+        "position2-IMG_5475"
+      ],
+      "cameraPairReview": "Oblique baseline and marked shot have similar framing; no numerical camera-registration check.",
+      "contactSheet": ".cache/phone-targeted-v1/review/position2-contact.jpg"
+    },
+    {
+      "id": "position3",
+      "plannedSessionId": "session-03",
+      "actualCataloguePairId": "cc-shaded-brown",
+      "appearanceGroup": "cc-shaded",
+      "boardAppearance": "plain-brown",
+      "officialPieceSelector": null,
+      "officialBoardSelector": null,
+      "styleReview": {
+        "status": "visually-matches-local-reference-appearance",
+        "referencePhotoIds": [
+          "chesscom-img_5397",
+          "chesscom-img_5398"
+        ],
+        "settingsScreenshotProvided": false
+      },
+      "source": {
+        "platform": "chesscom",
+        "client": "desktop-web",
+        "gameId": "187062563830",
+        "url": "https://www.chess.com/game/live/187062563830",
+        "moveParameter": "38",
+        "evidenceImageId": "position3-IMG_5476",
+        "method": "visual-browser-address-transcription",
+        "networkLookup": false
+      },
+      "groupId": "chesscom-game-187062563830",
+      "split": "development",
+      "trainingAssignment": "pending-source-overlap-review",
+      "label": {
+        "piecePlacement": "r3nr2/1bq2pbk/ppn1p1pp/3pP3/P1BP1BP1/1PN1QN1P/5P2/3RK2R",
+        "orientation": "black-bottom",
+        "visualRows": [
+          "R..KR...",
+          "..P.....",
+          "P.NQ.NP.",
+          ".PB.PB.P",
+          "...Pp...",
+          "pp.p.npp",
+          "kbp..qb.",
+          "..rn...r"
+        ],
+        "status": "visual-transcription",
+        "method": "direct-screenshot-transcription-and-photo-comparison",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "userVerified": false,
+        "referenceImageSha256": "67ee41fca2b243bc6259af99b65f85484c153619c09aaa3fa2feeeab4642867d"
+      },
+      "overlapReview": {
+        "positionFamilyMatches": [],
+        "knownGameMatches": [],
+        "scope": "Existing 161 development and 30 validation phone photos only; unresolved sources and other corpora are not cleared."
+      },
+      "referenceImageIds": [
+        "position3-2026-11-12_18-23",
+        "position3-2026-11-12_18-24"
+      ],
+      "photoImageIds": [
+        "position3-IMG_5476",
+        "position3-IMG_5477",
+        "position3-IMG_5478"
+      ],
+      "cameraPairReview": "Oblique baseline and marked shot have similar framing; no numerical camera-registration check.",
+      "contactSheet": ".cache/phone-targeted-v1/review/position3-contact.jpg"
+    },
+    {
+      "id": "position4",
+      "plannedSessionId": "session-04",
+      "actualCataloguePairId": "cc-shaded-reference-background",
+      "appearanceGroup": "cc-shaded",
+      "boardAppearance": "wood-texture",
+      "officialPieceSelector": null,
+      "officialBoardSelector": null,
+      "styleReview": {
+        "status": "visually-matches-local-reference-appearance",
+        "referencePhotoIds": [
+          "chesscom-img_5397",
+          "chesscom-img_5398"
+        ],
+        "settingsScreenshotProvided": false
+      },
+      "source": {
+        "platform": "chesscom",
+        "client": "desktop-web",
+        "gameId": "187014017568",
+        "url": "https://www.chess.com/game/live/187014017568",
+        "moveParameter": "22",
+        "evidenceImageId": "position4-IMG_5479",
+        "method": "visual-browser-address-transcription",
+        "networkLookup": false
+      },
+      "groupId": "chesscom-game-187014017568",
+      "split": "development",
+      "trainingAssignment": "pending-source-overlap-review",
+      "label": {
+        "piecePlacement": "r2qk2r/pp3ppp/3ppnb1/N2p4/3P4/2P1PN2/PP3PPP/R3KB1R",
+        "orientation": "white-bottom",
+        "visualRows": [
+          "r..qk..r",
+          "pp...ppp",
+          "...ppnb.",
+          "N..p....",
+          "...P....",
+          "..P.PN..",
+          "PP...PPP",
+          "R...KB.R"
+        ],
+        "status": "visual-transcription",
+        "method": "direct-screenshot-transcription-and-photo-comparison",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "userVerified": false,
+        "referenceImageSha256": "2415bc04f5324b78241e9721a581bff19d44e88f8e236fa3c76e46031caed6dc"
+      },
+      "overlapReview": {
+        "positionFamilyMatches": [],
+        "knownGameMatches": [],
+        "scope": "Existing 161 development and 30 validation phone photos only; unresolved sources and other corpora are not cleared."
+      },
+      "referenceImageIds": [
+        "position4-2026-11-12_18-26",
+        "position4-2026-11-12_18-28"
+      ],
+      "photoImageIds": [
+        "position4-IMG_5479",
+        "position4-IMG_5480",
+        "position4-IMG_5481"
+      ],
+      "cameraPairReview": "Oblique baseline and marked shot have similar framing; no numerical camera-registration check.",
+      "contactSheet": ".cache/phone-targeted-v1/review/position4-contact.jpg"
+    },
+    {
+      "id": "position5",
+      "plannedSessionId": "session-05",
+      "actualCataloguePairId": "lc-rounded-king-reference-background",
+      "appearanceGroup": "lc-rounded-king",
+      "boardAppearance": "wood-texture",
+      "officialPieceSelector": null,
+      "officialBoardSelector": null,
+      "styleReview": {
+        "status": "visually-matches-local-reference-appearance",
+        "referencePhotoIds": [
+          "lichess-img_5391",
+          "lichess-img_5392"
+        ],
+        "settingsScreenshotProvided": false
+      },
+      "source": {
+        "platform": "lichess",
+        "client": "desktop-web",
+        "gameId": null,
+        "url": null,
+        "moveParameter": null,
+        "evidenceImageId": "position5-IMG_5482",
+        "method": "source-identity-not-visible",
+        "networkLookup": false,
+        "groupingEvidence": {
+          "status": "user-confirmed-distinct-games",
+          "confirmedOn": "2026-11-12",
+          "scope": "position5 and position6 come from different games; identifiers and separation from older corpora remain unconfirmed."
+        }
+      },
+      "groupId": "training2-lichess-position5",
+      "split": "development",
+      "trainingAssignment": "pending-source-overlap-review",
+      "label": {
+        "piecePlacement": "r1bqr1k1/ppp2ppp/3p1n2/4p3/1PBbP3/P1NP3P/2PB1PP1/R2QR1K1",
+        "orientation": "white-bottom",
+        "visualRows": [
+          "r.bqr.k.",
+          "ppp..ppp",
+          "...p.n..",
+          "....p...",
+          ".PBbP...",
+          "P.NP...P",
+          "..PB.PP.",
+          "R..QR.K."
+        ],
+        "status": "visual-transcription",
+        "method": "direct-screenshot-transcription-and-photo-comparison",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "userVerified": false,
+        "referenceImageSha256": "2bec7936e3b7c7c6a0fa4d434f9ae76ddafddc380f9bbf3095595933e5960a7e"
+      },
+      "overlapReview": {
+        "positionFamilyMatches": [],
+        "knownGameMatches": [],
+        "scope": "Existing 161 development and 30 validation phone photos only; unresolved sources and other corpora are not cleared."
+      },
+      "referenceImageIds": [
+        "position5-2026-11-12_18-32",
+        "position5-2026-11-12_18-33"
+      ],
+      "photoImageIds": [
+        "position5-IMG_5482",
+        "position5-IMG_5483",
+        "position5-IMG_5485"
+      ],
+      "cameraPairReview": "Oblique baseline and marked shot have similar framing; no numerical camera-registration check.",
+      "contactSheet": ".cache/phone-targeted-v1/review/position5-contact.jpg"
+    },
+    {
+      "id": "position6",
+      "plannedSessionId": "session-06",
+      "actualCataloguePairId": "lc-rounded-king-brown",
+      "appearanceGroup": "lc-rounded-king",
+      "boardAppearance": "plain-brown",
+      "officialPieceSelector": null,
+      "officialBoardSelector": null,
+      "styleReview": {
+        "status": "visually-matches-local-reference-appearance",
+        "referencePhotoIds": [
+          "lichess-img_5391",
+          "lichess-img_5392"
+        ],
+        "settingsScreenshotProvided": false
+      },
+      "source": {
+        "platform": "lichess",
+        "client": "desktop-web",
+        "gameId": null,
+        "url": null,
+        "moveParameter": null,
+        "evidenceImageId": "position6-IMG_5486",
+        "method": "source-identity-not-visible",
+        "networkLookup": false,
+        "groupingEvidence": {
+          "status": "user-confirmed-distinct-games",
+          "confirmedOn": "2026-11-12",
+          "scope": "position5 and position6 come from different games; identifiers and separation from older corpora remain unconfirmed."
+        }
+      },
+      "groupId": "training2-lichess-position6",
+      "split": "development",
+      "trainingAssignment": "pending-source-overlap-review",
+      "label": {
+        "piecePlacement": "r1bqk2r/pppp2pp/2n2P2/2b5/2B3n1/5N2/PB3PPP/RN1QR1K1",
+        "orientation": "black-bottom",
+        "visualRows": [
+          ".K.RQ.NR",
+          "PPP...BP",
+          "..N.....",
+          ".n...B..",
+          ".....b..",
+          "..P..n..",
+          "pp..pppp",
+          "r..kqb.r"
+        ],
+        "status": "visual-transcription",
+        "method": "direct-screenshot-transcription-and-photo-comparison",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "userVerified": false,
+        "referenceImageSha256": "e871836782f86f110d1dd404e52006bae325536e16dbdd2f0343b10191566827"
+      },
+      "overlapReview": {
+        "positionFamilyMatches": [],
+        "knownGameMatches": [],
+        "scope": "Existing 161 development and 30 validation phone photos only; unresolved sources and other corpora are not cleared."
+      },
+      "referenceImageIds": [
+        "position6-2026-11-12_18-36",
+        "position6-2026-11-12_18-38"
+      ],
+      "photoImageIds": [
+        "position6-IMG_5486",
+        "position6-IMG_5487",
+        "position6-IMG_5488"
+      ],
+      "cameraPairReview": "Oblique baseline and marked shot have similar framing; no numerical camera-registration check.",
+      "contactSheet": ".cache/phone-targeted-v1/review/position6-contact.jpg"
+    },
+    {
+      "id": "position7",
+      "plannedSessionId": null,
+      "collectionReason": "Targeted expansion for white knights on both square colors and white-bottom thin-stem views.",
+      "actualCataloguePairId": "cc-thin-stem-reference-background",
+      "appearanceGroup": "cc-thin-stem",
+      "boardAppearance": "plain-purple",
+      "officialPieceSelector": null,
+      "officialBoardSelector": null,
+      "styleReview": {
+        "status": "visually-matches-local-reference-appearance",
+        "referencePhotoIds": [
+          "chesscom-img_5401",
+          "chesscom-img_5402"
+        ],
+        "settingsScreenshotProvided": false
+      },
+      "source": {
+        "platform": "chesscom",
+        "client": "desktop-web",
+        "gameId": "186984581962",
+        "url": "https://www.chess.com/game/live/186984581962",
+        "moveParameter": "14",
+        "evidenceImageId": "position7-IMG_5490",
+        "method": "visual-browser-address-transcription",
+        "networkLookup": false
+      },
+      "groupId": "chesscom-game-186984581962",
+      "split": "development",
+      "trainingAssignment": "pending-source-overlap-review",
+      "label": {
+        "piecePlacement": "r1bqk2r/pp2npbp/2npp1p1/2p5/2B1P3/2NPBN2/PPP2PPP/R2Q1RK1",
+        "orientation": "white-bottom",
+        "visualRows": [
+          "r.bqk..r",
+          "pp..npbp",
+          "..npp.p.",
+          "..p.....",
+          "..B.P...",
+          "..NPBN..",
+          "PPP..PPP",
+          "R..Q.RK."
+        ],
+        "status": "visual-transcription",
+        "method": "direct-screenshot-transcription-and-photo-comparison",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "userVerified": false,
+        "referenceImageSha256": "307ffd4d30a1617bef4c29e3e4bef6efad3466c1155c04eab5875b7c8a71d602"
+      },
+      "overlapReview": {
+        "positionFamilyMatches": [],
+        "knownGameMatches": [],
+        "scope": "Existing 161 development and 30 validation phone photos only; unresolved sources and other corpora are not cleared."
+      },
+      "referenceImageIds": [
+        "position7-2026-11-12_18-53",
+        "position7-2026-11-12_18-54"
+      ],
+      "photoImageIds": [
+        "position7-IMG_5490",
+        "position7-IMG_5491",
+        "position7-IMG_5492"
+      ],
+      "cameraPairReview": "Oblique baseline and marked shot have similar framing; no numerical camera-registration check.",
+      "contactSheet": ".cache/phone-targeted-v1/review/position7-contact.jpg"
+    },
+    {
+      "id": "position8",
+      "plannedSessionId": null,
+      "collectionReason": "Targeted expansion for white knights on both square colors and white-bottom thin-stem views.",
+      "actualCataloguePairId": "cc-thin-stem-brown",
+      "appearanceGroup": "cc-thin-stem",
+      "boardAppearance": "plain-brown",
+      "officialPieceSelector": null,
+      "officialBoardSelector": null,
+      "styleReview": {
+        "status": "visually-matches-local-reference-appearance",
+        "referencePhotoIds": [
+          "chesscom-img_5401",
+          "chesscom-img_5402"
+        ],
+        "settingsScreenshotProvided": false
+      },
+      "source": {
+        "platform": "chesscom",
+        "client": "desktop-web",
+        "gameId": "186840071668",
+        "url": "https://www.chess.com/game/live/186840071668",
+        "moveParameter": "22",
+        "evidenceImageId": "position8-IMG_5493",
+        "method": "visual-browser-address-transcription",
+        "networkLookup": false
+      },
+      "groupId": "chesscom-game-186840071668",
+      "split": "development",
+      "trainingAssignment": "pending-source-overlap-review",
+      "label": {
+        "piecePlacement": "r1bqk2r/pp3pp1/1b1p1n1p/nPp1p3/4P3/P1NP1N1P/B1P2PP1/R1BQ1RK1",
+        "orientation": "white-bottom",
+        "visualRows": [
+          "r.bqk..r",
+          "pp...pp.",
+          ".b.p.n.p",
+          "nPp.p...",
+          "....P...",
+          "P.NP.N.P",
+          "B.P..PP.",
+          "R.BQ.RK."
+        ],
+        "status": "visual-transcription",
+        "method": "direct-screenshot-transcription-and-photo-comparison",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "userVerified": false,
+        "referenceImageSha256": "9c878a0b3fb75741fcf929d7f895c00efcbcdf043fa7e944317d3c39fb03b892"
+      },
+      "overlapReview": {
+        "positionFamilyMatches": [],
+        "knownGameMatches": [],
+        "scope": "Existing 161 development and 30 validation phone photos only; unresolved sources and other corpora are not cleared."
+      },
+      "referenceImageIds": [
+        "position8-2026-11-12_18-56",
+        "position8-2026-11-12_18-58"
+      ],
+      "photoImageIds": [
+        "position8-IMG_5493",
+        "position8-IMG_5494",
+        "position8-IMG_5495"
+      ],
+      "cameraPairReview": "Marked shot uses opposite tilt to baseline oblique shot; not a controlled marks-only comparison.",
+      "contactSheet": ".cache/phone-targeted-v1/review/position8-contact.jpg"
+    }
+  ],
+  "images": [
+    {
+      "id": "position1-2026-11-12_18-07",
+      "session": "position1",
+      "kind": "direct-screenshot",
+      "originalPath": ".cache/real-use-tests/training2/position1/2026-11-12_18-07.png",
+      "originalSha256": "23c8eb0f9ef8b3a36ca1a57260589c98f0b7a175dda5b9e457c79968eb56dbb1",
+      "originalBytes": 193075,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position1-2026-11-12_18-07.png",
+      "imageSha256": "77329198ed946f2b3def9fba0944d1df275ad1597d11b9f88882e9c42cb991c5",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position1-2026-11-12_18-07.jpg",
+      "imageSize": [
+        1291,
+        1340
+      ],
+      "metadata": {
+        "cameraMake": null,
+        "cameraModel": null,
+        "fileDateTime": null,
+        "timeZone": null,
+        "originalOrientation": null,
+        "decodedBitDepth": 8,
+        "colorConversion": "untagged-assumed-srgb",
+        "sourceIccSha256": null
+      },
+      "referenceRole": "baseline-with-last-move",
+      "marks": {
+        "lastMoveSquares": [
+          "f2",
+          "f3"
+        ],
+        "checkSquares": [],
+        "highlightSquares": [],
+        "circles": [],
+        "arrows": [],
+        "annotationStatus": "visual-transcription-not-renderer-verified"
+      }
+    },
+    {
+      "id": "position1-2026-11-12_18-11",
+      "session": "position1",
+      "kind": "direct-screenshot",
+      "originalPath": ".cache/real-use-tests/training2/position1/2026-11-12_18-11.png",
+      "originalSha256": "8db77ae87f73a1ee0d482a63bf57aef91f65af8549aa222d810bf8d2858927ce",
+      "originalBytes": 206324,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position1-2026-11-12_18-11.png",
+      "imageSha256": "ed131c0e7041a0a0a5e3ff1900ea3d7f970f1103a38771d9c6f45d738d1225ec",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position1-2026-11-12_18-11.jpg",
+      "imageSize": [
+        1262,
+        1326
+      ],
+      "metadata": {
+        "cameraMake": null,
+        "cameraModel": null,
+        "fileDateTime": null,
+        "timeZone": null,
+        "originalOrientation": null,
+        "decodedBitDepth": 8,
+        "colorConversion": "untagged-assumed-srgb",
+        "sourceIccSha256": null
+      },
+      "referenceRole": "additional-marks",
+      "marks": {
+        "lastMoveSquares": [
+          "f2",
+          "f3"
+        ],
+        "checkSquares": [],
+        "highlightSquares": [
+          "c2"
+        ],
+        "circles": [],
+        "arrows": [
+          {
+            "from": "f1",
+            "to": "c1",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "f5",
+            "to": "c2",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "c2",
+            "to": "c4",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "c2",
+            "to": "a4",
+            "color": "orange",
+            "geometry": "straight"
+          }
+        ],
+        "annotationStatus": "visual-transcription-not-renderer-verified"
+      }
+    },
+    {
+      "id": "position1-IMG_5470",
+      "session": "position1",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position1/IMG_5470.HEIC",
+      "originalSha256": "9b9166267dab5df6e5dca1934ce35f4052149fd947e3f209dc824e836f6d6c93",
+      "originalBytes": 1616920,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position1-IMG_5470.png",
+      "imageSha256": "e8556d6dbd14b70b0d648d0a9e033ab850efc63f98f7629375f0e1aacd1a8f3c",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position1-IMG_5470.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:09:35",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position1-2026-11-12_18-07",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights"
+      ],
+      "captureView": "approximately-frontal",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          162.38265380859374,
+          620.5653295898437
+        ],
+        [
+          2917.239404296875,
+          586.2994409179687
+        ],
+        [
+          2792.4397265625,
+          3161.904375
+        ],
+        [
+          343.91968139648435,
+          3187.8643945312497
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "e8556d6dbd14b70b0d648d0a9e033ab850efc63f98f7629375f0e1aacd1a8f3c",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position1-IMG_5470-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "9cd46ec5af0fa96e1d051ad052511965de997d4711d7ca180cd3c64c5f8ebdc1"
+      }
+    },
+    {
+      "id": "position1-IMG_5471",
+      "session": "position1",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position1/IMG_5471.HEIC",
+      "originalSha256": "7a781fd53c2fc7112d8c54bfb1d2f0e07075edbf89b24fc4014d3284e0c13bb9",
+      "originalBytes": 1614528,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position1-IMG_5471.png",
+      "imageSha256": "9b4bdc3fda6e7639e1cb07068a99e1a0cd29af9b2dae9f11f163d44ceb54188f",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position1-IMG_5471.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:09:58",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position1-2026-11-12_18-07",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights"
+      ],
+      "captureView": "oblique",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          106.87778503417968,
+          810.109453125
+        ],
+        [
+          2610.93533203125,
+          550.9898583984375
+        ],
+        [
+          2681.28123046875,
+          2897.43849609375
+        ],
+        [
+          496.2979321289062,
+          3080.304814453125
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "9b4bdc3fda6e7639e1cb07068a99e1a0cd29af9b2dae9f11f163d44ceb54188f",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position1-IMG_5471-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "b0551cf9319e1a4ebf8cecc0f98db78c9ebd8ea879e93f6399cef3c07168121a"
+      }
+    },
+    {
+      "id": "position1-IMG_5472",
+      "session": "position1",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position1/IMG_5472.HEIC",
+      "originalSha256": "400d2ce5ee31c8e9bf19e5a290e3f0e08fd79c1677797679f1319a51505384f5",
+      "originalBytes": 1679951,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position1-IMG_5472.png",
+      "imageSha256": "7d86858e517e9b3b2e7556b32afd94f4c995ac43ef4008a0fe12a6445b9e8f02",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position1-IMG_5472.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:11:17",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position1-2026-11-12_18-11",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights",
+        "arrows",
+        "colored-square-highlights"
+      ],
+      "captureView": "oblique",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          312.15984741210934,
+          400.6875366210937
+        ],
+        [
+          2943.2625878906247,
+          768.492744140625
+        ],
+        [
+          2434.018740234375,
+          3078.519404296875
+        ],
+        [
+          223.35179077148436,
+          2820.972861328125
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "7d86858e517e9b3b2e7556b32afd94f4c995ac43ef4008a0fe12a6445b9e8f02",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position1-IMG_5472-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "0e142d52722c2f19fd96a6e67bd688304487352784c563975e0a490a430e69fe"
+      }
+    },
+    {
+      "id": "position2-2026-11-12_18-16",
+      "session": "position2",
+      "kind": "direct-screenshot",
+      "originalPath": ".cache/real-use-tests/training2/position2/2026-11-12_18-16.png",
+      "originalSha256": "85424291945a868c1eed661af4c0da9ff33588d56d54113720df53c13bb05d52",
+      "originalBytes": 204962,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position2-2026-11-12_18-16.png",
+      "imageSha256": "3948fc4d5bc3fca86dda28484f2e7cbaf9d5699368a0b1b2894ce277dbe6820b",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position2-2026-11-12_18-16.jpg",
+      "imageSize": [
+        1283,
+        1291
+      ],
+      "metadata": {
+        "cameraMake": null,
+        "cameraModel": null,
+        "fileDateTime": null,
+        "timeZone": null,
+        "originalOrientation": null,
+        "decodedBitDepth": 8,
+        "colorConversion": "untagged-assumed-srgb",
+        "sourceIccSha256": null
+      },
+      "referenceRole": "baseline-with-last-move",
+      "marks": {
+        "lastMoveSquares": [
+          "h8",
+          "d8"
+        ],
+        "checkSquares": [],
+        "highlightSquares": [],
+        "circles": [],
+        "arrows": [],
+        "annotationStatus": "visual-transcription-not-renderer-verified"
+      }
+    },
+    {
+      "id": "position2-2026-11-12_18-18",
+      "session": "position2",
+      "kind": "direct-screenshot",
+      "originalPath": ".cache/real-use-tests/training2/position2/2026-11-12_18-18.png",
+      "originalSha256": "fdbec64388d8a999d5cb26c43b4ad54f52a84785b31791bbb6f382a4f183aa2a",
+      "originalBytes": 221448,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position2-2026-11-12_18-18.png",
+      "imageSha256": "eccec589f1439774d54c1f10fd67f0927a7e1d444bddb64a44080086a7dac9ef",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position2-2026-11-12_18-18.jpg",
+      "imageSize": [
+        1294,
+        1333
+      ],
+      "metadata": {
+        "cameraMake": null,
+        "cameraModel": null,
+        "fileDateTime": null,
+        "timeZone": null,
+        "originalOrientation": null,
+        "decodedBitDepth": 8,
+        "colorConversion": "untagged-assumed-srgb",
+        "sourceIccSha256": null
+      },
+      "referenceRole": "additional-marks",
+      "marks": {
+        "lastMoveSquares": [
+          "h8",
+          "d8"
+        ],
+        "checkSquares": [],
+        "highlightSquares": [
+          "f6"
+        ],
+        "circles": [],
+        "arrows": [
+          {
+            "from": "e1",
+            "to": "e5",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "e5",
+            "to": "e7",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "f4",
+            "to": "e5",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "d4",
+            "to": "f6",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "f5",
+            "to": "f6",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "g7",
+            "to": "g8",
+            "color": "orange",
+            "geometry": "straight"
+          }
+        ],
+        "annotationStatus": "visual-transcription-not-renderer-verified"
+      }
+    },
+    {
+      "id": "position2-IMG_5473",
+      "session": "position2",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position2/IMG_5473.HEIC",
+      "originalSha256": "7ed57da4ea49145df664eb8a6529407f9930706aa8cc944ffa2381035f6eef47",
+      "originalBytes": 1596515,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position2-IMG_5473.png",
+      "imageSha256": "85f464d1566455dcda53f6bf8aee7e214c12e280a6c2391e5aba725b55329863",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position2-IMG_5473.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:17:03",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position2-2026-11-12_18-16",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights"
+      ],
+      "captureView": "approximately-frontal",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          211.02101989746092,
+          696.1704052734375
+        ],
+        [
+          2852.94474609375,
+          689.1609887695312
+        ],
+        [
+          2671.072646484375,
+          3124.257978515625
+        ],
+        [
+          382.979912109375,
+          3094.669306640625
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "85f464d1566455dcda53f6bf8aee7e214c12e280a6c2391e5aba725b55329863",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position2-IMG_5473-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "11ebaa6ce1f22ccb7e4d3069399cd6595f17eaf0e0100b253084aa6f7d3401a5"
+      }
+    },
+    {
+      "id": "position2-IMG_5474",
+      "session": "position2",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position2/IMG_5474.HEIC",
+      "originalSha256": "6722c993f4ad70cebf86b110f29805f5adcaa3874b73f1321f14f607756482dc",
+      "originalBytes": 1816290,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position2-IMG_5474.png",
+      "imageSha256": "9f95b5cd1959010b507ae1a6ec07f9c1c1c287ec714cb0556b36550ca935fad6",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position2-IMG_5474.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:17:08",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position2-2026-11-12_18-16",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights"
+      ],
+      "captureView": "oblique",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          84.96880828857421,
+          626.353505859375
+        ],
+        [
+          2785.320439453125,
+          316.44146850585935
+        ],
+        [
+          2848.63810546875,
+          2847.67998046875
+        ],
+        [
+          528.9726196289063,
+          3054.932958984375
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "9f95b5cd1959010b507ae1a6ec07f9c1c1c287ec714cb0556b36550ca935fad6",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position2-IMG_5474-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "e71e512b1360c216aa2d90c53d38b9c990e90d949ffb6b90cabc7a21684c162b"
+      }
+    },
+    {
+      "id": "position2-IMG_5475",
+      "session": "position2",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position2/IMG_5475.HEIC",
+      "originalSha256": "5b19b354c2a7db4ab1804517bd74e6d01ff2bf27fa686e62b4c5f07edc51a60d",
+      "originalBytes": 1445230,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position2-IMG_5475.png",
+      "imageSha256": "758e116d35d46bf4deeadef5faedb780544e96d74bb69f4fdd40ac797ee9d934",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position2-IMG_5475.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:18:06",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position2-2026-11-12_18-18",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights",
+        "arrows",
+        "colored-square-highlights",
+        "multiple-interacting-arrows"
+      ],
+      "captureView": "oblique",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          61.739423217773435,
+          560.0400073242188
+        ],
+        [
+          2858.173623046875,
+          262.76760131835937
+        ],
+        [
+          2892.093134765625,
+          2884.0585839843748
+        ],
+        [
+          497.1324462890625,
+          3077.8773046875
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "758e116d35d46bf4deeadef5faedb780544e96d74bb69f4fdd40ac797ee9d934",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position2-IMG_5475-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "74aff6d34a22f76ea90d3146b874ec7ac708ab586f7e9076dc6a66f4efa23b9b"
+      }
+    },
+    {
+      "id": "position3-2026-11-12_18-23",
+      "session": "position3",
+      "kind": "direct-screenshot",
+      "originalPath": ".cache/real-use-tests/training2/position3/2026-11-12_18-23.png",
+      "originalSha256": "5b6af69b49de158548cd87dc8ab96c7daecc95d399b134cc53b9c20bf601389a",
+      "originalBytes": 325581,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position3-2026-11-12_18-23.png",
+      "imageSha256": "67ee41fca2b243bc6259af99b65f85484c153619c09aaa3fa2feeeab4642867d",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position3-2026-11-12_18-23.jpg",
+      "imageSize": [
+        1276,
+        1317
+      ],
+      "metadata": {
+        "cameraMake": null,
+        "cameraModel": null,
+        "fileDateTime": null,
+        "timeZone": null,
+        "originalOrientation": null,
+        "decodedBitDepth": 8,
+        "colorConversion": "untagged-assumed-srgb",
+        "sourceIccSha256": null
+      },
+      "referenceRole": "baseline-with-last-move",
+      "marks": {
+        "lastMoveSquares": [
+          "d6",
+          "d5"
+        ],
+        "checkSquares": [],
+        "highlightSquares": [],
+        "circles": [],
+        "arrows": [],
+        "annotationStatus": "visual-transcription-not-renderer-verified"
+      }
+    },
+    {
+      "id": "position3-2026-11-12_18-24",
+      "session": "position3",
+      "kind": "direct-screenshot",
+      "originalPath": ".cache/real-use-tests/training2/position3/2026-11-12_18-24.png",
+      "originalSha256": "45c8acfaeb061071d5b563029430ea76b77390b271c6357df7769e51b7aec706",
+      "originalBytes": 341596,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position3-2026-11-12_18-24.png",
+      "imageSha256": "084614b37808a71da7b6c75d1b09a2f6b6af985e8ec28359368ced832e66fb0f",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position3-2026-11-12_18-24.jpg",
+      "imageSize": [
+        1265,
+        1312
+      ],
+      "metadata": {
+        "cameraMake": null,
+        "cameraModel": null,
+        "fileDateTime": null,
+        "timeZone": null,
+        "originalOrientation": null,
+        "decodedBitDepth": 8,
+        "colorConversion": "untagged-assumed-srgb",
+        "sourceIccSha256": null
+      },
+      "referenceRole": "additional-marks",
+      "marks": {
+        "lastMoveSquares": [
+          "d6",
+          "d5"
+        ],
+        "checkSquares": [],
+        "highlightSquares": [
+          "f3",
+          "d5"
+        ],
+        "circles": [],
+        "arrows": [
+          {
+            "from": "e3",
+            "to": "d4",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "c6",
+            "to": "d4",
+            "color": "orange",
+            "geometry": "elbow"
+          },
+          {
+            "from": "c4",
+            "to": "d5",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "e6",
+            "to": "d5",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "b7",
+            "to": "f3",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "c3",
+            "to": "d5",
+            "color": "orange",
+            "geometry": "elbow"
+          }
+        ],
+        "annotationStatus": "visual-transcription-not-renderer-verified"
+      }
+    },
+    {
+      "id": "position3-IMG_5476",
+      "session": "position3",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position3/IMG_5476.HEIC",
+      "originalSha256": "138b3535a4b571c69a93151548cf5f857cd920739ac1628df03bf1acebbd2de5",
+      "originalBytes": 1828176,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position3-IMG_5476.png",
+      "imageSha256": "487b1b1203a43edbd40be8195dd7f9e88d34af2c1fd2e18e52d0d32b036176d9",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position3-IMG_5476.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:23:23",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position3-2026-11-12_18-23",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights"
+      ],
+      "captureView": "approximately-frontal",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          64.53697723388672,
+          635.3530004882813
+        ],
+        [
+          2938.76994140625,
+          555.9726416015625
+        ],
+        [
+          2786.18197265625,
+          3191.6835644531247
+        ],
+        [
+          334.57232299804684,
+          3213.623232421875
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "487b1b1203a43edbd40be8195dd7f9e88d34af2c1fd2e18e52d0d32b036176d9",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position3-IMG_5476-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "d5c015a3f9e31c4e6b80bb87d3e16ff144b3488ae3864c92acf6a39065d4147b"
+      }
+    },
+    {
+      "id": "position3-IMG_5477",
+      "session": "position3",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position3/IMG_5477.HEIC",
+      "originalSha256": "e63eb3777ac4a669a50f6471185f9bccca48a82f6ad2cb05042935809e2176f9",
+      "originalBytes": 1783498,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position3-IMG_5477.png",
+      "imageSha256": "5e5731de97035cdd14baf1a6435f88ae278e8305b613d994fe0088622c1988c6",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position3-IMG_5477.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:23:31",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position3-2026-11-12_18-23",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights"
+      ],
+      "captureView": "oblique",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          420.7672229003906,
+          623.1908422851562
+        ],
+        [
+          2996.30748046875,
+          1014.9473291015624
+        ],
+        [
+          2472.73482421875,
+          3333.1263574218747
+        ],
+        [
+          239.66729370117187,
+          2992.335732421875
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "5e5731de97035cdd14baf1a6435f88ae278e8305b613d994fe0088622c1988c6",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position3-IMG_5477-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "3938477854959377b994de298748e35570921e9a4572603e2b26e8d0d5a5c43c"
+      }
+    },
+    {
+      "id": "position3-IMG_5478",
+      "session": "position3",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position3/IMG_5478.HEIC",
+      "originalSha256": "7b95398a6dd5e268b025af59454975d4d66cdad6278f125c2cb94aef659eb5fa",
+      "originalBytes": 1738398,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position3-IMG_5478.png",
+      "imageSha256": "a814445661f0fdc4b37237afe4d127829e86e90fa9515b8057d79d4646929a5d",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position3-IMG_5478.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:24:30",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position3-2026-11-12_18-24",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights",
+        "arrows",
+        "colored-square-highlights",
+        "multiple-interacting-arrows"
+      ],
+      "captureView": "oblique",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          262.27236328124997,
+          461.6379345703125
+        ],
+        [
+          2988.545478515625,
+          815.1183837890625
+        ],
+        [
+          2471.84068359375,
+          3257.4857519531247
+        ],
+        [
+          158.97856201171874,
+          2945.747109375
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "a814445661f0fdc4b37237afe4d127829e86e90fa9515b8057d79d4646929a5d",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position3-IMG_5478-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "f55e4202016b7449552ac8c1d476d57a95ab80957083b0ec0aaa2aebfee0164a"
+      }
+    },
+    {
+      "id": "position4-2026-11-12_18-26",
+      "session": "position4",
+      "kind": "direct-screenshot",
+      "originalPath": ".cache/real-use-tests/training2/position4/2026-11-12_18-26.png",
+      "originalSha256": "fe0bf70dcd876875fa956717c3eca680b96279791b39a9bb62b0d94fccf4bef3",
+      "originalBytes": 2442866,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position4-2026-11-12_18-26.png",
+      "imageSha256": "2415bc04f5324b78241e9721a581bff19d44e88f8e236fa3c76e46031caed6dc",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position4-2026-11-12_18-26.jpg",
+      "imageSize": [
+        1266,
+        1309
+      ],
+      "metadata": {
+        "cameraMake": null,
+        "cameraModel": null,
+        "fileDateTime": null,
+        "timeZone": null,
+        "originalOrientation": null,
+        "decodedBitDepth": 8,
+        "colorConversion": "untagged-assumed-srgb",
+        "sourceIccSha256": null
+      },
+      "referenceRole": "baseline-with-last-move",
+      "marks": {
+        "lastMoveSquares": [
+          "c7",
+          "d6"
+        ],
+        "checkSquares": [],
+        "highlightSquares": [],
+        "circles": [],
+        "arrows": [],
+        "annotationStatus": "visual-transcription-not-renderer-verified"
+      }
+    },
+    {
+      "id": "position4-2026-11-12_18-28",
+      "session": "position4",
+      "kind": "direct-screenshot",
+      "originalPath": ".cache/real-use-tests/training2/position4/2026-11-12_18-28.png",
+      "originalSha256": "4f1534a03f99ee6757700e81d9a5d1178bbc177e8b019e7e8b592a828d5c4670",
+      "originalBytes": 2418681,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position4-2026-11-12_18-28.png",
+      "imageSha256": "71be2cae8791dd7af5d1122ba7eb57714e5e5a3f46eae2fdb1da0155782c7b3a",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position4-2026-11-12_18-28.jpg",
+      "imageSize": [
+        1333,
+        1338
+      ],
+      "metadata": {
+        "cameraMake": null,
+        "cameraModel": null,
+        "fileDateTime": null,
+        "timeZone": null,
+        "originalOrientation": null,
+        "decodedBitDepth": 8,
+        "colorConversion": "untagged-assumed-srgb",
+        "sourceIccSha256": null
+      },
+      "referenceRole": "additional-marks",
+      "marks": {
+        "lastMoveSquares": [
+          "c7",
+          "d6"
+        ],
+        "checkSquares": [],
+        "highlightSquares": [
+          "h4"
+        ],
+        "circles": [],
+        "arrows": [
+          {
+            "from": "e8",
+            "to": "g8",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "h8",
+            "to": "f8",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "b7",
+            "to": "b6",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "a5",
+            "to": "b3",
+            "color": "orange",
+            "geometry": "elbow"
+          },
+          {
+            "from": "b2",
+            "to": "b4",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "f1",
+            "to": "b5",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "e1",
+            "to": "c1",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "h2",
+            "to": "h4",
+            "color": "orange",
+            "geometry": "straight"
+          }
+        ],
+        "annotationStatus": "visual-transcription-not-renderer-verified"
+      }
+    },
+    {
+      "id": "position4-IMG_5479",
+      "session": "position4",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position4/IMG_5479.HEIC",
+      "originalSha256": "c3792b035d5b144b395213cb6be6be35433bd57be43eb965c59719d9e6bbb1cd",
+      "originalBytes": 1621420,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position4-IMG_5479.png",
+      "imageSha256": "93c4adff2e41335ed712b3b1dbfb02b4946fd7a47bbd1d208b721511919e8af3",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position4-IMG_5479.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:27:01",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position4-2026-11-12_18-26",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights",
+        "wood-texture"
+      ],
+      "captureView": "approximately-frontal",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          89.28552337646484,
+          742.5313916015625
+        ],
+        [
+          2804.017412109375,
+          692.8520874023437
+        ],
+        [
+          2681.884775390625,
+          3210.30814453125
+        ],
+        [
+          300.9273596191406,
+          3229.2464941406247
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "93c4adff2e41335ed712b3b1dbfb02b4946fd7a47bbd1d208b721511919e8af3",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position4-IMG_5479-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "2656ecd8d2bd4df66dad06d97d2f67e9863425da1cdace6a51c152a0c1941678"
+      }
+    },
+    {
+      "id": "position4-IMG_5480",
+      "session": "position4",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position4/IMG_5480.HEIC",
+      "originalSha256": "ad171825198fa1840f75d116b4d1be1f9cc49b346593c4f69bde8cbfd30f618c",
+      "originalBytes": 1443308,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position4-IMG_5480.png",
+      "imageSha256": "451143cfc6941d29055f7ff583836da3873e4eb0b39825e21bcaf8496889f3c4",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position4-IMG_5480.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:27:06",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position4-2026-11-12_18-26",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights",
+        "wood-texture"
+      ],
+      "captureView": "oblique",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          224.7532434082031,
+          715.7748999023437
+        ],
+        [
+          2715.95666015625,
+          313.35611938476563
+        ],
+        [
+          2862.595927734375,
+          2675.11412109375
+        ],
+        [
+          717.2676123046874,
+          2945.5799707031247
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "451143cfc6941d29055f7ff583836da3873e4eb0b39825e21bcaf8496889f3c4",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position4-IMG_5480-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "36d6e99fcb19a0a344acabae97cf026361761ca265b9106b93fd91a3da9ec1b0"
+      }
+    },
+    {
+      "id": "position4-IMG_5481",
+      "session": "position4",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position4/IMG_5481.HEIC",
+      "originalSha256": "430d9f2ecf3442e9fdf81b64a6e1e17b63ccc6dcf309cd7573e7eb8a7036c0c4",
+      "originalBytes": 1395023,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position4-IMG_5481.png",
+      "imageSha256": "4c2f10fd8d8dba5e5673a574f73aaed2416605fa0a48d7e90194776b0288c599",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position4-IMG_5481.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:28:00",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position4-2026-11-12_18-28",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights",
+        "wood-texture",
+        "arrows",
+        "colored-square-highlights",
+        "multiple-interacting-arrows"
+      ],
+      "captureView": "oblique",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          154.7732940673828,
+          872.5870166015625
+        ],
+        [
+          2725.337958984375,
+          442.25948730468747
+        ],
+        [
+          2892.170654296875,
+          2828.6622656249997
+        ],
+        [
+          697.8813720703125,
+          3144.6474609375
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "4c2f10fd8d8dba5e5673a574f73aaed2416605fa0a48d7e90194776b0288c599",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position4-IMG_5481-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "dec51c59ec4c26280ca087de1dc608857a3161a10fe254b29b3c43807172debb"
+      }
+    },
+    {
+      "id": "position5-2026-11-12_18-32",
+      "session": "position5",
+      "kind": "direct-screenshot",
+      "originalPath": ".cache/real-use-tests/training2/position5/2026-11-12_18-32.png",
+      "originalSha256": "44f4f269b4bd7d28d00c78dbcd5e6ca1ce4d0d674fa6402baea1f1e52bc4ce59",
+      "originalBytes": 1138530,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position5-2026-11-12_18-32.png",
+      "imageSha256": "2bec7936e3b7c7c6a0fa4d434f9ae76ddafddc380f9bbf3095595933e5960a7e",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position5-2026-11-12_18-32.jpg",
+      "imageSize": [
+        1123,
+        1134
+      ],
+      "metadata": {
+        "cameraMake": null,
+        "cameraModel": null,
+        "fileDateTime": null,
+        "timeZone": null,
+        "originalOrientation": null,
+        "decodedBitDepth": 8,
+        "colorConversion": "untagged-assumed-srgb",
+        "sourceIccSha256": null
+      },
+      "referenceRole": "baseline-with-last-move",
+      "marks": {
+        "lastMoveSquares": [
+          "f1",
+          "e1"
+        ],
+        "checkSquares": [],
+        "highlightSquares": [],
+        "circles": [],
+        "arrows": [],
+        "annotationStatus": "visual-transcription-not-renderer-verified"
+      }
+    },
+    {
+      "id": "position5-2026-11-12_18-33",
+      "session": "position5",
+      "kind": "direct-screenshot",
+      "originalPath": ".cache/real-use-tests/training2/position5/2026-11-12_18-33.png",
+      "originalSha256": "d54655a6821da2a6281fd42718aa52db8144ea7afb71f3ad8fc42793bf069a52",
+      "originalBytes": 1151763,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position5-2026-11-12_18-33.png",
+      "imageSha256": "e644a808c0e310e792b81e240365de0585c96a790511068612e445a15b822a72",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position5-2026-11-12_18-33.jpg",
+      "imageSize": [
+        1127,
+        1133
+      ],
+      "metadata": {
+        "cameraMake": null,
+        "cameraModel": null,
+        "fileDateTime": null,
+        "timeZone": null,
+        "originalOrientation": null,
+        "decodedBitDepth": 8,
+        "colorConversion": "untagged-assumed-srgb",
+        "sourceIccSha256": null
+      },
+      "referenceRole": "additional-marks",
+      "marks": {
+        "lastMoveSquares": [],
+        "checkSquares": [],
+        "highlightSquares": [],
+        "circles": [
+          "d5",
+          "c3"
+        ],
+        "arrows": [
+          {
+            "from": "d8",
+            "to": "d5",
+            "color": "green",
+            "geometry": "straight"
+          },
+          {
+            "from": "f6",
+            "to": "d5",
+            "color": "green",
+            "geometry": "straight"
+          },
+          {
+            "from": "c4",
+            "to": "d5",
+            "color": "green",
+            "geometry": "straight"
+          },
+          {
+            "from": "e4",
+            "to": "d5",
+            "color": "green",
+            "geometry": "straight"
+          },
+          {
+            "from": "d4",
+            "to": "c3",
+            "color": "green",
+            "geometry": "straight"
+          },
+          {
+            "from": "d2",
+            "to": "c3",
+            "color": "green",
+            "geometry": "straight"
+          }
+        ],
+        "annotationStatus": "visual-transcription-not-renderer-verified"
+      }
+    },
+    {
+      "id": "position5-IMG_5482",
+      "session": "position5",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position5/IMG_5482.HEIC",
+      "originalSha256": "7dd85dcdd9a5e50a5d81a9f0c816b1b4a3b16874afda4172c07a08d64419a42b",
+      "originalBytes": 1779774,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position5-IMG_5482.png",
+      "imageSha256": "90677b4733b8c6507ed12ee9cbed618264d73e0cab84a7e674531e4a8a2619a5",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position5-IMG_5482.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:32:16",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position5-2026-11-12_18-32",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights",
+        "wood-texture"
+      ],
+      "captureView": "approximately-frontal",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          141.98599365234375,
+          542.3162329101563
+        ],
+        [
+          2913.9413378906247,
+          504.23486572265625
+        ],
+        [
+          2756.0978320312497,
+          3073.119697265625
+        ],
+        [
+          345.4999108886719,
+          3091.455732421875
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "90677b4733b8c6507ed12ee9cbed618264d73e0cab84a7e674531e4a8a2619a5",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position5-IMG_5482-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "0bef0cfeec016d1fa0e192ad7a05fe2190bf30638272f2efa79df5ab40e1a493"
+      }
+    },
+    {
+      "id": "position5-IMG_5483",
+      "session": "position5",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position5/IMG_5483.HEIC",
+      "originalSha256": "04aeb8ddbf09ddbe74b0a60c1dfeea7f3154fa220aab2b60e5640860a94df271",
+      "originalBytes": 1768697,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position5-IMG_5483.png",
+      "imageSha256": "88957e165ca48ecfbdea386a4a33f5b3b1aea3cf9b1f575cbb982bca7656b48d",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position5-IMG_5483.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:32:19",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position5-2026-11-12_18-32",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights",
+        "wood-texture"
+      ],
+      "captureView": "oblique",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          14.080308380126953,
+          608.6263989257812
+        ],
+        [
+          2737.86966796875,
+          186.52610412597656
+        ],
+        [
+          2939.420654296875,
+          2770.7523046875
+        ],
+        [
+          554.8437890624999,
+          3110.4166406249997
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "88957e165ca48ecfbdea386a4a33f5b3b1aea3cf9b1f575cbb982bca7656b48d",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position5-IMG_5483-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "af355cd90b574476f4f43944be7f2ad137af4410da398fa70735f8d33912ecf8"
+      }
+    },
+    {
+      "id": "position5-IMG_5485",
+      "session": "position5",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position5/IMG_5485.HEIC",
+      "originalSha256": "a6aef018eccd9cb7c86eab29a9ab5393650d61b5a0c1f73521871853e258a7f1",
+      "originalBytes": 1531087,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position5-IMG_5485.png",
+      "imageSha256": "786409e86d3364b84802f0ee43447e3a07d6be3abf49c53de0ffa4d1a674aa2f",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position5-IMG_5485.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:33:07",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position5-2026-11-12_18-33",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "wood-texture",
+        "arrows",
+        "circles",
+        "multiple-interacting-arrows"
+      ],
+      "captureView": "oblique",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          170.47189636230468,
+          657.2681616210938
+        ],
+        [
+          2825.5705078124997,
+          315.25465576171877
+        ],
+        [
+          2892.659970703125,
+          2742.571083984375
+        ],
+        [
+          669.0865063476563,
+          3027.35015625
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "786409e86d3364b84802f0ee43447e3a07d6be3abf49c53de0ffa4d1a674aa2f",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position5-IMG_5485-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "e9a6010a6ce37af2b2d8a7542b7d6384cdb23e494054e0beea1ada87f29feeb3"
+      }
+    },
+    {
+      "id": "position6-2026-11-12_18-36",
+      "session": "position6",
+      "kind": "direct-screenshot",
+      "originalPath": ".cache/real-use-tests/training2/position6/2026-11-12_18-36.png",
+      "originalSha256": "96c61df26200671f77f26387c94417658d710a15d7d981410c3f85c69cfe903d",
+      "originalBytes": 163086,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position6-2026-11-12_18-36.png",
+      "imageSha256": "e871836782f86f110d1dd404e52006bae325536e16dbdd2f0343b10191566827",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position6-2026-11-12_18-36.jpg",
+      "imageSize": [
+        1123,
+        1138
+      ],
+      "metadata": {
+        "cameraMake": null,
+        "cameraModel": null,
+        "fileDateTime": null,
+        "timeZone": null,
+        "originalOrientation": null,
+        "decodedBitDepth": 8,
+        "colorConversion": "untagged-assumed-srgb",
+        "sourceIccSha256": null
+      },
+      "referenceRole": "baseline-with-last-move",
+      "marks": {
+        "lastMoveSquares": [
+          "e5",
+          "f6"
+        ],
+        "checkSquares": [
+          "e8"
+        ],
+        "highlightSquares": [],
+        "circles": [],
+        "arrows": [],
+        "annotationStatus": "visual-transcription-not-renderer-verified"
+      }
+    },
+    {
+      "id": "position6-2026-11-12_18-38",
+      "session": "position6",
+      "kind": "direct-screenshot",
+      "originalPath": ".cache/real-use-tests/training2/position6/2026-11-12_18-38.png",
+      "originalSha256": "01837aade331dc2c4c12765e91402546949e407243c5a8e23b46ba73a1c994aa",
+      "originalBytes": 181915,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position6-2026-11-12_18-38.png",
+      "imageSha256": "b25246981f745b86f8083e4a2f727e289b4679f4cc2cb494bf39dda3cfcf60b7",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position6-2026-11-12_18-38.jpg",
+      "imageSize": [
+        1170,
+        1158
+      ],
+      "metadata": {
+        "cameraMake": null,
+        "cameraModel": null,
+        "fileDateTime": null,
+        "timeZone": null,
+        "originalOrientation": null,
+        "decodedBitDepth": 8,
+        "colorConversion": "untagged-assumed-srgb",
+        "sourceIccSha256": null
+      },
+      "referenceRole": "additional-marks",
+      "marks": {
+        "lastMoveSquares": [
+          "e5",
+          "f6"
+        ],
+        "checkSquares": [
+          "e8"
+        ],
+        "highlightSquares": [],
+        "circles": [
+          "f8"
+        ],
+        "arrows": [
+          {
+            "from": "f6",
+            "to": "g7",
+            "color": "green",
+            "geometry": "straight"
+          },
+          {
+            "from": "e8",
+            "to": "f8",
+            "color": "green",
+            "geometry": "straight"
+          }
+        ],
+        "annotationStatus": "visual-transcription-not-renderer-verified"
+      }
+    },
+    {
+      "id": "position6-IMG_5486",
+      "session": "position6",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position6/IMG_5486.HEIC",
+      "originalSha256": "d85f66c4e01e4b9238f7d28f1eb5a42b6a36d4f8a72a493500cb92f96ed32f5e",
+      "originalBytes": 1760676,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position6-IMG_5486.png",
+      "imageSha256": "79e7f356cc83351a85234fe3afa48fce36666c77ce1fffb864e527fba87d7c46",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position6-IMG_5486.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:36:34",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position6-2026-11-12_18-36",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights",
+        "check-highlight"
+      ],
+      "captureView": "approximately-frontal",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          220.81640991210938,
+          736.7233740234375
+        ],
+        [
+          2699.154404296875,
+          757.2231372070312
+        ],
+        [
+          2528.71828125,
+          2999.11828125
+        ],
+        [
+          391.2145166015625,
+          3008.154638671875
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "79e7f356cc83351a85234fe3afa48fce36666c77ce1fffb864e527fba87d7c46",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position6-IMG_5486-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "3248b6a6af17780822c4d7b34d4eecf15ea8545a8bbd80a861b9a6981f83945a"
+      }
+    },
+    {
+      "id": "position6-IMG_5487",
+      "session": "position6",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position6/IMG_5487.HEIC",
+      "originalSha256": "2411a8a5f955404c495a263914471e71a4197b6eb491c8d1f97519059b92857e",
+      "originalBytes": 1368990,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position6-IMG_5487.png",
+      "imageSha256": "11f0d460d7cc1f3e3c45bc71f5121745746ef5c5a8719e224fd46605490cf253",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position6-IMG_5487.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:37:37",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position6-2026-11-12_18-36",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights",
+        "check-highlight"
+      ],
+      "captureView": "oblique",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          106.73225646972656,
+          792.4322314453125
+        ],
+        [
+          2490.22552734375,
+          259.93693359375
+        ],
+        [
+          2776.24962890625,
+          2484.7667578124997
+        ],
+        [
+          759.3151391601563,
+          2924.422470703125
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "11f0d460d7cc1f3e3c45bc71f5121745746ef5c5a8719e224fd46605490cf253",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position6-IMG_5487-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "80c505cfafd61c4b5963cfb9f72de1d6d5bd9872da015ac7ce16eaed3aa1b1cc"
+      }
+    },
+    {
+      "id": "position6-IMG_5488",
+      "session": "position6",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position6/IMG_5488.HEIC",
+      "originalSha256": "69feaab7c64f710030261f403ba80f88dbbf75d512e8185fd1613e5590d9370a",
+      "originalBytes": 1454929,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position6-IMG_5488.png",
+      "imageSha256": "c50cd82c9bcee8645cfd9896df4ec7014a5d9a867a2252638aafef6d1ff538da",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position6-IMG_5488.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:37:49",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position6-2026-11-12_18-38",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights",
+        "check-highlight",
+        "arrows",
+        "circles"
+      ],
+      "captureView": "oblique",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          177.81066833496092,
+          750.3581982421874
+        ],
+        [
+          2688.531767578125,
+          318.6739233398437
+        ],
+        [
+          2880.38912109375,
+          2653.059609375
+        ],
+        [
+          732.1793041992187,
+          3019.78810546875
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "c50cd82c9bcee8645cfd9896df4ec7014a5d9a867a2252638aafef6d1ff538da",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position6-IMG_5488-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "ff4a88e6c14e3b209af695d88d1fc3918e15ff2bc5ebf9aa81ba84d1c9f7ed18"
+      }
+    },
+    {
+      "id": "position7-2026-11-12_18-53",
+      "session": "position7",
+      "kind": "direct-screenshot",
+      "originalPath": ".cache/real-use-tests/training2/position7/2026-11-12_18-53.png",
+      "originalSha256": "bd64fd7825d6a4bf7a5da4348a9b22c817a7f6311f6d79fe73a4d03e428e7307",
+      "originalBytes": 290347,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position7-2026-11-12_18-53.png",
+      "imageSha256": "307ffd4d30a1617bef4c29e3e4bef6efad3466c1155c04eab5875b7c8a71d602",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position7-2026-11-12_18-53.jpg",
+      "imageSize": [
+        1262,
+        1287
+      ],
+      "metadata": {
+        "cameraMake": null,
+        "cameraModel": null,
+        "fileDateTime": null,
+        "timeZone": null,
+        "originalOrientation": null,
+        "decodedBitDepth": 8,
+        "colorConversion": "untagged-assumed-srgb",
+        "sourceIccSha256": null
+      },
+      "referenceRole": "baseline-with-last-move",
+      "marks": {
+        "lastMoveSquares": [
+          "d7",
+          "d6"
+        ],
+        "checkSquares": [],
+        "highlightSquares": [],
+        "circles": [],
+        "arrows": [],
+        "annotationStatus": "visual-transcription-not-renderer-verified"
+      }
+    },
+    {
+      "id": "position7-2026-11-12_18-54",
+      "session": "position7",
+      "kind": "direct-screenshot",
+      "originalPath": ".cache/real-use-tests/training2/position7/2026-11-12_18-54.png",
+      "originalSha256": "d9baf13598360baf4d2b55ca69a500d56f00c72e9efae26386f6d5ed603124c1",
+      "originalBytes": 310591,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position7-2026-11-12_18-54.png",
+      "imageSha256": "c096a58f75ea783301ae3c8860fd80ab3eb7d87db3e7fa2cad34b9c2f57bca9d",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position7-2026-11-12_18-54.jpg",
+      "imageSize": [
+        1262,
+        1311
+      ],
+      "metadata": {
+        "cameraMake": null,
+        "cameraModel": null,
+        "fileDateTime": null,
+        "timeZone": null,
+        "originalOrientation": null,
+        "decodedBitDepth": 8,
+        "colorConversion": "untagged-assumed-srgb",
+        "sourceIccSha256": null
+      },
+      "referenceRole": "additional-marks",
+      "marks": {
+        "lastMoveSquares": [
+          "d7",
+          "d6"
+        ],
+        "checkSquares": [],
+        "highlightSquares": [
+          "f7"
+        ],
+        "circles": [],
+        "arrows": [
+          {
+            "from": "e7",
+            "to": "c6",
+            "color": "orange",
+            "geometry": "elbow"
+          },
+          {
+            "from": "c6",
+            "to": "b4",
+            "color": "orange",
+            "geometry": "elbow"
+          },
+          {
+            "from": "f3",
+            "to": "g5",
+            "color": "orange",
+            "geometry": "elbow"
+          },
+          {
+            "from": "f4",
+            "to": "g5",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "d1",
+            "to": "f3",
+            "color": "orange",
+            "geometry": "straight"
+          }
+        ],
+        "unresolvedArrowSegments": [
+          {
+            "file": "f",
+            "visibleArrowheadSquares": [
+              "f4",
+              "f7"
+            ],
+            "note": "Overlapping vertical shafts; origin pairing not independently resolved."
+          }
+        ],
+        "annotationStatus": "partial-visual-transcription-use-reference-image-for-overlapping-shafts"
+      }
+    },
+    {
+      "id": "position7-IMG_5490",
+      "session": "position7",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position7/IMG_5490.HEIC",
+      "originalSha256": "c51ec3f9bc1819264c0d2237dcb7d1e89c92b0b2570b063e7fa5e97d1bcde9fe",
+      "originalBytes": 1898931,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position7-IMG_5490.png",
+      "imageSha256": "aa92ce88d5b4ef8b3978ec7a7b0c31f7f7bb4aba96290ea3ce77853465172391",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position7-IMG_5490.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:53:57",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position7-2026-11-12_18-53",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights"
+      ],
+      "captureView": "approximately-frontal",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          90.74734588623046,
+          524.0921704101562
+        ],
+        [
+          2881.521767578125,
+          494.0945727539062
+        ],
+        [
+          2714.10849609375,
+          3047.094873046875
+        ],
+        [
+          325.74540161132813,
+          3074.87044921875
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "aa92ce88d5b4ef8b3978ec7a7b0c31f7f7bb4aba96290ea3ce77853465172391",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position7-IMG_5490-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "021a05544882f73c47911a16bd4a83326917f1f8af448959743e0ef6f6c1e677"
+      }
+    },
+    {
+      "id": "position7-IMG_5491",
+      "session": "position7",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position7/IMG_5491.HEIC",
+      "originalSha256": "acde8afd2ccf816195068851d109e5e5069be49904225f21faa296a482ee16f2",
+      "originalBytes": 1856761,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position7-IMG_5491.png",
+      "imageSha256": "5d9a8d41057d8f8141fa27ec54b2430e5e44dfd9cd32b8c6bb577e2c6ed01d58",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position7-IMG_5491.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:54:04",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position7-2026-11-12_18-53",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights"
+      ],
+      "captureView": "oblique",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          293.04510498046875,
+          474.4462426757812
+        ],
+        [
+          2916.6485742187497,
+          806.9279736328125
+        ],
+        [
+          2421.5231249999997,
+          3143.9206640625
+        ],
+        [
+          221.70691040039063,
+          2848.46830078125
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "5d9a8d41057d8f8141fa27ec54b2430e5e44dfd9cd32b8c6bb577e2c6ed01d58",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position7-IMG_5491-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "e3ee096be8e084ebda03a2fff87c14849c0cd8c7cc76e34b749aec0b91a658e0"
+      }
+    },
+    {
+      "id": "position7-IMG_5492",
+      "session": "position7",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position7/IMG_5492.HEIC",
+      "originalSha256": "5e17020cc814844f724777488ee570f6e4e9b497e8bb875b2fb535fe6115bb9d",
+      "originalBytes": 1925233,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position7-IMG_5492.png",
+      "imageSha256": "ee59fde2a22ea7092e97b6a583b29db66015cb6d99bb140ddcd88bf453502146",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position7-IMG_5492.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:54:46",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position7-2026-11-12_18-54",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights",
+        "arrows",
+        "colored-square-highlights",
+        "multiple-interacting-arrows"
+      ],
+      "captureView": "oblique",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          275.12609619140625,
+          399.8107763671875
+        ],
+        [
+          2959.2252539062497,
+          771.3104663085937
+        ],
+        [
+          2401.6176269531247,
+          3187.709560546875
+        ],
+        [
+          166.7016760253906,
+          2805.2189648437497
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "ee59fde2a22ea7092e97b6a583b29db66015cb6d99bb140ddcd88bf453502146",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position7-IMG_5492-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "38a08a0ec439bd5e94e30bb8d8708852754d8dec715adec6ba9c7a61a4415bf4"
+      }
+    },
+    {
+      "id": "position8-2026-11-12_18-56",
+      "session": "position8",
+      "kind": "direct-screenshot",
+      "originalPath": ".cache/real-use-tests/training2/position8/2026-11-12_18-56.png",
+      "originalSha256": "510cb636b3c2963d5485691158d808107b621ae1d78d8aee721a3c728c2dbc0c",
+      "originalBytes": 301267,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position8-2026-11-12_18-56.png",
+      "imageSha256": "9c878a0b3fb75741fcf929d7f895c00efcbcdf043fa7e944317d3c39fb03b892",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position8-2026-11-12_18-56.jpg",
+      "imageSize": [
+        1276,
+        1299
+      ],
+      "metadata": {
+        "cameraMake": null,
+        "cameraModel": null,
+        "fileDateTime": null,
+        "timeZone": null,
+        "originalOrientation": null,
+        "decodedBitDepth": 8,
+        "colorConversion": "untagged-assumed-srgb",
+        "sourceIccSha256": null
+      },
+      "referenceRole": "baseline-with-last-move",
+      "marks": {
+        "lastMoveSquares": [
+          "c7",
+          "c5"
+        ],
+        "checkSquares": [],
+        "highlightSquares": [],
+        "circles": [],
+        "arrows": [],
+        "annotationStatus": "visual-transcription-not-renderer-verified"
+      }
+    },
+    {
+      "id": "position8-2026-11-12_18-58",
+      "session": "position8",
+      "kind": "direct-screenshot",
+      "originalPath": ".cache/real-use-tests/training2/position8/2026-11-12_18-58.png",
+      "originalSha256": "3513fb4fba8c978fde8756f1b1a7084b627edf95f99f605981a35cab9a4c3551",
+      "originalBytes": 312057,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position8-2026-11-12_18-58.png",
+      "imageSha256": "ae1845e061c02d4aefde80109b352cdf206d2ac184a3f6902237080cb46ee537",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position8-2026-11-12_18-58.jpg",
+      "imageSize": [
+        1300,
+        1277
+      ],
+      "metadata": {
+        "cameraMake": null,
+        "cameraModel": null,
+        "fileDateTime": null,
+        "timeZone": null,
+        "originalOrientation": null,
+        "decodedBitDepth": 8,
+        "colorConversion": "untagged-assumed-srgb",
+        "sourceIccSha256": null
+      },
+      "referenceRole": "additional-marks",
+      "marks": {
+        "lastMoveSquares": [
+          "c7",
+          "c5"
+        ],
+        "checkSquares": [],
+        "highlightSquares": [
+          "d5"
+        ],
+        "circles": [],
+        "arrows": [
+          {
+            "from": "d8",
+            "to": "f6",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "f6",
+            "to": "d5",
+            "color": "orange",
+            "geometry": "elbow"
+          },
+          {
+            "from": "c3",
+            "to": "d5",
+            "color": "orange",
+            "geometry": "elbow"
+          },
+          {
+            "from": "e4",
+            "to": "d5",
+            "color": "orange",
+            "geometry": "straight"
+          },
+          {
+            "from": "a2",
+            "to": "d5",
+            "color": "orange",
+            "geometry": "straight"
+          }
+        ],
+        "annotationStatus": "visual-transcription-not-renderer-verified"
+      }
+    },
+    {
+      "id": "position8-IMG_5493",
+      "session": "position8",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position8/IMG_5493.HEIC",
+      "originalSha256": "abcda7f95d0f03d4811552df7f128b3376810defaec21fe9dafafe317ccda830",
+      "originalBytes": 1652146,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position8-IMG_5493.png",
+      "imageSha256": "a8277354f2f7b1b299f29c68458aedd196bcec62a3c9135cf27de05f1b9db2c2",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position8-IMG_5493.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:57:07",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position8-2026-11-12_18-56",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights"
+      ],
+      "captureView": "approximately-frontal",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          142.0695245361328,
+          513.8836376953125
+        ],
+        [
+          2975.85134765625,
+          494.70806396484375
+        ],
+        [
+          2744.922099609375,
+          3095.67767578125
+        ],
+        [
+          355.2724987792969,
+          3043.123330078125
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "a8277354f2f7b1b299f29c68458aedd196bcec62a3c9135cf27de05f1b9db2c2",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position8-IMG_5493-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "289fac5b1e16070c80c9eb623aa9d91ad97721467661dc97efed795c385a9a8a"
+      }
+    },
+    {
+      "id": "position8-IMG_5494",
+      "session": "position8",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position8/IMG_5494.HEIC",
+      "originalSha256": "da605cc14e58105653afe716d3380bd1bad7d06cb892d63ad83ce64360137baf",
+      "originalBytes": 1871873,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position8-IMG_5494.png",
+      "imageSha256": "ebb692705a7b794feb8ee0791d7880826aebd1ac3c906d1379c41b4535158a00",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position8-IMG_5494.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:57:09",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position8-2026-11-12_18-56",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights"
+      ],
+      "captureView": "oblique",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          79.16903869628906,
+          669.8607788085938
+        ],
+        [
+          2736.6022851562498,
+          275.37188232421875
+        ],
+        [
+          2870.209248046875,
+          2787.25986328125
+        ],
+        [
+          588.7660180664062,
+          3045.359912109375
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "ebb692705a7b794feb8ee0791d7880826aebd1ac3c906d1379c41b4535158a00",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position8-IMG_5494-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "82ec189ee92350b61fc81c2896e989e898a969c3880d67c4ae7f4e8d768d0261"
+      }
+    },
+    {
+      "id": "position8-IMG_5495",
+      "session": "position8",
+      "kind": "phone-photo",
+      "originalPath": ".cache/real-use-tests/training2/position8/IMG_5495.HEIC",
+      "originalSha256": "3c8d90902ece6d72e2f8ce52baaebd61a5a7b4527692a45f735386f25432a7d1",
+      "originalBytes": 1917054,
+      "imagePath": ".cache/phone-targeted-v1/review/images/position8-IMG_5495.png",
+      "imageSha256": "e9568bd2cd39a834978aeb976a496025c00a14de82b0eafba1f19a459deec958",
+      "jpegPath": ".cache/phone-targeted-v1/review/jpg/position8-IMG_5495.jpg",
+      "imageSize": [
+        3024,
+        4032
+      ],
+      "metadata": {
+        "cameraMake": "Apple",
+        "cameraModel": "iPhone 8",
+        "fileDateTime": "2026:11:12 18:57:36",
+        "timeZone": null,
+        "originalOrientation": 6,
+        "decodedBitDepth": 8,
+        "colorConversion": "embedded-icc-to-srgb",
+        "sourceIccSha256": "20789fdbea9835251a4f0796c8bf45cbd964896044886540da21ffc7457af0ab"
+      },
+      "referenceImageId": "position8-2026-11-12_18-58",
+      "pairingReview": {
+        "status": "visually-matches-placement-view-artwork-and-marks",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-12",
+        "independentHumanReview": false
+      },
+      "conditions": [
+        "screen-photograph",
+        "perspective",
+        "moire",
+        "last-move-highlights",
+        "arrows",
+        "colored-square-highlights",
+        "multiple-interacting-arrows"
+      ],
+      "captureView": "oblique",
+      "boardVisibilityReview": "complete-grid-visible",
+      "boardCorners": [
+        [
+          318.5640014648437,
+          625.7315551757812
+        ],
+        [
+          2938.1071289062497,
+          905.8404345703125
+        ],
+        [
+          2477.894794921875,
+          3250.4025585937497
+        ],
+        [
+          268.4341149902344,
+          2968.267353515625
+        ]
+      ],
+      "cornerAnnotationStatus": "visual-reviewed",
+      "physicalLightingMeasurements": null,
+      "geometryReview": {
+        "status": "visual-reviewed",
+        "reviewedBy": "assistant",
+        "reviewedOn": "2026-11-13",
+        "coordinateSpace": "normalized-image-pixels",
+        "cornerOrder": [
+          "top-left",
+          "top-right",
+          "bottom-right",
+          "bottom-left"
+        ],
+        "imageSha256": "e9568bd2cd39a834978aeb976a496025c00a14de82b0eafba1f19a459deec958",
+        "method": "existing-detector-proposal-followed-by-visual-review-of-original-rectification-grid-and-paired-reference",
+        "proposalCodeSha256": "2f4b6082e5aee8c521873a2332eff862fe98e0564a1895c782046b278a1ce21c",
+        "manualCornerAdjustment": false,
+        "independentHumanReview": false,
+        "outcome": "complete-grid-aligned-and-labels-match-reference",
+        "reviewPanel": ".cache/phone-targeted-v1/geometry-proposals/position8-IMG_5495-panel.jpg",
+        "notes": "All eight rows and columns remain visible. Perspective-corrected boundaries align with square divisions; no clipped pieces or swapped cells observed. Moire and overlays are retained.",
+        "fingerprint": "29f04d9b5199229a0369abb5490b4b5940c266d502d69d41d6d8b24926186156"
+      }
+    }
+  ],
+  "limitations": [
+    "Official selectors are unconfirmed; settings screenshots were not supplied.",
+    "Corner and crop reviews are assistant visual annotations, not independent human verification or subpixel metrology.",
+    "All baseline images retain last-move highlights; there are no truly unmarked examples.",
+    "No quantitative illumination, camera-pose or sharpness measurements.",
+    "Matched visible artwork does not prove coverage of all twelve piece designs when some classes are absent.",
+    "Lichess sessions are distinct games per user confirmation, but their identifiers and relation to older sources remain unconfirmed.",
+    "position7 has overlapping vertical arrow shafts with unresolved origin pairing. The screenshot is the authoritative mark reference; partial mark annotations are not a synthesis recipe."
+  ],
+  "intakeBatches": [
+    {
+      "id": "initial-pilot",
+      "sessionIds": [
+        "position1",
+        "position2",
+        "position3",
+        "position4",
+        "position5",
+        "position6"
+      ],
+      "phonePhotos": 18,
+      "directScreenshots": 12,
+      "reviewedOn": "2026-11-12"
+    },
+    {
+      "id": "white-knight-expansion",
+      "sessionIds": [
+        "position7",
+        "position8"
+      ],
+      "phonePhotos": 6,
+      "directScreenshots": 4,
+      "reviewedOn": "2026-11-12",
+      "previousManifestSha256": "df5094c886bbf5ce44b0c4859a175e85cbaf42674ed2394c7df21ec2c263d27a"
+    }
+  ],
+  "geometryPreparation": {
+    "reviewedOn": "2026-11-13",
+    "previousManifestSha256": "999693dc13f054674e49564dd28f01a7013a411ded3e20c4ed1007d02cc061c5",
+    "reviewedPhotos": 24,
+    "readyForSquareExport": true,
+    "gallery": ".cache/phone-targeted-squares-v1/index.html",
+    "cornerOrder": [
+      "top-left",
+      "top-right",
+      "bottom-right",
+      "bottom-left"
+    ],
+    "coordinateSpace": "full-resolution EXIF-normalized RGB image pixels",
+    "reviewMethod": "Detector-assisted proposals individually checked visually against complete boards, direct screenshots and transcribed piece diagrams.",
+    "accuracyMeasurement": false,
+    "trainingRun": false,
+    "detectorProposalsGenerated": true
+  }
+}

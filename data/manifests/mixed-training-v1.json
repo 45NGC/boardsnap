@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "datasetId": "mixed-training-v1",
+  "preparedOn": "2026-11-14",
+  "purpose": "Preparation only; no training authorization inferred.",
+  "datasets": [
+    "digital-style-squares-v2",
+    "arrowhead-training-squares-v1",
+    "phone-targeted-training-v1"
+  ],
+  "validationDatasets": [
+    "digital-style-squares-v2",
+    "phone-targeted-training-v1"
+  ],
+  "backgroundReview": "data/manifests/phone-training-backgrounds-v1.json",
+  "inputs": [
+    {
+      "path": ".cache/arrowhead-training-squares-v1/dataset.json",
+      "sha256": "c843b1dc4199a2619be2a32194cb19eb74a1ecbc7c264545b967f3180e6a19ca"
+    },
+    {
+      "path": ".cache/arrowhead-training-squares-v1/verified.jsonl",
+      "sha256": "5bdc7de8be3fd6303317f0c5832740a48542404bb3b685049bfd6a02cd361b38"
+    },
+    {
+      "path": ".cache/digital-style-squares-v2/dataset.json",
+      "sha256": "7cae41fdb1b28e7dc8442c70a01cc5c473ee47f7c206cdfcc9ec0cb715842525"
+    },
+    {
+      "path": ".cache/digital-style-squares-v2/verified.jsonl",
+      "sha256": "9bfe8473346998df5df546c7a74c449d14d9db1ad34669dc390e527993172f4a"
+    },
+    {
+      "path": ".cache/phone-targeted-training-v1/dataset.json",
+      "sha256": "8f413689357c4beb07fa199b65827d360ed9d6c955c9b90d16916b70bb618697"
+    },
+    {
+      "path": ".cache/phone-targeted-training-v1/training.jsonl",
+      "sha256": "0af4c88ce775634e6c0168d1e3b47892e991812dd627a87bce9f3ee770d0e165"
+    },
+    {
+      "path": ".cache/phone-targeted-training-v1/validation.jsonl",
+      "sha256": "a9208f8a64b5b2307fff3c6ce60049ed5ee88653052198b8b66b8cef765b124c"
+    },
+    {
+      "path": ".cache/phone-targeted-training-v1/verified.jsonl",
+      "sha256": "b2ea9e3d361bab16f78602318213e57989092392b4ec80ddcda035514db394a8"
+    },
+    {
+      "path": "data/manifests/phone-training-backgrounds-v1.json",
+      "sha256": "f648aa8a9dfb08ca94e50f8fd3864971b123b97808eb715b84f4061035eb569a"
+    },
+    {
+      "path": "data/reports/phone-targeted-overlap-v1.json",
+      "sha256": "4fbb3f59073411a6b0e0f8e4e76abde13193aff7cee1db644e2376e13cd3b3a7"
+    },
+    {
+      "path": "data/reports/training-coverage-v1.json",
+      "sha256": "aeab993f606d63a83417f8978c18a7e03bafd9601a4c0429274ac7b2f58ebb1b"
+    }
+  ],
+  "seed": 20261114,
+  "poolQuotas": {
+    "digital-clean": 6400,
+    "digital-simple-marks": 3200,
+    "digital-arrows": 4800,
+    "digital-arrowheads": 1600,
+    "photo-old-other": 9600,
+    "photo-old-wood": 1600,
+    "photo-targeted": 4800
+  },
+  "samplingPolicy": "32000 draws per epoch: 50% digital and 50% photo. Exact pool quotas, balanced group/position/style/board allocation within pools; shuffled eligible cells before repeating. Digital marks use existing training_indices. No class reweighting, new transforms or validation sampling.",
+  "status": "Initial data recipe, not an optimized or accepted model.",
+  "limitations": [
+    "Unknown photographic game/video origins remain unresolved; no observed overlap is not proof of independent sources.",
+    "Existing validation has already informed development, not independent final acceptance.",
+    "No partial group reassignment; any overlap blocks assembly.",
+    "Counts include repeated cells and related variants. The old wood pool has five photos; its 5% quota must be validated for overfitting.",
+    "Source crop preprocessing remains unchanged. No current trainer automatically consumes this custom reference dataset; use its checked loader when wiring the next training run."
+  ]
+}

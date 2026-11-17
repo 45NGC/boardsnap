@@ -13,6 +13,7 @@ dependencies = ["Pillow>=12.1.1,<13", "numpy>=2,<3", "opencv-python-headless>=4.
 
 [project.scripts]
 boardsnap = "boardsnap.adapters.cli:main"
+boardsnap-http = "boardsnap.adapters.http:main"
 
 [project.optional-dependencies]
 dev = ["pytest>=8"]
@@ -20,6 +21,8 @@ capture = ["playwright>=1.51,<2"]
 photos = ["pillow-heif>=1.8,<2"]
 dataset = ["chess==1.11.2"]
 ml = ["torch>=2.14.1,<2.15"]
+server = ["starlette>=1.10,<2", "uvicorn>=0.54,<1", "python-multipart>=0.0.34,<0.1"]
+server-test = ["httpx>=0.28,<1"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

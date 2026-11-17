@@ -1,0 +1,837 @@
+{
+  "schemaVersion": 1,
+  "reportId": "phone-targeted-overlap-v1",
+  "scope": "New targeted intake versus existing non-final phone validation; annotation comparisons also cover prior phone development and generated digital validation positions.",
+  "inputs": {
+    "targeted": {
+      "path": "data/manifests/phone-targeted-intake-v1.json",
+      "sha256": "b50d76eda72620fd961f16c968db414ae0b8654c497251f57e2e8b377a6eaad3"
+    },
+    "validation": {
+      "path": "data/manifests/phone-validation-v1.json",
+      "sha256": "d461867923a346e17122ff35bef2bb7c284d9ed1354eab431060887200bfdd4f"
+    },
+    "development": {
+      "path": "data/manifests/phone-photos-v1.json",
+      "sha256": "44e0f95efaa0afc1b51d1818b8485e90162c40d6cacc59e5f8cf0b6cd9e05e13"
+    },
+    "digitalPositions": {
+      "path": "data/manifests/digital-positions-v1.json",
+      "sha256": "507e33680fd9970a14d26f2d7ea9627b9cf1ae0c310a57cb182316af88c14b35"
+    },
+    "phonePartitionPlan": {
+      "path": "data/manifests/phone-training-v1.json",
+      "sha256": "6ff840f3c57901ec821feef3cda9cfbc424635dc2eda1c097da245e7616d9869"
+    }
+  },
+  "counts": {
+    "targetPhotos": 24,
+    "targetReferences": 16,
+    "targetPositions": 8,
+    "validationPhotos": 30,
+    "previousDevelopmentPhotos": 161,
+    "generatedDigitalValidationPositions": 12,
+    "validationPhotosWithKnownSourceId": 10,
+    "validationPhotosWithoutKnownSourceId": 20
+  },
+  "imageIntegrity": {
+    "targetedFilesAndPixelsChecked": [
+      {
+        "id": "position1-2026-11-12_18-07",
+        "originalSha256": "23c8eb0f9ef8b3a36ca1a57260589c98f0b7a175dda5b9e457c79968eb56dbb1",
+        "imageSha256": "77329198ed946f2b3def9fba0944d1df275ad1597d11b9f88882e9c42cb991c5",
+        "pixelSha256": "6b2bac878c98f92ff8111bd8d81cfedaf096fbab338bcdb1bff5c9fdd3cd9ee6"
+      },
+      {
+        "id": "position1-2026-11-12_18-11",
+        "originalSha256": "8db77ae87f73a1ee0d482a63bf57aef91f65af8549aa222d810bf8d2858927ce",
+        "imageSha256": "ed131c0e7041a0a0a5e3ff1900ea3d7f970f1103a38771d9c6f45d738d1225ec",
+        "pixelSha256": "302fc42015da0d9fc8273d732d3734726fd0aebcdbc50a4d8446eeb6650f792b"
+      },
+      {
+        "id": "position1-IMG_5470",
+        "originalSha256": "9b9166267dab5df6e5dca1934ce35f4052149fd947e3f209dc824e836f6d6c93",
+        "imageSha256": "e8556d6dbd14b70b0d648d0a9e033ab850efc63f98f7629375f0e1aacd1a8f3c",
+        "pixelSha256": "306083535371b5aa2d2490917c075722aacbfca9c04405c7a73c97bb50f4ed21"
+      },
+      {
+        "id": "position1-IMG_5471",
+        "originalSha256": "7a781fd53c2fc7112d8c54bfb1d2f0e07075edbf89b24fc4014d3284e0c13bb9",
+        "imageSha256": "9b4bdc3fda6e7639e1cb07068a99e1a0cd29af9b2dae9f11f163d44ceb54188f",
+        "pixelSha256": "a57139a636fe789ba7d2d89d241c42ee1f710fef9d0e2b9900dba6e98386afc1"
+      },
+      {
+        "id": "position1-IMG_5472",
+        "originalSha256": "400d2ce5ee31c8e9bf19e5a290e3f0e08fd79c1677797679f1319a51505384f5",
+        "imageSha256": "7d86858e517e9b3b2e7556b32afd94f4c995ac43ef4008a0fe12a6445b9e8f02",
+        "pixelSha256": "29763776b005a70c18480ca45f03e0025ded47723392a9f1476eaeaf93e2b5d3"
+      },
+      {
+        "id": "position2-2026-11-12_18-16",
+        "originalSha256": "85424291945a868c1eed661af4c0da9ff33588d56d54113720df53c13bb05d52",
+        "imageSha256": "3948fc4d5bc3fca86dda28484f2e7cbaf9d5699368a0b1b2894ce277dbe6820b",
+        "pixelSha256": "8a1002f78f03c303a0e1f0fa7aedc6df180004440b24120a67399e98b4b8f8e8"
+      },
+      {
+        "id": "position2-2026-11-12_18-18",
+        "originalSha256": "fdbec64388d8a999d5cb26c43b4ad54f52a84785b31791bbb6f382a4f183aa2a",
+        "imageSha256": "eccec589f1439774d54c1f10fd67f0927a7e1d444bddb64a44080086a7dac9ef",
+        "pixelSha256": "76f98f1f0f39a1d9a35e25ad2e1e2ebe833ccad94553df17f8700960f6c3224a"
+      },
+      {
+        "id": "position2-IMG_5473",
+        "originalSha256": "7ed57da4ea49145df664eb8a6529407f9930706aa8cc944ffa2381035f6eef47",
+        "imageSha256": "85f464d1566455dcda53f6bf8aee7e214c12e280a6c2391e5aba725b55329863",
+        "pixelSha256": "4597d502bfe7a1268be4a12e7305db5353e737bc9e514cc6619ec90bc6d0593e"
+      },
+      {
+        "id": "position2-IMG_5474",
+        "originalSha256": "6722c993f4ad70cebf86b110f29805f5adcaa3874b73f1321f14f607756482dc",
+        "imageSha256": "9f95b5cd1959010b507ae1a6ec07f9c1c1c287ec714cb0556b36550ca935fad6",
+        "pixelSha256": "e2c5377461babfad270ba52ae2be1f3f349720fea105949461bd73947e300b9c"
+      },
+      {
+        "id": "position2-IMG_5475",
+        "originalSha256": "5b19b354c2a7db4ab1804517bd74e6d01ff2bf27fa686e62b4c5f07edc51a60d",
+        "imageSha256": "758e116d35d46bf4deeadef5faedb780544e96d74bb69f4fdd40ac797ee9d934",
+        "pixelSha256": "3835b2e5f3f0926ea2b96c60cc266405ced10406b43fbc13448c9dae902dfe17"
+      },
+      {
+        "id": "position3-2026-11-12_18-23",
+        "originalSha256": "5b6af69b49de158548cd87dc8ab96c7daecc95d399b134cc53b9c20bf601389a",
+        "imageSha256": "67ee41fca2b243bc6259af99b65f85484c153619c09aaa3fa2feeeab4642867d",
+        "pixelSha256": "1695250dac85ffd99231d17cde9a534a885675594920ca2fb6f56a216a2eb17d"
+      },
+      {
+        "id": "position3-2026-11-12_18-24",
+        "originalSha256": "45c8acfaeb061071d5b563029430ea76b77390b271c6357df7769e51b7aec706",
+        "imageSha256": "084614b37808a71da7b6c75d1b09a2f6b6af985e8ec28359368ced832e66fb0f",
+        "pixelSha256": "d214cebe6b30c0bb02de19a27c0d338486355b763cc2170053edde37a1f4d0a7"
+      },
+      {
+        "id": "position3-IMG_5476",
+        "originalSha256": "138b3535a4b571c69a93151548cf5f857cd920739ac1628df03bf1acebbd2de5",
+        "imageSha256": "487b1b1203a43edbd40be8195dd7f9e88d34af2c1fd2e18e52d0d32b036176d9",
+        "pixelSha256": "446a5031f40818b42495fdd4d780ab879ba301a020ffefa7fe297ba67d3d678c"
+      },
+      {
+        "id": "position3-IMG_5477",
+        "originalSha256": "e63eb3777ac4a669a50f6471185f9bccca48a82f6ad2cb05042935809e2176f9",
+        "imageSha256": "5e5731de97035cdd14baf1a6435f88ae278e8305b613d994fe0088622c1988c6",
+        "pixelSha256": "d8d009187d917eb874da896e1d7a74379111ac124f0428f1b9c69a574d9e8c17"
+      },
+      {
+        "id": "position3-IMG_5478",
+        "originalSha256": "7b95398a6dd5e268b025af59454975d4d66cdad6278f125c2cb94aef659eb5fa",
+        "imageSha256": "a814445661f0fdc4b37237afe4d127829e86e90fa9515b8057d79d4646929a5d",
+        "pixelSha256": "aa417462ebfbb22e00e411c666d495c5aa72c232332ac57ee82f632f0da38192"
+      },
+      {
+        "id": "position4-2026-11-12_18-26",
+        "originalSha256": "fe0bf70dcd876875fa956717c3eca680b96279791b39a9bb62b0d94fccf4bef3",
+        "imageSha256": "2415bc04f5324b78241e9721a581bff19d44e88f8e236fa3c76e46031caed6dc",
+        "pixelSha256": "5aabdbd5f519a2ffb679691bcdeb111dc51ed0b623305748bc29804c5a6e9201"
+      },
+      {
+        "id": "position4-2026-11-12_18-28",
+        "originalSha256": "4f1534a03f99ee6757700e81d9a5d1178bbc177e8b019e7e8b592a828d5c4670",
+        "imageSha256": "71be2cae8791dd7af5d1122ba7eb57714e5e5a3f46eae2fdb1da0155782c7b3a",
+        "pixelSha256": "aa796b104a79db6b2c6ee3dcf681f5df51cbb19b0a40287ba3e4fd218ce0d534"
+      },
+      {
+        "id": "position4-IMG_5479",
+        "originalSha256": "c3792b035d5b144b395213cb6be6be35433bd57be43eb965c59719d9e6bbb1cd",
+        "imageSha256": "93c4adff2e41335ed712b3b1dbfb02b4946fd7a47bbd1d208b721511919e8af3",
+        "pixelSha256": "d3c84b19de3ae4e7bf3e5fa9df19b25fc13c9ec01d62e97ad959e372be5d2241"
+      },
+      {
+        "id": "position4-IMG_5480",
+        "originalSha256": "ad171825198fa1840f75d116b4d1be1f9cc49b346593c4f69bde8cbfd30f618c",
+        "imageSha256": "451143cfc6941d29055f7ff583836da3873e4eb0b39825e21bcaf8496889f3c4",
+        "pixelSha256": "e1cdd898ae4e7b4e06034d991b440ec810c91cb2713e56b81ef6559accaa10a6"
+      },
+      {
+        "id": "position4-IMG_5481",
+        "originalSha256": "430d9f2ecf3442e9fdf81b64a6e1e17b63ccc6dcf309cd7573e7eb8a7036c0c4",
+        "imageSha256": "4c2f10fd8d8dba5e5673a574f73aaed2416605fa0a48d7e90194776b0288c599",
+        "pixelSha256": "69e49cbe6a32e27bb9260627222983d6d5958ce29577ad325dc04e6799d3c7b2"
+      },
+      {
+        "id": "position5-2026-11-12_18-32",
+        "originalSha256": "44f4f269b4bd7d28d00c78dbcd5e6ca1ce4d0d674fa6402baea1f1e52bc4ce59",
+        "imageSha256": "2bec7936e3b7c7c6a0fa4d434f9ae76ddafddc380f9bbf3095595933e5960a7e",
+        "pixelSha256": "be4e4b710c58bd9b3e218fc57c98439a39c2ca7bd0889e5b53c508ae1aab6f5c"
+      },
+      {
+        "id": "position5-2026-11-12_18-33",
+        "originalSha256": "d54655a6821da2a6281fd42718aa52db8144ea7afb71f3ad8fc42793bf069a52",
+        "imageSha256": "e644a808c0e310e792b81e240365de0585c96a790511068612e445a15b822a72",
+        "pixelSha256": "647d7d69d2bb57289544fdf245a3da17751af62f30b425ceb0cffe86863fa8b5"
+      },
+      {
+        "id": "position5-IMG_5482",
+        "originalSha256": "7dd85dcdd9a5e50a5d81a9f0c816b1b4a3b16874afda4172c07a08d64419a42b",
+        "imageSha256": "90677b4733b8c6507ed12ee9cbed618264d73e0cab84a7e674531e4a8a2619a5",
+        "pixelSha256": "cd56f3260fa790d5b2b30b9277cbcc0aeae91daa4d748a82221d2b0f68e346f8"
+      },
+      {
+        "id": "position5-IMG_5483",
+        "originalSha256": "04aeb8ddbf09ddbe74b0a60c1dfeea7f3154fa220aab2b60e5640860a94df271",
+        "imageSha256": "88957e165ca48ecfbdea386a4a33f5b3b1aea3cf9b1f575cbb982bca7656b48d",
+        "pixelSha256": "deeb68fb5bff7f1787f069d9fbf38a1c1e63a78d7ce87a0be33c50e12deb295f"
+      },
+      {
+        "id": "position5-IMG_5485",
+        "originalSha256": "a6aef018eccd9cb7c86eab29a9ab5393650d61b5a0c1f73521871853e258a7f1",
+        "imageSha256": "786409e86d3364b84802f0ee43447e3a07d6be3abf49c53de0ffa4d1a674aa2f",
+        "pixelSha256": "1e2a7a0eac4e971cfcb7c71345b9d85d850b98f211a662805458e6cd11bfc8c3"
+      },
+      {
+        "id": "position6-2026-11-12_18-36",
+        "originalSha256": "96c61df26200671f77f26387c94417658d710a15d7d981410c3f85c69cfe903d",
+        "imageSha256": "e871836782f86f110d1dd404e52006bae325536e16dbdd2f0343b10191566827",
+        "pixelSha256": "d24471840e72d567c0178e6e9ad5fa5757594a3c14dc15ed5c52466ddc3bd553"
+      },
+      {
+        "id": "position6-2026-11-12_18-38",
+        "originalSha256": "01837aade331dc2c4c12765e91402546949e407243c5a8e23b46ba73a1c994aa",
+        "imageSha256": "b25246981f745b86f8083e4a2f727e289b4679f4cc2cb494bf39dda3cfcf60b7",
+        "pixelSha256": "0a59f434525e49d90139296f812b22582928d8accdd0aba70951782acb35a1c6"
+      },
+      {
+        "id": "position6-IMG_5486",
+        "originalSha256": "d85f66c4e01e4b9238f7d28f1eb5a42b6a36d4f8a72a493500cb92f96ed32f5e",
+        "imageSha256": "79e7f356cc83351a85234fe3afa48fce36666c77ce1fffb864e527fba87d7c46",
+        "pixelSha256": "051c0afdeaedefdd4021aae475da9ff38554a19596e467261c8a14dccddfc0d9"
+      },
+      {
+        "id": "position6-IMG_5487",
+        "originalSha256": "2411a8a5f955404c495a263914471e71a4197b6eb491c8d1f97519059b92857e",
+        "imageSha256": "11f0d460d7cc1f3e3c45bc71f5121745746ef5c5a8719e224fd46605490cf253",
+        "pixelSha256": "00dd9fecebeaddcbd2fd1c861a38aba4891747f4e3a978a4e42d764b50f6dd98"
+      },
+      {
+        "id": "position6-IMG_5488",
+        "originalSha256": "69feaab7c64f710030261f403ba80f88dbbf75d512e8185fd1613e5590d9370a",
+        "imageSha256": "c50cd82c9bcee8645cfd9896df4ec7014a5d9a867a2252638aafef6d1ff538da",
+        "pixelSha256": "ab928c594d592ad9219d49ee773e460bdc4f17b384c22dc53c6a6a0a157b11cd"
+      },
+      {
+        "id": "position7-2026-11-12_18-53",
+        "originalSha256": "bd64fd7825d6a4bf7a5da4348a9b22c817a7f6311f6d79fe73a4d03e428e7307",
+        "imageSha256": "307ffd4d30a1617bef4c29e3e4bef6efad3466c1155c04eab5875b7c8a71d602",
+        "pixelSha256": "075273f78f86e3633734b3454ccc0a6271efb30f131848da9baa6ac1b2d60083"
+      },
+      {
+        "id": "position7-2026-11-12_18-54",
+        "originalSha256": "d9baf13598360baf4d2b55ca69a500d56f00c72e9efae26386f6d5ed603124c1",
+        "imageSha256": "c096a58f75ea783301ae3c8860fd80ab3eb7d87db3e7fa2cad34b9c2f57bca9d",
+        "pixelSha256": "9b8aa05c1aebaff7d230f72ca952b52ce85c0e83d5837ca6efd49f2e5460917e"
+      },
+      {
+        "id": "position7-IMG_5490",
+        "originalSha256": "c51ec3f9bc1819264c0d2237dcb7d1e89c92b0b2570b063e7fa5e97d1bcde9fe",
+        "imageSha256": "aa92ce88d5b4ef8b3978ec7a7b0c31f7f7bb4aba96290ea3ce77853465172391",
+        "pixelSha256": "3c5f3b0abc077b5463851d987d257624d23cfb40479236675af6365dfa460877"
+      },
+      {
+        "id": "position7-IMG_5491",
+        "originalSha256": "acde8afd2ccf816195068851d109e5e5069be49904225f21faa296a482ee16f2",
+        "imageSha256": "5d9a8d41057d8f8141fa27ec54b2430e5e44dfd9cd32b8c6bb577e2c6ed01d58",
+        "pixelSha256": "5d418c9ccbd50376e40c545611f0c5c5047c1fca8d27424027f29b03a70b21aa"
+      },
+      {
+        "id": "position7-IMG_5492",
+        "originalSha256": "5e17020cc814844f724777488ee570f6e4e9b497e8bb875b2fb535fe6115bb9d",
+        "imageSha256": "ee59fde2a22ea7092e97b6a583b29db66015cb6d99bb140ddcd88bf453502146",
+        "pixelSha256": "9bc1ed5071e25b9c54b92ef5bc56cd55c22d0ca36ac4c6ca07686a3f4c80ddf7"
+      },
+      {
+        "id": "position8-2026-11-12_18-56",
+        "originalSha256": "510cb636b3c2963d5485691158d808107b621ae1d78d8aee721a3c728c2dbc0c",
+        "imageSha256": "9c878a0b3fb75741fcf929d7f895c00efcbcdf043fa7e944317d3c39fb03b892",
+        "pixelSha256": "38aa3831874c9b08218748d85a451734b3d00bbf50abf2035081c6161f1cd760"
+      },
+      {
+        "id": "position8-2026-11-12_18-58",
+        "originalSha256": "3513fb4fba8c978fde8756f1b1a7084b627edf95f99f605981a35cab9a4c3551",
+        "imageSha256": "ae1845e061c02d4aefde80109b352cdf206d2ac184a3f6902237080cb46ee537",
+        "pixelSha256": "f879e095d08eaa928104ff8e786cdeec2ab575a8735afe8004cb8bfb56bb0e41"
+      },
+      {
+        "id": "position8-IMG_5493",
+        "originalSha256": "abcda7f95d0f03d4811552df7f128b3376810defaec21fe9dafafe317ccda830",
+        "imageSha256": "a8277354f2f7b1b299f29c68458aedd196bcec62a3c9135cf27de05f1b9db2c2",
+        "pixelSha256": "8c878cf6b4ecf6b275de52030b3c43a75f18776d43038ef1dc5cd3161279cada"
+      },
+      {
+        "id": "position8-IMG_5494",
+        "originalSha256": "da605cc14e58105653afe716d3380bd1bad7d06cb892d63ad83ce64360137baf",
+        "imageSha256": "ebb692705a7b794feb8ee0791d7880826aebd1ac3c906d1379c41b4535158a00",
+        "pixelSha256": "5a40e41c13a6320566af6b13fbe839b267d626be1d25f894b2bd00806b7e2518"
+      },
+      {
+        "id": "position8-IMG_5495",
+        "originalSha256": "3c8d90902ece6d72e2f8ce52baaebd61a5a7b4527692a45f735386f25432a7d1",
+        "imageSha256": "e9568bd2cd39a834978aeb976a496025c00a14de82b0eafba1f19a459deec958",
+        "pixelSha256": "52c7727611b00067a4169c27b128b0292f21c47699ee05f7d81d8585095120ef"
+      }
+    ],
+    "validationFilesAndPixelsChecked": [
+      {
+        "id": "chesscom-img_5393",
+        "originalSha256": "0c5c3bd7f835bda38a1e670e9d37d7849b4a9447048220355e418a60b40eb076",
+        "imageSha256": "be4f178607778d8b8711a00ba9d6233648e3ccdf8877059e5001b7604543c0b9",
+        "pixelSha256": "af6242b5b3df4bebfc633278489b847a3067493a9b5f7046dbad7614222205fa"
+      },
+      {
+        "id": "chesscom-img_5394",
+        "originalSha256": "07641fc758e3024be3cfcfa3dbd05a872ddfeac90ac360a4e3300d31b5066778",
+        "imageSha256": "012986da922195f3c99a9044ac816cb92b574bf05eedbaa9c45a881c205e1ed8",
+        "pixelSha256": "03d8657ccd8c78f89ebe203ec55708a0ff4e48fbf14ddea411e6849dbfaf9110"
+      },
+      {
+        "id": "chesscom-img_5395",
+        "originalSha256": "21d632f7a5c0c713fd2c817f421da89bd1db96c9567621393343f43fa52fc9d8",
+        "imageSha256": "5e8695bcc5ddffaf1a0d8c2829ca730a43ace7dc61c6fdeb3e0ed74f300c5d13",
+        "pixelSha256": "4e29140590aa52b39e9395db08b837bc0e2b7316ff282492276d40b2a7e05f76"
+      },
+      {
+        "id": "chesscom-img_5396",
+        "originalSha256": "467732cc01cf0d33289d55bf9c00afa930e1aaae8c88b29374f733e2126164d6",
+        "imageSha256": "efe67ecbc84a197e572443221767542e4048959f77e601a3632d09b036204c49",
+        "pixelSha256": "63f91cfca5d1b21db75fdfd56ec1ad52830894f21b5d964df5d23d9998b72162"
+      },
+      {
+        "id": "chesscom-img_5397",
+        "originalSha256": "f84a880d2327364a3ff2e331c084451f854ac02316386a0e10d2a41dca33ad65",
+        "imageSha256": "b0dd3f9d186f6ee68b874f7f8420de261fbbeb5bb0f9f22d26a3b61760a92e89",
+        "pixelSha256": "d9bc406413369e2468e268daa6dfc8463428552bc2fe885e53776e386c6f80ce"
+      },
+      {
+        "id": "chesscom-img_5398",
+        "originalSha256": "2cb1ab6c6443b300f6cad138c665a7e94e352518b4c80948da1b8886fed870cb",
+        "imageSha256": "3f3cd9a92ce1dc6e7e356237ebc61e40675825d1d65aea962a7beff09669ad20",
+        "pixelSha256": "cddb84556a556dca99782ccafbc63653850d5cb1276f77e3bf50f91f3cfd4410"
+      },
+      {
+        "id": "chesscom-img_5399",
+        "originalSha256": "7b51993147f1fdc0c48bf88ddf07b3506bd582d7478b0cfe0626e0b34608792c",
+        "imageSha256": "959470d453e26bbae09e4d7ae823907c8a1969d578316a42436d2f45265aade5",
+        "pixelSha256": "e3488a0c6eef9614c3cc4d9920e83f47ad9dea5857992da3eb375f2196716d4b"
+      },
+      {
+        "id": "chesscom-img_5400",
+        "originalSha256": "e0abd5b17a72c7e0f37b29609e05be7d60dd38af804dcbd944ca46dfaf82be42",
+        "imageSha256": "9fbbaeb4a2c6c766d6fa57a99e3a0f1a6a83e118c3b6abbc566b851f16eb75cb",
+        "pixelSha256": "497bbee03e850540e03f62aa978f16ad5ddb746c5d129d19e1342fcc15fbc8fb"
+      },
+      {
+        "id": "chesscom-img_5401",
+        "originalSha256": "0ed6c19c539dfa8490f95a4a8e05b49f9a9ef0700eb45a25b8fe3c9a6fa6522d",
+        "imageSha256": "7b21a0d24c7ea9d6bb16d371cb9cc7b04cfcd67e22645f00bb54b566c2ae2214",
+        "pixelSha256": "24c8c0404f4e7ebd646ef121eb67d01dccbd3829ee7bdf413543ebe5b1b633d9"
+      },
+      {
+        "id": "chesscom-img_5402",
+        "originalSha256": "1719a41bf5205cf35302301e78be4f18e6bb37afb4235bb364c4b0eab79e4b7b",
+        "imageSha256": "98511f13f42d4c5ce06bbe2ee3d27ddfc5dbed0f90d39891a868fd260b5db46f",
+        "pixelSha256": "f23c73a59e7263e8340c6324c050256c73b60170cd84125717bb625408c20cf1"
+      },
+      {
+        "id": "lichess-img_5383",
+        "originalSha256": "4b44810a51265887df5d1f2bd8ff56fa74650361af24eab57d4a9085c8472062",
+        "imageSha256": "67ef2f6ccdf8af11322d0c3e79baf9e8d816e28f840dd7a3e3c797f5860e8986",
+        "pixelSha256": "cc01e8d075a7c3d07da4e57e265c8029fb4ac0d68e5ad3aa5912ea08c05f2ac2"
+      },
+      {
+        "id": "lichess-img_5384",
+        "originalSha256": "4d0f5bf978ed569a1327d0c10f1a69a85ecfe166e4c1588766bfc12563b944e7",
+        "imageSha256": "3ed15840dd22f11030b573b94c29e263b9182843fc9d00dc56596e78d8b89e10",
+        "pixelSha256": "77fb4c94df84b009e408e18e9ced456a0e762249e3cf9d14cecc47b09d1813e0"
+      },
+      {
+        "id": "lichess-img_5385",
+        "originalSha256": "8347c615d9add84be2d3826135f8aa04b9b3dd6ddd89a6ee545e73f3a06e5ec5",
+        "imageSha256": "07bbec163906b36ee348ceac8067e9cd7449589db914c5b203b2093e51f9f5db",
+        "pixelSha256": "4bcf838824d522ca29a78b62e32934e812a0e02a921b6e0a3dd2b941d548092c"
+      },
+      {
+        "id": "lichess-img_5386",
+        "originalSha256": "969ddc343c904402b20be33817e5fc1c8c92605d03bd76437616df6354293592",
+        "imageSha256": "5c12148c2e85166ac672ca46a5e8181ebc9bf4cb86256619a9686a5addbbdee6",
+        "pixelSha256": "085610c0ba353370b748b3fac4195a249efa6448f66af4d19ddcf1c190ba53a7"
+      },
+      {
+        "id": "lichess-img_5387",
+        "originalSha256": "08c05e6e065b8a81a6fbdc41f214c1a7d233b288f41fd693711f3455e7c1c589",
+        "imageSha256": "c7845f970ec1ad2f9e6f095af97a029126b25575f4ef46e3c8ebdee2551b82fc",
+        "pixelSha256": "70b3a9bffe61ffd41e2673368c959fa5df1c1f7474a357f8679ad2d136be0e01"
+      },
+      {
+        "id": "lichess-img_5388",
+        "originalSha256": "c0c986e4b87f2af8b53e5f7f2c78e48b9540f0954043c2f44d9ae5538d9fec50",
+        "imageSha256": "6ac52d1a7d5b7cc13b686270d42c69ceb2bbf43e67ffbc82f885d73048114f7b",
+        "pixelSha256": "51b9b9f783ce854a5dcee5ffe366bb6e72b9c31abd0f0f417670910f21427419"
+      },
+      {
+        "id": "lichess-img_5389",
+        "originalSha256": "c47c21eb781543eb72d6ed3cc0f8e2cca8d95cdc44eefcc6cfa6b70473abb2ad",
+        "imageSha256": "24afc4d3c6fb202f55764592f6d362972572b2160b836bdbe964aee4695b1040",
+        "pixelSha256": "519fc4737a0380c01bfde5d13c465695d7779f319e453246958ee6d12cd1ad8f"
+      },
+      {
+        "id": "lichess-img_5390",
+        "originalSha256": "021991eb18f271f9b8fdf7d85c43f62e3d7e93b8352d7c5e645ddea14799b2bd",
+        "imageSha256": "a03cfa6333c0bbcc747022f68711eb59788b5fcb7f81847ca7f3831a4093368c",
+        "pixelSha256": "847ae3f65673edd735fb2b74e7a2d43647b64882af0e6127384bb2fc1a91cc99"
+      },
+      {
+        "id": "lichess-img_5391",
+        "originalSha256": "1fef6d970ddff02f78ef95656e2a8ee2d8f2aaeeab728f567816c57bd5732e76",
+        "imageSha256": "25a83a9ed2ab90b72573723aa1de3e9458d89cc6e870e79672ac1abdf90890c7",
+        "pixelSha256": "34db07452d696b0b740cfbcbcb5dae53e2bb13ae01ff88f9dcab427da769e816"
+      },
+      {
+        "id": "lichess-img_5392",
+        "originalSha256": "e1a0afe095e089a99c5d0c04e16dadc4f9c35e618007c358a3f11c628530e6d9",
+        "imageSha256": "26cdae8f6e5db158b6a02eb7868c390d224e6bf8cb8cb1d513ecb97a86570b67",
+        "pixelSha256": "c07d090ba061e13990382d6006556379dfc1ab204a60abbf797c439d21eafb34"
+      },
+      {
+        "id": "video-img_5403",
+        "originalSha256": "aa8492969d20223e2196cbeac648ee41e0cc0c6daac54682281d763e448745f1",
+        "imageSha256": "c3f93f8d148fc5be94eab1120f87d618bc2a6399db95e8b9ca0dcbfa95b9793d",
+        "pixelSha256": "6db89df88792524addc8a5e9b36b92357e0ae964bce840dd3fb2259ef56e90b5"
+      },
+      {
+        "id": "video-img_5404",
+        "originalSha256": "8509997588ee2cdfebcc67e7f9d770271d3823dc59f3efcc7219ccbc90f42c7f",
+        "imageSha256": "1cf23f532ce646af683fa4398f7c1a858c9897f2c079078174d52703ec479f94",
+        "pixelSha256": "83a6ccdc71c738867a41a948f33970b5e5f64c16a40527436be11f7f79703939"
+      },
+      {
+        "id": "video-img_5405",
+        "originalSha256": "bdba0b361218614605108d2a35a5dac30c43344eda5e5084da610d5e2f639f10",
+        "imageSha256": "dfc0d503b51a7ad13b2923bb7e6007c7997d54bb52af19de5fe782a9d702d143",
+        "pixelSha256": "d12644aee7852416b783564864878df40cc79f3d2d39cfe9f3f1401debe28f37"
+      },
+      {
+        "id": "video-img_5406",
+        "originalSha256": "4836121576e532aac8580fab3fb76472d506e9eea38b34b1c59d0882739caa72",
+        "imageSha256": "4ce3e8916c430c66d940bcfeda14fca1d6e93a91dee849880ecbcc6fc5b18628",
+        "pixelSha256": "67ced037163704de3e93a117e7c81875e2e28652b658090aa2dff990f5340f5f"
+      },
+      {
+        "id": "video-img_5407",
+        "originalSha256": "3290facf2772af3de946fdd8d7d682a45e6684833e65cf78f2a97630a7cff5aa",
+        "imageSha256": "4c5d1f3a2080782ec9e42db097da2c581b7f92098479b2f3495880445748d016",
+        "pixelSha256": "6c15b186fd0e8ff93ba54ce06ac2b0c5484155dc40d5815c521d1d3efdfa2026"
+      },
+      {
+        "id": "video-img_5409",
+        "originalSha256": "990d91bab1d7c45639fb8c135f78d0d385a16b79c2d58048a4b617507c059bc9",
+        "imageSha256": "04e055ce35049dc73c73ce1e5514fcd2f7e9b06b4a55f1f5d773f41315a20adf",
+        "pixelSha256": "5374d678dfeffa7cd2c2755b01f2c98ce8c03fc442200f897a9d9a6cbb7c3829"
+      },
+      {
+        "id": "video-img_5410",
+        "originalSha256": "6e5f8163b42028267cdc70ab9eeeea0eab5259fa6d6ae131461d9496d1dcb8c4",
+        "imageSha256": "d5484d65687036d28d8bcfe21ed5ef28942badb392fd8a72c26708bdd6fbf288",
+        "pixelSha256": "41ca5079e43331948a8d76a5200249afa55e5e1ef0669b5e0ba8985d3dffc439"
+      },
+      {
+        "id": "video-img_5411",
+        "originalSha256": "05400961fecb6ad93e52eba00a0fc065705d42117f2e06ffb093c1680142793c",
+        "imageSha256": "0a83a9cd4d0e5fe6dfcf283c7eebf7905625de0f0112254bfb3f02b2b53d28cf",
+        "pixelSha256": "ae6f8c1da381ac9a90ebcdf43e8a5b1adb5ac35b19a1f9cf106b36c84786f4e8"
+      },
+      {
+        "id": "video-img_5412",
+        "originalSha256": "3a91b45b67622535481b3e7d42e4f72f6bc905ea04f956d4799cd5df1eac9365",
+        "imageSha256": "9ca6368214811401251fc0d607ac9ce0342bab246f2804489efd58b38219122d",
+        "pixelSha256": "1ae88d998cb36bccaf021343fad21a0f69338381e544b7a98f3b8bcd880fcd20"
+      },
+      {
+        "id": "video-img_5413",
+        "originalSha256": "e3e57375d926907d79540eb51705bed72156b54978afaa8ff9f4b6ce96e9537a",
+        "imageSha256": "3367ad672f0d20221d6a8a5d1fb13025efd318a1a8d834fedc404f0084e6e46b",
+        "pixelSha256": "4339ac7d9f3630679728c4377f127e47233be331d665f7e22a93385e48e6f573"
+      }
+    ]
+  },
+  "sessions": [
+    {
+      "sessionId": "position1",
+      "groupId": "chesscom-game-186750194058",
+      "photoCount": 3,
+      "sourceIdentity": [
+        "chesscom",
+        "186750194058"
+      ],
+      "comparisons": {
+        "phoneValidation": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 17,
+          "nearestPositionIds": [
+            "chesscom-img_5401"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        },
+        "previousPhoneDevelopment": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 18,
+          "nearestPositionIds": [
+            "phone-72ea7638c691cb5d",
+            "phone-046e1479136cf7ea"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        },
+        "generatedDigitalValidation": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 25,
+          "nearestPositionIds": [
+            "digital-015"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        }
+      },
+      "duplicateFilesOrPixels": [],
+      "status": "no-observed-overlap",
+      "provenanceStatus": "known-game-id"
+    },
+    {
+      "sessionId": "position2",
+      "groupId": "chesscom-game-186559752718",
+      "photoCount": 3,
+      "sourceIdentity": [
+        "chesscom",
+        "186559752718"
+      ],
+      "comparisons": {
+        "phoneValidation": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 21,
+          "nearestPositionIds": [
+            "lichess-img_5392"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        },
+        "previousPhoneDevelopment": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 21,
+          "nearestPositionIds": [
+            "phone-369f8c62b80ae326",
+            "phone-3268d66de68b4ac3",
+            "phone-7f91c2c3931c1bf4",
+            "phone-90a25f7019fe18fb",
+            "phone-d169bc677bc96b34"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        },
+        "generatedDigitalValidation": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 25,
+          "nearestPositionIds": [
+            "digital-072"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        }
+      },
+      "duplicateFilesOrPixels": [],
+      "status": "no-observed-overlap",
+      "provenanceStatus": "known-game-id"
+    },
+    {
+      "sessionId": "position3",
+      "groupId": "chesscom-game-187062563830",
+      "photoCount": 3,
+      "sourceIdentity": [
+        "chesscom",
+        "187062563830"
+      ],
+      "comparisons": {
+        "phoneValidation": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 31,
+          "nearestPositionIds": [
+            "chesscom-img_5398",
+            "video-img_5403"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        },
+        "previousPhoneDevelopment": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 23,
+          "nearestPositionIds": [
+            "phone-f64a6fdcea10684b"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        },
+        "generatedDigitalValidation": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 33,
+          "nearestPositionIds": [
+            "digital-015",
+            "digital-035"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        }
+      },
+      "duplicateFilesOrPixels": [],
+      "status": "no-observed-overlap",
+      "provenanceStatus": "known-game-id"
+    },
+    {
+      "sessionId": "position4",
+      "groupId": "chesscom-game-187014017568",
+      "photoCount": 3,
+      "sourceIdentity": [
+        "chesscom",
+        "187014017568"
+      ],
+      "comparisons": {
+        "phoneValidation": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 16,
+          "nearestPositionIds": [
+            "video-img_5405"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        },
+        "previousPhoneDevelopment": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 14,
+          "nearestPositionIds": [
+            "phone-5e13a3b0bd60fde4"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        },
+        "generatedDigitalValidation": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 28,
+          "nearestPositionIds": [
+            "digital-013",
+            "digital-016",
+            "digital-033"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        }
+      },
+      "duplicateFilesOrPixels": [],
+      "status": "no-observed-overlap",
+      "provenanceStatus": "known-game-id"
+    },
+    {
+      "sessionId": "position5",
+      "groupId": "training2-lichess-position5",
+      "photoCount": 3,
+      "sourceIdentity": null,
+      "comparisons": {
+        "phoneValidation": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 22,
+          "nearestPositionIds": [
+            "chesscom-img_5393"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        },
+        "previousPhoneDevelopment": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 16,
+          "nearestPositionIds": [
+            "phone-4960b6bee5413fa8",
+            "phone-72ea7638c691cb5d"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        },
+        "generatedDigitalValidation": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 29,
+          "nearestPositionIds": [
+            "digital-070",
+            "digital-072"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        }
+      },
+      "duplicateFilesOrPixels": [],
+      "status": "no-observed-overlap",
+      "provenanceStatus": "unresolved-game-id"
+    },
+    {
+      "sessionId": "position6",
+      "groupId": "training2-lichess-position6",
+      "photoCount": 3,
+      "sourceIdentity": null,
+      "comparisons": {
+        "phoneValidation": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 17,
+          "nearestPositionIds": [
+            "video-img_5411"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        },
+        "previousPhoneDevelopment": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 13,
+          "nearestPositionIds": [
+            "phone-be7abe8650fc6d21"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        },
+        "generatedDigitalValidation": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 27,
+          "nearestPositionIds": [
+            "digital-013"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        }
+      },
+      "duplicateFilesOrPixels": [],
+      "status": "no-observed-overlap",
+      "provenanceStatus": "unresolved-game-id"
+    },
+    {
+      "sessionId": "position7",
+      "groupId": "chesscom-game-186984581962",
+      "photoCount": 3,
+      "sourceIdentity": [
+        "chesscom",
+        "186984581962"
+      ],
+      "comparisons": {
+        "phoneValidation": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 18,
+          "nearestPositionIds": [
+            "video-img_5410",
+            "video-img_5411"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        },
+        "previousPhoneDevelopment": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 13,
+          "nearestPositionIds": [
+            "phone-62e927b6a08e5a73"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        },
+        "generatedDigitalValidation": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 32,
+          "nearestPositionIds": [
+            "digital-013"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        }
+      },
+      "duplicateFilesOrPixels": [],
+      "status": "no-observed-overlap",
+      "provenanceStatus": "known-game-id"
+    },
+    {
+      "sessionId": "position8",
+      "groupId": "chesscom-game-186840071668",
+      "photoCount": 3,
+      "sourceIdentity": [
+        "chesscom",
+        "186840071668"
+      ],
+      "comparisons": {
+        "phoneValidation": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 22,
+          "nearestPositionIds": [
+            "chesscom-img_5393"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        },
+        "previousPhoneDevelopment": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 15,
+          "nearestPositionIds": [
+            "phone-c714791042aeccb1"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        },
+        "generatedDigitalValidation": {
+          "exactPositionMatches": [],
+          "positionFamilyMatches": [],
+          "knownSourceMatches": [],
+          "minimumDifferentSquares": 33,
+          "nearestPositionIds": [
+            "digital-016",
+            "digital-070"
+          ],
+          "note": "Square distance is a screening clue, not a game-identity test or move distance."
+        }
+      },
+      "duplicateFilesOrPixels": [],
+      "status": "no-observed-overlap",
+      "provenanceStatus": "known-game-id"
+    }
+  ],
+  "observedOverlap": false,
+  "sourceIndependenceFullyVerified": false,
+  "limitations": [
+    "New Lichess series 5 and 6 have no game IDs. The user confirmed they are different from one another, not from all older sources.",
+    "Twenty validation photos have no verified game/video ID. Unmatched known IDs cannot rule out a relation to those unknown sources.",
+    "Different placements, pixel hashes or capture dates cannot establish different games.",
+    "The digital comparison uses only validation positions from the generated plan; it is not a complete audit of every legacy or real-use corpus.",
+    "This reused validation is for development/model selection, not a fresh independent acceptance evaluation."
+  ],
+  "decision": "No assignments are changed. If there is no observed overlap, keep the paired groups intact for future training assembly, recording unresolved provenance; do not claim fully verified source independence.",
+  "trainingRun": false,
+  "partitionsChanged": false,
+  "finalEvaluationAccessed": false
+}

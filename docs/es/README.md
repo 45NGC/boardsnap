@@ -1,5 +1,36 @@
 # BoardSnap
 
+El [adaptador HTTP](http-server.md) está implementado y pasa la comparación HTTPS local con la CLI. El [informe general](project-status.md) reúne funciones, resultados, limitaciones y siguientes pasos.
+
+El [contrato HTTP por modo y su prueba de paridad](http-contract.md) fija los campos obligatorios, modelos, errores y cabeceras de versión. La paridad HTTPS local está comprobada; queda desplegar el servicio y conectar Flutter.
+
+La [configuración local de prueba](local-trial.md) selecciona explícitamente modelo digital y fotográfico y pasa las mediciones de CPU. El modelo fotográfico sigue siendo experimental.
+
+La [comparación mediante la CLI](mixed-sqrt-cli.md) confirma una mejora de 20 a 22 fotos completas, pero pierde dos capturas digitales reales. El candidato sigue siendo fotográfico experimental.
+
+La [prueba de ponderado por raíz cuadrada](mixed-sqrt-result.md) reduce las falsas piezas de 8 a 5 sin aumentar las omisiones frente al control. Es una mejora parcial; phone-v1 sigue como referencia y el nuevo modelo queda experimental.
+
+La [prueba de excluir la imitación de piezas falsas en vacías](mixed-empty-guard-result.md) ha terminado: no mejora las predicciones finales del intento mixto. Se conserva phone-v1; no se inicia otro entrenamiento.
+
+La [revisión acotada del entrenamiento mixto](mixed-training-review.md) identifica objetivos de destilación contradictorios en vacías verificadas y propone una prueba con un único cambio. No se ha iniciado otro entrenamiento.
+
+El [resultado del entrenamiento mixto](mixed-training-result.md) completa las 12 épocas fijadas. La última conserva las predicciones digitales, pero pierde una foto y aumenta las piezas falsas; se mantiene phone-v1.
+
+El [plan de configuración y aceptación del entrenamiento mixto](mixed-training-plan.md) fija un intento de 12 épocas, límites separados para fotos/capturas y requisitos de CPU y CLI. El intento posterior está documentado en el resultado del entrenamiento mixto.
+
+La [preparación del conjunto mixto](mixed-training.md) fija un muestreo 50 % digital / 50 % fotográfico, comprueba solapamientos con validación y exporta recortes reproducibles sin entrenar un modelo.
+
+El [inventario de entrenamiento](training-coverage.md) identifica marcas digitales y fotos de madera/piezas finas reutilizables. No se inicia otro entrenamiento; el siguiente paso es preparar un corpus mixto equilibrado.
+
+El [diagnóstico de las regresiones](targeted-photo-regressions.md) identifica piezas falsas en casillas vacías en diez de los once tableros perdidos. Se mantiene la recomendación del modelo anterior.
+
+El [entrenamiento fotográfico dirigido](targeted-photo-training.md) está completado: 184 tableros de entrenamiento y validación intacta. El candidato no sustituye a phone-v1 porque pierde aciertos anteriores en fotos y capturas.
+
+La [revisión del piloto fotográfico](targeted-photo-intake.md) registra 24 fotos,
+16 referencias, ocho posiciones y carencias concretas. Las esquinas y los recortes
+ya están revisados y se han exportado 1.536 casillas etiquetadas de desarrollo;
+la guía de recogida conserva el plan original.
+
 El [catálogo fotográfico inicial](photo-catalogue.md) fija siete entradas objetivo
 y catorce combinaciones con fondos, con evidencias, temas por identificar y
 cobertura pendiente. No declara nueva compatibilidad.

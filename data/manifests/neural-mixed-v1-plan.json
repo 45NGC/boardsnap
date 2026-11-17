@@ -1,0 +1,381 @@
+{
+  "schemaVersion": 1,
+  "planId": "neural-mixed-v1",
+  "frozenOn": "2026-11-14",
+  "status": "configuration-only-no-training-started",
+  "scope": "One candidate for the photographic classifier, retaining phone-v1 digital coverage. Does not automatically replace the separate conservative digital model or establish final release acceptance.",
+  "baseline": {
+    "path": ".cache/neural-phone-v1/best.pt",
+    "sha256": "bca969fc9fb42811a5daa4c11b968c68f805cb0b1404604b7fb6d5486dc8c60e"
+  },
+  "dataset": ".cache/mixed-training-v1",
+  "runDirectory": ".cache/neural-mixed-v1",
+  "frozenInputs": [
+    {
+      "path": ".cache/neural-phone-v1/best.pt",
+      "sha256": "bca969fc9fb42811a5daa4c11b968c68f805cb0b1404604b7fb6d5486dc8c60e"
+    },
+    {
+      "path": ".cache/mixed-training-v1/dataset.json",
+      "sha256": "26befdaea54ace5ec8d1005d86946d2b6aa963b9e1ad3699c65cb78da1641e3b"
+    },
+    {
+      "path": "data/manifests/mixed-training-v1.json",
+      "sha256": "34bdb986659927d69366dab329ae40842236f958a4bf206dce9d9032c0a355bf"
+    },
+    {
+      "path": "data/reports/mixed-training-v1.json",
+      "sha256": "26befdaea54ace5ec8d1005d86946d2b6aa963b9e1ad3699c65cb78da1641e3b"
+    },
+    {
+      "path": "data/manifests/phone-validation-appearance-v1.json",
+      "sha256": "c74d2a53ea611577f5d155b590f0f26ea4bd52930641a2e13d12d41c0a3cbc9e"
+    },
+    {
+      "path": "tools/mixed_training_policy.py",
+      "sha256": "3e57a5610cf88cedd55ee1a1b8eb37cfc0bc99644972dbdfab548092c5142ec6"
+    },
+    {
+      "path": "tools/prepare_mixed_training.py",
+      "sha256": "a22ef92bb3e3e21f57429e06add18074cea72aa399a51673f34ed052e7c8cf96"
+    },
+    {
+      "path": "src/boardsnap/neural.py",
+      "sha256": "a1ec8a7254f8b8d14ea223d8a0118ac6be8c0afc5d8b5eddfc2e3acb81b1f125"
+    },
+    {
+      "path": "tools/train_neural.py",
+      "sha256": "5471c8939e8031ede5ca49789a94ebc46fc9540ae8c53de465f8653e7a5a5bea"
+    },
+    {
+      "path": ".cache/neural-phone-targeted-v1/phone-validation.json",
+      "sha256": "a84434385b5f123e80ef7366b8277964d76f91c1f1c849a7781c5d6e23180911"
+    },
+    {
+      "path": ".cache/neural-phone-targeted-v1/digital-validation.json",
+      "sha256": "7d9e617d492a7ba319c113c3fb9139348fb175db215ab24c156258d0af4983ef"
+    }
+  ],
+  "baselineReports": {
+    "phone": {
+      "path": ".cache/neural-phone-targeted-v1/phone-validation.json",
+      "sha256": "a84434385b5f123e80ef7366b8277964d76f91c1f1c849a7781c5d6e23180911"
+    },
+    "digital": {
+      "path": ".cache/neural-phone-targeted-v1/digital-validation.json",
+      "sha256": "7d9e617d492a7ba319c113c3fb9139348fb175db215ab24c156258d0af4983ef"
+    }
+  },
+  "appearanceManifest": "data/manifests/phone-validation-appearance-v1.json",
+  "validationDatasets": {
+    "phone": ".cache/phone-targeted-training-v1",
+    "digital": ".cache/digital-style-squares-v2"
+  },
+  "baselineMetrics": {
+    "phone": {
+      "boards": 30,
+      "squares": 1920,
+      "exactBoards": 19,
+      "correctSquares": 1871,
+      "falsePieces": 3,
+      "missedPieces": 26,
+      "classTotals": [
+        1188,
+        178,
+        36,
+        40,
+        52,
+        22,
+        30,
+        192,
+        39,
+        41,
+        49,
+        23,
+        30
+      ],
+      "classCorrect": [
+        1185,
+        167,
+        34,
+        39,
+        49,
+        21,
+        28,
+        178,
+        36,
+        36,
+        49,
+        19,
+        30
+      ],
+      "macroRecall": 0.9415079932858833
+    },
+    "digital": {
+      "boards": 3132,
+      "squares": 200448,
+      "exactBoards": 3128,
+      "correctSquares": 200444,
+      "falsePieces": 1,
+      "missedPieces": 0,
+      "classTotals": [
+        137456,
+        13366,
+        4764,
+        3676,
+        4426,
+        1838,
+        3132,
+        13910,
+        4720,
+        3676,
+        4470,
+        1882,
+        3132
+      ],
+      "classCorrect": [
+        137455,
+        13366,
+        4764,
+        3675,
+        4426,
+        1838,
+        3131,
+        13909,
+        4720,
+        3676,
+        4470,
+        1882,
+        3132
+      ],
+      "macroRecall": 0.999948424199701
+    }
+  },
+  "architecture": "small-square-cnn-v1",
+  "preprocessing": {
+    "inputSize": [
+      64,
+      64
+    ],
+    "colorMode": "RGB",
+    "inputDtype": "uint8",
+    "tensorLayout": "NCHW",
+    "tensorDtype": "float32",
+    "scale": "divide by 255",
+    "additionalNormalization": null,
+    "augmentation": null
+  },
+  "classOrder": [
+    "empty",
+    "P",
+    "N",
+    "B",
+    "R",
+    "Q",
+    "K",
+    "p",
+    "n",
+    "b",
+    "r",
+    "q",
+    "k"
+  ],
+  "trainingConfig": {
+    "seed": 20261114,
+    "epochs": 12,
+    "batchSize": 256,
+    "learningRate": 2e-05,
+    "weightDecay": 0.0001,
+    "threads": 4,
+    "distillationTemperature": 2,
+    "distillationWeight": 1
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "amsgrad": false,
+    "newOptimizerState": true,
+    "scheduler": null
+  },
+  "loss": {
+    "name": "weighted-cross-entropy-plus-masked-distillation",
+    "classCountSource": "frozen 32000 training labels only",
+    "classCounts": [
+      19409,
+      2728,
+      812,
+      688,
+      822,
+      404,
+      850,
+      2671,
+      746,
+      772,
+      832,
+      400,
+      866
+    ],
+    "classWeights": [
+      0.12682458758354187,
+      0.9023234844207764,
+      3.0314512252807617,
+      3.577817440032959,
+      2.994572401046753,
+      6.092916965484619,
+      2.895927667617798,
+      0.9215793609619141,
+      3.299649477005005,
+      3.188521385192871,
+      2.9585797786712646,
+      6.153846263885498,
+      2.8424232006073
+    ],
+    "crossEntropyReduction": "weighted mean, as tools.train_neural.fit",
+    "distillationFormula": "weight * T^2 * KL(teacher softmax(logits/T) || student softmax(logits/T)), batchmean over masked samples; added to supervised loss",
+    "teacher": {
+      "path": ".cache/neural-phone-v1/best.pt",
+      "sha256": "bca969fc9fb42811a5daa4c11b968c68f805cb0b1404604b7fb6d5486dc8c60e"
+    },
+    "teacherPools": [
+      "digital-clean",
+      "digital-simple-marks",
+      "digital-arrows",
+      "digital-arrowheads",
+      "photo-old-other",
+      "photo-old-wood"
+    ],
+    "teacherSampleCount": 27200,
+    "supervisedOnlyPool": "photo-targeted",
+    "supervisedOnlyCount": 4800,
+    "teacherPredictionsOnValidation": false,
+    "secondTeacher": null
+  },
+  "poolQuotas": {
+    "digital-clean": 6400,
+    "digital-simple-marks": 3200,
+    "digital-arrows": 4800,
+    "digital-arrowheads": 1600,
+    "photo-old-other": 9600,
+    "photo-old-wood": 1600,
+    "photo-targeted": 4800
+  },
+  "sampling": {
+    "draw": "sampling-epoch-000.npz",
+    "resampleBetweenEpochs": false,
+    "shuffle": "numpy default_rng(seed + zero-based epoch).permutation(32000)",
+    "augmentation": null,
+    "classResampling": false,
+    "reason": "Reuse the exact reviewed mixed draw; isolate the effect of mixed replay, with no new data-generation variable."
+  },
+  "checkpointSelection": {
+    "validateEveryEpoch": true,
+    "domains": [
+      "phone",
+      "digital"
+    ],
+    "eligibility": "All safety gates must pass separately for both domains; never sum correct controls across domains.",
+    "rankDescending": [
+      "phone.exactBoards",
+      "phone.macroRecall",
+      "phone.correctSquares",
+      "digital.exactBoards",
+      "digital.correctSquares"
+    ],
+    "tie": "earliest epoch",
+    "save": "last.pt with optimizer, RNG, completed epoch and selection state; best.pt only for safe eligible epochs",
+    "noEligibleEpoch": "Do not promote; retain reference, last checkpoint and diagnosis.",
+    "baselineFallback": "Compare against frozen baseline; a safe checkpoint without improvement is not accepted."
+  },
+  "acceptance": {
+    "minimumPhotoExactBoards": 20,
+    "minimumPhotoExactGain": 1,
+    "safetyGates": [
+      "zero lost baseline-exact boards in each domain",
+      "correct square count must not decrease in either domain",
+      "false-piece and missed-piece counts must not increase in either domain",
+      "correct count per true class must not decrease (same class totals)",
+      "no decrease in exact boards/correct squares or increase in false/missed pieces within any frozen validation stratum"
+    ],
+    "strata": {
+      "both": [
+        "platform/category",
+        "orientation",
+        "condition (overlapping)"
+      ],
+      "phone": [
+        "observed appearance",
+        "board background"
+      ],
+      "digital": [
+        "configurationId (piece/background/layout/mark variant)"
+      ]
+    },
+    "requiredDiagnostics": [
+      "per-class precision/recall/confusion matrix",
+      "all changed cells and lost/gained boards",
+      "clean/simple/arrow/crossed/combined conditions",
+      "training-photo diagnostics labeled as training, never acceptance evidence"
+    ],
+    "cpu": {
+      "device": "cpu",
+      "threads": 4,
+      "batchSquares": 64,
+      "scope": "Classifier plus preprocessing, warm model, excluding I/O/detection/rectification",
+      "warmupsPerTrial": 20,
+      "measuredBatchesPerTrial": 100,
+      "freshProcessTrialsPerModel": 3,
+      "sameHardwareEnvironmentAndInputs": true,
+      "inputSelection": "First phone validation board in frozen reference report; record image and crop checksum",
+      "aggregation": "Median of trial medians, median of trial p95 latencies, median of fresh-process peak RSS",
+      "maximumMedianLatencyRatio": 1.25,
+      "maximumP95LatencyRatio": 1.25,
+      "maximumPeakRssRatio": 1.25,
+      "rssScope": "One model per fresh process with same imports and one board; no full corpus or second model resident",
+      "existingComparisonRssIsValidBaseline": false
+    },
+    "cli": {
+      "requiredBeforePromotion": true,
+      "scope": "Existing annotated photo and digital development/regression cases, never final reserved images",
+      "criteria": [
+        "retain every baseline-correct full-pipeline position",
+        "no additional detection failures or false detections",
+        "orientation respected",
+        "exact piecePlacement-only success JSON, structured errors, exit codes and no diagnostics on stdout"
+      ],
+      "baseline": "Reuse compatible saved per-image full-pipeline results; if stale, measure baseline and candidate under identical current code before comparing."
+    },
+    "missingEvidence": "pending, never accepted",
+    "notFinalReleaseAcceptance": true
+  },
+  "executionLimits": {
+    "maximumRuns": 1,
+    "maximumEpochs": 12,
+    "automaticHyperparameterSearch": false,
+    "extendEpochsOnFailure": false,
+    "resume": "Only the identical configuration/data/environment; resume completed checkpoint and repeat at most interrupted epoch; no restart of completed work."
+  },
+  "environment": {
+    "python": "3.12.3",
+    "numpy": "2.5.3",
+    "torch": "2.14.1+cpu",
+    "device": "cpu",
+    "deterministicAlgorithms": true
+  },
+  "implementationBeforeLaunch": [
+    "Use checked mixed dataset loader and frozen masks.",
+    "Use streaming validation over all 3162 boards with identical labels and preprocessing.",
+    "The current fit selection_key is insufficient: wire separate domain/stratum safety gates before best checkpoint selection.",
+    "Preserve interrupted-run resume and record plan/source/model hashes; do not change this policy after seeing candidate results."
+  ],
+  "limitations": [
+    "Existing validation is consulted development data, not independent final acceptance.",
+    "Some photo game/video provenance is unknown; no observed overlap is not proof of independence.",
+    "32k occurrences include repeated crops; old wood pool deliberately repeats five photos.",
+    "Quotas and thresholds are conservative initial engineering choices, not statistically proven optimal settings.",
+    "If no candidate passes, keep phone-v1 and investigate without quietly relaxing thresholds."
+  ]
+}

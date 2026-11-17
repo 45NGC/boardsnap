@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "status": "contract-ready-live-parity-pending",
+  "contract": "data/manifests/http-contract-v1.json",
+  "contractSha256": "933a76d7f57bcfe381783a8b85c07f5bf2987eeeaac3287dedd9e7cb18d60db8",
+  "configuration": "data/manifests/local-trial-v1.json",
+  "configSha256": "a31053d4737c8facfeeb0bf7558854468a9a80934aa56ab8695a8ca86d8de875",
+  "trainingRun": false,
+  "finalEvaluationAccessed": false,
+  "tests": {
+    "passed": 39,
+    "command": "python -m pytest tests/test_http_contract.py tests/test_http_cli_probe.py tests/test_local_trial.py -q",
+    "httpEvidence": "Controlled transport doubles only; no real HTTPS adapter exists."
+  },
+  "cliReferences": {
+    "path": ".cache/http-cli-contract-v1/cli-references.json",
+    "sha256": "dd1269cfca7a6261f7eebfeb46e4a11fc99e25e11fa1356743e91ad4836f35d1",
+    "count": 8,
+    "cases": [
+      {
+        "id": "digital-white-bottom",
+        "mode": "digital",
+        "orientation": "white-bottom",
+        "imageSha256": "d9bb2069f8ae30a90f6befd102b411e744e3bf90fb542dcf229bf5ebbf00d693",
+        "modelSha256": "4c14507ad700dbe8c6ea6bdcdfb7072c7f31ef9fd9c21c22a782498c2d09ce5f",
+        "exitCode": 0,
+        "result": {
+          "piecePlacement": "r3rk2/pb1n2pR/1p1qp1P1/5p2/3Pp1Q1/P2BP3/1P3PP1/R3K3"
+        }
+      },
+      {
+        "id": "photo-white-bottom",
+        "mode": "photo",
+        "orientation": "white-bottom",
+        "imageSha256": "be4f178607778d8b8711a00ba9d6233648e3ccdf8877059e5001b7604543c0b9",
+        "modelSha256": "41bbfa5cb3da6e6831ed4c293fd48a5680f831de9fa8568f39b513ff0f932275",
+        "exitCode": 0,
+        "result": {
+          "piecePlacement": "rn1qkb1r/ppp2ppp/3p1n2/4p3/4PP2/2N2b1P/PPPP2P1/R1BQKB1R"
+        }
+      },
+      {
+        "id": "digital-black-bottom",
+        "mode": "digital",
+        "orientation": "black-bottom",
+        "imageSha256": "cbb6683bf149c48babeed75570a7c554de727b584c073d8b9f9839f8ef02efd4",
+        "modelSha256": "4c14507ad700dbe8c6ea6bdcdfb7072c7f31ef9fd9c21c22a782498c2d09ce5f",
+        "exitCode": 0,
+        "result": {
+          "piecePlacement": "r4rk1/p4ppp/2q1p3/4P3/2p3Nn/2Q2P2/P3KP1P/R6R"
+        }
+      },
+      {
+        "id": "photo-black-bottom",
+        "mode": "photo",
+        "orientation": "black-bottom",
+        "imageSha256": "5e8695bcc5ddffaf1a0d8c2829ca730a43ace7dc61c6fdeb3e0ed74f300c5d13",
+        "modelSha256": "41bbfa5cb3da6e6831ed4c293fd48a5680f831de9fa8568f39b513ff0f932275",
+        "exitCode": 0,
+        "result": {
+          "piecePlacement": "r1bq1rk1/ppp2pbp/2np1np1/8/3P1B2/2PBPN2/PP3PPP/RN1Q1RK1"
+        }
+      },
+      {
+        "id": "digital-no-board",
+        "mode": "digital",
+        "orientation": "white-bottom",
+        "imageSha256": "68245bd8435bf432f168c0f569ca971d3ec0c03825f90d3c310355d1d21f4451",
+        "modelSha256": "4c14507ad700dbe8c6ea6bdcdfb7072c7f31ef9fd9c21c22a782498c2d09ce5f",
+        "exitCode": 1,
+        "result": {
+          "error": {
+            "code": "BOARD_NOT_FOUND",
+            "message": "No supported chessboard was detected in the image."
+          }
+        }
+      },
+      {
+        "id": "digital-corrupt",
+        "mode": "digital",
+        "orientation": "white-bottom",
+        "imageSha256": "5464533c9647b67eb320c40ccc5959537c09102ae75388f6a7675b433e745c9d",
+        "modelSha256": "4c14507ad700dbe8c6ea6bdcdfb7072c7f31ef9fd9c21c22a782498c2d09ce5f",
+        "exitCode": 1,
+        "result": {
+          "error": {
+            "code": "INVALID_IMAGE",
+            "message": "The file is not a valid, fully decodable image."
+          }
+        }
+      },
+      {
+        "id": "photo-no-board",
+        "mode": "photo",
+        "orientation": "white-bottom",
+        "imageSha256": "68245bd8435bf432f168c0f569ca971d3ec0c03825f90d3c310355d1d21f4451",
+        "modelSha256": "41bbfa5cb3da6e6831ed4c293fd48a5680f831de9fa8568f39b513ff0f932275",
+        "exitCode": 1,
+        "result": {
+          "error": {
+            "code": "BOARD_NOT_FOUND",
+            "message": "No complete supported photographic chessboard was detected."
+          }
+        }
+      },
+      {
+        "id": "photo-corrupt",
+        "mode": "photo",
+        "orientation": "white-bottom",
+        "imageSha256": "5464533c9647b67eb320c40ccc5959537c09102ae75388f6a7675b433e745c9d",
+        "modelSha256": "41bbfa5cb3da6e6831ed4c293fd48a5680f831de9fa8568f39b513ff0f932275",
+        "exitCode": 1,
+        "result": {
+          "error": {
+            "code": "INVALID_IMAGE",
+            "message": "The file is not a valid, fully decodable image."
+          }
+        }
+      }
+    ]
+  },
+  "implementationSha256": {
+    "src/boardsnap/adapters/http_contract.py": "02f805bccefc42b70cba0538fe15507b365ce4273f7cf800e9d1fd4bba698e05",
+    "tools/check_http_cli.py": "71948f99ea57344a930e06b4dde7107437026aa0f05702ba956394053220bb02"
+  },
+  "pending": [
+    "Implement the separate HTTP adapter.",
+    "Run the parity probe against that adapter.",
+    "Test multipart parser, total body limit, oversized files, temporary cleanup, internal errors and CORS in the real adapter."
+  ],
+  "qualityAccepted": false
+}

@@ -1,0 +1,1453 @@
+{
+  "schemaVersion": 1,
+  "reviewedBy": "assistant",
+  "reviewedOn": "2026-11-14",
+  "scope": "160 previously assigned training photos only",
+  "method": "Visual review of all 160 canonical board contact sheets reconstructed from verified existing crops; wood grain distinct from photographic moire. No official piece theme identification or per-cell overlay annotation.",
+  "limitations": [
+    "No-visible-wood-grain does not mean texture-free or clean.",
+    "Review is not an independent annotation or a model prediction."
+  ],
+  "samples": [
+    {
+      "number": 1,
+      "photoId": "phone-357e135f4522a8f7",
+      "imageSha256": "a23a128ee23438ae8be9f798e6cb3eb64083f175a582a8469dd3e87c0640ec36",
+      "arraySha256": "59e1edf8dd70fb6b9cfc6671a8ef0f27aea732785e335a01d0bcdebd0c8e6408",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-1.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-1.jpg"
+    },
+    {
+      "number": 2,
+      "photoId": "phone-f4434cf704b97964",
+      "imageSha256": "d90ead455deeebfcb2d761787cba3178d205c43bed9b6e71525414667e5651fe",
+      "arraySha256": "fb327befefda5ffbd981252faf4c9cdcb18d789b22e99119761809faf83ae6b9",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-2.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-1.jpg"
+    },
+    {
+      "number": 3,
+      "photoId": "phone-f2893766b8090cc7",
+      "imageSha256": "e20f07d5adbcae54ce4649655cb02318836b7b027074701565ba221f55ac7336",
+      "arraySha256": "e595ea88721cf18cab38915be6aa050be950329be3ff3f5500f0a0ad768afb16",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-3.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-1.jpg"
+    },
+    {
+      "number": 4,
+      "photoId": "phone-af784bddea9dd3b3",
+      "imageSha256": "f852aec158ab04cea6d6e8ef5c69df08c00f4ccda74ecff42a8dd701a389d05a",
+      "arraySha256": "1b11216099359764c7e79bd581c87ff09ffe9e0ab4c36fc687add448b1a40f9e",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-4.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-1.jpg"
+    },
+    {
+      "number": 5,
+      "photoId": "phone-d1603360b12d8a5e",
+      "imageSha256": "883aba98c2568514a441c54d741369c0e19ebdbb1104b2d1bca35bb9943cfe70",
+      "arraySha256": "fc48e347e4437c50397e17fb9eb189daa7470870d5d845b73d5641e531b6b6f6",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-5.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-1.jpg"
+    },
+    {
+      "number": 6,
+      "photoId": "phone-60a84f4256de0a73",
+      "imageSha256": "33c684b9e6edf8c3a6e4d9af8d70a021ad02702a2934520291430661dd13707c",
+      "arraySha256": "3b325034d33b49c914fe78a66145de8f5c7e94fa04e1d94dd6a8e2586e657dc2",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-6.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-1.jpg"
+    },
+    {
+      "number": 7,
+      "photoId": "phone-07db5044b893c799",
+      "imageSha256": "26328314cbe0d0d7419ccbca0fa9fc8d7012a26cfdebaee6e8ea18dc2ddb10a4",
+      "arraySha256": "fe3732eed8067d3b6e744c84cb81c3818b8a603132c0d910ed32e75796eb5d76",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-7.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-1.jpg"
+    },
+    {
+      "number": 8,
+      "photoId": "phone-60913e118dc95b5a",
+      "imageSha256": "1e41190874acb3a59f5bd69d50a1f20934449e8ca4ce612f9d5be6f0ea73e1e1",
+      "arraySha256": "50f852e7e12f2ff2e29778b76da14c9989ed801884c2947fdaa1e693170e45bd",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-8.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-1.jpg"
+    },
+    {
+      "number": 9,
+      "photoId": "phone-769cc449230f0b48",
+      "imageSha256": "c8e86cad75c9227c0ba5eed977f53540c8620c121e5af748a269fb74fa16c875",
+      "arraySha256": "01c575b660eb2a86133728ae7f2f400666714b8fde76601fc140b9406461bb96",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-9.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-1.jpg"
+    },
+    {
+      "number": 10,
+      "photoId": "phone-e37e3ffa091f7fd8",
+      "imageSha256": "7561877b230b827768700a3cadaf66140eaf6044649a4a18317eebc0150eb7a5",
+      "arraySha256": "263b585338508a9fa550fb79e46e3a16960f4e255ed8ab7be37240c688b6244d",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-10.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-1.jpg"
+    },
+    {
+      "number": 11,
+      "photoId": "phone-2f789f63ee0010b9",
+      "imageSha256": "fbbbf8a82b419517e656a13dc5abaf8a5f18f9f765003a56ce4a62be1a19d239",
+      "arraySha256": "4f43f57925ed3cf45374c3ad4ef7e35b2ebed74da4a05f2a71161d7193f5dded",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-11.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-1.jpg"
+    },
+    {
+      "number": 12,
+      "photoId": "phone-4960b6bee5413fa8",
+      "imageSha256": "6a1462212eff5a8b074c7cd3f3ed04d87ce5f7a725870f61f4b9ec95c107bed3",
+      "arraySha256": "265446f4dc5762440e5c95214e450393e7fd3d2d216dad38369d5fa5dca84e23",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-12.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-1.jpg"
+    },
+    {
+      "number": 13,
+      "photoId": "phone-eba77b13130c195c",
+      "imageSha256": "da39f41c5aa2697252539efc153324cbc8338667b10bb302d3ea896b57e2a468",
+      "arraySha256": "ae9a6e095314694fd5c5a0ca78c76f30b8d742dd7bf1560d9aa46110131ee098",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-13.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-1.jpg"
+    },
+    {
+      "number": 14,
+      "photoId": "phone-12f61a23bf5ca5b5",
+      "imageSha256": "cb56f68b2ce311030496f2b3530f940083ce4555b07db0a910ded6a07058ac97",
+      "arraySha256": "69ae5e3efb06461076b752bccc881a73508811fddad56acf5e5d851c35693634",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-14.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-1.jpg"
+    },
+    {
+      "number": 15,
+      "photoId": "phone-3919af681ea8ed08",
+      "imageSha256": "2c851e9ca2c2526b5c21503c10e019c00d18372ea05a2601e8f7936303175667",
+      "arraySha256": "5def84b0e6adc74d226398f49a67aa322e10a74c64f52c6839e8acae354a4d3c",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-15.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-1.jpg"
+    },
+    {
+      "number": 16,
+      "photoId": "phone-b5f150c7d7b40482",
+      "imageSha256": "3f97fc537f3dab90e2d94f49f7d0af024d489e52add17491f9614aa90a81d91f",
+      "arraySha256": "02aaef54b31d7df4f8ecc261fb7928ea51960e09e45b7552f07f28954a149b13",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-16.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-1.jpg"
+    },
+    {
+      "number": 17,
+      "photoId": "phone-d95dd8c771a465ae",
+      "imageSha256": "4b59a76c7e792388064bb7503c0372110ea29c6f0b7f41454218cea3880064be",
+      "arraySha256": "1df7a998a6c5c8e2efcf141a7799dfc62eecf40056a5aa63e19359c4432d09d7",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-17.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-1.jpg"
+    },
+    {
+      "number": 18,
+      "photoId": "phone-3fa9a4cdb5941c3a",
+      "imageSha256": "3a19f08256f92767d4219aae30a9444409c4de8e4fb152a87e89bf43969e4e3b",
+      "arraySha256": "41d331d717be1981f162bfd93254ba1a972ea7474e51124b335192faba030690",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-18.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-1.jpg"
+    },
+    {
+      "number": 19,
+      "photoId": "phone-8933d535e0a58ce7",
+      "imageSha256": "baa351d8cf28bad09694b126d17e980815ea0105d0507cb7700ab7b0d94f2e53",
+      "arraySha256": "e09144fc201baf693219e470f029941d2e041fd17fcb523c90f5be11c5a95ef8",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-19.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-1.jpg"
+    },
+    {
+      "number": 20,
+      "photoId": "phone-a11c46b55910c12b",
+      "imageSha256": "32761812e53bb9d839c57235cbc79b1668554c517de97ff3a29d0be6f679e40b",
+      "arraySha256": "3143ec88a5dedea58b576d593eadfcb5447660395f40cbd5815fba4dadd1e507",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-20.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-1.jpg"
+    },
+    {
+      "number": 21,
+      "photoId": "phone-5401404735d66725",
+      "imageSha256": "ddef392b8f70340a2dc38bb39b7c9fb1f0368fa8730fe2b992eec3ea86cb6351",
+      "arraySha256": "46c3b5373dc880133cba80bab7656f82ad27350c0e83ebdd75b5030299cbe265",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-21.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-2.jpg"
+    },
+    {
+      "number": 22,
+      "photoId": "phone-97bcaac405ef13e9",
+      "imageSha256": "cc33fb20712137898458d4a4412b5f6d90c397595f05b58f8e4a9fcaa4ca18df",
+      "arraySha256": "0fd89a0d658ea537dcc9232dd9714142da72e545603519d4a6ee2b7077fff252",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-22.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-2.jpg"
+    },
+    {
+      "number": 23,
+      "photoId": "phone-3143e97a6d00eaea",
+      "imageSha256": "3c81b6d3784449eb4acb66ed4806260ee5fa0a8be6e819b17e25fab15089a28f",
+      "arraySha256": "de6e54f0fd9318f248f98079e9073f71e0925c376a20da768c45cfa4a9924024",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-23.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-2.jpg"
+    },
+    {
+      "number": 24,
+      "photoId": "phone-08a5490ba0c17d7f",
+      "imageSha256": "d72a4f79ba241d699521c42a6cc0e57b77fbf21b2cce30189c49e3730eb51171",
+      "arraySha256": "928948d8402ad98ad6e342de555f96b7efc22c47100c187cafe7906437b556fa",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-24.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-2.jpg"
+    },
+    {
+      "number": 25,
+      "photoId": "phone-d4d94e4c0b82caee",
+      "imageSha256": "c4a4305048b15aeee77b4d336931a78d50fc889c252ffff8fd44077fe22f4287",
+      "arraySha256": "700f826ead826ccb2c0eb02af914ecc2fbea8208f1b8450b355c989d6a33e1d9",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-25.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-2.jpg"
+    },
+    {
+      "number": 26,
+      "photoId": "phone-55585ae421e3e8d6",
+      "imageSha256": "b73a29e1a99edec1e8333c06dc05aa1e0165d1051f903729e9c00306b7dc6a88",
+      "arraySha256": "94a3ed264d0b38c83ee10538bfc1f98e368040d69719b4f1161b5f7e47b15da8",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-26.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-2.jpg"
+    },
+    {
+      "number": 27,
+      "photoId": "phone-79c71dc753519eb8",
+      "imageSha256": "4cb4a707ffd94383ab35ef4e6c15ba2dea0e382a739471457b67cc92d1f9b774",
+      "arraySha256": "00baab7bbd42eed786fb1f0c2c6c3d9af34b66b5b1b886fc5acc7f02bd2052ac",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-27.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-2.jpg"
+    },
+    {
+      "number": 28,
+      "photoId": "phone-d18f815e674828d9",
+      "imageSha256": "0e7a91b4f71a75ab6758af51704b3cb8c79d07390e174eb6e37eab59b51ad0b7",
+      "arraySha256": "ed1582bcf7b46b5c25d6b9699c6af3928d5107497802eb1c312919edbe419bda",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-28.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-2.jpg"
+    },
+    {
+      "number": 29,
+      "photoId": "phone-79eefdd283c5b77d",
+      "imageSha256": "fa83a4f2fa868d0fe2232ef8931dead321da6b3b36f3622a88fdf262647b0d32",
+      "arraySha256": "c9f5f1db81d496bd639b3a69e0a3d3279875ff500cd6e64462b81580dc84ce76",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-29.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-2.jpg"
+    },
+    {
+      "number": 30,
+      "photoId": "phone-304a5e9f1f578036",
+      "imageSha256": "4d2c6940154ecc04b97b9decb7102d1fb7892e7f8f345e8c1b412f625ba9f891",
+      "arraySha256": "bd612e5dcb2ee8c883bb24685e5cfd67dfdfae689a9fcd857d459d3cf53a6fd6",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-30.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-2.jpg"
+    },
+    {
+      "number": 31,
+      "photoId": "phone-e61819279f91c91e",
+      "imageSha256": "4f7e689069247511be51a52c683d365dd475369f35ff15842556b9ecc0138b36",
+      "arraySha256": "dab66c8b062fe0f8557df82b847f93889328be957dc83a4620acde49c024c71c",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-1.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-2.jpg"
+    },
+    {
+      "number": 32,
+      "photoId": "phone-8dae9671e0f390e4",
+      "imageSha256": "45a122408ff66a0c04e383efa3a4841dba76cc076f30e56179d331275fa8f20e",
+      "arraySha256": "2f5b72bef1c14c8e7fe2c99878b857b0de02035e0836ae9203453f768991412a",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-2.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-2.jpg"
+    },
+    {
+      "number": 33,
+      "photoId": "phone-c714791042aeccb1",
+      "imageSha256": "b17017be91c8399e7290939d89389a3d832c81c7127a2a1be7d6ccb3c93a87cf",
+      "arraySha256": "a335cb593934e606011087b65e0c43a56782cc745ef2b99c875e995055f10c3c",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-3.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-2.jpg"
+    },
+    {
+      "number": 34,
+      "photoId": "phone-459d6257d2fb3ab2",
+      "imageSha256": "7592855bda785a3d2bdcb43888dd0a7e846cdc1721f77136b0aadc29aec61d46",
+      "arraySha256": "2e954a47f0066a0b205cd629ae966ee6c869b8f16829214fb8b896c7bca09553",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-4.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-2.jpg"
+    },
+    {
+      "number": 35,
+      "photoId": "phone-ab9863dbc46ba8e9",
+      "imageSha256": "eda8f812d268e94381fdc50b746c2410a6e5f6487ff48ee70663c154ebe53200",
+      "arraySha256": "b7503d33d30c54b7fc7fc7757280c5ed761e6b93e55628d8361c8cd1f449de19",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-5.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-2.jpg"
+    },
+    {
+      "number": 36,
+      "photoId": "phone-ee72c36864a726a4",
+      "imageSha256": "3e5f45b068c48dfff78dc67c4f2873d0f9ec78748b79a787fc4728b3ad4cd96a",
+      "arraySha256": "0d6febf2997ce1a03948c575625f75ad3793519b5011191cc2a4436fa9a56d8f",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-6.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-2.jpg"
+    },
+    {
+      "number": 37,
+      "photoId": "phone-a39fed0ffbb76d9b",
+      "imageSha256": "f13049a2ebd812fe27339a733117ebf391348e720be3e0ae78d28bae245755a1",
+      "arraySha256": "5a54ddb1a922b0e48885d11a6dda15084784dc79c501072d918074b00339330b",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-7.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-2.jpg"
+    },
+    {
+      "number": 38,
+      "photoId": "phone-ea90bf646c79d0e6",
+      "imageSha256": "265cbf61de170e94057dddf54be2b7be476a8aef07a35b93a9d4e108a8e9c046",
+      "arraySha256": "c544b8a49a918ce445584df3a23196edc16ee3d05c0ff71f8392963702ac530b",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-9.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-2.jpg"
+    },
+    {
+      "number": 39,
+      "photoId": "phone-04f9d06d2e080c60",
+      "imageSha256": "536b89fa239467ae36be9e313e8b36830bb3aa0d66786929aafdb120b49f947f",
+      "arraySha256": "1fa69a1b0218566bfcc4efd732731c12da686af89e6561f2cc06e9c1e64646c9",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-10.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-2.jpg"
+    },
+    {
+      "number": 40,
+      "photoId": "phone-61e8274b36059552",
+      "imageSha256": "985ee50edc55c8bfaf34678e7deb559025e56eed18a8cf49e344ac90a67327af",
+      "arraySha256": "c6e89d33b7ff509280ea78b07dc5557e9187f558674e6a486c9aa4eb95e5f7be",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-11.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-2.jpg"
+    },
+    {
+      "number": 41,
+      "photoId": "phone-ea0e171bd7a7cdc3",
+      "imageSha256": "26ee2a938a73a496bb3ded38255e5b658c8c523d086af7fd70f0cbd8ae1b5b35",
+      "arraySha256": "7e4a8fbf6a8b1875818e399fb263fd4f7ca00192a07c5e843863407a75206249",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-12.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-3.jpg"
+    },
+    {
+      "number": 42,
+      "photoId": "phone-d11a264f4952c3d8",
+      "imageSha256": "09b6b63a64adb9297e08c6cbf4c69c1478fbf9e785f535c10c1c2013b46b5cf7",
+      "arraySha256": "4d51c8ad62b65f003b54fd55b750eac09b17a4b99e560e1846b91aa91b18ae6e",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-13.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-3.jpg"
+    },
+    {
+      "number": 43,
+      "photoId": "phone-129de706cfb263c9",
+      "imageSha256": "372c8c87fbd74e10c06111c39940880a5bd95b5be234bab73cbe8f9dd665609c",
+      "arraySha256": "8c05c970d1b8bd9410b8dee0a3bad14522db9c4bb14d070876205bd6fed3b9e6",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-14.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-3.jpg"
+    },
+    {
+      "number": 44,
+      "photoId": "phone-9c7f3baea6979bb8",
+      "imageSha256": "647512ec2187e72c1e8c22db1a5c534d242c4153443ee4cb0b68d55bace5aa7b",
+      "arraySha256": "807a6a8dba8f2e6841fe548bf9435eddc5017df443db727562cae1a6583b4f8d",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-15.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-3.jpg"
+    },
+    {
+      "number": 45,
+      "photoId": "phone-335e5170d910dae4",
+      "imageSha256": "7ceb86aab27916d596ae9421d65c1c6808bba2a0a1d678114695ba45543e6e20",
+      "arraySha256": "b9db69765a5f5a80a6a231418807b72a080a7d63b043fadee2df0f3cdbc7beac",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-16.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-3.jpg"
+    },
+    {
+      "number": 46,
+      "photoId": "phone-ef969598673e0e74",
+      "imageSha256": "0863dd49f25b42598d647879780f033b9dfa76660f2d3515607012ca8cdef082",
+      "arraySha256": "3f677ae0bbcb473c28c1fe4dbce1cb9ce0777ace227879566316e5426ce7a8f0",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-17.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-3.jpg"
+    },
+    {
+      "number": 47,
+      "photoId": "phone-515ebe471d662834",
+      "imageSha256": "32217a4d6ec45a9aaa2df6a8c203f37c60033afc859a505ae45c7e15a4577f8b",
+      "arraySha256": "3278016600ad30729473342165bf2fb123ef8b710d6a9d2c3cd4ed77fe99cfa2",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-18.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-3.jpg"
+    },
+    {
+      "number": 48,
+      "photoId": "phone-fbba3d541b821831",
+      "imageSha256": "0184548e704a29ba8881d64e383e321974e6e2a71a19e54438271bcaa32496eb",
+      "arraySha256": "757f9aa0f03f53e763363c34fc51136e9c97b547f5c3fea138dbc2c2558d813c",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-19.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-3.jpg"
+    },
+    {
+      "number": 49,
+      "photoId": "phone-3a99ebcf13e6460e",
+      "imageSha256": "47e11271da219625f4082a8fc2b72c2fbf56cd3b028f83c5665147d07c88a849",
+      "arraySha256": "4a2b0b5f7234dab8805b3f3f3e413265b2c46478313232c493ad8993446a70cd",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-20.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-3.jpg"
+    },
+    {
+      "number": 50,
+      "photoId": "phone-3eced6d924e6139c",
+      "imageSha256": "055f3ff7a415030471ff76180c6c9039ca7e6ebfac6742b52cca302cbd598263",
+      "arraySha256": "80f968dee841a28d9e3668261c9639753a858a51f3e8f67dfb48d98b9e92eefc",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-21.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-3.jpg"
+    },
+    {
+      "number": 51,
+      "photoId": "phone-47c76ad4dfbca8a0",
+      "imageSha256": "57abe97461b3f53e45027c8ead0df2c95e69656730aba1a6f813ca255c46cd0e",
+      "arraySha256": "ecb77bae64704716ca1608bb9a49e182bd2496623693f1a5b0ef931b1ef0b2cd",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-22.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-3.jpg"
+    },
+    {
+      "number": 52,
+      "photoId": "phone-fe90e48e3e6c9e17",
+      "imageSha256": "139171a24ec389bd01d5c88ba28fb8bd8043069df8e238c40192d8933c9b5580",
+      "arraySha256": "39a33b567f8b69236f346527a0e1304ededad8961f6970204aa260bba9a495f8",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-23.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-3.jpg"
+    },
+    {
+      "number": 53,
+      "photoId": "phone-5671d5ed953b62c0",
+      "imageSha256": "f74ac39db40ed9843d7a7e072ec92eee28ac8b5dd479a1caecb1bfa8acc2f040",
+      "arraySha256": "d2487db603d66a0c52ae7de9ce10a079de3019605a071c432055e653614f4e2d",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-24.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-3.jpg"
+    },
+    {
+      "number": 54,
+      "photoId": "phone-ccf04aa50e520746",
+      "imageSha256": "bb5366d0c1864e5ba86fbd99dc931ff00a394f0970891ad1c0f01c0800b7d814",
+      "arraySha256": "6db225c584a062fa409f536796652e55fc1963e92d4a787b9e1115358355d41b",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-25.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-3.jpg"
+    },
+    {
+      "number": 55,
+      "photoId": "phone-ec2c273d1ac4af8e",
+      "imageSha256": "9e33959e29370267dea71b55decf5ba15a7194f9e5dcc6880f48edf8c80399be",
+      "arraySha256": "64f652793311437b34159715a768c4d9c4571fcdfa9f44caca5f059a4d22ac8c",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-26.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-3.jpg"
+    },
+    {
+      "number": 56,
+      "photoId": "phone-06a12eccffbf1c3d",
+      "imageSha256": "7b8e4ab9e6c9d060f54dba3d3d7a10f5a4bade4a67f91820db056c3322ada811",
+      "arraySha256": "9e375e354d3afbf9171bd9352f5a00644e3a324b889e3bb2ec3b80622f5463c0",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-27.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-3.jpg"
+    },
+    {
+      "number": 57,
+      "photoId": "phone-ba6617fe964fba0c",
+      "imageSha256": "edfe1b659df93288df2fd59482cdaaa5ae7b61e20fdc0135d2c958cec24138ba",
+      "arraySha256": "68379bc99a077d9b9a578bb86145bd17d07e1f8413244cf5455c89397576e377",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-28.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-3.jpg"
+    },
+    {
+      "number": 58,
+      "photoId": "phone-68fbfe6cb128127d",
+      "imageSha256": "bf5336784196dfa5848c13780dc135b1d330f074f0c72f9746125ad499731ac4",
+      "arraySha256": "51f4da5584fbce73bba55292d2bc210c7f5a020f611c3a4d8a0852637c4d3508",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-29.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-3.jpg"
+    },
+    {
+      "number": 59,
+      "photoId": "phone-eb020c23f54e1a41",
+      "imageSha256": "c07c935e0d2fcb1b46a9feaf7f704d6b96f25b10f22e9c70bf6c2800fe1caecb",
+      "arraySha256": "8945dea53722911250b7e110a6583b01f8ab4c05f856931c9d347b1a8abe7889",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-30.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-3.jpg"
+    },
+    {
+      "number": 60,
+      "photoId": "phone-f7a04b143261e0f5",
+      "imageSha256": "cae68c5675215ea2f8effdaced6fd09a285a7c56f35a0e9d9b4f7aaa621d754b",
+      "arraySha256": "0807486c5c231d75f0c8c6a745d873822d3dd175f60d16603087d7fabce85b27",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-1.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-3.jpg"
+    },
+    {
+      "number": 61,
+      "photoId": "phone-3d294a5eb6fcd0fa",
+      "imageSha256": "b7b155e184db42b34288a7af3201f3d8ddcd219f1b515d2f38f8891f6afade0e",
+      "arraySha256": "f27ef03406f5cafd0cc4ae3d0b633d9f97e1b596c46c5aa555586048e2296f0a",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-2.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-4.jpg"
+    },
+    {
+      "number": 62,
+      "photoId": "phone-2c1928374e5ff2be",
+      "imageSha256": "03791a70eea892b1172bf3f8482492b1b91fc80cde60195d7cd19ca457f10d04",
+      "arraySha256": "8417e6da094889fefc78d2b4680e24a910d5e53cf8823d73decc1e9240ed022e",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-3.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-4.jpg"
+    },
+    {
+      "number": 63,
+      "photoId": "phone-19fb0ff5251d6514",
+      "imageSha256": "a6df4254b1960d6e7105075f521eea7a1398a818941db10f8fc89b1356a0e934",
+      "arraySha256": "5a9983440a6849bd8978f63abb70bc5a8bba6031489105be7318a3d240ed258e",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-4.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-4.jpg"
+    },
+    {
+      "number": 64,
+      "photoId": "phone-78609865d3135ad8",
+      "imageSha256": "0584a040ca788c3e67ab7630f90c48b27d6ca8196d51792215f494aa29082603",
+      "arraySha256": "f9d08b3da80b551f0d074ee0f51f13c31dcc1bacbbd31c30ed8a30a8d6324522",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-5.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-4.jpg"
+    },
+    {
+      "number": 65,
+      "photoId": "phone-d045f07954e513fb",
+      "imageSha256": "1e04ccb9513c3794a3c3a26bc007e8194e5de01058937080ce3049a1c922bd80",
+      "arraySha256": "77a7115476b5bf1d410f0a1e1e05649d0058d01e581d827103531cc58f00b7fc",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-6.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-4.jpg"
+    },
+    {
+      "number": 66,
+      "photoId": "phone-77739890b8750422",
+      "imageSha256": "e05c0e15017cd0d6b6c4871379bddd875821161ecb0873e829092fcb3a74a666",
+      "arraySha256": "11910b88b025462bb7160d50d082347442abfebc5a2e9e22c5942fe5db00db9e",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-7.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-4.jpg"
+    },
+    {
+      "number": 67,
+      "photoId": "phone-369f8c62b80ae326",
+      "imageSha256": "d47d89436d7f01efb74acf59e8b147dcab2ccecac0e620ab11ca4354a99437f5",
+      "arraySha256": "b6de3dfea922de81b5151f95bd8db2a5e4f32bc2909791a97f6f0bc03ef00374",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-8.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-4.jpg"
+    },
+    {
+      "number": 68,
+      "photoId": "phone-c4905641ecd8ead9",
+      "imageSha256": "925353df29d28b8ce31ab27f8b42e6a63f083ed0571a2b4a21bf8b0092c78240",
+      "arraySha256": "86e506592900a4a568ba527fed24226bc6bc076fb8b66dad7184ce5f93aa26b6",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-9.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-4.jpg"
+    },
+    {
+      "number": 69,
+      "photoId": "phone-703ef3bb0d658ebb",
+      "imageSha256": "3ea024f50f248f53879ef22b07526852dd12f63f4e14f600a225fc6a7572f461",
+      "arraySha256": "053ab71e7ccb1957c906c4c459b3e8207bd787934b6f2f67a69edf5867634ad9",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-10.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-4.jpg"
+    },
+    {
+      "number": 70,
+      "photoId": "phone-3268d66de68b4ac3",
+      "imageSha256": "02d937f63194596ab28654388df6517d7ab5827ccf2b01b3a1f53abd1e962a8e",
+      "arraySha256": "c6a2e8cca0c09b7c01f8a2a20a9ddce0c2f9e4e476eb694331bc2b5437dcf59a",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-11.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-4.jpg"
+    },
+    {
+      "number": 71,
+      "photoId": "phone-5e3e4216cd130a8a",
+      "imageSha256": "ba1b227ccb6561f0fcd8159d3d723f24590e1563eaafc7c67a34b91c35527fe7",
+      "arraySha256": "0e9b70aa5eb40f116c381e800e336442d4f4c9a02e12d7d6daaa4e6af10a03e3",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-12.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-4.jpg"
+    },
+    {
+      "number": 72,
+      "photoId": "phone-632760bf2c9f4f4b",
+      "imageSha256": "0b6f9b57672c020fbaa0c95271d7b26121c887d1527f0e1570fb2537e09445dd",
+      "arraySha256": "c10b98ab9b92fd0852f27a3c2f3403e43fa84050bcceed4ff1ddffd9bbc7d9ac",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-13.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-4.jpg"
+    },
+    {
+      "number": 73,
+      "photoId": "phone-5e8c256be9ef5897",
+      "imageSha256": "5319485c91383e91083232b25ebef2f791d91a06a9ea2f444a5c525e2bd1e47a",
+      "arraySha256": "d40c0591847cd08f69a948d6634618e1fbb88362af7d01adc886dac1934d8a0c",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-14.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-4.jpg"
+    },
+    {
+      "number": 74,
+      "photoId": "phone-2f54c61243556b1e",
+      "imageSha256": "4e3e9473613df0525369b7afd91ba94275c299b505d689f120251a7ed08844fa",
+      "arraySha256": "74aaa27952f5e2d23425f2505f04dd1abdc25da1ba5a78e33599bdcb8c4a7b30",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-15.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-4.jpg"
+    },
+    {
+      "number": 75,
+      "photoId": "phone-497b48679b527cf9",
+      "imageSha256": "6ca4aabbc678fae2b4891f377601270788112b29eb67b5373f90741593532b71",
+      "arraySha256": "978774b40526134d2e41f9509f64dd51135fd92042d1383bbe5c465d64319057",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-16.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-4.jpg"
+    },
+    {
+      "number": 76,
+      "photoId": "phone-83e47e9eafacde1f",
+      "imageSha256": "0fed6938b6ea95765a2f8bc2d05a44dc557815453836e4229a390e37371f0344",
+      "arraySha256": "7f698a97819c422c5a1aef746be919d7a8f5580890fc887cc7aeb8ae0f27b46d",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-17.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-4.jpg"
+    },
+    {
+      "number": 77,
+      "photoId": "phone-a402498bd385294a",
+      "imageSha256": "91c524af9351eedc3403f14cef6362f139c9fd3f9e6e85a974bc32b1d4004c01",
+      "arraySha256": "65dfbf870f5e34cc2e5c864480147cbb98fb44f187afddb674f9441fc7be47a4",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-18.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-4.jpg"
+    },
+    {
+      "number": 78,
+      "photoId": "phone-7f91c2c3931c1bf4",
+      "imageSha256": "f3a88299a237c717c3b995bf05fc003a095d149281d21214a9eccb86a1a74ae9",
+      "arraySha256": "5dc5f5fccc00aff25a50033736586f5089c5a584ec155a2d28833d27b62cecb1",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-19.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-4.jpg"
+    },
+    {
+      "number": 79,
+      "photoId": "phone-17536706b058196a",
+      "imageSha256": "20cd2dc74350254e7cc5078334a1da1c9d4f37cbc83d1eca7ca7ad7a85855337",
+      "arraySha256": "a4fee4d5fe4b4931ba04b4fec6c675fc4c05f122783f822c822f32f85b78c75d",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-20.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-4.jpg"
+    },
+    {
+      "number": 80,
+      "photoId": "phone-c29ea8667be9f0e4",
+      "imageSha256": "f8572e302f1fe93d70c834cb16a783ff6ef7c4248fa66ab33b8681a96a6c49aa",
+      "arraySha256": "622310795ca89d47f830e2ce0a62f06b419968cfba75243471c2c5a8137a3ab1",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-21.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-4.jpg"
+    },
+    {
+      "number": 81,
+      "photoId": "phone-93319356e94bae92",
+      "imageSha256": "cc183d81ca0aeaadc525ff465f11b8cd49afac7eebe33241258ec288d6fa4bd7",
+      "arraySha256": "5767c7f69115581a3c697027f8d5bbe3b4f33980adb6143d10649d5f42a45ef1",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-22.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-5.jpg"
+    },
+    {
+      "number": 82,
+      "photoId": "phone-0a44e664e846f50f",
+      "imageSha256": "fcd0c461969cb3c0f935e0c1a40d73f16d66219b10316018130a5b38512f1837",
+      "arraySha256": "0418900583e60c1c97dd4d37ab8a9413a15db5f1fc99250922048e907047a093",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-23.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-5.jpg"
+    },
+    {
+      "number": 83,
+      "photoId": "phone-9eb693dc0fcfa29d",
+      "imageSha256": "cde8eef365661387b9bef84ab3bf8a5ba88b22478ffe3ad3fd2ba4da1c140672",
+      "arraySha256": "113cb2ff5b4f6cd5234249b817374e905490c1962c89abd7d53f7ffef33efff2",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-24.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-5.jpg"
+    },
+    {
+      "number": 84,
+      "photoId": "phone-89dcbe0f9b34b2e2",
+      "imageSha256": "28d70258319fb6b2e3b67dc024538bbbe0a7add16bae31b5dd011a09480a4bd0",
+      "arraySha256": "1df5d9217dacd134a3b511d74487079d315a7916eb7577627636002223bf948a",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-25.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-5.jpg"
+    },
+    {
+      "number": 85,
+      "photoId": "phone-ed8227c015a110d0",
+      "imageSha256": "d11d32df808402ede39e1f534e90ddb87ca0d8a894ed2611a4ce368c11e62c09",
+      "arraySha256": "898e8c700e24cee2d62f55d3e4c43b2f6f51877ca494bef9c40cbf176ac95841",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-26.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-5.jpg"
+    },
+    {
+      "number": 86,
+      "photoId": "phone-741c71aa7baa0c02",
+      "imageSha256": "99740d45d8936c0499ac79a8db6e86e4e075c12e8ed67c4baee2fa956989bb8d",
+      "arraySha256": "2bc6f2e1f258312d532662f98f5fc2f320265f2c3c160f3126d7bc15e3bc7900",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-27.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-5.jpg"
+    },
+    {
+      "number": 87,
+      "photoId": "phone-4fae5747da5167d9",
+      "imageSha256": "11378efce257eb274427a7689521aef98fe80a34f207d27d9b984f285641176d",
+      "arraySha256": "4a53af72dfce84683b7ee6a149112ed1c9ea02fe0b05779b27f1c9accd47416c",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-28.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-5.jpg"
+    },
+    {
+      "number": 88,
+      "photoId": "phone-af61315a4af4e0e2",
+      "imageSha256": "4b2147537c97e2f87a9e822bfea4a51891c57f080e319e01ad309bf4a6c7060d",
+      "arraySha256": "6b232c71bc6de6b6b277cb0272009a8e356d27bfde00b9809246e1b22d7431d3",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-29.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-5.jpg"
+    },
+    {
+      "number": 89,
+      "photoId": "phone-8b68476184c1f9d9",
+      "imageSha256": "99f4679a6dfc0c69db99ef29b70986a595ecfab4ccfb5dcbfae4e7291ace1a25",
+      "arraySha256": "95f8a693c3632a31e9a22b2829b87491bc34e5a9357003a6d918a9fca45f3659",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-31.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-5.jpg"
+    },
+    {
+      "number": 90,
+      "photoId": "phone-8dc1a7d99d0eb3d6",
+      "imageSha256": "89c74647491da1a218ffadd11208931d8ce2de701760c405a10552b512868cdc",
+      "arraySha256": "a7a4c4e72722d2e44029bc6c862b9a35054b5d9025ec5818eeddb9318d6c3390",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-32.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-5.jpg"
+    },
+    {
+      "number": 91,
+      "photoId": "phone-62e927b6a08e5a73",
+      "imageSha256": "9db95600e6478db0a2df463e99ff661ad76ac9028d3925f12e56380539bfe2e4",
+      "arraySha256": "dc50caf528cdf36782556941e93ad479be01e99ed68c2be83229421001abb7f9",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-33.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-5.jpg"
+    },
+    {
+      "number": 92,
+      "photoId": "phone-6959b615e211ede1",
+      "imageSha256": "76dcc93b7e19e569e23d16462cce360ed35a813345ec556f0208acd63ce6b498",
+      "arraySha256": "ebf8d8819cb43def340a83ab1baa26432a568e84f5e80b0b31855201ad1af6be",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-34.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-5.jpg"
+    },
+    {
+      "number": 93,
+      "photoId": "phone-5e62603717d40d74",
+      "imageSha256": "8b8a33aa6cd722bc164c0fcd66d54d2fda26d64a25efcd2c3ec52c4c2c4df37c",
+      "arraySha256": "a3345b8ac8165de0274c3c92cb1f1e0741c71f8bbd498becc9bd4f8140535ac1",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-35.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-5.jpg"
+    },
+    {
+      "number": 94,
+      "photoId": "phone-73ee8fd98e682c80",
+      "imageSha256": "38382007192d8b14097f0c57bfe072150a26bad375a7fc85cf01c02f064de046",
+      "arraySha256": "1f56ebc6b7852f2133fbf7d9d33791f1bb963b920961d90b227ec2ae0a3b21bf",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-36.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-5.jpg"
+    },
+    {
+      "number": 95,
+      "photoId": "phone-dd5d557ef8096fa7",
+      "imageSha256": "06acfaf8b4cb9949974957101271cce3b53efd8dc1394a2a370bdc41fc9dc417",
+      "arraySha256": "0e9ebb6bf39db2fac880ade458c3ab4211f3611ef79fcbfc391087f3b1306f6a",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-37.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-5.jpg"
+    },
+    {
+      "number": 96,
+      "photoId": "phone-ce9e3c09195f7fcf",
+      "imageSha256": "d27f6c59a0287aa318654d2682dd0067d33773c1becaecf5343f5c1fde3bc101",
+      "arraySha256": "82518a95e273e75e39eda6d81ad5838dde572f4fcefe735fdee7cf2a9fa21084",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-38.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-5.jpg"
+    },
+    {
+      "number": 97,
+      "photoId": "phone-2b8e213f8d3f3ca8",
+      "imageSha256": "0ec7d0cc8978acfa65daf13c875cdcac5270c1bd3608c4ec0e2c6a22c9d2151d",
+      "arraySha256": "3534e5e9fb99322c7016c4e2bbdc9293d19c282328ef49b9f106ce5a19803bae",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-39.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-5.jpg"
+    },
+    {
+      "number": 98,
+      "photoId": "phone-694f37ac04a3fc22",
+      "imageSha256": "0bc013846a076a8da85f03605fb5e3c3e762bffe6176ea764c6c2e964ccb529d",
+      "arraySha256": "4bf6a06d9510a8a6e3d1601888c40a93623dadf892dcdd4fcfd490906ae82534",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-40.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-5.jpg"
+    },
+    {
+      "number": 99,
+      "photoId": "phone-7617d3c9a0752fa8",
+      "imageSha256": "ca2b34053a039992c9e1c8300b77f32a6cd5b64b70a7cb8360b0be530f4f53d1",
+      "arraySha256": "e4dbc43f78c0112dce2467f91ae6b5992b68f9e1ae5a3094840b6b581d976a4c",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-41.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-5.jpg"
+    },
+    {
+      "number": 100,
+      "photoId": "phone-9ae5242f2729aabb",
+      "imageSha256": "1ab97fa91727ca3f7a5a6e10b8e287cf07aa201141969a9893413d799beef49c",
+      "arraySha256": "e9f21b6b1a7cbbe592d61970dbd83422ab1f91a263b464639a07321b016c3712",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-42.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-5.jpg"
+    },
+    {
+      "number": 101,
+      "photoId": "phone-40016a598f6015e6",
+      "imageSha256": "28029a43a7fa6c0dd4cb57f8e50c84d92624547ebbe1038cb9d6be3c4bc6fa85",
+      "arraySha256": "8d042507b032f9927082e89601e77e9afe21580c6d969338e8a147ba773ae08d",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-43.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-6.jpg"
+    },
+    {
+      "number": 102,
+      "photoId": "phone-5918b5bb0e18dca1",
+      "imageSha256": "c7ecf12e3929d45341fa7e2f555ab1ad5b2abf40284deacb893b240a13600a96",
+      "arraySha256": "5bf752d2d164feb1e6cd2b6e2d0cd1aa21c30445a7d79ca05ac0ccf1d81bf1ca",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-44.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-6.jpg"
+    },
+    {
+      "number": 103,
+      "photoId": "phone-3e6ec99cc93eab20",
+      "imageSha256": "c3a1d4ab11efab68c48c8509438e947252c127c5376c242c7b52777659af87f8",
+      "arraySha256": "3189431b095773c4cbbbfaac0ce8ffc73adb2a6769e66c5a0d6d2ff0b12297ca",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-45.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-6.jpg"
+    },
+    {
+      "number": 104,
+      "photoId": "phone-0155c166bd1a1341",
+      "imageSha256": "503c3465cafd2d82bdeaf3db1099f5e953be9918def43b212b0bfd51fb821f22",
+      "arraySha256": "1f67168ee182e9db37112acb84423a8a97993f015a4cefd110ee89532aa6b886",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-46.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-6.jpg"
+    },
+    {
+      "number": 105,
+      "photoId": "phone-87dae87648d7bf12",
+      "imageSha256": "145b0d505363a7be78bed16d8cc1e5871d453a4c062c7a7ef8f6f4045abb3e47",
+      "arraySha256": "2176b6c0be367b97fc86d0055316701d144c215050fa1968ffc0bdf500ce6f0d",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-47.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-6.jpg"
+    },
+    {
+      "number": 106,
+      "photoId": "phone-bf695a5b43ced338",
+      "imageSha256": "1665108736617e008bd25dcc107661fa489ec81772315f272529bdb5a7b13221",
+      "arraySha256": "9d92af35f1eff00c69e0a09555ec42e360be57cb206603d143e2e2afbc254617",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-48.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-6.jpg"
+    },
+    {
+      "number": 107,
+      "photoId": "phone-4ea615ff0c6ad77a",
+      "imageSha256": "bd3f099d4a300146b5dc7580ace588442f7dac7d6949b4b2c8c359bbc43f4074",
+      "arraySha256": "d5d0c65602202d09d98fd1559e198dd046ff862cac3086018ecd69462a5f46aa",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-49.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-6.jpg"
+    },
+    {
+      "number": 108,
+      "photoId": "phone-49b0a8f84f1009fe",
+      "imageSha256": "6df0e5020495ad710a4c97c595cbe78c9f8babafb29b1d9e11b6ebba1377de7e",
+      "arraySha256": "b0bd823d363f1b575f69a660c11884e56fe77986f4d69f483abb2da148f37494",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-50.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-6.jpg"
+    },
+    {
+      "number": 109,
+      "photoId": "phone-0e291824b98cb1a2",
+      "imageSha256": "6546a12bd0261d91d667709b0967df25f935d01d3edafcb0c6c02e287909262f",
+      "arraySha256": "a215bac3edb74bb2dee913e587138b8b926b6d34fec1c970909fc68a47e60051",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-51.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-6.jpg"
+    },
+    {
+      "number": 110,
+      "photoId": "phone-e740681448815ce3",
+      "imageSha256": "f4bd48661709247e213bb244b6b454e58dd8e94a269055aa900852e9d4b0b824",
+      "arraySha256": "3d1030e119bc37b66e578e4b14838b081138e69db4d6e4acedfc6f11a75a20e2",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-52.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-6.jpg"
+    },
+    {
+      "number": 111,
+      "photoId": "phone-d0e08280ebf8b742",
+      "imageSha256": "4a245cbed2ae6b3a778f572bd4846bd6a8d86f3ab82f26d9eeecc62819a0f32a",
+      "arraySha256": "3ee9419675b5134e69f8587978f2c58e82fe5197a4f51c0c6fc88cdea8df5061",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-53.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-6.jpg"
+    },
+    {
+      "number": 112,
+      "photoId": "phone-ca7e49c7efbaadf7",
+      "imageSha256": "ee5c01acafccff2ad1924eb1367160d68ce194d0b0e5069dac06403571a4f56b",
+      "arraySha256": "7aa21eba821cdc1583ba18d1617c8ff63d68a463614c195b385f950d0cd4b389",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-54.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-6.jpg"
+    },
+    {
+      "number": 113,
+      "photoId": "phone-90a25f7019fe18fb",
+      "imageSha256": "73be7f84de016172d4fdbde16c71ba5a0502713c961e349e0efcf5f6d02f68e9",
+      "arraySha256": "1c1a920f78b2bd5a9e87a8d1f6a685039d446c60a440dbabdbcdbb86a3d6a4f7",
+      "originalPath": ".cache/real-use-tests/phone-photos/chesscom-photos/chesscom-photo-55.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-6.jpg"
+    },
+    {
+      "number": 114,
+      "photoId": "phone-c9f39529fbd5bbff",
+      "imageSha256": "d2750c1341357bdb4554bc9cefe8ca52b2a4a94bbe0fab0372c1bda8133aea4d",
+      "arraySha256": "7e05d9c1dab65a3fd3178b537714341d9ada7334438677e703ad3b5740cad5d2",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-31.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-6.jpg"
+    },
+    {
+      "number": 115,
+      "photoId": "phone-735003e11107efbd",
+      "imageSha256": "f0450f6f93daf3603a1a1b64448c3f94f2f49c3749e3fb7190b5a66599ca7863",
+      "arraySha256": "6c84511234d6e8f689eb6c7561264004d57257a77bd4d4016f02bd92e70fd171",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-32.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-6.jpg"
+    },
+    {
+      "number": 116,
+      "photoId": "phone-784c4ba9cbe4a2bd",
+      "imageSha256": "e32aef3a2025a28cd1a925693fc8c11001aa8ee068363118ab71b890824dd3f1",
+      "arraySha256": "88ea3fa72e380d3cacc5456245791e7fdd85c7ad6804858fa61215093c5f64f0",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-33.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-6.jpg"
+    },
+    {
+      "number": 117,
+      "photoId": "phone-b0453b01066eaaa5",
+      "imageSha256": "2377e5d6374456f4dc75e4013d755cca0d6c20c44e486487e29cf0707cad20f1",
+      "arraySha256": "e3b5a4811d02a88555cd1e32ec8e3167ba1608bc926e0ebebc109b3878407f6a",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-34.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-6.jpg"
+    },
+    {
+      "number": 118,
+      "photoId": "phone-1dccc21f5e11505f",
+      "imageSha256": "8acf8e2109a7cabb39053ae598da0e7b1dee31542bc300e92b49b82aa95919ff",
+      "arraySha256": "88d279be53d6f57c8646fb3d24003345cbb10621b1e447485498229c9575bd47",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-35.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-6.jpg"
+    },
+    {
+      "number": 119,
+      "photoId": "phone-72ff73dce55e25d5",
+      "imageSha256": "a98eb7dafde82048114c06c6b7be5ba4740992cd68834073071a9fa73affb867",
+      "arraySha256": "0b7b655c08893685f69f92d4200bbeff766616755023b19977236d0f2cdb5aec",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-36.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-6.jpg"
+    },
+    {
+      "number": 120,
+      "photoId": "phone-a0298df316da0825",
+      "imageSha256": "ea47eb0987544d2fa91946a8afca7236d4b76659d7fd5dc7d0fe6144a110cf5d",
+      "arraySha256": "07a3c23c27619b1ccb2e077cc811717c027bf4e325cfc807f60c50714d6b6232",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-37.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-6.jpg"
+    },
+    {
+      "number": 121,
+      "photoId": "phone-2ec348f093102497",
+      "imageSha256": "dd09e73c78f6a26b8efa373343b37889a4e8efd616da94bf7416b698539d8a7a",
+      "arraySha256": "9e0773a1be4ed30cbfd031bfadff78cde0d24c7583ba3775e543c9c2a546ee9f",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-38.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-7.jpg"
+    },
+    {
+      "number": 122,
+      "photoId": "phone-e21cc1bc39d12c14",
+      "imageSha256": "4414b2474e59e6dfa81544c41afd18578266f427da4d9ccd9c368ee0aa535f4a",
+      "arraySha256": "72034a13bed2febd3e9e97a3cffc1c6071fc6cd72f9c57a2db229ab47ba88ba5",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-39.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-7.jpg"
+    },
+    {
+      "number": 123,
+      "photoId": "phone-d1bd99f986904f82",
+      "imageSha256": "f55c7830b34b429019a28e89f03fbf685f3b7ee506128b5e07c2aa0924be0a5a",
+      "arraySha256": "79ae333ecca022ae050cc6e4d595fdb974f3e66851c22d3821cfcc7a9d236c28",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-40.HEIC",
+      "boardAppearance": "wood-texture",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-7.jpg"
+    },
+    {
+      "number": 124,
+      "photoId": "phone-d169bc677bc96b34",
+      "imageSha256": "f4537a744e95da31248ee09353f3339eaed65ac783b0591718819015e8b16e8a",
+      "arraySha256": "316ebc219c01996a2b59103de0494f409c345d5db5fee0168a90c874551ec6bb",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-41.HEIC",
+      "boardAppearance": "wood-texture",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-7.jpg"
+    },
+    {
+      "number": 125,
+      "photoId": "phone-cd1dbf1ffd266650",
+      "imageSha256": "36eeb986a65aeb36f630798abc60561edfe1b07fbe12a196400e9e436c229908",
+      "arraySha256": "07c2521a3db341d80e2e4f3340e5034f9dfcdb1efc9f7befc8415b557d7a4add",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-42.HEIC",
+      "boardAppearance": "wood-texture",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-7.jpg"
+    },
+    {
+      "number": 126,
+      "photoId": "phone-3d6322d89640c189",
+      "imageSha256": "552fbb3a04503f81b80810c5ce154d06e50ab0ce129b738fd2f85cff8bb613a4",
+      "arraySha256": "4fbebfdfea5e3e8a744cb3e1cfeb85c303cdbddc8c33ce3b21953555ee91cdd0",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-43.HEIC",
+      "boardAppearance": "wood-texture",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-7.jpg"
+    },
+    {
+      "number": 127,
+      "photoId": "phone-41b31b4f182915a7",
+      "imageSha256": "46b005edf38049666a3b6666e7fac71f49a2c64d1f0ccb1f3028c2478fc80e98",
+      "arraySha256": "c2f7520b506648a128677d2d6af515ae3a32792ee55308f443fbeeee0d11bf13",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-44.HEIC",
+      "boardAppearance": "wood-texture",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-7.jpg"
+    },
+    {
+      "number": 128,
+      "photoId": "phone-19767eea9fbff91d",
+      "imageSha256": "c65ca90c4b1ee3819399e5ff66296390f0a307a051a529fa25da41eb6ed2d7f5",
+      "arraySha256": "a92059784a2f2094cf92f936de47af2cb166a63a1354167294ae154fc4fb0716",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-45.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-7.jpg"
+    },
+    {
+      "number": 129,
+      "photoId": "phone-d7510ffe055f9eef",
+      "imageSha256": "2741bf1869e5455c7cbbe08078532a0a3c85cfb3a2040dc957e88633132bd6da",
+      "arraySha256": "b69759a99b78f31b206135edaf78ad56871f2c0965735713af90697c241d616f",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-46.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-7.jpg"
+    },
+    {
+      "number": 130,
+      "photoId": "phone-30521cd5a02b2900",
+      "imageSha256": "71e1b9b6f13689e513a3e47a6f408d617ee8eb5cbf92840d58fef7ac090a5bbf",
+      "arraySha256": "b7c554f6e88863ffeef09457463a77ce269d2e6782f707b0e60ccc2833519716",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-47.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-7.jpg"
+    },
+    {
+      "number": 131,
+      "photoId": "phone-f64a6fdcea10684b",
+      "imageSha256": "81e7f73a4c8fa781f2f2c009c724fc8b77474981af026805bbc28b0229dc437e",
+      "arraySha256": "1dd4e2ab07fd88707d131d55d485d76cddb47e3b10c1bbb4cfe9c54f1926626b",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-48.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-7.jpg"
+    },
+    {
+      "number": 132,
+      "photoId": "phone-fd2f15f0414950ca",
+      "imageSha256": "683ec021e1d12f7584a9dcab365711df655307734112c7ba40450cf0059b7b70",
+      "arraySha256": "4248958c2b0545d30349c91e46b7656cafb2e3bfc365a51c8a5bb6f4670c9a69",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-49.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-7.jpg"
+    },
+    {
+      "number": 133,
+      "photoId": "phone-07654a913cdd899d",
+      "imageSha256": "dcccd572e99d6f48670d3d5a443e73b8e8e61366d8c1adf7455927dc913aac1f",
+      "arraySha256": "2f2dbe536ccae8ca20f09ec3743eb880d8d8ada4976578885330d329aa18ee20",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-50.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-7.jpg"
+    },
+    {
+      "number": 134,
+      "photoId": "phone-72ea7638c691cb5d",
+      "imageSha256": "def14b66bcc45e0570dd3000818fbce4d728c9b6d9c4ab24e4a2ed55102d6b0f",
+      "arraySha256": "62144a79025135f80fb99b1363f7697c3ce0a29bd8382834944bfa8dd8494406",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-51.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-7.jpg"
+    },
+    {
+      "number": 135,
+      "photoId": "phone-e3ba3a3ddcd41719",
+      "imageSha256": "09256a47387f343de585a76e94b4b3527dbf97c88fa324aa00b84fe8fcf679df",
+      "arraySha256": "de745fa4c6a06e6f32a152d6043eba78a412c3601b59defe42eb44a3362811a2",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-52.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-7.jpg"
+    },
+    {
+      "number": 136,
+      "photoId": "phone-344a8a45379db795",
+      "imageSha256": "7a0c1ebc45c96296e631d4246c66ba0bc6f92114c85a588b09cd73e4a9ce005e",
+      "arraySha256": "f69fb6f1a0de4fb740b1a58795ee1700bd737da00e21db558936ee6f11bf90e1",
+      "originalPath": ".cache/real-use-tests/phone-photos/lichess-photos/lichess-photo-53.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-7.jpg"
+    },
+    {
+      "number": 137,
+      "photoId": "phone-be7abe8650fc6d21",
+      "imageSha256": "6d2e4af2b1b78180748368fba119d01878a122a1078c0ee6a65b2cb74aca5e6c",
+      "arraySha256": "ba533ecdc7b57712dc1a652458968b9761d52fc1eded2e0d77b21f413d76bcba",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-30.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-7.jpg"
+    },
+    {
+      "number": 138,
+      "photoId": "phone-2bee677d4784513d",
+      "imageSha256": "63f5d968ccfb976bc07a226529f7ece9905b9718c1c1ba90d35093c61cfd9b47",
+      "arraySha256": "947a14e298eed4ac1878593973ccbd3fb564bdf67737ea9032d4283ba4696344",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-31.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-7.jpg"
+    },
+    {
+      "number": 139,
+      "photoId": "phone-046e1479136cf7ea",
+      "imageSha256": "f7b78f2aa9671ccbe7367a7dc08885722a271874b652e3ab794370e97316c652",
+      "arraySha256": "27157ac06c327f2f4de09be6ce646a41da30cd94beae4dae0f32279c05d6caa2",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-32.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-7.jpg"
+    },
+    {
+      "number": 140,
+      "photoId": "phone-643436c2e0c78864",
+      "imageSha256": "083fa7688e929df32ca37285f4a7a359aeeed29fe7f1f143c173b77b3d40d757",
+      "arraySha256": "5b14b0947bb2119b01d33e11247e11c5651515bdbde09c423eb3d908e6133510",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-33.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-7.jpg"
+    },
+    {
+      "number": 141,
+      "photoId": "phone-485c74810d773fc3",
+      "imageSha256": "f97e72a442b98c2afff8185d538ed00775dc600e9a84fc56bc69251ae017b34c",
+      "arraySha256": "090494dc2589dbf31b47881ce74ddedb81685e5af7530975ce771920491ef81f",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-34.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-8.jpg"
+    },
+    {
+      "number": 142,
+      "photoId": "phone-30b1c8754d02a459",
+      "imageSha256": "61b698f54accf3da213c8c8d3c1816dbebe2bb5971a3486c1fe286a230cd88f1",
+      "arraySha256": "d76f0de4bfd1a277a3fa4811544df3246a21af2757a6c4f149627c957f0c9512",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-35.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-8.jpg"
+    },
+    {
+      "number": 143,
+      "photoId": "phone-0f3e689e21c1eae4",
+      "imageSha256": "fc01af4272905ca961bc281fe88710a98f8b520cdfdc6b28b6eea95aebd92b95",
+      "arraySha256": "c220bb688231d05134956cdfef397ab4e4082559eff43ca4a9c503bbf5f883b3",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-36.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-8.jpg"
+    },
+    {
+      "number": 144,
+      "photoId": "phone-e5232c9961498e5d",
+      "imageSha256": "4522b0f8438a984463becfd5bdb7a52afc542f191c05297b57d3e840cdd8b6fe",
+      "arraySha256": "90a55604b1332a686a41a01ac58a0eec8f12b0a926766609391c68036fb542f4",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-37.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-8.jpg"
+    },
+    {
+      "number": 145,
+      "photoId": "phone-5e13a3b0bd60fde4",
+      "imageSha256": "45698eaf0f2b0e7948f4376f25d49ff0a3e8603a9b5ff5e676bb977bb6ff26a3",
+      "arraySha256": "6458027e4f3490def6ab2879abec1e0a850002200eb305b77104238b8546dc6d",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-38.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-8.jpg"
+    },
+    {
+      "number": 146,
+      "photoId": "phone-412c9e5db61de850",
+      "imageSha256": "551201857e25f5ca747780fad2486ab17c59912265cf7511b88d14f7f849a398",
+      "arraySha256": "e995359d5da277e60b6e1e7cdd68019f2fa04cc319d782ac9cad7c6a6039e2eb",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-39.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-8.jpg"
+    },
+    {
+      "number": 147,
+      "photoId": "phone-c19f513652bf7961",
+      "imageSha256": "87e9fc69472a21906d5adc02e3119789ddea22b7834abbe04bffe343494061e6",
+      "arraySha256": "910a952c8af7d8e816b9d0c595be85f656b82b49cf578a8f8ab662f9e65a1063",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-40.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-8.jpg"
+    },
+    {
+      "number": 148,
+      "photoId": "phone-b6e5ca0918da446d",
+      "imageSha256": "414b5cfa60aa6e460a1dcfe78fc1e7af45285a45e45f7ac826c6f9ab880515b3",
+      "arraySha256": "3f148ef15be87011199c57425f9a605e63d62e15be33c52c4a156c03cb19bebd",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-41.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-8.jpg"
+    },
+    {
+      "number": 149,
+      "photoId": "phone-a4bcf1415c23f668",
+      "imageSha256": "44467d28d26a196b60f5cc8d92d3f232110061e3678468cbe7a17fb88dd6fff7",
+      "arraySha256": "e28fe18b7b1f17106fa0db5be1c00413faa7527c318023d2e6538bbb203c9e76",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-42.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-8.jpg"
+    },
+    {
+      "number": 150,
+      "photoId": "phone-ba03df27d1a0f4fd",
+      "imageSha256": "46bdf081c783a058d2ea09865b16ed40fe1d1e583aedfa5739ef6809a662aa9b",
+      "arraySha256": "4d75c832ce82230d0e3b551c869990601fc0fb21eede78b24f0100183b17971b",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-43.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-8.jpg"
+    },
+    {
+      "number": 151,
+      "photoId": "phone-00f22dc260ad1b02",
+      "imageSha256": "960fbf2784c68a4d9b1387bb6cf4ae87eb658a6d05c179395d46ef416f7dfc6d",
+      "arraySha256": "1c4258f5795f07e7498e973c1973481f9af936f1bd046f1ffb6fcc6c39707906",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-44.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-8.jpg"
+    },
+    {
+      "number": 152,
+      "photoId": "phone-d99527227f1b6d6b",
+      "imageSha256": "4136ca8ebef5b2bc111e313fd04ec751c5f5e82fc7cd478a8ca5f8804a0b059b",
+      "arraySha256": "da7a668244fdad17c78c3c46be0753e17c40b2b601308fb70d1551122ac7b723",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-45.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-8.jpg"
+    },
+    {
+      "number": 153,
+      "photoId": "phone-e6bbcb7a2f19404d",
+      "imageSha256": "c34dbd47d014ca497312f2f3d9d7e4acdebfdcc9c1c1a8164c814123b7db3acc",
+      "arraySha256": "881025456e81491f0a3aa23a5f7a80937f0e15a6d2f4bcb0358e8e56468ae3be",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-46.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-8.jpg"
+    },
+    {
+      "number": 154,
+      "photoId": "phone-90b6b827a87b1dcc",
+      "imageSha256": "ae539fcdad5e0d05979eb49641570fa45c61a919d188b75c37df39c5d1b260e4",
+      "arraySha256": "f2a55aec6b7ced3d9486b70cd5687f2a1026a246a75b81dba01279fb5b1ee38c",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-47.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-8.jpg"
+    },
+    {
+      "number": 155,
+      "photoId": "phone-53008f192ac5c50d",
+      "imageSha256": "cca039a7a14788c69a2007c3a4644c3d3a270885fe9c2675e77fa4ebc85700d0",
+      "arraySha256": "f0370ee47bc4673c4d37298257e991b7fda6a80d02c3e972b3df0452a7758505",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-48.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-8.jpg"
+    },
+    {
+      "number": 156,
+      "photoId": "phone-f38b9febed592a82",
+      "imageSha256": "d9aa0b1f6250d3c893e27cf3839687fea1b0090a10e90c897957f21f566136ca",
+      "arraySha256": "22fb2800dd798515253ceb6e3a9165f7e937e1325ebe0db867e2597975111616",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-49.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-8.jpg"
+    },
+    {
+      "number": 157,
+      "photoId": "phone-7042f5131d9d7217",
+      "imageSha256": "556348a926922208ecc0d63ca62e7fcef799e32ee43052a12d6caf3558b403e3",
+      "arraySha256": "860347aab52c3e7b9ce80c732e64de8b6e328c9b69ab4333e01088406f360f6c",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-50.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-8.jpg"
+    },
+    {
+      "number": 158,
+      "photoId": "phone-73574d8c694eaec0",
+      "imageSha256": "979bd530a36ea8f2d3085434ef5dbe8de82ad235ec9d08571d1b3b97e8889dce",
+      "arraySha256": "abe49b907d1ce593b5259488b68aa4ac917304bfa1c5ddafd244c09f0a9600db",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-51.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-8.jpg"
+    },
+    {
+      "number": 159,
+      "photoId": "phone-2105505a485fa736",
+      "imageSha256": "87b5527e8ded03f883f91aeb4e3cc1d0a09fc25f9ea875731dc7a75d86744cc9",
+      "arraySha256": "38539741332ccc5f468aad862b5b3ce99e9a099d2a38a03a5cd6a48b2509482f",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-52.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-8.jpg"
+    },
+    {
+      "number": 160,
+      "photoId": "phone-2a3077892eb91781",
+      "imageSha256": "31dcc8cb6d713f91828d8dc75fec17d2ae3e44644e587705e013a1acab7247f4",
+      "arraySha256": "94d3f2cfde095900e566f41817d2b42685f737243c940940c5dab71c294fc121",
+      "originalPath": ".cache/real-use-tests/phone-photos/video-photos/video-photo-53.HEIC",
+      "boardAppearance": "no-visible-wood-grain",
+      "reviewSheet": ".cache/training-coverage-v1/old-photos-8.jpg"
+    }
+  ]
+}
